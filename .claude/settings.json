@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '=== DESIGN SYSTEM REMINDER ===' && echo 'Tokens : src/app/globals.css' && echo 'Tailwind: tailwind.config.ts' && echo 'Rules   : CLAUDE.md § Design System Rules' && echo 'Colors  : process=#2563EB framework=#7C3AED methods=#059669 scenario=#D97706 reading=#DC2626' && echo 'Fonts   : Inter, weights 400/600 only' && echo 'Spacing : base-8 scale, max-w-content=1200px max-w-prose=720px'"
+          }
+        ]
+      }
+    ]
+  }
+}
