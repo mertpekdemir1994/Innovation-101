@@ -74,9 +74,9 @@ export default function SBExampleToggle() {
               onClick={() => setTab(t)}
               className="px-4 py-2 text-xs font-mono tracking-widest rounded-sm transition-colors"
               style={{
-                background: active ? `${accent}0.12)` : 'rgba(255,255,255,0.04)',
-                border: `1px solid ${active ? `${accent}0.48)` : 'rgba(255,255,255,0.12)'}`,
-                color: active ? `${accent}1)` : 'rgba(255,255,255,0.45)',
+                background: active ? `${accent}0.10)` : 'rgba(0,0,0,0.03)',
+                border: `1px solid ${active ? `${accent}0.40)` : 'rgba(0,0,0,0.10)'}`,
+                color: active ? `${accent}1)` : 'var(--color-neutral-500)',
               }}
             >
               {t === 'traditional' ? 'TRADITIONAL' : 'WITH AI (HYPOTHETICAL)'}
@@ -87,14 +87,14 @@ export default function SBExampleToggle() {
 
       {/* Context card */}
       <div className="mb-6 rounded-sm px-5 py-4" style={{
-        background: 'rgba(255,255,255,0.03)',
-        border: '1px solid rgba(255,255,255,0.08)',
+        background: 'var(--color-neutral-50)',
+        border: '1px solid var(--color-neutral-200)',
       }}>
         <p className="text-xs font-mono tracking-widest mb-1"
-          style={{ color: 'rgba(255,255,255,0.30)' }}>
+          style={{ color: 'var(--color-neutral-400)' }}>
           SCENARIO
         </p>
-        <p className="text-sm" style={{ color: 'rgba(255,255,255,0.60)' }}>
+        <p className="text-sm" style={{ color: 'var(--color-neutral-600)' }}>
           A team is storyboarding a meal-planning app that suggests recipes based on what ingredients the user has at home.
         </p>
       </div>
@@ -120,20 +120,20 @@ export default function SBExampleToggle() {
 
             return (
               <div key={i} className="rounded-sm p-5" style={{
-                background: isGapPanel || isAIGap ? `${AMBER}0.04)` : `${accent}0.04)`,
-                border: `1px solid ${isGapPanel || isAIGap ? `${AMBER}0.18)` : `${accent}0.14)`}`,
+                background: isGapPanel || isAIGap ? `${AMBER}0.06)` : `${accent}0.05)`,
+                border: `1px solid ${isGapPanel || isAIGap ? `${AMBER}0.25)` : `${accent}0.18)`}`,
                 borderLeft,
               }}>
                 <p className="text-xs font-mono tracking-widest mb-1"
                   style={{
-                    color: isGapPanel || isAIGap ? `${AMBER}0.65)` : `${accent}0.55)`,
+                    color: isGapPanel || isAIGap ? `${AMBER}0.90)` : `${accent}0.90)`,
                   }}>
                   {panel.step}
                 </p>
-                <p className="text-sm font-semibold mb-3" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <p className="text-sm font-semibold mb-3" style={{ color: 'var(--color-neutral-900)' }}>
                   {panel.heading}
                 </p>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--color-neutral-600)' }}>
                   {panel.body}
                 </p>
               </div>
@@ -147,7 +147,7 @@ export default function SBExampleToggle() {
         background: tab === 'traditional' ? `${CLAY}0.06)` : `${INDIGO}0.06)`,
         border: `1px solid ${tab === 'traditional' ? `${CLAY}0.18)` : `${INDIGO}0.18)`}`,
       }}>
-        <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.62)' }}>
+        <p className="text-sm leading-relaxed" style={{ color: 'var(--color-neutral-700)' }}>
           {tab === 'traditional'
             ? 'The storyboard worked because the team could not draw frame four. In two hours they discovered a product decision that would have cost months to find in a build. The gap was the method doing its job.'
             : 'The AI storyboard looked finished because the gap was written, not drawn. "Intelligently surfaces" is not a frame — it is a wish. The method only works if you cannot pass a gap by labelling it.'}
