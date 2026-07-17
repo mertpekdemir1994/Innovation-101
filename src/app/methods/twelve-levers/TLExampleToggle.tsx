@@ -45,9 +45,9 @@ function TabBtn({
         letterSpacing: '0.12em',
         padding: '6px 16px',
         borderRadius: '20px',
-        border: `1px solid ${active ? `${accent}0.55)` : 'rgba(255,255,255,0.14)'}`,
+        border: `1px solid ${active ? `${accent}0.55)` : 'var(--color-neutral-200)'}`,
         background: active ? `${accent}0.10)` : 'transparent',
-        color: active ? `${accent}0.90)` : 'rgba(255,255,255,0.38)',
+        color: active ? `${accent}0.90)` : 'var(--color-neutral-500)',
         cursor: 'pointer',
       }}
     >
@@ -108,9 +108,9 @@ function TabA() {
   return (
     <div>
       {/* Scenario */}
-      <div style={{ marginBottom: '24px', padding: '16px 20px', background: 'rgba(255,255,255,0.03)', borderRadius: '6px', borderLeft: `3px solid ${PLUM}0.45)` }}>
+      <div style={{ marginBottom: '24px', padding: '16px 20px', background: 'var(--color-neutral-50)', borderRadius: '6px', borderLeft: `3px solid ${PLUM}0.45)` }}>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.12em', color: `${PLUM}0.60)`, marginBottom: '6px' }}>SCENARIO</p>
-        <p style={{ color: 'rgba(255,255,255,0.72)', fontSize: '14px', lineHeight: 1.65 }}>
+        <p style={{ color: 'var(--color-neutral-700)', fontSize: '14px', lineHeight: 1.65 }}>
           A mid-sized manufacturer of specialty industrial components is facing commoditization. The product is technically solid, pricing pressure is intense, and margins are eroding year over year. The leadership team suspects the only path forward is &ldquo;a better product&rdquo; &mdash; but they commission a 12-lever audit.
         </p>
       </div>
@@ -118,7 +118,7 @@ function TabA() {
       {/* Audit results */}
       <div style={{ display: 'grid', gap: '12px' }}>
         <Block label="STEP 1 — THE AUDIT REVEALS THE DEFAULT" accent={AMBER}>
-          <p style={{ color: 'rgba(255,255,255,0.68)', fontSize: '13px', lineHeight: 1.65, marginBottom: '12px' }}>
+          <p style={{ color: 'var(--color-neutral-700)', fontSize: '13px', lineHeight: 1.65, marginBottom: '12px' }}>
             The team maps what they have invested in across all twelve levers over the last three years. The pattern is stark: 85% of innovation effort has gone to the Offering lever — better specs, tighter tolerances, expanded SKU range. Almost nothing has been invested in Revenue Model, Cost Model, or Partnerships.
           </p>
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
@@ -129,7 +129,7 @@ function TabA() {
         </Block>
 
         <Block label="STEP 2 — THREE LEVERS SURFACE AS CANDIDATES" accent={PLUM}>
-          <p style={{ color: 'rgba(255,255,255,0.68)', fontSize: '13px', lineHeight: 1.65, marginBottom: '16px' }}>
+          <p style={{ color: 'var(--color-neutral-700)', fontSize: '13px', lineHeight: 1.65, marginBottom: '16px' }}>
             With the full lever map visible, three levers look genuinely promising — and none of them require a better product:
           </p>
           <div style={{ display: 'grid', gap: '10px' }}>
@@ -154,17 +154,17 @@ function TabA() {
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.10em', color: `${accent}0.72)`, display: 'block', marginBottom: '6px' }}>
                   {lever}
                 </span>
-                <p style={{ color: 'rgba(255,255,255,0.70)', fontSize: '13px', lineHeight: 1.6, margin: 0 }}>{idea}</p>
+                <p style={{ color: 'var(--color-neutral-700)', fontSize: '13px', lineHeight: 1.6, margin: 0 }}>{idea}</p>
               </div>
             ))}
           </div>
         </Block>
 
         <Block label="STEP 3 — COMBINATION CHOSEN, FEASIBILITY CHECKED" accent={GREEN}>
-          <p style={{ color: 'rgba(255,255,255,0.68)', fontSize: '13px', lineHeight: 1.65, marginBottom: '12px' }}>
+          <p style={{ color: 'var(--color-neutral-700)', fontSize: '13px', lineHeight: 1.65, marginBottom: '12px' }}>
             The team selects Revenue Model + Partnerships as a combined bet (Cost Model deferred to Year 2 — requires distributor negotiation that will take longer than the strategic window). They run feasibility checks: legal confirms availability contracts are enforceable in their key markets; the IoT platform integration is assessed at 6-month lead time.
           </p>
-          <p style={{ color: 'rgba(255,255,255,0.68)', fontSize: '13px', lineHeight: 1.65, marginBottom: '16px' }}>
+          <p style={{ color: 'var(--color-neutral-700)', fontSize: '13px', lineHeight: 1.65, marginBottom: '16px' }}>
             Result: a differentiated position built on Revenue Model + Partnerships that does not require a better product to launch — and that competitors selling identical components cannot easily replicate, because they lack the existing sensor infrastructure and the customer relationships needed to make availability contracts credible.
           </p>
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
@@ -194,14 +194,14 @@ function TabB() {
         gap: '10px',
       }}>
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.10em', color: `${INDIGO}0.75)`, paddingTop: '2px', flexShrink: 0 }}>HYPOTHETICAL</span>
-        <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '12px', lineHeight: 1.6, margin: 0 }}>
+        <p style={{ color: 'var(--color-neutral-500)', fontSize: '12px', lineHeight: 1.6, margin: 0 }}>
           This tab shows how an AI-first 12-lever scan would likely play out — fast, comprehensive, and systematically incomplete in the ways that matter. The scenario is the same manufacturer.
         </p>
       </div>
 
       {/* Same scenario but AI-led */}
       <Block label="AI FAST SCAN — WHAT IT PRODUCES" accent={INDIGO}>
-        <p style={{ color: 'rgba(255,255,255,0.68)', fontSize: '13px', lineHeight: 1.65, marginBottom: '16px' }}>
+        <p style={{ color: 'var(--color-neutral-700)', fontSize: '13px', lineHeight: 1.65, marginBottom: '16px' }}>
           The team asks an AI assistant to &ldquo;generate the top innovation idea for each of the 12 levers for an industrial components manufacturer.&rdquo; Within minutes, they have 12 ideas &mdash; one per lever, neatly listed:
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '16px' }}>
@@ -221,7 +221,7 @@ function TabB() {
           ].map(([lever, idea]) => (
             <div key={lever} style={{ padding: '10px 12px', background: `${INDIGO}0.06)`, borderLeft: `2px solid ${INDIGO}0.26)`, borderRadius: '0 4px 4px 0' }}>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '7px', letterSpacing: '0.10em', color: `${INDIGO}0.60)`, display: 'block', marginBottom: '4px' }}>{lever}</span>
-              <p style={{ color: 'rgba(255,255,255,0.62)', fontSize: '12px', lineHeight: 1.5, margin: 0 }}>{idea}</p>
+              <p style={{ color: 'var(--color-neutral-600)', fontSize: '12px', lineHeight: 1.5, margin: 0 }}>{idea}</p>
             </div>
           ))}
         </div>
@@ -250,7 +250,7 @@ function TabB() {
             ].map(({ problem, detail }) => (
               <div key={problem} style={{ padding: '12px 14px', background: `${AMBER}0.05)`, borderLeft: `2px solid ${AMBER}0.30)`, borderRadius: '0 4px 4px 0' }}>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.10em', color: `${AMBER}0.70)`, display: 'block', marginBottom: '6px' }}>{problem}</span>
-                <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '13px', lineHeight: 1.6, margin: 0 }}>{detail}</p>
+                <p style={{ color: 'var(--color-neutral-600)', fontSize: '13px', lineHeight: 1.6, margin: 0 }}>{detail}</p>
               </div>
             ))}
           </div>
@@ -261,13 +261,13 @@ function TabB() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
         <div style={{ padding: '16px', background: `${INDIGO}0.06)`, border: `1px solid ${INDIGO}0.22)`, borderRadius: '6px' }}>
           <p style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.12em', color: `${INDIGO}0.75)`, marginBottom: '8px' }}>WHERE AI HELPS</p>
-          <p style={{ color: 'rgba(255,255,255,0.62)', fontSize: '13px', lineHeight: 1.6, margin: 0 }}>
+          <p style={{ color: 'var(--color-neutral-600)', fontSize: '13px', lineHeight: 1.6, margin: 0 }}>
             AI is genuinely useful for ensuring no lever is overlooked and generating initial idea fodder quickly. Use it to populate the audit canvas before the workshop, not to replace the strategic thinking that happens inside it.
           </p>
         </div>
         <div style={{ padding: '16px', background: `${PLUM}0.06)`, border: `1px solid ${PLUM}0.22)`, borderRadius: '6px' }}>
           <p style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.12em', color: `${PLUM}0.75)`, marginBottom: '8px' }}>WHAT STAYS HUMAN</p>
-          <p style={{ color: 'rgba(255,255,255,0.62)', fontSize: '13px', lineHeight: 1.6, margin: 0 }}>
+          <p style={{ color: 'var(--color-neutral-600)', fontSize: '13px', lineHeight: 1.6, margin: 0 }}>
             The choice of which lever or combination to pull, whether that choice is organizationally feasible, and which levers are over-used in your specific context — these require judgment about your real situation that no AI can substitute.
           </p>
         </div>

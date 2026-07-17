@@ -185,19 +185,19 @@ export default function SMExampleToggle() {
                 ].map(item => (
                   <div key={item.role} className="rounded p-3"
                     style={{
-                      background: item.obvious ? `${INDIGO}0.07)` : 'rgba(255,255,255,0.02)',
-                      borderLeft: `2px solid ${item.obvious ? `${INDIGO}0.35)` : 'rgba(255,255,255,0.10)'}`,
+                      background: item.obvious ? `${INDIGO}0.07)` : 'var(--color-neutral-50)',
+                      borderLeft: `2px solid ${item.obvious ? `${INDIGO}0.35)` : 'var(--color-neutral-200)'}`,
                     }}>
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <p className="text-[9px] font-semibold uppercase tracking-widest mb-0.5"
-                          style={{ color: item.obvious ? `${INDIGO}0.80)` : 'rgba(255,255,255,0.35)' }}>{item.role}</p>
-                        <p className="text-[8px] mb-1" style={{ color: 'rgba(255,255,255,0.35)' }}>{item.attrs}</p>
+                          style={{ color: item.obvious ? `${INDIGO}0.80)` : 'var(--color-neutral-500)' }}>{item.role}</p>
+                        <p className="text-[8px] mb-1" style={{ color: 'var(--color-neutral-400)' }}>{item.attrs}</p>
                         <p className="text-[10px] text-neutral-600 italic">{item.note}</p>
                       </div>
                       {!item.obvious && (
                         <span className="text-[7px] font-mono uppercase px-1.5 py-0.5 rounded shrink-0"
-                          style={{ color: 'rgba(255,255,255,0.30)', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                          style={{ color: 'var(--color-neutral-500)', background: 'var(--color-neutral-100)', border: '1px solid var(--color-neutral-200)' }}>
                           secondary
                         </span>
                       )}
@@ -233,7 +233,7 @@ export default function SMExampleToggle() {
                   },
                 ].map(item => (
                   <div key={item.miss} className="rounded p-3"
-                    style={{ background: 'rgba(255,255,255,0.03)', borderLeft: '2px solid rgba(255,255,255,0.10)' }}>
+                    style={{ background: 'var(--color-neutral-50)', borderLeft: '2px solid var(--color-neutral-200)' }}>
                     <p className="text-[9px] font-semibold uppercase tracking-widest mb-1 text-neutral-500">{item.miss}</p>
                     <p className="text-xs text-neutral-600 leading-relaxed">{item.why}</p>
                   </div>

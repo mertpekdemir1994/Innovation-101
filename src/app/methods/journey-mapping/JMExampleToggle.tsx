@@ -119,7 +119,7 @@ export default function JMExampleToggle() {
           {/* Verdict */}
           <div className="rounded-xl p-5"
             style={{
-              background: 'rgba(255,255,255,0.03)',
+              background: 'var(--color-neutral-50)',
               border: `1px solid ${d.verdictColor.replace('0.75', '0.22')}`,
             }}
           >

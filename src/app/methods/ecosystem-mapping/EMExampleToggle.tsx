@@ -51,9 +51,9 @@ export default function EMExampleToggle() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.65)` }}
               >Scenario</p>
               <p className="font-semibold mb-2"
-                style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.85)' }}
+                style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}
               >A fast-growing short-term rental marketplace — mapping the ecosystem to find growth levers and head off threats</p>
-              <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.55)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 The team&rsquo;s instinctive framing is a two-sided market: hosts on the supply side, guests on the demand side. The ecosystem mapping session is run to find out if the real system is more complicated than that — and where the leverage is.
               </p>
             </div>
@@ -119,7 +119,7 @@ export default function EMExampleToggle() {
                         >NON-OBVIOUS</span>
                       )}
                     </div>
-                    <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.55)', lineHeight: 'var(--leading-relaxed)' }}>
+                    <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                       {item.finding}
                     </p>
                   </div>
@@ -133,7 +133,7 @@ export default function EMExampleToggle() {
               <p className="font-mono uppercase tracking-widest mb-2"
                 style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
               >What the ecosystem map produced</p>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.70)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 The map turned &ldquo;we match hosts and guests&rdquo; into an understanding of the actual system the business depended on. Three strategic moves came directly from the hidden actors: a professional photography service (from the photographer actor), a co-host and cleaning ecosystem partnership program (from the service layer actor), and a neighbor and community relations strategy (from the neighbor-to-regulator causal chain). None of these would have emerged from the two-sided-market framing.
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function EMExampleToggle() {
               <p className="font-mono uppercase tracking-widest mb-1"
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(99,102,241,0.70)' }}
               >Same scenario — AI assistance applied</p>
-              <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.55)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 The same team gives the AI the domain — a short-term rental marketplace — and asks for an ecosystem map. The AI generates a draft quickly.
               </p>
             </div>
@@ -217,17 +217,17 @@ export default function EMExampleToggle() {
                             ? `${TEAL}0.65)`
                             : item.confidence === 'LOW'
                             ? `${AMBER}0.60)`
-                            : 'rgba(255,255,255,0.28)',
+                            : 'var(--color-neutral-400)',
                         }}
                       >AI: {item.confidence}</span>
                     </div>
                   </div>
-                  <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/5">
+                  <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-neutral-100">
                     <div className="p-4">
                       <p className="font-semibold mb-1.5"
                         style={{ fontSize: 'var(--text-xs)', color: 'rgba(99,102,241,0.70)' }}
                       >What AI mapped</p>
-                      <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+                      <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item.aiRead}
                       </p>
                     </div>
@@ -235,7 +235,7 @@ export default function EMExampleToggle() {
                       <p className="font-semibold mb-1.5"
                         style={{ fontSize: 'var(--text-xs)', color: `${TEAL}0.65)` }}
                       >What the gap was</p>
-                      <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+                      <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item.gap}
                       </p>
                     </div>
@@ -250,7 +250,7 @@ export default function EMExampleToggle() {
               <p className="font-mono uppercase tracking-widest mb-2"
                 style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
               >What this tells you about AI + ecosystem mapping</p>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.70)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 AI produced the visible ecosystem fast and gave a solid scaffold for the obvious structure. The distinctive value — the hidden photographer actor whose effect on bookings was specific to real data, and the informal neighbor dynamic that mapped the platform&rsquo;s regulatory risk — came from human system-knowledge and the deliberate search for what the common description omits. The strongest approach uses AI to assemble the visible actors quickly, then applies human inquiry specifically to find the non-obvious ones. Use AI as the scaffold; use the session to hunt what it cannot see.
               </p>
             </div>

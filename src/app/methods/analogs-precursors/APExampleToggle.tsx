@@ -188,11 +188,11 @@ export default function APExampleToggle() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3 rounded p-2"
                     style={{
-                      background: item.near ? `${INDIGO}0.06)` : 'rgba(255,255,255,0.02)',
-                      borderLeft: `2px solid ${item.near ? `${INDIGO}0.30)` : 'rgba(255,255,255,0.10)'}`,
+                      background: item.near ? `${INDIGO}0.06)` : 'var(--color-neutral-50)',
+                      borderLeft: `2px solid ${item.near ? `${INDIGO}0.30)` : 'var(--color-neutral-200)'}`,
                     }}>
                     <span className="text-[9px] font-semibold mt-0.5 shrink-0"
-                      style={{ color: item.near ? `${INDIGO}0.65)` : 'rgba(255,255,255,0.30)' }}>
+                      style={{ color: item.near ? `${INDIGO}0.65)` : 'var(--color-neutral-400)' }}>
                       {item.near ? 'NEAR' : 'MISSED'}
                     </span>
                     <p className="text-xs text-neutral-600 leading-relaxed">{item.item}</p>

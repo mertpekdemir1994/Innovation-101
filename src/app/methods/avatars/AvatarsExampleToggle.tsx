@@ -58,9 +58,9 @@ export default function AvatarsExampleToggle() {
             onClick={() => setActiveTab(id)}
             className="rounded-full px-5 py-1.5 text-sm font-semibold transition-colors"
             style={{
-              background: activeTab === id ? 'rgba(255,255,255,0.12)' : 'transparent',
-              color:      activeTab === id ? '#FAFAFA' : 'rgba(255,255,255,0.40)',
-              border:     `1px solid ${activeTab === id ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.10)'}`,
+              background: activeTab === id ? 'var(--color-neutral-900)' : 'transparent',
+              color:      activeTab === id ? '#FFFFFF' : 'var(--color-neutral-500)',
+              border:     `1px solid ${activeTab === id ? 'var(--color-neutral-900)' : 'var(--color-neutral-200)'}`,
             }}
             aria-pressed={activeTab === id}
           >{label}</button>
@@ -80,7 +80,7 @@ export default function AvatarsExampleToggle() {
           <p className="mb-8" style={{
             fontSize:   'var(--text-base)',
             lineHeight: 'var(--leading-relaxed)',
-            color:      'rgba(255,255,255,0.60)',
+            color:      'var(--color-neutral-600)',
             fontStyle:  'italic',
           }}>{d.context}</p>
 
@@ -89,9 +89,9 @@ export default function AvatarsExampleToggle() {
             {[d.step1, d.step2, d.step3].map((text, i) => (
               <div key={i} className="flex gap-5">
                 <div className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center font-mono text-xs font-semibold"
-                  style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.12)' }}
+                  style={{ background: 'var(--color-neutral-100)', color: 'var(--color-neutral-500)', border: '1px solid var(--color-neutral-200)' }}
                 >{i + 1}</div>
-                <p style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.72)', paddingTop: 3 }}>
+                <p style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)', paddingTop: 3 }}>
                   {text}
                 </p>
               </div>
@@ -100,22 +100,22 @@ export default function AvatarsExampleToggle() {
 
           {/* Outcome + verdict */}
           <div className="rounded-xl p-5 mb-5"
-            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.10)' }}
+            style={{ background: 'var(--color-neutral-50)', border: '1px solid var(--color-neutral-200)' }}
           >
             <p className="font-mono uppercase tracking-widest mb-2"
-              style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.35)' }}
+              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
             >Avatar chosen</p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.80)', fontWeight: 600 }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)', fontWeight: 600 }}>
               {d.outcome}
             </p>
           </div>
           <div className="rounded-xl p-5"
-            style={{ background: 'rgba(255,255,255,0.03)', border: `1px solid ${d.verdictColor.replace('0.75', '0.22')}` }}
+            style={{ background: 'var(--color-neutral-50)', border: `1px solid ${d.verdictColor.replace('0.75', '0.22')}` }}
           >
             <p className="font-mono uppercase tracking-widest mb-2"
               style={{ fontSize: 'var(--text-2xs)', color: d.verdictColor }}
             >{d.verdictLabel}</p>
-            <p style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.65)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-600)' }}>
               {d.verdict}
             </p>
           </div>
