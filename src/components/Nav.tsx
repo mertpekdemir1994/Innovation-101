@@ -34,10 +34,34 @@ export default function Nav() {
   // Close menu on route change
   useEffect(() => { setMenuOpen(false) }, [pathname])
 
-  // Prevent body scroll when menu is open
+  // Scroll-lock while menu is open.
+  // position:fixed is used instead of overflow:hidden because iOS Safari ignores
+  // overflow:hidden on <body> for touch-scroll — this pattern works universally.
+  // We save the current scrollY so we can restore the exact position on close.
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    if (menuOpen) {
+      const y = window.scrollY
+      document.body.dataset.scrollY = String(y)
+      document.body.style.position  = 'fixed'
+      document.body.style.top       = `-${y}px`
+      document.body.style.width     = '100%'
+      document.body.style.overflowY = 'scroll' // keep scrollbar gutter, prevents layout shift
+    } else {
+      const y = Number(document.body.dataset.scrollY ?? 0)
+      document.body.style.position  = ''
+      document.body.style.top       = ''
+      document.body.style.width     = ''
+      document.body.style.overflowY = ''
+      delete document.body.dataset.scrollY
+      window.scrollTo(0, y)
+    }
+    return () => {
+      // Safety cleanup if component unmounts while menu is open
+      document.body.style.position  = ''
+      document.body.style.top       = ''
+      document.body.style.width     = ''
+      document.body.style.overflowY = ''
+    }
   }, [menuOpen])
 
   // Scroll awareness
