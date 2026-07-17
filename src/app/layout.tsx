@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google'
 import Script from 'next/script'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import SectionProvider from '@/components/SectionProvider'
@@ -59,6 +60,9 @@ export default function RootLayout({
           <main className="pt-16 min-h-screen">{children}</main>
           <Footer />
         </SectionProvider>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   )
