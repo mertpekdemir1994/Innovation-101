@@ -75,7 +75,6 @@
   line-height: var(--leading-relaxed);
   color: rgba(255, 255, 255, 0.65);
   margin-bottom: 1.25rem;
-  flex-grow: 1;
 }
 
 /* ── Method chips (clickable links) ────────────────────────────────────────── */
