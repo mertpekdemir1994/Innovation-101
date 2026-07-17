@@ -72,76 +72,95 @@ export default function Nav() {
   }
 
   return (
-    <header className={headerClass}>
-      <div className="max-w-content mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
+    <>
+      <header className={headerClass}>
+        <div className="max-w-content mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
 
-        {/* Logo */}
-        <Link
-          href="/"
-          className="font-semibold text-lg tracking-tight transition-opacity duration-200 hover:opacity-70"
-          style={{ color: logoColor }}
-        >
-          Innovation 101
-        </Link>
+          {/* Logo */}
+          <Link
+            href="/"
+            className="font-semibold text-lg tracking-tight transition-opacity duration-200 hover:opacity-70"
+            style={{ color: logoColor }}
+          >
+            Innovation 101
+          </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV_ITEMS.map(({ label, href, color }) => (
-            <Link
-              key={href}
-              href={href}
-              className="text-sm transition-colors duration-150"
-              style={{
-                color:      linkColor(href, color),
-                fontWeight: isActive(pathname, href) ? 600 : 400,
-              }}
-              onMouseEnter={() => setHoveredHref(href)}
-              onMouseLeave={() => setHoveredHref(null)}
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {NAV_ITEMS.map(({ label, href, color }) => (
+              <Link
+                key={href}
+                href={href}
+                className="text-sm transition-colors duration-150"
+                style={{
+                  color:      linkColor(href, color),
+                  fontWeight: isActive(pathname, href) ? 600 : 400,
+                }}
+                onMouseEnter={() => setHoveredHref(href)}
+                onMouseLeave={() => setHoveredHref(null)}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-        >
-          <span
-            className={`block w-5 h-px ${barColor} transition-transform duration-200`}
-            style={{ transform: menuOpen ? 'translateY(5px) rotate(45deg)' : 'none' }}
-          />
-          <span
-            className={`block w-5 h-px ${barColor} transition-opacity duration-200`}
-            style={{ opacity: menuOpen ? 0 : 1 }}
-          />
-          <span
-            className={`block w-5 h-px ${barColor} transition-transform duration-200`}
-            style={{ transform: menuOpen ? 'translateY(-5px) rotate(-45deg)' : 'none' }}
-          />
-        </button>
-      </div>
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          >
+            <span
+              className={`block w-5 h-px ${barColor} transition-transform duration-200`}
+              style={{ transform: menuOpen ? 'translateY(5px) rotate(45deg)' : 'none' }}
+            />
+            <span
+              className={`block w-5 h-px ${barColor} transition-opacity duration-200`}
+              style={{ opacity: menuOpen ? 0 : 1 }}
+            />
+            <span
+              className={`block w-5 h-px ${barColor} transition-transform duration-200`}
+              style={{ transform: menuOpen ? 'translateY(-5px) rotate(-45deg)' : 'none' }}
+            />
+          </button>
+        </div>
+      </header>
 
-      {/* Mobile overlay menu */}
+      {/*
+        Mobile overlay — rendered OUTSIDE <header> so that backdrop-filter on the
+        header (which makes it a containing block for fixed descendants per CSS spec)
+        does not collapse this panel to zero height. Position uses inline style for
+        `top` so it is always relative to the viewport, never the header.
+      */}
       {menuOpen && (
-        <div className="fixed inset-0 top-16 bg-white z-40 flex flex-col px-6 pt-12 gap-8">
-          <Link href="/" className="text-2xl font-semibold text-neutral-900">
+        <div
+          className="fixed left-0 right-0 bottom-0 z-[60] flex flex-col overflow-y-auto bg-white px-6 pt-12 pb-12 gap-2 md:hidden"
+          style={{ top: '4rem' }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
+        >
+          <Link
+            href="/"
+            className="text-2xl font-semibold py-3 transition-colors duration-150"
+            style={{ color: pathname === '/' ? 'var(--color-framework)' : 'var(--color-neutral-900)' }}
+            onClick={() => setMenuOpen(false)}
+          >
             Home
           </Link>
           {NAV_ITEMS.map(({ label, href, color }) => (
             <Link
               key={href}
               href={href}
-              className="text-2xl font-semibold"
+              className="text-2xl font-semibold py-3 transition-colors duration-150"
               style={{ color: isActive(pathname, href) ? color : 'var(--color-neutral-900)' }}
+              onClick={() => setMenuOpen(false)}
             >
               {label}
             </Link>
           ))}
         </div>
       )}
-    </header>
+    </>
   )
 }
