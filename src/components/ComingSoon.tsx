@@ -65,27 +65,22 @@ export default function ComingSoon({ accent, glowRgb, heading, body, footer }: C
           style={{ display: 'block', margin: '0 auto 2rem' }}
         >
           {/*
-            Hexagon path — point up, circumradius 65, center (90, 90).
-            Vertices: top (90,25), top-right (146,57), bottom-right (146,123),
-            bottom (90,155), bottom-left (34,123), top-left (34,57).
-            The missing side — top-left back to top — is the intentional gap.
+            Hexagon — point up, circumradius 65, center (90, 90).
+            375 of 390 path units drawn; small gap at closing vertex.
+            The <g> rotates as a unit so the gap orbits the perimeter.
           */}
-          <circle
-            cx="90"
-            cy="90"
-            r="3"
-            fill={accent}
-            opacity={0.32}
-          />
-          <path
-            className={styles.path}
-            d="M 90 25 L 146 57 L 146 123 L 90 155 L 34 123 L 34 57"
-            stroke={accent}
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="none"
-          />
+          <g className={styles.group}>
+            <circle cx="90" cy="90" r="3" fill={accent} opacity={0.32} />
+            <path
+              className={styles.path}
+              d="M 90 25 L 146 57 L 146 123 L 90 155 L 34 123 L 34 57"
+              stroke={accent}
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </g>
         </svg>
 
         {/* Mono section label */}

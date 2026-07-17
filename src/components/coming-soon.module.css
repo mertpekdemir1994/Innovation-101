@@ -1,56 +1,36 @@
 /*
-  Mechanism: opt-in animation via prefers-reduced-motion: no-preference.
-  Animation only runs when the user has NOT requested reduced motion.
-  Under reduce (or no system preference set), the element shows its static
-  base state below — shape visible, gap present, no motion.
+  Hexagon rotates slowly — the gap orbits the perimeter, readable as
+  "thinking" or "in progress." A separate opacity pulse breathes over it.
 
-  Static default (reduced-motion / no animation):
-    stroke-dasharray: 375 390
-      375 = drawn portion (5 full sides + ~73% of the 6th, ≈ 360° minus ~10°)
-      390 = gap region (oversize so the pattern never wraps into a second dash)
-    dashoffset: 0 → draw starts at vertex 0 (top); the small gap falls at the
-    end of the 6th side, just before closing back to the start. Reads as
-    "almost closed" not "a side missing."
+  Static default (prefers-reduced-motion: reduce, or feature unsupported):
+  shape visible, gap present, no motion.
 */
+
 .path {
   stroke-dasharray: 375 390;
   stroke-dashoffset: 0;
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
-/*
-  Animated version — only activates under no-preference.
-  Phase 1  (0 – 10%):  fade in while nothing is drawn
-  Phase 2  (10 – 65%): draw 375 units — shape assembles, nearly closes
-  Phase 3  (65 – 92%): single slow breathe (opacity pulse)
-  Phase 4  (92 – 96%): fade out
-  Phase 5  (96 – 100%): invisible; offset resets to 375 for seamless loop
-*/
+.group {
+  transform-origin: 90px 90px; /* center of the 180×180 viewBox */
+}
+
 @media (prefers-reduced-motion: no-preference) {
+  .group {
+    animation: cs-spin 12s linear infinite;
+  }
   .path {
-    opacity: 0;
-    stroke-dashoffset: 375;
-    animation:
-      cs-draw    9s linear infinite,
-      cs-breathe 9s linear infinite;
+    animation: cs-breathe 5s ease-in-out infinite;
   }
 }
 
-@keyframes cs-draw {
-  0%   { stroke-dashoffset: 375; }
-  10%  { stroke-dashoffset: 375; }
-  65%  { stroke-dashoffset: 0;   }
-  96%  { stroke-dashoffset: 0;   }
-  100% { stroke-dashoffset: 375; }
+@keyframes cs-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 @keyframes cs-breathe {
-  0%   { opacity: 0;    }
-  10%  { opacity: 0.85; }
-  65%  { opacity: 0.85; }
-  76%  { opacity: 0.42; }
-  86%  { opacity: 0.85; }
-  92%  { opacity: 0.85; }
-  96%  { opacity: 0;    }
-  100% { opacity: 0;    }
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 0.9; }
 }
