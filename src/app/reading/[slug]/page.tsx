@@ -72,7 +72,6 @@ export default function ReadingItemPage({ params }: { params: { slug: string } }
       {(frontmatter.relatedFrameworks.length > 0 || frontmatter.relatedMethods.length > 0) && (
         <RelatedContent
           frameworks={frontmatter.relatedFrameworks}
-          processes={[]}
           methods={frontmatter.relatedMethods}
         />
       )}

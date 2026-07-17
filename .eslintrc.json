@@ -1,3 +1,37 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "overrides": [
+    {
+      "files": [
+        "src/app/methods/**/page.tsx",
+        "src/app/framework/**/page.tsx"
+      ],
+      "rules": {
+        "no-restricted-syntax": [
+          "error",
+          {
+            "selector": "FunctionDeclaration[id.name=/^(DarkSection|LightSection|WarmSection|Container|SectionLabel|SectionHeadingDark|SectionHeadingLight|Body)$/]",
+            "message": "Layout primitives must be imported from 'src/components/method/Primitives.tsx', not defined inline. See CLAUDE.md."
+          },
+          {
+            "selector": "JSXOpeningElement[name.name=/^h[1-6]$/] JSXAttribute[name.name='className'][value.value=/\\bfont-bold\\b/]",
+            "message": "Use font-semibold on headings. font-bold is reserved for inline body emphasis. See CLAUDE.md."
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "src/app/methods/business-model-canvas/page.tsx",
+        "src/app/methods/storyboarding/page.tsx",
+        "src/app/methods/systems-mapping/page.tsx",
+        "src/app/methods/design-principles/page.tsx",
+        "src/app/methods/capability-mapping/page.tsx",
+        "src/app/methods/delivery-roadmap/page.tsx"
+      ],
+      "rules": {
+        "no-restricted-syntax": "off"
+      }
+    }
+  ]
 }

@@ -1,3 +1,6 @@
+// All 5 process frameworks (Double Diamond, Design Sprint, Lean Startup,
+// Agile Innovation, Forward Deployed Engineering) share this type.
+// There is no separate "Process" type — they are all frameworks.
 export type FrameworkFrontmatter = {
   title: string
   slug: string
@@ -7,42 +10,45 @@ export type FrameworkFrontmatter = {
   originYear: number
   whenToUse: string[]
   whenNotToUse: string[]
-  relatedFrameworks: string[]
-  relatedProcesses: string[]
   relatedMethods: string[]
+  relatedFrameworks: string[]
   sourceBook: string
   sourceAuthor: string
   amazonAffiliateUrl: string
-  interactiveType: 'double-diamond' | 'spectrum' | 'matrix' | 'funnel' | 'canvas'
+  interactiveType: 'double-diamond' | 'spectrum' | 'matrix' | 'funnel' | 'canvas' | 'timeline'
   phases?: string[]
 }
 
-export type ProcessFrontmatter = {
-  title: string
-  slug: string
-  tagline: string
-  oneLiner: string
-  stages: string[]
-  relatedFrameworks: string[]
-  relatedMethods: string[]
-  sourceBook: string
-  sourceAuthor: string
-  amazonAffiliateUrl: string
+// Canonical stage groups — six groups, one per cluster of methods.
+// A method belongs to exactly one primary group (frontmatter: stages[0]).
+export type MethodStage =
+  | 'discovery'    // Discovery & Research
+  | 'synthesis'    // Synthesis & Framing
+  | 'experience'   // Experience & Systems Mapping
+  | 'ideation'     // Ideation & Prototyping
+  | 'strategy'     // Strategy & Prioritization
+  | 'validation'   // Delivery & Validation
+
+export type MethodFrameworkLink = {
+  slug: string   // framework slug, e.g. "double-diamond"
+  phase: string  // phase name within that framework, e.g. "Discover"
 }
 
-export type MethodDeploymentStage = 'discover' | 'define' | 'develop' | 'deliver'
-
+// Tools & methods — the 21 tools deployed within the 5 frameworks.
+// Files live flat in content/methods/*.mdx with no subdirectory grouping.
 export type MethodFrontmatter = {
   title: string
   slug: string
   tagline: string
-  deploymentStage: MethodDeploymentStage
+  // Which stages this method belongs to (can be several)
+  stages: MethodStage[]
+  // Which frameworks/phases this method is used in (many-to-many)
+  frameworks: MethodFrameworkLink[]
   timeRequired: string
   groupSize: string
   remote: boolean
   inPerson: boolean
   relatedMethods: string[]
-  relatedFrameworks: string[]
 }
 
 export type ScenarioFrontmatter = {
@@ -50,7 +56,6 @@ export type ScenarioFrontmatter = {
   slug: string
   industry: string
   challengeType: string
-  processUsed: string
   frameworks: string[]
   methods: string[]
   duration: string

@@ -2,22 +2,19 @@ import Link from 'next/link'
 
 type RelatedContentProps = {
   frameworks: string[]
-  processes: string[]
   methods: string[]
 }
 
 const TYPE_CONFIG = {
   framework: { label: 'Framework', href: (slug: string) => `/framework/${slug}`, color: 'var(--color-framework)' },
-  process: { label: 'Process', href: (slug: string) => `/process/${slug}`, color: 'var(--color-process)' },
   method: { label: 'Method', href: (slug: string) => `/methods/${slug}`, color: 'var(--color-methods)' },
 }
 
 type RelatedItem = { type: keyof typeof TYPE_CONFIG; slug: string }
 
-export default function RelatedContent({ frameworks, processes, methods }: RelatedContentProps) {
+export default function RelatedContent({ frameworks, methods }: RelatedContentProps) {
   const items: RelatedItem[] = [
     ...frameworks.map((slug) => ({ type: 'framework' as const, slug })),
-    ...processes.map((slug) => ({ type: 'process' as const, slug })),
     ...methods.map((slug) => ({ type: 'method' as const, slug })),
   ]
 

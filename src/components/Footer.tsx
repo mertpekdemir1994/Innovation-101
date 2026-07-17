@@ -1,10 +1,16 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-neutral-100 py-8 mt-24">
-      <div className="max-w-content mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-600">
-        <p>© {new Date().getFullYear()} Innovation 101</p>
-        <p>
-          This site participates in the Amazon Associates program. Some book links may be affiliate links.
+    <footer style={{ borderTop: '1px solid var(--color-neutral-100)', padding: '1.25rem 0' }}>
+      <div className="max-w-content mx-auto px-6 md:px-8">
+        <p
+          style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: 'var(--text-xs)',
+            color: 'var(--color-neutral-400)',
+            letterSpacing: '0.04em',
+          }}
+        >
+          © {new Date().getFullYear()} Innovation 101
         </p>
       </div>
     </footer>

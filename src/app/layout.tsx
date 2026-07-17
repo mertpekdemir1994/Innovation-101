@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google'
 import Script from 'next/script'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -9,7 +9,21 @@ import './globals.css'
 const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '600'],
-  variable: '--font-inter',
+  variable: '--font-body',
+  display: 'swap',
+})
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+  axes: ['SOFT', 'opsz'],
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  weight: ['400', '500'],
   display: 'swap',
 })
 
@@ -28,7 +42,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html
+      lang="en"
+      className={[inter.variable, fraunces.variable, jetbrainsMono.variable].join(' ')}
+    >
       <body className="antialiased bg-background text-foreground">
         {/* Replace YOUR_DOMAIN with your actual domain, e.g. innovation101.com */}
         <Script

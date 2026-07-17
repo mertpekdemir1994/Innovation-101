@@ -1,0 +1,433 @@
+import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
+import Container from '@/components/ui/Container'
+import Eyebrow from '@/components/ui/Eyebrow'
+import ScrollReveal from '@/components/ui/ScrollReveal'
+import { DarkSection, LightSection, WarmSection } from '../../../components/method/Primitives'
+
+const LSLoopHero = dynamic(() => import('./LSLoopHero'), { ssr: false })
+const LSPhasesSection = dynamic(() => import('./LSPhasesSection'), { ssr: false })
+const LSInteractiveSection = dynamic(() => import('./LSInteractiveSection'), {
+  ssr: false,
+  loading: () => (
+    <div className="py-space-12 flex items-center justify-center" style={{ minHeight: 400, color: 'rgba(255,255,255,0.25)' }}>
+      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram…</span>
+    </div>
+  ),
+})
+const LSEvolutionTimeline = dynamic(() => import('./LSEvolutionTimeline'), { ssr: false })
+const LSCaseStudy = dynamic(() => import('./LSCaseStudy'), { ssr: false })
+
+export const metadata: Metadata = {
+  title: 'Lean Startup — Innovation 101',
+  description: 'The Lean Startup replaces elaborate planning with validated learning — a continuous Build-Measure-Learn loop that treats every launch as a test of a hypothesis.',
+}
+
+
+const PURPLE = 'rgba(124,58,237,'
+
+function ChapterLabel({ number, label }: { number: string; label: string }) {
+  return (
+    <div className="flex items-center gap-space-4 mb-space-8">
+      <span
+        className="font-mono text-xs uppercase tracking-widest"
+        style={{ color: `${PURPLE}0.60)` }}
+      >
+        {number}
+      </span>
+      <div className="h-px flex-1" style={{ background: `${PURPLE}0.15)` }} />
+      <span
+        className="font-mono text-xs uppercase tracking-widest"
+        style={{ color: `${PURPLE}0.60)` }}
+      >
+        {label}
+      </span>
+    </div>
+  )
+}
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
+export default function LeanStartupPage() {
+  return (
+    <>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          HERO — dark, full viewport
+      ══════════════════════════════════════════════════════════════════════ */}
+      <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
+        {/* Radial purple glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `radial-gradient(ellipse 70% 50% at 50% 55%, ${PURPLE}0.14) 0%, transparent 70%)`,
+          }}
+        />
+
+        <Container className="relative z-10 flex flex-col justify-center flex-1 py-space-13">
+          {/* Title */}
+          <h1
+            className="font-display font-semibold text-balance mb-space-6"
+            style={{
+              color: '#FAFAFA',
+              fontSize: 'clamp(3rem, 8vw, 5.5rem)',
+              lineHeight: 1.05,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            The Lean<br />Startup
+          </h1>
+
+          {/* Tagline */}
+          <p
+            className="text-xl max-w-prose mb-space-10"
+            style={{ color: 'rgba(255,255,255,0.52)', lineHeight: 1.6 }}
+          >
+            Build less, learn more, waste nothing. Replace elaborate planning
+            with validated learning — and treat every launch as a test of a hypothesis.
+          </p>
+        </Container>
+
+        {/* Loop SVG — full width, outside Container */}
+        <div className="relative z-10 w-full px-space-6 md:px-space-10 pb-space-12 pt-space-6">
+          <LSLoopHero />
+        </div>
+
+        {/* Scroll indicator */}
+        <div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-space-2 pointer-events-none"
+          style={{ color: 'rgba(255,255,255,0.20)' }}
+        >
+          <span className="font-mono text-2xs uppercase tracking-widest">Scroll</span>
+          <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+            <rect x="6" y="0" width="4" height="12" rx="2" fill="currentColor" opacity="0.4" />
+            <path d="M4 18L8 22L12 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
+      </DarkSection>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          THREE PHASES DEEP DIVE
+      ══════════════════════════════════════════════════════════════════════ */}
+      <LightSection>
+        <Container className="py-space-12">
+          <ScrollReveal>
+            <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${PURPLE}0.65)` }}>
+              The three phases
+            </p>
+            <h2
+              className="font-display font-semibold mb-space-10"
+              style={{
+                fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
+                lineHeight: 1.15,
+                letterSpacing: '-0.02em',
+                color: 'var(--color-neutral-900)',
+              }}
+            >
+              Each phase has a single discipline
+            </h2>
+          </ScrollReveal>
+          <LSPhasesSection />
+        </Container>
+      </LightSection>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          THE CORE TRUTH
+      ══════════════════════════════════════════════════════════════════════ */}
+      <LightSection>
+        <Container className="py-space-12 md:py-space-13">
+          <ScrollReveal>
+            <div
+              className="border-l-4 pl-space-8 mb-space-10"
+              style={{ borderColor: 'var(--color-framework)' }}
+            >
+              <p
+                className="font-display font-semibold text-balance"
+                style={{
+                  fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                  lineHeight: 1.15,
+                  color: 'var(--color-neutral-900)',
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                Startups don&apos;t fail because they can&apos;t execute. They fail because they execute the wrong plan.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <div className="max-w-prose space-y-space-4 mb-space-8">
+              <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
+                Before the Lean Startup, the dominant model for building new products was the
+                business plan model: write a comprehensive plan, raise money against it, execute it,
+                and launch. The problem is that the plan is almost always wrong, because it is built
+                on assumptions that have never been tested against reality.
+              </p>
+              <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
+                Eric Ries, drawing on lean manufacturing principles and Steve Blank&apos;s Customer
+                Development methodology, developed the Lean Startup while leading IMVU between 2008
+                and 2011. His core insight:{' '}
+                <strong className="text-neutral-900 font-semibold">
+                  replace the plan with a loop.
+                </strong>
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.15}>
+            <div
+              className="max-w-prose rounded-xl p-space-7 space-y-space-5"
+              style={{ background: 'var(--color-warm-50)', border: '1px solid var(--color-neutral-200)' }}
+            >
+              <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${PURPLE}0.65)` }}>
+                The core insight
+              </p>
+              <p className="text-base text-neutral-700 leading-relaxed">
+                The fundamental shift the Lean Startup demands is a shift in what counts as progress.
+                Traditional metrics measure output: features shipped, revenue generated. Lean Startup
+                metrics measure learning: assumptions tested, hypotheses validated or invalidated.
+              </p>
+              <ol className="space-y-space-3">
+                {[
+                  'Write a falsifiable hypothesis — the single assumption that, if wrong, would cause your concept to fail.',
+                  'Build the minimum artifact to test that assumption. Not a product — a test.',
+                  'Measure what actually happened against the hypothesis. Use cohort analysis, not aggregate totals.',
+                  'Learn: was the hypothesis true or false? Pivot or persevere — then write the next hypothesis.',
+                ].map((step, i) => (
+                  <li key={i} className="flex items-start gap-space-4">
+                    <span
+                      className="font-mono text-xs font-semibold shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-white"
+                      style={{ background: `${PURPLE}0.70)`, fontSize: '0.6875rem' }}
+                    >
+                      {i + 1}
+                    </span>
+                    <span className="text-sm text-neutral-700 leading-relaxed">{step}</span>
+                  </li>
+                ))}
+              </ol>
+              <div
+                className="pt-space-4 border-t"
+                style={{ borderColor: 'var(--color-neutral-200)' }}
+              >
+                <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-2">
+                  Real-world example
+                </p>
+                <p className="text-sm text-neutral-600 leading-relaxed">
+                  Dropbox did not build a product to validate their concept. Drew Houston made a
+                  three-minute video explaining how Dropbox would work. Overnight, the waitlist grew
+                  from 5,000 to 75,000. That video was an MVP — the minimum artifact needed to test
+                  the assumption that people wanted this product. The experiment cost almost nothing.
+                  The learning was worth millions.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </Container>
+      </LightSection>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          WHEN TO USE
+      ══════════════════════════════════════════════════════════════════════ */}
+      <WarmSection>
+        <Container className="py-space-10">
+          <ScrollReveal>
+            <Eyebrow className="mb-space-6">When to use it</Eyebrow>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4 max-w-prose">
+            {[
+              {
+                heading: 'Use it when',
+                items: [
+                  'Building a new product or business in significant uncertainty',
+                  'You need to learn what customers actually want rather than what you assume',
+                  'Resources are limited and every cycle must produce learning',
+                  'You operate in a new, rapidly changing, or poorly understood market',
+                ],
+                positive: true,
+              },
+              {
+                heading: 'Do not use it when',
+                items: [
+                  'The solution is known and the challenge is execution',
+                  'You operate in a regulated environment where the MVP cannot legally reach users',
+                  'Stakeholders require a committed delivery plan',
+                ],
+                positive: false,
+              },
+            ].map(({ heading, items, positive }, i) => (
+              <ScrollReveal key={heading} delay={i * 0.1}>
+                <div
+                  className="rounded-lg p-space-6 h-full"
+                  style={{
+                    background: '#FFFFFF',
+                    border: `1px solid rgba(17,24,39,0.08)`,
+                    borderTop: `3px solid ${positive ? 'var(--color-framework)' : 'var(--color-neutral-200)'}`,
+                  }}
+                >
+                  <p className="font-semibold text-sm text-neutral-900 mb-space-4">{heading}</p>
+                  <ul className="space-y-space-2">
+                    {items.map((item) => (
+                      <li key={item} className="flex items-start gap-space-2 text-sm text-neutral-600">
+                        <span
+                          className="mt-0.5 shrink-0"
+                          style={{ color: positive ? 'var(--color-framework)' : 'var(--color-neutral-400)' }}
+                        >
+                          {positive ? '→' : '×'}
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </Container>
+      </WarmSection>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          EXPLORE — dark, interactive loop diagram
+      ══════════════════════════════════════════════════════════════════════ */}
+      <DarkSection>
+        <Container className="pt-space-10 pb-space-4">
+          <ChapterLabel number="01" label="Explore" />
+          <ScrollReveal>
+            <h2
+              className="font-display font-semibold mb-space-4"
+              style={{
+                color: '#FAFAFA',
+                fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
+                lineHeight: 1.15,
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Click any phase to see how it works
+            </h2>
+            <p className="text-base mb-space-8 max-w-prose" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+              Click Build, Measure, or Learn to explore each phase. Click Pivot to see the eight
+              pivot types. Switch between MVP types below the loop to see a real-world example of each.
+            </p>
+          </ScrollReveal>
+          <LSInteractiveSection />
+        </Container>
+      </DarkSection>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          EVOLUTION
+      ══════════════════════════════════════════════════════════════════════ */}
+      <WarmSection>
+        <Container className="py-space-12">
+          <ScrollReveal>
+            <ChapterLabel number="02" label="Evolution" />
+            <h2
+              className="font-display font-semibold mb-space-4"
+              style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', lineHeight: 1.15, color: 'var(--color-neutral-900)' }}
+            >
+              Six versions, one loop
+            </h2>
+            <p className="text-base text-neutral-600 mb-space-10 max-w-prose">
+              The Lean Startup did not emerge fully formed. It is the product of a lineage of related
+              thinking that began a decade before Ries published the book. Select a version to see
+              what changed.
+            </p>
+          </ScrollReveal>
+          <LSEvolutionTimeline />
+        </Container>
+      </WarmSection>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          CASE STUDY
+      ══════════════════════════════════════════════════════════════════════ */}
+      <WarmSection>
+        <Container className="py-space-12">
+          <ScrollReveal>
+            <ChapterLabel number="03" label="Case study" />
+          </ScrollReveal>
+          <LSCaseStudy />
+        </Container>
+      </WarmSection>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          CONNECTIONS
+      ══════════════════════════════════════════════════════════════════════ */}
+      <DarkSection>
+        <Container className="py-space-12">
+          <ScrollReveal>
+            <ChapterLabel number="04" label="Connections" />
+            <h2
+              className="font-display font-semibold mb-space-4"
+              style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', lineHeight: 1.15, color: '#FAFAFA' }}
+            >
+              Where this connects
+            </h2>
+            <p className="text-base mb-space-8 max-w-prose" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+              The Lean Startup answers &ldquo;what should we build and is it right?&rdquo; These are
+              the frameworks and methods that answer adjacent questions.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-space-3">
+            {[
+              { name: 'Double Diamond', rel: 'Build-Measure-Learn maps onto the Deliver phase — launch is the beginning of a learning cycle, not the end of the project', slug: '/framework/double-diamond' },
+              { name: 'Design Sprint', rel: 'A Design Sprint compresses a single turn of the Build-Measure-Learn loop into five days', slug: '/framework/design-sprint' },
+              { name: 'Assumption Mapping', rel: 'The core method for identifying which leap-of-faith assumption to test first in the Build phase', slug: '/methods/assumption-mapping' },
+              { name: 'Jobs To Be Done', rel: 'A lens for framing which hypotheses are worth testing: what job is the customer actually trying to get done?', slug: '/methods/jobs-to-be-done' },
+              { name: 'Value Proposition Canvas', rel: 'Used to map and iterate the value-and-customer fit hypothesis across loops', slug: '/methods/value-proposition-canvas' },
+              { name: 'Rapid Prototyping', rel: 'The core building method of the Build phase — rapid, cheap artifacts that test specific assumptions', slug: '/methods/rapid-prototyping' },
+            ].map(({ name, rel, slug }, i) => (
+              <ScrollReveal key={name} delay={i * 0.06}>
+                <a
+                  href={slug}
+                  className="dark-card-hover flex items-start justify-between gap-space-4 rounded-lg p-space-5"
+                  style={{
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                  }}
+                >
+                  <div>
+                    <p className="font-semibold text-sm mb-space-1" style={{ color: '#FAFAFA' }}>{name}</p>
+                    <p className="text-sm" style={{ color: 'rgba(255,255,255,0.45)' }}>{rel}</p>
+                  </div>
+                  <span style={{ color: 'rgba(255,255,255,0.25)', flexShrink: 0 }}>→</span>
+                </a>
+              </ScrollReveal>
+            ))}
+          </div>
+        </Container>
+      </DarkSection>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          SOURCES
+      ══════════════════════════════════════════════════════════════════════ */}
+      <LightSection>
+        <Container className="py-space-10">
+          <div className="max-w-prose">
+            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-6">
+              Sources &amp; Further Reading
+            </p>
+            <div className="space-y-space-4">
+              {[
+                { title: 'The Lean Startup', author: 'Eric Ries, 2011' },
+                { title: 'The Startup Owner\'s Manual', author: 'Steve Blank and Bob Dorf, 2012' },
+                { title: 'Running Lean', author: 'Ash Maurya, 2012' },
+                { title: 'Continuous Discovery Habits', author: 'Teresa Torres, 2021' },
+              ].map(({ title, author }) => (
+                <div key={title} className="flex items-start gap-space-4 py-space-4 border-b border-neutral-100 last:border-0">
+                  <div
+                    className="w-1 self-stretch rounded-full shrink-0"
+                    style={{ background: 'var(--color-framework)', opacity: 0.35 }}
+                  />
+                  <div>
+                    <p className="font-semibold text-sm text-neutral-900">{title}</p>
+                    <p className="text-sm text-neutral-500 mt-space-1">{author}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </LightSection>
+
+    </>
+  )
+}

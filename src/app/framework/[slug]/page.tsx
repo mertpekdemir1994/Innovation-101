@@ -23,7 +23,6 @@ export default function FrameworkPage({ params }: { params: { slug: string } }) 
 
   return (
     <div>
-      {/* Hero header */}
       <header
         className="border-b border-neutral-100 py-16 px-6 md:px-8"
         style={{ borderTopColor: 'var(--color-framework)' }}
@@ -47,7 +46,7 @@ export default function FrameworkPage({ params }: { params: { slug: string } }) 
         className="w-full py-24 flex items-center justify-center border-b border-neutral-100 text-neutral-600 text-sm"
         style={{ background: 'var(--color-neutral-100)' }}
       >
-        Interactive {frontmatter.interactiveType} visualization — coming in Step 10
+        Interactive {frontmatter.interactiveType} visualization — coming soon
       </div>
 
       {/* Content */}
@@ -55,7 +54,7 @@ export default function FrameworkPage({ params }: { params: { slug: string } }) 
         <MDXRenderer source={content} />
       </div>
 
-      {/* Source & Further Reading */}
+      {/* Source */}
       <div className="max-w-prose mx-auto px-6 md:px-8 pb-16">
         <SourceBlock
           sourceBook={frontmatter.sourceBook}
@@ -64,19 +63,14 @@ export default function FrameworkPage({ params }: { params: { slug: string } }) 
         />
       </div>
 
-      {/* Related content */}
-      {(frontmatter.relatedFrameworks.length > 0 ||
-        frontmatter.relatedProcesses.length > 0 ||
-        frontmatter.relatedMethods.length > 0) && (
+      {(frontmatter.relatedFrameworks.length > 0 || frontmatter.relatedMethods.length > 0) && (
         <RelatedContent
           frameworks={frontmatter.relatedFrameworks}
-          processes={frontmatter.relatedProcesses}
           methods={frontmatter.relatedMethods}
         />
       )}
 
-      {/* Calendar CTA */}
-      <CalendarCTA title={frontmatter.title} bookingType="framework" />
+      <CalendarCTA title={frontmatter.title} />
     </div>
   )
 }

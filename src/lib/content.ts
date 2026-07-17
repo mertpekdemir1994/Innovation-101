@@ -3,9 +3,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import type {
   FrameworkFrontmatter,
-  ProcessFrontmatter,
   MethodFrontmatter,
-  MethodDeploymentStage,
+  MethodStage,
   ScenarioFrontmatter,
   ReadingFrontmatter,
   ContentItem,
@@ -19,7 +18,7 @@ function readMdxDir<T>(dir: string): ContentItem<T>[] {
 
   return fs
     .readdirSync(fullDir)
-    .filter((file) => file.endsWith('.mdx'))
+    .filter((f) => f.endsWith('.mdx'))
     .map((file) => {
       const slug = file.replace(/\.mdx$/, '')
       const raw = fs.readFileSync(path.join(fullDir, file), 'utf-8')
@@ -36,6 +35,9 @@ function readMdxFile<T>(dir: string, slug: string): ContentItem<T> | null {
   return { frontmatter: data as T, content, slug }
 }
 
+// ── Frameworks ────────────────────────────────────────────────────────────────
+// All 5 process frameworks live in content/frameworks/*.mdx
+
 export function getFrameworks(): ContentItem<FrameworkFrontmatter>[] {
   return readMdxDir<FrameworkFrontmatter>('frameworks')
 }
@@ -44,33 +46,29 @@ export function getFramework(slug: string): ContentItem<FrameworkFrontmatter> | 
   return readMdxFile<FrameworkFrontmatter>('frameworks', slug)
 }
 
-export function getProcesses(): ContentItem<ProcessFrontmatter>[] {
-  return readMdxDir<ProcessFrontmatter>('processes')
-}
-
-export function getProcess(slug: string): ContentItem<ProcessFrontmatter> | null {
-  return readMdxFile<ProcessFrontmatter>('processes', slug)
-}
+// ── Methods ───────────────────────────────────────────────────────────────────
+// All 21 methods live flat in content/methods/*.mdx
+// Relationships (frameworks[], stages[]) are carried in each method's frontmatter.
 
 export function getMethods(): ContentItem<MethodFrontmatter>[] {
-  const stages: MethodDeploymentStage[] = ['discover', 'define', 'develop', 'deliver']
-  return stages.flatMap((stage) =>
-    readMdxDir<MethodFrontmatter>(`methods/${stage}`)
+  return readMdxDir<MethodFrontmatter>('methods')
+}
+
+export function getMethodsByStage(stage: MethodStage): ContentItem<MethodFrontmatter>[] {
+  return getMethods().filter(({ frontmatter }) => frontmatter.stages.includes(stage))
+}
+
+export function getMethodsForFramework(frameworkSlug: string): ContentItem<MethodFrontmatter>[] {
+  return getMethods().filter(({ frontmatter }) =>
+    frontmatter.frameworks.some((f) => f.slug === frameworkSlug)
   )
 }
 
-export function getMethodsByStage(stage: MethodDeploymentStage): ContentItem<MethodFrontmatter>[] {
-  return readMdxDir<MethodFrontmatter>(`methods/${stage}`)
+export function getMethod(slug: string): ContentItem<MethodFrontmatter> | null {
+  return readMdxFile<MethodFrontmatter>('methods', slug)
 }
 
-export function getMethod(slug: string): ContentItem<MethodFrontmatter> | null {
-  const stages: MethodDeploymentStage[] = ['discover', 'define', 'develop', 'deliver']
-  for (const stage of stages) {
-    const item = readMdxFile<MethodFrontmatter>(`methods/${stage}`, slug)
-    if (item) return item
-  }
-  return null
-}
+// ── Scenarios ─────────────────────────────────────────────────────────────────
 
 export function getScenarios(): ContentItem<ScenarioFrontmatter>[] {
   return readMdxDir<ScenarioFrontmatter>('scenarios')
@@ -79,6 +77,8 @@ export function getScenarios(): ContentItem<ScenarioFrontmatter>[] {
 export function getScenario(slug: string): ContentItem<ScenarioFrontmatter> | null {
   return readMdxFile<ScenarioFrontmatter>('scenarios', slug)
 }
+
+// ── Reading ───────────────────────────────────────────────────────────────────
 
 export function getReadingItems(): ContentItem<ReadingFrontmatter>[] {
   return readMdxDir<ReadingFrontmatter>('reading')

@@ -1,180 +1,391 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import {
+  DarkSection,
+  LightSection,
+  WarmSection,
+  Container,
+  SectionLabel,
+  SectionHeadingDark,
+  SectionHeadingLight,
+  Body,
+} from '../components/method/Primitives'
+import HeroField from '@/components/homepage/HeroField'
+import FrameworksCarousel from '@/components/homepage/FrameworksCarousel'
+import MethodsBands from '@/components/homepage/MethodsBands'
 
-const ENTRY_POINTS = [
-  {
-    label: 'Processes & Frameworks',
-    href: '/explore',
-    color: 'var(--color-framework)',
-    description:
-      'End-to-end innovation journeys and the mental models that power them. From Design Thinking to Blue Ocean Strategy.',
-    question: 'How do I think about this problem?',
-  },
-  {
-    label: 'Methods',
-    href: '/methods',
-    color: 'var(--color-methods)',
-    description:
-      'Specific tools and techniques for every stage of the innovation process — from discovery to scale.',
-    question: 'What do I do in my session today?',
-  },
-  {
-    label: 'Scenarios',
-    href: '/scenarios',
-    color: 'var(--color-scenario)',
-    description:
-      'Real-world-style challenges worked through step by step — see exactly how frameworks and methods come together in practice.',
-    question: 'What does this actually look like in practice?',
-  },
-]
-
-const WHAT_IS_NEW = [
-  { type: 'Framework', label: 'Double Diamond', href: '/framework/double-diamond' },
-  { type: 'Framework', label: '10 Types of Innovation', href: '/framework/10-types' },
-  { type: 'Process', label: 'Design Thinking', href: '/process/design-thinking' },
-]
-
-const TYPE_COLORS: Record<string, string> = {
-  Framework: 'var(--color-framework)',
-  Process: 'var(--color-process)',
-  Method: 'var(--color-methods)',
+export const metadata = {
+  title: 'Innovation 101',
+  description:
+    'Six frameworks, forty methods, and the thinking that connects them. Interactive, not decorative.',
 }
+
+// ─── Page ────────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="min-h-[80vh] flex flex-col justify-center px-6 md:px-8 max-w-content mx-auto py-24">
-        <p className="text-sm font-semibold text-neutral-600 uppercase tracking-widest mb-6">
-          Innovation 101
-        </p>
-        <h1 className="text-4xl md:text-6xl font-semibold text-neutral-900 leading-[1.1] text-balance mb-8 max-w-[800px]">
-          Innovation is a learnable skill.
-          <br />
-          <span className="text-neutral-600">Here&apos;s how it works.</span>
-        </h1>
-        <p className="text-lg md:text-xl text-neutral-600 max-w-[560px] leading-relaxed mb-12">
-          An interactive guide to the processes, frameworks, and methods that
-          drive real innovation — not theory, not buzzwords. Explorable, not
-          just readable.
-        </p>
 
-        {/* Entry point cards */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {ENTRY_POINTS.map(({ label, href, color, description, question }) => (
-            <Link
-              key={href}
-              href={href}
-              className="group block p-8 border border-neutral-100 rounded-lg hover:border-transparent hover:shadow-lg transition-all duration-300 bg-white"
-            >
-              <div
-                className="text-xs font-semibold uppercase tracking-widest mb-4"
-                style={{ color }}
-              >
-                {label}
-              </div>
-              <p className="text-neutral-600 text-sm leading-relaxed mb-6">
-                {description}
-              </p>
-              <p className="text-sm font-semibold italic" style={{ color }}>
-                &ldquo;{question}&rdquo;
-              </p>
-              <div
-                className="mt-6 text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
-                style={{ color }}
-              >
-                Explore
-                <span aria-hidden>→</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+      {/* ═══════════════════════════════════════════════════════════════════
+          SECTION 1 — HERO
+      ══════════════════════════════════════════════════════════════════════ */}
+      <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
 
-      {/* Featured */}
-      <section className="border-t border-neutral-100 py-24 px-6 md:px-8">
-        <div className="max-w-content mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-neutral-600 mb-4">
-            Featured
-          </p>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-2xl md:text-4xl font-semibold text-neutral-900 mb-4 text-balance">
-                The Double Diamond
-              </h2>
-              <p className="text-neutral-600 leading-relaxed mb-6">
-                The most widely used innovation framework in the world — and the
-                most misunderstood. Explore it interactively: zoom into each
-                phase, see what happens inside, understand when to diverge and
-                when to converge.
-              </p>
-              <Link
-                href="/framework/double-diamond"
-                className="inline-flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all"
-                style={{ color: 'var(--color-framework)' }}
-              >
-                Explore the Double Diamond <span aria-hidden>→</span>
-              </Link>
-            </div>
-            <div
-              className="aspect-video rounded-lg flex items-center justify-center text-neutral-600 text-sm"
-              style={{ background: 'var(--color-neutral-100)' }}
-            >
-              Double Diamond visualization coming in Step 10
-            </div>
-          </div>
-        </div>
-      </section>
+        {/* Drifting SVG motif field — decorative, aria-hidden */}
+        <HeroField />
 
-      {/* About snippet */}
-      <section className="py-24 px-6 md:px-8 border-t border-neutral-100">
-        <div className="max-w-prose mx-auto text-center">
-          <p className="text-neutral-600 text-lg leading-relaxed mb-6">
-            This site is a personal project — a practical, interactive reference
-            for anyone serious about learning how innovation actually works.
-            Every framework is explorable. Every method is actionable.
-          </p>
-          <Link
-            href="/about"
-            className="text-sm font-semibold text-neutral-900 hover:opacity-70 transition-opacity"
+        {/* Radial glow — draws eye toward the text */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'radial-gradient(ellipse 70% 55% at 30% 55%, rgba(124,58,237,0.08) 0%, transparent 70%)',
+            pointerEvents: 'none',
+          }}
+        />
+
+        {/* Foreground content */}
+        <div className="relative z-10 max-w-content mx-auto px-6 md:px-8 w-full flex flex-col justify-center flex-1 py-24">
+          <SectionLabel accent="rgba(255,255,255,0.50)">INNOVATION 101</SectionLabel>
+
+          <h1
+            className="font-display text-balance"
+            style={{
+              fontSize: 'clamp(2.75rem, 6vw, 5rem)',
+              fontWeight: 600,
+              lineHeight: 1.05,
+              letterSpacing: '-0.02em',
+              color: '#FAFAFA',
+              maxWidth: '16ch',
+              marginBottom: '1.5rem',
+            }}
           >
-            About this site →
-          </Link>
-        </div>
-      </section>
+            How innovation actually gets done.
+          </h1>
 
-      {/* What&apos;s new */}
-      <section className="py-24 px-6 md:px-8 border-t border-neutral-100">
-        <div className="max-w-content mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-neutral-600 mb-8">
-            Recently added
+          <p
+            style={{
+              fontSize: 'clamp(1rem, 1.5vw, 1.125rem)',
+              lineHeight: 1.65,
+              color: 'rgba(255,255,255,0.52)',
+              maxWidth: '48ch',
+            }}
+          >
+            Six frameworks, forty methods, organized by the problem they
+            solve — not by how they look in a slide deck. Every framework
+            is interactive; every method comes with enough context to know
+            when not to use it.
           </p>
-          <div className="grid md:grid-cols-3 gap-4">
-            {WHAT_IS_NEW.map(({ type, label, href }) => (
-              <Link
-                key={href}
-                href={href}
-                className="group flex items-center justify-between p-6 border border-neutral-100 rounded-lg hover:border-transparent hover:shadow-md transition-all"
-              >
-                <div>
-                  <span
-                    className="text-xs font-semibold uppercase tracking-widest block mb-1"
-                    style={{ color: TYPE_COLORS[type] ?? 'var(--color-neutral-600)' }}
-                  >
-                    {type}
-                  </span>
-                  <span className="font-semibold text-neutral-900">{label}</span>
-                </div>
-                <span
-                  className="text-neutral-600 group-hover:translate-x-1 transition-transform"
-                  aria-hidden
-                >
-                  →
-                </span>
-              </Link>
-            ))}
-          </div>
         </div>
-      </section>
+
+        {/* Scroll indicator */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            bottom: '2rem',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '0.5rem',
+            color: 'rgba(255,255,255,0.22)',
+          }}
+        >
+          <span
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: 'var(--text-2xs)',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+            }}
+          >
+            Scroll
+          </span>
+          <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
+            <path
+              d="M 8,2 L 8,14 M 3,10 L 8,15 L 13,10"
+              stroke="currentColor" strokeWidth="1.5"
+              strokeLinecap="round" strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+      </DarkSection>
+
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          SECTION 2 — FRAMEWORKS
+      ══════════════════════════════════════════════════════════════════════ */}
+      <WarmSection>
+        <Container>
+          <div style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+            <SectionLabel accent="var(--color-framework)">THE LENSES</SectionLabel>
+            <SectionHeadingLight>Six frameworks for six ways of working.</SectionHeadingLight>
+            <Body className="mb-2">
+              A framework is a named structure for running an innovation process from
+              end to end — not a method (a single tool), not a metaphor. There are six
+              here because different problems call for fundamentally different approaches.
+            </Body>
+            <Body className="mb-10">
+              Pick the one that fits how your problem is shaped, then use the methods
+              inside it.
+            </Body>
+            <FrameworksCarousel />
+          </div>
+        </Container>
+      </WarmSection>
+
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          SECTION 3 — METHODS
+      ══════════════════════════════════════════════════════════════════════ */}
+      <DarkSection>
+        <Container>
+          <div style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+            <SectionLabel accent="rgba(255,255,255,0.50)" dark>THE WORK</SectionLabel>
+            <SectionHeadingDark>Forty methods, organized by the problem they solve.</SectionHeadingDark>
+            <Body dark className="mb-10">
+              Not a list to scroll, but a toolkit to deploy. Each group is for
+              a different kind of stuck.
+            </Body>
+            <MethodsBands />
+          </div>
+        </Container>
+      </DarkSection>
+
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          SECTION 4 — WHO MADE THIS
+      ══════════════════════════════════════════════════════════════════════ */}
+      <LightSection>
+        <Container>
+          <div style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+            <SectionLabel accent="var(--color-neutral-600)">WHO MADE THIS</SectionLabel>
+            <p
+              style={{
+                fontSize: 'var(--text-base)',
+                lineHeight: 'var(--leading-relaxed)',
+                color: 'var(--color-neutral-600)',
+                marginBottom: '2rem',
+                maxWidth: '60ch',
+              }}
+            >
+              Built by Mert Pekdemir, with Claude and Claude Code — a practitioner
+              and an AI, on purpose.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '1.5rem' }}>
+
+              {/* ── Mert card ─────────────────────────────────────────── */}
+              <div
+                style={{
+                  border: '1px solid var(--color-neutral-100)',
+                  borderRadius: '8px',
+                  padding: '2rem',
+                  background: 'var(--color-background)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                {/* Header: photo + name */}
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1.25rem' }}>
+                  <div
+                    style={{
+                      position: 'relative',
+                      width: '52px',
+                      height: '52px',
+                      borderRadius: '50%',
+                      overflow: 'hidden',
+                      flexShrink: 0,
+                      border: '1px solid var(--color-neutral-100)',
+                    }}
+                  >
+                    <Image
+                      src="/images/mert.jpg"
+                      alt="Mert Pekdemir"
+                      fill
+                      sizes="52px"
+                      style={{ objectFit: 'cover', objectPosition: '65% center' }}
+                    />
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: 'var(--text-2xs)',
+                        letterSpacing: '0.10em',
+                        textTransform: 'uppercase',
+                        color: 'var(--color-neutral-400)',
+                        marginBottom: '0.2rem',
+                      }}
+                    >
+                      The Practitioner
+                    </p>
+                    <h2
+                      className="font-display font-semibold"
+                      style={{
+                        fontSize: 'var(--text-xl)',
+                        lineHeight: 1.2,
+                        color: 'var(--color-neutral-900)',
+                      }}
+                    >
+                      Mert Pekdemir
+                    </h2>
+                  </div>
+                </div>
+
+                <p
+                  style={{
+                    fontSize: 'var(--text-sm)',
+                    lineHeight: 'var(--leading-relaxed)',
+                    color: 'var(--color-neutral-600)',
+                    marginBottom: '0.75rem',
+                  }}
+                >
+                  Design researcher and strategist at Deloitte&apos;s Innovation and
+                  Product Strategy team, formerly known as Doblin. He leads research
+                  and strategy engagements for Fortune 50 to 500 companies across
+                  financial services, healthcare, and enterprise technology.
+                </p>
+                <p
+                  style={{
+                    fontSize: 'var(--text-sm)',
+                    lineHeight: 'var(--leading-relaxed)',
+                    color: 'var(--color-neutral-600)',
+                    marginBottom: '1.5rem',
+                    flexGrow: 1,
+                  }}
+                >
+                  He brought the practice and the judgment: which methods belong,
+                  where their boundaries sit, and what is honest to say about each.
+                </p>
+
+                <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
+                  <Link
+                    href="/about"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      fontSize: 'var(--text-sm)',
+                      fontWeight: 600,
+                      color: 'var(--color-neutral-900)',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Read more <span aria-hidden="true">→</span>
+                  </Link>
+                  <a
+                    href="https://calendar.app.google/753ZRix7sw4XVtzC7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      fontSize: 'var(--text-sm)',
+                      fontWeight: 600,
+                      color: 'var(--color-framework)',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Book time <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* ── Claude card ───────────────────────────────────────── */}
+              <div
+                style={{
+                  border: '1px solid var(--color-neutral-100)',
+                  borderRadius: '8px',
+                  padding: '2rem',
+                  background: 'var(--color-background)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                {/* Header: original AI mark + name */}
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1.25rem' }}>
+                  {/*
+                    Original mark — three concentric rings with a center dot.
+                    Not Anthropic's logo. No brand assets used.
+                    Reads as "signal" or "focus" — an abstract AI presence.
+                  */}
+                  <svg
+                    viewBox="0 0 52 52"
+                    width="52"
+                    height="52"
+                    fill="none"
+                    aria-hidden="true"
+                    style={{ flexShrink: 0 }}
+                  >
+                    <circle cx="26" cy="26" r="23" stroke="var(--color-neutral-200)" strokeWidth="1" />
+                    <circle cx="26" cy="26" r="15" stroke="var(--color-neutral-400)" strokeWidth="1.2" />
+                    <circle cx="26" cy="26" r="8"  stroke="var(--color-neutral-700)" strokeWidth="1.5" />
+                    <circle cx="26" cy="26" r="2.5" fill="var(--color-neutral-900)" />
+                  </svg>
+                  <div>
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: 'var(--text-2xs)',
+                        letterSpacing: '0.10em',
+                        textTransform: 'uppercase',
+                        color: 'var(--color-neutral-400)',
+                        marginBottom: '0.2rem',
+                      }}
+                    >
+                      The AI Collaborator
+                    </p>
+                    <h3
+                      className="font-display font-semibold"
+                      style={{
+                        fontSize: 'var(--text-xl)',
+                        lineHeight: 1.2,
+                        color: 'var(--color-neutral-900)',
+                      }}
+                    >
+                      Claude &amp; Claude Code
+                    </h3>
+                  </div>
+                </div>
+
+                <p
+                  style={{
+                    fontSize: 'var(--text-sm)',
+                    lineHeight: 'var(--leading-relaxed)',
+                    color: 'var(--color-neutral-600)',
+                    marginBottom: '0.75rem',
+                  }}
+                >
+                  Claude helped draft, structure, and build the site — writing
+                  content, reasoning through editorial decisions, and translating
+                  design specs into working code via Claude Code.
+                </p>
+                <p
+                  style={{
+                    fontSize: 'var(--text-sm)',
+                    lineHeight: 'var(--leading-relaxed)',
+                    color: 'var(--color-neutral-600)',
+                    flexGrow: 1,
+                  }}
+                >
+                  It is a demonstration of the same idea the site keeps returning
+                  to — that AI is genuinely useful for fluent production, and that
+                  the judgment about what is true and what matters stays human.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </Container>
+      </LightSection>
+
+
     </>
   )
 }

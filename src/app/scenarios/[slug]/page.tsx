@@ -48,13 +48,7 @@ export default function ScenarioPage({ params }: { params: { slug: string } }) {
 
       {/* Concepts used */}
       <div className="border-b border-neutral-100 py-10 px-6 md:px-8">
-        <div className="max-w-content mx-auto grid md:grid-cols-3 gap-8">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-neutral-600 mb-3">
-              Process
-            </p>
-            <p className="text-neutral-900">{frontmatter.processUsed}</p>
-          </div>
+        <div className="max-w-content mx-auto grid md:grid-cols-2 gap-8">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-neutral-600 mb-3">
               Frameworks
@@ -86,7 +80,7 @@ export default function ScenarioPage({ params }: { params: { slug: string } }) {
         <MDXRenderer source={content} />
       </div>
 
-      <CalendarCTA title={frontmatter.title} bookingType="challenge" />
+      <CalendarCTA title={frontmatter.title} />
     </div>
   )
 }

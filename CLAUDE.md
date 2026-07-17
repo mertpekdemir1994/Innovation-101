@@ -92,8 +92,10 @@ Never use raw hex values in components — always use the token.
 ### Typography
 - Font: **Inter** only, loaded via `next/font/google` in `src/app/layout.tsx`
 - Weights: **400 (normal)** and **600 (semibold)** only
-- Bold (`font-bold`, `font-700`) is reserved for inline emphasis in body copy only
+- Bold (`font-bold`, `font-700`) is reserved for inline emphasis in body copy only — never on heading elements
 - Never use more than two font weights in a single component
+
+> **Enforcement note:** The 400/600 weight rule was pre-existing in this file and was violated on all six framework pages. An ESLint rule now catches `font-bold` on heading elements in page files. A written rule without automated enforcement is not enforced.
 
 ### Spacing
 - All spacing on a **base-8 scale**: `2, 4, 8, 12, 16, 24, 32, 48, 64, 96` (px)
@@ -116,6 +118,27 @@ Never use raw hex values in components — always use the token.
 - Progressive disclosure: overview first, detail on demand
 - No dead ends: every page links to related content
 - Mobile-first: tap to expand, swipe to navigate
+
+### Layout Primitives
+
+Method and framework page files (`src/app/methods/*/page.tsx`, `src/app/framework/*/page.tsx`) **MUST** import layout primitives from `src/components/method/Primitives.tsx` and **MUST NOT** define them locally.
+
+Shared primitives exported from that module:
+
+| Export | Key props |
+|---|---|
+| `DarkSection` | `className?: string` |
+| `LightSection` | `className?: string` |
+| `WarmSection` | `className?: string` |
+| `Container` | `prose?: boolean` |
+| `SectionLabel` | `accent: string`, `dark?: boolean` |
+| `SectionHeadingDark` | — |
+| `SectionHeadingLight` | — |
+| `Body` | `dark?: boolean`, `className?: string` |
+
+An ESLint rule (see `.eslintrc.json`) enforces this: any `FunctionDeclaration` naming a shared primitive inside a page file is a lint error.
+
+**Current exceptions:** Six pages keep local structural definitions (`DarkSection`, `LightSection`, `Container`) because they use incompatible layout models. ESLint is suppressed for those files. Treat these as structural drift to resolve in a dedicated migration. Affected pages: `business-model-canvas`, `storyboarding`, `systems-mapping`, `design-principles`, `capability-mapping`, `delivery-roadmap`.
 
 ### Content
 - Do not generate any framework, method, process, scenario, or reading content
