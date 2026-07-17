@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import MVPExampleToggle from './MVPExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
+import FrameworkHoverCard from '../../../components/method/FrameworkHoverCard'
 
 export const metadata: Metadata = {
   title: 'MVP & MLP — Methods — Innovation 101',
@@ -649,44 +650,7 @@ export default function MVPMLPPage() {
             <SectionLabel accent={BRICK}>Used in these frameworks</SectionLabel>
             <SectionHeadingLight>Where the MVP and MLP sit inside the frameworks that shape delivery.</SectionHeadingLight>
 
-            <div className="grid md:grid-cols-2 gap-5 mt-2">
-              {FRAMEWORK_LINKS.map(fw => (
-                <Link key={fw.slug} href={`/framework/${fw.slug}`}
-                  className="block rounded-xl p-6 transition-all"
-                  style={{
-                    background: 'var(--color-neutral-50)',
-                    border: '1px solid var(--color-neutral-100)',
-                  }}
-                  onMouseEnter={e => {
-                    const el = e.currentTarget
-                    el.style.borderColor = `rgba(138,75,60,0.30)`
-                    el.style.background = `rgba(138,75,60,0.03)`
-                  }}
-                  onMouseLeave={e => {
-                    const el = e.currentTarget
-                    el.style.borderColor = 'var(--color-neutral-100)'
-                    el.style.background = 'var(--color-neutral-50)'
-                  }}>
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <h3 className="font-semibold" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-900)' }}>
-                      {fw.name}
-                    </h3>
-                    <span className="font-mono shrink-0 rounded px-2 py-0.5"
-                      style={{
-                        fontSize: 'var(--text-2xs)',
-                        color: BRICK,
-                        background: 'rgba(138,75,60,0.08)',
-                        border: '1px solid rgba(138,75,60,0.18)',
-                      }}>
-                      {fw.phase}
-                    </span>
-                  </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
-                    {fw.note}
-                  </p>
-                </Link>
-              ))}
-            </div>
+            <FrameworkHoverCard links={FRAMEWORK_LINKS} variant="light" />
           </div>
         </Container>
       </LightSection>
