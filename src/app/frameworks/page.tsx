@@ -79,6 +79,8 @@ const ILLUSTRATIONS: Record<string, React.ReactNode> = {
   'fde':              <FDEMini             c="rgba(185,28,28,"   />,
 }
 
+const SHOW_FRAMEWORK_QUIZ = false
+
 export default function FrameworksPage() {
   return (
     <>
@@ -118,7 +120,7 @@ export default function FrameworksPage() {
             </h1>
             <p className="text-lg max-w-[560px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.50)' }}>
               Six frameworks, each a complete system for moving from problem to solution. Ordered from
-              foundational to radical — pick the one that fits your context, or use the chooser below.
+              foundational to radical — pick the one that fits your context.
             </p>
           </header>
 
@@ -142,12 +144,14 @@ export default function FrameworksPage() {
         </div>
       </section>
 
-      {/* ── Warm section: chooser ── */}
-      <section style={{ background: 'var(--color-warm-50)' }}>
-        <div className="max-w-content mx-auto px-6 md:px-8 pb-20">
-          <FrameworkChooser frameworks={FRAMEWORKS.map(({ slug, title, color }) => ({ slug, title, color }))} />
-        </div>
-      </section>
+      {/* ── Warm section: chooser (set SHOW_FRAMEWORK_QUIZ = true to re-enable) ── */}
+      {SHOW_FRAMEWORK_QUIZ && (
+        <section style={{ background: 'var(--color-warm-50)' }}>
+          <div className="max-w-content mx-auto px-6 md:px-8 pb-20">
+            <FrameworkChooser frameworks={FRAMEWORKS.map(({ slug, title, color }) => ({ slug, title, color }))} />
+          </div>
+        </section>
+      )}
     </>
   )
 }
