@@ -76,11 +76,6 @@ const FRAMEWORK_LINKS = [
 
 const RELATED_METHODS = [
   {
-    slug: 'twelve-levers',
-    name: '12 Levers of Business Innovation',
-    rel: 'The reciprocal pair, and the distinction matters. The canvas describes the business model: what it is, and whether its nine blocks cohere with each other. The 12 Levers are an intervention menu: which of the twelve levers you could pull to innovate it. Canvas = the picture; Levers = the menu of changes. Draw the canvas to see what your model IS and whether it holds together; reach for the levers when you know it must change and need the full range of options rather than reflexively pulling on product.',
-  },
-  {
     slug: 'value-proposition-canvas',
     name: 'Value Proposition Canvas',
     rel: 'The nesting sibling, by the same authors. The Value Proposition Canvas zooms into one block — the value proposition against the customer segment — and does it in depth, forcing an honest match between what customers need and what you offer. The Business Model Canvas is the whole board, and its concern is whether all nine blocks fit together. Use the VPC to get one block right; use the BMC to see whether the whole thing stands up.',
@@ -226,7 +221,7 @@ export default function BMCPage() {
               <ul className="flex flex-col gap-3">
                 {[
                   'You want depth on the customer and the offer specifically — that is the Value Proposition Canvas, which zooms into a single block and does it properly.',
-                  'You want to know which lever to pull to innovate the model — that is the 12 Levers, which is an intervention menu rather than a description.',
+                  'You want to explore the full range of innovation interventions beyond the model itself — the canvas describes what IS; other methods help you decide what to CHANGE.',
                   'Filling it in will be treated as the work. A completed canvas is a hypothesis; if the organisation mistakes it for a plan, the canvas has done harm.',
                   'The business is genuinely unknown and unformed. The canvas is excellent at organising what you believe; it can make a pile of guesses look like a strategy.',
                 ].map((item, i) => (

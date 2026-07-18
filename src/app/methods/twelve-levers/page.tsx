@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
@@ -80,6 +81,7 @@ const RELATED_METHODS: RelatedMethod[] = [
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function TLPage() {
+  notFound()
   return (
     <>
       {/* S1 — Header DARK */}

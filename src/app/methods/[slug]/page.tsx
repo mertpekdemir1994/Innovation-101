@@ -5,7 +5,7 @@ import CalendarCTA from '@/components/CalendarCTA'
 import RelatedContent from '@/components/RelatedContent'
 
 // These slugs have dedicated pages under /methods/<slug>/ and are excluded from the dynamic route
-const CUSTOM_ROUTES = new Set(['in-depth-interviews', 'ambition-matrix', 'personas-archetypes', 'avatars', 'journey-mapping', 'service-blueprinting', '5es-framework', 'ecosystem-mapping', 'how-might-we', 'affinity-mapping', 'empathy-mapping', 'jobs-to-be-done', 'value-proposition-canvas', 'concept-testing', 'ten-types-innovation', 'contextual-observation', 'orthodoxies', 'analogs-precursors', 'competitive-landscape-analysis', 'stakeholder-mapping', 'diary-studies', 'crazy-8s', 'rapid-prototyping', 'balanced-breakthrough', 'strategic-choice-cascade', 'twelve-levers'])
+const CUSTOM_ROUTES = new Set(['in-depth-interviews', 'ambition-matrix', 'personas-archetypes', 'avatars', 'journey-mapping', 'service-blueprinting', '5es-framework', 'ecosystem-mapping', 'how-might-we', 'affinity-mapping', 'empathy-mapping', 'jobs-to-be-done', 'value-proposition-canvas', 'concept-testing', 'ten-types-innovation', 'contextual-observation', 'orthodoxies', 'analogs-precursors', 'competitive-landscape-analysis', 'stakeholder-mapping', 'diary-studies', 'crazy-8s', 'rapid-prototyping', 'balanced-breakthrough', 'strategic-choice-cascade', 'swot-analysis'])
 
 export async function generateStaticParams() {
   return getMethods()

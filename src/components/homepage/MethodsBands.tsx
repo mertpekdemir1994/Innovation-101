@@ -107,7 +107,7 @@ const STAGES: StageGroup[] = [
       { name: 'Design Principles',          slug: 'design-principles' },
       { name: 'Strategic Choice Cascade',   slug: 'strategic-choice-cascade' },
       { name: 'Ten Types of Innovation',    slug: 'ten-types-innovation' },
-      { name: 'The Twelve Levers',          slug: 'twelve-levers' },
+      { name: 'SWOT Analysis',               slug: 'swot-analysis' },
       { name: 'Value Proposition Canvas',   slug: 'value-proposition-canvas' },
     ],
   },

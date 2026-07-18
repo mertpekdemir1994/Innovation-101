@@ -47,11 +47,6 @@ type RelatedMethod = {
 
 const RELATED_METHODS: RelatedMethod[] = [
   {
-    slug: 'twelve-levers',
-    name: '12 Levers of Business Innovation',
-    rel: 'The close sibling, worth distinguishing clearly. Both say "innovate beyond the product" — but they use different structures. The 10 Types framework organises innovation by type across three zones (Configuration, Offering, Experience) with named types in each. The 12 Levers audit organises it by lever — areas of the business model a team can deliberately pull. Use the 10 Types when you want to categorise and understand the character of an innovation; use the 12 Levers when auditing which parts of your specific business model are and are not being innovated.',
-  },
-  {
     slug: 'ambition-matrix',
     name: 'Ambition Matrix',
     rel: 'The natural companion lens: the Ambition Matrix handles the scale of bets (core / adjacent / transformational); the 10 Types handles the type of bets (which of the ten dimensions). Used together, they shape both how bold and how broad a portfolio of innovation is. This is the key strategic pairing for portfolio design.',

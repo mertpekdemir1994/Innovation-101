@@ -1,0 +1,25 @@
+---
+title: "12 Levers of Business Innovation"
+slug: "twelve-levers"
+tagline: "A structured audit of the twelve levers a business can pull to innovate its whole business model, not just its product, so no lever gets ignored."
+stages:
+  - strategy
+frameworks:
+  - slug: double-diamond
+    phase: Develop
+  - slug: lean-startup
+    phase: Build framing
+  - slug: agile-innovation
+    phase: Backlog
+timeRequired: "Half day for a cross-functional audit; ongoing as the business model evolves and competitive dynamics shift"
+groupSize: "Cross-functional team of 4–10; must include people who understand the product, operations, finance, sales, and partnerships"
+remote: true
+inPerson: true
+relatedMethods:
+  - ten-types-innovation
+  - value-proposition-canvas
+  - strategic-choice-cascade
+  - balanced-breakthrough
+  - concept-testing
+---
+Full content is rendered by the dedicated page at /methods/twelve-levers.
