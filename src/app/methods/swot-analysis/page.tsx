@@ -61,7 +61,7 @@ export default function SWOTAnalysisPage() {
       {/* S2 — Establishing visual DARK */}
       <DarkSection>
         <Container>
-          <div className="pb-20">
+          <div className="py-20">
             <SectionLabel accent={PLUM} dark>The cross-pairing engine</SectionLabel>
             <SectionHeadingDark>Four quadrants. Four crossings. The crossings are the point.</SectionHeadingDark>
             <p className="mb-12 max-w-[520px]" style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.45)' }}>
