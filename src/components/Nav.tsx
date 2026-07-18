@@ -12,9 +12,6 @@ const NAV_ITEMS = [
   { label: 'About',      href: '/about',      color: 'var(--color-neutral-900)' },
 ]
 
-// Pages whose hero is dark — nav uses white text and a dark background until scroll
-const DARK_HERO_PREFIXES = ['/framework/', '/process/']
-
 function isActive(pathname: string, href: string): boolean {
   if (href === '/') return pathname === '/'
   return pathname.startsWith(href)
@@ -23,13 +20,7 @@ function isActive(pathname: string, href: string): boolean {
 export default function Nav() {
   const pathname  = usePathname()
   const [menuOpen,    setMenuOpen]    = useState(false)
-  const [scrolled,    setScrolled]    = useState(false)
   const [hoveredHref, setHoveredHref] = useState<string | null>(null)
-
-  const isDarkPage = pathname === '/' || DARK_HERO_PREFIXES.some(p => pathname.startsWith(p))
-  // Before scrolling on dark pages, nav sits on a dark hero — use a dark background
-  // so the bar is always visually present (not floating transparent text)
-  const isDarkUnscrolled = isDarkPage && !scrolled
 
   // Close menu on route change
   useEffect(() => { setMenuOpen(false) }, [pathname])
@@ -64,35 +55,13 @@ export default function Nav() {
     }
   }, [menuOpen])
 
-  // Scroll awareness
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  const headerClass = [
-    'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-    scrolled
-      ? 'bg-white/95 backdrop-blur-sm border-b border-neutral-100 shadow-subtle'
-      : isDarkPage
-        ? 'bg-zinc-950/75 backdrop-blur-sm border-b border-white/[0.06]'
-        : 'bg-white border-b border-neutral-100',
-  ].join(' ')
-
-  const logoColor      = isDarkUnscrolled ? '#FAFAFA'                    : 'var(--color-neutral-900)'
-  const inactiveColor  = isDarkUnscrolled ? 'rgba(255,255,255,0.55)'     : 'var(--color-neutral-500)'
-  const barColor       = isDarkUnscrolled ? 'bg-white'                   : 'bg-neutral-900'
+  const headerClass = 'fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-100'
 
   // Returns the colour a desktop nav link should render at
   const linkColor = (href: string, color: string): string => {
-    const active  = isActive(pathname, href)
-    const hovered = hoveredHref === href
-    if (active)                       return isDarkUnscrolled ? '#FFFFFF' : color
-    if (hovered && isDarkUnscrolled)  return 'rgba(255,255,255,0.95)'
-    if (hovered)                      return color
-    return inactiveColor
+    if (isActive(pathname, href)) return color
+    if (hoveredHref === href)     return color
+    return 'var(--color-neutral-500)'
   }
 
   return (
@@ -104,7 +73,7 @@ export default function Nav() {
           <Link
             href="/"
             className="font-semibold text-lg tracking-tight transition-opacity duration-200 hover:opacity-70"
-            style={{ color: logoColor }}
+            style={{ color: 'var(--color-neutral-900)' }}
           >
             Innovation 101
           </Link>
@@ -135,15 +104,15 @@ export default function Nav() {
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >
             <span
-              className={`block w-5 h-px ${barColor} transition-transform duration-200`}
+              className="block w-5 h-px bg-neutral-900 transition-transform duration-200"
               style={{ transform: menuOpen ? 'translateY(5px) rotate(45deg)' : 'none' }}
             />
             <span
-              className={`block w-5 h-px ${barColor} transition-opacity duration-200`}
+              className="block w-5 h-px bg-neutral-900 transition-opacity duration-200"
               style={{ opacity: menuOpen ? 0 : 1 }}
             />
             <span
-              className={`block w-5 h-px ${barColor} transition-transform duration-200`}
+              className="block w-5 h-px bg-neutral-900 transition-transform duration-200"
               style={{ transform: menuOpen ? 'translateY(-5px) rotate(-45deg)' : 'none' }}
             />
           </button>
