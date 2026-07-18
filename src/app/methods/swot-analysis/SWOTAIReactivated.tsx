@@ -48,7 +48,7 @@ export default function SWOTAIReactivated() {
   ]
 
   return (
-    <div style={{ maxWidth: 700 }}>
+    <div style={{ maxWidth: 700, margin: '0 auto' }}>
 
       {/* State tabs */}
       <div style={{ display: 'flex', gap: '8px', marginBottom: '28px', flexWrap: 'wrap' }}>

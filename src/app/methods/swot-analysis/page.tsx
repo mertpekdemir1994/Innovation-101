@@ -62,11 +62,13 @@ export default function SWOTAnalysisPage() {
       <DarkSection>
         <Container>
           <div className="py-20">
-            <SectionLabel accent={PLUM} dark>The cross-pairing engine</SectionLabel>
-            <SectionHeadingDark>Four quadrants. Four crossings. The crossings are the point.</SectionHeadingDark>
-            <p className="mb-12 max-w-[520px]" style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.45)' }}>
-              The boxes sort your situation. The diagonal connections between them — the crossings — are where every strategic move in a SWOT is found.
-            </p>
+            <div className="text-center mb-12">
+              <SectionLabel accent={PLUM} dark>The cross-pairing engine</SectionLabel>
+              <SectionHeadingDark>Four quadrants. Four crossings. The crossings are the point.</SectionHeadingDark>
+              <p className="max-w-[520px] mx-auto" style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.45)' }}>
+                The boxes sort your situation. The diagonal connections between them — the crossings — are where every strategic move in a SWOT is found.
+              </p>
+            </div>
             <SWOTEstablishing />
           </div>
         </Container>
@@ -97,11 +99,13 @@ export default function SWOTAnalysisPage() {
       <DarkSection>
         <Container>
           <div className="py-20">
-            <SectionLabel accent={PLUM} dark>Cross-pairing engine</SectionLabel>
-            <SectionHeadingDark>Fill the boxes, and nothing happens. Cross them, and a strategy appears.</SectionHeadingDark>
-            <p className="mb-12 max-w-[520px]" style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}>
-              Click the axes, the quadrants, and the crossings. The quadrants are setup; the crossings are strategy.
-            </p>
+            <div className="text-center mb-12">
+              <SectionLabel accent={PLUM} dark>Cross-pairing engine</SectionLabel>
+              <SectionHeadingDark>Fill the boxes, and nothing happens. Cross them, and a strategy appears.</SectionHeadingDark>
+              <p className="max-w-[520px] mx-auto" style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}>
+                Click the axes, the quadrants, and the crossings. The quadrants are setup; the crossings are strategy.
+              </p>
+            </div>
             <SWOTInteractive />
           </div>
         </Container>
@@ -257,11 +261,13 @@ export default function SWOTAnalysisPage() {
       <DarkSection>
         <Container>
           <div className="py-20">
-            <SectionLabel accent={PLUM} dark>How AI is evolving this method</SectionLabel>
-            <SectionHeadingDark>AI fills all four boxes in seconds. The four boxes were never the work.</SectionHeadingDark>
-            <p className="mb-12 max-w-[560px]" style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}>
-              So this is the least useful thing it could possibly do well. Two uses are genuinely good — and both are the opposite of &ldquo;fill the boxes.&rdquo;
-            </p>
+            <div className="text-center mb-12">
+              <SectionLabel accent={PLUM} dark>How AI is evolving this method</SectionLabel>
+              <SectionHeadingDark>AI fills all four boxes in seconds. The four boxes were never the work.</SectionHeadingDark>
+              <p className="max-w-[560px] mx-auto" style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}>
+                So this is the least useful thing it could possibly do well. Two uses are genuinely good — and both are the opposite of &ldquo;fill the boxes.&rdquo;
+              </p>
+            </div>
             <SWOTAIReactivated />
           </div>
         </Container>

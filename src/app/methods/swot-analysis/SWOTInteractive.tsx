@@ -102,7 +102,7 @@ export default function SWOTInteractive() {
   })
 
   return (
-    <div style={{ maxWidth: 700 }}>
+    <div style={{ maxWidth: 700, margin: '0 auto' }}>
 
       {/* ── Axis buttons ── */}
       <div style={{ marginBottom: '24px' }}>
