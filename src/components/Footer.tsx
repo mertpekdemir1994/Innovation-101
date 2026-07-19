@@ -20,7 +20,7 @@ export default function Footer() {
             letterSpacing: '0.04em',
           }}
         >
-          Content is not finalized. AI-assisted — may contain errors.
+          Content is a work in progress. Written with AI, and may contain errors.
         </p>
       </div>
     </footer>
