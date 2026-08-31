@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'Cleveland Clinic, one of the largest hospital systems in the US, wanted to improve the patient experience — not clinical outcomes, which were already strong, but the felt quality of being cared for. Their eventual insight came from looking at an analog. But look at how differently the search played out depending on where they started.'
+const SCENARIO = 'Cleveland Clinic, one of the largest hospital systems in the US, wanted to improve the patient experience, not clinical outcomes, which were already strong, but the felt quality of being cared for. Their eventual insight came from looking at an analog. But look at how differently the search played out depending on where they started.'
 
 export default function APExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -62,7 +62,7 @@ export default function APExampleToggle() {
                 style={{ color: `${CLAY}1)` }}>The analog search</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 The team was explicit about starting far from healthcare. They did not ask &ldquo;what do other hospitals do?&rdquo;
-                That would have surfaced near analogs — similar settings with similar constraints, confirming what was already known.
+                That would have surfaced near analogs: similar settings with similar constraints, confirming what was already known.
                 Instead, they asked: &ldquo;who has already solved the problem of making people feel cared for across many staff,
                 many touchpoints, and a complex choreography they do not control?&rdquo;
               </p>
@@ -76,14 +76,14 @@ export default function APExampleToggle() {
             {/* The abstracted principle */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${CLAY}0.22)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${CLAY}1)` }}>What they abstracted — and what they refused to borrow</p>
+                style={{ color: `${CLAY}1)` }}>What they abstracted, and what they refused to borrow</p>
               <div className="space-y-3">
                 <div className="rounded p-4"
                   style={{ background: `${CLAY}0.06)`, borderLeft: `2px solid ${CLAY}0.40)` }}>
                   <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
                     style={{ color: `${CLAY}0.65)` }}>What they noticed in hotels</p>
                   <p className="text-xs text-neutral-700 mb-2">
-                    Every person in the building — not just the concierge, not just the room service team —
+                    Every person in the building (not just the concierge, not just the room service team)
                     was trained to see themselves as part of the guest experience. A hotel housekeeper who passed
                     a guest in the hallway greeted them by name. A bellman who overheard a complaint addressed it.
                     The experience was choreographed across the entire staff, not delegated to a guest relations department.
@@ -94,7 +94,7 @@ export default function APExampleToggle() {
                   <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
                     style={{ color: `${CLAY}0.55)` }}>The abstracted principle</p>
                   <p className="text-xs text-neutral-800 font-semibold mb-2">
-                    Patient experience is the sum of every handoff — from orderly to nurse, from receptionist to physician —
+                    Patient experience is the sum of every handoff (from orderly to nurse, from receptionist to physician)
                     not a single moment. Every person in the building is responsible for it. Dignity-centred care cannot be
                     delegated to a department; it must be the standard for the entire organisation.
                   </p>
@@ -119,14 +119,14 @@ export default function APExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-3"
                 style={{ color: `${CLAY}1)` }}>The precursor check</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
-                The team also looked backward. Had hospitals tried to redesign patient experience before? Yes —
+                The team also looked backward. Had hospitals tried to redesign patient experience before? Yes,
                 hotel-inspired &ldquo;patient amenity&rdquo; programmes from the 1990s had largely failed,
                 and the team diagnosed why: they had borrowed the surface (aesthetics, amenities) rather than the structure
-                (organisation-wide service training). The earlier attempts were not premature — they were misdirected.
+                (organisation-wide service training). The earlier attempts were not premature. They were misdirected.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 That precursor diagnosis sharpened the approach: the principle to borrow was organisational, not cosmetic.
-                The team created the first Chief Patient Experience Officer role in a major hospital system —
+                The team created the first Chief Patient Experience Officer role in a major hospital system,
                 a structural change modelled on the hotel&rsquo;s Director of Guest Services, not its interior design.
               </p>
             </div>
@@ -140,7 +140,7 @@ export default function APExampleToggle() {
                 The combination of one far analog (luxury hotels) and one precursor diagnosis (earlier patient amenity
                 programmes had borrowed the wrong thing) gave the team a sharp, actionable principle.
                 Cleveland Clinic went from the bottom quartile of patient experience scores in their peer group
-                to the top. The insight — that experience is an organisational model, not a service layer —
+                to the top. The insight, that experience is an organisational model, not a service layer,
                 came entirely from looking sideways and backward, not from studying what other hospitals were doing.
               </p>
             </div>
@@ -160,7 +160,7 @@ export default function APExampleToggle() {
               <p className="text-xs text-neutral-600 leading-relaxed">
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The real search was human-led. This tab imagines the team had instead asked an AI to find analogs
-                and precursors — to make the contrast visible.
+                and precursors, to make the contrast visible.
               </p>
             </div>
 
@@ -181,10 +181,10 @@ export default function APExampleToggle() {
               </p>
               <div className="space-y-2">
                 {[
-                  { near: true,  item: 'Mayo Clinic — ranked highly for patient experience' },
-                  { near: true,  item: 'Marriott and Ritz-Carlton — frequently cited in healthcare service articles' },
-                  { near: false, item: 'Racing pit crews — AI did not surface this; the structural match requires a conceptual leap the default prompt did not elicit' },
-                  { near: false, item: 'Disney theme parks — reached only after explicit reprompting toward "extreme emotional choreography"' },
+                  { near: true,  item: 'Mayo Clinic: ranked highly for patient experience' },
+                  { near: true,  item: 'Marriott and Ritz-Carlton: frequently cited in healthcare service articles' },
+                  { near: false, item: 'Racing pit crews: AI did not surface this; the structural match requires a conceptual leap the default prompt did not elicit' },
+                  { near: false, item: 'Disney theme parks: reached only after explicit reprompting toward "extreme emotional choreography"' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3 rounded p-2"
                     style={{
@@ -213,7 +213,7 @@ export default function APExampleToggle() {
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 What it could not do was diagnose: it could not reliably distinguish &ldquo;this failed because it was
                 premature&rdquo; from &ldquo;this failed because it borrowed the wrong thing.&rdquo;
-                That distinction — which is the entire point of looking at precursors — required a human to read the
+                That distinction, which is the entire point of looking at precursors, required a human to read the
                 history and ask &ldquo;what was actually missing, and is it missing now?&rdquo;
               </p>
               <div className="rounded p-3"
@@ -234,10 +234,10 @@ export default function APExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
                 style={{ color: `${INDIGO}0.80)` }}>The honest readout</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                AI accelerated both searches when aimed explicitly — telling it to push toward &ldquo;far, non-obvious
+                AI accelerated both searches when aimed explicitly: telling it to push toward &ldquo;far, non-obvious
                 analogs&rdquo; eventually surfaced racing crews and theme parks. For precursors, asking it to speculate
                 on each failure&rsquo;s cause produced useful hypotheses to investigate.
-                But the far jump and the timing diagnosis — both of which were the actual insight in this case —
+                But the far jump and the timing diagnosis (both of which were the actual insight in this case)
                 required human direction to reach, and human judgment to confirm.
               </p>
             </div>

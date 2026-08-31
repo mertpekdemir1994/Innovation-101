@@ -308,8 +308,8 @@ export default function APAIReactivated() {
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 Humans search far: they jump from a hospital to a luxury hotel not because the surface is similar
-                but because they can feel a structural match across a conceptual gap. That leap — from medical
-                to hospitality, from clinical to dignity-centered — is a distinctly human move.
+                but because they can feel a structural match across a conceptual gap. That leap, from medical
+                to hospitality, from clinical to dignity-centered, is a distinctly human move.
               </p>
             </div>
             <div className="rounded-lg border p-5 space-y-2"
@@ -319,7 +319,7 @@ export default function APAIReactivated() {
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 Humans diagnose timing: they look at something that failed fifteen years ago and ask
-                &ldquo;was this premature or fundamentally broken?&rdquo; The distinction is a judgment call —
+                &ldquo;was this premature or fundamentally broken?&rdquo; The distinction is a judgment call:
                 it requires interpreting why the world changed, not just recording that it did.
               </p>
             </div>
@@ -342,7 +342,7 @@ export default function APAIReactivated() {
                 <p className="text-sm text-neutral-700 leading-relaxed">
                   AI retrieves by similarity in its training data. Asked for analogs to hospital patient experience,
                   it surfaces other hospitals, then clinics, then hotel chains mentioned alongside healthcare.
-                  The far structural match — &ldquo;what does a racing pit crew have in common with a trauma unit?&rdquo; —
+                  The far structural match (&ldquo;what does a racing pit crew have in common with a trauma unit?&rdquo;)
                   requires a conceptual leap the model does not naturally take without an explicit prompt.
                 </p>
               </div>
@@ -353,7 +353,7 @@ export default function APAIReactivated() {
                 </p>
                 <p className="text-sm text-neutral-700 leading-relaxed">
                   AI can retrieve a rich list of past attempts in your category. What it cannot reliably do is
-                  diagnose whether each failure was premature or structurally flawed — that judgment requires
+                  diagnose whether each failure was premature or structurally flawed. That judgment requires
                   contextual interpretation of why the world is different now. Without that, a list of precursors
                   stays a history lesson rather than a timing map.
                 </p>

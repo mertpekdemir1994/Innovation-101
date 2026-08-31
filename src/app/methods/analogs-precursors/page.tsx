@@ -23,13 +23,13 @@ const FRAMEWORK_LINKS = [
     slug: 'design-sprint',
     name: 'Design Sprint',
     phase: 'Tuesday',
-    note: 'Tuesday in a sprint is when the team sketches solutions after Monday\'s problem mapping. An analog session run at the top of Tuesday dramatically increases the range of those sketches — instead of each person reaching for the nearest familiar solution, they arrive with structural principles borrowed from distant domains. Precursors surface on Monday but are refined on Tuesday as the team decides which ideas are genuinely new versus previously tried and abandoned.',
+    note: 'Tuesday in a sprint is when the team sketches solutions after Monday\'s problem mapping. An analog session run at the top of Tuesday dramatically increases the range of those sketches: instead of each person reaching for the nearest familiar solution, they arrive with structural principles borrowed from distant domains. Precursors surface on Monday but are refined on Tuesday as the team decides which ideas are genuinely new versus previously tried and abandoned.',
   },
   {
     slug: 'design-thinking',
     name: 'Design Thinking',
     phase: 'Ideate',
-    note: 'The ideation phase generates concepts through divergent thinking, and the quality of concepts depends entirely on the richness of the inputs. Analogs expand the input library by showing how other domains have solved structurally similar problems. Precursors inform ideation by preventing the team from reinventing a wheel that already failed — the timing diagnosis tells you whether to revisit the idea with fresh conditions or move on.',
+    note: 'The ideation phase generates concepts through divergent thinking, and the quality of concepts depends entirely on the richness of the inputs. Analogs expand the input library by showing how other domains have solved structurally similar problems. Precursors inform ideation by preventing the team from reinventing a wheel that already failed. The timing diagnosis tells you whether to revisit the idea with fresh conditions or move on.',
   },
   {
     slug: 'double-diamond',
@@ -60,7 +60,7 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'orthodoxies',
     name: 'Orthodoxies',
-    rel: 'Complementary provocation tools that attack the same problem from different directions. Orthodoxies identifies what your industry treats as impossible and asks what if the opposite were true. Analogs then provide the evidence that another domain already did the opposite — and survived. The combination is powerful: an orthodoxy names the constraint; an analog shows it was never necessary.',
+    rel: 'Complementary provocation tools that attack the same problem from different directions. Orthodoxies identifies what your industry treats as impossible and asks what if the opposite were true. Analogs then provide the evidence that another domain already did the opposite, and survived. The combination is compelling: an orthodoxy names the constraint; an analog shows it was never necessary.',
   },
   {
     slug: null,
@@ -70,12 +70,12 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: null,
     name: 'Co-Creation',
-    rel: 'Involving users or external stakeholders in the analog and precursor search surfaces leads the core team would not see. Users often know precursors — failed attempts at solving their own problem that the company never heard about. Co-creation sessions that include an analog segment also produce richer concepts because participants bring structural intuitions from their own domains that insiders lack.',
+    rel: 'Involving users or external stakeholders in the analog and precursor search surfaces leads the core team would not see. Users often know precursors: failed attempts at solving their own problem that the company never heard about. Co-creation sessions that include an analog segment also produce richer concepts because participants bring structural intuitions from their own domains that insiders lack.',
   },
   {
     slug: null,
     name: 'Assumption Mapping',
-    rel: 'Precursor research feeds directly into assumption mapping. A failed precursor is a validated failure mode — it answers the question "what has to be true for this idea to work?" with "these specific things that were not true the last time anyone tried." Running assumption mapping after a precursor review sharpens the hypothesis about what is different now and what risks remain.',
+    rel: 'Precursor research feeds directly into assumption mapping. A failed precursor is a validated failure mode: it answers the question "what has to be true for this idea to work?" with "these specific things that were not true the last time anyone tried." Running assumption mapping after a precursor review sharpens the hypothesis about what is different now and what risks remain.',
   },
 ]
 
@@ -85,7 +85,7 @@ export default function APPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -113,8 +113,8 @@ export default function APPage() {
               className="mb-3 max-w-[620px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              Borrowing solutions that already exist &mdash; looking sideways across other industries and backward through
-              your own industry&rsquo;s past &mdash; to spark genuinely new ideas without inventing from nothing.
+              Borrowing solutions that already exist (looking sideways across other industries and backward through
+              your own industry&rsquo;s past) to spark genuinely new ideas without inventing from nothing.
             </p>
 
             <p
@@ -128,7 +128,7 @@ export default function APPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -139,20 +139,20 @@ export default function APPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>What it is</SectionLabel>
-            <SectionHeadingLight>A structured search for solutions that already exist &mdash; across other industries and back through your own.</SectionHeadingLight>
+            <SectionHeadingLight>A structured search for solutions that already exist: across other industries and back through your own.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5">
               <Body>
                 Analogs and precursors are two directions you can search when you need a genuinely new idea
                 but do not want to start from nothing. Both directions are based on the same insight: the solution
                 you need almost certainly exists in a form somewhere, because most problems have already been
-                solved &mdash; either by another industry working on a structurally similar challenge, or by a
+                solved, either by another industry working on a structurally similar challenge, or by a
                 previous generation working on your exact challenge before the conditions were right.
               </Body>
               <Body>
@@ -161,14 +161,14 @@ export default function APPage() {
                 contexts look nothing alike. The connection is never obvious. A hospital and a luxury hotel share
                 no surface similarity; what they share is the structural challenge of orchestrating consistent,
                 dignity-centred service across a large, distributed team. The hospital finds the principle by
-                abstracting past the surface similarity. That abstracted principle &mdash; not the imitated practice,
-                but the structural insight &mdash; is what makes the analog productive.
+                abstracting past the surface similarity. That abstracted principle, not the imitated practice,
+                but the structural insight, is what makes the analog productive.
               </Body>
               <Body>
                 <strong>Precursors</strong> search <em>back through time</em>: they examine the history of your own industry
                 for earlier attempts at solving the same problem you are now facing. Something tried and stalled.
                 A patent that was filed and never shipped. A startup that was ahead of its time. The question
-                precursors ask is not &ldquo;what happened?&rdquo; but &ldquo;why?&rdquo; &mdash; and specifically, was the earlier attempt
+                precursors ask is not &ldquo;what happened?&rdquo; but &ldquo;why?&rdquo;, and specifically, was the earlier attempt
                 premature (the infrastructure, cost curve, or behavioural readiness was not yet there) or fundamentally
                 flawed (the concept itself was wrong)? That distinction is the timing diagnosis, and it is the
                 entire value of the precursor search.
@@ -186,7 +186,7 @@ export default function APPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive visual   DARK
+          S4 - Interactive visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -206,7 +206,7 @@ export default function APPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -222,7 +222,7 @@ export default function APPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'Your team keeps generating variations on the same familiar solutions — a sign the search space is too narrow.',
+                    'Your team keeps generating variations on the same familiar solutions, a sign the search space is too narrow.',
                     'You need a genuinely new concept and first-principles thinking is producing either nothing or the obvious.',
                     'You are entering an established category and need to understand both the landscape of analogous domains and the history of earlier attempts in your own.',
                     'Ideation feels stuck inside the conventions of the industry, and you need structural distance from those conventions before anything else will work.',
@@ -244,7 +244,7 @@ export default function APPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You are optimizing an existing concept rather than generating new ones — analog research has a high setup cost that is not justified for incremental refinement.',
+                    'You are optimizing an existing concept rather than generating new ones: analog research has a high setup cost that is not justified for incremental refinement.',
                     'The team treats the analog as a solution to copy rather than a source of structural principle to abstract. Imitation of surface features (the chocolates on the pillow) is not the method; abstraction of the structural insight is.',
                     'There is no time or appetite for genuine abstraction. The method fails when teams list analogs but skip the step of articulating what principle from the analog is actionable in their context.',
                   ].map((item, i) => (
@@ -265,8 +265,8 @@ export default function APPage() {
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: the abstraction step is genuinely hard, and most teams skip it. Finding the analog is
-                easy; articulating the structural principle it contains &mdash; the transferable insight that is not
-                domain-specific &mdash; requires careful thinking and often multiple iterations. A list of analogs that has
+                easy; articulating the structural principle it contains (the transferable insight that is not
+                domain-specific) requires careful thinking and often multiple iterations. A list of analogs that has
                 not been abstracted produces imitation, not innovation.
               </p>
             </div>
@@ -275,7 +275,7 @@ export default function APPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -288,37 +288,37 @@ export default function APPage() {
                 {
                   n: '01',
                   title: 'Frame the underlying problem structurally.',
-                  body: 'Before searching, translate the problem from its domain-specific terms into structural language. Not "how do we improve hospital patient experience?" but "how do we orchestrate consistent, dignity-centred service across a large, distributed team with many handoffs?" The structural framing is what makes the analog search work — it opens the field to every domain that has solved the same underlying structure, regardless of surface appearance.',
+                  body: 'Before searching, translate the problem from its domain-specific terms into structural language. Not "how do we improve hospital patient experience?" but "how do we orchestrate consistent, dignity-centred service across a large, distributed team with many handoffs?" The structural framing is what makes the analog search work: it opens the field to every domain that has solved the same underlying structure, regardless of surface appearance.',
                 },
                 {
                   n: '02',
                   title: 'Search for analogs across industries.',
-                  body: 'Ask who else has already solved the structural problem you framed. Cast deliberately far — the near analogs (other hospitals, other clinics) are obvious and will surface naturally. The search that pays off is the one that finds the far structural match: the hotel, the pit crew, the airport. Push past the first tier of obvious answers. The most productive analogs are rarely the ones the team names in the first five minutes.',
+                  body: 'Ask who else has already solved the structural problem you framed. Cast deliberately far: the near analogs (other hospitals, other clinics) are obvious and will surface naturally. The search that pays off is the one that finds the far structural match: the hotel, the pit crew, the airport. Push past the first tier of obvious answers. The most productive analogs are rarely the ones the team names in the first five minutes.',
                 },
                 {
                   n: '03',
                   title: 'Abstract the structural principle from each analog.',
-                  body: 'For each analog, identify the structural insight — not what they do, but why it works. This is the most important and most often skipped step. "Hotels do chocolates on pillows" is a surface observation that produces nothing actionable. "Hotels train every person in the building to the same service standard, not just the guest-facing roles" is a structural principle that transfers. Write the principle in terms your problem space can act on.',
+                  body: 'For each analog, identify the structural insight: not what they do, but why it works. This is the most important and most often skipped step. "Hotels do chocolates on pillows" is a surface observation that produces nothing actionable. "Hotels train every person in the building to the same service standard, not just the guest-facing roles" is a structural principle that transfers. Write the principle in terms your problem space can act on.',
                 },
                 {
                   n: '04',
                   title: 'Search backward for precursors in your own industry.',
-                  body: 'Look for earlier attempts at solving the same problem: products launched and abandoned, patents filed and not used, startups that tried and did not scale, research projects that demonstrated the concept but could not ship it. The search is historical and focused on your category or close adjacencies. The question is not "what happened?" but "what are we looking at?" — is this a dead end or a ripe idea?',
+                  body: 'Look for earlier attempts at solving the same problem: products launched and abandoned, patents filed and not used, startups that tried and did not scale, research projects that demonstrated the concept but could not ship it. The search is historical and focused on your category or close adjacencies. The question is not "what happened?" but "what are we looking at?": is this a dead end or a ripe idea?',
                 },
                 {
                   n: '05',
                   title: 'Diagnose the timing of each precursor.',
-                  body: 'For every precursor found, make a timing judgment: was this premature (the infrastructure, technology, cost curve, or behavioral readiness was not yet there) or structurally flawed (the concept itself was wrong)? These are very different findings. A premature precursor suggests the idea may now be ripe; a structurally flawed one is a warning. The diagnosis requires examining what specifically was missing and whether it is now present.',
+                  body: 'For every precursor found, make a timing judgment: was this premature (the infrastructure, technology, cost curve, or behavioral readiness was not yet there) or structurally flawed (the concept itself was wrong)? These are different findings. A premature precursor suggests the idea may now be ripe; a structurally flawed one is a warning. The diagnosis requires examining what specifically was missing and whether it is now present.',
                 },
                 {
                   n: '06',
                   title: 'Synthesize across both axes into a working hypothesis.',
-                  body: 'After running both searches, look for convergent signals: an analog pointing in the same direction as a ripe precursor is a strong signal. The combination of "another domain already solved this" and "someone tried this before and was merely premature" is a powerful case for moving forward. Synthesize the structural principles from analogs with the timing insights from precursors into a clear hypothesis about what to try.',
+                  body: 'After running both searches, look for convergent signals: an analog pointing in the same direction as a ripe precursor is a strong signal. The combination of "another domain already solved this" and "someone tried this before and was merely premature" is a compelling case for moving forward. Synthesize the structural principles from analogs with the timing insights from precursors into a clear hypothesis about what to try.',
                 },
                 {
                   n: '07',
                   title: 'Carry the principles into ideation and concept development.',
-                  body: 'The output of analog and precursor research is not a solution; it is a set of structural principles and timing hypotheses that seed concept development. Each abstracted principle becomes a frame for How Might We questions or for Crazy 8s sketches. The research done here is the fuel for the next step — it must be actively fed into whatever ideation method follows, not left as a research report that gets filed away.',
+                  body: 'The output of analog and precursor research is not a solution; it is a set of structural principles and timing hypotheses that seed concept development. Each abstracted principle becomes a frame for How Might We questions or for Crazy 8s sketches. The research done here is the fuel for the next step. It must be actively fed into whatever ideation method follows, not left as a research report that gets filed away.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -341,7 +341,7 @@ export default function APPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -355,12 +355,12 @@ export default function APPage() {
             </h3>
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                'The structural framing is crisp before the search begins — not domain-specific but expressed in terms that could apply to multiple industries.',
+                'The structural framing is crisp before the search begins, not domain-specific but expressed in terms that could apply to multiple industries.',
                 'The analog search pushes deliberately far. The team fights the pull toward near, surface-similar examples and looks for the truly distant structural match.',
                 'Every analog is abstracted to a structural principle, not left as a domain description. The principle is expressed in terms the problem space can act on.',
                 'Precursors are diagnosed for timing, not just listed. The team distinguishes premature from flawed and records the specific conditions that were missing.',
                 'Both axes are run, and the outputs are synthesized before feeding into ideation. Convergent signals from both directions are weighted heavily.',
-                'The research is actively fed into the ideation method that follows — it does not remain a report, it becomes the input material for What Might We and sketch sessions.',
+                'The research is actively fed into the ideation method that follows. It does not remain a report, it becomes the input material for What Might We and sketch sessions.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span style={{ color: CLAY, flexShrink: 0, marginTop: 3 }}>✓</span>
@@ -379,7 +379,7 @@ export default function APPage() {
               {[
                 {
                   mistake: 'Skipping the structural framing.',
-                  fix: 'Jumping straight into "find analogies" without first translating the problem into structural language produces near, surface-similar results. The hotel shows up when you frame the problem as "how do we orchestrate consistent service across many handoffs?" — not when you frame it as "how do we improve hospital experience?"',
+                  fix: 'Jumping straight into "find analogies" without first translating the problem into structural language produces near, surface-similar results. The hotel shows up when you frame the problem as "how do we orchestrate consistent service across many handoffs?", not when you frame it as "how do we improve hospital experience?"',
                 },
                 {
                   mistake: 'Stopping at near analogs.',
@@ -391,7 +391,7 @@ export default function APPage() {
                 },
                 {
                   mistake: 'Treating precursors as a dead-end list.',
-                  fix: 'Finding that something was tried before and failed is the beginning of the precursor analysis, not the end. Without the timing diagnosis — was it premature or flawed? — the list of failures is a caution sign, not a finding. The diagnosis is what makes precursor research valuable.',
+                  fix: 'Finding that something was tried before and failed is the beginning of the precursor analysis, not the end. Without the timing diagnosis (was it premature or flawed?) the list of failures is a caution sign, not a finding. The diagnosis is what makes precursor research valuable.',
                 },
                 {
                   mistake: 'Filing the research and not feeding it forward.',
@@ -418,7 +418,7 @@ export default function APPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -436,7 +436,7 @@ export default function APPage() {
               {[
                 {
                   label: 'Assign research in advance',
-                  body: 'The productive analog session is not a blank brainstorm — it is a structured debrief of research done in advance. Assign each team member two or three domains to investigate before the session: how has the hotel industry solved service consistency? How have airports managed complex, stressful multi-stage journeys? Individuals bring structured findings; the session synthesizes and abstracts, not generates.',
+                  body: 'The productive analog session is not a blank brainstorm. It is a structured debrief of research done in advance. Assign each team member two or three domains to investigate before the session: how has the hotel industry solved service consistency? How have airports managed complex, stressful multi-stage journeys? Individuals bring structured findings; the session synthesizes and abstracts, not generates.',
                 },
                 {
                   label: 'Use a consistent reporting format per analog',
@@ -452,7 +452,7 @@ export default function APPage() {
                 },
                 {
                   label: 'Document the timing diagnosis explicitly',
-                  body: 'For every precursor, record the timing judgment in writing: premature or flawed, and specifically what was missing. This is the finding that is most commonly lost — teams note that something was tried before and forget to record why it failed and whether the conditions have changed. The diagnosis belongs in the team\'s working document, not just in the facilitator\'s head.',
+                  body: 'For every precursor, record the timing judgment in writing: premature or flawed, and specifically what was missing. This is the finding that is most commonly lost. Teams note that something was tried before and forget to record why it failed and whether the conditions have changed. The diagnosis belongs in the team\'s working document, not just in the facilitator\'s head.',
                 },
               ].map(({ label, body }) => (
                 <div key={label} className="flex gap-4">
@@ -477,7 +477,7 @@ export default function APPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — How AI is evolving this method   DARK
+          S9 - How AI is evolving this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -488,7 +488,7 @@ export default function APPage() {
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see how the search space changes when AI leads the search &mdash;
+              Toggle between modes to see how the search space changes when AI leads the search,
               what it clusters on, and what it misses.
             </p>
             <APAIReactivated />
@@ -497,7 +497,7 @@ export default function APPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -509,7 +509,7 @@ export default function APPage() {
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               Cleveland Clinic needed to transform patient experience. The breakthrough came from a single
-              far structural analog &mdash; luxury hotels &mdash; and a precise precursor diagnosis about what
+              far structural analog (luxury hotels) and a precise precursor diagnosis about what
               earlier attempts had borrowed wrong. Toggle to see what changed with a hypothetical AI-first search.
             </p>
             <APExampleToggle />
@@ -518,7 +518,7 @@ export default function APPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Analogs vs Precursors distinction   LIGHT
+          S11 - Analogs vs Precursors distinction   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -530,7 +530,7 @@ export default function APPage() {
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               Analogs search outward across other industries in the present. Precursors search backward through your
-              own industry&rsquo;s history. The skill each requires &mdash; abstraction versus timing diagnosis &mdash; is
+              own industry&rsquo;s history. The skill each requires (abstraction versus timing diagnosis) is
               different enough that they benefit from being run separately before being synthesized.
             </p>
             <APDistinction />
@@ -539,7 +539,7 @@ export default function APPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Used in these frameworks   LIGHT
+          S12 - Used in these frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -582,7 +582,7 @@ export default function APPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Related methods   LIGHT
+          S13 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -622,7 +622,7 @@ export default function APPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S14 — Sources   LIGHT
+          S14 - Sources   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -636,19 +636,19 @@ export default function APPage() {
                   title:  'The Medici Effect',
                   author: 'Frans Johansson',
                   year:   '2004',
-                  note:   'The defining account of intersection thinking — the idea that breakthrough innovations occur at the intersection of concepts from different fields, not within any single field. Johansson\'s central argument is that the further you search from your starting domain, the higher the density of potential ideas, because you encounter concepts and principles that have never been combined with your field\'s problems before. This is the core intuition behind the analogs direction: the value of the far search grows with distance.',
+                  note:   'The defining account of intersection thinking: the idea that breakthrough innovations occur at the intersection of concepts from different fields, not within any single field. Johansson\'s central argument is that the further you search from your starting domain, the higher the density of potential ideas, because you encounter concepts and principles that have never been combined with your field\'s problems before. This is the core intuition behind the analogs direction: the value of the far search grows with distance.',
                 },
                 {
                   title:  'Creative Confidence',
                   author: 'Tom Kelley and David Kelley',
                   year:   '2013',
-                  note:   'The Kelleys\' treatment of how design thinkers build the habit of looking to other domains for structural inspiration. Their concept of the analogical library — a team\'s personal collection of insights, principles, and mechanisms from adjacent and distant domains, built continuously as a practice rather than a one-time exercise — maps directly onto the analog axis of this method. The book\'s cases show repeatedly how far structural matches produced solutions that near matches could not.',
+                  note:   'The Kelleys\' treatment of how design thinkers build the habit of looking to other domains for structural inspiration. Their concept of the analogical library (a team\'s personal collection of insights, principles, and mechanisms from adjacent and distant domains, built continuously as a practice rather than a one-time exercise) maps directly onto the analog axis of this method. The book\'s cases show repeatedly how far structural matches produced solutions that near matches could not.',
                 },
                 {
                   title:  'Where Good Ideas Come From',
                   author: 'Steven Johnson',
                   year:   '2010',
-                  note:   'Johnson\'s analysis of innovation patterns across centuries provides the best conceptual frame for why precursors matter. His concepts of the "slow hunch" (ideas that circulate and develop over years before becoming viable) and "the adjacent possible" (the space of ideas that are one step beyond what currently exists) explain why historical precursors are such a rich source of ripe innovations. An idea that failed in 1990 because the cost curve had not moved is a slow hunch waiting for the adjacent possible to catch up — exactly what the precursor timing diagnosis is designed to identify.',
+                  note:   'Johnson\'s analysis of innovation patterns across centuries provides the best conceptual frame for why precursors matter. His concepts of the "slow hunch" (ideas that circulate and develop over years before becoming viable) and "the adjacent possible" (the space of ideas that are one step beyond what currently exists) explain why historical precursors are such a rich source of ripe innovations. An idea that failed in 1990 because the cost curve had not moved is a slow hunch waiting for the adjacent possible to catch up, exactly what the precursor timing diagnosis is designed to identify.',
                 },
               ].map(({ title, author, year, note }) => (
                 <div

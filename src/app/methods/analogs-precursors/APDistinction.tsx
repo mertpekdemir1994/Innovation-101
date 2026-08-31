@@ -135,7 +135,7 @@ export default function APDistinction() {
             >
               <div className="space-y-1">
                 <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-400">Direction</p>
-                <p className="text-sm font-semibold text-neutral-800">Lateral — across other industries, in the present</p>
+                <p className="text-sm font-semibold text-neutral-800">Lateral: across other industries, in the present</p>
               </div>
               <div className="space-y-1">
                 <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-400">The question</p>
@@ -144,7 +144,7 @@ export default function APDistinction() {
               <div className="space-y-1">
                 <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-400">The core skill</p>
                 <p className="text-sm text-neutral-700">
-                  <strong>Abstraction.</strong> Moving from a surface similarity to a structural one —
+                  <strong>Abstraction.</strong> Moving from a surface similarity to a structural one:
                   recognising that two contexts are solving the same underlying problem even when they look nothing alike.
                 </p>
               </div>
@@ -172,7 +172,7 @@ export default function APDistinction() {
             >
               <div className="space-y-1">
                 <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-400">Direction</p>
-                <p className="text-sm font-semibold text-neutral-800">Backward — through your own industry&rsquo;s history</p>
+                <p className="text-sm font-semibold text-neutral-800">Backward: through your own industry&rsquo;s history</p>
               </div>
               <div className="space-y-1">
                 <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-400">The question</p>
@@ -189,7 +189,7 @@ export default function APDistinction() {
                 <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-400">The payoff</p>
                 <p className="text-sm text-neutral-700">
                   <strong>Hindsight as advantage.</strong> If a good idea ran ahead of its time,
-                  the world may now have provided what it lacked. A ripe idea may be hiding in your industry&rsquo;s history —
+                  the world may now have provided what it lacked. A ripe idea may be hiding in your industry&rsquo;s history,
                   already validated by the need, already refined through failure.
                 </p>
               </div>

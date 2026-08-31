@@ -35,7 +35,7 @@ const ANALOG_DATA: Record<AnalogId, { domain: string; solved: string; principle:
   hotel: {
     domain: 'Luxury Hotels',
     solved: 'Orchestrating consistent, dignity-centred service across many staff, touchpoints, and guests simultaneously.',
-    principle: 'Choreograph every handoff to feel intentional. Train every person in the service chain — not just the front desk — to the same standard. The guest experience is the sum of handoffs, not a single moment.',
+    principle: 'Choreograph every handoff to feel intentional. Train every person in the service chain (not just the front desk) to the same standard. The guest experience is the sum of handoffs, not a single moment.',
   },
   airport: {
     domain: 'Airports & Transit Hubs',
@@ -53,20 +53,20 @@ const PRECUR_DATA: Record<PrecurId, { era: string; what: string; whatHappened: s
   early: {
     era: 'One decade ago',
     what: 'A similar product or service that launched, gained early users, then stalled or failed to scale.',
-    whatHappened: 'The concept was directionally correct. The problem was real. But the ecosystem — technology maturity, distribution, cost curve, behavioural readiness — was not yet in place.',
+    whatHappened: 'The concept was directionally correct. The problem was real. But the ecosystem (technology maturity, distribution, cost curve, behavioural readiness) was not yet in place.',
     diagnosis: 'Probably premature, not flawed. Ask: has the infrastructure now caught up? If adoption, cost, or enabling technology has shifted, this idea may simply be ready now.',
   },
   'prior-art': {
     era: 'Two decades ago',
     what: 'A patent, a research prototype, or a startup that articulated the concept but never shipped at scale.',
-    whatHappened: 'The idea existed but could not break through — market was too nascent, distribution did not exist, or the required cost curve had not moved enough to make the economics work.',
+    whatHappened: 'The idea existed but could not break through: market was too nascent, distribution did not exist, or the required cost curve had not moved enough to make the economics work.',
     diagnosis: 'Worth diagnosing carefully. If the distribution and cost landscape now look different, this could be ripe. If the concept itself proved structurally flawed (not just early), it is a warning rather than an opportunity.',
   },
   antecedent: {
     era: 'Three or more decades ago',
     what: 'A historical precedent from a different era that solved a structurally similar problem with the tools available then.',
     whatHappened: 'The category did not yet exist, the required technology was not available, or the economic model that would have made it viable had not yet emerged.',
-    diagnosis: 'Classic "too early" case. Diagnose specifically: what did the earlier era lack — technology, scale, behavioural readiness — and does today provide it? If yes, there may be a ripe idea hiding in history.',
+    diagnosis: 'Classic "too early" case. Diagnose specifically: what did the earlier era lack (technology, scale, behavioural readiness) and does today provide it? If yes, there may be a ripe idea hiding in history.',
   },
 }
 
@@ -355,16 +355,16 @@ export default function APInteractive() {
             style={{ borderColor: `${CLAY}0.22)`, background: `${CLAY}0.04)` }}
           >
             <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${CLAY}0.90)` }}>
-              Analogs — searching across space
+              Analogs: searching across space
             </p>
             <p className="text-sm text-neutral-700 leading-relaxed">
-              Analogs are industries, domains, or contexts that have already solved a problem structurally similar to yours —
+              Analogs are industries, domains, or contexts that have already solved a problem structurally similar to yours,
               even when they look nothing like you. The search is lateral: away from your own category, across other industries, in the present.
             </p>
             <p className="text-sm text-neutral-700 leading-relaxed">
               The core skill is <strong>abstraction</strong>: moving from a surface similarity
               (both use waiting rooms) to a structural one (both must manage dignified waiting under uncertainty).
-              The payoff is <strong>freshness from distance</strong> — the further the analog, the less obvious
+              The payoff is <strong>freshness from distance</strong>: the further the analog, the less obvious
               the connection, and the more genuinely new the borrowed principle feels in your space.
             </p>
             <p className="text-sm text-neutral-600 italic">
@@ -419,7 +419,7 @@ export default function APInteractive() {
             style={{ borderColor: 'rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.03)' }}
           >
             <p className="text-[10px] font-semibold uppercase tracking-widest text-white text-opacity-75">
-              Precursors — searching back through time
+              Precursors: searching back through time
             </p>
             <p className="text-sm text-neutral-700 leading-relaxed">
               Precursors are earlier attempts at solving the same problem within your own industry or an adjacent one.
@@ -429,7 +429,7 @@ export default function APInteractive() {
             <p className="text-sm text-neutral-700 leading-relaxed">
               The core skill is <strong>timing diagnosis</strong>: distinguishing between ideas that failed because they were
               structurally flawed versus ideas that failed because they were premature. The payoff is <strong>hindsight as
-              advantage</strong> — if the world has now provided what the original attempt lacked, an idea hiding in history
+              advantage</strong>: if the world has now provided what the original attempt lacked, an idea hiding in history
               may be ripe.
             </p>
             <p className="text-sm text-neutral-600 italic">
