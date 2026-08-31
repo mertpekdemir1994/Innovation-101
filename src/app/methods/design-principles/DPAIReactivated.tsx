@@ -13,7 +13,7 @@ const FX = 230, FY = 120
 const TX = 452, TY = 54
 const CX = 452, CY = 186
 
-// AI-generated principles — beautiful, polished, closing nothing
+// AI-generated principles - beautiful, polished, closing nothing
 const AI_PRINCIPLES = [
   'Balance power with simplicity',
   'Serve every user well',
@@ -21,7 +21,7 @@ const AI_PRINCIPLES = [
   'Empower users to do their best work',
 ]
 
-// Human principle — specific, arguable, closes a branch
+// Human principle - specific, arguable, closes a branch
 const HUMAN_PRINCIPLE = {
   text: 'We favour speed over configurability, even when power users ask for options',
   closed: 'CONFIGURABILITY',
@@ -63,7 +63,7 @@ export default function DPAIReactivated() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label={isAI
-          ? 'Fork in AI mode. Four beautiful AI-generated principles float around the junction, but neither branch closes — the fork is undecided.'
+          ? 'Fork in AI mode. Four beautiful AI-generated principles float around the junction, but neither branch closes, the fork is undecided.'
           : 'Fork in human mode. A specific principle sits on the incoming path, the lower branch is closed with an X barrier.'}
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
@@ -135,7 +135,7 @@ export default function DPAIReactivated() {
               <text x={SVG_W / 2} y={14} textAnchor="middle"
                 fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
                 fill={`${AMBER}0.72)`} style={{ userSelect: 'none' }}>
-                ⚠ CLOSES NO BRANCHES — FORK UNDECIDED
+                ⚠ CLOSES NO BRANCHES: FORK UNDECIDED
               </text>
             </motion.g>
           )}
@@ -270,7 +270,7 @@ export default function DPAIReactivated() {
       {/* Info cards */}
       <div className="grid gap-4 sm:grid-cols-2">
 
-        {/* INDIGO: genuine AI help — sharpen the language */}
+        {/* INDIGO: genuine AI help - sharpen the language */}
         <div className="rounded-lg p-5"
           style={{ background: `${INDIGO}0.05)`, border: `1px solid ${INDIGO}0.20)` }}>
           <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
@@ -305,8 +305,8 @@ export default function DPAIReactivated() {
           </div>
           <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
             Give AI your draft principle and ask it to argue the opposite as convincingly as possible. If it cannot
-            produce a reasonable counter-argument, the principle is a platitude. If it can — and especially if the
-            counter-argument surfaces a real product strategy your team has not considered — that is the arguability
+            produce a reasonable counter-argument, the principle is a platitude. If it can, and especially if the
+            counter-argument surfaces a real product strategy your team has not considered, that is the arguability
             test doing its job.
           </p>
         </div>
@@ -320,7 +320,7 @@ export default function DPAIReactivated() {
           </p>
           <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
             AI produces fluent, balanced, well-structured prose by design. A principle that balances competing values
-            elegantly closes nothing by construction — balance is the absence of a choice. The more polished the
+            elegantly closes nothing by construction. Balance is the absence of a choice. The more polished the
             output looks, the more likely it is to be a platitude. Seductiveness and emptiness travel together here.
           </p>
         </div>
@@ -335,7 +335,7 @@ export default function DPAIReactivated() {
           <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
             The principle &ldquo;we favour speed over configurability even when power users ask for options&rdquo; comes from a specific
             team having a specific argument, repeatedly. That history is not in the model. AI can help you write it
-            once you know what you&rsquo;re sacrificing. It cannot tell you what your sacrifice should be — that answer is
+            once you know what you&rsquo;re sacrificing. It cannot tell you what your sacrifice should be. That answer is
             inside the building, not inside the model.
           </p>
         </div>
@@ -355,7 +355,7 @@ export default function DPAIReactivated() {
             style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
             Derive the real tradeoff in the room, from the real arguments your team keeps having. Then bring it
             to AI to sharpen the language and challenge the platitude-ness. If you skip the derivation step, no
-            amount of AI refinement will produce a principle — it will produce a beautifully worded fork with
+            amount of AI refinement will produce a principle. It will produce a beautifully worded fork with
             both branches still open.
           </p>
         </div>

@@ -26,7 +26,7 @@ const PRINCIPLES: Principle[] = [
     closed: 'CONFIGURABILITY',
     taken: 'SPEED · SIMPLICITY',
     arguable: true,
-    arguableNote: 'Many of the most successful products — professional software, IDEs, B2B tools, developer environments — deliberately choose configurability over speed. The opposite is a completely defensible position.',
+    arguableNote: 'Many of the most successful products (professional software, IDEs, B2B tools, developer environments) deliberately choose configurability over speed. The opposite is a completely defensible position.',
   },
   {
     id: 'firsttime',
@@ -35,21 +35,21 @@ const PRINCIPLES: Principle[] = [
     closed: 'EXPERT EFFICIENCY',
     taken: 'NEW USER EXPERIENCE',
     arguable: true,
-    arguableNote: 'Excel, Vim, Bloomberg Terminal, Photoshop — many of the world&rsquo;s most successful products deliberately sacrifice the first-time user for expert power. The opposite is a completely defensible position.',
+    arguableNote: 'Excel, Vim, Bloomberg Terminal, Photoshop: many of the world&rsquo;s most successful products deliberately sacrifice the first-time user for expert power. The opposite is a completely defensible position.',
   },
   {
     id: 'usercentred',
     type: 'platitude',
     text: 'Be user-centred',
     arguable: false,
-    arguableNote: 'Nobody advocates user-hostility. No reasonable person can defend the opposite — which means this principle constrains nothing and decides nothing.',
+    arguableNote: 'Nobody advocates user-hostility. No reasonable person can defend the opposite, which means this principle constrains nothing and decides nothing.',
   },
   {
     id: 'delight',
     type: 'platitude',
     text: 'Delight our customers',
     arguable: false,
-    arguableNote: 'No reasonable person advocates disappointing customers. Any decision can claim to honour this principle — it rules nothing out.',
+    arguableNote: 'No reasonable person advocates disappointing customers. Any decision can claim to honour this principle. It rules nothing out.',
   },
   {
     id: 'bold',
@@ -88,7 +88,7 @@ export default function DPInteractive() {
       <div>
         <p className="font-mono uppercase tracking-widest mb-3"
           style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.55)` }}>
-          Select a candidate principle — bring it to the fork
+          Select a candidate principle: bring it to the fork
         </p>
         <div className="flex flex-wrap gap-2">
           {PRINCIPLES.map(p => (
@@ -188,7 +188,7 @@ export default function DPInteractive() {
               <text x={124} y={107} textAnchor="middle"
                 fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                 fill={isReal ? `${PLUM}0.52)` : `${AMBER}0.52)`} style={{ userSelect: 'none' }}>
-                {isReal ? 'PRINCIPLE — SEE BUTTON ABOVE' : 'PLATITUDE — SEE BUTTON ABOVE'}
+                {isReal ? 'PRINCIPLE: SEE BUTTON ABOVE' : 'PLATITUDE: SEE BUTTON ABOVE'}
               </text>
               <text x={124} y={120} textAnchor="middle"
                 fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
@@ -368,7 +368,7 @@ export default function DPInteractive() {
 
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
               {isReal
-                ? `This closes the "${selected.closed}" branch. Any team that adopts this principle has, in advance, agreed to say no to power-user configurability requests — regardless of how compelling they sound in the moment.`
+                ? `This closes the "${selected.closed}" branch. Any team that adopts this principle has, in advance, agreed to say no to power-user configurability requests, regardless of how compelling they sound in the moment.`
                 : `This principle remains open to every direction. There is no branch it closes. Under pressure, it provides no guidance because any choice can claim to honour it.`}
             </p>
 
@@ -379,11 +379,11 @@ export default function DPInteractive() {
               }}>
               <p className="font-mono uppercase tracking-widest mb-1"
                 style={{ fontSize: 'var(--text-2xs)', color: isReal ? `${PLUM}0.60)` : `${AMBER}0.60)` }}>
-                Arguability test — can a reasonable person argue the opposite?
+                Arguability test: can a reasonable person argue the opposite?
               </p>
               <p className="font-semibold"
                 style={{ fontSize: 'var(--text-sm)', color: isReal ? `${PLUM}0.85)` : `${AMBER}0.78)` }}>
-                {isReal ? 'YES — this is a principle.' : 'NO — this is a platitude.'}
+                {isReal ? 'YES: this is a principle.' : 'NO: this is a platitude.'}
               </p>
               <p className="mt-1"
                 style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}

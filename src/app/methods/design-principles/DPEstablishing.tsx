@@ -46,7 +46,7 @@ export default function DPEstablishing() {
       <svg
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-        aria-label="A decision fork. A principle sits on the incoming path before the junction. At the fork, one branch is taken — lit and open, labelled SPEED. The other branch is closed off — an X barrier in amber, labelled CLOSED · CONFIGURABILITY. On the right, a counter-example shows a platitude (BE USER-CENTRED) where both branches remain equally open, closing nothing."
+        aria-label="A decision fork. A principle sits on the incoming path before the junction. At the fork, one branch is taken (lit and open, labelled SPEED). The other branch is closed off (an X barrier in amber, labelled CLOSED · CONFIGURABILITY). On the right, a counter-example shows a platitude (BE USER-CENTRED) where both branches remain equally open, closing nothing."
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
         <defs>
@@ -206,11 +206,11 @@ export default function DPEstablishing() {
           <circle cx={PFX} cy={PFY} r={3.5}
             fill={`${PLUM}0.10)`} stroke={`${PLUM}0.35)`} strokeWidth={0.8} />
 
-          {/* Upper arm — lit */}
+          {/* Upper arm - lit */}
           <line x1={PFX} y1={PFY} x2={610} y2={104}
             stroke={`${PLUM}0.40)`} strokeWidth={1.4}
             markerEnd="url(#dp-est-arr-dim)" />
-          {/* Lower arm — equally lit (no closure) */}
+          {/* Lower arm - equally lit (no closure) */}
           <line x1={PFX} y1={PFY} x2={610} y2={164}
             stroke={`${PLUM}0.40)`} strokeWidth={1.4}
             markerEnd="url(#dp-est-arr-dim)" />
@@ -233,7 +233,7 @@ export default function DPEstablishing() {
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
           fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}
           {...fade(1.65)}>
-          A principle&apos;s value is in what it closes — there must be something it closes.
+          A principle&apos;s value is in what it closes: there must be something it closes.
         </motion.text>
       </svg>
     </div>

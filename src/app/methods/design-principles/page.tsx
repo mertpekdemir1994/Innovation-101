@@ -50,7 +50,7 @@ function Container({ prose = false, children }: { prose?: boolean; children: Rea
 export default function DesignPrinciplesPage() {
   return (
     <>
-      {/* S1 — Hero (dark) */}
+      {/* S1 - Hero (dark) */}
       <DarkSection>
         <Container prose>
           <SectionLabel accent={PLUM} dark>Strategy &amp; Prioritization · Method</SectionLabel>
@@ -75,33 +75,33 @@ export default function DesignPrinciplesPage() {
               <p className="font-mono uppercase tracking-widest mb-1"
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(107,74,119,0.60)' }}>Group size</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.70)' }}>
-                The team that faces the recurring choices — not representatives, the decision-makers themselves
+                The team that faces the recurring choices, not representatives, the decision-makers themselves
               </p>
             </div>
           </div>
         </Container>
       </DarkSection>
 
-      {/* S2 — The fork (dark) */}
+      {/* S2 - The fork (dark) */}
       <DarkSection>
         <SectionLabel accent={PLUM} dark>The visual</SectionLabel>
         <SectionHeadingDark>A principle is a fork with one branch closed</SectionHeadingDark>
         <div className="max-w-prose mb-10">
           <Body className="mb-6 last:mb-0">
-            A design principle is not a value. It is a pre-committed decision about a specific recurring tradeoff
-            — made before the hard choice arrives, by the people who will be held to it, with the sacrifice
+            A design principle is not a value. It is a pre-committed decision about a specific recurring tradeoff,
+            made before the hard choice arrives, by the people who will be held to it, with the sacrifice
             explicitly named.
           </Body>
           <Body className="mb-6 last:mb-0">
             Visualised as a fork, the principle sits on the incoming path. At the junction, one branch is taken
-            and one branch is closed. The closed branch — the thing the team has agreed to say no to — is the
+            and one branch is closed. The closed branch (the thing the team has agreed to say no to) is the
             point. Without a closed branch, you have not written a principle. You have written a platitude.
           </Body>
         </div>
         <DPEstablishing />
       </DarkSection>
 
-      {/* S3 — The two tests (light) */}
+      {/* S3 - The two tests (light) */}
       <LightSection>
         <Container prose>
           <SectionLabel accent={PLUM}>The tests</SectionLabel>
@@ -135,7 +135,7 @@ export default function DesignPrinciplesPage() {
                 &ldquo;Be user-centred&rdquo; fails this test: no reasonable person advocates user-hostility. &ldquo;We favour
                 speed over configurability, even when power users ask for options&rdquo; passes it: many excellent
                 products chose configurability over speed and won. If the opposite cannot be defended, the
-                principle is not describing a real choice — it is describing a preference so universal it
+                principle is not describing a real choice. It is describing a preference so universal it
                 constrains nothing.
               </p>
             </div>
@@ -156,7 +156,7 @@ export default function DesignPrinciplesPage() {
         </Container>
       </LightSection>
 
-      {/* S4 — The platitude problem (dark) */}
+      {/* S4 - The platitude problem (dark) */}
       <DarkSection>
         <Container prose>
           <SectionLabel accent={PLUM} dark>The failure mode</SectionLabel>
@@ -175,7 +175,7 @@ export default function DesignPrinciplesPage() {
           <Body className="mb-6 last:mb-0">
             The warning sign is unanimous agreement at the moment of writing. If everyone in the room agrees
             with the principle without discussion, check whether it names a sacrifice. If it does not, you have
-            written something that costs nothing to agree with — and will give nothing back when you need it.
+            written something that costs nothing to agree with, and will give nothing back when you need it.
           </Body>
 
           <div className="mt-8 rounded-lg p-5"
@@ -184,21 +184,21 @@ export default function DesignPrinciplesPage() {
               style={{ fontSize: 'var(--text-2xs)', color: 'rgba(107,74,119,0.60)' }}>A useful test in the room</p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.70)', lineHeight: 'var(--leading-relaxed)' }}>
               Before the session ends, read each candidate principle aloud and ask: &ldquo;Who in this room would
-              argue the opposite?&rdquo; If nobody raises their hand — not because everyone agrees, but because the
-              opposite is impossible to defend — you have written a platitude. Try again.
+              argue the opposite?&rdquo; If nobody raises their hand, not because everyone agrees, but because the
+              opposite is impossible to defend, you have written a platitude. Try again.
             </p>
           </div>
         </Container>
       </DarkSection>
 
-      {/* S5 — How to derive (light) */}
+      {/* S5 - How to derive (light) */}
       <LightSection>
         <Container prose>
           <SectionLabel accent={PLUM}>Derivation</SectionLabel>
           <SectionHeadingLight>Start from the recurring argument</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
             The best source for a design principle is a decision your team keeps making badly, slowly, or
-            inconsistently. Not a hypothetical tradeoff someone invents in a workshop — a real argument that
+            inconsistently. Not a hypothetical tradeoff someone invents in a workshop, a real argument that
             surfaced three times in the last quarter and never stayed decided.
           </Body>
           <Body className="mb-6 last:mb-0">
@@ -209,7 +209,7 @@ export default function DesignPrinciplesPage() {
           </Body>
           <Body className="mb-6 last:mb-0">
             Once the tension is named, the next question is: which side does this team commit to? Not in
-            theory — in the next version of the product, given what we know about our users and our strategy.
+            theory, in the next version of the product, given what we know about our users and our strategy.
             That commitment, written with the sacrifice explicitly stated, is the principle.
           </Body>
 
@@ -242,8 +242,8 @@ export default function DesignPrinciplesPage() {
               <p className="font-mono uppercase tracking-widest mb-2"
                 style={{ fontSize: 'var(--text-2xs)', color: PLUM }}>Step 4</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                Run both tests. Bring a real scenario to the fork — does it close a branch? Ask the room to
-                argue the opposite — does someone genuinely believe the other side? If both pass, you have a
+                Run both tests. Bring a real scenario to the fork: does it close a branch? Ask the room to
+                argue the opposite: does someone genuinely believe the other side? If both pass, you have a
                 principle.
               </p>
             </div>
@@ -251,7 +251,7 @@ export default function DesignPrinciplesPage() {
         </Container>
       </LightSection>
 
-      {/* S6 — Writing them well (light) */}
+      {/* S6 - Writing them well (light) */}
       <LightSection>
         <Container prose>
           <SectionLabel accent={PLUM}>Language</SectionLabel>
@@ -262,13 +262,13 @@ export default function DesignPrinciplesPage() {
             the expert</strong>&rdquo; is a principle. The sacrifice clause is what makes the commitment real.
           </Body>
           <Body className="mb-6 last:mb-0">
-            A good formulation names the highest-pressure exception the principle will face — the case that will
-            most tempt the team to abandon it — and commits in advance. If the principle would not hold under
+            A good formulation names the highest-pressure exception the principle will face (the case that will
+            most tempt the team to abandon it) and commits in advance. If the principle would not hold under
             that pressure, it is not a principle. It is a preference that bends.
           </Body>
           <Body className="mb-6 last:mb-0">
             Aim for a single sentence that contains the commitment and the sacrifice. Principles that require two
-            sentences to state often contain an unresolved tension in the middle — they are two competing
+            sentences to state often contain an unresolved tension in the middle. They are two competing
             principles sharing one slot.
           </Body>
 
@@ -289,18 +289,18 @@ export default function DesignPrinciplesPage() {
             <div className="mt-4 grid grid-cols-2 gap-4">
               <div>
                 <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: PLUM }}>Commitment</p>
-                <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)' }}>The branch you take — stated in terms of what you are optimising for</p>
+                <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)' }}>The branch you take, stated in terms of what you are optimising for</p>
               </div>
               <div>
                 <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: 'rgba(245,158,11,0.75)' }}>Sacrifice</p>
-                <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)' }}>The branch you close — named explicitly, including the pressure that will test it</p>
+                <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)' }}>The branch you close, named explicitly, including the pressure that will test it</p>
               </div>
             </div>
           </div>
         </Container>
       </LightSection>
 
-      {/* S7 — When a principle gets tested (light) */}
+      {/* S7 - When a principle gets tested (light) */}
       <LightSection>
         <Container prose>
           <SectionLabel accent={PLUM}>Pressure</SectionLabel>
@@ -308,16 +308,16 @@ export default function DesignPrinciplesPage() {
           <Body className="mb-6 last:mb-0">
             A principle that has never been tested is a hypothesis. You do not know yet whether it is a
             principle or a preference. The test arrives the first time someone influential asks for something
-            that is on the wrong side of the fork — and it is compelling.
+            that is on the wrong side of the fork, and it is compelling.
           </Body>
           <Body className="mb-6 last:mb-0">
             If the principle holds, two things happen: the decision is made faster, because the reasoning was
-            done in advance. And the team learns that the principle is real — that they are actually committed
+            done in advance. And the team learns that the principle is real, that they are actually committed
             to what it says, not just to the words on a wall.
           </Body>
           <Body className="mb-6 last:mb-0">
-            If the principle does not hold — if the team votes to make an exception, or silently drifts to the
-            closed branch — that is also information. It does not mean the principle was wrong. It means either
+            If the principle does not hold, if the team votes to make an exception, or silently drifts to the
+            closed branch, that is also information. It does not mean the principle was wrong. It means either
             the strategy has shifted (update the principle) or the team was not genuinely committed to it in the
             first place (do the harder derivation work again).
           </Body>
@@ -328,7 +328,7 @@ export default function DesignPrinciplesPage() {
               style={{ fontSize: 'var(--text-2xs)', color: PLUM }}>The exception question</p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
               Every team eventually faces someone who argues &ldquo;this case is different.&rdquo; It usually is, in some
-              specific way. The principle does not have to be applied robotically — but it does have to be the
+              specific way. The principle does not have to be applied robotically, but it does have to be the
               starting position, and overriding it requires a conscious decision, not just the loudest voice in
               the room. If you find yourself regularly making exceptions, the principle no longer reflects your
               actual commitments. Revisit it.
@@ -337,7 +337,7 @@ export default function DesignPrinciplesPage() {
         </Container>
       </LightSection>
 
-      {/* S8 — When to revisit (light) */}
+      {/* S8 - When to revisit (light) */}
       <LightSection>
         <Container prose>
           <SectionLabel accent={PLUM}>Maintenance</SectionLabel>
@@ -351,7 +351,7 @@ export default function DesignPrinciplesPage() {
           <Body className="mb-6 last:mb-0">
             The trigger for revisiting a principle is not elapsed time but changed conditions: a shift in
             business model, a shift in who the primary user is, a shift in competitive position. Revisiting
-            does not mean abandoning — it means running the derivation process again and asking whether this
+            does not mean abandoning. It means running the derivation process again and asking whether this
             is still the right side of the fork to commit to.
           </Body>
           <Body className="mb-6 last:mb-0">
@@ -362,26 +362,26 @@ export default function DesignPrinciplesPage() {
         </Container>
       </LightSection>
 
-      {/* S9 — Interactive (dark) */}
+      {/* S9 - Interactive (dark) */}
       <DarkSection>
         <SectionLabel accent={PLUM} dark>Try it</SectionLabel>
         <SectionHeadingDark>Bring a candidate principle to the fork</SectionHeadingDark>
         <p className="max-w-prose mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.62)', lineHeight: 'var(--leading-relaxed)' }}>
           Select one of the five candidates below. Real principles close a branch and pass the arguability test.
-          Platitudes close nothing — the fork stays undecided.
+          Platitudes close nothing. The fork stays undecided.
         </p>
         <DPInteractive />
       </DarkSection>
 
-      {/* S10 — When to run this (light) */}
+      {/* S10 - When to run this (light) */}
       <LightSection>
         <Container prose>
           <SectionLabel accent={PLUM}>When to use</SectionLabel>
           <SectionHeadingLight>When the same argument keeps coming back</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
             Design principles are worth deriving when a team is making the same type of decision repeatedly
-            and reaching inconsistent conclusions — or when decisions that should be fast are consuming hours
+            and reaching inconsistent conclusions, or when decisions that should be fast are consuming hours
             of senior time in every planning cycle.
           </Body>
 
@@ -407,7 +407,7 @@ export default function DesignPrinciplesPage() {
                   {col.items.map(item => (
                     <li key={item} className="flex gap-2"
                       style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                      <span style={{ color: PLUM, marginTop: 2, flexShrink: 0 }}>—</span>
+                      <span style={{ color: PLUM, marginTop: 2, flexShrink: 0 }}>-</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -422,7 +422,7 @@ export default function DesignPrinciplesPage() {
               style={{ fontSize: 'var(--text-2xs)', color: PLUM }}>On quantity</p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
               Most teams need three to five principles, not twenty. Each principle should cover a distinct,
-              recurring decision type. If you have ten principles, check whether they are all distinct — teams
+              recurring decision type. If you have ten principles, check whether they are all distinct. Teams
               often generate many statements that collapse onto the same underlying tension, restated in
               different language.
             </p>
@@ -430,32 +430,32 @@ export default function DesignPrinciplesPage() {
         </Container>
       </LightSection>
 
-      {/* S11 — AI (light) */}
+      {/* S11 - AI (light) */}
       <LightSection>
         <SectionLabel accent={PLUM}>AI &amp; this method</SectionLabel>
         <SectionHeadingLight>When AI helps and when it misleads</SectionHeadingLight>
         <p className="max-w-prose mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
           AI produces polished, balanced principles by design. At the fork, that means both branches
-          remain open — the fork is always undecided. Here is where the boundary runs.
+          remain open, the fork is always undecided. Here is where the boundary runs.
         </p>
         <DPAIReactivated />
       </LightSection>
 
-      {/* S12 — Example (light) */}
+      {/* S12 - Example (light) */}
       <LightSection>
         <SectionLabel accent={PLUM}>Example</SectionLabel>
         <SectionHeadingLight>A product team and a power-user problem</SectionHeadingLight>
         <p className="max-w-prose mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
           A team faces a recurring argument about configurability. The traditional tab shows the derivation
-          method working. The AI tab shows what happens when the process is shortcut — and where AI
+          method working. The AI tab shows what happens when the process is shortcut, and where AI
           genuinely earns its place.
         </p>
         <DPExampleToggle />
       </LightSection>
 
-      {/* S13 — Framework connections + related methods (light) */}
+      {/* S13 - Framework connections + related methods (light) */}
       <LightSection>
         <SectionLabel accent={PLUM}>Connections</SectionLabel>
         <SectionHeadingLight>Where this sits in the wider work</SectionHeadingLight>
@@ -474,13 +474,13 @@ export default function DesignPrinciplesPage() {
                   slug: 'double-diamond',
                   name: 'Double Diamond',
                   phase: 'Define',
-                  note: 'Principles derived in the Define phase anchor the Develop phase against feature drift — they are the boundary conditions that govern what the team builds next.',
+                  note: 'Principles derived in the Define phase anchor the Develop phase against feature drift: they are the boundary conditions that govern what the team builds next.',
                 },
                 {
                   slug: 'design-thinking',
                   name: 'Design Thinking',
                   phase: 'Define / Ideate',
-                  note: 'In Design Thinking, the Define phase closes in on a problem statement. Design Principles extend that closure into the solution space — they constrain what counts as a valid answer.',
+                  note: 'In Design Thinking, the Define phase closes in on a problem statement. Design Principles extend that closure into the solution space: they constrain what counts as a valid answer.',
                 },
                 {
                   slug: 'design-sprint',
@@ -492,7 +492,7 @@ export default function DesignPrinciplesPage() {
                   slug: 'agile-innovation',
                   name: 'Agile Innovation',
                   phase: 'Planning / Review',
-                  note: 'Principles give the team something stable to plan against and review decisions against — without them, each sprint carries the cost of redeciding the same tradeoffs.',
+                  note: 'Principles give the team something stable to plan against and review decisions against: without them, each sprint carries the cost of redeciding the same tradeoffs.',
                 },
               ].map(f => (
                 <div key={f.slug}>
@@ -535,17 +535,17 @@ export default function DesignPrinciplesPage() {
                 {
                   slug: 'concept-testing',
                   name: 'Concept Testing',
-                  note: 'Concept testing surfaces what users actually respond to — which often conflicts with the team&rsquo;s existing commitments. Design principles help the team decide whether to update the principle or resist the pull of a local user preference.',
+                  note: 'Concept testing surfaces what users actually respond to, which often conflicts with the team&rsquo;s existing commitments. Design principles help the team decide whether to update the principle or resist the pull of a local user preference.',
                 },
                 {
                   slug: 'orthodoxies',
                   name: 'Orthodoxies',
-                  note: 'Orthodoxies surfaces the assumptions the industry treats as given. Design principles can be built by questioning them — a principle that commits against the orthodoxy is often the most powerful and the most contested.',
+                  note: 'Orthodoxies surfaces the assumptions the industry treats as given. Design principles can be built by questioning them, a principle that commits against the orthodoxy is often the most consequential and the most contested.',
                 },
                 {
                   slug: 'ambition-matrix',
                   name: 'Ambition Matrix',
-                  note: 'Different innovation horizons require different principles. What is the right principle for a core product may be the wrong one for a new venture. Mapping your portfolio across the matrix surfaces where the same principle needs to hold — and where it does not.',
+                  note: 'Different innovation horizons require different principles. What is the right principle for a core product may be the wrong one for a new venture. Mapping your portfolio across the matrix surfaces where the same principle needs to hold, and where it does not.',
                 },
               ].map(m => (
                 <div key={m.slug}>

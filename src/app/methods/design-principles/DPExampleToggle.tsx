@@ -83,7 +83,7 @@ export default function DPExampleToggle() {
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 After two sessions, they had a candidate principle: &ldquo;We optimise for the first-time user, even
-                at the expense of the expert.&rdquo; The second clause — &ldquo;even at the expense of the expert&rdquo; — was
+                at the expense of the expert.&rdquo; The second clause, &ldquo;even at the expense of the expert,&rdquo; was
                 the hard part, and it was the whole point. Without it, the principle was just &ldquo;be good for users&rdquo;
                 and it closed nothing. With it, it named what they were giving up.
               </p>
@@ -110,7 +110,7 @@ export default function DPExampleToggle() {
                 The arguability test as a check
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                They checked it: could a reasonable team argue the opposite? Yes — many products had been built
+                They checked it: could a reasonable team argue the opposite? Yes, many products had been built
                 the other way and had succeeded. Bloomberg Terminal, Adobe Photoshop, Microsoft Excel all chose
                 the expert over the first-time user and won. The opposite was defensible. That confirmed it was
                 a principle, not a platitude. It described a real, contested choice that the team had now
@@ -126,7 +126,7 @@ export default function DPExampleToggle() {
               </p>
               <p className="font-semibold"
                 style={{ fontSize: 'var(--text-sm)', color: `${PLUM}0.82)` }}>
-                The principle did not change the answer — it made the answer pre-computable. The same situation
+                The principle did not change the answer. It made the answer pre-computable. The same situation
                 had come up eight times in the previous six months. It had consumed the same hour each time and
                 reached no durable conclusion. After the principle, the same situation took four minutes.
               </p>
@@ -146,7 +146,7 @@ export default function DPExampleToggle() {
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The team-derived approach above is the recommended method. This tab imagines the same team
-                had asked AI to write their principles first — to show where that goes and where AI genuinely helps.
+                had asked AI to write their principles first, to show where that goes and where AI genuinely helps.
               </p>
             </div>
 
@@ -154,7 +154,7 @@ export default function DPExampleToggle() {
               style={{ border: `1px solid ${AMBER}0.22)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
                 style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}>
-                The AI principles — beautiful and empty
+                The AI principles: beautiful and empty
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
                 The team asked an AI assistant to generate a set of product principles for a product-led growth
@@ -163,7 +163,7 @@ export default function DPExampleToggle() {
               <div className="space-y-2">
                 {[
                   'Balance power with simplicity',
-                  'Serve every user well — new and experienced',
+                  'Serve every user well, new and experienced',
                   'Be flexible without becoming complex',
                   'Empower users to do their best work',
                 ].map(p => (
@@ -211,8 +211,8 @@ export default function DPExampleToggle() {
                 </span>
               </div>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                After the team had derived the real principle themselves — &ldquo;we optimise for the first-time user,
-                even at the expense of the expert&rdquo; — they gave it to AI with one instruction: argue the strongest
+                After the team had derived the real principle themselves, &ldquo;we optimise for the first-time user,
+                even at the expense of the expert,&rdquo; they gave it to AI with one instruction: argue the strongest
                 possible case for the opposite. The AI produced a detailed argument for the expert-first strategy,
                 citing real products, real numbers, real market data. It was excellent. It confirmed the principle
                 was arguable (therefore a principle), and it forced the team to stress-test their conviction before
@@ -226,7 +226,7 @@ export default function DPExampleToggle() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.62)` }}>The honest readout</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 Skip the AI generation step. Do the hard work of surfacing your real recurring argument, naming
-                the sacrifice, and passing the arguability test — in the room, with the people who will be held
+                the sacrifice, and passing the arguability test, in the room, with the people who will be held
                 to the principle. Then bring in AI to challenge it. That sequence is the right one. Reversing it
                 produces beautiful walls with no load-bearing function.
               </p>
