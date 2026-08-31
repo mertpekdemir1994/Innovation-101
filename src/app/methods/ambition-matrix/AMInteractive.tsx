@@ -22,12 +22,12 @@ const ZONE_DETAIL: Record<Zone, { heading: string; allocation: string; body: str
   core: {
     heading: 'Core',
     allocation: '~70% of innovation resources',
-    body: 'Optimizing what already exists for the customers you already have. Incremental improvements, efficiency gains, line extensions. The safest, most measurable bets, and the ones that fund everything else. Core work is essential and must not be neglected, but it is also where organizations over-concentrate — because its returns are near-term and easy to justify.',
+    body: 'Optimizing what already exists for the customers you already have. Incremental improvements, efficiency gains, line extensions. The safest, most measurable bets, and the ones that fund everything else. Core work is essential and must not be neglected, but it is also where organizations over-concentrate, because its returns are near-term and easy to justify.',
   },
   adjacent: {
     heading: 'Adjacent',
     allocation: '~20% of innovation resources',
-    body: 'Extending a proven strength into nearby territory — a new customer segment, a related product, an adjacent market. Adjacent bets carry more uncertainty than core but build on something you already do well, which makes the risk manageable. This is where most real growth comes from.',
+    body: 'Extending a proven strength into nearby territory (a new customer segment, a related product, an adjacent market). Adjacent bets carry more uncertainty than core but build on something you already do well, which makes the risk manageable. This is where most real growth comes from.',
   },
   transformational: {
     heading: 'Transformational',
@@ -60,7 +60,7 @@ export default function AMInteractive() {
           width="100%"
           style={{ overflow: 'visible' }}
           role="group"
-          aria-label="Ambition Matrix — click a zone to learn about that type of bet"
+          aria-label="Ambition Matrix, click a zone to learn about that type of bet"
         >
           <defs>
             <filter id="am-int-glow" x="-20%" y="-20%" width="140%" height="140%">

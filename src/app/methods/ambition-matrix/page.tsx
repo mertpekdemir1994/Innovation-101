@@ -61,7 +61,7 @@ export default function AmbitionMatrixPage() {
   return (
     <>
       {/* ────────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -103,7 +103,7 @@ export default function AmbitionMatrixPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK (scroll-in)
+          S2 - Establishing visual   DARK (scroll-in)
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -114,7 +114,7 @@ export default function AmbitionMatrixPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -127,7 +127,7 @@ export default function AmbitionMatrixPage() {
                 The Ambition Matrix plots innovation initiatives on two axes: how new the product or offering is, and how new the market or customer is. Those two axes produce three broad zones. Core innovations improve existing offerings for existing customers. Adjacent innovations extend into new-but-related offerings or markets. Transformational innovations create entirely new offerings for markets that do not yet exist.
               </Body>
               <Body>
-                Its value is strategic and almost diagnostic: it lets an organization see its whole portfolio of innovation bets at once, on a single picture, and judge whether the balance across the three zones is deliberate or accidental. Almost always, the picture reveals the same thing &mdash; a portfolio crowded into the safe, measurable core, with the adjacent and transformational zones quietly starved. The matrix makes that imbalance impossible to ignore.
+                Its value is strategic and almost diagnostic: it lets an organization see its whole portfolio of innovation bets at once, on a single picture, and judge whether the balance across the three zones is deliberate or accidental. Almost always, the picture reveals the same thing: a portfolio crowded into the safe, measurable core, with the adjacent and transformational zones quietly starved. The matrix makes that imbalance impossible to ignore.
               </Body>
               <Body>
                 It is not a project method. You do not &ldquo;run an Ambition Matrix&rdquo; the way you run an interview or a sprint. It is a lens applied across a set of initiatives, used to allocate resources and to argue, with a picture rather than an opinion, for protecting the bolder bets that secure the future.
@@ -138,7 +138,7 @@ export default function AmbitionMatrixPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -157,7 +157,7 @@ export default function AmbitionMatrixPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -193,7 +193,7 @@ export default function AmbitionMatrixPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You have a single project and no portfolio to balance — it is a portfolio tool, not a project tool.',
+                    'You have a single project and no portfolio to balance: it is a portfolio tool, not a project tool.',
                     'You need to evaluate the desirability, feasibility, or viability of a specific concept (use Value Proposition Canvas, Assumption Mapping, or Concept Testing).',
                     'You treat the 70-20-10 ratio as a law rather than a starting reference; the right balance depends heavily on industry, maturity, and ambition.',
                   ].map((item, i) => (
@@ -221,7 +221,7 @@ export default function AmbitionMatrixPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S6 — How it works   WARM
+          S6 - How it works   WARM
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -234,7 +234,7 @@ export default function AmbitionMatrixPage() {
                 {
                   n: '01',
                   title: 'Define the two axes.',
-                  body: 'Horizontal: how new is the market or customer (from existing to brand new). Vertical: how new is the offering or product (from existing to brand new). Agree on concrete criteria up front — what specifically counts as a "new market" versus an "existing" one — so placement is argued from criteria rather than enthusiasm.',
+                  body: 'Horizontal: how new is the market or customer (from existing to brand new). Vertical: how new is the offering or product (from existing to brand new). Agree on concrete criteria up front (what specifically counts as a "new market" versus an "existing" one) so placement is argued from criteria rather than enthusiasm.',
                 },
                 {
                   n: '02',
@@ -244,7 +244,7 @@ export default function AmbitionMatrixPage() {
                 {
                   n: '03',
                   title: 'Map resources, not just dots.',
-                  body: 'Gather the actual investment behind each initiative — budget, headcount, leadership attention — so the matrix reflects where resources truly go, not just where projects nominally sit. This is what surfaces the starved-transformational-zone problem.',
+                  body: 'Gather the actual investment behind each initiative (budget, headcount, leadership attention) so the matrix reflects where resources truly go, not just where projects nominally sit. This is what surfaces the starved-transformational-zone problem.',
                 },
                 {
                   n: '04',
@@ -254,7 +254,7 @@ export default function AmbitionMatrixPage() {
                 {
                   n: '05',
                   title: 'Rebalance, and mean it.',
-                  body: 'The matrix only earns its keep if the picture changes a decision — shifting resources toward starved zones, killing redundant core bets, or deliberately protecting a transformational slice. Labeling the portfolio without then reallocating is the most common way the tool gets wasted.',
+                  body: 'The matrix only earns its keep if the picture changes a decision: shifting resources toward starved zones, killing redundant core bets, or deliberately protecting a transformational slice. Labeling the portfolio without then reallocating is the most common way the tool gets wasted.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -278,13 +278,13 @@ export default function AmbitionMatrixPage() {
       </WarmSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like — and the mistakes that prevent it.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and the mistakes that prevent it.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
               When it goes well
@@ -293,7 +293,7 @@ export default function AmbitionMatrixPage() {
               {[
                 'The entire portfolio of bets is visible on one picture, and the balance across the three zones is a deliberate choice rather than an accident.',
                 'The adjacent and transformational zones are genuinely funded, not starved to feed the core.',
-                'Resource percentages are mapped — not just project counts — because ten tiny transformational projects can still mean almost no real investment in transformation.',
+                'Resource percentages are mapped, not just project counts, because ten tiny transformational projects can still mean almost no real investment in transformation.',
                 'The picture actually changes an allocation decision, not just a label.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
@@ -350,7 +350,7 @@ export default function AmbitionMatrixPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S8 — Logistics   WARM
+          S8 - Logistics   WARM
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -365,11 +365,11 @@ export default function AmbitionMatrixPage() {
               {[
                 {
                   label: 'Who needs to be there',
-                  body: 'The people who actually control resource allocation — because the output is a reallocation decision they must be willing to make. A matrix built by a team that cannot move money or people is an interesting picture with no consequences. Include the budget owners.',
+                  body: 'The people who actually control resource allocation, because the output is a reallocation decision they must be willing to make. A matrix built by a team that cannot move money or people is an interesting picture with no consequences. Include the budget owners.',
                 },
                 {
                   label: 'Getting honest placement',
-                  body: 'The hard part is candidly assessing how new each bet really is. Teams tend to overstate the ambition of their pet projects (everything sounds "transformational" in a pitch). Define concrete criteria for each axis up front — what specifically counts as a "new market" versus an "existing" one — so placement is argued from criteria rather than enthusiasm.',
+                  body: 'The hard part is candidly assessing how new each bet really is. Teams tend to overstate the ambition of their pet projects (everything sounds "transformational" in a pitch). Define concrete criteria for each axis up front (what specifically counts as a "new market" versus an "existing" one) so placement is argued from criteria rather than enthusiasm.',
                 },
                 {
                   label: 'Mapping resources, not just dots',
@@ -398,7 +398,7 @@ export default function AmbitionMatrixPage() {
       </WarmSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S9 — How AI is evolving this method   DARK
+          S9 - How AI is evolving this method   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -409,7 +409,7 @@ export default function AmbitionMatrixPage() {
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle each zone to see how AI changes the analysis behind bets of that type — what it accelerates, and where human strategic judgment remains essential.
+              Toggle each zone to see how AI changes the analysis behind bets of that type, what it accelerates, and where human strategic judgment remains essential.
             </p>
             <AMAIReactivated />
           </div>
@@ -417,7 +417,7 @@ export default function AmbitionMatrixPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -433,7 +433,7 @@ export default function AmbitionMatrixPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S11 — Used in these frameworks   WARM
+          S11 - Used in these frameworks   WARM
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -466,14 +466,14 @@ export default function AmbitionMatrixPage() {
             </div>
 
             <p className="mt-6" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)', fontStyle: 'italic' }}>
-              Note: the Ambition Matrix does not map to Design Thinking, Design Sprint, Lean Startup, or FDE — those are single-initiative or field frameworks without a portfolio-allocation step. These blanks are intentional.
+              Note: the Ambition Matrix does not map to Design Thinking, Design Sprint, Lean Startup, or FDE: those are single-initiative or field frameworks without a portfolio-allocation step. These blanks are intentional.
             </p>
           </div>
         </Container>
       </WarmSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -503,7 +503,7 @@ export default function AmbitionMatrixPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S13 — Sources   WARM
+          S13 - Sources   WARM
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -523,7 +523,7 @@ export default function AmbitionMatrixPage() {
                   title:  'Ten Types of Innovation',
                   author: 'Larry Keeley, Helen Walters, Ryan Pikkel, and Brian Quinn',
                   year:   '2013',
-                  note:   'Complementary portfolio and innovation-dimension thinking — pairs naturally with the Ambition Matrix for a fuller strategic picture.',
+                  note:   'Complementary portfolio and innovation-dimension thinking, pairs naturally with the Ambition Matrix for a fuller strategic picture.',
                 },
               ].map(({ title, author, year, note }) => (
                 <div

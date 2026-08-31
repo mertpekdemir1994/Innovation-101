@@ -70,7 +70,7 @@ export default function AMEstablishing() {
           variants={fade} transition={gridT}
         />
 
-        {/* Quadrant dividers — subtle dashed */}
+        {/* Quadrant dividers - subtle dashed */}
         <motion.line
           x1={MX} y1={GY} x2={MX} y2={GB}
           stroke="rgba(255,255,255,0.09)" strokeWidth={1} strokeDasharray="4 5"

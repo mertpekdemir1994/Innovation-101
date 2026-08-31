@@ -26,11 +26,11 @@ const AI_NOTES: Record<Zone, { well: string; risks: string }> = {
   },
   adjacent: {
     well:  'AI-assisted market sizing and scenario analysis help estimate the opportunity in a new-but-related market, model how a proven capability might transfer, and stress-test assumptions about an adjacent segment. Synthesizes analogous market data far faster than manual research.',
-    risks: "Adjacency involves genuine novelty, so AI's estimates rest on analogies that may not hold. The scenarios feel data-grounded but need human judgment to sanity-check against what actually makes a market work — not just what made a similar market work.",
+    risks: "Adjacency involves genuine novelty, so AI's estimates rest on analogies that may not hold. The scenarios feel data-grounded but need human judgment to sanity-check against what actually makes a market work, not just what made a similar market work.",
   },
   transformational: {
-    well:  'AI can help explore possibility space, generate scenarios, and surface weak signals from adjacent domains — broadening the search for what a transformational bet could be before conviction is committed.',
-    risks: "AI cannot forecast a market that has no precedent. A market that doesn't yet exist has no training data. The confident numbers AI generates for core bets are simply absent here. Whether to protect a bet that data cannot justify remains a matter of human conviction — the one thing the Ambition Matrix is built around.",
+    well:  'AI can help explore possibility space, generate scenarios, and surface weak signals from adjacent domains, broadening the search for what a transformational bet could be before conviction is committed.',
+    risks: "AI cannot forecast a market that has no precedent. A market that doesn't yet exist has no training data. The confident numbers AI generates for core bets are absent here. Whether to protect a bet that data cannot justify remains a matter of human conviction: the one thing the Ambition Matrix is built around.",
   },
 }
 
@@ -51,7 +51,7 @@ export default function AMAIReactivated() {
 
   return (
     <div>
-      {/* ── SVG illustration — zone fills animate on toggle ── */}
+      {/* SVG illustration - zone fills animate on toggle */}
       <div className="w-full flex justify-center mb-12 select-none" aria-hidden="true">
         <svg viewBox="0 0 560 450" width="100%" style={{ maxWidth: 640, overflow: 'visible' }}>
           <defs>
@@ -81,7 +81,7 @@ export default function AMAIReactivated() {
           <text x={GX - 8} y={GY + 6} textAnchor="end" fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}>NEW</text>
           <text transform={`translate(28, ${MY}) rotate(-90)`} textAnchor="middle" fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fill="rgba(255,255,255,0.14)" style={{ userSelect: 'none' }}>↑ OFFERING / PRODUCT</text>
 
-          {/* Zone ellipses — fill/stroke animate with AI state */}
+          {/* Zone ellipses - fill/stroke animate with AI state */}
           {ZONES.map(({ id, label, cx, cy, rx, ry }) => {
             const isAI = aiZones[id]
             return (
@@ -214,7 +214,7 @@ export default function AMAIReactivated() {
           The honest synthesis
         </p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
-          AI sharpens the assessment of innovation bets, especially in the data-rich core and, with care, the adjacent zone. But it tilts naturally toward where data already exists &mdash; which is precisely the safe core the Ambition Matrix exists to stop you over-funding. Used well, AI makes each zone&rsquo;s analysis faster and better grounded. Used carelessly, it adds a veneer of quantitative confidence to the core and makes the transformational bets look even less justifiable by comparison. The judgment the matrix demands &mdash; deliberately protecting the bold bets that data cannot yet justify &mdash; is exactly the judgment AI cannot make for you.
+          AI sharpens the assessment of innovation bets, especially in the data-rich core and, with care, the adjacent zone. But it tilts naturally toward where data already exists, which is precisely the safe core the Ambition Matrix exists to stop you over-funding. Used well, AI makes each zone&rsquo;s analysis faster and better grounded. Used carelessly, it adds a veneer of quantitative confidence to the core and makes the transformational bets look even less justifiable by comparison. The judgment the matrix demands (deliberately protecting the bold bets that data cannot yet justify) is exactly the judgment AI cannot make for you.
         </p>
       </div>
     </div>
