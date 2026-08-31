@@ -96,7 +96,7 @@ export default function C8AIReactivated() {
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill={isAI ? `${INDIGO}0.40)` : `${CLAY}0.48)`}
             style={{ userSelect: 'none' }}>
-            {isAI ? 'AI: INSTANT GENERATION — NO TIMER NEEDED' : '1 MIN PER PANEL'}
+            {isAI ? 'AI: INSTANT GENERATION, NO TIMER NEEDED' : '1 MIN PER PANEL'}
           </text>
 
           {/* AI "instant" badge */}
@@ -185,7 +185,7 @@ export default function C8AIReactivated() {
                   <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y + 13} textAnchor="middle"
                     fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                     fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
-                    obvious ideas run out here — constraint forces you past it
+                    obvious ideas run out here, constraint forces you past it
                   </text>
                 </g>
               ) : (
@@ -194,7 +194,7 @@ export default function C8AIReactivated() {
                     stroke={`${INDIGO}0.14)`} strokeWidth={0.8} strokeDasharray="4 3" />
                   <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 7} textAnchor="middle"
                     fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-                    fill={`${INDIGO}0.45)`} style={{ userSelect: 'none' }}>NO WALL — AI NEVER RUNS OUT OF PLAUSIBLE IDEAS</text>
+                    fill={`${INDIGO}0.45)`} style={{ userSelect: 'none' }}>NO WALL, AI NEVER RUNS OUT OF PLAUSIBLE IDEAS</text>
                   <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y + 13} textAnchor="middle"
                     fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                     fill={`${INDIGO}0.30)`} style={{ userSelect: 'none' }}>
@@ -210,8 +210,8 @@ export default function C8AIReactivated() {
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill="rgba(255,255,255,0.16)" style={{ userSelect: 'none' }}>
             {isAI
-              ? 'AI GENERATES PLAUSIBLE IDEAS INSTANTLY — AND REMOVES THE CONSTRAINT THAT PRODUCES ORIGINALITY'
-              : 'THE CONSTRAINT IS THE METHOD — THE WALL IS WHERE ORIGINAL IDEAS BEGIN'}
+              ? 'AI GENERATES PLAUSIBLE IDEAS INSTANTLY, AND REMOVES THE CONSTRAINT THAT PRODUCES ORIGINALITY'
+              : 'THE CONSTRAINT IS THE METHOD, THE WALL IS WHERE ORIGINAL IDEAS BEGIN'}
           </text>
         </svg>
       </div>
@@ -228,11 +228,11 @@ export default function C8AIReactivated() {
             {[
               {
                 label: 'THE WALL IS THE METHOD',
-                body: 'The constraint refuses to let you stop at panel 4. That refusal forces the original ideas out — ideas you would never have reached in a comfortable, unhurried brainstorm that ended when the obvious ones were done.',
+                body: 'The constraint refuses to let you stop at panel 4. That refusal forces the original ideas out, ideas you would never have reached in a comfortable, unhurried brainstorm that ended when the obvious ones were done.',
               },
               {
                 label: 'PANELS 5–8 ARE WHERE THEY LIVE',
-                body: 'The ideas teams actually select come disproportionately from the late panels — not because quality improves, but because quantity is what gets you there. You have to exhaust the obvious to reach the original.',
+                body: 'The ideas teams actually select come disproportionately from the late panels, not because quality improves, but because quantity is what gets you there. You have to exhaust the obvious to reach the original.',
               },
               {
                 label: 'OWNERSHIP MATTERS',
@@ -259,7 +259,7 @@ export default function C8AIReactivated() {
             {[
               {
                 label: 'AI FLOODS THE OBVIOUS ZONE',
-                body: 'AI generates the plausible middle at scale — the same obvious ideas the early panels produce, many times over, with no constraint to push past them. More ideas is not the same as reaching idea seven.',
+                body: 'AI generates the plausible middle at scale: the same obvious ideas the early panels produce, many times over, with no constraint to push past them. More ideas is not the same as reaching idea seven.',
               },
               {
                 label: 'NO WALL, NO FORCING FUNCTION',

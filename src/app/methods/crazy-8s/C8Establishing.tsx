@@ -148,7 +148,7 @@ export default function C8Establishing() {
           <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y + 13} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}>
-            obvious ideas run out here — keep going
+            obvious ideas run out here, keep going
           </text>
         </motion.g>
 
@@ -160,7 +160,7 @@ export default function C8Establishing() {
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.3, delay: prefersReduced ? 0 : 0.90 }}
           style={{ userSelect: 'none' }}>
-          THE IDEAS TEAMS SELECT COME DISPROPORTIONATELY FROM PANELS 5–8 — NOT 1–4
+          THE IDEAS TEAMS SELECT COME DISPROPORTIONATELY FROM PANELS 5-8, NOT 1-4
         </motion.text>
       </svg>
     </div>

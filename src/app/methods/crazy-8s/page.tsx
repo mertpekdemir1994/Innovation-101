@@ -28,19 +28,19 @@ const FRAMEWORK_LINKS = [
     slug: 'design-thinking',
     name: 'Design Thinking',
     phase: 'Ideate',
-    note: 'The Ideate phase calls for divergent thinking — generating a wide range of ideas before converging on the most promising. Crazy 8s is one of the most reliable divergence tools in the Ideate phase, producing genuine variety fast while preventing premature convergence on the first comfortable idea. The eight-minute constraint ensures the phase actually diverges rather than quickly settling on the obvious.',
+    note: 'The Ideate phase calls for divergent thinking: generating a wide range of ideas before converging on the most promising. Crazy 8s is one of the most reliable divergence tools in the Ideate phase, producing genuine variety fast while preventing premature convergence on the first comfortable idea. The eight-minute constraint ensures the phase actually diverges rather than quickly settling on the obvious.',
   },
   {
     slug: 'double-diamond',
     name: 'Double Diamond',
     phase: 'Develop',
-    note: 'The Develop phase opens the second diamond with concept generation. Crazy 8s is one of the fastest ways to produce a wide range of candidate concepts at the start of Develop — enough variety that the team has genuinely different options to prototype and test rather than variations on a single obvious direction. The late-panel ideas are what make the Develop phase worth running.',
+    note: 'The Develop phase opens the second diamond with concept generation. Crazy 8s is one of the fastest ways to produce a wide range of candidate concepts at the start of Develop, enough variety that the team has genuinely different options to prototype and test rather than variations on a single obvious direction. The late-panel ideas are what make the Develop phase worth running.',
   },
   {
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Sprint / Discovery Sprint',
-    note: 'Crazy 8s fits both the Discovery Sprint and the regular sprint within an Agile Innovation engagement. In the Discovery Sprint, it generates a wide range of solution hypotheses quickly. In the regular sprint, it provides fast divergence before selecting what to build and test. The low setup cost — paper and a timer — makes it well-suited to the pace of sprint-based work.',
+    note: 'Crazy 8s fits both the Discovery Sprint and the regular sprint within an Agile Innovation engagement. In the Discovery Sprint, it generates a wide range of solution hypotheses quickly. In the regular sprint, it provides fast divergence before selecting what to build and test. The low setup cost (paper and a timer) makes it well-suited to the pace of sprint-based work.',
   },
 ]
 
@@ -59,7 +59,7 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'analogs-precursors',
     name: 'Analogs & Precursors',
-    rel: 'Strong upstream stimulus: the abstracted structural principles from an analog session are excellent raw material to sketch against in Crazy 8s — seeding the eight panels with non-obvious frames before the session starts. Each abstracted principle from the analog search becomes a potential frame for one panel, preventing the early sketches from collapsing into variations on the same obvious idea.',
+    rel: 'Strong upstream stimulus: the abstracted structural principles from an analog session are excellent raw material to sketch against in Crazy 8s, seeding the eight panels with non-obvious frames before the session starts. Each abstracted principle from the analog search becomes a potential frame for one panel, preventing the early sketches from collapsing into variations on the same obvious idea.',
   },
   {
     slug: null,
@@ -69,7 +69,7 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: null,
     name: 'Co-Creation Workshops',
-    rel: 'A companion setting: Crazy 8s is one of the most common divergence activities run inside a broader co-creation session. It produces individual sketches that can be shared, clustered, and built on collaboratively — making it a reliable warm-up for group concept development. The individual-first, group-second structure it enforces is especially valuable in co-creation contexts where group dynamics can otherwise anchor everyone to the first idea voiced.',
+    rel: 'A companion setting: Crazy 8s is one of the most common divergence activities run inside a broader co-creation session. It produces individual sketches that can be shared, clustered, and built on collaboratively, making it a reliable warm-up for group concept development. The individual-first, group-second structure it enforces is especially valuable in co-creation contexts where group dynamics can otherwise anchor everyone to the first idea voiced.',
   },
   {
     slug: null,
@@ -83,7 +83,7 @@ const RELATED_METHODS: RelatedMethod[] = [
 export default function C8Page() {
   return (
     <>
-      {/* S1 — Header DARK */}
+      {/* S1 - Header DARK */}
       <DarkSection>
         <Container>
           <div className="py-20 md:py-28">
@@ -110,7 +110,7 @@ export default function C8Page() {
               className="mb-3 max-w-[620px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              Eight ideas, one per panel, one per minute, eight minutes &mdash; a brutal time constraint
+              Eight ideas, one per panel, one per minute, eight minutes: a brutal time constraint
               that forces you past your obvious ideas to the ones you did not know you had.
             </p>
 
@@ -124,7 +124,7 @@ export default function C8Page() {
         </Container>
       </DarkSection>
 
-      {/* S2 — Establishing visual DARK */}
+      {/* S2 - Establishing visual DARK */}
       <DarkSection>
         <Container>
           <div className="pb-20">
@@ -133,12 +133,12 @@ export default function C8Page() {
         </Container>
       </DarkSection>
 
-      {/* S3 — What it is LIGHT */}
+      {/* S3 - What it is LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>What it is</SectionLabel>
-            <SectionHeadingLight>Not a brainstorm. A forcing function — a brutal time constraint designed to exhaust the obvious and reach the non-obvious.</SectionHeadingLight>
+            <SectionHeadingLight>Not a brainstorm. A forcing function: a brutal time constraint designed to exhaust the obvious and reach the non-obvious.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5">
               <Body>
@@ -154,14 +154,14 @@ export default function C8Page() {
                 Its defining insight is counterintuitive and well-documented. The ideas teams actually
                 select for prototyping are disproportionately drawn from panels five through eight, not
                 one through four. The reason is structural: the first few ideas any person sketches are
-                the obvious ones &mdash; the solutions already lurking in their mind, the conventional
-                responses everyone in the room would also produce. It is only after those are exhausted,
+                the obvious ones (the solutions already lurking in their mind, the conventional
+                responses everyone in the room would also produce). It is only after those are exhausted,
                 somewhere around the fifth panel, that people are forced to reach for something genuinely
                 new. The late panels, where it gets hard and slightly desperate, are where the breakthrough
                 ideas tend to live.
               </Body>
               <Body>
-                Crazy 8s is really a forcing function. It uses speed and a rigid constraint to do
+                Crazy 8s is a forcing function. It uses speed and a rigid constraint to do
                 something people cannot reliably do on their own: exhaust the obvious and keep going into
                 the non-obvious. Jake Knapp, who codified the method in the Design Sprint context, calls
                 it &ldquo;a forcing function for the ideas you did not know you had.&rdquo; The rough sketches
@@ -173,26 +173,26 @@ export default function C8Page() {
         </Container>
       </LightSection>
 
-      {/* S4 — Interactive DARK */}
+      {/* S4 - Interactive DARK */}
       <DarkSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={CLAY}>Fill the eight panels. Feel where it gets hard.</SectionLabel>
-            <SectionHeadingDark>No single panel contains the breakthrough. It lives on the far side of the wall &mdash; click through to find it.</SectionHeadingDark>
+            <SectionHeadingDark>No single panel contains the breakthrough. It lives on the far side of the wall, click through to find it.</SectionHeadingDark>
             <p
               className="mb-10 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Click any panel to see what kind of idea lands there and why. The early panels
               produce the obvious; the late panels produce what you did not know you had.
-              The wall is around panel five &mdash; that is exactly where it starts to get interesting.
+              The wall is around panel five, that is exactly where it starts to get interesting.
             </p>
             <C8Interactive />
           </div>
         </Container>
       </DarkSection>
 
-      {/* S5 — When to deploy LIGHT */}
+      {/* S5 - When to deploy LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -207,7 +207,7 @@ export default function C8Page() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You have a well-scoped prompt — ideally a How Might We question — and need to generate a lot of divergent ideas fast.',
+                    'You have a well-scoped prompt (ideally a How Might We question) and need to generate a lot of divergent ideas fast.',
                     'The team is stuck on the obvious solutions and needs to be forced past them into genuine variety.',
                     'You want broad participation and many ideas quickly, without the polish or commitment of prototyping.',
                     'You are early in ideation and want quantity and range before converging.',
@@ -229,10 +229,10 @@ export default function C8Page() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'The prompt is too vague to sketch against. Scope it first — Crazy 8s needs a clear challenge, not "improve the product."',
+                    'The prompt is too vague to sketch against. Scope it first: Crazy 8s needs a clear challenge, not "improve the product."',
                     'You need depth on one concept rather than breadth across many. Crazy 8s is a divergence tool, not a refinement one.',
                     'The problem genuinely has one correct answer to be analysed rather than a space of possibilities to be explored.',
-                    'Participants are so blocked by "I can\'t draw" anxiety that the sketching itself prevents ideas. Reassure them first — the sketches are rough and private by design.',
+                    'Participants are so blocked by "I can\'t draw" anxiety that the sketching itself prevents ideas. Reassure them first: the sketches are rough and private by design.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
                       <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
@@ -251,7 +251,7 @@ export default function C8Page() {
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: Crazy 8s generates raw, rough ideas at volume; it does not evaluate,
-                refine, or validate them. Most of the eight panels will be bad &mdash; that is expected and
+                refine, or validate them. Most of the eight panels will be bad, that is expected and
                 fine. The method trades quality-per-idea for quantity and range, on the bet that a few
                 late panels hold something worth developing. It is a divergence engine that must be paired
                 with convergence to produce anything real.
@@ -261,7 +261,7 @@ export default function C8Page() {
         </Container>
       </LightSection>
 
-      {/* S6 — How it works LIGHT */}
+      {/* S6 - How it works LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -278,27 +278,27 @@ export default function C8Page() {
                 {
                   n: '02',
                   title: 'Fold the sheet into eight panels and set the timer.',
-                  body: 'Each participant divides a sheet into eight panels. One minute per panel, eight minutes total. The rigid timing is non-negotiable — it is the forcing function. Protect it: run a visible timer, call the minute, and keep moving. A relaxed, drifting version of the timing loses the effect entirely.',
+                  body: 'Each participant divides a sheet into eight panels. One minute per panel, eight minutes total. The rigid timing is non-negotiable. It is the forcing function. Protect it: run a visible timer, call the minute, and keep moving. A relaxed, drifting version of the timing loses the effect entirely.',
                 },
                 {
                   n: '03',
                   title: 'Sketch one distinct idea per panel, fast.',
-                  body: 'One idea per minute, moving on whether or not the panel feels finished. Distinct ideas, not variations of one concept. Rough is required — polish is impossible in a minute, and that is the point. The sketches are meant to be ugly; they are capturing an idea, not demonstrating drafting skill.',
+                  body: 'One idea per minute, moving on whether or not the panel feels finished. Distinct ideas, not variations of one concept. Rough is required. Polish is impossible in a minute, and that is the point. The sketches are meant to be ugly; they are capturing an idea, not demonstrating drafting skill.',
                 },
                 {
                   n: '04',
                   title: 'Push through the wall past panel four.',
-                  body: 'Expect the obvious ideas to come first and run out around panel five. Keep going. The instruction that matters most: do not stop when it gets hard. That is exactly when the original ideas start. The time constraint refuses to let you stop at four ideas and call it done — honour the constraint.',
+                  body: 'Expect the obvious ideas to come first and run out around panel five. Keep going. The instruction that matters most: do not stop when it gets hard. That is exactly when the original ideas start. The time constraint refuses to let you stop at four ideas and call it done. Honour the constraint.',
                 },
                 {
                   n: '05',
                   title: 'Do it individually, then share.',
-                  body: 'Everyone sketches their own eight in silence, so the loudest voice does not shape the room. Individual divergence first, collective sense-making after. When the team shares, the full range of ideas becomes visible — including the late-panel ideas that no brainstorm converging on the first voiced idea would have reached.',
+                  body: 'Everyone sketches their own eight in silence, so the loudest voice does not shape the room. Individual divergence first, collective sense-making after. When the team shares, the full range of ideas becomes visible, including the late-panel ideas that no brainstorm converging on the first voiced idea would have reached.',
                 },
                 {
                   n: '06',
                   title: 'Select and carry forward.',
-                  body: 'After sharing, the team identifies the most promising ideas — often, tellingly, from the late panels — and carries them into the next step: further sketching, prototyping, or co-creation. Crazy 8s ends by feeding convergence, not by choosing a winner on its own. The selection is where the method hands off to the next phase.',
+                  body: 'After sharing, the team identifies the most promising ideas (often, tellingly, from the late panels) and carries them into the next step: further sketching, prototyping, or co-creation. Crazy 8s ends by feeding convergence, not by choosing a winner on its own. The selection is where the method hands off to the next phase.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -320,7 +320,7 @@ export default function C8Page() {
         </Container>
       </LightSection>
 
-      {/* S7 — Best practices LIGHT */}
+      {/* S7 - Best practices LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -334,10 +334,10 @@ export default function C8Page() {
             <ul className="flex flex-col gap-3 mb-10">
               {[
                 'The prompt is sharp and well-scoped, so eight minutes of divergence stays focused on the right challenge.',
-                'The time constraint is held strictly — one minute per panel — because the pressure is the entire mechanism.',
+                'The time constraint is held strictly (one minute per panel) because the pressure is the entire mechanism.',
                 'People push through the wall past panel four and reach for the non-obvious ideas in panels five through eight.',
                 'Everyone sketches individually first, so the room produces genuine variety rather than an echo of the loudest voice.',
-                'The team treats rough as required and judgment as deferred — generating first and evaluating later.',
+                'The team treats rough as required and judgment as deferred: generating first and evaluating later.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span style={{ color: CLAY, flexShrink: 0, marginTop: 3 }}>✓</span>
@@ -356,7 +356,7 @@ export default function C8Page() {
               {[
                 {
                   mistake: 'Stopping at the obvious ideas.',
-                  fix: 'Quitting mentally around panel four, when it gets hard, forfeits exactly the late panels where the breakthroughs live. Push through the wall — that is the point of the exercise. The instruction "keep going when it gets hard" is not encouragement; it is the mechanism.',
+                  fix: 'Quitting mentally around panel four, when it gets hard, forfeits exactly the late panels where the breakthroughs live. Push through the wall. That is the point of the exercise. The instruction "keep going when it gets hard" is not encouragement; it is the mechanism.',
                 },
                 {
                   mistake: 'Letting people polish.',
@@ -376,7 +376,7 @@ export default function C8Page() {
                 },
                 {
                   mistake: 'Letting "I can\'t draw" stop ideas.',
-                  fix: 'Sketching anxiety blocks participation. Reassure the team before the session: the sketches are rough, private, and about ideas, not art. Show an example of what an acceptable panel looks like — a few lines and a label is enough.',
+                  fix: 'Sketching anxiety blocks participation. Reassure the team before the session: the sketches are rough, private, and about ideas, not art. Show an example of what an acceptable panel looks like: a few lines and a label is enough.',
                 },
               ].map(({ mistake, fix }) => (
                 <div
@@ -398,7 +398,7 @@ export default function C8Page() {
         </Container>
       </LightSection>
 
-      {/* S8 — Logistics LIGHT */}
+      {/* S8 - Logistics LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -406,7 +406,7 @@ export default function C8Page() {
             <SectionHeadingLight>Keep it dead simple. The beauty of Crazy 8s is that it needs almost nothing.</SectionHeadingLight>
             <Body>
               Crazy 8s needs paper, a pen, and a timer. That is almost everything. Resist adding
-              complexity. The low setup is part of why it is so reliable and repeatable &mdash; it can
+              complexity. The low setup is part of why it is so reliable and repeatable. It can
               run anywhere, with any team, against almost any prompt, in eight minutes plus the time
               to share and select.
             </Body>
@@ -419,7 +419,7 @@ export default function C8Page() {
                 },
                 {
                   label: 'Protect the timing ritual',
-                  body: 'Run a visible timer and call the minute. The strict cadence is what creates the productive pressure; a relaxed, drifting version loses the effect entirely. One minute per panel, no negotiation. Calling the time — even when participants are still mid-sketch — is not harsh; it is the mechanism.',
+                  body: 'Run a visible timer and call the minute. The strict cadence is what creates the productive pressure; a relaxed, drifting version loses the effect entirely. One minute per panel, no negotiation. Calling the time, even when participants are still mid-sketch, is not harsh; it is the mechanism.',
                 },
                 {
                   label: 'Set expectations about roughness and volume',
@@ -455,7 +455,7 @@ export default function C8Page() {
         </Container>
       </LightSection>
 
-      {/* S9 — AI and this method DARK */}
+      {/* S9 - AI and this method DARK */}
       <DarkSection>
         <Container>
           <div className="py-20">
@@ -465,7 +465,7 @@ export default function C8Page() {
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see what AI produces when it replaces the eight minutes &mdash;
+              Toggle between modes to see what AI produces when it replaces the eight minutes,
               and why more ideas is not the same as reaching idea seven. The value of Crazy 8s
               was never the raw count; it was the constraint and the ownership.
             </p>
@@ -474,7 +474,7 @@ export default function C8Page() {
         </Container>
       </DarkSection>
 
-      {/* S10 — In-depth example LIGHT */}
+      {/* S10 - In-depth example LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -494,7 +494,7 @@ export default function C8Page() {
         </Container>
       </LightSection>
 
-      {/* S11 — Frameworks LIGHT */}
+      {/* S11 - Frameworks LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -535,7 +535,7 @@ export default function C8Page() {
         </Container>
       </LightSection>
 
-      {/* S12 — Related methods LIGHT */}
+      {/* S12 - Related methods LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -573,7 +573,7 @@ export default function C8Page() {
         </Container>
       </LightSection>
 
-      {/* S13 — Sources LIGHT */}
+      {/* S13 - Sources LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -586,19 +586,19 @@ export default function C8Page() {
                   title:  'Sprint',
                   author: 'Jake Knapp, John Zeratsky, and Braden Kowitz',
                   year:   '2016',
-                  note:   'The defining account of Crazy 8s in the Design Sprint context. Knapp codified the method as the core rapid ideation activity for Tuesday in a sprint, and his description of the late-panel insight — that the ideas teams actually select come disproportionately from the final panels rather than the first — is the insight that makes the method worth understanding rather than just running. The book\'s framing of the method as a "forcing function for the ideas you did not know you had" is the clearest articulation of why the time constraint is the whole point, not an inconvenience to be managed.',
+                  note:   'The defining account of Crazy 8s in the Design Sprint context. Knapp codified the method as the core rapid ideation activity for Tuesday in a sprint, and his description of the late-panel insight (that the ideas teams actually select come disproportionately from the final panels rather than the first) is the insight that makes the method worth understanding rather than just running. The book\'s framing of the method as a "forcing function for the ideas you did not know you had" is the clearest articulation of why the time constraint is the whole point, not an inconvenience to be managed.',
                 },
                 {
                   title:  'Gamestorming',
                   author: 'Dave Gray, Sunni Brown, and James Macanufo',
                   year:   '2010',
-                  note:   'A comprehensive reference for rapid ideation methods, including the broader family of time-boxed sketching and divergence practices that Crazy 8s belongs to. Gray, Brown, and Macanufo\'s treatment of the generative value of constraints — and of why a well-designed game produces better outcomes than an open brainstorm — provides the theoretical grounding for why Crazy 8s works as a structural intervention rather than merely a fun activity. The book\'s broader catalogue situates Crazy 8s within a family of related practices.',
+                  note:   'A comprehensive reference for rapid ideation methods, including the broader family of time-boxed sketching and divergence practices that Crazy 8s belongs to. Gray, Brown, and Macanufo\'s treatment of the generative value of constraints, and of why a well-designed game produces better outcomes than an open brainstorm, provides the theoretical grounding for why Crazy 8s works as a structural intervention rather than merely a fun activity. The book\'s broader catalogue situates Crazy 8s within a family of related practices.',
                 },
                 {
                   title:  'Creative Confidence',
                   author: 'Tom Kelley and David Kelley',
                   year:   '2013',
-                  note:   'On getting past the fear that blocks fast, generative sketching. The Kelleys\' treatment of creative confidence — the belief that you can generate good ideas and make them real — is directly relevant to the "I can\'t draw" block that stops participants from committing the strange late-panel ideas to paper. Their core argument, that creative capacity is learned and sustained by practice rather than innate, is the foundation for the reassurance that rough sketches are required and that the drawing is beside the point. The book\'s cases show repeatedly that the constraints that appear to limit creativity are often the ones that produce it.',
+                  note:   'On getting past the fear that blocks fast, generative sketching. The Kelleys\' treatment of creative confidence (the belief that you can generate good ideas and make them real) is directly relevant to the "I can\'t draw" block that stops participants from committing the strange late-panel ideas to paper. Their core argument, that creative capacity is learned and sustained by practice rather than innate, is the foundation for the reassurance that rough sketches are required and that the drawing is beside the point. The book\'s cases show repeatedly that the constraints that appear to limit creativity are often the ones that produce it.',
                 },
               ].map(({ title, author, year, note }) => (
                 <div

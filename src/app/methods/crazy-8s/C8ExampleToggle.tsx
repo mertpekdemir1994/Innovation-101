@@ -63,8 +63,8 @@ export default function C8ExampleToggle() {
                 moment, one distinct idea per panel.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                The early panels went as they always do. The obvious robotics directions came fast and easily
-                &mdash; sensible, functional, the things the whole category was already building. Reliable to
+                The early panels went as they always do. The obvious robotics directions came fast and easily,
+                sensible, functional, the things the whole category was already building. Reliable to
                 sketch, unremarkable to select.
               </p>
             </div>
@@ -75,7 +75,7 @@ export default function C8ExampleToggle() {
                 style={{ color: `${CLAY}1)` }}>The wall: around panel five</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 Around panel five, the obvious directions ran out. It got hard. For a moment, nothing came.
-                In a comfortable, unhurried session, this is where most people stop &mdash; satisfied with their
+                In a comfortable, unhurried session, this is where most people stop, satisfied with their
                 first four, never reaching what they did not know was in there.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
@@ -91,7 +91,7 @@ export default function C8ExampleToggle() {
                 style={{ color: `${CLAY}1)` }}>The late-panel idea: panel seven</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 Forced past the conventional robotics directions, a participant sketched a
-                personality-forward design direction &mdash; a playful, character-driven take that they
+                personality-forward design direction, a playful, character-driven take that they
                 had almost not bothered to draw. &ldquo;Too playful for a serious robotics product.&rdquo;
                 The one-minute constraint forced it onto the page before judgment could kill it.
               </p>
@@ -99,11 +99,11 @@ export default function C8ExampleToggle() {
                 {[
                   {
                     finding: 'The share-and-select step: that sketch stood out',
-                    detail: 'When the team shared their eight panels, the personality-forward sketch stood out immediately. It was the only direction in the room that was genuinely differentiating — not because it was more polished or more logical, but because it was the only one that had not come from the obvious zone. It went on to become the product\'s defining, differentiating characteristic.',
+                    detail: 'When the team shared their eight panels, the personality-forward sketch stood out immediately. It was the only direction in the room that was genuinely differentiating, not because it was more polished or more logical, but because it was the only one that had not come from the obvious zone. It went on to become the product\'s defining, differentiating characteristic.',
                   },
                   {
                     finding: 'The forcing function and the ownership',
-                    detail: 'The direction was a late-panel idea that a comfortable brainstorm would never have surfaced — and that the participant themselves would have discarded if given the chance to judge it first. The time constraint dragged out an idea the team did not know it had. And because a team member had sketched it themselves, they understood it, believed in it, and championed it.',
+                    detail: 'The direction was a late-panel idea that a comfortable brainstorm would never have surfaced, and that the participant themselves would have discarded if given the chance to judge it first. The time constraint dragged out an idea the team did not know it had. And because a team member had sketched it themselves, they understood it, believed in it, and championed it.',
                   },
                 ].map(item => (
                   <div key={item.finding} className="rounded p-4"
@@ -142,7 +142,7 @@ export default function C8ExampleToggle() {
               <p className="text-xs text-neutral-600 leading-relaxed">
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Two paths:</span>{' '}
                 The real robotics case was human-led. This tab considers two ways AI might enter
-                this scenario &mdash; one unsound (framed as a hypothetical), one genuinely useful.
+                this scenario: one unsound (framed as a hypothetical), one genuinely useful.
               </p>
             </div>
 
@@ -158,7 +158,7 @@ export default function C8ExampleToggle() {
               </div>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 Imagine the team had skipped Crazy 8s and asked an AI to generate design directions for
-                the robotics product. The AI produced a long, fast, well-organized list &mdash; dozens of
+                the robotics product. The AI produced a long, fast, well-organized list, dozens of
                 directions in seconds.
               </p>
               <div className="space-y-2 mb-4">
@@ -169,11 +169,11 @@ export default function C8ExampleToggle() {
                   },
                   {
                     label: 'What was missing',
-                    body: 'The wall. Without the constraint that exhausts the obvious and forces you to keep going, the plausible middle is all there is. The personality-forward direction — playful, character-driven, the idea that differentiates — is exactly the kind of idea a plausibility-seeking model is least likely to surface and elevate. The non-obvious idea was not on the list.',
+                    body: 'The wall. Without the constraint that exhausts the obvious and forces you to keep going, the plausible middle is all there is. The personality-forward direction (playful, character-driven, the idea that differentiates) is exactly the kind of idea a plausibility-seeking model is least likely to surface and elevate. The non-obvious idea was not on the list.',
                   },
                   {
                     label: 'Why it would have misled',
-                    body: 'A team working from the AI\'s list would have selected from the obvious zone — the same directions everyone in robotics already has. The differentiating idea comes from a human pushed past the wall, sketching a direction they almost dismissed. AI generated many plausible directions fast, but it regressed to the obvious, offered no forcing function to reach the non-obvious, and produced nothing the team owned.',
+                    body: 'A team working from the AI\'s list would have selected from the obvious zone, the same directions everyone in robotics already has. The differentiating idea comes from a human pushed past the wall, sketching a direction they almost dismissed. AI generated many plausible directions fast, but it regressed to the obvious, offered no forcing function to reach the non-obvious, and produced nothing the team owned.',
                   },
                 ].map(item => (
                   <div key={item.label} className="rounded p-3"
@@ -205,11 +205,11 @@ export default function C8ExampleToggle() {
                   },
                   {
                     role: 'Provoke after the team has diverged',
-                    detail: 'After the team has done their own eight panels, AI can add an additional "participant" whose list is used as extra provocation — surface directions the team may not have reached, prompt reactions, extend the selection pool. Used this way, it augments rather than replaces the human divergence. The team\'s own panels come first, always.',
+                    detail: 'After the team has done their own eight panels, AI can add an additional "participant" whose list is used as extra provocation: surface directions the team may not have reached, prompt reactions, extend the selection pool. Used this way, it augments rather than replaces the human divergence. The team\'s own panels come first, always.',
                   },
                   {
                     role: 'Help cluster and theme at the share-and-select step',
-                    detail: 'With many participants and many sketches, AI can help identify clusters and themes across the panels — surfacing structural similarities between ideas from different people. This supports the selection step without replacing the human judgment about which ideas are worth pursuing.',
+                    detail: 'With many participants and many sketches, AI can help identify clusters and themes across the panels, surfacing structural similarities between ideas from different people. This supports the selection step without replacing the human judgment about which ideas are worth pursuing.',
                   },
                 ].map(item => (
                   <div key={item.role} className="rounded p-4"
@@ -237,7 +237,7 @@ export default function C8ExampleToggle() {
                   <p className="text-xs text-neutral-700 leading-relaxed">
                     The eight minutes. The wall. The panel-seven idea forced out before judgment could
                     kill it. The ownership of having sketched it. AI shaped the session and supported
-                    the selection &mdash; it did not replace the constraint.
+                    the selection. It did not replace the constraint.
                   </p>
                 </div>
               </div>

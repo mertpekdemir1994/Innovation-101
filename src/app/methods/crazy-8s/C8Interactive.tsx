@@ -33,14 +33,14 @@ const PANELS: PanelDef[] = [
     n: 1, col: 0, row: 0,
     type: 'EARLY · OBVIOUS',
     headline: 'The standard solution.',
-    body: 'The first idea that comes to mind — the one already in your head before the session started. Obvious, expected, familiar. Everyone in the room would produce the same one. Essential to get on paper, but not where the value is.',
+    body: 'The first idea that comes to mind: the one already in your head before the session started. Obvious, expected, familiar. Everyone in the room would produce the same one. Essential to get on paper, but not where the value is.',
     note: 'Panel 1 is not failure. It is emptying. The obvious ideas need to go somewhere before you can reach the others.',
   },
   {
     n: 2, col: 1, row: 0,
     type: 'EARLY · OBVIOUS',
     headline: 'A variation on the first.',
-    body: 'Incremental, safe, a recognizable improvement on the obvious. The same idea dressed slightly differently. Still in panel-one territory — the search space has not opened yet.',
+    body: 'Incremental, safe, a recognizable improvement on the obvious. The same idea dressed slightly differently. Still in panel-one territory. The search space has not opened yet.',
     note: 'Most comfortable brainstorms end here: more of the same, dressed differently, with a sense of progress that is largely illusory.',
   },
   {
@@ -54,14 +54,14 @@ const PANELS: PanelDef[] = [
     n: 4, col: 3, row: 0,
     type: 'EARLY · OBVIOUS',
     headline: 'The safest possible take.',
-    body: 'Cautious, defensible, unlikely to be wrong — or right. The idea no one would object to. The last obvious idea before the well runs dry. The wall is right here.',
+    body: 'Cautious, defensible, unlikely to be wrong, or right. The idea no one would object to. The last obvious idea before the well runs dry. The wall is right here.',
     note: 'Most people, unhurried, would stop with four ideas and call it a session. The time constraint refuses to allow that.',
   },
   {
     n: 5, col: 0, row: 1,
     type: 'THE WALL',
     headline: 'Nothing obvious is left.',
-    body: 'The pressure rises. The obvious ideas are exhausted. For a moment, nothing comes. The pen keeps moving anyway. This is the constraint doing its job — the moment most comfortable brainstorms never reach.',
+    body: 'The pressure rises. The obvious ideas are exhausted. For a moment, nothing comes. The pen keeps moving anyway. This is the constraint doing its job, the moment most comfortable brainstorms never reach.',
     note: 'Panel 5 is the wall. The time constraint refuses to let you stop here. That refusal is the entire mechanism of the method.',
   },
   {
@@ -69,7 +69,7 @@ const PANELS: PanelDef[] = [
     type: 'LATE · ORIGINAL',
     headline: 'Something flipped.',
     body: 'Strange. Unexpected. An idea you would normally dismiss as too different, too playful, too far from the brief. Past the wall, judgment is quieter and the ideas start to surprise you.',
-    note: 'Panel 6 is past the wall — slightly desperate, slightly weird. Starting to get interesting. The ideas are becoming yours.',
+    note: 'Panel 6 is past the wall, slightly desperate, slightly weird. Starting to get interesting. The ideas are becoming yours.',
   },
   {
     n: 7, col: 2, row: 1,
@@ -232,7 +232,7 @@ export default function C8Interactive() {
             transition={{ duration: 0.18 }}
             className="rounded-lg border p-5 text-sm text-neutral-500"
             style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-            Click any panel to see what kind of idea it produces — and why the late panels are where the breakthroughs live.
+            Click any panel to see what kind of idea it produces, and why the late panels are where the breakthroughs live.
           </motion.div>
         ) : selectedPanel !== null && (
           <motion.div key={`panel-${selected}`}
