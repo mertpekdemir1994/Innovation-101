@@ -7,7 +7,7 @@ const AMBER  = 'rgba(217,119,6,'
 
 const SVG_W = 700, SVG_H = 260
 
-// Grid geometry — identical to AMPEstablishing
+// Grid geometry - identical to AMPEstablishing
 const GX = 96,  GY = 20
 const GW = 544, GH = 228
 const GR = GX + GW   // 640
@@ -44,7 +44,7 @@ const CARDS: AssumptionCard[] = [
     detail: {
       verdict: 'Leap of Faith',
       tag: 'TEST FIRST',
-      why: 'This is both critical — the concept depends on it — and genuinely untested. You have no real evidence yet. If this turns out to be false, the whole idea collapses.',
+      why: 'This is both critical (the concept depends on it) and genuinely untested. You have no real evidence yet. If this turns out to be false, the whole idea collapses.',
       action: 'Design the cheapest possible experiment that could prove this wrong and run it before committing to build.',
     },
   },
@@ -56,7 +56,7 @@ const CARDS: AssumptionCard[] = [
     detail: {
       verdict: 'Leap of Faith',
       tag: 'TEST FIRST',
-      why: 'The economics of the concept depend on customers accepting this price — and you have no evidence either way. A wrong assumption here makes the business model unviable.',
+      why: 'The economics of the concept depend on customers accepting this price, and you have no evidence either way. A wrong assumption here makes the business model unviable.',
       action: 'Test willingness to pay before investing in product development. A fake-door test or a pilot sale is usually enough.',
     },
   },
@@ -68,7 +68,7 @@ const CARDS: AssumptionCard[] = [
     detail: {
       verdict: 'Monitor',
       tag: 'SAFE TO PROCEED',
-      why: 'You have reasonable evidence that this behaviour already exists in your target segment — the concept depends on it, but the evidence is solid enough to proceed.',
+      why: 'You have reasonable evidence that this behaviour already exists in your target segment. The concept depends on it, but the evidence is solid enough to proceed.',
       action: 'Proceed on this assumption, but keep watching. If the evidence weakens or your specific segment turns out to differ from the average, it moves into the danger quadrant.',
     },
   },
@@ -80,7 +80,7 @@ const CARDS: AssumptionCard[] = [
     detail: {
       verdict: 'Nice to Know',
       tag: 'LOW PRIORITY',
-      why: 'Interesting to learn, but even if wrong — if customers are fine paying for returns — the concept still works. This is not a concept-killer.',
+      why: 'Interesting to learn, but even if wrong (if customers are fine paying for returns) the concept still works. This is not a concept-killer.',
       action: 'Do not spend scarce test budget here. Log it for later; address it once the leap-of-faith assumptions are resolved.',
     },
   },
@@ -160,7 +160,7 @@ export default function AMPInteractive() {
 
       <p className="font-mono uppercase tracking-widest mb-4"
         style={{ fontSize: 'var(--text-2xs)', color: `${CLAY}0.55)` }}>
-        Click an assumption to see where it sits — and what to do about it
+        Click an assumption to see where it sits, and what to do about it
       </p>
 
       <div className="w-full select-none">
@@ -228,7 +228,7 @@ export default function AMPInteractive() {
               tabIndex={0}
               role="button"
               aria-pressed={active === card.id}
-              aria-label={`${card.label}: ${card.detail.verdict} — ${card.detail.tag}`}
+              aria-label={`${card.label}: ${card.detail.verdict}, ${card.detail.tag}`}
             >
               <rect
                 x={card.x} y={card.y} width={card.w} height={CARD_H} rx={3}

@@ -22,7 +22,7 @@ const FRAMEWORK_LINKS = [
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Build',
-    note: 'Identifying the leap-of-faith assumption before building the MVP. The Lean Startup discipline is to test the riskiest assumption first, with the smallest possible experiment — and Assumption Mapping is how you find that assumption in the first place. You map the concept, locate the high-importance / high-uncertainty belief, and design the MVP to test it.',
+    note: 'Identifying the leap-of-faith assumption before building the MVP. The Lean Startup discipline is to test the riskiest assumption first, with the smallest possible experiment, and Assumption Mapping is how you find that assumption in the first place. You map the concept, locate the high-importance / high-uncertainty belief, and design the MVP to test it.',
   },
   {
     slug: 'double-diamond',
@@ -54,7 +54,7 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'orthodoxies',
     name: 'Orthodoxies',
-    rel: 'A close cousin at a different altitude — worth distinguishing. Assumption Mapping surfaces the risky assumptions behind a SPECIFIC concept (what does this idea depend on, and which belief is the leap to test?). Orthodoxies surfaces the unquestioned assumptions of an entire INDUSTRY (what does everyone in this field take for granted, and what if the opposite were true?). Assumption mapping de-risks an idea; orthodoxies breaks an industry convention to find opportunity.',
+    rel: 'A close cousin at a different altitude: worth distinguishing. Assumption Mapping surfaces the risky assumptions behind a SPECIFIC concept (what does this idea depend on, and which belief is the leap to test?). Orthodoxies surfaces the unquestioned assumptions of an entire INDUSTRY (what does everyone in this field take for granted, and what if the opposite were true?). Assumption mapping de-risks an idea; orthodoxies breaks an industry convention to find opportunity.',
   },
   {
     slug: 'rapid-prototyping',
@@ -74,7 +74,7 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'balanced-breakthrough',
     name: 'Balanced Breakthrough',
-    rel: 'Complementary: the Balanced Breakthrough names the three lenses (desirability, feasibility, viability). Assumption Mapping surfaces and prioritises the specific untested beliefs within each lens for a given concept. They work together — the Breakthrough frame tells you which lens is missing; Assumption Mapping finds the specific critical-and-unknown belief within it.',
+    rel: 'Complementary: the Balanced Breakthrough names the three lenses (desirability, feasibility, viability). Assumption Mapping surfaces and prioritises the specific untested beliefs within each lens for a given concept. They work together: the Breakthrough frame tells you which lens is missing; Assumption Mapping finds the specific critical-and-unknown belief within it.',
   },
 ]
 
@@ -84,7 +84,7 @@ export default function AssumptionMappingPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -128,7 +128,7 @@ export default function AssumptionMappingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -139,13 +139,13 @@ export default function AssumptionMappingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>What it is</SectionLabel>
-            <SectionHeadingLight>The beliefs a concept secretly depends on &mdash; sorted by how dangerous they are.</SectionHeadingLight>
+            <SectionHeadingLight>The beliefs a concept secretly depends on, sorted by how dangerous they are.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5">
               <Body>
@@ -153,14 +153,14 @@ export default function AssumptionMappingPage() {
                 and then sorting them by risk so you test the dangerous ones first. Every concept rests on
                 a stack of assumptions: that customers want this, that they will pay this price, that you
                 can build it, that regulators will allow it, that partners will cooperate. Most of them feel
-                safe. But usually one or two are both critical &mdash; if wrong, the whole idea collapses &mdash; and
-                unknown &mdash; you have no real evidence either way &mdash; and those are the ones that quietly kill
+                safe. But usually one or two are both critical (if wrong, the whole idea collapses) and
+                unknown (you have no real evidence either way), and those are the ones that quietly kill
                 projects when a team builds for months before discovering that a foundational belief was false.
               </Body>
               <Body>
                 The method sorts assumptions along two axes. IMPORTANCE asks how much the concept depends
-                on this assumption being true &mdash; would the idea survive if it turned out false?
-                UNCERTAINTY asks how much evidence you actually have &mdash; do you know this, or are you
+                on this assumption being true: would the idea survive if it turned out false?
+                UNCERTAINTY asks how much evidence you actually have: do you know this, or are you
                 just hoping? Plotting every assumption on this importance-by-uncertainty grid reveals the
                 one quadrant that matters most: high importance and high uncertainty, the assumptions that
                 are both critical and untested. These are the leap-of-faith assumptions, and they are exactly
@@ -180,7 +180,7 @@ export default function AssumptionMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -192,7 +192,7 @@ export default function AssumptionMappingPage() {
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Each card is an assumption the concept rests on. Click it to see which quadrant it sits in
-              and what to do about it &mdash; discovering that the high-importance / high-uncertainty corner is
+              and what to do about it, discovering that the high-importance / high-uncertainty corner is
               where your testing energy belongs.
             </p>
             <AMPInteractive />
@@ -201,7 +201,7 @@ export default function AssumptionMappingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -239,7 +239,7 @@ export default function AssumptionMappingPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'The idea is too vague to have concrete assumptions yet — shape the concept first, then map what it depends on.',
+                    'The idea is too vague to have concrete assumptions yet, shape the concept first, then map what it depends on.',
                     'You are not actually willing to test (or kill the idea over) the leap-of-faith assumption. Mapping risk you will ignore is theater.',
                     'The relevant uncertainty is trivial or already well-evidenced across the board (rare, and worth double-checking).',
                   ].map((item, i) => (
@@ -260,8 +260,8 @@ export default function AssumptionMappingPage() {
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: assumption mapping identifies and prioritises risk; it does not resolve it.
-                Placing an assumption in the leap-of-faith corner tells you what to test, not what the answer is
-                &mdash; the test still has to be run. Its most common failure is dishonesty about the axes: rating
+                Placing an assumption in the leap-of-faith corner tells you what to test, not what the answer is.
+                The test still has to be run. Its most common failure is dishonesty about the axes: rating
                 a shaky assumption as &ldquo;known&rdquo; because admitting the uncertainty is uncomfortable, which quietly
                 moves the real risk out of view. The method is only as good as the team&rsquo;s honesty about how
                 little it actually knows.
@@ -272,7 +272,7 @@ export default function AssumptionMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -294,7 +294,7 @@ export default function AssumptionMappingPage() {
                 },
                 {
                   n: '03',
-                  title: 'Rate each on uncertainty — honestly.',
+                  title: 'Rate each on uncertainty: honestly.',
                   body: 'Ask how much real evidence you have: do you actually know this, or are you assuming it? This is the axis teams fudge. Be rigorous about admitting what is genuinely untested, because comfortable overconfidence here hides the real risk. For each "known" assumption, ask what the actual evidence is.',
                 },
                 {
@@ -305,7 +305,7 @@ export default function AssumptionMappingPage() {
                 {
                   n: '05',
                   title: 'Design the cheapest test for the riskiest assumption.',
-                  body: 'Take the top leap-of-faith assumption and design the smallest, fastest experiment that could prove it wrong. Favour a rough prototype, a concept test, a fake-door, or a manual simulation over an expensive build. The Zappos model — photograph shoes, build a simple site, buy at retail and ship manually — is the benchmark: answer the belief in days with no engineering investment.',
+                  body: 'Take the top leap-of-faith assumption and design the smallest, fastest experiment that could prove it wrong. Favour a rough prototype, a concept test, a fake-door, or a manual simulation over an expensive build. The Zappos model (photograph shoes, build a simple site, buy at retail and ship manually) is the benchmark: answer the belief in days with no engineering investment.',
                 },
                 {
                   n: '06',
@@ -333,13 +333,13 @@ export default function AssumptionMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like &mdash; and the mistakes that prevent it.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and the mistakes that prevent it.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4"
               style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
@@ -349,7 +349,7 @@ export default function AssumptionMappingPage() {
               {[
                 'The team surfaces the buried assumptions, not just the obvious ones, across desirability, feasibility, and viability.',
                 'Uncertainty is rated honestly, with real rigour about admitting what is genuinely untested.',
-                'Testing energy goes to the leap-of-faith corner — critical AND unknown — not to comfortable or trivial assumptions.',
+                'Testing energy goes to the leap-of-faith corner (critical AND unknown), not to comfortable or trivial assumptions.',
                 'The riskiest assumption gets the cheapest possible test, run before committing to build.',
                 'The map is treated as living: after each test, evidence is updated and the grid re-plotted so testing keeps aiming at the highest remaining risk.',
               ].map((item, i) => (
@@ -374,7 +374,7 @@ export default function AssumptionMappingPage() {
                 },
                 {
                   mistake: 'Validating the comfortable assumptions.',
-                  fix: 'Teams love confirming what they are already confident about. Aim at the critical-and-unknown corner instead — the belief that could kill the idea, not the one that will confirm it.',
+                  fix: 'Teams love confirming what they are already confident about. Aim at the critical-and-unknown corner instead: the belief that could kill the idea, not the one that will confirm it.',
                 },
                 {
                   mistake: 'Testing the trivial.',
@@ -382,11 +382,11 @@ export default function AssumptionMappingPage() {
                 },
                 {
                   mistake: 'Listing only the obvious assumptions.',
-                  fix: 'The dangerous belief is often a buried one no one has said aloud. Push past the surface to the assumptions the idea silently depends on — the beliefs that feel too obvious to question.',
+                  fix: 'The dangerous belief is often a buried one no one has said aloud. Push past the surface to the assumptions the idea silently depends on, the beliefs that feel too obvious to question.',
                 },
                 {
                   mistake: 'Mapping risk you will not act on.',
-                  fix: 'Identifying a leap-of-faith assumption and then building anyway, without testing it, is theatre. Map only if you are willing to test — and possibly kill the idea.',
+                  fix: 'Identifying a leap-of-faith assumption and then building anyway, without testing it, is theatre. Map only if you are willing to test, and possibly kill the idea.',
                 },
               ].map(({ mistake, fix }) => (
                 <div
@@ -409,13 +409,13 @@ export default function AssumptionMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>Logistics</SectionLabel>
-            <SectionHeadingLight>How to run it well &mdash; and the discipline that makes the map trustworthy.</SectionHeadingLight>
+            <SectionHeadingLight>How to run it well, and the discipline that makes the map trustworthy.</SectionHeadingLight>
             <Body>
               Assumption mapping works best with a cross-functional group, because different people hold
               different assumptions and see different risks, and because a team that maps its own idea
@@ -427,7 +427,7 @@ export default function AssumptionMappingPage() {
               {[
                 {
                   label: 'Separate surfacing from rating',
-                  body: 'First get all the assumptions on the table (diverge), then rate them on importance and uncertainty (converge). Mixing the two — judging assumptions as they are named — suppresses the buried ones that matter. Name everything first, evaluate nothing.',
+                  body: 'First get all the assumptions on the table (diverge), then rate them on importance and uncertainty (converge). Mixing the two (judging assumptions as they are named) suppresses the buried ones that matter. Name everything first, evaluate nothing.',
                 },
                 {
                   label: 'Push hard on the uncertainty axis',
@@ -435,11 +435,11 @@ export default function AssumptionMappingPage() {
                 },
                 {
                   label: 'Design cheap, fast tests for the top assumptions',
-                  body: 'The output of the map is a test plan for the leap-of-faith corner. Favour the smallest experiment that could disprove each critical assumption — a rough prototype, a concept test, a fake-door, a manual simulation — over an expensive build. The Zappos-style cheap test is the model: answer the belief in days with no engineering investment.',
+                  body: 'The output of the map is a test plan for the leap-of-faith corner. Favour the smallest experiment that could disprove each critical assumption (a rough prototype, a concept test, a fake-door, a manual simulation) over an expensive build. The Zappos-style cheap test is the model: answer the belief in days with no engineering investment.',
                 },
                 {
                   label: 'Use common tools as examples, not recipes',
-                  body: 'Whiteboards and sticky notes are the classic format; digital canvases (Miro, Mural, FigJam — named as common examples, not endorsements) work well for distributed teams. The tool is not the method; the discipline of honest placement on the two axes is.',
+                  body: 'Whiteboards and sticky notes are the classic format; digital canvases (Miro, Mural, FigJam, named as common examples, not endorsements) work well for distributed teams. The tool is not the method; the discipline of honest placement on the two axes is.',
                 },
                 {
                   label: 'Keep it visible and re-map after tests',
@@ -468,18 +468,18 @@ export default function AssumptionMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — How AI is evolving this method   DARK
+          S9 - How AI is evolving this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={CLAY}>AI and this method</SectionLabel>
-            <SectionHeadingDark>AI will list your assumptions in seconds. It cannot tell you which one is the leap of faith &mdash; because that depends on what you actually know.</SectionHeadingDark>
+            <SectionHeadingDark>AI will list your assumptions in seconds. It cannot tell you which one is the leap of faith, because that depends on what you actually know.</SectionHeadingDark>
             <p
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see where AI helps build the map &mdash; and why judging
+              Toggle between modes to see where AI helps build the map, and why judging
               the two axes stays human.
             </p>
             <AMPAIReactivated />
@@ -488,20 +488,20 @@ export default function AssumptionMappingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>In-depth example</SectionLabel>
-            <SectionHeadingLight>The same scenario. Two approaches &mdash; one finds the leap of faith, one misses it.</SectionHeadingLight>
+            <SectionHeadingLight>The same scenario. Two approaches, one finds the leap of faith, one misses it.</SectionHeadingLight>
             <p
               className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A founder mapping the assumptions behind an online shoe store. The genuine leap of faith:
               will people buy shoes without trying them on? Toggle between the traditional approach and
-              a hypothetical AI-first approach to see what each finds &mdash; and what each misses.
+              a hypothetical AI-first approach to see what each finds, and what each misses.
             </p>
             <AMPExampleToggle />
           </div>
@@ -509,7 +509,7 @@ export default function AssumptionMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Used in these frameworks   LIGHT
+          S11 - Used in these frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -521,7 +521,7 @@ export default function AssumptionMappingPage() {
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A de-risking method that sits between having an idea and testing it, Assumption Mapping
-              maps to the build-and-test framing moments of frameworks &mdash; where a concept is selected
+              maps to the build-and-test framing moments of frameworks: where a concept is selected
               and the team must decide what to test before committing.
             </p>
 
@@ -552,7 +552,7 @@ export default function AssumptionMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -592,7 +592,7 @@ export default function AssumptionMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources   LIGHT
+          S13 - Sources   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -606,13 +606,13 @@ export default function AssumptionMappingPage() {
                   title:  'Testing Business Ideas',
                   author: 'David Bland and Alexander Osterwalder',
                   year:   '2019',
-                  note:   'The definitive source for the assumptions map — importance by evidence — and cheap experiment design. Bland and Osterwalder\'s framework structures the full cycle from assumption to experiment to learning, making this the closest companion to the method as described here. Their assumption map is an importance-by-uncertainty grid; their experiment library shows how to design the cheapest possible test for each type of assumption.',
+                  note:   'The definitive source for the assumptions map (importance by evidence) and cheap experiment design. Bland and Osterwalder\'s framework structures the full cycle from assumption to experiment to learning, making this the closest companion to the method as described here. Their assumption map is an importance-by-uncertainty grid; their experiment library shows how to design the cheapest possible test for each type of assumption.',
                 },
                 {
                   title:  'The Lean Startup',
                   author: 'Eric Ries',
                   year:   '2011',
-                  note:   'The source of the "leap-of-faith assumption" concept and the discipline of testing the riskiest belief first. Ries argues that the job of an early-stage team is not to build a product but to test whether the foundational beliefs behind it are true — and that the MVP is an instrument for testing the leap-of-faith assumption, not a minimum version of the final product.',
+                  note:   'The source of the "leap-of-faith assumption" concept and the discipline of testing the riskiest belief first. Ries argues that the job of an early-stage team is not to build a product but to test whether the foundational beliefs behind it are true, and that the MVP is an instrument for testing the leap-of-faith assumption, not a minimum version of the final product.',
                 },
                 {
                   title:  'The Right It',

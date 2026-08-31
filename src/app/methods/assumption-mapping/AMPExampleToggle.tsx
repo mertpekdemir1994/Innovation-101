@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'A founder wants to build an online shoe store. The concept rests on many assumptions — but which one is the genuine leap of faith? Will people actually buy shoes online without trying them on first? That is the Zappos origin question: critical (the whole business hinges on it) and untested (no evidence exists either way).'
+const SCENARIO = 'A founder wants to build an online shoe store. The concept rests on many assumptions, but which one is the genuine leap of faith? Will people actually buy shoes online without trying them on first? That is the Zappos origin question: critical (the whole business hinges on it) and untested (no evidence exists either way).'
 
 export default function AMPExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -64,7 +64,7 @@ export default function AMPExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${CLAY}1)` }}>How the mapping worked</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
-                The team surfaced every assumption the online shoe store depended on — across desirability
+                The team surfaced every assumption the online shoe store depended on: across desirability
                 (do people want this?), feasibility (can it be built?), and viability (do the economics work?).
                 Most assumptions were important but well-evidenced. Shoes can be photographed and displayed online.
                 People already buy things online. Delivery and returns are operationally viable.
@@ -72,7 +72,7 @@ export default function AMPExampleToggle() {
               <p className="text-sm text-neutral-700 leading-relaxed">
                 But one assumption sat alone in the leap-of-faith corner: critical, and genuinely untested.
                 Everyone already agreed that shoes had to be tried on before buying. Whether people would
-                actually purchase them online, sight unseen, was a belief nobody had tested — and the entire
+                actually purchase them online, sight unseen, was a belief nobody had tested, and the entire
                 business model depended on the answer.
               </p>
             </div>
@@ -86,7 +86,7 @@ export default function AMPExampleToggle() {
                   {
                     label: 'Shoes can be sold online',
                     quadrant: 'MONITOR',
-                    note: 'Important, and reasonably evidenced — e-commerce was already established for other goods. Safe to proceed on, but not the dangerous bet.',
+                    note: 'Important, and reasonably evidenced: e-commerce was already established for other goods. Safe to proceed on, but not the dangerous bet.',
                     danger: false,
                   },
                   {
@@ -98,7 +98,7 @@ export default function AMPExampleToggle() {
                   {
                     label: 'People will buy shoes without trying them on',
                     quadrant: 'LEAP OF FAITH',
-                    note: 'Critical — the concept collapses without this being true — and completely untested. No evidence existed either way. This is the one.',
+                    note: 'Critical (the concept collapses without this being true) and completely untested. No evidence existed either way. This is the one.',
                     danger: true,
                   },
                   {
@@ -148,7 +148,7 @@ export default function AMPExampleToggle() {
                 He lost money on every sale. That was not the point. The test answered the one
                 leap-of-faith assumption in days, with no engineering investment: people would buy shoes
                 online, without trying them on first. The Zappos business model was validated by a test
-                aimed at the belief that could have killed the idea — not at the comfortable ones.
+                aimed at the belief that could have killed the idea, not at the comfortable ones.
               </p>
               <p className="text-sm font-semibold" style={{ color: `${CLAY}0.88)` }}>
                 Testing the thing that could kill the idea first, while it was still cheap to be wrong, is the whole discipline.
@@ -170,7 +170,7 @@ export default function AMPExampleToggle() {
               <p className="text-xs text-neutral-600 leading-relaxed">
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The real Zappos case was human-led. This tab imagines the founder had instead used AI
-                to map the concept&rsquo;s assumptions — to show where it helps and where it falls short.
+                to map the concept&rsquo;s assumptions, to show where it helps and where it falls short.
               </p>
             </div>
 
@@ -185,13 +185,13 @@ export default function AMPExampleToggle() {
                 </span>
               </div>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                AI produced a thorough list of assumptions fast — across desirability, feasibility, and
+                AI produced a thorough list of assumptions fast: across desirability, feasibility, and
                 viability. It covered the obvious categories well and ensured nothing was forgotten:
                 delivery, returns, catalogue size, trust in online retail. As a checklist, it was useful.
               </p>
             </div>
 
-            {/* Where AI failed — the consensus trap */}
+            {/* Where AI failed - the consensus trap */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
               <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
@@ -204,7 +204,7 @@ export default function AMPExampleToggle() {
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 The decisive judgment was one AI could not make well. Rating &ldquo;people will buy shoes
                 without trying them on&rdquo; on UNCERTAINTY required knowing how uncertain that was for
-                this specific venture — a judgment about the founder&rsquo;s actual evidence (none) and
+                this specific venture: a judgment about the founder&rsquo;s actual evidence (none) and
                 the specific market context.
               </p>
               <div className="space-y-3">
@@ -212,7 +212,7 @@ export default function AMPExampleToggle() {
                   {
                     tag: 'On online purchasing',
                     ai: '"Online shopping is a well-established consumer behaviour across most product categories. Strong evidence base from other verticals."',
-                    note: 'The consensus trap: AI rates online purchasing as broadly known — missing that buying shoes sight unseen, without trying, was the genuine untested question. It conflates general online buying with the specific shoes-without-trying leap.',
+                    note: 'The consensus trap: AI rates online purchasing as broadly known, missing that buying shoes sight unseen, without trying, was the genuine untested question. It conflates general online buying with the specific shoes-without-trying leap.',
                   },
                   {
                     tag: 'On the leap-of-faith assumption',
@@ -238,7 +238,7 @@ export default function AMPExampleToggle() {
                   style={{ color: `${INDIGO}0.80)` }}>The assumption AI missed</p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
                   Had the founder trusted the AI&rsquo;s generic placement, the assumption &ldquo;people will buy
-                  shoes without trying them on&rdquo; might have looked safely &ldquo;known&rdquo; — and the temptation
+                  shoes without trying them on&rdquo; might have looked safely &ldquo;known&rdquo;, and the temptation
                   would have been to just build. The leap of faith would have remained untested until
                   after months of engineering investment.
                 </p>
@@ -248,7 +248,7 @@ export default function AMPExampleToggle() {
                   The judgment stayed human
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
-                  Correctly identifying that assumption as the leap of faith — based on zero actual evidence —
+                  Correctly identifying that assumption as the leap of faith (based on zero actual evidence)
                   and committing to test it cheaply before building: that was a human act of intellectual
                   honesty about what was genuinely unknown, that no generic AI rating could supply.
                 </p>
@@ -260,10 +260,10 @@ export default function AMPExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
                 style={{ color: `${INDIGO}0.80)` }}>The honest readout</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                AI generates the assumption list fast — breadth for the obvious beliefs.
+                AI generates the assumption list fast: breadth for the obvious beliefs.
                 But judging which assumption is both most critical to this specific concept and least
                 evidenced by what you actually know requires your business model and your private evidence,
-                neither of which AI has. And the consensus trap — AI rating shared beliefs as safe — can
+                neither of which AI has. And the consensus trap (AI rating shared beliefs as safe) can
                 quietly push the riskiest assumption out of the danger quadrant. Use AI to build the list;
                 keep the placement on the two axes, and the choice of the leap-of-faith assumption to test first, human.
               </p>

@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 const SVG_W = 700, SVG_H = 260
 
-// Grid geometry — identical to AMPEstablishing
+// Grid geometry - identical to AMPEstablishing
 const GX = 96,  GY = 20
 const GW = 544, GH = 228
 const GR = GX + GW
@@ -20,7 +20,7 @@ const CARD_H = 26
 type Mode = 'human' | 'ai'
 
 // The key assumption: in human mode it's correctly in the LOF quadrant (top-right).
-// In AI mode it's incorrectly pushed to the MONITOR quadrant (top-left) — the consensus trap.
+// In AI mode it's incorrectly pushed to the MONITOR quadrant (top-left): the consensus trap.
 const LOF_CARD = { x: 384, y: 54, w: 136, label: 'WILL THEY BUY ONLINE?' }
 const TRAP_CARD = { x: 218, y: 54, w: 136, label: 'WILL THEY BUY ONLINE?' }
 
@@ -72,7 +72,7 @@ export default function AMPAIReactivated() {
         aria-label={
           isAI
             ? 'AI mode: the assumption "Will they buy online?" is incorrectly placed in the top-left monitor quadrant. AI rates online purchasing as well-established behaviour, missing that buying shoes without trying is the genuine, untested leap.'
-            : 'Human mode: the assumption "Will they buy online?" is correctly placed in the top-right leap-of-faith quadrant — critical and untested.'
+            : 'Human mode: the assumption "Will they buy online?" is correctly placed in the top-right leap-of-faith quadrant, critical and untested.'
         }
       >
         <defs>
@@ -90,7 +90,7 @@ export default function AMPAIReactivated() {
           </radialGradient>
         </defs>
 
-        {/* Leap-of-faith corner glow (dims in AI mode — the AI misses the dangerous zone) */}
+        {/* Leap-of-faith corner glow (dims in AI mode - the AI misses the dangerous zone) */}
         <rect x={MX} y={GY} width={GR - MX} height={MY - GY}
           fill={isAI ? 'url(#amp-ai-lof-grad-ai)' : 'url(#amp-ai-lof-grad-h)'}
           style={{ transition: 'fill 0.45s' }} />
@@ -156,7 +156,7 @@ export default function AMPAIReactivated() {
           </g>
         ))}
 
-        {/* The key assumption card — moves position in AI mode */}
+        {/* The key assumption card - moves position in AI mode */}
         {(() => {
           const card = isAI ? TRAP_CARD : LOF_CARD
           return (
@@ -223,11 +223,11 @@ export default function AMPAIReactivated() {
               },
               {
                 h: 'AI cannot judge your uncertainty',
-                b: "Uncertainty is how much evidence YOU have — what you've learned from customers, tests, and your specific context. AI doesn't have access to your private evidence. An assumption that's genuinely unknown to your team may look well-established to AI from public patterns.",
+                b: "Uncertainty is how much evidence YOU have: what you've learned from customers, tests, and your specific context. AI doesn't have access to your private evidence. An assumption that's genuinely unknown to your team may look well-established to AI from public patterns.",
               },
               {
                 h: 'The consensus trap',
-                b: "AI reasons from what's widely written, so it tends to rate industry-wide shared assumptions as 'known' and safe — when those consensus beliefs are sometimes exactly the untested leaps a breakthrough would challenge. It can quietly push the riskiest assumption into the safe quadrant.",
+                b: "AI reasons from what's widely written, so it tends to rate industry-wide shared assumptions as 'known' and safe, when those consensus beliefs are sometimes exactly the untested leaps a breakthrough would challenge. It can quietly push the riskiest assumption into the safe quadrant.",
               },
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border"
@@ -249,11 +249,11 @@ export default function AMPAIReactivated() {
             {[
               {
                 h: 'Importance is specific to your model',
-                b: 'How much does THIS concept depend on THIS assumption? That depends on your specific business design — not a generic one. A team can judge importance for their situation; AI can only guess generically.',
+                b: 'How much does THIS concept depend on THIS assumption? That depends on your specific business design, not a generic one. A team can judge importance for their situation; AI can only guess generically.',
               },
               {
                 h: 'Uncertainty is what you actually know',
-                b: "The axis that matters most is: do you have real evidence, or are you just hoping? That is a judgment about your own evidence base — what you have tested, what customers have told you. Only you know what you actually know.",
+                b: "The axis that matters most is: do you have real evidence, or are you just hoping? That is a judgment about your own evidence base: what you have tested, what customers have told you. Only you know what you actually know.",
               },
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border"
@@ -272,7 +272,7 @@ export default function AMPAIReactivated() {
         style={{ background: 'rgba(255,255,255,0.04)' }}>
         <p className="text-[10px] font-semibold uppercase tracking-wider text-white/28 mb-1">Synthesis</p>
         <p className="text-xs text-white/42 leading-relaxed">
-          Use AI to generate the assumption list quickly — breadth for the obvious beliefs. But keep the placement on the two axes human: importance depends on your specific business model, and uncertainty depends on your private evidence. The leap-of-faith assumption to test first is a human judgment, not a generic one.
+          Use AI to generate the assumption list quickly: breadth for the obvious beliefs. But keep the placement on the two axes human: importance depends on your specific business model, and uncertainty depends on your private evidence. The leap-of-faith assumption to test first is a human judgment, not a generic one.
         </p>
       </div>
     </div>

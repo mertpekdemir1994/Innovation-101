@@ -6,7 +6,7 @@ const CLAY = 'rgba(181,97,62,'
 const SVG_W = 700
 const SVG_H = 312
 
-// Grid geometry — shared across all three appearances
+// Grid geometry - shared across all three appearances
 const GX = 96,  GY = 20
 const GW = 544, GH = 228
 const GR = GX + GW   // 640
@@ -26,15 +26,15 @@ type Card = {
 }
 
 const CARDS: Card[] = [
-  // LEAP-OF-FAITH (top-right — high importance, unknown)
+  // LEAP-OF-FAITH (top-right - high importance, unknown)
   { id: 'a', x: 384, y: 40,  w: 118, label: 'WILL THEY BUY?',      lof: true  },
   { id: 'b', x: 508, y: 80,  w: 118, label: 'PRICE ACCEPTED?',     lof: true  },
-  // MONITOR (top-left — high importance, known)
+  // MONITOR (top-left - high importance, known)
   { id: 'c', x: 104, y: 40,  w: 126, label: 'BEHAVIOUR EXISTS',    lof: false },
   { id: 'd', x: 218, y: 82,  w: 110, label: 'TECH IS READY',       lof: false },
-  // NICE-TO-KNOW (bottom-right — low importance, unknown)
+  // NICE-TO-KNOW (bottom-right - low importance, unknown)
   { id: 'e', x: 400, y: 170, w: 134, label: 'PREFER FREE RETURNS', lof: false },
-  // IGNORE (bottom-left — low importance, known)
+  // IGNORE (bottom-left - low importance, known)
   { id: 'f', x: 104, y: 168, w: 114, label: 'CAN SHIP PRODUCT',    lof: false },
   { id: 'g', x: 224, y: 208, w: 110, label: 'CAN BUILD SITE',      lof: false },
 ]
@@ -64,7 +64,7 @@ export default function AMPEstablishing() {
       whileInView="visible"
       viewport={{ once: true, margin: '-60px' }}
       variants={container}
-      aria-label="Importance by uncertainty risk grid. Top-right quadrant (high importance, unknown) glows in clay orange and is labelled LEAP OF FAITH — TEST THESE FIRST. Other quadrants: top-left is MONITOR, bottom-right is NICE TO KNOW, bottom-left is IGNORE. Seven assumption cards are placed across the four quadrants."
+      aria-label="Importance by uncertainty risk grid. Top-right quadrant (high importance, unknown) glows in clay orange and is labelled LEAP OF FAITH: TEST THESE FIRST. Other quadrants: top-left is MONITOR, bottom-right is NICE TO KNOW, bottom-left is IGNORE. Seven assumption cards are placed across the four quadrants."
     >
       <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ overflow: 'visible' }}>
         <defs>
