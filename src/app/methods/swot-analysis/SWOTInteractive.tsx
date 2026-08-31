@@ -19,7 +19,7 @@ const QUADRANT_INFO = {
     label: 'WEAKNESSES',
     axis: 'Internal · Harmful',
     items: ['No functioning delivery logistics', 'App with a one-star rating', 'Thin margins under price pressure'],
-    note: 'The most honest quadrant — and the one teams most often soften. If this list is diplomatic, the two most important crossings (W×T and W×O) become impossible.',
+    note: 'The most honest quadrant, and the one teams most often soften. If this list is diplomatic, the two most important crossings (W×T and W×O) become impossible.',
     color: 'rgba(220,38,38,',
   },
   o: {
@@ -40,36 +40,36 @@ const QUADRANT_INFO = {
 
 const CROSSING_INFO = {
   so: {
-    label: 'S × O — PRESS',
+    label: 'S × O: PRESS',
     color: PLUM_RGB,
     description: 'Match a real advantage to a real opening. Your dense local footprint × "shop local" sentiment and convenience demand → same-day pickup from existing stores, using proximity a national player cannot match for years. These are your most aggressive, highest-confidence moves.',
     instruction: 'Ask: where can we do more of what we are good at, because the world is opening for it?',
   },
   wt: {
-    label: 'W × T — DEFEND',
+    label: 'W × T: DEFEND',
     color: 'rgba(220,38,38,',
     description: 'Where a vulnerability meets an external danger. No delivery logistics × national online entrant arriving → the entrant\'s first advantage is the one you cannot counter. Fix this before anything else. These moves usually deserve attention before the exciting S×O press moves.',
     instruction: 'Ask: where are we exposed in a way that could sink us, and what must we address first?',
   },
   st: {
-    label: 'S × T — COUNTER',
+    label: 'S × T: COUNTER',
     color: 'rgba(245,158,11,',
     description: 'Use something you have to blunt something coming. Your supplier relationships × the threat of national-player price leverage → build a local-sourcing story the national player structurally cannot tell. Turn your asset against their advantage.',
     instruction: 'Ask: what do we have that directly blunts what is coming at us?',
   },
   wo: {
-    label: 'W × O — BUILD',
+    label: 'W × O: BUILD',
     color: 'rgba(59,130,246,',
-    description: 'An opening you cannot yet reach because of a gap in yourself. No delivery logistics × the convenience-delivery opportunity → you cannot access this opportunity in your current state. The move is to build the missing capability — or honestly decide to let the opportunity go.',
+    description: 'An opening you cannot yet reach because of a gap in yourself. No delivery logistics × the convenience-delivery opportunity → you cannot access this opportunity in your current state. The move is to build the missing capability, or honestly decide to let the opportunity go.',
     instruction: 'Ask: what would we need to build or fix in order to reach for this?',
   },
 }
 
 const AXIS_INFO = {
-  internal: 'INTERNAL means about you — within your control. Strengths and Weaknesses are always internal. The most common error: filing an external market trend as a "Strength." It is not yours; you do not control it.',
-  external: 'EXTERNAL means about the world — outside your control. You can prepare for it, respond to it, exploit it, or defend against it, but you cannot change it. Opportunities and Threats are always external.',
-  helpful:  'HELPFUL to your position — not morally, just directionally. Strengths and Opportunities are helpful in the sense that, if used well, they work for you.',
-  harmful:  'HARMFUL to your position. Weaknesses and Threats work against you. The W×T crossing — where two harmful factors meet — is often the most important and the most avoided.',
+  internal: 'INTERNAL means about you: within your control. Strengths and Weaknesses are always internal. The most common error: filing an external market trend as a "Strength." It is not yours; you do not control it.',
+  external: 'EXTERNAL means about the world: outside your control. You can prepare for it, respond to it, exploit it, or defend against it, but you cannot change it. Opportunities and Threats are always external.',
+  helpful:  'HELPFUL to your position, not morally, just directionally. Strengths and Opportunities are helpful in the sense that, if used well, they work for you.',
+  harmful:  'HARMFUL to your position. Weaknesses and Threats work against you. The W×T crossing, where two harmful factors meet, is often the most important and the most avoided.',
 }
 
 export default function SWOTInteractive() {
@@ -107,7 +107,7 @@ export default function SWOTInteractive() {
       {/* ── Axis buttons ── */}
       <div style={{ marginBottom: '24px' }}>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.30)', marginBottom: '10px' }}>
-          THE TWO AXES — click to understand what they mean
+          THE TWO AXES: click to understand what they mean
         </p>
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
           {(['internal', 'external', 'helpful', 'harmful'] as const).map(id => (
@@ -121,7 +121,7 @@ export default function SWOTInteractive() {
       {/* ── Quadrant buttons ── */}
       <div style={{ marginBottom: '24px' }}>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.30)', marginBottom: '10px' }}>
-          THE FOUR QUADRANTS — each holds a list; the list alone points to nothing
+          THE FOUR QUADRANTS: each holds a list; the list alone points to nothing
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
           {(['s', 'w', 'o', 't'] as const).map(id => {
@@ -139,7 +139,7 @@ export default function SWOTInteractive() {
       {/* ── Crossing buttons ── */}
       <div style={{ marginBottom: '28px' }}>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.30)', marginBottom: '10px' }}>
-          THE FOUR CROSSINGS — this is where strategy appears
+          THE FOUR CROSSINGS: this is where strategy appears
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
           {(['so', 'wt', 'st', 'wo'] as const).map(id => {
@@ -172,7 +172,7 @@ export default function SWOTInteractive() {
             {qInfo && (
               <>
                 <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: `${qInfo.color}0.70)`, marginBottom: '12px' }}>
-                  {qInfo.label} — {qInfo.axis}
+                  {qInfo.label}: {qInfo.axis}
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 14px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   {qInfo.items.map((item, i) => (

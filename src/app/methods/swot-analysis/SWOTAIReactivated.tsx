@@ -42,9 +42,9 @@ export default function SWOTAIReactivated() {
   ]
 
   const CROSSINGS_GENERATED = [
-    { crossing: 'S × O — PRESS', move: 'Use the price premium brand trust × the growing same-day convenience demand → launch a premium same-day grocery tier at a 15% markup, positioned as the trusted local alternative.', color: PLUM },
-    { crossing: 'W × T — DEFEND', move: 'No delivery infrastructure × national entrant\'s Q4 arrival → build or acquire last-mile capability in the next 6 months, or cede the delivery channel entirely. This is the defend move that determines whether the S×O press is even possible.', color: RED },
-    { crossing: 'S × T — COUNTER', move: 'Supplier relationships × the entrant\'s generic, national brand → build a hyper-local assortment story (named local farms, exclusive regional products) that a national player structurally cannot replicate.', color: 'rgba(245,158,11,' },
+    { crossing: 'S × O: PRESS', move: 'Use the price premium brand trust × the growing same-day convenience demand → launch a premium same-day grocery tier at a 15% markup, positioned as the trusted local alternative.', color: PLUM },
+    { crossing: 'W × T: DEFEND', move: 'No delivery infrastructure × national entrant\'s Q4 arrival → build or acquire last-mile capability in the next 6 months, or cede the delivery channel entirely. This is the defend move that determines whether the S×O press is even possible.', color: RED },
+    { crossing: 'S × T: COUNTER', move: 'Supplier relationships × the entrant\'s generic, national brand → build a hyper-local assortment story (named local farms, exclusive regional products) that a national player structurally cannot replicate.', color: 'rgba(245,158,11,' },
   ]
 
   return (
@@ -99,7 +99,7 @@ export default function SWOTAIReactivated() {
               ))}
             </div>
             <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6, marginTop: '16px', fontStyle: 'italic' }}>
-              These entries are true, generic, and unfalsifiable — they describe not your company but every company. A team that stops here, feeling finished, has a polished artifact and no strategy.
+              These entries are true, generic, and unfalsifiable: they describe not your company but every company. A team that stops here, feeling finished, has a polished artifact and no strategy.
             </p>
           </motion.div>
         )}
@@ -134,7 +134,7 @@ export default function SWOTAIReactivated() {
         {state === 'crossings' && (
           <motion.div key="cross" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={tr}>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.65, marginBottom: '20px' }}>
-              Give AI your sharpened, specific quadrants and ask it to generate candidate crossings. It produces many quickly — useful. The judgment of which crossings are real, which strengths are actually assets versus comfortable stories, and which threats deserve priority stays entirely human.
+              Give AI your sharpened, specific quadrants and ask it to generate candidate crossings. It produces many quickly. Useful. The judgment of which crossings are real, which strengths are actually assets versus comfortable stories, and which threats deserve priority stays entirely human.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {CROSSINGS_GENERATED.map((item, i) => (
@@ -145,7 +145,7 @@ export default function SWOTAIReactivated() {
               ))}
             </div>
             <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6, marginTop: '16px', fontStyle: 'italic' }}>
-              AI generated these candidates quickly. Choosing among them — which is the right first move, which strengths are real versus asserted, which threats are existential — remains the human work.
+              AI generated these candidates quickly. Choosing among them (which is the right first move, which strengths are real versus asserted, which threats are existential) remains the human work.
             </p>
           </motion.div>
         )}

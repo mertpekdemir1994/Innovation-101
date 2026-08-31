@@ -109,7 +109,7 @@ export default function SWOTEstablishing() {
                 fontFamily="var(--font-mono)"
                 letterSpacing="0.06em"
               >{q.axis}</text>
-              {/* Items — plain, inert */}
+              {/* Items - plain, inert */}
               {q.items.map((item, i) => (
                 <text
                   key={i}
@@ -124,7 +124,7 @@ export default function SWOTEstablishing() {
           ))}
         </motion.g>
 
-        {/* ── Cross-pairing lines — these GLOW, boxes do not ── */}
+        {/* -- Cross-pairing lines - these GLOW, boxes do not -- */}
         <motion.g variants={lineContainer}>
           {CROSSINGS.map(c => (
             <motion.g
