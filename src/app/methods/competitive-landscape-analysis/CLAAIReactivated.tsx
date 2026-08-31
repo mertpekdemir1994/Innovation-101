@@ -83,7 +83,7 @@ export default function CLAAIReactivated() {
           width="100%"
           style={{ overflow: 'visible' }}
           aria-label={isAI
-            ? 'AI mode: conventional axes with all competitors confidently plotted. The reframed axis and the real white space on the right side remain dim — the human strategic move.'
+            ? 'AI mode: conventional axes with all competitors confidently plotted. The reframed axis and the real white space on the right side remain dim: the human strategic move.'
             : 'Human mode: the analyst sees both the conventional map and knows to reframe the axes to find the actual white space.'}
         >
           <defs>
@@ -131,7 +131,7 @@ export default function CLAAIReactivated() {
             stroke="rgba(255,255,255,0.48)" strokeWidth={2} fill="none"
             strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Axis labels — always CONVENTIONAL in AI mode */}
+          {/* Axis labels - always CONVENTIONAL in AI mode */}
           <text x={FX + 6} y={F_B + 15} fontSize="8" fontFamily="var(--font-mono)"
             letterSpacing="0.10em" fill="rgba(255,255,255,0.38)"
             style={{ userSelect: 'none' }}>LOW</text>
@@ -183,7 +183,7 @@ export default function CLAAIReactivated() {
             {isAI ? 'AI: "MARKET IS CROWDED"' : 'CROWDED ZONE'}
           </text>
 
-          {/* Competitors — 10px radius for legibility */}
+          {/* Competitors - 10px radius for legibility */}
           {COMPS.map((c) => (
             <circle key={c.id}
               cx={c.cx} cy={c.cy} r={10}
@@ -194,7 +194,7 @@ export default function CLAAIReactivated() {
             />
           ))}
 
-          {/* White space — CONVENTIONAL (faint in AI mode because AI sees it but doesn't act on it) */}
+          {/* White space - CONVENTIONAL (faint in AI mode because AI sees it but doesn't act on it) */}
           <motion.rect
             x={WS_CONV.x} y={WS_CONV.y} width={WS_CONV.w} height={WS_CONV.h}
             rx={6}
@@ -251,7 +251,7 @@ export default function CLAAIReactivated() {
             )}
           </AnimatePresence>
 
-          {/* AI mode: "reframe" ghost button — dim, labelled as out of reach */}
+          {/* AI mode: "reframe" ghost button - dim, labelled as out of reach */}
           <AnimatePresence>
             {isAI && (
               <motion.g
@@ -312,7 +312,7 @@ export default function CLAAIReactivated() {
                 style={{ color: `${SAGE}0.75)` }}>Human advantage: judging the gap</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 Once the white space appears, telling an un-served opportunity from an unviable void requires
-                customer understanding — not just a gap on the map. That judgment combines the positioning
+                customer understanding, not just a gap on the map. That judgment combines the positioning
                 map with interviews, observation, and concept testing: all human work.
               </p>
             </div>
@@ -330,7 +330,7 @@ export default function CLAAIReactivated() {
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
                   style={{ color: `${INDIGO}0.80)` }}>AI accelerates: gathering and mapping</p>
                 <p className="text-sm text-neutral-700 leading-relaxed">
-                  AI gathers competitive information fast and produces a solid first-pass map — who is playing,
+                  AI gathers competitive information fast and produces a solid first-pass map: who is playing,
                   how they describe themselves, where they cluster. On the conventional axes the industry uses,
                   AI assembles the documented landscape quickly and accurately. Genuine time savings.
                 </p>
@@ -340,7 +340,7 @@ export default function CLAAIReactivated() {
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
                   style={{ color: `${INDIGO}0.70)` }}>AI limitation: the framing trap</p>
                 <p className="text-sm text-neutral-700 leading-relaxed">
-                  AI maps the field on the axes the industry is already using — because those are the axes
+                  AI maps the field on the axes the industry is already using, because those are the axes
                   the existing literature uses. It cannot propose the fresh axis that reveals a gap the
                   industry is not measuring, because that axis appears nowhere in its training data by design.
                   The method&rsquo;s most valuable move is invisible to the default prompt.
@@ -355,7 +355,7 @@ export default function CLAAIReactivated() {
                 AI is strongest at the legwork: cataloging players, summarizing stated positioning, and populating
                 the map on axes you specify. The research that normally takes days can be compressed to hours.
                 The gap is the reframe: when you tell AI specifically &ldquo;map this market on unconventional axes
-                the industry is not using,&rdquo; it can explore alternatives — but the choice of which reframe is
+                the industry is not using,&rdquo; it can explore alternatives, but the choice of which reframe is
                 strategic and which gap is a real opportunity stays with the human who understands customer need.
               </p>
             </div>

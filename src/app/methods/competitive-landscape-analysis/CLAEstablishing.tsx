@@ -65,7 +65,7 @@ export default function CLAEstablishing() {
       viewport={{ once: true, margin: '-60px' }}
       variants={container}
       role="img"
-      aria-label="Competitive positioning field: Price (horizontal) vs Prestige (vertical). Eight competitors cluster in the high-price, high-prestige upper-right zone. The lower-left — low price, low prestige — is empty: the un-served white space."
+      aria-label="Competitive positioning field: Price (horizontal) vs Prestige (vertical). Eight competitors cluster in the high-price, high-prestige upper-right zone. The lower-left (low price, low prestige) is empty: the un-served white space."
     >
       <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ overflow: 'visible' }}>
         <defs>
@@ -87,7 +87,7 @@ export default function CLAEstablishing() {
           </radialGradient>
         </defs>
 
-        {/* Grid — subtle guidance lines */}
+        {/* Grid - subtle guidance lines */}
         <motion.g variants={fadeIn} transition={axT}>
           {[0.25, 0.50, 0.75].map((t) => (
             <React.Fragment key={t}>
@@ -161,7 +161,7 @@ export default function CLAEstablishing() {
             fill={`${SAGE}0.50)`} style={{ userSelect: 'none' }}>8 players competing here</text>
         </motion.g>
 
-        {/* Competitors — large dots, 9px radius */}
+        {/* Competitors - large dots, 9px radius */}
         {COMPS.map((c, i) => (
           <motion.circle
             key={c.id}
@@ -176,7 +176,7 @@ export default function CLAEstablishing() {
           />
         ))}
 
-        {/* White space — the actual empty region of the plot.
+        {/* White space - the actual empty region of the plot.
             This rect sits on the genuinely empty lower-left (no dot within x<232, y>228). */}
         <motion.g
           variants={fadeIn}

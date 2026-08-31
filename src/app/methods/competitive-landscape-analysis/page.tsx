@@ -22,25 +22,25 @@ const FRAMEWORK_LINKS = [
     slug: 'double-diamond',
     name: 'Double Diamond',
     phase: 'Discover / Define',
-    note: 'The Discover phase needs a clear picture of the competitive field before the team can define where to play. Competitive landscape analysis maps who is already there and how they are positioned, so the Define phase can make a deliberate choice — not inherit the conventional position by default. A team that defines the problem without mapping the field will often define it inside the crowded center without noticing.',
+    note: 'The Discover phase needs a clear picture of the competitive field before the team can define where to play. Competitive landscape analysis maps who is already there and how they are positioned, so the Define phase can make a deliberate choice, not inherit the conventional position by default. A team that defines the problem without mapping the field will often define it inside the crowded center without noticing.',
   },
   {
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Build',
-    note: 'Before committing to a build, the team needs to understand what the product must differ from — which competitors it will be compared to, on what dimensions, and where the genuine point of differentiation is. Competitive analysis maps that context before the build begins, so the value proposition is designed against a clear picture of the existing alternatives rather than a vague sense of the market.',
+    note: 'Before committing to a build, the team needs to understand what the product must differ from: which competitors it will be compared to, on what dimensions, and where the genuine point of differentiation is. Competitive analysis maps that context before the build begins, so the value proposition is designed against a clear picture of the existing alternatives rather than a vague sense of the market.',
   },
   {
     slug: 'design-sprint',
     name: 'Design Sprint',
     phase: 'Monday',
-    note: 'Monday in a sprint maps the competitive context alongside the experts\' knowledge and the target. A competitive landscape analysis run before or at the start of Monday ensures the sprint is working on a positioning challenge that the team actually understands — who is already in the space, where the white space might be, and what the target differentiator could be. A sprint without competitive context will often prototype solutions to the wrong positioning problem.',
+    note: 'Monday in a sprint maps the competitive context alongside the experts\' knowledge and the target. A competitive landscape analysis run before or at the start of Monday ensures the sprint is working on a positioning challenge that the team actually understands: who is already in the space, where the white space might be, and what the target differentiator could be. A sprint without competitive context will often prototype solutions to the wrong positioning problem.',
   },
   {
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Discovery Sprint',
-    note: 'The Discovery Sprint establishes the product context, the user problem, and the early positioning hypothesis. Competitive landscape analysis in the Discovery Sprint ensures the team understands what the product enters — who is already in the market, how they are positioned, and where the white space is. Without this, the Discovery Sprint produces a hypothesis in a competitive vacuum.',
+    note: 'The Discovery Sprint establishes the product context, the user problem, and the early positioning hypothesis. Competitive landscape analysis in the Discovery Sprint ensures the team understands what the product enters: who is already in the market, how they are positioned, and where the white space is. Without this, the Discovery Sprint produces a hypothesis in a competitive vacuum.',
   },
 ]
 
@@ -54,27 +54,27 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'ecosystem-mapping',
     name: 'Ecosystem Mapping',
-    rel: 'A different altitude, and worth distinguishing: Competitive Landscape Analysis maps the competitive field — who is playing, how they are positioned, where the white space is. Ecosystem Mapping maps the whole system of actors and value flows around a market: competitors, customers, suppliers, regulators, and the relationships between them. Competitors are just one actor type in an ecosystem. Use competitive analysis to find a position; use ecosystem mapping to understand the system the business lives in.',
+    rel: 'A different altitude, and worth distinguishing: Competitive Landscape Analysis maps the competitive field: who is playing, how they are positioned, where the white space is. Ecosystem Mapping maps the whole system of actors and value flows around a market: competitors, customers, suppliers, regulators, and the relationships between them. Competitors are just one actor type in an ecosystem. Use competitive analysis to find a position; use ecosystem mapping to understand the system the business lives in.',
   },
   {
     slug: 'orthodoxies',
     name: 'Orthodoxies',
-    rel: 'A powerful pairing: when every competitor in a category is bunched in the same crowded zone, doing the same thing on the same axes, that sameness is often a shared industry orthodoxy made visible. Competitive analysis reveals the pattern — every player does this — and Orthodoxies names and challenges the belief behind it. The axis no competitor is competing on is usually an orthodoxy nobody has questioned.',
+    rel: 'A useful pairing: when every competitor in a category is bunched in the same crowded zone, doing the same thing on the same axes, that sameness is often a shared industry orthodoxy made visible. Competitive analysis reveals the pattern (every player does this) and Orthodoxies names and challenges the belief behind it. The axis no competitor is competing on is usually an orthodoxy nobody has questioned.',
   },
   {
     slug: 'ten-types-innovation',
     name: '10 Types of Innovation',
-    rel: 'Complementary diagnostics: competitive analysis shows WHERE competitors sit in the positioning space; the 10 Types of Innovation helps diagnose WHY a competitor\'s advantage is durable — which combination of profit model, network, structure, process, product performance, product system, service, channel, brand, and customer engagement innovations underpin the position. Understanding the innovation stack is what tells you whether a gap is defensible and where to attack.',
+    rel: 'Complementary diagnostics: competitive analysis shows WHERE competitors sit in the positioning space; the 10 Types of Innovation helps diagnose WHY a competitor\'s advantage is durable: which combination of profit model, network, structure, process, product performance, product system, service, channel, brand, and customer engagement innovations underpin the position. Understanding the innovation stack is what tells you whether a gap is defensible and where to attack.',
   },
   {
     slug: 'jobs-to-be-done',
     name: 'Jobs To Be Done',
-    rel: 'Jobs To Be Done reveals the true competition: the other things customers hire to do the same job, which often includes indirect substitutes that never appear on a conventional competitive map. A customer who hires an expensive restaurant for a date night is not comparing it only to other expensive restaurants — she might be comparing it to a cooking class, a concert, or staying home. Including indirect competitors in the landscape is what Jobs To Be Done makes visible.',
+    rel: 'Jobs To Be Done reveals the true competition: the other things customers hire to do the same job, which often includes indirect substitutes that never appear on a conventional competitive map. A customer who hires an expensive restaurant for a date night is not comparing it only to other expensive restaurants. She might be comparing it to a cooking class, a concert, or staying home. Including indirect competitors in the landscape is what Jobs To Be Done makes visible.',
   },
   {
     slug: 'value-proposition-canvas',
     name: 'Value Proposition Canvas',
-    rel: 'Once a white space has been chosen, the Value Proposition Canvas designs the fit for the customers in that space — matching the pains and gains of the target segment to the specific features and benefits of the product or service. Competitive analysis identifies the un-served position; the Value Proposition Canvas designs the offering that occupies it.',
+    rel: 'Once a white space has been chosen, the Value Proposition Canvas designs the fit for the customers in that space, matching the pains and gains of the target segment to the specific features and benefits of the product or service. Competitive analysis identifies the un-served position; the Value Proposition Canvas designs the offering that occupies it.',
   },
 ]
 
@@ -84,7 +84,7 @@ export default function CLAPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -120,14 +120,14 @@ export default function CLAPage() {
               className="max-w-[520px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
             >
-              The point is not to match your competitors. It is to see, clearly, the position none of them has taken &mdash; and ask whether that empty space is where you should be.
+              The point is not to match your competitors. It is to see, clearly, the position none of them has taken, and ask whether that empty space is where you should be.
             </p>
           </div>
         </Container>
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -138,7 +138,7 @@ export default function CLAPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -151,21 +151,21 @@ export default function CLAPage() {
                 Competitive Landscape Analysis is the structured study of who else is playing in a market
                 and how they are positioned, so a team can understand the field it is entering or competing
                 in and, most importantly, find where the opportunity lies. It catalogs the competitors
-                &mdash; direct and indirect &mdash; maps how each is positioned, and reveals the shape of the field:
+                (direct and indirect) maps how each is positioned, and reveals the shape of the field:
                 where players cluster, where they differentiate, and, decisively, where no one is.
               </Body>
               <Body>
                 Its most common use is also its weakest: benchmarking. Listing competitors&rsquo; features and
-                matching or beating them. Done only this way, competitive analysis is a recipe for sameness
-                &mdash; it pulls a company toward the crowded center where everyone already competes, chasing
+                matching or beating them. Done only this way, competitive analysis is a recipe for sameness.
+                It pulls a company toward the crowded center where everyone already competes, chasing
                 feature parity and eroding margins. The far more valuable use is the opposite: to find the
                 WHITE SPACE, the position on the map that no competitor occupies, and ask whether that
                 un-served space is where the real opportunity is. The goal is not to be a slightly better
                 version of what exists; it is to see clearly the space that does not yet exist.
               </Body>
               <Body>
-                The single most powerful move in the method is reframing the axes. A market&rsquo;s competitors all
-                tend to compete on the same one or two dimensions &mdash; the ones the industry takes for granted.
+                The single most important move in the method is reframing the axes. A market&rsquo;s competitors all
+                tend to compete on the same one or two dimensions, the ones the industry takes for granted.
                 Mapping the field on those conventional axes shows the crowded cluster, which is useful but
                 limited. The breakthrough often comes from mapping the field on a <em>different</em> axis,
                 a dimension the industry is not paying attention to, on which the crowded cluster suddenly
@@ -178,7 +178,7 @@ export default function CLAPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive visual   DARK
+          S4 - Interactive visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -198,7 +198,7 @@ export default function CLAPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -215,7 +215,7 @@ export default function CLAPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'You are entering a market or category and need to understand who is already there and how they are positioned.',
-                    'You want to find an un-served position — white space — rather than compete head-on in the crowded center.',
+                    'You want to find an un-served position (white space) rather than compete head-on in the crowded center.',
                     'You need to understand why an incumbent is hard to beat, or where an incumbent is vulnerable.',
                     'You suspect the whole industry is competing on the same two dimensions and want to find a third one.',
                   ].map((item, i) => (
@@ -236,9 +236,9 @@ export default function CLAPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You would use it only to benchmark and match competitors\' features. That pulls you into the crowded center and produces sameness — the opposite of the method\'s value.',
+                    'You would use it only to benchmark and match competitors\' features. That pulls you into the crowded center and produces sameness, the opposite of the method\'s value.',
                     'You have no real understanding of customer needs. A white space that no competitor occupies may be empty because customers do not want it. Only customer research can tell you which empty spaces are opportunities.',
-                    'You need to understand the whole system of actors and value flows around a market, not just competitors. For that, use Ecosystem Mapping — a different altitude.',
+                    'You need to understand the whole system of actors and value flows around a market, not just competitors. For that, use Ecosystem Mapping, a different altitude.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
                       <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
@@ -257,7 +257,7 @@ export default function CLAPage() {
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: a competitive map shows where players are, not whether an empty space is
-                worth occupying. White space is necessary but not sufficient &mdash; some gaps are unmet
+                worth occupying. White space is necessary but not sufficient. Some gaps are unmet
                 opportunities, others are graveyards where no viable business can survive. The method finds
                 the gaps; customer research and concept testing determine which are real. Its most common
                 failure is being used for benchmarking rather than for finding and validating white space.
@@ -268,7 +268,7 @@ export default function CLAPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -280,23 +280,23 @@ export default function CLAPage() {
               {[
                 {
                   n: '01',
-                  title: 'Identify the competitors — direct and indirect.',
-                  body: 'List not just the obvious direct rivals but the indirect ones — the different solutions customers use for the same need. The true competition, as Jobs To Be Done also reveals, is often not another product in your category: a customer choosing between a home-cooked meal and a restaurant is competing with delivery apps, meal kits, and supermarkets, not just other restaurants. Missing indirect competitors is how a competitive map misleads.',
+                  title: 'Identify the competitors: direct and indirect.',
+                  body: 'List not just the obvious direct rivals but the indirect ones, the different solutions customers use for the same need. The true competition, as Jobs To Be Done also reveals, is often not another product in your category: a customer choosing between a home-cooked meal and a restaurant is competing with delivery apps, meal kits, and supermarkets, not just other restaurants. Missing indirect competitors is how a competitive map misleads.',
                 },
                 {
                   n: '02',
                   title: 'Choose meaningful axes and map the conventional view.',
-                  body: 'Select the two dimensions on which to map the field. Start with the conventional ones the industry competes on — the axes everyone uses — to see the crowded center and understand how the market frames itself. Plot each competitor on that first map. See where they cluster; that dense zone is the conventional battleground, the place where matching them means fighting for parity.',
+                  body: 'Select the two dimensions on which to map the field. Start with the conventional ones the industry competes on (the axes everyone uses) to see the crowded center and understand how the market frames itself. Plot each competitor on that first map. See where they cluster; that dense zone is the conventional battleground, the place where matching them means fighting for parity.',
                 },
                 {
                   n: '03',
                   title: 'Hunt the white space and reframe the axes to find more.',
-                  body: 'Look for the empty regions on the conventional map. Then — the decisive move — remap the field on different axes: dimensions the industry is not competing on. Watch new white space appear. The gap that opens on a fresh axis is often the real opportunity, because no competitor has staked a claim there and no competitor is even measuring it.',
+                  body: 'Look for the empty regions on the conventional map. Then, the decisive move, remap the field on different axes: dimensions the industry is not competing on. Watch new white space appear. The gap that opens on a fresh axis is often the real opportunity, because no competitor has staked a claim there and no competitor is even measuring it.',
                 },
                 {
                   n: '04',
                   title: 'Interrogate each white space honestly.',
-                  body: 'For every gap, ask the hard question: is this empty because it is an un-served opportunity, or because no viable business can live there? Both exist. An empty space on a competitive map is a candidate, not a verdict. Use customer understanding — interviews, observation, concept testing — to tell them apart. Do not assume empty means valuable.',
+                  body: 'For every gap, ask the hard question: is this empty because it is an un-served opportunity, or because no viable business can live there? Both exist. An empty space on a competitive map is a candidate, not a verdict. Use customer understanding (interviews, observation, concept testing) to tell them apart. Do not assume empty means valuable.',
                 },
                 {
                   n: '05',
@@ -329,7 +329,7 @@ export default function CLAPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -343,10 +343,10 @@ export default function CLAPage() {
             </h3>
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                'The analysis includes indirect competitors — the other solutions customers actually use for the same need — not just the obvious direct rivals.',
+                'The analysis includes indirect competitors (the other solutions customers actually use for the same need) not just the obvious direct rivals.',
                 'The team maps the field on more than the conventional axes, deliberately reframing to reveal white space the industry is not measuring.',
                 'White space is interrogated, not assumed valuable. Every gap is tested against real customer need before being treated as an opportunity.',
-                'The output is a positioning decision — where to play and how to differ — not just a chart.',
+                'The output is a positioning decision (where to play and how to differ) not just a chart.',
                 'The analysis uses perceived positioning (how customers see competitors) as well as stated positioning (how competitors describe themselves).',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
@@ -405,7 +405,7 @@ export default function CLAPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -423,19 +423,19 @@ export default function CLAPage() {
               {[
                 {
                   label: 'Gather from many sources, including customers',
-                  body: 'A good competitive map draws on public information — competitor sites, pricing, positioning statements, reviews, analyst reports — and, ideally, real customer perspective on how the alternatives are actually perceived. Stated positioning and perceived positioning diverge more than companies expect. Customers who can describe "what brand X feels like" are describing perceived positioning, and that view is usually more useful than the brand\'s own claims.',
+                  body: 'A good competitive map draws on public information (competitor sites, pricing, positioning statements, reviews, analyst reports) and, ideally, real customer perspective on how the alternatives are actually perceived. Stated positioning and perceived positioning diverge more than companies expect. Customers who can describe "what brand X feels like" are describing perceived positioning, and that view is usually more useful than the brand\'s own claims.',
                 },
                 {
                   label: 'Define the market boundary deliberately, and include indirect competitors',
-                  body: 'Decide what counts as a competitor before you start mapping. Drawing the boundary too narrowly — only direct rivals in your category — is the most common way a competitive analysis misses real threats and real white space. Draw the boundary around the customer need, not the product category, and include every viable substitute a customer might use instead.',
+                  body: 'Decide what counts as a competitor before you start mapping. Drawing the boundary too narrowly (only direct rivals in your category) is the most common way a competitive analysis misses real threats and real white space. Draw the boundary around the customer need, not the product category, and include every viable substitute a customer might use instead.',
                 },
                 {
                   label: 'Try several sets of axes',
-                  body: 'Because the choice of axes determines what the map reveals, deliberately map the field several ways. Start with the conventional dimensions — the ones every analyst uses — to understand the crowded center. Then try unconventional ones. A rule of thumb: if you heard the axis in the industry\'s own trade publications, it is conventional; if you had to invent it, it might reveal something.',
+                  body: 'Because the choice of axes determines what the map reveals, deliberately map the field several ways. Start with the conventional dimensions (the ones every analyst uses) to understand the crowded center. Then try unconventional ones. A rule of thumb: if you heard the axis in the industry\'s own trade publications, it is conventional; if you had to invent it, it might reveal something.',
                 },
                 {
                   label: 'Pair it with customer research',
-                  body: 'A competitive map alone cannot tell you whether a white space is an opportunity or a void. Plan to validate promising gaps against real customer need — interviews, observation, concept testing — before committing. The research sequence is: map first, to know where to look; then talk to customers, to know whether the gap is real.',
+                  body: 'A competitive map alone cannot tell you whether a white space is an opportunity or a void. Plan to validate promising gaps against real customer need (interviews, observation, concept testing) before committing. The research sequence is: map first, to know where to look; then talk to customers, to know whether the gap is real.',
                 },
                 {
                   label: 'Keep it current',
@@ -464,7 +464,7 @@ export default function CLAPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — How AI is evolving this method   DARK
+          S9 - How AI is evolving this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -484,7 +484,7 @@ export default function CLAPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -505,7 +505,7 @@ export default function CLAPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Used in these frameworks   LIGHT
+          S11 - Used in these frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -555,7 +555,7 @@ export default function CLAPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -595,7 +595,7 @@ export default function CLAPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources   LIGHT
+          S13 - Sources   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -609,7 +609,7 @@ export default function CLAPage() {
                   title:  'Blue Ocean Strategy',
                   author: 'W. Chan Kim and Renée Mauborgne',
                   year:   '2005',
-                  note:   'The definitive treatment of finding uncontested market space rather than competing in crowded markets. Kim and Mauborgne\'s strategy-canvas mapping technique — plotting competitors on the dimensions an industry competes on, then deliberately choosing which to eliminate, reduce, raise, or create — is the most rigorous version of the axis-reframe move this method relies on. Their cases show that the breakthrough came not from a better product on the conventional axes but from drawing a new strategy canvas on dimensions competitors were not measuring.',
+                  note:   'The definitive treatment of finding uncontested market space rather than competing in crowded markets. Kim and Mauborgne\'s strategy-canvas mapping technique (plotting competitors on the dimensions an industry competes on, then deliberately choosing which to eliminate, reduce, raise, or create) is the most rigorous version of the axis-reframe move this method relies on. Their cases show that the breakthrough came not from a better product on the conventional axes but from drawing a new strategy canvas on dimensions competitors were not measuring.',
                 },
                 {
                   title:  'Competitive Strategy',
@@ -621,7 +621,7 @@ export default function CLAPage() {
                   title:  'Playing to Win',
                   author: 'A.G. Lafley and Roger Martin',
                   year:   '2013',
-                  note:   'On making the "where to play and how to win" choices that competitive analysis informs. Lafley and Martin\'s framework — the strategy cascade from winning aspiration through where to play, how to win, capabilities, and management systems — gives competitive landscape analysis its natural downstream home. The competitive map produces the "where to play" candidates; their framework structures the choice and connects it to the capabilities required to win in the chosen position.',
+                  note:   'On making the "where to play and how to win" choices that competitive analysis informs. Lafley and Martin\'s framework (the strategy cascade from winning aspiration through where to play, how to win, capabilities, and management systems) gives competitive landscape analysis its natural downstream home. The competitive map produces the "where to play" candidates; their framework structures the choice and connects it to the capabilities required to win in the chosen position.',
                 },
               ].map(({ title, author, year, note }) => (
                 <div

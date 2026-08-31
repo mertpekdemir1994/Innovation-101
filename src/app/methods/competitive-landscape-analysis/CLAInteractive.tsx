@@ -37,7 +37,7 @@ const COMPS: CompData[] = [
   },
   {
     id: 'b', label: 'INCUMBENT B', sub: 'premium challenger',
-    positioning: 'Premium challenger competing on quality credentials. Similar axis to the market leader — expert voice, high prestige — differentiated primarily on specific quality claims.',
+    positioning: 'Premium challenger competing on quality credentials. Similar axis to the market leader (expert voice, high prestige) differentiated primarily on specific quality claims.',
     conventional: { cx: 580, cy: 90 }, reframed: { cx: 116, cy: 90 },
   },
   {
@@ -162,7 +162,7 @@ export default function CLAInteractive() {
     setPanel(p => {
       const next = p.type === 'whitespace' ? { type: 'idle' as const } : { type: 'whitespace' as const }
       setLiveText(next.type === 'whitespace'
-        ? 'White space selected — genuinely empty region with no competitors. Click again to close.'
+        ? 'White space selected: genuinely empty region with no competitors. Click again to close.'
         : 'White space panel closed.')
       return next
     })
@@ -173,7 +173,7 @@ export default function CLAInteractive() {
 
   return (
     <div className="w-full space-y-6">
-      {/* Screen-reader live region — announces state changes (reframe, selection, WS) */}
+      {/* Screen-reader live region - announces state changes (reframe, selection, WS) */}
       <div
         aria-live="polite"
         aria-atomic="true"
@@ -314,7 +314,7 @@ export default function CLAInteractive() {
             onClick={() => setPanel(p => p.type === 'crowd' ? { type: 'idle' } : { type: 'crowd' })}
           >CROWDED ZONE</motion.text>
 
-          {/* White space — ONE group. Position is computed from current dot positions so
+          {/* White space - ONE group. Position is computed from current dot positions so
               the highlight, label, and hit-target always sit on the actual empty region.
               initial matches animate to prevent a fly-in on mount. */}
           <motion.g
@@ -336,7 +336,7 @@ export default function CLAInteractive() {
               filter="url(#cla-int-ws-glow)"
               style={{ pointerEvents: 'none' }}
             />
-            {/* Labels — centred inside the box */}
+            {/* Labels - centred inside the box */}
             <motion.text
               textAnchor="middle" dominantBaseline="middle"
               fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.16em"
@@ -355,7 +355,7 @@ export default function CLAInteractive() {
               transition={motT}
               style={{ userSelect: 'none', pointerEvents: 'none' } as React.CSSProperties}
             >click to explore</motion.text>
-            {/* Full-area transparent hit-target — single surface for click and keyboard.
+            {/* Full-area transparent hit-target - single surface for click and keyboard.
                 Sits on top so it captures all events over the entire white-space region. */}
             <motion.rect
               x={0} y={0}
@@ -369,12 +369,12 @@ export default function CLAInteractive() {
               tabIndex={0}
               role="button"
               aria-pressed={panel.type === 'whitespace'}
-              aria-label="White space — click to explore the un-served opportunity"
+              aria-label="White space, click to explore the un-served opportunity"
               style={{ cursor: 'pointer', outline: 'none' }}
             />
           </motion.g>
 
-          {/* Competitors — 10px visual radius, 24px hit target, hover feedback */}
+          {/* Competitors - 10px visual radius, 24px hit target, hover feedback */}
           {COMPS.map((c) => {
             const pos   = isReframed ? c.reframed : c.conventional
             const isAct = panel.type === 'comp' && panel.id === c.id
@@ -393,7 +393,7 @@ export default function CLAInteractive() {
                   transition={motT}
                   style={{ pointerEvents: 'none' }}
                 />
-                {/* 24px transparent hit area — easy to click / tap */}
+                {/* 24px transparent hit area - easy to click / tap */}
                 <motion.circle
                   cx={c.conventional.cx} cy={c.conventional.cy}
                   r={24}
@@ -427,7 +427,7 @@ export default function CLAInteractive() {
             style={{ borderColor: 'var(--color-neutral-100)', color: 'var(--color-neutral-500)' }}
           >
             {isReframed
-              ? 'Axes reframed: the crowded cluster has moved to the left (intimidating). The right side — approachable, accessible — is now the white space. Click the white space to explore the opportunity.'
+              ? 'Axes reframed: the crowded cluster has moved to the left (intimidating). The right side (approachable, accessible) is now the white space. Click the white space to explore the opportunity.'
               : 'Click a competitor to see its positioning. Click the white space to explore the opportunity. Use the Reframe button to see how the map changes on different axes.'}
           </motion.div>
         )}
@@ -453,7 +453,7 @@ export default function CLAInteractive() {
               <p className="text-sm text-neutral-700 leading-relaxed">{c.positioning}</p>
               <p className="text-xs text-neutral-500 italic">
                 {isReframed
-                  ? 'On the reframed axis: positioned at the intimidating end — approachability is not how this player competes.'
+                  ? 'On the reframed axis: positioned at the intimidating end. Approachability is not how this player competes.'
                   : 'On the conventional axis: competes where most of the market competes.'}
               </p>
             </motion.div>
@@ -473,13 +473,13 @@ export default function CLAInteractive() {
             <p className="text-sm text-neutral-700 leading-relaxed">
               This is where the entire market competes. Every player has converged on the same two or three
               dimensions, driving toward feature parity and margin erosion. Entering here means choosing a
-              position on the conventional axes — and then fighting, at great expense, for incremental
+              position on the conventional axes, and then fighting, at great expense, for incremental
               differentiation in a space that is already defined.
             </p>
             <p className="text-sm text-neutral-700 leading-relaxed">
               The crowded zone is not a failure of the competitors; it is the result of each company sensibly
               watching its nearest rivals and matching what works. The result is a field of increasingly
-              similar offerings. The map makes the pattern visible — and seeing it clearly is the first
+              similar offerings. The map makes the pattern visible, and seeing it clearly is the first
               step to escaping it.
             </p>
             {!isReframed && (
@@ -504,14 +504,14 @@ export default function CLAInteractive() {
             </p>
             <p className="text-sm text-neutral-700 leading-relaxed">
               {isReframed
-                ? 'After reframing to approachability vs price, the entire right side of the field is empty. No competitor has positioned on being genuinely approachable and accessible — every player, from the budget entry-level to the ultra-premium leader, uses the expert-oriented category conventions. The gap between where competitors actually sit and where un-served customers might want them is now visible.'
-                : 'This region has no competitors. On the conventional axes, the lower-left represents a position that combines accessible price with simplified, low-barrier positioning — something no current player occupies.'}
+                ? 'After reframing to approachability vs price, the entire right side of the field is empty. No competitor has positioned on being genuinely approachable and accessible: every player, from the budget entry-level to the ultra-premium leader, uses the expert-oriented category conventions. The gap between where competitors actually sit and where un-served customers might want them is now visible.'
+                : 'This region has no competitors. On the conventional axes, the lower-left represents a position that combines accessible price with simplified, low-barrier positioning, something no current player occupies.'}
             </p>
             <div className="border-t pt-4 space-y-2" style={{ borderColor: `${SAGE}0.15)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest"
                 style={{ color: `${SAGE}0.70)` }}>The critical question</p>
               <p className="text-sm font-semibold text-neutral-800 leading-relaxed">
-                Is this space empty because it is an un-served opportunity — or because no viable business can survive here?
+                Is this space empty because it is an un-served opportunity, or because no viable business can survive here?
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 Both exist. A white space on a competitive map is necessary but not sufficient. It tells you

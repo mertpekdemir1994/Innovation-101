@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'A company wants to enter the wine market. Every competitor positions on the same conventional axis: price tied to prestige and expertise — cheap-and-basic up to expensive-and-sophisticated — with all the associated language of regions, vintages, and connoisseurship. The team runs a competitive landscape analysis to find an opening. This is the terrain the approachable-wine disruptors like Yellow Tail famously exploited. Both versions map the same market; only the method differs.'
+const SCENARIO = 'A company wants to enter the wine market. Every competitor positions on the same conventional axis: price tied to prestige and expertise (cheap-and-basic up to expensive-and-sophisticated) with all the associated language of regions, vintages, and connoisseurship. The team runs a competitive landscape analysis to find an opening. This is the terrain the approachable-wine disruptors like Yellow Tail famously exploited. Both versions map the same market; only the method differs.'
 
 export default function CLAExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -61,14 +61,14 @@ export default function CLAExampleToggle() {
                 style={{ color: `${SAGE}1)` }}>Step 1: Map the field on the conventional axis</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 The team first mapped the wine market on its conventional axis: price and prestige. Every
-                competitor in the category sat somewhere along the same line — from budget entry-level to
-                ultra-premium — all speaking the same language of expertise, region, and vintage. The map
+                competitor in the category sat somewhere along the same line, from budget entry-level to
+                ultra-premium, all speaking the same language of expertise, region, and vintage. The map
                 was complete and accurate.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 And it showed exactly what you would expect: a dense, crowded market with every position
                 on the line already taken. Entering on the conventional axis meant competing in a space
-                where the only moves were incremental — slightly better quality at the same price, or
+                where the only moves were incremental: slightly better quality at the same price, or
                 slightly lower price at the same quality.
               </p>
               <div className="mt-4 rounded p-3"
@@ -84,15 +84,15 @@ export default function CLAExampleToggle() {
             {/* Step 2: The reframe */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${SAGE}0.22)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${SAGE}1)` }}>Step 2: Reframe the axes — find a dimension the industry ignores</p>
+                style={{ color: `${SAGE}1)` }}>Step 2: Reframe the axes, find a dimension the industry ignores</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
-                Instead of price-and-prestige, the team tried a different dimension: <strong>approachability</strong> —
+                Instead of price-and-prestige, the team tried a different dimension: <strong>approachability</strong>,
                 how easy or hard the wine (and its marketing) made a non-expert feel. How much expertise
                 did a customer need to choose a bottle and feel confident about it?
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 On that fresh axis, the crowded market suddenly revealed a wide white space. Almost every
-                competitor sat at the &ldquo;expert, sophisticated, faintly intimidating&rdquo; end — even the budget
+                competitor sat at the &ldquo;expert, sophisticated, faintly intimidating&rdquo; end. Even the budget
                 entry-level brands used the same expert-oriented language and visual conventions as the
                 premium ones. Virtually no competitor occupied the &ldquo;approachable, unpretentious, fun,
                 no connoisseurship required&rdquo; end.
@@ -125,8 +125,8 @@ export default function CLAExampleToggle() {
                 not a graveyard.
               </p>
               <p className="text-sm font-semibold" style={{ color: `${SAGE}0.88)` }}>
-                Occupying that reframed white space — approachable wine with friendly, jargon-free branding
-                and accessible pricing — opened an enormous market the conventional map had rendered entirely invisible.
+                Occupying that reframed white space (approachable wine with friendly, jargon-free branding
+                and accessible pricing) opened an enormous market the conventional map had rendered entirely invisible.
                 The breakthrough came from reframing the axis to one the industry was not competing on,
                 and validating the gap it revealed.
               </p>
@@ -146,7 +146,7 @@ export default function CLAExampleToggle() {
               <p className="text-xs text-neutral-600 leading-relaxed">
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The real disruption was human-led. This tab imagines the team had instead opened with an AI
-                competitive analysis of the wine market — to make visible what that approach reveals and what it misses.
+                competitive analysis of the wine market, to make visible what that approach reveals and what it misses.
               </p>
             </div>
 
@@ -161,7 +161,7 @@ export default function CLAExampleToggle() {
                 </span>
               </div>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
-                The AI produced a thorough, well-organized competitive analysis — and it mapped the field on
+                The AI produced a thorough, well-organized competitive analysis, and it mapped the field on
                 the conventional axis. Reasoning from everything written about wine, it inherited the industry&rsquo;s
                 own framing: it plotted competitors by price and prestige, summarized their positioning in the
                 standard language of region, vintage, and quality tier, and identified the crowded center accurately.
@@ -200,15 +200,15 @@ export default function CLAExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${INDIGO}0.80)` }}>What was missing: the axis the industry was not using</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
-                The decisive move — reframing the map onto the &ldquo;approachable vs intimidating&rdquo; axis the
-                industry was not competing on — was not something the AI proposed. That axis appears nowhere
+                The decisive move (reframing the map onto the &ldquo;approachable vs intimidating&rdquo; axis the
+                industry was not competing on) was not something the AI proposed. That axis appears nowhere
                 in the conventional wine discourse the AI learned from. The whole point of it was that the
                 industry was <em>not</em> talking about it. Asked to map the landscape, the AI mapped
                 the field everyone already sees and confirmed it was crowded.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                Prompted specifically — &ldquo;map this market on unconventional axes the industry ignores,
-                such as how approachable it feels to a non-expert&rdquo; — the AI could help explore the reframe.
+                Prompted specifically, &ldquo;map this market on unconventional axes the industry ignores,
+                such as how approachable it feels to a non-expert,&rdquo; the AI could help explore the reframe.
                 But choosing that axis (the contrarian move against the consensus framing) and validating that
                 the gap was a real, underserved market were human acts.
               </p>
@@ -231,8 +231,8 @@ export default function CLAExampleToggle() {
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
                   The reframe, the validation, and the decision. The axis no one was using was not in the
-                  data. Whether the gap was an opportunity was not in the data either. The strategy — and the
-                  billion-dollar category creation — was entirely human.
+                  data. Whether the gap was an opportunity was not in the data either. The strategy, and the
+                  billion-dollar category creation, was entirely human.
                 </p>
               </div>
             </div>
