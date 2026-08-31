@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'In-Depth Interviews — Methods — Innovation 101',
 }
 
-// Client components — dynamic import avoids SSR/hydration issues with animations
+// Client components: dynamic import avoids SSR/hydration issues with animations
 const IDIEstablishing  = dynamic(() => import('./IDIEstablishing'),  { ssr: false })
 const IDIInteractive   = dynamic(() => import('./IDIInteractive'),   { ssr: false })
 const IDIAIReactivated = dynamic(() => import('./IDIAIReactivated'), { ssr: false })
@@ -21,7 +21,7 @@ const SAGE = '#3D6B5A'
 const FRAMEWORK_LINKS = [
   { slug: 'double-diamond',    name: 'Double Diamond',              phase: 'Discover',         note: 'The primary research method for understanding the problem space.' },
   { slug: 'design-thinking',   name: 'Design Thinking',             phase: 'Empathize',        note: 'A core method of the empathy stage.' },
-  { slug: 'lean-startup',      name: 'Lean Startup',                phase: 'Build',            note: 'Informs the hypothesis — interviews shape what to build and test first.' },
+  { slug: 'lean-startup',      name: 'Lean Startup',                phase: 'Build',            note: 'Informs the hypothesis, interviews shape what to build and test first.' },
   { slug: 'agile-innovation',  name: 'Agile Innovation',            phase: 'Discovery Sprint', note: 'The core research activity that keeps the backlog grounded in real needs.' },
   { slug: 'fde',               name: 'Forward Deployed Engineering', phase: 'Embed',            note: 'Continuous, deep interviewing is part of living with the customer.' },
 ]
@@ -40,7 +40,7 @@ export default function InDepthInterviewsPage() {
   return (
     <>
       {/* ────────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -88,7 +88,7 @@ export default function InDepthInterviewsPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK (scroll-in)
+          S2 - Establishing visual   DARK (scroll-in)
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -99,7 +99,7 @@ export default function InDepthInterviewsPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -109,13 +109,13 @@ export default function InDepthInterviewsPage() {
 
             <div className="flex flex-col gap-5">
               <Body>
-                An in-depth interview is a guided but open conversation with a single participant, designed to surface motivations, frustrations, workarounds, and unarticulated needs. Unlike a survey, which captures what people say at scale, or a focus group, which captures group dynamics and the loudest voice, the in-depth interview captures the texture of one person&rsquo;s actual experience &mdash; including the things they would never think to put on a form.
+                An in-depth interview is a guided but open conversation with a single participant, designed to surface motivations, frustrations, workarounds, and unarticulated needs. Unlike a survey, which captures what people say at scale, or a focus group, which captures group dynamics and the loudest voice, the in-depth interview captures the texture of one person&rsquo;s actual experience, including the things they would never think to put on a form.
               </Body>
               <Body>
                 Its power comes from a simple truth: people are not reliable narrators of their own behavior, but they are excellent storytellers about specific moments. A good interview moves a person away from opinions and generalizations (&ldquo;I usually try to eat healthy&rdquo;) and toward concrete, recent stories (&ldquo;last night I ordered takeout at 9pm because I was exhausted&rdquo;), because the specifics are where the real, un-rationalized behavior lives.
               </Body>
               <Body>
-                It is the single most widely used research method in innovation and the foundation that most other discovery and synthesis methods build on. It is also the one teams most often do badly &mdash; talking too much, asking leading questions, accepting the first surface answer, and hearing what they hoped to hear. Done well, it is the closest thing innovation has to a superpower. Done badly, it quietly produces false confidence.
+                It is the single most widely used research method in innovation and the foundation that most other discovery and synthesis methods build on. It is also the one teams most often do badly: talking too much, asking leading questions, accepting the first surface answer, and hearing what they hoped to hear. Done well, it is the closest thing innovation has to a superpower. Done badly, it quietly produces false confidence.
               </Body>
             </div>
           </div>
@@ -123,7 +123,7 @@ export default function InDepthInterviewsPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -142,7 +142,7 @@ export default function InDepthInterviewsPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -162,7 +162,7 @@ export default function InDepthInterviewsPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'You are at the start of an innovation challenge and do not yet fully understand the people you are designing for.',
-                    'You need to understand the emotional and contextual reality of a problem — the why beneath the what — not just its surface symptoms.',
+                    'You need to understand the emotional and contextual reality of a problem, the why beneath the what, not just its surface symptoms.',
                     'You need rich, specific stories rather than statistics.',
                     'You suspect there is a gap between what people say they do and what they actually do, and you want to hear them describe real, recent behavior.',
                   ].map((item, i) => (
@@ -188,7 +188,7 @@ export default function InDepthInterviewsPage() {
                   {[
                     'You need quantitative validation or statistical significance (use surveys or analytics instead).',
                     'You are testing a finished solution for usability (use concept or usability testing).',
-                    'You need to observe behavior in context rather than hear it described — pair with or substitute contextual observation.',
+                    'You need to observe behavior in context rather than hear it described; pair with or substitute contextual observation.',
                     'The behavior you care about is too private, rare, or sensitive to be discussed candidly.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
@@ -215,7 +215,7 @@ export default function InDepthInterviewsPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -253,7 +253,7 @@ export default function InDepthInterviewsPage() {
                 {
                   n: '06',
                   title: 'Reach saturation, then stop.',
-                  body: 'Conduct enough interviews (usually 12 to 15 for a given population) that you stop hearing genuinely new things. That point of diminishing returns — saturation — is your signal that you have learned what this round can teach.',
+                  body: 'Conduct enough interviews (usually 12 to 15 for a given population) that you stop hearing genuinely new things. That point of diminishing returns, saturation, is your signal that you have learned what this round can teach.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -280,13 +280,13 @@ export default function InDepthInterviewsPage() {
       </WarmSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={SAGE}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like — and the mistakes that prevent it.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and the mistakes that prevent it.</SectionHeadingLight>
 
             {/* The craft */}
             <h3
@@ -300,7 +300,7 @@ export default function InDepthInterviewsPage() {
                 'The interviewer talks less than 20 percent of the time. Silence is a tool, not a failure; people fill it with their most honest material.',
                 'The participant tells stories about specific, recent moments rather than offering general opinions.',
                 'The conversation surfaces at least one thing that genuinely surprises the team. If nothing surprised you, you probably confirmed your assumptions rather than challenging them.',
-                'Questions are open and non-leading. "What was that experience like?" — not "That was frustrating, right?"',
+                'Questions are open and non-leading. "What was that experience like?", not "That was frustrating, right?"',
                 'Exact quotes are captured verbatim, because the participant\'s own words carry meaning a paraphrase loses.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
@@ -335,7 +335,7 @@ export default function InDepthInterviewsPage() {
                 },
                 {
                   mistake: 'Interviewing to validate.',
-                  fix: 'Going in hoping to confirm a belief turns the interview into theater. Go in genuinely trying to learn you are wrong — that is where the value is.',
+                  fix: 'Going in hoping to confirm a belief turns the interview into theater. Go in genuinely trying to learn you are wrong; that is where the value is.',
                 },
                 {
                   mistake: 'Recruiting the convenient rather than the right people.',
@@ -368,7 +368,7 @@ export default function InDepthInterviewsPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -398,7 +398,7 @@ export default function InDepthInterviewsPage() {
                 },
                 {
                   label: 'Customer and user lists',
-                  body: 'If you already have users, recruiting from your own base gives you people with genuine relevant experience. The caveat: your existing users are the ones who did not churn, so they can over-represent the satisfied and under-represent the people who left — often the most informative to talk to.',
+                  body: 'If you already have users, recruiting from your own base gives you people with genuine relevant experience. The caveat: your existing users are the ones who did not churn, so they can over-represent the satisfied and under-represent the people who left, often the most informative to talk to.',
                 },
                 {
                   label: 'AI-assisted recruiting',
@@ -444,7 +444,7 @@ export default function InDepthInterviewsPage() {
                 },
                 {
                   label: 'AI-moderated and AI-assisted sessions',
-                  body: 'A rapidly developing option in which AI conducts or supports the interview itself, asking questions, following up, and capturing responses at scale. Tools such as Outset.io run AI-moderated qualitative interviews with many participants in parallel. This unlocks scale that was previously impossible, but introduces a real tradeoff explored in the next section: what is gained in scale and speed, and what is quietly lost.',
+                  body: 'A rapidly developing option in which AI conducts or supports the interview itself, asking questions, following up, and capturing responses at scale. Tools such as Outset.io run AI-moderated qualitative interviews with many participants in parallel. This makes possible a scale of research that was previously impossible, but introduces a real tradeoff explored in the next section: what is gained in scale and speed, and what is quietly lost.',
                 },
               ].map(({ label, body }) => (
                 <div key={label} className="flex gap-4">
@@ -471,7 +471,7 @@ export default function InDepthInterviewsPage() {
       </WarmSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S9 — How AI is evolving this method   DARK
+          S9 - How AI is evolving this method   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -482,7 +482,7 @@ export default function InDepthInterviewsPage() {
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle each role to see what changes when AI takes it — what it gains, and what it risks. The illustration above updates to reflect the state.
+              Toggle each role to see what changes when AI takes it: what it gains, and what it risks. The illustration above updates to reflect the state.
             </p>
             <IDIAIReactivated />
           </div>
@@ -490,7 +490,7 @@ export default function InDepthInterviewsPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -509,7 +509,7 @@ export default function InDepthInterviewsPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S11 — Used in these frameworks   LIGHT
+          S11 - Used in these frameworks   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -559,14 +559,14 @@ export default function InDepthInterviewsPage() {
               className="mt-6"
               style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)', fontStyle: 'italic' }}
             >
-              Note: the Design Sprint deliberately does not run full in-depth interviews inside the five days — it imports their outputs. This blank is intentional.
+              Note: the Design Sprint deliberately does not run full in-depth interviews inside the five days; it imports their outputs. This blank is intentional.
             </p>
           </div>
         </Container>
       </WarmSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -601,7 +601,7 @@ export default function InDepthInterviewsPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S13 — Sources   LIGHT
+          S13 - Sources   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>

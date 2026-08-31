@@ -46,7 +46,7 @@ export default function IDIEstablishing() {
       {/* viewBox height: body base (137) + name (18) + sub (16) + margin (14) = 185 */}
       <svg viewBox="0 0 640 185" width="100%" style={{ maxWidth: 680, overflow: 'visible' }}>
         <defs>
-          {/* Soft glow that blends stroke/fill outward — matches DiamondHero treatment */}
+          {/* Soft glow that blends stroke/fill outward: matches DiamondHero treatment */}
           <filter id="idi-est-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="5" result="blur" />
             <feMerge>
@@ -63,7 +63,7 @@ export default function IDIEstablishing() {
           variants={fade} transition={lineT}
         />
 
-        {/* ── Connectors — in the clear gap between figure bodies ── */}
+        {/* Connectors: in the clear gap between figure bodies */}
         {/* OBSERVES: Note-taker → Facilitator (dashed) */}
         <motion.line
           x1={148} y1={105} x2={302} y2={105}
@@ -77,7 +77,7 @@ export default function IDIEstablishing() {
           variants={fade} transition={lineT}
         />
 
-        {/* Connector micro-labels — float between the head circles */}
+        {/* Connector micro-labels: float between the head circles */}
         <motion.text
           x={225} y={90} textAnchor="middle"
           fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"

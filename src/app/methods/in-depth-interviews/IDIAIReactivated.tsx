@@ -21,12 +21,12 @@ const AI_NOTES: Record<Role, { well: string; risks: string }> = {
     risks: 'AI misses the unplanned thread a skilled human would have chased, and lacks the human presence that earns deeper trust. AI follows up on what was said; the best human facilitators follow up on what was almost said.',
   },
   notetaker: {
-    well:  'AI transcription tools capture every word verbatim, generate instant transcripts, and surface candidate themes across dozens of interviews in minutes — work that used to take a researcher days. Perfect recall, real speed.',
+    well:  'AI transcription tools capture every word verbatim, generate instant transcripts, and surface candidate themes across dozens of interviews in minutes: work that used to take a researcher days. Perfect recall, real speed.',
     risks: 'A transcript records the words but can miss the hesitation, the loaded pause, the contradiction between word and tone that a human note-taker flags as the real signal. The texture gets flattened.',
   },
   participant: {
     well:  'Synthetic users answer interview questions at instant, free, infinite scale. Useful for rehearsing an interview guide or pressure-testing obvious assumptions before running a real study.',
-    risks: 'A synthetic participant cannot tell you something you did not already implicitly know — it is generated from existing patterns. It will confidently confirm your assumptions and cannot surprise you with genuine new human truth. Used as a replacement for real people, it removes the entire point of the method.',
+    risks: 'A synthetic participant cannot tell you something you did not already implicitly know: it is generated from existing patterns. It will confidently confirm your assumptions and cannot surprise you with genuine new human truth. Used as a replacement for real people, it removes the entire point of the method.',
   },
 }
 
@@ -37,7 +37,7 @@ function dome(cx: number, cy: number, w: number, h: number) {
 export default function IDIAIReactivated() {
   const [aiRoles, setAiRoles] = useState<Record<Role, boolean>>({
     facilitator: false,
-    notetaker:   true,  // default: note-taker as AI — clearest value, least controversial
+    notetaker:   true,  // default: note-taker as AI, clearest value, least controversial
     participant: false,
   })
   const prefersReduced = useReducedMotion()
@@ -145,7 +145,7 @@ export default function IDIAIReactivated() {
         </svg>
       </div>
 
-      {/* ── Per-role toggle cards — same order as illustration: N · F · P ── */}
+      {/* Per-role toggle cards, same order as illustration: N · F · P */}
       <div className="grid md:grid-cols-3 gap-5">
         {ROLES.map(({ id, name }) => {
           const isAI = aiRoles[id]
@@ -242,7 +242,7 @@ export default function IDIAIReactivated() {
           style={{ fontSize: 'var(--text-2xs)', color: `${SAGE}0.70)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
-          AI&rsquo;s leverage on this method is real and growing: it removes the note-taking burden almost entirely, and it makes interviewing at scale genuinely possible for the first time. But the core of the method &mdash; a present human earning enough trust to hear an un-rationalized truth, and the judgment to chase the unexpected thread &mdash; is exactly the part AI is weakest at. The teams that get the most from AI here use it to amplify human interviewing (scale, transcription, synthesis) rather than to replace the human judgment that makes an interview worth running.
+          AI&rsquo;s leverage on this method is real and growing: it removes the note-taking burden almost entirely, and it makes interviewing at scale genuinely possible for the first time. But the core of the method (a present human earning enough trust to hear an un-rationalized truth, and the judgment to chase the unexpected thread) is exactly the part AI is weakest at. The teams that get the most from AI here use it to amplify human interviewing (scale, transcription, synthesis) rather than to replace the human judgment that makes an interview worth running.
         </p>
       </div>
     </div>

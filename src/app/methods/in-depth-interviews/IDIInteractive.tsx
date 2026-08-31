@@ -21,11 +21,11 @@ const ROLE_DETAIL: Record<Role, { heading: string; body: string }> = {
   },
   notetaker: {
     heading: 'Note-taker',
-    body: "The silent observer who captures both what is said and what is unsaid — the hesitations, the contradictions, the moment the participant's tone shifts. Freeing the facilitator from note-taking is what lets them stay fully present in the conversation. The note-taker also watches for the gap between what the participant says and what their body language suggests, because that gap is often where the most valuable insight hides. A good note-taker captures verbatim quotes, not paraphrases, because the participant's exact words carry meaning a summary loses.",
+    body: "The silent observer who captures both what is said and what is unsaid: the hesitations, the contradictions, the moment the participant's tone shifts. Freeing the facilitator from note-taking is what lets them stay fully present in the conversation. The note-taker also watches for the gap between what the participant says and what their body language suggests, because that gap is often where the most valuable insight hides. A good note-taker captures verbatim quotes, not paraphrases, because the participant's exact words carry meaning a summary loses.",
   },
   participant: {
     heading: 'Participant',
-    body: "The person being interviewed, and the only true source of insight in the room. Everything depends on getting the right participant — someone who genuinely has the experience you are studying — and on creating enough trust and safety that they tell you the real story rather than the polite, presentable version. The participant is not there to validate your idea. They are there to teach you about their world. The interview succeeds when they tell you something that genuinely surprises you.",
+    body: "The person being interviewed, and the only true source of insight in the room. Everything depends on getting the right participant, someone who genuinely has the experience you are studying, and on creating enough trust and safety that they tell you the real story rather than the polite, presentable version. The participant is not there to validate your idea. They are there to teach you about their world. The interview succeeds when they tell you something that genuinely surprises you.",
   },
 }
 
@@ -84,7 +84,7 @@ export default function IDIInteractive() {
           width="100%"
           style={{ overflow: 'visible' }}
           role="group"
-          aria-label="Interview roles — click a figure to learn about its role"
+          aria-label="Interview roles, click a figure to learn about its role"
         >
           <defs>
             <filter id="idi-int-glow" x="-40%" y="-40%" width="180%" height="180%">
