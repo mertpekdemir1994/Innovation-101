@@ -215,7 +215,7 @@ export default function FiveEsAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}
               >Where AI is strong</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                The Engage phase generates abundant data: session recordings, usage logs, completion rates, NPS scores, A/B test results. AI can synthesize this evidence faster and at higher volume than any team. It will give you a thorough and well-supported read on the core experience — exactly the phase you already know the most about.
+                The Engage phase generates abundant data: session recordings, usage logs, completion rates, NPS scores, A/B test results. AI can synthesize this evidence faster and at higher volume than any team. It will give you a thorough and well-supported read on the core experience, exactly the phase you already know the most about.
               </p>
             </div>
             <div className="rounded-xl p-5"
@@ -225,20 +225,20 @@ export default function FiveEsAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}
               >Where AI is weakest</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                Bookend signals are faint and unstructured: the moment of awareness before someone even becomes a user, the anxiety of the very first visit, what someone feels in the days after the experience has ended. These leave few data traces. AI&rsquo;s reading of the bookends goes thin and generic — it can tell you what the pattern usually looks like, not what it actually looks like for your experience.
+                Bookend signals are faint and unstructured: the moment of awareness before someone even becomes a user, the anxiety of the very first visit, what someone feels in the days after the experience has ended. These leave few data traces. AI&rsquo;s reading of the bookends goes thin and generic: it can tell you what the pattern usually looks like, not what it actually looks like for your experience.
               </p>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Synthesis — always visible */}
+      {/* Synthesis - always visible */}
       <div className="rounded-xl p-6" style={{ background: `${TEAL}0.08)`, border: `1px solid ${TEAL}0.20)` }}>
         <p className="font-mono uppercase tracking-widest mb-3"
           style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
-          AI reinforces the exact bias the 5Es is designed to correct. It gives you the most evidence on the phase you already over-invest in, and the least evidence on the phases you already neglect. The bookends — Entice, Exit, Extend — are thin in data because they are thin in design. That is the finding, not the limit. Use AI to efficiently cover the Engage phase, and spend your human research budget entirely on the bookends.
+          AI reinforces the exact bias the 5Es is designed to correct. It gives you the most evidence on the phase you already over-invest in, and the least evidence on the phases you already neglect. The bookends (Entice, Exit, Extend) are thin in data because they are thin in design. That is the finding, not the limit. Use AI to efficiently cover the Engage phase, and spend your human research budget entirely on the bookends.
         </p>
       </div>
     </div>

@@ -69,10 +69,10 @@ export default function AMExampleToggle() {
               <p
                 className="font-mono uppercase tracking-widest mb-4"
                 style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
-              >The raw observations — before clustering</p>
+              >The raw observations, before clustering</p>
               <div className="grid sm:grid-cols-2 gap-3 mb-4">
                 {[
-                  { obs: 'Child grips the brush with whole fist — all four fingers wrapped around the handle.', note: 'Observation' },
+                  { obs: 'Child grips the brush with whole fist: all four fingers wrapped around the handle.', note: 'Observation' },
                   { obs: 'Child&rsquo;s arm shakes when trying to hold a thin grip. Brush slips.', note: 'Observation' },
                   { obs: 'Parent says: "She just can\'t control it. She ends up poking herself."', note: 'Parent interview' },
                   { obs: 'Dentist: "Children under eight don\'t have the fine motor control for a thin handle."', note: 'Expert interview' },
@@ -113,10 +113,10 @@ export default function AMExampleToggle() {
                 className="font-semibold mb-3"
                 style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-900)', lineHeight: 1.35 }}
               >
-                Children brush with their whole fist — the standard thin handle fights the grip they actually have
+                Children brush with their whole fist: the standard thin handle fights the grip they actually have
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                Six separate observations — from field visits, parent interviews, and expert input — cluster together around a single pattern. No individual card says this. The insight exists only in the grouping. The team named the cluster as an insight, not as a category (&ldquo;grip issues&rdquo;) — which made the design direction immediate.
+                Six separate observations (from field visits, parent interviews, and expert input) cluster together around a single pattern. No individual card says this. The insight exists only in the grouping. The team named the cluster as an insight, not as a category (&ldquo;grip issues&rdquo;), which made the design direction immediate.
               </p>
             </div>
 
@@ -130,7 +130,7 @@ export default function AMExampleToggle() {
                 style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
               >What the cluster made possible</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                The named insight — children brush with their whole fist — pointed directly to a design direction that Oral-B had never considered: make the handle fatter. Not a feature. Not an aesthetic update. A structural change that matched the grip children actually use. The Oral-B Squish Grip became one of the most commercially successful product redesigns of its decade. The insight was not in any single observation. It was in the cluster.
+                The named insight, children brush with their whole fist, pointed directly to a design direction that Oral-B had never considered: make the handle fatter. Not a feature. Not an aesthetic update. A structural change that matched the grip children actually use. The Oral-B Squish Grip became one of the most commercially successful product redesigns of its decade. The insight was not in any single observation. It was in the cluster.
               </p>
             </div>
           </motion.div>
@@ -151,7 +151,7 @@ export default function AMExampleToggle() {
               <p
                 className="font-mono uppercase tracking-widest mb-1"
                 style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}
-              >Same research — AI assistance applied</p>
+              >Same research: AI assistance applied</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 The same 90 observation cards are fed to an AI as text. The AI is asked to perform affinity mapping: group the observations into themes and label each group.
               </p>
@@ -172,7 +172,7 @@ export default function AMExampleToggle() {
                   count: 9,
                   sample: '"arm shakes," "fine motor control," "pincer grip not developed," "pencil grip pattern"',
                   verdict: 'DUPLICATES THE CLUSTER',
-                  note: 'AI creates a second cluster that overlaps significantly with "Grip & Handling." The motor development observations and the grip observations describe the same underlying pattern — but AI does not recognize this because it is matching keywords, not meaning.',
+                  note: 'AI creates a second cluster that overlaps significantly with "Grip & Handling." The motor development observations and the grip observations describe the same underlying pattern, but AI does not recognize this because it is matching keywords, not meaning.',
                 },
                 {
                   category: 'Parent Feedback',
@@ -186,7 +186,7 @@ export default function AMExampleToggle() {
                   count: 7,
                   sample: '"less slipping," "brushes more confidently," "enjoys it more," "asks to brush again"',
                   verdict: 'MISSES THE CAUSE',
-                  note: 'The confidence improvement observations are caused by a different handle — but AI files them under behaviour rather than connecting them to the grip pattern. The most design-relevant link in the entire dataset is not visible in the clustering.',
+                  note: 'The confidence improvement observations are caused by a different handle, but AI files them under behaviour rather than connecting them to the grip pattern. The most design-relevant link in the entire dataset is not visible in the clustering.',
                 },
               ].map(item => (
                 <div
@@ -242,7 +242,7 @@ export default function AMExampleToggle() {
                 className="font-semibold mb-2"
                 style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)', lineHeight: 1.35 }}
               >
-                Children brush with their whole fist — the standard thin handle fights the grip they actually have
+                Children brush with their whole fist: the standard thin handle fights the grip they actually have
               </p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 AI split the relevant observations across three separate categories (Grip &amp; Handling, Motor Skills, Parent Feedback) and did not recognize that observations about confidence improvement were caused by a handle shape change. The singular insight that led to the Oral-B Squish Grip is not visible anywhere in the AI output. It required a human to see what the four categories had in common.
@@ -259,7 +259,7 @@ export default function AMExampleToggle() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.65)` }}
               >What this tells you about AI + affinity mapping</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI groups by surface similarity and keyword co-occurrence — useful for initial sorting, unreliable for insight generation. Use it to organize volume before the session, not to replace the session. The naming step — converting a cluster into a statement that reveals meaning, not just topic — requires the researcher who was in the room. The insight that changed Oral-B required seeing across categories, not within them.
+                AI groups by surface similarity and keyword co-occurrence: useful for initial sorting, unreliable for insight generation. Use it to organize volume before the session, not to replace the session. The naming step, converting a cluster into a statement that reveals meaning, not just topic, requires the researcher who was in the room. The insight that changed Oral-B required seeing across categories, not within them.
               </p>
             </div>
           </motion.div>

@@ -30,34 +30,34 @@ const PHASES: { id: PhaseId; label: string; bookend: boolean; core: boolean }[] 
 
 const DETAIL: Record<PhaseId, { tagline: string; what: string; goodLooks: string; whatToCheck: string }> = {
   entice: {
-    tagline: 'Before arrival — commonly neglected',
-    what: 'How people become aware of and motivated to begin the experience. The phase that happens before the person even arrives — the awareness, the promise, the reason to come. The question it poses: is the promise honest and compelling, and does it set up the right expectation for what follows?',
+    tagline: 'Before arrival: commonly neglected',
+    what: 'How people become aware of and motivated to begin the experience. The phase that happens before the person even arrives (the awareness, the promise, the reason to come). The question it poses: is the promise honest and compelling, and does it set up the right expectation for what follows?',
     goodLooks: 'The person understands what they are getting into before they arrive. The promise is honest, the expectation it creates is accurate, and the motivation to begin is strong. People arrive ready and oriented, not confused or already disappointed.',
-    whatToCheck: 'What makes people aware of this experience? Is the promise clear and compelling? Does it create the right expectation — or does it set up disappointment? Is there friction in the decision to begin? Are the right people being attracted in the first place?',
+    whatToCheck: 'What makes people aware of this experience? Is the promise clear and compelling? Does it create the right expectation, or does it set up disappointment? Is there friction in the decision to begin? Are the right people being attracted in the first place?',
   },
   enter: {
     tagline: 'First moments of engagement',
-    what: 'The critical first moments once the person arrives and begins. Evaluate whether the opening reduces or increases anxiety. First impressions here — the first five seconds, the first gesture, the first decision point — color everything that follows. Teams often underinvest here because it feels transitional rather than central.',
+    what: 'The critical first moments once the person arrives and begins. Evaluate whether the opening reduces or increases anxiety. First impressions here (the first five seconds, the first gesture, the first decision point) color everything that follows. Teams often underinvest here because it feels transitional rather than central.',
     goodLooks: 'The person begins with confidence. The environment is welcoming, the path forward is clear, and the natural anxieties of starting something new are actively reduced. The transition from outside to inside feels smooth and intentional rather than abrupt or disorienting.',
-    whatToCheck: 'What are the very first moments like? Does the person feel welcomed or lost? Is the beginning clear or confusing? What anxieties does a newcomer bring, and how does the experience address them? What is the first impression — and does it serve what comes next?',
+    whatToCheck: 'What are the first moments like? Does the person feel welcomed or lost? Is the beginning clear or confusing? What anxieties does a newcomer bring, and how does the experience address them? What is the first impression, and does it serve what comes next?',
   },
   engage: {
-    tagline: 'The core — where teams over-invest',
-    what: 'The main interaction where the core value is delivered. This is the phase teams focus on almost exclusively. Evaluate whether the central value is actually being delivered well — but be aware that this is almost always the phase that has already received the most attention. The 5Es points you at what is being skipped.',
+    tagline: 'The core: where teams over-invest',
+    what: 'The main interaction where the core value is delivered. This is the phase teams focus on almost exclusively. Evaluate whether the central value is actually being delivered well, but be aware that this is almost always the phase that has already received the most attention. The 5Es points you at what is being skipped.',
     goodLooks: 'The core value is delivered reliably and well. The person gets what they came for. The main experience meets the expectations set in Entice and Enter, without requiring workarounds or heroics on either side.',
-    whatToCheck: 'Is the core value actually being delivered? What is the quality of the main interaction? Are there gaps between the promised experience and the actual one? This is the phase most teams have already analyzed well — the 5Es asks you to spend proportionally less time here and more time on the bookends.',
+    whatToCheck: 'Is the core value actually being delivered? What is the quality of the main interaction? Are there gaps between the promised experience and the actual one? This is the phase most teams have already analyzed well: the 5Es asks you to spend proportionally less time here and more time on the bookends.',
   },
   exit: {
-    tagline: 'The conclusion — commonly neglected',
-    what: 'How the experience concludes and the person leaves. Evaluate whether it ends gracefully and leaves a strong final impression. The ending disproportionately shapes what people remember — the peak-end effect — and it is routinely treated as an afterthought rather than a designed moment.',
-    goodLooks: 'The experience ends with intention. There is a deliberate closing moment, a clear signal that the interaction is complete, and a final impression that is as considered as the opening. What the person leaves with — emotionally and practically — has been designed.',
-    whatToCheck: 'How does the experience end? Is it graceful or abrupt — does it just stop? What is the last thing the person sees, hears, or does? Is the ending intentional, or did the team simply run out of budget after the Engage phase? Does the exit earn a return or leave the person flat?',
+    tagline: 'The conclusion: commonly neglected',
+    what: 'How the experience concludes and the person leaves. Evaluate whether it ends gracefully and leaves a strong final impression. The ending disproportionately shapes what people remember (the peak-end effect), and it is routinely treated as an afterthought rather than a designed moment.',
+    goodLooks: 'The experience ends with intention. There is a deliberate closing moment, a clear signal that the interaction is complete, and a final impression that is as considered as the opening. What the person leaves with, emotionally and practically, has been designed.',
+    whatToCheck: 'How does the experience end? Is it graceful or abrupt, does it just stop? What is the last thing the person sees, hears, or does? Is the ending intentional, or did the team run out of budget after the Engage phase? Does the exit earn a return or leave the person flat?',
   },
   extend: {
-    tagline: 'After the core — the most neglected phase',
+    tagline: 'After the core: the most neglected phase',
     what: 'What happens afterward to sustain the relationship and bring the person back. Evaluate whether there is anything that earns a return, builds loyalty, or creates belonging between engagements. This is where retention is won or lost, and it is the phase most teams have never formally designed at all.',
     goodLooks: 'Something deliberate happens after the experience to sustain the relationship. The person feels a sense of belonging between engagements, receives relevant and timely follow-through, and has reasons to return that go beyond habit or inertia.',
-    whatToCheck: 'What happens after the person leaves? Is there anything at all, or does the relationship simply go dark? Does the person feel like a member of something, or like a completed transaction? What earns a return — and what makes it less likely? Has this phase ever been designed, or only assumed?',
+    whatToCheck: 'What happens after the person leaves? Is there anything at all, or does the relationship go dark? Does the person feel like a member of something, or like a completed transaction? What earns a return, and what makes it less likely? Has this phase ever been designed, or only assumed?',
   },
 }
 
@@ -83,7 +83,7 @@ export default function FiveEsInteractive() {
 
   return (
     <div>
-      {/* Phase SVG — click to select */}
+      {/* Phase SVG - click to select */}
       <div className="w-full select-none mb-8" aria-label="Click a phase to explore it">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ display: 'block', overflow: 'visible', cursor: 'pointer' }}>
           <defs>
@@ -194,7 +194,7 @@ export default function FiveEsInteractive() {
                   />
                 </motion.g>
 
-                {/* Click cue — only when nothing is selected */}
+                {/* Click cue - only when nothing is selected */}
                 {!active && (
                   <text
                     x={PCX[i]} y={SVG_H - 6}

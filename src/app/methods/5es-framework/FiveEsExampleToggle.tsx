@@ -52,9 +52,9 @@ export default function FiveEsExampleToggle() {
               >Scenario</p>
               <p className="font-semibold mb-2"
                 style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}
-              >Altitude Fitness — boutique cycling studio, three locations</p>
+              >Altitude Fitness: boutique cycling studio, three locations</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
-                The studio has excellent retention among riders who make it past their first three classes. The problem is that fewer than 40% of first-time visitors come back for a second class. Management has focused its energy on instructor quality and class programming — the Engage phase. The 5Es workshop is commissioned to find out what is actually driving the drop-off.
+                The studio has excellent retention among riders who make it past their first three classes. The problem is that fewer than 40% of first-time visitors come back for a second class. Management has focused its energy on instructor quality and class programming: the Engage phase. The 5Es workshop is commissioned to find out what is actually driving the drop-off.
               </p>
             </div>
 
@@ -64,13 +64,13 @@ export default function FiveEsExampleToggle() {
                 {
                   phase: 'ENTICE',
                   bookend: true,
-                  finding: 'The studio&rsquo;s Instagram is aspirational — serious athletes mid-sprint. First-timers see it and assume the classes are too advanced for them. The promise attracts experienced riders and deters everyone else. Three people in the workshop were almost put off by the feed before they ever booked.',
+                  finding: 'The studio&rsquo;s Instagram is aspirational: serious athletes mid-sprint. First-timers see it and assume the classes are too advanced for them. The promise attracts experienced riders and deters everyone else. Three people in the workshop were almost put off by the feed before they ever booked.',
                   status: 'PROBLEM FOUND',
                 },
                 {
                   phase: 'ENTER',
                   bookend: false,
-                  finding: 'The check-in area is unmanned for the first five minutes of arrival. First-timers stand at the door, unsure whether to walk in, where to leave their bag, or whether their bike is set up correctly. Two workshop participants describe feeling embarrassed to ask — so they guessed. One set up her bike wrong and spent the first fifteen minutes in discomfort.',
+                  finding: 'The check-in area is unmanned for the first five minutes of arrival. First-timers stand at the door, unsure whether to walk in, where to leave their bag, or whether their bike is set up correctly. Two workshop participants describe feeling embarrassed to ask, so they guessed. One set up her bike wrong and spent the first fifteen minutes in discomfort.',
                   status: 'PROBLEM FOUND',
                 },
                 {
@@ -82,13 +82,13 @@ export default function FiveEsExampleToggle() {
                 {
                   phase: 'EXIT',
                   bookend: true,
-                  finding: 'When the class ends, the instructor immediately leaves to set up the next session. First-timers are left on their bikes with no closing moment — no cool-down ritual, no acknowledgement that they finished. Three participants said the experience &ldquo;just stopped.&rdquo; The last impression is awkward and uncelebrated.',
+                  finding: 'When the class ends, the instructor immediately leaves to set up the next session. First-timers are left on their bikes with no closing moment: no cool-down ritual, no acknowledgement that they finished. Three participants said the experience &ldquo;just stopped.&rdquo; The last impression is awkward and uncelebrated.',
                   status: 'PROBLEM FOUND',
                 },
                 {
                   phase: 'EXTEND',
                   bookend: true,
-                  finding: 'After the first visit, nothing happens. No welcome message. No sequence that acknowledges the difficulty of the first class. No community touchpoint between classes. The studio has a strong community for regulars, but first-timers are invisible to it. This is the most neglected phase — it has simply never been designed.',
+                  finding: 'After the first visit, nothing happens. No welcome message. No sequence that acknowledges the difficulty of the first class. No community touchpoint between classes. The studio has a strong community for regulars, but first-timers are invisible to it. This is the most neglected phase. It has never been designed.',
                   status: 'NOT DESIGNED',
                 },
               ].map(item => (
@@ -131,7 +131,7 @@ export default function FiveEsExampleToggle() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
               >What the workshop found</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                The drop-off problem is not in the class — it is in everything surrounding it. Four of the five phases had been neglected because the team had never formally looked at them. The workshop identified specific interventions for Enter, Exit, and Extend that cost almost nothing to implement: a greeter for the first five minutes, a 30-second closing acknowledgement by the instructor, and a three-email welcome sequence for first-timers. None of these required new programming or facilities investment.
+                The drop-off problem is not in the class. It is in everything surrounding it. Four of the five phases had been neglected because the team had never formally looked at them. The workshop identified specific interventions for Enter, Exit, and Extend that cost almost nothing to implement: a greeter for the first five minutes, a 30-second closing acknowledgement by the instructor, and a three-email welcome sequence for first-timers. None of these required new programming or facilities investment.
               </p>
             </div>
           </motion.div>
@@ -147,7 +147,7 @@ export default function FiveEsExampleToggle() {
             >
               <p className="font-mono uppercase tracking-widest mb-1"
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(99,102,241,0.70)' }}
-              >Same scenario — AI assistance applied</p>
+              >Same scenario: AI assistance applied</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 Before the workshop, the team feeds AI the studio&rsquo;s post-visit survey data, class attendance logs, Google reviews, and booking flow analytics. They ask for a 5Es analysis.
               </p>
@@ -165,7 +165,7 @@ export default function FiveEsExampleToggle() {
                 {
                   phase: 'ENTER',
                   bookend: false,
-                  aiRead: 'AI has no data on the Enter phase. The booking system confirms arrival, but no event fires until the class starts. AI leaves a note: &ldquo;insufficient data for this phase — recommend observation.&rdquo; A correct but unhelpful response.',
+                  aiRead: 'AI has no data on the Enter phase. The booking system confirms arrival, but no event fires until the class starts. AI leaves a note: &ldquo;insufficient data for this phase, recommend observation.&rdquo; A correct but unhelpful response.',
                   actualRead: 'The unmanned check-in area and bike setup confusion are the most emotionally costly problems found in the workshop. AI pointed to the gap but could not fill it.',
                   confidence: 'NONE',
                 },
@@ -179,14 +179,14 @@ export default function FiveEsExampleToggle() {
                 {
                   phase: 'EXIT',
                   bookend: true,
-                  aiRead: 'Post-class survey response rate is 34%. AI analyzes responses and finds nothing notable — ratings are slightly lower than mid-class ratings but within normal range. It concludes the Exit phase needs no attention.',
+                  aiRead: 'Post-class survey response rate is 34%. AI analyzes responses and finds nothing notable: ratings are slightly lower than mid-class ratings but within normal range. It concludes the Exit phase needs no attention.',
                   actualRead: 'The 66% who do not complete the post-class survey are the first-timers who felt the class &ldquo;just stopped.&rdquo; AI is reading the signal from people who stayed; it has no signal from people who left awkwardly.',
                   confidence: 'LOW',
                 },
                 {
                   phase: 'EXTEND',
                   bookend: true,
-                  aiRead: 'AI analyzes email open rates and finds a 15% open rate on the single post-visit email — below category benchmark. It recommends A/B testing subject lines. No other Extend analysis offered because there is no other Extend data.',
+                  aiRead: 'AI analyzes email open rates and finds a 15% open rate on the single post-visit email, below category benchmark. It recommends A/B testing subject lines. No other Extend analysis offered because there is no other Extend data.',
                   actualRead: 'The entire Extend phase is undesigned. AI&rsquo;s recommendation is to optimize a single email rather than design the phase. The workshop creates three new Extend touchpoints; the email is the least important of them.',
                   confidence: 'LOW',
                 },
@@ -246,7 +246,7 @@ export default function FiveEsExampleToggle() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
               >What this tells you about AI + the 5Es</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI did genuinely useful work on Engage — fast, precise, better than a manual data pull. Its mistake was not in what it found; it was in what it failed to flag as unknown. The bookend phases came back with confident-sounding analysis built on thin or missing signals. That false confidence is the hazard. Use AI to cover Engage thoroughly, and treat any AI output on the bookends as a placeholder that tells you where to look, not what you will find.
+                AI did genuinely useful work on Engage: fast, precise, better than a manual data pull. Its mistake was not in what it found; it was in what it failed to flag as unknown. The bookend phases came back with confident-sounding analysis built on thin or missing signals. That false confidence is the hazard. Use AI to cover Engage thoroughly, and treat any AI output on the bookends as a placeholder that tells you where to look, not what you will find.
               </p>
             </div>
           </motion.div>

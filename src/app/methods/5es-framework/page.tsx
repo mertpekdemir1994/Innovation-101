@@ -19,17 +19,17 @@ const TEAL = '#2A6F7A'
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const FRAMEWORK_LINKS = [
-  { slug: 'double-diamond',   name: 'Double Diamond',   phase: 'Define',           note: 'Evaluating the current or proposed experience through all five phases during the Define stage — particularly to surface which bookends are structurally neglected before the develop phase begins.' },
+  { slug: 'double-diamond',   name: 'Double Diamond',   phase: 'Define',           note: 'Evaluating the current or proposed experience through all five phases during the Define stage, particularly to surface which bookends are structurally neglected before the develop phase begins.' },
   { slug: 'design-thinking',  name: 'Design Thinking',  phase: 'Define',           note: 'The 5Es structures the definition of an experience problem by surfacing which phases are under-designed and which are being over-invested at the expense of the bookends.' },
   { slug: 'agile-innovation', name: 'Agile Innovation', phase: 'Discovery Sprint', note: 'Applied during discovery sprints to quickly evaluate an experience for bookend gaps before prioritizing which phase to invest in.' },
   { slug: 'design-sprint',    name: 'Design Sprint',    phase: 'Monday',           note: 'Used on Monday to map the existing experience and identify where the bookend failure is before committing the sprint to a design direction.' },
 ]
 
 const RELATED_METHODS = [
-  { slug: 'journey-mapping',        name: 'Journey Mapping',         rel: 'The natural complement. Use the 5Es to identify which bookend phase is most neglected, then use Journey Mapping to go deep on that zone — flexible stages, emotion line, full narrative of the specific moment. See the boundary section above.' },
-  { slug: 'service-blueprinting',   name: 'Service Blueprinting',    rel: 'When a bookend problem turns out to be an operational problem — the Exit is bad because a backstage handoff fails — a Service Blueprint maps the machine behind the experience that is producing the symptom. See the boundary section above.' },
+  { slug: 'journey-mapping',        name: 'Journey Mapping',         rel: 'The natural complement. Use the 5Es to identify which bookend phase is most neglected, then use Journey Mapping to go deep on that zone: flexible stages, emotion line, full narrative of the specific moment. See the boundary section above.' },
+  { slug: 'service-blueprinting',   name: 'Service Blueprinting',    rel: 'When a bookend problem turns out to be an operational problem (the Exit is bad because a backstage handoff fails), a Service Blueprint maps the machine behind the experience that is producing the symptom. See the boundary section above.' },
   { slug: 'in-depth-interviews',    name: 'In-Depth Interviews',     rel: 'The primary research method for populating the bookend phases with real evidence. Especially valuable for Entice (what motivated the person to begin), Exit (what they remember and feel afterward), and Extend (what brings them back).' },
-  { slug: 'contextual-observation', name: 'Contextual Observation',  rel: 'Observing the Enter and Exit moments in context — arriving, beginning, leaving — often reveals what surveys cannot. The anxiety of entering and the abruptness of exiting are visible in real behavior but rarely reported in self-administered research.' },
+  { slug: 'contextual-observation', name: 'Contextual Observation',  rel: 'Observing the Enter and Exit moments in context (arriving, beginning, leaving) often reveals what surveys cannot. The anxiety of entering and the abruptness of exiting are visible in real behavior but rarely reported in self-administered research.' },
 ]
 
 // ── Page ──────────────────────────────────────────────────────────────────────
@@ -38,7 +38,7 @@ export default function FiveEsFrameworkPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -66,7 +66,7 @@ export default function FiveEsFrameworkPage() {
               className="mb-3 max-w-[600px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              A fixed five-phase lens — Entice, Enter, Engage, Exit, Extend — for evaluating an experience and making sure the neglected bookends get designed, not just the core.
+              A fixed five-phase lens (Entice, Enter, Engage, Exit, Extend) for evaluating an experience and making sure the neglected bookends get designed, not just the core.
             </p>
 
             <p
@@ -80,7 +80,7 @@ export default function FiveEsFrameworkPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -91,7 +91,7 @@ export default function FiveEsFrameworkPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -101,13 +101,13 @@ export default function FiveEsFrameworkPage() {
 
             <div className="flex flex-col gap-5">
               <Body>
-                The 5Es Framework applies five fixed phases to any experience: Entice, Enter, Engage, Exit, and Extend. The phases are always the same — what changes is what you find inside each one. The framework exists to solve a specific and near-universal problem: teams over-invest in the middle of an experience and under-invest in the bookends that begin and end it. The 5Es makes those bookends impossible to skip.
+                The 5Es Framework applies five fixed phases to any experience: Entice, Enter, Engage, Exit, and Extend. The phases are always the same; what changes is what you find inside each one. The framework exists to solve a specific and near-universal problem: teams over-invest in the middle of an experience and under-invest in the bookends that begin and end it. The 5Es makes those bookends impossible to skip.
               </Body>
               <Body>
-                Its design is deliberately structural. Unlike a journey map, which shapes its stages to fit the specific experience being mapped, the 5Es applies the same five lenses every time. That consistency is the point: it prevents the team from creating a map that simply confirms where they already spend their time. Engage will almost always look strong. Entice, Exit, and Extend will almost always reveal neglected territory — and the framework forces you to look at them regardless.
+                Its design is deliberately structural. Unlike a journey map, which shapes its stages to fit the specific experience being mapped, the 5Es applies the same five lenses every time. That consistency is the point: it prevents the team from creating a map that confirms where they already spend their time. Engage will almost always look strong. Entice, Exit, and Extend will almost always reveal neglected territory, and the framework forces you to look at them regardless.
               </Body>
               <Body>
-                The method was developed in the context of retail experience design and has since been applied across services, digital products, events, hospitality, and member-based organizations. It is not a narrative tool — it does not capture the emotional arc of a single person&rsquo;s journey. It is an evaluation tool: a structured lens for assessing an experience phase by phase and identifying which phases have been designed and which have been assumed.
+                The method was developed in the context of retail experience design and has since been applied across services, digital products, events, hospitality, and member-based organizations. It is not a narrative tool: it does not capture the emotional arc of a single person&rsquo;s journey. It is an evaluation tool, a structured lens for assessing an experience phase by phase and identifying which phases have been designed and which have been assumed.
               </Body>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function FiveEsFrameworkPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive   DARK
+          S4 - Interactive   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -134,7 +134,7 @@ export default function FiveEsFrameworkPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -149,7 +149,7 @@ export default function FiveEsFrameworkPage() {
                 >Use the 5Es when</p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'The core experience scores well but retention, return visits, or word-of-mouth are weak — the classic bookend-neglect pattern.',
+                    'The core experience scores well but retention, return visits, or word-of-mouth are weak: the classic bookend-neglect pattern.',
                     'You want a fast, structured evaluation of an experience before deciding where to invest design effort.',
                     'You need a consistent lens that the whole team will apply the same way, regardless of where their instincts lead.',
                     'You suspect the team is pouring resources into Engage while Entice, Exit, and Extend have never been formally designed at all.',
@@ -172,8 +172,8 @@ export default function FiveEsFrameworkPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'You need a deep narrative of a specific person\'s emotional journey through a specific experience. Use Journey Mapping, which shapes its stages to the experience and adds an emotion line.',
-                    'You need to diagnose an operational or backstage failure — why the service breaks rather than what the customer experiences. Use Service Blueprinting.',
-                    'The experience genuinely has no bookend phases — for instance, a single discrete transaction with no before or after. The 5Es will produce thin or empty phases.',
+                    'You need to diagnose an operational or backstage failure: why the service breaks rather than what the customer experiences. Use Service Blueprinting.',
+                    'The experience genuinely has no bookend phases, for instance a single discrete transaction with no before or after. The 5Es will produce thin or empty phases.',
                     'You need primary evidence rather than a structured evaluation. The 5Es organizes what you know; it does not replace going and finding out.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
@@ -199,7 +199,7 @@ export default function FiveEsFrameworkPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -212,17 +212,17 @@ export default function FiveEsFrameworkPage() {
                 {
                   n: '01',
                   title: 'Scope the experience.',
-                  body: 'Agree on what counts as the full experience you are evaluating. Where does it start — from the first moment of awareness, or from the moment of arrival? Where does it end — when the person leaves, or months later when they decide whether to return? Defining the edges before you begin prevents the team from unconsciously scoping out the bookends.',
+                  body: 'Agree on what counts as the full experience you are evaluating. Where does it start: from the first moment of awareness, or from the moment of arrival? Where does it end: when the person leaves, or months later when they decide whether to return? Defining the edges before you begin prevents the team from unconsciously scoping out the bookends.',
                 },
                 {
                   n: '02',
                   title: 'Evaluate Entice.',
-                  body: 'How do people become aware of and motivated to begin the experience? Is the promise clear and honest? Does it set the right expectation for what follows? Does it attract the right people? Teams often have very little evidence here because pre-arrival awareness leaves few measurable signals. Treat that absence of evidence as information.',
+                  body: 'How do people become aware of and motivated to begin the experience? Is the promise clear and honest? Does it set the right expectation for what follows? Does it attract the right people? Teams often have little evidence here because pre-arrival awareness leaves few measurable signals. Treat that absence of evidence as information.',
                 },
                 {
                   n: '03',
                   title: 'Evaluate Enter.',
-                  body: 'What are the first moments like — from the instant of arrival through the beginning of full engagement? Does the opening reduce or increase anxiety? Is the transition smooth and welcoming, or confusing and intimidating? First impressions here color everything that follows, including the perception of Engage, regardless of how good Engage actually is.',
+                  body: 'What are the first moments like, from the instant of arrival through the beginning of full engagement? Does the opening reduce or increase anxiety? Is the transition smooth and welcoming, or confusing and intimidating? First impressions here color everything that follows, including the perception of Engage, regardless of how good Engage actually is.',
                 },
                 {
                   n: '04',
@@ -232,12 +232,12 @@ export default function FiveEsFrameworkPage() {
                 {
                   n: '05',
                   title: 'Evaluate Exit.',
-                  body: 'How does the experience conclude and the person leave? Is the ending graceful and intentional, or abrupt and forgotten? The ending disproportionately shapes what people remember — the peak-end effect. An undesigned exit is one of the most reliable causes of good experiences being remembered as mediocre ones.',
+                  body: 'How does the experience conclude and the person leave? Is the ending graceful and intentional, or abrupt and forgotten? The ending disproportionately shapes what people remember: the peak-end effect. An undesigned exit is one of the most reliable causes of good experiences being remembered as mediocre ones.',
                 },
                 {
                   n: '06',
                   title: 'Evaluate Extend.',
-                  body: 'What happens after the person leaves to sustain the relationship and earn a return? Is there anything — or does the relationship simply go dark? This is the most commonly neglected phase of all. Most teams have never designed it; they have only assumed it. The absence of an Extend phase is not a neutral state: it is the experience of abandonment.',
+                  body: 'What happens after the person leaves to sustain the relationship and earn a return? Is there anything, or does the relationship go dark? This is the most commonly neglected phase of all. Most teams have never designed it; they have only assumed it. The absence of an Extend phase is not a neutral state: it is the experience of abandonment.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -258,24 +258,24 @@ export default function FiveEsFrameworkPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={TEAL}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like — and what prevents it.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and what prevents it.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4"
               style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}
             >When it goes well</h3>
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                'The bookend phases are populated with real evidence — interviews, observation, or logged data — rather than team assumption. The framework only reveals what you have actually looked at.',
+                'The bookend phases are populated with real evidence (interviews, observation, or logged data) rather than team assumption. The framework only reveals what you have actually looked at.',
                 'The Engage phase is covered quickly and allocated proportionally less workshop time than the bookends, because the team already knows it best.',
                 'The evaluation starts from scoped boundaries that include the earliest pre-arrival moment (Entice) and the latest post-departure moment (Extend).',
                 'Each phase produces a clear verdict: designed deliberately, addressed but not designed, or never touched. The goal is to find the never-touched phases.',
-                'The session produces specific interventions for the weakest bookend phases — concrete things to design or research — not just a finding that the bookends are weak.',
+                'The session produces specific interventions for the weakest bookend phases (concrete things to design or research), not just a finding that the bookends are weak.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span style={{ color: TEAL, flexShrink: 0, marginTop: 3 }}>✓</span>
@@ -297,19 +297,19 @@ export default function FiveEsFrameworkPage() {
                 },
                 {
                   mistake: 'Scoping out the bookends at the start.',
-                  fix: 'Teams often define the experience as starting at the front door and ending when the person leaves — accidentally removing Entice and Extend from scope before the evaluation begins. Scope the experience before the session and include the full bookend territory.',
+                  fix: 'Teams often define the experience as starting at the front door and ending when the person leaves, accidentally removing Entice and Extend from scope before the evaluation begins. Scope the experience before the session and include the full bookend territory.',
                 },
                 {
                   mistake: 'Running the 5Es without evidence for the bookends.',
-                  fix: 'A 5Es session built from team knowledge will confirm what the team already believes — which is always that Engage is fine and the bookends are someone else\'s problem. Populate the bookends with primary evidence first: interviews, observation, or anything that brings the person\'s actual experience into the room.',
+                  fix: 'A 5Es session built from team knowledge will confirm what the team already believes, which is always that Engage is fine and the bookends are someone else\'s problem. Populate the bookends with primary evidence first: interviews, observation, or anything that brings the person\'s actual experience into the room.',
                 },
                 {
                   mistake: 'Treating &ldquo;we do not know&rdquo; as a null finding.',
-                  fix: 'A phase the team has no information about is not a blank — it is evidence of neglect. Mark it clearly. An Extend phase no one can describe is the most important finding of the session, not an absence of finding.',
+                  fix: 'A phase the team has no information about is not a blank. It is evidence of neglect. Mark it clearly. An Extend phase no one can describe is the most important finding of the session, not an absence of finding.',
                 },
                 {
                   mistake: 'Stopping at the finding.',
-                  fix: 'The 5Es produces a diagnostic. The diagnostic is not the output — specific design or research actions for each neglected phase are. End every session with named next steps for the bookends, not just a summary of which ones are weak.',
+                  fix: 'The 5Es produces a diagnostic. The diagnostic is not the output: specific design or research actions for each neglected phase are. End every session with named next steps for the bookends, not just a summary of which ones are weak.',
                 },
               ].map(({ mistake, fix }) => (
                 <div key={mistake} className="rounded-lg p-4"
@@ -329,15 +329,15 @@ export default function FiveEsFrameworkPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={TEAL}>Logistics</SectionLabel>
-            <SectionHeadingLight>Setting up a session that actually finds the neglected phases.</SectionHeadingLight>
+            <SectionHeadingLight>Setting up a session that finds the neglected phases.</SectionHeadingLight>
             <Body>
-              A 5Es session is a half-day workshop. Its value is proportional to the quality of the evidence that enters the room. Evidence-free 5Es sessions reliably confirm what the team already believes — which is that the bookends are fine. Gather real evidence for the bookend phases before the session begins.
+              A 5Es session is a half-day workshop. Its value is proportional to the quality of the evidence that enters the room. Evidence-free 5Es sessions reliably confirm what the team already believes, which is that the bookends are fine. Gather real evidence for the bookend phases before the session begins.
             </Body>
 
             <div className="flex flex-col gap-7 mt-10">
@@ -348,15 +348,15 @@ export default function FiveEsFrameworkPage() {
                 },
                 {
                   label: 'Bring a cross-functional group',
-                  body: 'Marketing owns Entice. Operations owns Enter and Exit. Customer success owns Extend. None of them typically see the full picture together. Getting them in the same session is half the value — the evaluation surfaces the gaps between teams, not just the gaps in the experience.',
+                  body: 'Marketing owns Entice. Operations owns Enter and Exit. Customer success owns Extend. None of them typically see the full picture together. Getting them in the same session is half the value: the evaluation surfaces the gaps between teams, not just the gaps in the experience.',
                 },
                 {
                   label: 'Set time budgets per phase before you start',
-                  body: 'Announce and enforce phase time limits at the start: for example, 20 minutes each on Entice, Enter, Engage, Exit, and Extend. The team will overspend on Engage without explicit time pressure. A timer is not pedantic — it is the mechanism.',
+                  body: 'Announce and enforce phase time limits at the start: for example, 20 minutes each on Entice, Enter, Engage, Exit, and Extend. The team will overspend on Engage without explicit time pressure. A timer is not pedantic. It is the mechanism.',
                 },
                 {
                   label: 'Treat silence as a finding',
-                  body: 'If the team has nothing to say about Exit or Extend — no evidence, no practices, no one responsible — write that down explicitly. &ldquo;No one owns this phase and we have no evidence for it&rdquo; is the most important finding of the session. It means the phase has never been designed.',
+                  body: 'If the team has nothing to say about Exit or Extend (no evidence, no practices, no one responsible), write that down explicitly. &ldquo;No one owns this phase and we have no evidence for it&rdquo; is the most important finding of the session. It means the phase has never been designed.',
                 },
                 {
                   label: 'End with specific actions, not summaries',
@@ -383,7 +383,7 @@ export default function FiveEsFrameworkPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — AI and this method   DARK
+          S9 - AI and this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -394,7 +394,7 @@ export default function FiveEsFrameworkPage() {
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see what AI contributes to each phase — and where its confidence fails at exactly the phases that most need attention.
+              Toggle between modes to see what AI contributes to each phase, and where its confidence fails at exactly the phases that most need attention.
             </p>
             <FiveEsAIReactivated />
           </div>
@@ -402,7 +402,7 @@ export default function FiveEsFrameworkPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -412,7 +412,7 @@ export default function FiveEsFrameworkPage() {
             <p className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
-              Altitude Fitness, a boutique cycling studio with three locations, has excellent class quality and strong retention among regulars — but fewer than 40% of first-time visitors return for a second class. Management has focused on instructors and programming: the Engage phase. The 5Es workshop is commissioned to find out what else is going on. The same studio, evaluated once with a traditional 5Es workshop grounded in primary research, and once with AI providing the analysis.
+              Altitude Fitness, a boutique cycling studio with three locations, has excellent class quality and strong retention among regulars, but fewer than 40% of first-time visitors return for a second class. Management has focused on instructors and programming: the Engage phase. The 5Es workshop is commissioned to find out what else is going on. The same studio, evaluated once with a traditional 5Es workshop grounded in primary research, and once with AI providing the analysis.
             </p>
             <FiveEsExampleToggle />
           </div>
@@ -420,7 +420,7 @@ export default function FiveEsFrameworkPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Where it ends: neighboring methods   DARK   [ADDED]
+          S11 - Where it ends: neighboring methods   DARK   [ADDED]
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -431,7 +431,7 @@ export default function FiveEsFrameworkPage() {
               className="mb-12 max-w-[560px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              The 5Es evaluates an experience through five fixed phases. Two neighboring methods extend it in different directions — one into a person&rsquo;s emotional narrative, one into the operational machine behind the experience.
+              The 5Es evaluates an experience through five fixed phases. Two neighboring methods extend it in different directions: one into a person&rsquo;s emotional narrative, one into the operational machine behind the experience.
             </p>
             <FiveEsBoundarySection />
           </div>
@@ -439,7 +439,7 @@ export default function FiveEsFrameworkPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Frameworks   LIGHT
+          S12 - Frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -449,7 +449,7 @@ export default function FiveEsFrameworkPage() {
             <p className="mb-8"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
-              The 5Es is primarily a definition and discovery tool — it evaluates and diagnoses before the team invests in a design direction. It maps most naturally to the early stages of frameworks where the question is &ldquo;which problem are we solving&rdquo; rather than &ldquo;how do we solve it.&rdquo;
+              The 5Es is primarily a definition and discovery tool: it evaluates and diagnoses before the team invests in a design direction. It maps most naturally to the early stages of frameworks where the question is &ldquo;which problem are we solving&rdquo; rather than &ldquo;how do we solve it.&rdquo;
             </p>
 
             <div className="flex flex-col gap-3">
@@ -475,7 +475,7 @@ export default function FiveEsFrameworkPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Related methods   LIGHT
+          S13 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -503,7 +503,7 @@ export default function FiveEsFrameworkPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S14 — Sources & further reading   LIGHT
+          S14 - Sources & further reading   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -517,7 +517,7 @@ export default function FiveEsFrameworkPage() {
                   title:  'The Experience Economy',
                   author: 'B. Joseph Pine II and James H. Gilmore',
                   year:   '1999',
-                  note:   'The foundational argument that designed experiences — not goods or services — are the primary economic offering. The 5Es emerged from this tradition of treating experiences as designable, stageable entities with deliberate structure rather than accidental outcomes.',
+                  note:   'The foundational argument that designed experiences, not goods or services, are the primary economic offering. The 5Es emerged from this tradition of treating experiences as designable, stageable entities with deliberate structure rather than accidental outcomes.',
                 },
                 {
                   title:  'Outside In: The Power of Putting Customers at the Center of Your Business',

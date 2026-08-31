@@ -25,7 +25,7 @@ const CLUSTERS: ClusterDef[] = [
   {
     id: 'progress',
     insightLines: ['People quit when', 'progress feels invisible'],
-    cards: ['skipped — felt meaningless', 'no sense of improving', 'same as 6 months ago', "can't tell if working"],
+    cards: ['skipped, felt meaningless', 'no sense of improving', 'same as 6 months ago', "can't tell if working"],
     tlx: 75, tly: 58,
   },
   {
@@ -65,19 +65,19 @@ const DETAIL: Record<ClusterId, ClusterDetail> = {
   progress: {
     insight: 'People quit when progress feels invisible',
     observations: [
-      'Skipped three sessions in a row and felt it made no difference — no visible consequence in the app.',
+      'Skipped three sessions in a row and felt it made no difference: no visible consequence in the app.',
       'No sense of getting better despite consistency; the numbers appear but carry no meaning.',
-      '"It looks the same as it did six months ago" — data is present, trajectory is absent.',
+      '"It looks the same as it did six months ago": data is present, trajectory is absent.',
       "Can't tell whether the plan is working; the feedback lag is too long to feel connected to effort.",
     ],
-    whyItMatters: "The retention problem isn't quitting — it's that improvement is real but invisible. The design task is making progress legible before it can be felt.",
+    whyItMatters: "The retention problem isn't quitting. It's that improvement is real but invisible. The design task is making progress legible before it can be felt.",
   },
   social: {
     insight: 'Accountability only works when it feels mutual',
     observations: [
-      'Reliably shows up only when a specific friend is expecting her — obligation, not motivation.',
+      'Reliably shows up only when a specific friend is expecting her: obligation, not motivation.',
       "Solo goal-setting produces the goal but not the behavior. Goals feel optional without a witness.",
-      '"The group chat is the only thing that has actually stuck" — social threads outlast every other feature.',
+      '"The group chat is the only thing that has actually stuck": social threads outlast every other feature.',
       "Motivation drops sharply when exercising alone, even with the app's engagement features running.",
     ],
     whyItMatters: "Social features designed as broadcasting (likes, leaderboards) don't create accountability. Mutual commitment does. The design difference is obligation versus visibility.",
@@ -85,22 +85,22 @@ const DETAIL: Record<ClusterId, ClusterDetail> = {
   firstweek: {
     insight: 'The first session sets the ceiling on every session after',
     observations: [
-      '"Didn\'t know the rules" — basic gym etiquette unknown; paralyzed by fear of doing something wrong.',
+      '"Didn\'t know the rules": basic gym etiquette unknown; paralyzed by fear of doing something wrong.',
       'Felt visibly judged from the first minute and spent the session trying not to be noticed.',
       'Figured it out eventually by watching others, but the shame of not knowing stuck for weeks.',
-      '"It took three sessions to feel normal" — most people do not make it to three sessions.',
+      '"It took three sessions to feel normal": most people do not make it to three sessions.',
     ],
-    whyItMatters: "First-session experience predicts long-term retention better than overall product quality. The design problem isn't what to offer — it's making the first experience survivable for a newcomer.",
+    whyItMatters: "First-session experience predicts long-term retention better than overall product quality. The design problem isn't what to offer. It's making the first experience survivable for a newcomer.",
   },
   identity: {
     insight: 'People exercise for who they want to become, not how they feel today',
     observations: [
-      '"I do it for future me, not current me" — the beneficiary of the effort is an imagined, future person.',
+      '"I do it for future me, not current me": the beneficiary of the effort is an imagined, future person.',
       'Current discomfort is the price; the reward is inhabiting a version of themselves they want to become.',
-      '"I want to be the kind of person who does this" — the goal is identity, not a fitness outcome.',
-      '"Identity, not fitness" — the actual reason has nothing to do with health metrics or performance data.',
+      '"I want to be the kind of person who does this": the goal is identity, not a fitness outcome.',
+      '"Identity, not fitness": the actual reason has nothing to do with health metrics or performance data.',
     ],
-    whyItMatters: "Features optimized for today's experience (comfort, ease, fewer steps) fight the actual motivator (identity investment). The most powerful designs make the future self tangible rather than optimizing for present-moment convenience.",
+    whyItMatters: "Features optimized for today's experience (comfort, ease, fewer steps) fight the actual motivator (identity investment). The most effective designs make the future self tangible rather than optimizing for present-moment convenience.",
   },
 }
 
@@ -113,7 +113,7 @@ export default function AMInteractive() {
 
   return (
     <div>
-      <div className="w-full select-none mb-6" aria-label="Affinity map — click a cluster to explore it">
+      <div className="w-full select-none mb-6" aria-label="Affinity map, click a cluster to explore it">
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}
           width="100%"
@@ -168,7 +168,7 @@ export default function AMInteractive() {
                 style={{ cursor: 'pointer' }}
                 role="button"
                 aria-pressed={isActive}
-                aria-label={`${cl.insightLines.join(' ')} — click to explore`}
+                aria-label={`${cl.insightLines.join(' ')}, click to explore`}
               >
                 {/* Hit area */}
                 <rect

@@ -22,7 +22,7 @@ const FRAMEWORK_LINKS = [
     slug: 'double-diamond',
     name: 'Double Diamond',
     phase: 'Define',
-    note: 'Affinity mapping is the primary tool for converting raw Discover research into the insight clusters that define the problem. The Define phase begins when individual observations become named patterns — and affinity mapping is how that transition happens.',
+    note: 'Affinity mapping is the primary tool for converting raw Discover research into the insight clusters that define the problem. The Define phase begins when individual observations become named patterns, and affinity mapping is how that transition happens.',
   },
   {
     slug: 'design-thinking',
@@ -65,7 +65,7 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'in-depth-interviews',
     name: 'In-Depth Interviews',
-    rel: "The primary source of the raw observations that affinity mapping organizes. Interviews produce the cards; affinity mapping produces the clusters. The quality of the mapping is a direct function of the quality of the interviews — thin data produces thin clusters.",
+    rel: "The primary source of the raw observations that affinity mapping organizes. Interviews produce the cards; affinity mapping produces the clusters. The quality of the mapping is a direct function of the quality of the interviews: thin data produces thin clusters.",
   },
   {
     slug: null,
@@ -80,7 +80,7 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: null,
     name: 'Jobs To Be Done',
-    rel: 'JTBD analysis identifies the underlying job a person is hiring a product to do. Affinity mapping that surfaces clusters about motivation, context, and substitutes is often a precursor to identifying the job — the cluster names become candidates for JTBD framing.',
+    rel: 'JTBD analysis identifies the underlying job a person is hiring a product to do. Affinity mapping that surfaces clusters about motivation, context, and substitutes is often a precursor to identifying the job: the cluster names become candidates for JTBD framing.',
   },
 ]
 
@@ -90,7 +90,7 @@ export default function AffinityMappingPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -118,21 +118,21 @@ export default function AffinityMappingPage() {
               className="mb-3 max-w-[600px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              Clustering raw research, one observation per card, until patterns emerge that no single data point could reveal &mdash; then naming each cluster as an insight.
+              Clustering raw research, one observation per card, until patterns emerge that no single data point could reveal, then naming each cluster as an insight.
             </p>
 
             <p
               className="max-w-[520px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
             >
-              The insight is not in the card. It is in the grouping. And in the name you give the grouping &mdash; which is not a category. It is a claim.
+              The insight is not in the card. It is in the grouping. And in the name you give the grouping, which is not a category. It is a claim.
             </p>
           </div>
         </Container>
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -143,7 +143,7 @@ export default function AffinityMappingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -153,8 +153,8 @@ export default function AffinityMappingPage() {
 
             <div className="flex flex-col gap-5">
               <Body>
-                Affinity mapping &mdash; sometimes called affinity diagramming or the KJ method, after its originator
-                Jiro Kawakita &mdash; is a structured process for organizing qualitative research into insight clusters.
+                Affinity mapping (sometimes called affinity diagramming or the KJ method, after its originator
+                Jiro Kawakita) is a structured process for organizing qualitative research into insight clusters.
                 Each observation, quote, or behavioral note is written on a separate card. The cards are then grouped
                 by affinity: placed near other cards they feel related to, without pre-defining what the categories
                 will be. The groupings emerge from the data rather than being imposed on it.
@@ -163,11 +163,11 @@ export default function AffinityMappingPage() {
                 The distinguishing act of affinity mapping is the naming. Once a cluster is formed, the team names it
                 not as a category (&ldquo;payment issues&rdquo;) but as an insight: a claim about what the data in
                 that cluster reveals (&ldquo;users feel the payment step is a test they might fail&rdquo;). The category
-                describes what the observations are about. The insight describes what they mean. This distinction &mdash;
-                between description and interpretation &mdash; is where the method does its real work.
+                describes what the observations are about. The insight describes what they mean. This distinction,
+                between description and interpretation, is where the method does its real work.
               </Body>
               <Body>
-                The method is particularly powerful for large bodies of qualitative research where no single observation
+                The method is especially effective for large bodies of qualitative research where no single observation
                 is sufficient to support a design decision, but the pattern across many observations is clear. The IDEO
                 toothbrush redesign, the Contextual Design method, and the Design Sprint&rsquo;s Monday HMW exercise
                 all use affinity mapping at the point where raw research must become structured knowledge before action
@@ -179,7 +179,7 @@ export default function AffinityMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive cluster explorer   DARK
+          S4 - Interactive cluster explorer   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -199,13 +199,13 @@ export default function AffinityMappingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={NAVY}>When to deploy it</SectionLabel>
-            <SectionHeadingLight>A post-research synthesis tool — not a real-time note-taker.</SectionHeadingLight>
+            <SectionHeadingLight>A post-research synthesis tool, not a real-time note-taker.</SectionHeadingLight>
 
             <div className="grid md:grid-cols-2 gap-8 mt-8">
               <div>
@@ -215,10 +215,10 @@ export default function AffinityMappingPage() {
                 >Use affinity mapping when</p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'Research is complete and you have a body of individual observations — at least 30 cards, more often 60–150 — that need organizing before decisions can be made.',
+                    'Research is complete and you have a body of individual observations (at least 30 cards, more often 60–150) that need organizing before decisions can be made.',
                     'The team has done the research together (or most of it) and needs to share what they learned before synthesis begins. Affinity mapping is also a knowledge-transfer ritual.',
                     'You need to move from "what we observed" to "what it means" before ideation begins. The Define phase in most frameworks begins with this transition.',
-                    'Contradictory or surprising observations need confronting. Clusters that refuse to resolve — that hold observations which do not obviously belong together — are often the most generative.',
+                    'Contradictory or surprising observations need confronting. Clusters that refuse to resolve (that hold observations which do not obviously belong together) are often the most generative.',
                     'A cross-functional team includes people who were not in the research and need to internalize what the research found. Handling the cards is the fastest way to build that understanding.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
@@ -241,7 +241,7 @@ export default function AffinityMappingPage() {
                     "Research hasn't happened yet. Affinity mapping organizes existing observations; it cannot generate them. Running it from memory, from assumptions, or from secondary sources produces clusters of opinion, not insight.",
                     'The data is primarily quantitative. Affinity mapping is designed for qualitative observations: quotes, behaviors, emotional responses. Survey results and analytics belong in a different kind of synthesis.',
                     'The team is too large. Beyond eight people, the session loses coherence. For large research teams, split into groups that synthesize subsets of the data, then share cluster outputs.',
-                    'Speed is the priority and good-enough structure is sufficient. A quick thematic sort without the naming discipline produces categories, not insights — but that may be enough for a fast decision.',
+                    'Speed is the priority and good-enough structure is sufficient. A quick thematic sort without the naming discipline produces categories, not insights, but that may be enough for a fast decision.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
                       <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
@@ -261,7 +261,7 @@ export default function AffinityMappingPage() {
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: affinity mapping produces the insights the research can support. If the research was
                 thin, or if the team never encountered the actual human experience they were studying, the clusters will
-                be superficial. The method surfaces what is latent in the data — it cannot put something there that was
+                be superficial. The method surfaces what is latent in the data. It cannot put something there that was
                 never captured.
               </p>
             </div>
@@ -270,7 +270,7 @@ export default function AffinityMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -283,32 +283,32 @@ export default function AffinityMappingPage() {
                 {
                   n: '01',
                   title: 'Transcribe everything to individual cards.',
-                  body: 'Before the session, each observation is written on a separate card or sticky note — one item per card. A quote, a behavior, an emotional response, an unexpected finding. The card should be specific enough to stand alone: not "users had trouble with checkout" but "user abandoned the basket at the payment step — said it felt like a test she was about to fail." Specificity is the raw material.',
+                  body: 'Before the session, each observation is written on a separate card or sticky note: one item per card. A quote, a behavior, an emotional response, an unexpected finding. The card should be specific enough to stand alone: not "users had trouble with checkout" but "user abandoned the basket at the payment step, said it felt like a test she was about to fail." Specificity is the raw material.',
                 },
                 {
                   n: '02',
                   title: 'Lay all cards out. Read everything.',
-                  body: 'The session begins with silence. Everyone reads every card. This step is not optional — it is the knowledge-transfer mechanism that ensures the whole team is working from the same evidence, not just what they personally observed. For large corpora, each researcher reads a subset and then shares what surprised them.',
+                  body: 'The session begins with silence. Everyone reads every card. This step is not optional. It is the knowledge-transfer mechanism that ensures the whole team is working from the same evidence, not just what they personally observed. For large corpora, each researcher reads a subset and then shares what surprised them.',
                 },
                 {
                   n: '03',
-                  title: 'Group by affinity — silently, without pre-defining categories.',
-                  body: 'Team members begin moving cards near other cards they feel belong together. No one explains their logic yet. The grouping is intuitive at first — cards that feel related are placed together. Disagreements are visible: if two people place the same card in different groups, that card goes in both (it is duplicated) and the disagreement is examined after.',
+                  title: 'Group by affinity: silently, without pre-defining categories.',
+                  body: 'Team members begin moving cards near other cards they feel belong together. No one explains their logic yet. The grouping is intuitive at first: cards that feel related are placed together. Disagreements are visible: if two people place the same card in different groups, that card goes in both (it is duplicated) and the disagreement is examined after.',
                 },
                 {
                   n: '04',
                   title: 'Discuss and refine. Let clusters stabilize.',
-                  body: 'The silent phase gives way to discussion. Groups are challenged, split, merged. A cluster that grows too large is usually a sign that it contains two separate insights — split it. A cluster that stays small may belong inside a larger one, or may be the most important insight in the room. Resist the pull to merge the uncomfortable singleton into a larger group.',
+                  body: 'The silent phase gives way to discussion. Groups are challenged, split, merged. A cluster that grows too large is usually a sign that it contains two separate insights: split it. A cluster that stays small may belong inside a larger one, or may be the most important insight in the room. Resist the pull to merge the uncomfortable singleton into a larger group.',
                 },
                 {
                   n: '05',
                   title: 'Name each cluster as an insight, not a category.',
-                  body: 'This is the highest-value step and the most commonly skipped. The cluster name is not a label for what the cards are about — it is a claim about what the cards reveal. "Payment flow" is a category. "Users feel the payment step is a test they are about to fail" is an insight. The insight is a sentence that a design direction can argue with or act on. The category is not.',
+                  body: 'This is the highest-value step and the most commonly skipped. The cluster name is not a label for what the cards are about. It is a claim about what the cards reveal. "Payment flow" is a category. "Users feel the payment step is a test they are about to fail" is an insight. The insight is a sentence that a design direction can argue with or act on. The category is not.',
                 },
                 {
                   n: '06',
                   title: 'Convert insights to design challenges.',
-                  body: 'Once each cluster is named, the team has a set of specific, evidenced insights. These are the raw material for How Might We questions: each insight becomes a candidate for conversion into an open design challenge. The affinity map is not the final output — it is the input to the next step of synthesis.',
+                  body: 'Once each cluster is named, the team has a set of specific, evidenced insights. These are the raw material for How Might We questions: each insight becomes a candidate for conversion into an open design challenge. The affinity map is not the final output. It is the input to the next step of synthesis.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -330,24 +330,24 @@ export default function AffinityMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={NAVY}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like — and what prevents it.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and what prevents it.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
               When it goes well
             </h3>
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                'The team includes at least two people who were in the research — they remember context that the card cannot carry.',
+                'The team includes at least two people who were in the research: they remember context that the card cannot carry.',
                 'The naming step is taken seriously: cluster names are complete sentences that make a specific claim about what the data means.',
-                'The most uncomfortable cluster — the one the team keeps moving cards out of — is examined carefully. Discomfort often marks the most important insight.',
+                'The most uncomfortable cluster (the one the team keeps moving cards out of) is examined carefully. Discomfort often marks the most important insight.',
                 'Small clusters are not prematurely merged. A cluster of two cards that resists joining a larger group may be more important than the larger group.',
-                'The session produces 4–8 named clusters from a typical body of research — enough to be comprehensive, few enough to hold in working memory and act on.',
+                'The session produces 4–8 named clusters from a typical body of research: enough to be comprehensive, few enough to hold in working memory and act on.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span style={{ color: NAVY, flexShrink: 0, marginTop: 3 }}>✓</span>
@@ -365,15 +365,15 @@ export default function AffinityMappingPage() {
               {[
                 {
                   mistake: 'Naming clusters as categories, not insights.',
-                  fix: '"User pain points," "app usability," and "social features" are categories. They describe what the cards are about. An insight is a claim: "Users tolerate the first three steps because they expect checkout to be hard — but abandon when they feel the process has become unfair." The category is safe. The insight is arguable. Arguable is useful.',
+                  fix: '"User pain points," "app usability," and "social features" are categories. They describe what the cards are about. An insight is a claim: "Users tolerate the first three steps because they expect checkout to be hard, but abandon when they feel the process has become unfair." The category is safe. The insight is arguable. Arguable is useful.',
                 },
                 {
                   mistake: 'Doing it without the people who were in the research.',
-                  fix: 'A card says "felt judged." The researcher who was in the room knows whether this means judged by the instructor, by other participants, or by herself — a distinction that changes the design direction entirely. Affinity mapping without the researchers produces clusters of text, not clusters of meaning.',
+                  fix: 'A card says "felt judged." The researcher who was in the room knows whether this means judged by the instructor, by other participants, or by herself: a distinction that changes the design direction entirely. Affinity mapping without the researchers produces clusters of text, not clusters of meaning.',
                 },
                 {
                   mistake: 'Merging every small cluster into a larger one.',
-                  fix: "A cluster that refuses to grow — one or two cards that don't fit anywhere — is either noise or the most important signal in the room. Before merging it, ask: why don't these cards fit with anything else? The answer is often more interesting than the merge.",
+                  fix: "A cluster that refuses to grow (one or two cards that don't fit anywhere) is either noise or the most important signal in the room. Before merging it, ask: why don't these cards fit with anything else? The answer is often more interesting than the merge.",
                 },
                 {
                   mistake: 'Stopping at the cluster instead of naming the insight.',
@@ -399,7 +399,7 @@ export default function AffinityMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -407,7 +407,7 @@ export default function AffinityMappingPage() {
             <SectionLabel accent={NAVY}>Logistics</SectionLabel>
             <SectionHeadingLight>Running the session from raw cards to named clusters.</SectionHeadingLight>
             <Body>
-              Affinity mapping is best run in person on a large wall with physical cards &mdash; the physical act of
+              Affinity mapping is best run in person on a large wall with physical cards. The physical act of
               moving cards is part of how meaning is made. For remote sessions, digital tools work, but the facilitator
               must be more active in managing the silent grouping phase: breakout rooms with card-sorting tasks are
               more effective than open collaborative canvases during the initial pass.
@@ -421,11 +421,11 @@ export default function AffinityMappingPage() {
                 },
                 {
                   label: 'The silent phase is non-negotiable',
-                  body: 'The initial grouping must happen without discussion. Discussion before grouping produces consensus around the most confident person in the room, not around what the data suggests. Silence during grouping reveals where disagreement actually lives — the cards that keep moving between groups are the ones worth talking about.',
+                  body: 'The initial grouping must happen without discussion. Discussion before grouping produces consensus around the most confident person in the room, not around what the data suggests. Silence during grouping reveals where disagreement actually lives: the cards that keep moving between groups are the ones worth talking about.',
                 },
                 {
                   label: 'One card can belong to two clusters',
-                  body: "When a card creates genuine disagreement about where it belongs, duplicate it. A card that appears in two clusters often marks the boundary between two insights — understanding why it fits in both is usually more valuable than deciding which cluster 'wins.'",
+                  body: "When a card creates genuine disagreement about where it belongs, duplicate it. A card that appears in two clusters often marks the boundary between two insights: understanding why it fits in both is usually more valuable than deciding which cluster 'wins.'",
                 },
                 {
                   label: 'The naming session is a separate step',
@@ -457,7 +457,7 @@ export default function AffinityMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — AI and this method   DARK
+          S9 - AI and this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -468,7 +468,7 @@ export default function AffinityMappingPage() {
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see what changes when AI performs the clustering &mdash; and why the naming
+              Toggle between modes to see what changes when AI performs the clustering, and why the naming
               step cannot be delegated.
             </p>
             <AMAIReactivated />
@@ -477,7 +477,7 @@ export default function AffinityMappingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -498,7 +498,7 @@ export default function AffinityMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Frameworks   LIGHT
+          S11 - Frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -510,7 +510,7 @@ export default function AffinityMappingPage() {
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               Affinity mapping is a synthesis-phase tool. It appears in every framework that moves from raw qualitative
-              research to structured insight &mdash; the moment when individual observations become patterns the team
+              research to structured insight: the moment when individual observations become patterns the team
               can design from.
             </p>
 
@@ -541,7 +541,7 @@ export default function AffinityMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -581,7 +581,7 @@ export default function AffinityMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources & further reading   LIGHT
+          S13 - Sources & further reading   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -595,19 +595,19 @@ export default function AffinityMappingPage() {
                   title:  'Contextual Design',
                   author: 'Hugh Beyer and Karen Holtzblatt',
                   year:   '1998',
-                  note:   "The foundational text on Contextual Inquiry and affinity diagramming as a synthesis method. Beyer and Holtzblatt formalized the affinity mapping process — including the wall-based, bottom-up clustering approach and the emphasis on naming clusters as insights rather than categories — as part of the Contextual Design methodology.",
+                  note:   "The foundational text on Contextual Inquiry and affinity diagramming as a synthesis method. Beyer and Holtzblatt formalized the affinity mapping process, including the wall-based, bottom-up clustering approach and the emphasis on naming clusters as insights rather than categories, as part of the Contextual Design methodology.",
                 },
                 {
                   title:  'The Art of Innovation',
                   author: 'Tom Kelley and Jonathan Littman',
                   year:   '2001',
-                  note:   "Documents IDEO's use of affinity mapping as a primary synthesis tool, including the toothbrush redesign case. Kelley's account of the process describes the physical wall, the silent sorting phase, and the critical act of naming what emerges — converting a cluster of cards into a design direction.",
+                  note:   "Documents IDEO's use of affinity mapping as a primary synthesis tool, including the toothbrush redesign case. Kelley's account of the process describes the physical wall, the silent sorting phase, and the critical act of naming what emerges, converting a cluster of cards into a design direction.",
                 },
                 {
                   title:  'Sprint',
                   author: 'Jake Knapp, John Zeratsky, and Braden Kowitz',
                   year:   '2016',
-                  note:   "The Design Sprint book uses affinity mapping as a core tool for organizing the How Might We notes generated during Monday's observation sessions. Knapp's adaptation is compressed — the sprint context requires fast synthesis — and demonstrates how the method scales down to a one-hour session when the research corpus is small.",
+                  note:   "The Design Sprint book uses affinity mapping as a core tool for organizing the How Might We notes generated during Monday's observation sessions. Knapp's adaptation is compressed (the sprint context requires fast synthesis) and demonstrates how the method scales down to a one-hour session when the research corpus is small.",
                 },
               ].map(({ title, author, year, note }) => (
                 <div

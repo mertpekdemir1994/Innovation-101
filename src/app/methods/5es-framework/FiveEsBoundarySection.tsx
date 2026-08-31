@@ -17,9 +17,9 @@ const MBAR_H_MAX = 72  // 116 - 36 - 8
 const MINV  = [0.34, 0.54, 0.91, 0.26, 0.14] as const
 const MH_5ES = 126
 
-// JM mini — variable-width stages and emotion curve
+// JM mini - variable-width stages and emotion curve
 const MH_JM  = 118
-const JM_STAGE_WS = [60, 72, 84, 72, 72] as const  // not equal — shows contrast with 5Es
+const JM_STAGE_WS = [60, 72, 84, 72, 72] as const  // not equal - shows contrast with 5Es
 const JM_STAGE_XS = [0, 60, 132, 216, 288] as const
 const JM_STAGE_CX = [30, 96, 174, 252, 324] as const
 
@@ -234,7 +234,7 @@ const STATES: {
     id: '5es',
     label: 'The 5Es Framework',
     href: '/methods/5es-framework',
-    tagline: 'Fixed five-phase evaluation lens — the current method',
+    tagline: 'Fixed five-phase evaluation lens: the current method',
     body: 'The 5Es applies five fixed, evenly-weighted phases to any experience: Entice, Enter, Engage, Exit, Extend. The phases are always the same; what changes is what you find in each one. The framework&rsquo;s purpose is to force attention onto the bookends that teams routinely skip.',
   },
   {
@@ -249,7 +249,7 @@ const STATES: {
     label: 'Service Blueprinting',
     href: '/methods/service-blueprinting',
     tagline: 'Adds the operational machine behind the experience',
-    body: 'Service Blueprinting adds the organizational dimension: the full service stack (customer actions, frontstage, backstage, systems) separated by the Line of Visibility. The 5Es evaluates what the customer experiences; a Service Blueprint maps the machine that produces it. Run both when a bookend problem turns out to be an operational problem — the 5Es names the symptom, the Blueprint finds the cause.',
+    body: 'Service Blueprinting adds the organizational dimension: the full service stack (customer actions, frontstage, backstage, systems) separated by the Line of Visibility. The 5Es evaluates what the customer experiences; a Service Blueprint maps the machine that produces it. Run both when a bookend problem turns out to be an operational problem: the 5Es names the symptom, the Blueprint finds the cause.',
   },
 ]
 

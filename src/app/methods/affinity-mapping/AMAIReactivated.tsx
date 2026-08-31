@@ -28,7 +28,7 @@ const CLUSTERS: ClusterDef[] = [
     id: 'progress',
     insightLines: ['People quit when', 'progress feels invisible'],
     aiCategory: 'Progress Tracking',
-    cards: ['skipped — felt meaningless', 'no sense of improving', 'same as 6 months ago', "can't tell if working"],
+    cards: ['skipped, felt meaningless', 'no sense of improving', 'same as 6 months ago', "can't tell if working"],
     tlx: 75, tly: 58,
   },
   {
@@ -144,7 +144,7 @@ export default function AMAIReactivated() {
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                   fill={`${INDIGO}0.70)`}
                   style={{ userSelect: 'none' }}
-                >AI GROUPS BY SURFACE SIMILARITY — LABELS AS CATEGORIES</text>
+                >AI GROUPS BY SURFACE SIMILARITY: LABELS AS CATEGORIES</text>
               </motion.g>
             )}
           </AnimatePresence>
@@ -203,7 +203,7 @@ export default function AMAIReactivated() {
                   >{isAI ? 'CATEGORY' : 'INSIGHT'}</text>
 
                   {isAI ? (
-                    /* AI mode: category label — single centered line */
+                    /* AI mode: category label - single centered line */
                     <text
                       x={cl.tlx + CL_W / 2} y={cl.tly + 29}
                       textAnchor="middle" dominantBaseline="middle"
@@ -287,7 +287,7 @@ export default function AMAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(245,158,11,0.75)' }}
               >Where AI falls short</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.60)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI groups by surface similarity — matching words and topics — not by meaning. It labels &ldquo;Progress Tracking&rdquo; and &ldquo;User Motivation&rdquo; instead of &ldquo;People quit when progress feels invisible&rdquo; and &ldquo;People exercise for who they want to become.&rdquo; The category describes what the data is about. The insight describes what the data means.
+                AI groups by surface similarity, matching words and topics, not by meaning. It labels &ldquo;Progress Tracking&rdquo; and &ldquo;User Motivation&rdquo; instead of &ldquo;People quit when progress feels invisible&rdquo; and &ldquo;People exercise for who they want to become.&rdquo; The category describes what the data is about. The insight describes what the data means.
               </p>
             </div>
           </motion.div>
@@ -302,7 +302,7 @@ export default function AMAIReactivated() {
         )}
       </AnimatePresence>
 
-      {/* Synthesis card — always visible */}
+      {/* Synthesis card - always visible */}
       <div
         className="rounded-xl p-5"
         style={{ background: `${NAVY}0.10)`, border: `1px solid ${NAVY}0.25)` }}

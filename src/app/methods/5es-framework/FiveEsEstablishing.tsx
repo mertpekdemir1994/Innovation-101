@@ -119,7 +119,7 @@ export default function FiveEsEstablishing() {
           </motion.g>
         ))}
 
-        {/* Quality bars — stagger separately so they grow after headers settle */}
+        {/* Quality bars - stagger separately so they grow after headers settle */}
         <motion.g variants={barContainer}>
           {PHASES.map((phase, i) => {
             const barH = INV[i] * BAR_H_MAX

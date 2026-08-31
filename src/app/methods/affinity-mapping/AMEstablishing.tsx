@@ -24,7 +24,7 @@ const CLUSTERS: ClusterDef[] = [
   {
     id: 'progress',
     insightLines: ['People quit when', 'progress feels invisible'],
-    cards: ['skipped — felt meaningless', 'no sense of improving', 'same as 6 months ago', "can't tell if working"],
+    cards: ['skipped, felt meaningless', 'no sense of improving', 'same as 6 months ago', "can't tell if working"],
     tlx: 75, tly: 58,
   },
   {
@@ -118,7 +118,7 @@ export default function AMEstablishing() {
             variants={clusterIn}
             transition={T}
           >
-            {/* Cluster body — clipped to rounded rect */}
+            {/* Cluster body - clipped to rounded rect */}
             <g clipPath={`url(#am-est-clip-${cl.id})`}>
               {/* Main background */}
               <rect
@@ -203,7 +203,7 @@ export default function AMEstablishing() {
           style={{ userSelect: 'none' }}
           variants={fadeIn}
           transition={{ ...(prefersReduced ? { duration: 0 } : { duration: 0.40, ease }), delay: prefersReduced ? 0 : 1.0 }}
-        >4 clusters — 16 observations — each cluster named as an insight, not a category</motion.text>
+        >4 clusters, 16 observations, each cluster named as an insight, not a category</motion.text>
       </svg>
     </motion.div>
   )
