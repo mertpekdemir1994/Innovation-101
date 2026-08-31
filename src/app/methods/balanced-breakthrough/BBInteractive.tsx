@@ -34,31 +34,31 @@ const REGIONS: Region[] = [
     id: 'd',
     hitX: 350, hitY: 62, hitR: 28,
     label: 'DESIRABILITY',
-    sublabel: 'Wanted — but that is all',
+    sublabel: 'Wanted, but that is all',
     zone: 'void',
     headline: 'People want it, but it cannot be built or sustained.',
-    body: 'An idea in the Desirability-only zone is genuinely compelling to the people it is designed for. But without Feasibility, the organisation cannot deliver it — the capability or technology does not exist, or the operational demands are beyond reach. Without Viability, there is no path to a sustainable economics. The desirability is real; the opportunity is not.',
-    example: 'A service that customers would genuinely love — but which the team cannot execute reliably, and which costs more to deliver than customers will ever pay.',
+    body: 'An idea in the Desirability-only zone is genuinely compelling to the people it is designed for. But without Feasibility, the organisation cannot deliver it: the capability or technology does not exist, or the operational demands are beyond reach. Without Viability, there is no path to a sustainable economics. The desirability is real; the opportunity is not.',
+    example: 'A service that customers would genuinely love, but which the team cannot execute reliably, and which costs more to deliver than customers will ever pay.',
   },
   {
     id: 'f',
     hitX: 240, hitY: 264, hitR: 28,
     label: 'FEASIBILITY',
-    sublabel: 'Buildable — but that is all',
+    sublabel: 'Buildable, but that is all',
     zone: 'void',
     headline: 'The team can build it, but no one wants it and it will not pay.',
-    body: 'A Feasibility-only idea is technically achievable — the organisation has the capability or access to it. But without Desirability, there is no genuine human need or want being met; without Viability, the economics do not work. Technology-push in its purest form: building what can be built, not what is needed or worth building.',
-    example: 'An internal platform the technology team can deploy without difficulty — that solves a problem real users do not have, and that generates no revenue or meaningful value in return.',
+    body: 'A Feasibility-only idea is technically achievable: the organisation has the capability or access to it. But without Desirability, there is no genuine human need or want being met; without Viability, the economics do not work. Technology-push in its purest form: building what can be built, not what is needed or worth building.',
+    example: 'An internal platform the technology team can deploy without difficulty, that solves a problem real users do not have, and that generates no revenue or meaningful value in return.',
   },
   {
     id: 'v',
     hitX: 460, hitY: 264, hitR: 28,
     label: 'VIABILITY',
-    sublabel: 'Financially sound — but that is all',
+    sublabel: 'Financially sound, but that is all',
     zone: 'void',
     headline: 'The numbers work, but there is no demand and no path to delivery.',
-    body: 'A Viability-only idea might produce margin on paper, but it satisfies no genuine human need (no Desirability) and cannot actually be executed (no Feasibility). This is the rarest zone in practice — usually it signals a financial model built around hypothetical numbers, or a pivot toward a market that is economically attractive but fundamentally misunderstood.',
-    example: 'A business model that pencils out on a spreadsheet — targeting a market that appears large, but that the team cannot serve and that customers do not actually want served this way.',
+    body: 'A Viability-only idea might produce margin on paper, but it satisfies no genuine human need (no Desirability) and cannot actually be executed (no Feasibility). This is the rarest zone in practice, usually it signals a financial model built around hypothetical numbers, or a pivot toward a market that is economically attractive but fundamentally misunderstood.',
+    example: 'A business model that pencils out on a spreadsheet, targeting a market that appears large, but that the team cannot serve and that customers do not actually want served this way.',
   },
   {
     id: 'df',
@@ -66,9 +66,9 @@ const REGIONS: Region[] = [
     label: 'D + F',
     sublabel: 'Love without sustainability',
     zone: 'trap',
-    headline: 'People love it and the team can build it — but the economics are fatal.',
-    body: 'This is the most common and most expensive trap in product and service development. Desirability and Feasibility are both present: real people want the thing, and the organisation can deliver it. What is missing is Viability — the unit economics do not work. The cost to serve exceeds what customers will pay, or the competitive dynamics erode margin to zero. Teams can spend years building something loved and deliverable before the economics catch up with them.',
-    example: 'A premium on-demand service that customers adore and operations can fulfil — but where the labour cost to deliver each unit exceeds the price any customer will pay, no matter the volume.',
+    headline: 'People love it and the team can build it, but the economics are fatal.',
+    body: 'This is the most common and most expensive trap in product and service development. Desirability and Feasibility are both present: real people want the thing, and the organisation can deliver it. What is missing is Viability: the unit economics do not work. The cost to serve exceeds what customers will pay, or the competitive dynamics erode margin to zero. Teams can spend years building something loved and deliverable before the economics catch up with them.',
+    example: 'A premium on-demand service that customers adore and operations can fulfil, but where the labour cost to deliver each unit exceeds the price any customer will pay, no matter the volume.',
   },
   {
     id: 'dv',
@@ -76,9 +76,9 @@ const REGIONS: Region[] = [
     label: 'D + V',
     sublabel: 'Promise without capability',
     zone: 'trap',
-    headline: 'Customers want it and it would make money — but the organisation cannot do it.',
-    body: 'Desirability and Viability align: the opportunity is real, customers would pay, and the economics work. What is absent is Feasibility — the organisation lacks the technical capability, operational capacity, or talent to deliver. This trap is particularly dangerous because the market signal and the financial model are both correct. The failure is internal: the capability to capture the opportunity does not yet exist.',
-    example: 'A highly personalised service with strong willingness to pay — that requires real-time data capability or operational precision the organisation has not yet built and cannot rapidly acquire.',
+    headline: 'Customers want it and it would make money, but the organisation cannot do it.',
+    body: 'Desirability and Viability align: the opportunity is real, customers would pay, and the economics work. What is absent is Feasibility: the organisation lacks the technical capability, operational capacity, or talent to deliver. This trap is particularly dangerous because the market signal and the financial model are both correct. The failure is internal: the capability to capture the opportunity does not yet exist.',
+    example: 'A highly personalised service with strong willingness to pay, that requires real-time data capability or operational precision the organisation has not yet built and cannot rapidly acquire.',
   },
   {
     id: 'fv',
@@ -87,8 +87,8 @@ const REGIONS: Region[] = [
     sublabel: 'Product without a market',
     zone: 'trap',
     headline: 'Efficient, profitable, and something nobody wants.',
-    body: 'Feasibility and Viability are present: the organisation can build this and the financials work. But without Desirability, there is no genuine human need at the centre. The classic "solution in search of a problem" — executed with operational efficiency and reasonable margins on a product the market does not value. Often the result of starting from capability or financial opportunity rather than from a real user need.',
-    example: 'An operational capability that generates positive unit economics and that the team can execute flawlessly — for a problem that the target customers have not prioritised, or have already solved another way.',
+    body: 'Feasibility and Viability are present: the organisation can build this and the financials work. But without Desirability, there is no genuine human need at the centre. The classic "solution in search of a problem," executed with operational efficiency and reasonable margins on a product the market does not value. Often the result of starting from capability or financial opportunity rather than from a real user need.',
+    example: 'An operational capability that generates positive unit economics and that the team can execute flawlessly, for a problem that the target customers have not prioritised, or have already solved another way.',
   },
   {
     id: 'center',
@@ -97,7 +97,7 @@ const REGIONS: Region[] = [
     sublabel: 'Desirable · Feasible · Viable',
     zone: 'good',
     headline: 'All three lenses align. This is what you are looking for.',
-    body: 'A Balanced Breakthrough sits at the intersection of all three circles: people genuinely want it (Desirability), the organisation can reliably deliver it (Feasibility), and the economics work sustainably (Viability). Reaching the centre is not an accident — it requires explicitly testing each lens and being willing to kill or reshape ideas that pass only two. Most promising ideas live in one of the pairwise overlaps, not the centre. The discipline is identifying which lens is missing and either filling that gap or changing the idea.',
+    body: 'A Balanced Breakthrough sits at the intersection of all three circles: people genuinely want it (Desirability), the organisation can reliably deliver it (Feasibility), and the economics work sustainably (Viability). Reaching the centre is not an accident. It requires explicitly testing each lens and being willing to kill or reshape ideas that pass only two. Most promising ideas live in one of the pairwise overlaps, not the centre. The discipline is identifying which lens is missing and either filling that gap or changing the idea.',
     example: 'A service that addresses a genuine unmet need, that the organisation has the operational capability to deliver consistently, and where the price customers will pay covers the cost to serve with margin left to sustain and improve it.',
   },
 ]
@@ -166,7 +166,7 @@ export default function BBInteractive() {
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
           preserveAspectRatio="xMidYMid meet"
           style={{ display: 'block', cursor: 'pointer' }}
-          aria-label="Interactive DFV Venn diagram — click a zone to learn what kind of idea lives there">
+          aria-label="Interactive DFV Venn diagram, click a zone to learn what kind of idea lives there">
           <defs>
             <filter id="bb-int-plum-glow" x="-30%" y="-30%" width="160%" height="160%">
               <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur" />
@@ -222,7 +222,7 @@ export default function BBInteractive() {
             style={{ filter: 'url(#bb-int-center-glow)' }}
           />
 
-          {/* Circle labels — animate opacity with their circle's involvement */}
+          {/* Circle labels - animate opacity with their circle's involvement */}
           {([
             { x: D_CX, y: D_CY - 48, main: 'DESIRABILITY', sub: 'do people want it?', anchor: 'middle' as const, op: dLabelOp },
             { x: F_CX - 58, y: F_CY + 5, main: 'FEASIBILITY', sub: 'can we build it?', anchor: 'end' as const, op: fLabelOp },
@@ -238,7 +238,7 @@ export default function BBInteractive() {
             </motion.g>
           ))}
 
-          {/* BREAKTHROUGH label — dims when a non-center region is active */}
+          {/* BREAKTHROUGH label - dims when a non-center region is active */}
           <motion.g animate={{ opacity: ctLabelOp }} transition={fade}>
             <text x={CTR_X} y={CTR_Y - 4} textAnchor="middle"
               fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
@@ -254,7 +254,7 @@ export default function BBInteractive() {
             </text>
           </motion.g>
 
-          {/* Focus ring — keyboard-visible indicator drawn under hit areas */}
+          {/* Focus ring - keyboard-visible indicator drawn under hit areas */}
           {focused && (() => {
             const reg = REGIONS.find(r => r.id === focused)!
             return (
@@ -269,7 +269,7 @@ export default function BBInteractive() {
             )
           })()}
 
-          {/* Hit areas — single circles + center first, pairwise overlaps on top */}
+          {/* Hit areas - single circles + center first, pairwise overlaps on top */}
           {(['d', 'f', 'v', 'center', 'df', 'dv', 'fv'] as RegionId[]).map(id => {
             const region = REGIONS.find(r => r.id === id)!
             return (
@@ -372,7 +372,7 @@ export default function BBInteractive() {
             style={{ border: '1px dashed rgba(255,255,255,0.10)' }}>
             <p className="font-mono uppercase tracking-widest"
               style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.22)' }}>
-              Select a zone above — centre, overlap, or single circle
+              Select a zone above: centre, overlap, or single circle
             </p>
           </motion.div>
         )}

@@ -176,7 +176,7 @@ export default function BBEstablishing() {
         does it sustain us?
       </motion.text>
 
-      {/* BREAKTHROUGH center label — white for contrast against the plum glow */}
+      {/* BREAKTHROUGH center label - white for contrast against the plum glow */}
       <motion.text
         x={CTR_X} y={CTR_Y - 4}
         textAnchor="middle"
@@ -200,7 +200,7 @@ export default function BBEstablishing() {
         THROUGH
       </motion.text>
 
-      {/* Failure-mode labels — each backed by a dark rect for legibility in the overlap zones */}
+      {/* Failure-mode labels - each backed by a dark rect for legibility in the overlap zones */}
 
       {/* D+F overlap: love without sustainability */}
       <motion.rect x={264} y={161} width={88} height={26} rx={3}
@@ -281,7 +281,7 @@ export default function BBEstablishing() {
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.80)}>
-        AN IDEA THAT PASSES TWO LENSES IS NOT A BREAKTHROUGH — IT IS A TRAP WITH A BLIND SPOT
+        AN IDEA THAT PASSES TWO LENSES IS NOT A BREAKTHROUGH: IT IS A TRAP WITH A BLIND SPOT
       </motion.text>
     </svg>
   )

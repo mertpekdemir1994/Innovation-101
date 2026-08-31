@@ -22,25 +22,25 @@ const FRAMEWORK_LINKS = [
     slug: 'design-thinking',
     name: 'Design Thinking',
     phase: 'Core lens throughout',
-    note: 'Desirability, Feasibility, and Viability are the organising framework for Design Thinking as codified by IDEO and the d.school. They are not a checklist applied at the end — they are the three questions that every phase of a Design Thinking process is implicitly trying to answer. Balanced Breakthrough makes that implicit check explicit, ensuring that each lens is genuinely tested rather than assumed.',
+    note: 'Desirability, Feasibility, and Viability are the organising framework for Design Thinking as codified by IDEO and the d.school. They are not a checklist applied at the end. They are the three questions that every phase of a Design Thinking process is implicitly trying to answer. Balanced Breakthrough makes that implicit check explicit, ensuring that each lens is genuinely tested rather than assumed.',
   },
   {
     slug: 'double-diamond',
     name: 'Double Diamond',
     phase: 'Develop / Deliver',
-    note: 'In the Double Diamond, Balanced Breakthrough functions as the sign-off lens at the transition from Develop to Deliver. Before committing to building and launching, the team explicitly checks whether the converged concept passes all three lenses — not just Desirability, which the research phase emphasised, but Feasibility (can we execute?) and Viability (will the economics sustain this?). It is the gate that prevents a well-loved concept from becoming an operationally or financially stranded launch.',
+    note: 'In the Double Diamond, Balanced Breakthrough functions as the sign-off lens at the transition from Develop to Deliver. Before committing to building and launching, the team explicitly checks whether the converged concept passes all three lenses, not just Desirability, which the research phase emphasised, but Feasibility (can we execute?) and Viability (will the economics sustain this?). It is the gate that prevents a well-loved concept from becoming an operationally or financially stranded launch.',
   },
   {
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Build-Measure-Learn',
-    note: 'The Build-Measure-Learn loop in Lean Startup is fundamentally a mechanism for testing DFV assumptions iteratively. Each loop cycle is a prioritised test of the riskiest assumption across the three lenses — what the Lean Startup calls the Leap-of-Faith assumption. Balanced Breakthrough provides the explicit framework for naming which lens each assumption belongs to, so the team can sequence tests to surface fatal flaws before investment rather than after.',
+    note: 'The Build-Measure-Learn loop in Lean Startup is fundamentally a mechanism for testing DFV assumptions iteratively. Each loop cycle is a prioritised test of the riskiest assumption across the three lenses: what the Lean Startup calls the Leap-of-Faith assumption. Balanced Breakthrough provides the explicit framework for naming which lens each assumption belongs to, so the team can sequence tests to surface fatal flaws before investment rather than after.',
   },
   {
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Backlog / Review',
-    note: 'In Agile Innovation sprints, the DFV lens surfaces most explicitly at two moments: backlog prioritisation (which items address the riskiest lens?) and sprint review (did the sprint output move one of the three lenses?). Balanced Breakthrough prevents sprint teams from optimising only for Feasibility — what they can build — at the expense of Desirability and Viability checks that require user research and financial modelling rather than code.',
+    note: 'In Agile Innovation sprints, the DFV lens surfaces most explicitly at two moments: backlog prioritisation (which items address the riskiest lens?) and sprint review (did the sprint output move one of the three lenses?). Balanced Breakthrough prevents sprint teams from optimising only for Feasibility (what they can build) at the expense of Desirability and Viability checks that require user research and financial modelling rather than code.',
   },
 ]
 
@@ -64,7 +64,7 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'value-proposition-canvas',
     name: 'Value Proposition Canvas',
-    rel: 'Provides depth within the Desirability circle by mapping customer jobs, pains, and gains against the proposed value proposition. Where Balanced Breakthrough asks "do people want this?", the Value Proposition Canvas provides the structured method for answering that question rigorously — making it a natural companion for filling the Desirability lens.',
+    rel: 'Provides depth within the Desirability circle by mapping customer jobs, pains, and gains against the proposed value proposition. Where Balanced Breakthrough asks "do people want this?", the Value Proposition Canvas provides the structured method for answering that question rigorously, making it a natural companion for filling the Desirability lens.',
   },
   {
     slug: 'ten-types-innovation',
@@ -83,7 +83,7 @@ const RELATED_METHODS: RelatedMethod[] = [
 export default function BBPage() {
   return (
     <>
-      {/* S1 — Header DARK */}
+      {/* S1 - Header DARK */}
       <DarkSection>
         <Container>
           <div className="py-20 md:py-28">
@@ -111,20 +111,20 @@ export default function BBPage() {
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
               An idea that passes all three lenses simultaneously: Desirability, Feasibility, and
-              Viability &mdash; the only location in the model where a genuine breakthrough lives.
+              Viability, the only location in the model where a genuine breakthrough lives.
             </p>
 
             <p
               className="max-w-[520px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
             >
-              An idea that passes two lenses is not a breakthrough. It is a trap with a blind spot — and the one that passes two is usually harder to kill than the one that passes none.
+              An idea that passes two lenses is not a breakthrough. It is a trap with a blind spot, and the one that passes two is usually harder to kill than the one that passes none.
             </p>
           </div>
         </Container>
       </DarkSection>
 
-      {/* S2 — Establishing visual DARK */}
+      {/* S2 - Establishing visual DARK */}
       <DarkSection>
         <Container>
           <div className="pb-20">
@@ -133,12 +133,12 @@ export default function BBPage() {
         </Container>
       </DarkSection>
 
-      {/* S3 — What it is LIGHT */}
+      {/* S3 - What it is LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>What it is</SectionLabel>
-            <SectionHeadingLight>Not a checklist. A diagnostic — three overlapping questions that together define the only zone worth building in.</SectionHeadingLight>
+            <SectionHeadingLight>Not a checklist. A diagnostic: three overlapping questions that together define the only zone worth building in.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5">
               <Body>
@@ -152,11 +152,11 @@ export default function BBPage() {
               <Body>
                 The model was developed at IDEO and codified in Design Thinking as the three-circle
                 framework that organises human-centred innovation work. Its core insight is that the most
-                dangerous ideas are not the ones that fail all three lenses &mdash; those are easy to stop.
+                dangerous ideas are not the ones that fail all three lenses. Those are easy to stop.
                 The most expensive ideas are the ones that pass two. An idea that is desirable and
                 feasible but not viable will be built with confidence and love, attract real users, and
                 then fail when the economics catch up. An idea that is desirable and viable but not
-                feasible will be sold, funded, and committed to &mdash; and then fail in delivery.
+                feasible will be sold, funded, and committed to, and then fail in delivery.
               </Body>
               <Body>
                 The three lenses are named for a reason. Desirability is not the same as expressed
@@ -172,7 +172,7 @@ export default function BBPage() {
         </Container>
       </LightSection>
 
-      {/* S4 — Interactive DARK */}
+      {/* S4 - Interactive DARK */}
       <DarkSection>
         <Container>
           <div className="py-20">
@@ -184,7 +184,7 @@ export default function BBPage() {
             >
               Click any region of the Venn to see what kind of idea lives there and what happens
               when teams build in that zone without recognising it. Most promising ideas sit in
-              one of the overlap zones, not the centre &mdash; close enough to feel like breakthroughs,
+              one of the overlap zones, not the centre, close enough to feel like breakthroughs,
               far enough to be traps.
             </p>
             <BBInteractive />
@@ -192,7 +192,7 @@ export default function BBPage() {
         </Container>
       </DarkSection>
 
-      {/* S5 — When to deploy LIGHT */}
+      {/* S5 - When to deploy LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -207,9 +207,9 @@ export default function BBPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You are evaluating which ideas to take forward from a set of candidates — and need to distinguish genuine opportunities from exciting traps.',
+                    'You are evaluating which ideas to take forward from a set of candidates, and need to distinguish genuine opportunities from exciting traps.',
                     'A promising concept is generating momentum and you want to ensure the enthusiasm is not masking a fatal gap in one of the lenses.',
-                    'You are preparing to commit resources — funding, headcount, operational capacity — and need to verify that all three lenses are genuinely solid before doing so.',
+                    'You are preparing to commit resources (funding, headcount, operational capacity) and need to verify that all three lenses are genuinely solid before doing so.',
                     'A cross-functional team needs a shared language for evaluating ideas across their different domains of expertise.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
@@ -229,10 +229,10 @@ export default function BBPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'The team treats it as a validation tool rather than a diagnostic one — using it to confirm a direction already decided, not to test it honestly.',
+                    'The team treats it as a validation tool rather than a diagnostic one, using it to confirm a direction already decided, not to test it honestly.',
                     'The inputs to each lens are hypothetical rather than evidenced. An assessment run on assumptions alone produces structured-looking conclusions built on nothing.',
                     'The analysis is used to declare an idea a breakthrough before each lens is genuinely tested. Labelling something viable because it is feasible and desirable is the most common way the model fails.',
-                    'You need a tool for generating ideas rather than evaluating them — Balanced Breakthrough is an evaluative lens, not an ideation method.',
+                    'You need a tool for generating ideas rather than evaluating them: Balanced Breakthrough is an evaluative lens, not an ideation method.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
                       <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
@@ -261,7 +261,7 @@ export default function BBPage() {
         </Container>
       </LightSection>
 
-      {/* S6 — How it works LIGHT */}
+      {/* S6 - How it works LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -273,17 +273,17 @@ export default function BBPage() {
                 {
                   n: '01',
                   title: 'Name the idea clearly enough to test it.',
-                  body: 'Before checking any lens, the team needs to agree on what the idea actually is — specifically enough that each lens can be applied without ambiguity. A vague idea produces vague lens checks. A clearly stated idea (what is it, for whom, delivered how, at what economics) makes the three questions answerable. Spend time on this before moving to the lenses.',
+                  body: 'Before checking any lens, the team needs to agree on what the idea actually is, specifically enough that each lens can be applied without ambiguity. A vague idea produces vague lens checks. A clearly stated idea (what is it, for whom, delivered how, at what economics) makes the three questions answerable. Spend time on this before moving to the lenses.',
                 },
                 {
                   n: '02',
                   title: 'Check Desirability with evidence from real people.',
-                  body: 'Desirability is confirmed or denied by real human research, not by assumption, survey approval ratings, or the team\'s intuition about what customers want. It requires direct contact with the people the idea is designed for — observing their behaviour, understanding their unmet needs, and testing whether the proposed idea genuinely addresses something they care about. The Desirability check is weak if the team has not spoken to, or observed, real intended users.',
+                  body: 'Desirability is confirmed or denied by real human research, not by assumption, survey approval ratings, or the team\'s intuition about what customers want. It requires direct contact with the people the idea is designed for: observing their behaviour, understanding their unmet needs, and testing whether the proposed idea genuinely addresses something they care about. The Desirability check is weak if the team has not spoken to, or observed, real intended users.',
                 },
                 {
                   n: '03',
                   title: 'Check Feasibility with operational honesty.',
-                  body: 'Feasibility is about what this organisation can actually do — not what is theoretically possible or what comparable organisations have achieved. It requires an honest assessment of current capabilities, the gap to what delivery would require, and the cost and timeline of bridging that gap. Feasibility checks often require input from operations, technology, and people with hands-on delivery experience rather than only from the strategists and designers who conceived the idea.',
+                  body: 'Feasibility is about what this organisation can actually do, not what is theoretically possible or what comparable organisations have achieved. It requires an honest assessment of current capabilities, the gap to what delivery would require, and the cost and timeline of bridging that gap. Feasibility checks often require input from operations, technology, and people with hands-on delivery experience rather than only from the strategists and designers who conceived the idea.',
                 },
                 {
                   n: '04',
@@ -315,7 +315,7 @@ export default function BBPage() {
         </Container>
       </LightSection>
 
-      {/* S7 — Best practices LIGHT */}
+      {/* S7 - Best practices LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -328,11 +328,11 @@ export default function BBPage() {
             </h3>
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                'Each lens is checked with genuine evidence — real user research for Desirability, operational self-assessment for Feasibility, real unit economics for Viability.',
-                'The team includes people who can speak with authority to all three lenses — not just the people who had the idea.',
+                'Each lens is checked with genuine evidence: real user research for Desirability, operational self-assessment for Feasibility, real unit economics for Viability.',
+                'The team includes people who can speak with authority to all three lenses, not just the people who had the idea.',
                 'The analysis is used to locate the idea honestly, including when the location is uncomfortable.',
                 'When a lens fails, the team treats it as a specific, addressable question ("what would need to be true about the economics for this to work?") rather than as a final verdict.',
-                'The tool is applied iteratively as each lens is tested — the picture updates as evidence comes in rather than being set once at the start.',
+                'The tool is applied iteratively as each lens is tested: the picture updates as evidence comes in rather than being set once at the start.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span style={{ color: PLUM, flexShrink: 0, marginTop: 3 }}>✓</span>
@@ -359,7 +359,7 @@ export default function BBPage() {
                 },
                 {
                   mistake: 'Treating all three lenses as equally certain.',
-                  fix: 'Teams often have strong evidence for one or two lenses and much weaker evidence for the third. The analysis should name the confidence level for each lens, not collapse them into a single verdict. "Strong Desirability signal, operational Feasibility confirmed, Viability based on analogues — needs real modelling" is more honest and more useful than a single thumbs-up.',
+                  fix: 'Teams often have strong evidence for one or two lenses and much weaker evidence for the third. The analysis should name the confidence level for each lens, not collapse them into a single verdict. "Strong Desirability signal, operational Feasibility confirmed, Viability based on analogues, needs real modelling" is more honest and more useful than a single thumbs-up.',
                 },
                 {
                   mistake: 'Only including people who designed the idea in the analysis.',
@@ -367,7 +367,7 @@ export default function BBPage() {
                 },
                 {
                   mistake: 'Treating a failed lens as a project-ending verdict.',
-                  fix: 'A lens that fails is a specific question: what would need to change for this lens to hold? The answer sometimes leads to a different model, a different price point, a different target user, or a different operational approach. The failure of one lens rarely means the idea is worthless — it means the current form of the idea has a specific gap that needs to be addressed or accepted.',
+                  fix: 'A lens that fails is a specific question: what would need to change for this lens to hold? The answer sometimes leads to a different model, a different price point, a different target user, or a different operational approach. The failure of one lens rarely means the idea is worthless. It means the current form of the idea has a specific gap that needs to be addressed or accepted.',
                 },
               ].map(({ mistake, fix }) => (
                 <div
@@ -389,18 +389,18 @@ export default function BBPage() {
         </Container>
       </LightSection>
 
-      {/* S8 — Logistics LIGHT */}
+      {/* S8 - Logistics LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>Logistics</SectionLabel>
-            <SectionHeadingLight>The tool is simple. The inputs are not — and that distinction matters.</SectionHeadingLight>
+            <SectionHeadingLight>The tool is simple. The inputs are not, and that distinction matters.</SectionHeadingLight>
             <Body>
               Running a DFV analysis requires a cross-functional team that can speak to all three
               lenses, evidence (not assumptions) for each, and enough time to have an honest conversation
               about what the evidence actually says. The framework itself is three questions. The work
               that makes it real is the research, modelling, and operational assessment that must happen
-              before — or alongside — the conversation.
+              before, or alongside, the conversation.
             </Body>
 
             <div className="flex flex-col gap-7 mt-10">
@@ -411,11 +411,11 @@ export default function BBPage() {
                 },
                 {
                   label: 'Gather evidence before the session, not during it',
-                  body: 'The DFV conversation is most productive when the team has real evidence for each lens going in — not when they are constructing the evidence during the session itself. User research, financial modelling, and operational assessment should be done before the DFV discussion, so the session can focus on interpreting what the evidence means rather than generating it from first principles.',
+                  body: 'The DFV conversation is most productive when the team has real evidence for each lens going in, not when they are constructing the evidence during the session itself. User research, financial modelling, and operational assessment should be done before the DFV discussion, so the session can focus on interpreting what the evidence means rather than generating it from first principles.',
                 },
                 {
                   label: 'Name the confidence level for each lens explicitly',
-                  body: 'Not all lenses will be equally evidenced. Making the confidence level explicit — "we have strong evidence on Desirability, moderate on Feasibility, and Viability is still primarily assumption" — keeps the analysis honest and points directly to what needs to be done next. A falsely even presentation of all three lenses hides exactly the work that still needs doing.',
+                  body: 'Not all lenses will be equally evidenced. Making the confidence level explicit ("we have strong evidence on Desirability, moderate on Feasibility, and Viability is still primarily assumption") keeps the analysis honest and points directly to what needs to be done next. A falsely even presentation of all three lenses hides exactly the work that still needs doing.',
                 },
                 {
                   label: 'Ask the kill question for each lens',
@@ -447,18 +447,18 @@ export default function BBPage() {
         </Container>
       </LightSection>
 
-      {/* S9 — AI and this method DARK */}
+      {/* S9 - AI and this method DARK */}
       <DarkSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={PLUM}>AI and this method</SectionLabel>
-            <SectionHeadingDark>AI shifts the weight of the three lenses unevenly — and cannot integrate them.</SectionHeadingDark>
+            <SectionHeadingDark>AI shifts the weight of the three lenses unevenly, and cannot integrate them.</SectionHeadingDark>
             <p
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Toggle between modes to see how AI contributes differently to each of the three
-              lenses &mdash; most strongly to Viability, moderately to Feasibility, and least
+              lenses, most strongly to Viability, moderately to Feasibility, and least
               to Desirability, where the limit of language-based analysis matters most.
               The integrating judgment at the centre remains irreducibly human.
             </p>
@@ -467,7 +467,7 @@ export default function BBPage() {
         </Container>
       </DarkSection>
 
-      {/* S10 — In-depth example LIGHT */}
+      {/* S10 - In-depth example LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -479,7 +479,7 @@ export default function BBPage() {
             >
               A founding team runs a rigorous DFV check on a premium on-demand cleaning service
               and discovers the idea sits in the Desirability + Feasibility overlap, not the centre.
-              Strong customer love, clear operational feasibility &mdash; fatal unit economics.
+              Strong customer love, clear operational feasibility, fatal unit economics.
               Toggle to see what a hypothetical AI-run DFV analysis might produce and why
               the false balance it generates is more dangerous than no analysis at all.
             </p>
@@ -488,7 +488,7 @@ export default function BBPage() {
         </Container>
       </LightSection>
 
-      {/* S11 — Frameworks LIGHT */}
+      {/* S11 - Frameworks LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -499,7 +499,7 @@ export default function BBPage() {
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               The DFV lens appears at the evaluation and gate moments of the major innovation
-              frameworks — when teams need to decide whether a concept is genuinely worth building,
+              frameworks, when teams need to decide whether a concept is genuinely worth building,
               not just promising. It is the common language across frameworks that otherwise differ
               significantly in their approach and vocabulary.
             </p>
@@ -530,17 +530,17 @@ export default function BBPage() {
         </Container>
       </LightSection>
 
-      {/* S12 — Related methods LIGHT */}
+      {/* S12 - Related methods LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>Related methods</SectionLabel>
-            <SectionHeadingLight>What to pair with Balanced Breakthrough — and where in the DFV model each method operates.</SectionHeadingLight>
+            <SectionHeadingLight>What to pair with Balanced Breakthrough, and where in the DFV model each method operates.</SectionHeadingLight>
 
             <p className="mb-6"
               style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
               Balanced Breakthrough is the integrating lens. The methods below operate within specific
-              circles — generating evidence for Desirability, testing Feasibility in practice, or
+              circles: generating evidence for Desirability, testing Feasibility in practice, or
               mapping the dimensions of Viability. The DFV framework names the question each method
               is answering.
             </p>
@@ -576,7 +576,7 @@ export default function BBPage() {
         </Container>
       </LightSection>
 
-      {/* S13 — Sources LIGHT */}
+      {/* S13 - Sources LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -595,13 +595,13 @@ export default function BBPage() {
                   title:  'The Innovator\'s Dilemma',
                   author: 'Clayton M. Christensen',
                   year:   '1997',
-                  note:   'Christensen\'s account of why good companies fail illuminates the Viability trap in particular: incumbents optimise for the viability of their existing business model, which leaves them blind to desirable new offerings that would undermine that model. The DFV framework, read through Christensen, reveals that Viability is not a single fixed lens — it depends on whose economics you are measuring and over what time horizon. The book is the best account of what happens when the Viability lens is applied only to the existing model and not to the emerging one.',
+                  note:   'Christensen\'s account of why good companies fail illuminates the Viability trap in particular: incumbents optimise for the viability of their existing business model, which leaves them blind to desirable new offerings that would undermine that model. The DFV framework, read through Christensen, reveals that Viability is not a single fixed lens. It depends on whose economics you are measuring and over what time horizon. The book is the best account of what happens when the Viability lens is applied only to the existing model and not to the emerging one.',
                 },
                 {
                   title:  'Ten Types of Innovation',
                   author: 'Larry Keeley, Ryan Pikkel, Brian Quinn, and Helen Walters',
                   year:   '2013',
-                  note:   'Keeley and colleagues provide the most systematic treatment of Viability as a multi-dimensional lens. The ten types — spanning profit model, network, structure, process, product performance, product system, service, channel, brand, and customer engagement — show that Viability is not simply "does the product make money?" but a composite of business model dimensions, most of which are not product features at all. Teams using the DFV framework benefit from the Ten Types as a tool for finding Viability routes when the obvious model fails.',
+                  note:   'Keeley and colleagues provide the most systematic treatment of Viability as a multi-dimensional lens. The ten types (spanning profit model, network, structure, process, product performance, product system, service, channel, brand, and customer engagement) show that Viability is not simply "does the product make money?" but a composite of business model dimensions, most of which are not product features at all. Teams using the DFV framework benefit from the Ten Types as a tool for finding Viability routes when the obvious model fails.',
                 },
               ].map(({ title, author, year, note }) => (
                 <div

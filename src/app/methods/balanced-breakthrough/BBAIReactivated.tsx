@@ -60,7 +60,7 @@ export default function BBAIReactivated() {
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
           preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}
           aria-label={isAI
-            ? 'AI mode: Viability lens is strongest (AI can model economics), Feasibility is moderate (AI can assess technical complexity), Desirability is weakest (AI cannot feel what humans genuinely want). The centre — the integration judgment — remains human.'
+            ? 'AI mode: Viability lens is strongest (AI can model economics), Feasibility is moderate (AI can assess technical complexity), Desirability is weakest (AI cannot feel what humans genuinely want). The centre, the integration judgment, remains human.'
             : 'Human mode: all three lenses balanced, requiring cross-functional human input across Desirability, Feasibility, and Viability.'}>
           <defs>
             <filter id="bb-ai-plum-glow" x="-30%" y="-30%" width="160%" height="160%">
@@ -175,7 +175,7 @@ export default function BBAIReactivated() {
                 {isAI ? 'JUDGMENT' : 'THROUGH'}
               </text>
 
-              {/* Circle labels — AI mode deliberately grades opacity D < F < V (AI strength order) */}
+              {/* Circle labels - AI mode deliberately grades opacity D < F < V (AI strength order) */}
               <text x={D_CX} y={D_CY - 48} textAnchor="middle"
                 fontSize="10" fontFamily="var(--font-mono)" letterSpacing="0.13em"
                 fill={isAI ? `${INDIGO}0.72)` : `${PLUM}0.95)`}
@@ -210,8 +210,8 @@ export default function BBAIReactivated() {
             fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill="rgba(255,255,255,0.36)" style={{ userSelect: 'none' }}>
             {isAI
-              ? 'AI SHIFTS THE WEIGHT OF THE LENSES — THE INTEGRATION JUDGMENT IN THE CENTRE REMAINS HUMAN'
-              : 'ALL THREE LENSES REQUIRE HUMAN JUDGMENT — NO SINGLE LENS IS ENOUGH'}
+              ? 'AI SHIFTS THE WEIGHT OF THE LENSES: THE INTEGRATION JUDGMENT IN THE CENTRE REMAINS HUMAN'
+              : 'ALL THREE LENSES REQUIRE HUMAN JUDGMENT: NO SINGLE LENS IS ENOUGH'}
           </text>
         </svg>
       </div>
@@ -226,8 +226,8 @@ export default function BBAIReactivated() {
             transition={{ duration: 0.18 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { label: 'DESIRABILITY', body: 'Requires genuine empathy and human research. Understanding what people actually want — not what they say they want — cannot be delegated to analysis alone. It is rooted in observation, listening, and interpretive judgment.' },
-              { label: 'FEASIBILITY', body: 'Requires operational and technical honesty. The team must assess whether the organisation can genuinely deliver this — given current capabilities, constraints, and what would need to change — not just whether it seems plausible.' },
+              { label: 'DESIRABILITY', body: 'Requires genuine empathy and human research. Understanding what people actually want, not what they say they want, cannot be delegated to analysis alone. It is rooted in observation, listening, and interpretive judgment.' },
+              { label: 'FEASIBILITY', body: 'Requires operational and technical honesty. The team must assess whether the organisation can genuinely deliver this (given current capabilities, constraints, and what would need to change) not just whether it seems plausible.' },
               { label: 'VIABILITY', body: 'Requires financial and strategic literacy. The economics must work sustainably: the cost to deliver, what the market will pay, and how the model holds up at scale and under competitive pressure. Optimistic projections are not enough.' },
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
@@ -246,19 +246,19 @@ export default function BBAIReactivated() {
             className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               {
-                label: 'DESIRABILITY — WEAKEST',
+                label: 'DESIRABILITY: WEAKEST',
                 color: AMBER,
-                body: 'AI can analyse patterns in stated preferences, reviews, and survey data. But Desirability is ultimately about what people actually want — which requires empathy, contextual observation, and interpretive judgment that AI cannot substitute. Fluent sentiment analysis is not the same as understanding genuine human need.',
+                body: 'AI can analyse patterns in stated preferences, reviews, and survey data. But Desirability is ultimately about what people actually want, which requires empathy, contextual observation, and interpretive judgment that AI cannot substitute. Fluent sentiment analysis is not the same as understanding genuine human need.',
               },
               {
-                label: 'FEASIBILITY — MODERATE',
+                label: 'FEASIBILITY: MODERATE',
                 color: INDIGO,
                 body: 'AI can help assess technical complexity, identify analogous implementations, and surface operational constraints. But it cannot replace the grounded organisational knowledge of whether this team, with these capabilities and this operating context, can actually deliver.',
               },
               {
-                label: 'VIABILITY — STRONGEST',
+                label: 'VIABILITY: STRONGEST',
                 color: INDIGO,
-                body: 'AI can model financial scenarios, benchmark unit economics, and identify structural risks in a business model with reasonable reliability. Viability analysis is the lens where AI contributes most — though the assumptions the model rests on still require human judgment to set correctly.',
+                body: 'AI can model financial scenarios, benchmark unit economics, and identify structural risks in a business model with reasonable reliability. Viability analysis is the lens where AI contributes most, though the assumptions the model rests on still require human judgment to set correctly.',
               },
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
@@ -282,10 +282,10 @@ export default function BBAIReactivated() {
             className="rounded-xl border p-4"
             style={{ borderColor: `${PLUM}0.25)`, background: `${PLUM}0.06)` }}>
             <p className="text-[9px] font-mono uppercase tracking-widest mb-2" style={{ color: `${PLUM}0.70)` }}>
-              The integration judgment — centre — remains human
+              The integration judgment, centre, remains human
             </p>
             <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.52)' }}>
-              Even when AI contributes meaningfully to individual lenses, the act of weighing all three together — deciding whether the gaps are bridgeable, which trade-offs to accept, and whether the overall picture adds up to a real opportunity — requires human judgment. AI can sharpen each input; it cannot substitute for the integrative decision at the centre.
+              Even when AI contributes meaningfully to individual lenses, the act of weighing all three together (deciding whether the gaps are bridgeable, which trade-offs to accept, and whether the overall picture adds up to a real opportunity) requires human judgment. AI can sharpen each input; it cannot substitute for the integrative decision at the centre.
             </p>
           </motion.div>
         )}

@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'A founding team is developing an on-demand premium home cleaning service targeting professional households who are time-poor but highly quality-conscious. The idea tests well in concept — customers articulate clear willingness to use it. The question before investing further is whether the idea is actually a Balanced Breakthrough or whether it sits in one of the failure-mode zones.'
+const SCENARIO = 'A founding team is developing an on-demand premium home cleaning service targeting professional households who are time-poor but highly quality-conscious. The idea tests well in concept: customers articulate clear willingness to use it. The question before investing further is whether the idea is actually a Balanced Breakthrough or whether it sits in one of the failure-mode zones.'
 
 export default function BBExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -69,13 +69,13 @@ export default function BBExampleToggle() {
                     lens: 'FEASIBILITY',
                     verdict: 'Conditional ✓',
                     color: `${PLUM}0.80)`,
-                    body: 'The team could recruit and train cleaning professionals to the required quality standard. The logistics and scheduling systems were buildable. The conditional: sustaining quality at scale would require robust QA processes and low staff turnover — both achievable but demanding ongoing investment. Feasibility held, but only with operational discipline.',
+                    body: 'The team could recruit and train cleaning professionals to the required quality standard. The logistics and scheduling systems were buildable. The conditional: sustaining quality at scale would require rigorous QA processes and low staff turnover, both achievable but demanding ongoing investment. Feasibility held, but only with operational discipline.',
                   },
                   {
                     lens: 'VIABILITY',
                     verdict: 'FATAL ✗',
                     color: 'var(--color-reading)',
-                    body: 'This is where the idea broke. At the price point customers would pay — even the premium end — the labour cost to deliver a high-quality clean at premium service levels exceeded revenue per visit. Labour is the dominant cost, and the unit economics were structurally negative. Volume did not fix it; it amplified the loss. The team modelled every pricing and cost scenario and could not find a path to positive unit economics.',
+                    body: 'This is where the idea broke. At the price point customers would pay (even the premium end) the labour cost to deliver a high-quality clean at premium service levels exceeded revenue per visit. Labour is the dominant cost, and the unit economics were structurally negative. Volume did not fix it; it amplified the loss. The team modelled every pricing and cost scenario and could not find a path to positive unit economics.',
                   },
                 ].map(({ lens, verdict, color, body }) => (
                   <div key={lens} className="rounded-lg p-4"
@@ -98,25 +98,25 @@ export default function BBExampleToggle() {
             {/* Diagnosis and outcome */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${PLUM}0.22)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${PLUM}1)` }}>Where this idea lives — and what the team did</p>
+                style={{ color: `${PLUM}1)` }}>Where this idea lives, and what the team did</p>
               <div className="rounded-lg p-4 mb-4"
                 style={{ background: 'rgba(220,38,38,0.05)', borderLeft: '3px solid rgba(220,38,38,0.35)' }}>
                 <p className="text-xs font-semibold mb-1 text-red-700">
-                  Desirability + Feasibility, not Viability — Love Without Sustainability
+                  Desirability + Feasibility, not Viability: Love Without Sustainability
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
-                  The idea sits in the D+F overlap, not the centre. People love it and the team can deliver it, but the economics are fatal. A year of building this would have created something beloved and unsustainable — the most common and most expensive trap in the DFV model.
+                  The idea sits in the D+F overlap, not the centre. People love it and the team can deliver it, but the economics are fatal. A year of building this would have created something beloved and unsustainable, the most common and most expensive trap in the DFV model.
                 </p>
               </div>
               <div className="space-y-3">
                 {[
                   {
                     label: 'The team stopped before building',
-                    detail: 'Because the DFV check surfaced the viability gap before significant investment, the team paused. This was not a comfortable conversation — the concept was genuinely exciting and the team was attached to it. But the discipline of checking all three lenses before committing prevented a much larger loss.',
+                    detail: 'Because the DFV check surfaced the viability gap before significant investment, the team paused. This was not a comfortable conversation. The concept was genuinely exciting and the team was attached to it. But the discipline of checking all three lenses before committing prevented a much larger loss.',
                   },
                   {
                     label: 'Reframing, not abandoning',
-                    detail: 'The team explored whether the viability gap could be bridged by changing the model — higher-tier positioning with fewer clients, B2B rather than B2C, or a technology-mediated quality layer that reduced the labour cost per visit. Each variant required re-checking all three lenses. The desirability and feasibility findings remained useful inputs to any reformulation.',
+                    detail: 'The team explored whether the viability gap could be bridged by changing the model: higher-tier positioning with fewer clients, B2B rather than B2C, or a technology-mediated quality layer that reduced the labour cost per visit. Each variant required re-checking all three lenses. The desirability and feasibility findings remained useful inputs to any reformulation.',
                   },
                   {
                     label: 'What the analysis gave them',
@@ -147,7 +147,7 @@ export default function BBExampleToggle() {
               style={{ background: `${INDIGO}0.05)`, borderColor: `${INDIGO}0.20)` }}>
               <p className="text-xs text-neutral-600 leading-relaxed">
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical.</span>{' '}
-                This tab imagines what might happen if the team asked an AI to run the DFV analysis rather than conducting their own research and financial modelling. It illustrates a specific failure mode — AI-produced false balance — not a claim about what any particular tool would produce.
+                This tab imagines what might happen if the team asked an AI to run the DFV analysis rather than conducting their own research and financial modelling. It illustrates a specific failure mode (AI-produced false balance) not a claim about what any particular tool would produce.
               </p>
             </div>
 
@@ -178,15 +178,15 @@ export default function BBExampleToggle() {
                 {[
                   {
                     label: 'Three lenses with one empty',
-                    detail: 'The AI assessment covers all three lenses, which creates the appearance of a complete DFV check. But the viability lens is effectively empty — populated with analogous data rather than real modelling. A three-section output with one hollow section can still pass a cursory review, particularly if the other two sections are strong.',
+                    detail: 'The AI assessment covers all three lenses, which creates the appearance of a complete DFV check. But the viability lens is effectively empty, populated with analogous data rather than real modelling. A three-section output with one hollow section can still pass a cursory review, particularly if the other two sections are strong.',
                   },
                   {
                     label: 'The team felt validated, not analysed',
-                    detail: 'Because the AI produced a balanced assessment across all three lenses, the team experienced the output as validation rather than analysis. The framing of each section — "strong desirability signal," "operationally feasible," "viable with appropriate positioning" — matched what they hoped to hear. The absence of real unit economics went unnoticed.',
+                    detail: 'Because the AI produced a balanced assessment across all three lenses, the team experienced the output as validation rather than analysis. The framing of each section ("strong desirability signal," "operationally feasible," "viable with appropriate positioning") matched what they hoped to hear. The absence of real unit economics went unnoticed.',
                   },
                   {
                     label: 'The fatal gap was papered over',
-                    detail: 'The specific viability conclusion that the human analysis would have reached — that the unit economics are structurally negative at any realistic price point in this labour market — never surfaced. The AI produced a conclusion consistent with the inputs it had, which were too general to reveal the specific flaw. The team moved forward into operational planning with the wrong picture of where their idea sat.',
+                    detail: 'The specific viability conclusion that the human analysis would have reached, that the unit economics are structurally negative at any realistic price point in this labour market, never surfaced. The AI produced a conclusion consistent with the inputs it had, which were too general to reveal the specific flaw. The team moved forward into operational planning with the wrong picture of where their idea sat.',
                   },
                 ].map(item => (
                   <div key={item.label} className="rounded p-3"
