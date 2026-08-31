@@ -53,17 +53,17 @@ const RELATED_METHODS = [
   {
     slug: 'personas-archetypes',
     name: 'Personas & Archetypes',
-    rel: 'HMW is often scoped to a specific persona — the question becomes sharper when anchored to a named person with a named need. A persona gives the HMW a subject: not "how might we improve checkout" but "how might we help Sarah, in the first ten seconds of payment, feel safe enough to complete the purchase."',
+    rel: 'HMW is often scoped to a specific persona: the question becomes sharper when anchored to a named person with a named need. A persona gives the HMW a subject: not "how might we improve checkout" but "how might we help Sarah, in the first ten seconds of payment, feel safe enough to complete the purchase."',
   },
   {
     slug: 'journey-mapping',
     name: 'Journey Mapping',
-    rel: 'Journey map moments — particularly the pain points and emotional valleys — are a rich source of HMW raw material. The journey identifies where the experience fails; HMW converts those failures into design opportunities.',
+    rel: 'Journey map moments, particularly the pain points and emotional valleys, are a rich source of HMW raw material. The journey identifies where the experience fails; HMW converts those failures into design opportunities.',
   },
   {
     slug: 'ambition-matrix',
     name: 'Ambition Matrix',
-    rel: 'After a HMW session produces several well-formed design challenges, the ambition matrix helps the team decide which to pursue — plotting each challenge against feasibility and potential impact to choose where to focus ideation.',
+    rel: 'After a HMW session produces several well-formed design challenges, the ambition matrix helps the team decide which to pursue, plotting each challenge against feasibility and potential impact to choose where to focus ideation.',
   },
 ]
 
@@ -73,7 +73,7 @@ export default function HowMightWePage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -101,21 +101,21 @@ export default function HowMightWePage() {
               className="mb-3 max-w-[600px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              A reframing question that converts a research insight into an open design challenge &mdash; the hinge between what you learned and what you build.
+              A reframing question that converts a research insight into an open design challenge: the hinge between what you learned and what you build.
             </p>
 
             <p
               className="max-w-[520px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
             >
-              Some problems, stated as problems, cannot be solved &mdash; only endured. The question is not what to fix. It is how to stand in front of the same situation and ask something different.
+              Some problems, stated as problems, cannot be solved, only endured. The question is not what to fix. It is how to stand in front of the same situation and ask something different.
             </p>
           </div>
         </Container>
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -126,7 +126,7 @@ export default function HowMightWePage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -163,7 +163,7 @@ export default function HowMightWePage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Scope Slider   DARK
+          S4 - Scope Slider   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -184,7 +184,7 @@ export default function HowMightWePage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -201,7 +201,7 @@ export default function HowMightWePage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'Research has produced specific, observed insights that need converting into design challenges before ideation begins.',
-                    'The team is stuck in problem mode — diagnosing, analyzing, or reporting the problem rather than opening it into possibility.',
+                    'The team is stuck in problem mode, diagnosing, analyzing, or reporting the problem rather than opening it into possibility.',
                     'After affinity mapping has produced insight clusters that need converting into a brief for ideation.',
                     'At the Define phase of a double diamond or design sprint, where the task is converting Discover findings into a design challenge.',
                     'When you need a single, shared design challenge that a cross-functional team can align on before ideation.',
@@ -224,7 +224,7 @@ export default function HowMightWePage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'Research hasn\'t happened yet. HMW without evidence becomes guessing framed as a design method. The quality of the HMW is a direct function of the quality of the insight behind it.',
-                    'You already have a solution in mind. Skipping to "how do we build X" wastes the method — HMW exists to open the solution space, not to dress up a decision already made.',
+                    'You already have a solution in mind. Skipping to "how do we build X" wastes the method; HMW exists to open the solution space, not to dress up a decision already made.',
                     'The problem is genuinely vague. A HMW question converts a specific insight; without a specific insight there is nothing to convert. Do the research first.',
                     'You need prioritization, not reframing. If the team already has good design challenges and needs to decide which to pursue, use a prioritization tool like the ambition matrix.',
                   ].map((item, i) => (
@@ -245,7 +245,7 @@ export default function HowMightWePage() {
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: a HMW question is only as good as the insight behind it. A weak insight produces
-                a weak HMW — one that accurately reframes the wrong thing. The method is a conversion mechanism;
+                a weak HMW: one that accurately reframes the wrong thing. The method is a conversion mechanism;
                 the quality of the input determines the quality of the output.
               </p>
             </div>
@@ -254,7 +254,7 @@ export default function HowMightWePage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -267,7 +267,7 @@ export default function HowMightWePage() {
                 {
                   n: '01',
                   title: 'Start with a specific, observed insight.',
-                  body: 'HMW converts evidence into possibility. The evidence must be specific: not "users find checkout hard" but "users abandon checkout at the payment step because it feels effortful and uncertain — observed in 11 of 14 interviews." The more specific the insight, the more directional the HMW.',
+                  body: 'HMW converts evidence into possibility. The evidence must be specific: not "users find checkout hard" but "users abandon checkout at the payment step because it feels effortful and uncertain, observed in 11 of 14 interviews." The more specific the insight, the more directional the HMW.',
                 },
                 {
                   n: '02',
@@ -277,7 +277,7 @@ export default function HowMightWePage() {
                 {
                   n: '03',
                   title: 'Convert to a HMW question.',
-                  body: 'Apply the format: "How might we [convert the problem into an opportunity]?" Stay close to the insight — the first HMW is usually the most direct reframing. Don\'t over-engineer it. "How might we make checkout feel effortless and reassuring?" holds the same insight as the problem statement, reframed for possibility.',
+                  body: 'Apply the format: "How might we [convert the problem into an opportunity]?" Stay close to the insight; the first HMW is usually the most direct reframing. Don\'t over-engineer it. "How might we make checkout feel effortless and reassuring?" holds the same insight as the problem statement, reframed for possibility.',
                 },
                 {
                   n: '04',
@@ -287,7 +287,7 @@ export default function HowMightWePage() {
                 {
                   n: '05',
                   title: 'Select and commit to one or two.',
-                  body: 'A HMW session should produce one or two well-calibrated design challenges — not twenty. More than two is usually a sign that the scope calibration step was skipped. The selected HMW questions become the brief for ideation: specific enough to give direction, open enough to generate genuinely different solutions.',
+                  body: 'A HMW session should produce one or two well-calibrated design challenges, not twenty. More than two is usually a sign that the scope calibration step was skipped. The selected HMW questions become the brief for ideation: specific enough to give direction, open enough to generate genuinely different solutions.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -309,23 +309,23 @@ export default function HowMightWePage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={NAVY}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like — and what prevents it.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and what prevents it.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
               When it goes well
             </h3>
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                'The question is anchored to a specific, observed insight — it converts evidence, not opinion.',
+                'The question is anchored to a specific, observed insight: it converts evidence, not opinion.',
                 'The scope is calibrated: specific enough to give direction, open enough to generate genuinely different solutions.',
                 'The question preserves the emotional truth of the insight without losing it in polished language.',
-                'The team can argue about whether the scope is right — that debate is a sign the question is working.',
+                'The team can argue about whether the scope is right, that debate is a sign the question is working.',
                 'It changes the conversation: the team shifts from diagnosing the problem to generating possibilities.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
@@ -348,11 +348,11 @@ export default function HowMightWePage() {
                 },
                 {
                   mistake: 'Losing the emotional truth in the reframe.',
-                  fix: '"How might we optimize the payment flow" and "how might we make checkout feel effortless and reassuring" address the same problem — but the second preserves the emotional observation and opens a different solution space. Abstracting away the human truth is the most common way a HMW goes flat.',
+                  fix: '"How might we optimize the payment flow" and "how might we make checkout feel effortless and reassuring" address the same problem, but the second preserves the emotional observation and opens a different solution space. Abstracting away the human truth is the most common way a HMW goes flat.',
                 },
                 {
                   mistake: 'Skipping scope calibration.',
-                  fix: 'A HMW at the wrong scope produces either paralysis (too broad) or a dressed-up specification (too narrow). The calibration step — testing the question against three altitudes — is not optional. It is the step where the method actually does its work.',
+                  fix: 'A HMW at the wrong scope produces either paralysis (too broad) or a dressed-up specification (too narrow). The calibration step, testing the question against three altitudes, is not optional. It is the step where the method actually does its work.',
                 },
                 {
                   mistake: 'Running HMW without a specific insight.',
@@ -378,7 +378,7 @@ export default function HowMightWePage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -386,17 +386,17 @@ export default function HowMightWePage() {
             <SectionLabel accent={NAVY}>Logistics</SectionLabel>
             <SectionHeadingLight>Running the session from insight to design challenge.</SectionHeadingLight>
             <Body>
-              HMW works well individually but is most powerful in a cross-functional group with access to the raw
+              HMW works well individually but is most effective in a cross-functional group with access to the raw
               research. The group should include people who were in the interviews, people who will be in the
               ideation sessions, and at least one person who can push back on scope. The writing of the question
-              is the key step — it is where the reframing happens.
+              is the key step; it is where the reframing happens.
             </Body>
 
             <div className="flex flex-col gap-7 mt-10">
               {[
                 {
                   label: 'Start from a specific insight, not a general theme',
-                  body: 'One HMW question per insight cluster. Don\'t try to reframe twenty insights into one question. A good HMW session converts three to five specific insights into three to five design challenges — a volume the team can work with in ideation.',
+                  body: 'One HMW question per insight cluster. Don\'t try to reframe twenty insights into one question. A good HMW session converts three to five specific insights into three to five design challenges, a volume the team can work with in ideation.',
                 },
                 {
                   label: 'Write, don\'t discuss',
@@ -404,11 +404,11 @@ export default function HowMightWePage() {
                 },
                 {
                   label: 'Run scope calibration explicitly',
-                  body: 'After writing, place each HMW at a scope level: too broad, just right, too narrow. This step is often skipped — and skipping it is the most common cause of a HMW session that produces nothing useful. Make the calibration conversation visible and explicit.',
+                  body: 'After writing, place each HMW at a scope level: too broad, just right, too narrow. This step is often skipped, and skipping it is the most common cause of a HMW session that produces nothing useful. Make the calibration conversation visible and explicit.',
                 },
                 {
                   label: 'Aim for one chosen question per insight',
-                  body: 'After calibration, converge. The group selects the best-scoped HMW for each insight — the one that gives the most direction while leaving the solution space genuinely open. The output of the session is a set of design challenges, not a list of questions.',
+                  body: 'After calibration, converge. The group selects the best-scoped HMW for each insight, the one that gives the most direction while leaving the solution space genuinely open. The output of the session is a set of design challenges, not a list of questions.',
                 },
                 {
                   label: 'Remote: works well',
@@ -436,7 +436,7 @@ export default function HowMightWePage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — AI and this method   DARK
+          S9 - AI and this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -447,7 +447,7 @@ export default function HowMightWePage() {
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see where AI contributes to HMW — and where the distinctive reframe
+              Toggle between modes to see where AI contributes to HMW, and where the distinctive reframe
               requires the emotional knowledge that only the research can supply.
             </p>
             <HMWAIReactivated />
@@ -456,7 +456,7 @@ export default function HowMightWePage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -478,7 +478,7 @@ export default function HowMightWePage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Frameworks   LIGHT
+          S11 - Frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -490,7 +490,7 @@ export default function HowMightWePage() {
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               HMW is a Define-phase tool. It maps to frameworks at the points where the task is converting
-              research findings into a design challenge &mdash; the hinge between what was learned in Discover
+              research findings into a design challenge: the hinge between what was learned in Discover
               and what gets built in Develop.
             </p>
 
@@ -521,7 +521,7 @@ export default function HowMightWePage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -554,7 +554,7 @@ export default function HowMightWePage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources & further reading   LIGHT
+          S13 - Sources & further reading   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -568,13 +568,13 @@ export default function HowMightWePage() {
                   title:  'The Art of Innovation',
                   author: 'Tom Kelley and Jonathan Littman',
                   year:   '2001',
-                  note:   'The book that brought IDEO\'s methods into public view, including the HMW format as a structured reframing tool. Describes how "How Might We" shifts a team\'s posture from problem analysis to creative possibility — the shift the phrasing is designed to produce.',
+                  note:   'The book that brought IDEO\'s methods into public view, including the HMW format as a structured reframing tool. Describes how "How Might We" shifts a team\'s posture from problem analysis to creative possibility, the shift the phrasing is designed to produce.',
                 },
                 {
                   title:  'Change by Design',
                   author: 'Tim Brown',
                   year:   '2009',
-                  note:   'The HMW method in its broader design thinking context. Brown\'s framing of design thinking as a human-centered approach to problem-solving situates HMW as the translation layer between empathy and ideation — converting what was learned into a question worth answering.',
+                  note:   'The HMW method in its broader design thinking context. Brown\'s framing of design thinking as a human-centered approach to problem-solving situates HMW as the translation layer between empathy and ideation, converting what was learned into a question worth answering.',
                 },
                 {
                   title:  'Sprint',

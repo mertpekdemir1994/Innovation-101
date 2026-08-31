@@ -131,7 +131,7 @@ export default function HMWAIReactivated() {
           >INSIGHT</text>
           {([
             ['Users abandon checkout',          PROB_Y + 68, '6.5', 0.74],
-            ['at payment — feels',               PROB_Y + 82, '6.5', 0.74],
+            ['at payment, feels',                 PROB_Y + 82, '6.5', 0.74],
             ['effortful and uncertain.',         PROB_Y + 96, '6.5', 0.74],
           ] as [string, number, string, number][]).map(([t, y, fs, op]) => (
             <text
@@ -240,7 +240,7 @@ export default function HMWAIReactivated() {
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
               fill="rgba(255,255,255,0.30)" style={{ userSelect: 'none' }}
-            >1 QUESTION — CALIBRATED SCOPE</text>
+            >1 QUESTION, CALIBRATED SCOPE</text>
           </motion.g>
 
           {/* ── AI MODE: flood of questions ── */}
@@ -253,7 +253,7 @@ export default function HMWAIReactivated() {
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={`${INDIGO}0.60)`} style={{ userSelect: 'none' }}
-            >20 QUESTIONS — 4 SECONDS — NO SCOPE</text>
+            >20 QUESTIONS, 4 SECONDS, NO SCOPE</text>
             <line
               x1={SOL_X + 10} y1={PROB_Y + 22} x2={SOL_X + SOL_W - 10} y2={PROB_Y + 22}
               stroke={`${INDIGO}0.14)`}
@@ -273,7 +273,7 @@ export default function HMWAIReactivated() {
             ))}
           </motion.g>
 
-          {/* AI mode annotation — appears over center gap */}
+          {/* AI mode annotation: appears over center gap */}
           <AnimatePresence>
             {aiMode && (
               <motion.text
@@ -309,7 +309,7 @@ export default function HMWAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}
               >Where AI is useful</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI generates large volumes of HMW questions from a brief quickly — useful for exploring scope variants,
+                AI generates large volumes of HMW questions from a brief quickly, useful for exploring scope variants,
                 seeding a workshop, or prompting a team that is stuck. The mechanical conversion from problem statement
                 to HMW question format is something AI does well and fast. Use it to populate a raw starting set.
               </p>
@@ -325,7 +325,7 @@ export default function HMWAIReactivated() {
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
                 HMW is a reframing tool, not a question generator. The valuable move is identifying one question at the
                 right scope that converts an insight into a design challenge by shifting what success means. AI produces
-                volume; it cannot do the brave reframe — the one that requires understanding what the insight actually
+                volume; it cannot do the brave reframe: the one that requires understanding what the insight actually
                 means for the person experiencing the problem, not just for the system producing it.
               </p>
             </div>
@@ -333,7 +333,7 @@ export default function HMWAIReactivated() {
         )}
       </AnimatePresence>
 
-      {/* Synthesis — always visible */}
+      {/* Synthesis: always visible */}
       <div
         className="rounded-xl p-6"
         style={{ background: `${NAVY}0.10)`, border: `1px solid ${NAVY}0.25)` }}
@@ -343,11 +343,11 @@ export default function HMWAIReactivated() {
           style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.80)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
-          AI accelerates the generation of HMW questions from a brief — genuinely useful when you need a large starting
+          AI accelerates the generation of HMW questions from a brief, genuinely useful when you need a large starting
           set or when a team is stuck. Where it cannot substitute is in the reframing step: the move from
           &ldquo;how might we fix the checkout form&rdquo; to &ldquo;how might we make payment feel like the least
           important moment of the purchase.&rdquo; That reframe requires understanding what the insight means
-          emotionally — knowledge that lives in the interviews and observations, not in the domain description.
+          emotionally: knowledge that lives in the interviews and observations, not in the domain description.
           Use AI to generate quantity; use the team to select and reframe.
         </p>
       </div>

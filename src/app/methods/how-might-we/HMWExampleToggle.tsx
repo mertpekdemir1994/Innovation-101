@@ -54,12 +54,12 @@ export default function HMWExampleToggle() {
               <p
                 className="font-mono uppercase tracking-widest mb-1"
                 style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.65)` }}
-              >Scenario &mdash; UK Government &ldquo;Tell Us Once&rdquo;</p>
+              >Scenario: UK Government &ldquo;Tell Us Once&rdquo;</p>
               <p
                 className="font-semibold mb-2"
                 style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}
               >
-                Redesigning the process for notifying government after a death &mdash; 2012
+                Redesigning the process for notifying government after a death, 2012
               </p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 When someone dies in the UK, the next of kin is required to separately notify a dozen or more government
@@ -92,7 +92,7 @@ export default function HMWExampleToggle() {
                     who: 'Bereaved families + registrars',
                   },
                   {
-                    finding: 'Registrars describe their role as &ldquo;the one person the family trusts in the process&rdquo; — not an administrative function.',
+                    finding: 'Registrars describe their role as &ldquo;the one person the family trusts in the process&rdquo;, not an administrative function.',
                     who: 'Bereavement registrars',
                   },
                 ].map(({ finding, who }, i) => (
@@ -136,7 +136,7 @@ export default function HMWExampleToggle() {
                   {
                     question: 'How might we make the government&rsquo;s response to a death feel like care rather than administration?',
                     scope: 'brave',
-                    note: 'The brave reframe. Redefines what the service is for &mdash; not reducing steps, but communicating care. This became the guiding question for the &ldquo;Tell Us Once&rdquo; design work.',
+                    note: 'The brave reframe. Redefines what the service is for: not reducing steps, but communicating care. This became the guiding question for the &ldquo;Tell Us Once&rdquo; design work.',
                   },
                   {
                     question: 'How might we design a better form for notification?',
@@ -212,11 +212,11 @@ export default function HMWExampleToggle() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.70)` }}
               >What the HMW produced</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                The chosen question &mdash; &ldquo;how might we make the government&rsquo;s response to a death feel like care
-                rather than administration?&rdquo; &mdash; reframed the design challenge from reducing bureaucratic steps
+                The chosen question (&ldquo;how might we make the government&rsquo;s response to a death feel like care
+                rather than administration?&rdquo;) reframed the design challenge from reducing bureaucratic steps
                 (a technical problem) to communicating care during grief (a human problem). Every design decision that
-                followed &mdash; the language of letters, the tone of interactions, the single notification as a service
-                rather than a form &mdash; was anchored to that reframe. The Tell Us Once service reduced notifications
+                followed (the language of letters, the tone of interactions, the single notification as a service
+                rather than a form) was anchored to that reframe. The Tell Us Once service reduced notifications
                 from twelve or more to one; the HMW ensured the team was designing for the bereaved person, not for
                 administrative efficiency.
               </p>
@@ -238,7 +238,7 @@ export default function HMWExampleToggle() {
               <p
                 className="font-mono uppercase tracking-widest mb-1"
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(99,102,241,0.70)' }}
-              >Same scenario &mdash; AI assistance applied</p>
+              >Same scenario: AI assistance applied</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 The team gives AI the domain: a UK government service for notifying departments after a death.
                 They ask it to generate How Might We questions. AI returns 20 questions in seconds.
@@ -284,7 +284,7 @@ export default function HMWExampleToggle() {
               </div>
             </div>
 
-            {/* The gap — breakdown by dimension */}
+            {/* The gap: breakdown by dimension */}
             <div className="space-y-4 mb-6">
               {[
                 {
@@ -292,21 +292,21 @@ export default function HMWExampleToggle() {
                   color: 'rgba(99,102,241,0.70)',
                   bg: 'rgba(99,102,241,0.06)',
                   border: 'rgba(99,102,241,0.16)',
-                  body: 'AI quickly mapped the domain&rsquo;s surface: government departments, notification steps, form fields, portal design, automation. All valid. All coherent. It produced a useful starting set for the problem as the system defines it — administrative efficiency.',
+                  body: 'AI quickly mapped the domain&rsquo;s surface: government departments, notification steps, form fields, portal design, automation. All valid. All coherent. It produced a useful starting set for the problem as the system defines it: administrative efficiency.',
                 },
                 {
                   dimension: 'What AI could not reach',
                   color: `${AMBER}0.80)`,
                   bg: `${AMBER}0.04)`,
                   border: `${AMBER}0.18)`,
-                  body: 'Not one question reached: &ldquo;how might we make the government&rsquo;s response feel like care rather than administration?&rdquo; That reframe requires understanding that the person completing the process is in grief, that bureaucracy at that moment feels like being unknown, and that the design challenge is not &ldquo;reduce steps&rdquo; but &ldquo;communicate that you see the person.&rdquo; This knowledge lived in the interviews &mdash; not in any description of the domain.',
+                  body: 'Not one question reached: &ldquo;how might we make the government&rsquo;s response feel like care rather than administration?&rdquo; That reframe requires understanding that the person completing the process is in grief, that bureaucracy at that moment feels like being unknown, and that the design challenge is not &ldquo;reduce steps&rdquo; but &ldquo;communicate that you see the person.&rdquo; This knowledge lived in the interviews, not in any description of the domain.',
                 },
                 {
                   dimension: 'Why it matters',
                   color: 'var(--color-neutral-500)',
                   bg: 'var(--color-neutral-50)',
                   border: 'var(--color-neutral-100)',
-                  body: 'The efficiency-framed questions would produce an efficient system. The care-framed question produced a different kind of service &mdash; one that begins with an acknowledgment of what the person is going through. The difference between the two is not a matter of domain knowledge. It is a matter of human insight into what the experience actually feels like from the inside, at the worst moment. AI cannot access that from a brief.',
+                  body: 'The efficiency-framed questions would produce an efficient system. The care-framed question produced a different kind of service, one that begins with an acknowledgment of what the person is going through. The difference between the two is not a matter of domain knowledge. It is a matter of human insight into what the experience actually feels like from the inside, at the worst moment. AI cannot access that from a brief.',
                 },
               ].map(({ dimension, color, bg, border, body }) => (
                 <div
@@ -337,10 +337,10 @@ export default function HMWExampleToggle() {
               >What this tells you about AI + HMW</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 AI is a fast starting set generator. Use it to get the obvious questions on the table quickly,
-                freeing the team to go further. What AI cannot provide is the brave reframe &mdash; the question
+                freeing the team to go further. What AI cannot provide is the brave reframe: the question
                 that changes what success means, not just how it is achieved. That reframe requires the emotional
                 knowledge from the research: what the experience feels like, what the person actually needs versus
-                what the system assumes they need. The most powerful HMWs emerge from that gap. AI, reasoning from
+                what the system assumes they need. The best HMWs emerge from that gap. AI, reasoning from
                 domain descriptions, is well-positioned to supply the obvious questions and poorly positioned to
                 supply the reframing ones. Know the difference, and use each accordingly.
               </p>

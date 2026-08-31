@@ -144,7 +144,7 @@ export default function HMWScopeSlider() {
           >INSIGHT</text>
           {([
             ['Users abandon checkout',          PROB_Y + 68, '6.5', 0.74],
-            ['at payment — feels',               PROB_Y + 82, '6.5', 0.74],
+            ['at payment, feels',                 PROB_Y + 82, '6.5', 0.74],
             ['effortful and uncertain.',         PROB_Y + 96, '6.5', 0.74],
           ] as [string, number, string, number][]).map(([t, y, fs, op]) => (
             <text

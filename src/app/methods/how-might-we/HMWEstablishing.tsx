@@ -13,7 +13,7 @@ const SOL_X  = 456, SOL_W  = 234
 const PROB_CX = PROB_X + PROB_W / 2   // 129
 const SOL_CX  = SOL_X  + SOL_W  / 2  // 573
 
-// Door geometry — posts + opening
+// Door geometry: posts + opening
 const DOOR_POST1_X = 310, DOOR_POST2_X = 391, DOOR_POST_W = 5
 const DOOR_OPEN_X1 = DOOR_POST1_X + DOOR_POST_W  // 315
 const DOOR_OPEN_X2 = DOOR_POST2_X                 // 391
@@ -86,7 +86,7 @@ export default function HMWEstablishing() {
           >INSIGHT</text>
           {([
             ['Users abandon checkout',         PROB_Y + 68,  '7',   0.80],
-            ['at payment — the step',           PROB_Y + 82,  '7',   0.80],
+            ['at payment, the step',             PROB_Y + 82,  '7',   0.80],
             ['feels effortful',                 PROB_Y + 96,  '7',   0.80],
             ['and uncertain.',                  PROB_Y + 110, '7',   0.80],
             ['11 of 14 interviews',             PROB_Y + 140, '4.5', 0.30],
