@@ -81,8 +81,8 @@ export default function CMExampleToggle() {
                 The practitioners, not the leadership deck
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                Assessed honestly — and this required asking the practitioners rather than reading the
-                leadership deck — the foundational layer had a hole in it. Data quality was not a gap
+                Assessed honestly (and this required asking the practitioners rather than reading the
+                leadership deck) the foundational layer had a hole in it. Data quality was not a gap
                 exactly; it was PARTIAL, which was worse, because for two years it had been recorded as
                 present. The data was good enough for reporting, which was what everyone had checked, and
                 nowhere near good enough to drive a real-time decision, which nobody had checked. Pipeline
@@ -113,7 +113,7 @@ export default function CMExampleToggle() {
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 They resequenced from the bottom: closed the foundational data-quality and pipeline-reliability
-                gaps first — unglamorous, and the only thing that could possibly work — and put those gaps
+                gaps first (unglamorous, and the only thing that could possibly work) and put those gaps
                 on the delivery roadmap as real work with honest timelines, rather than absorbing them as
                 scheduling optimism. The EPIC-level capability landed the following year, on a floor that
                 existed. The map did not build anything. It simply made it impossible to keep failing for
@@ -131,7 +131,7 @@ export default function CMExampleToggle() {
                 style={{ fontSize: 'var(--text-sm)', color: `${BRICK}0.80)` }}>
                 A flat capability list would never have found the foundational gap, because every item
                 would have looked equally important. The layers and the dependencies are what made the
-                foundational hole visible — and visible before another year was spent building on it.
+                foundational hole visible, and visible before another year was spent building on it.
               </p>
             </div>
           </motion.div>
@@ -147,7 +147,7 @@ export default function CMExampleToggle() {
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The traditional approach above is what the team actually did. This tab imagines the same team
-                had leaned on AI while mapping — to show where it genuinely helps and what it structurally
+                had leaned on AI while mapping, to show where it genuinely helps and what it structurally
                 cannot do.
               </p>
             </div>
@@ -157,7 +157,7 @@ export default function CMExampleToggle() {
               <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
                 <p className="font-mono uppercase tracking-widest"
                   style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.80)` }}>
-                  The good — and it is real
+                  The good, and it is real
                 </p>
                 <span className="font-mono text-xs px-2 py-0.5 rounded-full"
                   style={{ background: `${INDIGO}0.12)`, color: `${INDIGO}0.75)`, border: `1px solid ${INDIGO}0.25)` }}>
@@ -168,7 +168,7 @@ export default function CMExampleToggle() {
                 Several capability gaps that would have been serious three years ago had genuinely closed.
                 Analytical work, prototyping, and a range of technical production tasks that once needed
                 scarce specialists were now substantially within reach of the existing team. The map should
-                record that honestly — refusing to update it would be its own dishonesty — and it
+                record that honestly (refusing to update it would be its own dishonesty) and it
                 meaningfully changed which gaps were worth worrying about.
               </p>
             </div>
@@ -182,7 +182,7 @@ export default function CMExampleToggle() {
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 The team had begun using AI to generate and maintain parts of the data pipeline. On the
                 surface, the foundational gap looked closed: the work was getting produced, quickly, and
-                it appeared competent. The honest question — the one the method now has to ask — was
+                it appeared competent. The honest question (the one the method now has to ask) was
                 whether anyone in the building could JUDGE that work: tell good from bad, catch a silent
                 error, notice when the tool was confidently wrong, and take responsibility for the result.
                 Nobody could. What the organisation had was not a pipeline capability; it was access to
@@ -195,10 +195,10 @@ export default function CMExampleToggle() {
               style={{ border: `1px solid rgba(245,158,11,0.22)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(245,158,11,0.80)' }}>
-                The honest state was PARTIAL — and at the foundation that matters most
+                The honest state was PARTIAL, and at the foundation that matters most
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
-                Scored honestly, that foundational capability was PARTIAL, not HAVE IT — and at the base
+                Scored honestly, that foundational capability was PARTIAL, not HAVE IT, and at the base
                 of the stack, an un-judgeable dependency was silently carrying the entire EPIC-level
                 ambition above it. A capability map that had marked it green would have produced exactly
                 the same eighteen-month mystery as before, with a more modern explanation.
@@ -219,8 +219,8 @@ export default function CMExampleToggle() {
                 AI could not have drawn the map itself
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                The truth about this organisation&rsquo;s capability — that data quality was fine for reporting
-                and useless for real-time, that pipeline reliability lived in one person&rsquo;s head — was tacit,
+                The truth about this organisation&rsquo;s capability (that data quality was fine for reporting
+                and useless for real-time, that pipeline reliability lived in one person&rsquo;s head) was tacit,
                 political, and written down nowhere. It came from asking the people who did the work.
                 AI can offer a generic capability taxonomy to start from. It cannot tell you the truth
                 about your own building.

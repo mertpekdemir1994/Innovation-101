@@ -38,13 +38,13 @@ interface Cell {
 }
 
 const CELLS: Cell[] = [
-  // Layer 1 — FOUNDATIONAL (bottom)
+  // Layer 1 - FOUNDATIONAL (bottom)
   { id: 'fe-l1', layer: 1, seg: 'fe', x: FE_X, y: 168, cx: FE_CX, cy: 196, label: 'DATA QUALITY',        state: 'partial' },
   { id: 'be-l1', layer: 1, seg: 'be', x: BE_X, y: 168, cx: BE_CX, cy: 196, label: 'PIPELINE RELIABILITY', state: 'gap'     },
-  // Layer 2 — OPERATIONAL (middle)
+  // Layer 2 - OPERATIONAL (middle)
   { id: 'fe-l2', layer: 2, seg: 'fe', x: FE_X, y: 96,  cx: FE_CX, cy: 124, label: 'REAL-TIME SERVING',   state: 'partial' },
   { id: 'be-l2', layer: 2, seg: 'be', x: BE_X, y: 96,  cx: BE_CX, cy: 124, label: 'LIVE SYSTEM OPS',     state: 'partial' },
-  // Layer 3 — EPIC (top)
+  // Layer 3 - EPIC (top)
   { id: 'fe-l3', layer: 3, seg: 'fe', x: FE_X, y: 26,  cx: FE_CX, cy: 54,  label: 'PERSONALISATION',     state: 'have'    },
   { id: 'be-l3', layer: 3, seg: 'be', x: BE_X, y: 26,  cx: BE_CX, cy: 54,  label: 'REAL-TIME RECS',      state: 'have'    },
 ]
@@ -99,11 +99,11 @@ export default function CMEstablishing() {
       <svg
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-        aria-label="Layered capability map. Three layers from bottom to top: FOUNDATIONAL (data quality, pipeline reliability), OPERATIONAL (real-time serving, live system ops), EPIC-LEVEL (personalisation, real-time recs). Split into front-end and back-end segments. DATA QUALITY is PARTIAL; PIPELINE RELIABILITY is a GAP — a missing foundational capability. LIVE SYSTEM OPS and REAL-TIME RECS above the gap are unsupported: they depend on something that is not there."
+        aria-label="Layered capability map. Three layers from bottom to top: FOUNDATIONAL (data quality, pipeline reliability), OPERATIONAL (real-time serving, live system ops), EPIC-LEVEL (personalisation, real-time recs). Split into front-end and back-end segments. DATA QUALITY is PARTIAL; PIPELINE RELIABILITY is a GAP, a missing foundational capability. LIVE SYSTEM OPS and REAL-TIME RECS above the gap are unsupported: they depend on something that is not there."
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
         <defs>
-          {/* Amber glow for GAP cells — the glowing absence */}
+          {/* Amber glow for GAP cells - the glowing absence */}
           <filter id="cm-est-glow" x="-25%" y="-25%" width="150%" height="150%">
             <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
             <feFlood floodColor={`${AMBER}0.45)`} result="color" />
@@ -184,7 +184,7 @@ export default function CMEstablishing() {
             markerEnd="url(#cm-est-up-warn)" />
         </motion.g>
 
-        {/* CELLS — render bottom to top (L1 first, L3 last) */}
+        {/* CELLS - render bottom to top (L1 first, L3 last) */}
         {CELLS.map(c => {
           const unsupported = UNSUPPORTED.has(c.id)
           const sc = stateColors(c.state, unsupported)

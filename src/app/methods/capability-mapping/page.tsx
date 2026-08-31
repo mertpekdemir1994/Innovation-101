@@ -56,7 +56,7 @@ const RELATED_METHODS = [
   {
     slug: 'delivery-roadmap',
     name: 'Delivery Roadmap',
-    rel: 'The closest relationship. The roadmap sequences work on the assumption the work can be done; the capability map checks whether that is true. A capability gap is not a scheduling problem to absorb — it goes on the roadmap as an item in its own right (build, hire, partner, or buy) with an honest timeline.',
+    rel: 'The closest relationship. The roadmap sequences work on the assumption the work can be done; the capability map checks whether that is true. A capability gap is not a scheduling problem to absorb. It goes on the roadmap as an item in its own right (build, hire, partner, or buy) with an honest timeline.',
   },
   {
     slug: 'pilot-launches',
@@ -85,7 +85,7 @@ const RELATED_METHODS = [
 export default function CapabilityMappingPage() {
   return (
     <>
-      {/* S1 — Header */}
+      {/* S1 - Header */}
       <DarkSection>
         <Container prose>
           <SectionLabel accent="rgba(138,75,60,0.55)">Method · Delivery &amp; Validation</SectionLabel>
@@ -105,13 +105,13 @@ export default function CapabilityMappingPage() {
         </Container>
       </DarkSection>
 
-      {/* S2 — Establishing visual */}
+      {/* S2 - Establishing visual */}
       <DarkSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.55)">The signature visual</SectionLabel>
           <SectionHeadingDark>The layered capability map</SectionHeadingDark>
           <Body dark className="">
-            Capabilities arranged in layers — foundational at the base, EPIC-level at the top —
+            Capabilities arranged in layers (foundational at the base, EPIC-level at the top)
             with dependencies flowing upward: the top visibly rests on the bottom. Each capability
             scored in one of three states: HAVE IT, PARTIAL, or GAP. The glowing absence at
             PIPELINE RELIABILITY is carrying everything above it.
@@ -122,7 +122,7 @@ export default function CapabilityMappingPage() {
         </Container>
       </DarkSection>
 
-      {/* S3 — What it is */}
+      {/* S3 - What it is */}
       <LightSection>
         <Container prose>
           <SectionLabel accent="rgba(138,75,60,0.65)">What it is</SectionLabel>
@@ -149,7 +149,7 @@ export default function CapabilityMappingPage() {
               flat list. They are LAYERED: foundational capabilities at the base (the underlying data,
               infrastructure, skills, processes, and habits everything else depends on) rising to
               EPIC-level capabilities at the top (the big, visible, ambitious things the strategy
-              actually promises). Dependencies flow upward — the top rests on the bottom. They are also
+              actually promises). Dependencies flow upward: the top rests on the bottom. They are also
               SEGMENTED, cut across those layers by whatever divisions are real in your organisation.
               And the map holds two states at once: what exists TODAY, and the GAPS to be addressed.
             </Body>
@@ -157,7 +157,7 @@ export default function CapabilityMappingPage() {
               From that structure comes the method&rsquo;s sharpest teaching: <strong>you cannot build an
               EPIC-level capability on a foundational gap.</strong> Organisations do this constantly.
               They staff the exciting top-layer capability, the one the strategy is named after, and
-              cannot understand why it never quite lands — because the foundational capability it
+              cannot understand why it never quite lands, because the foundational capability it
               silently depends on was never there, and nobody mapped the dependency. A gap at the top
               is visible and embarrassing. A gap at the bottom is invisible and fatal, and it is holding
               up everything above it.
@@ -166,7 +166,7 @@ export default function CapabilityMappingPage() {
         </Container>
       </LightSection>
 
-      {/* S4 — Interactive */}
+      {/* S4 - Interactive */}
       <DarkSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.55)">Explore the map</SectionLabel>
@@ -175,7 +175,7 @@ export default function CapabilityMappingPage() {
             Toggle between TARGET (what delivery requires) and TODAY (what you actually have). The gaps
             are what appear in the difference. Click any capability to see its state and what depends on it.
             Click a foundational gap and watch the instability propagate upward through everything
-            resting on it — including the EPIC-level capability the strategy is named after.
+            resting on it, including the EPIC-level capability the strategy is named after.
           </Body>
           <div className="mt-10">
             <CMInteractive />
@@ -183,7 +183,7 @@ export default function CapabilityMappingPage() {
         </Container>
       </DarkSection>
 
-      {/* S5 — When to deploy */}
+      {/* S5 - When to deploy */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">When to deploy</SectionLabel>
@@ -203,7 +203,7 @@ export default function CapabilityMappingPage() {
                 head: 'Not yet ready when',
                 items: [
                   'The strategy itself is not settled: mapping capabilities against a direction nobody has committed to produces a map of nothing in particular',
-                  'The organisation is not willing to hear the answer — a map produced for an audience that has decided it is ready will be softened until it agrees',
+                  'The organisation is not willing to hear the answer: a map produced for an audience that has decided it is ready will be softened until it agrees',
                   'You would treat it as a scoring exercise: the point is finding the gaps that will stop delivery, especially the foundational ones',
                 ],
               },
@@ -244,7 +244,7 @@ export default function CapabilityMappingPage() {
         </Container>
       </LightSection>
 
-      {/* S6 — How it works */}
+      {/* S6 - How it works */}
       <LightSection>
         <Container prose>
           <SectionLabel accent="rgba(138,75,60,0.65)">How it works</SectionLabel>
@@ -264,7 +264,7 @@ export default function CapabilityMappingPage() {
               {
                 n: '03',
                 head: 'Segment across the layers',
-                body: 'Cut the map by the divisions that are real in your organisation — front-end and back-end most commonly, but whatever cuts reflect actual operational reality. This reveals that gaps cluster: an organisation can be strong down one column and hollow down another, and a flat list would never show that.',
+                body: 'Cut the map by the divisions that are real in your organisation (front-end and back-end most commonly, but whatever cuts reflect actual operational reality). This reveals that gaps cluster: an organisation can be strong down one column and hollow down another, and a flat list would never show that.',
               },
               {
                 n: '04',
@@ -274,12 +274,12 @@ export default function CapabilityMappingPage() {
               {
                 n: '05',
                 head: 'Toggle to target, and let the gaps appear',
-                body: 'Lay the required state against today&rsquo;s state. The difference IS the delivery gap, and seeing it whole — all at once, in a structure that shows what depends on what — is what the exercise is for. A flat list of gaps is still a list. A layered map of gaps is a diagnostic.',
+                body: 'Lay the required state against today&rsquo;s state. The difference IS the delivery gap, and seeing it whole (all at once, in a structure that shows what depends on what) is what the exercise is for. A flat list of gaps is still a list. A layered map of gaps is a diagnostic.',
               },
               {
                 n: '06',
                 head: 'Find the foundational gaps first, and sequence from the bottom',
-                body: 'Look underneath. A gap at the base is carrying everything above it, and it must be closed before anything that depends on it can be built — however unglamorous that is. Closing gaps from the top down is how organisations spend a year staffing an EPIC-level capability that never had a floor. Hand each gap to the roadmap as work: BUILD (slowest, deepest), HIRE (faster, needs somewhere to land), PARTNER (fastest, does not accrue), or BUY (expensive, integration risk).',
+                body: 'Look underneath. A gap at the base is carrying everything above it, and it must be closed before anything that depends on it can be built, however unglamorous that is. Closing gaps from the top down is how organisations spend a year staffing an EPIC-level capability that never had a floor. Hand each gap to the roadmap as work: BUILD (slowest, deepest), HIRE (faster, needs somewhere to land), PARTNER (fastest, does not accrue), or BUY (expensive, integration risk).',
               },
             ].map(d => (
               <div key={d.n} className="flex gap-6">
@@ -301,11 +301,11 @@ export default function CapabilityMappingPage() {
         </Container>
       </LightSection>
 
-      {/* S7 — Best practices */}
+      {/* S7 - Best practices */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Best practices</SectionLabel>
-          <SectionHeadingLight>What good looks like — and the mistakes</SectionHeadingLight>
+          <SectionHeadingLight>What good looks like, and the mistakes</SectionHeadingLight>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div>
               <p className="font-semibold mb-4"
@@ -316,10 +316,10 @@ export default function CapabilityMappingPage() {
                 {[
                   'Required capabilities are derived from the actual delivery, concretely, not listed as aspirations',
                   'The map is layered with explicit upward dependencies, so a foundational gap is visibly carrying what sits on it',
-                  'Today\'s state is assessed honestly — PARTIAL especially, which is the state most often mis-recorded as present',
+                  'Today\'s state is assessed honestly, PARTIAL especially, which is the state most often mis-recorded as present',
                   'Foundational gaps are found and sequenced first, however unglamorous the work to close them is',
                   'Gaps are handed to the roadmap as real work (build, hire, partner, buy) with honest timelines, not absorbed as scheduling optimism',
-                  'The people doing the actual work assess the state — not the leadership deck',
+                  'The people doing the actual work assess the state, not the leadership deck',
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
                     <span className="mt-1 shrink-0 w-1.5 h-1.5 rounded-full" style={{ background: BRICK }} />
@@ -338,10 +338,10 @@ export default function CapabilityMappingPage() {
               <ul className="space-y-3">
                 {[
                   'Mapping capabilities as a flat list: without layers and dependencies, every gap looks equally important, and the foundational one disappears into the middle of a spreadsheet',
-                  'Building top-down: staffing the exciting EPIC-level capability while the foundation it depends on is missing — it will not land, and the organisation will conclude the people were wrong when the floor was',
-                  'Scoring PARTIAL as present: a half-capability recorded as a tick, and everyone proceeds as though it is there — partial is more dangerous than absent',
+                  'Building top-down: staffing the exciting EPIC-level capability while the foundation it depends on is missing. It will not land, and the organisation will conclude the people were wrong when the floor was',
+                  'Scoring PARTIAL as present: a half-capability recorded as a tick, and everyone proceeds as though it is there. Partial is more dangerous than absent',
                   'Assessing intention instead of reality: capability is what you can do repeatedly and reliably, not what you could do if the right person had time',
-                  'Softening the map for its audience: a capability map exists to say uncomfortable things — one negotiated into agreement has been made worse than useless',
+                  'Softening the map for its audience: a capability map exists to say uncomfortable things. One negotiated into agreement has been made worse than useless',
                   'Treating a gap as a scheduling problem: "we will figure it out" is how a gap becomes a mid-rollout crisis',
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
@@ -358,7 +358,7 @@ export default function CapabilityMappingPage() {
         </Container>
       </LightSection>
 
-      {/* S8 — Logistics */}
+      {/* S8 - Logistics */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Logistics</SectionLabel>
@@ -366,11 +366,11 @@ export default function CapabilityMappingPage() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { label: 'Time required', value: '1–2 facilitated sessions to build the initial map; revisited when delivery plans or team capabilities change' },
-              { label: 'Who to involve', value: 'Practitioners who actually do the work — not just leadership. Real capability is known to the people doing it, not the people describing it upward' },
-              { label: 'Format', value: 'Works remotely and in person; the map should be a shared, visible artefact — a living document, not a slide filed away after the session' },
+              { label: 'Who to involve', value: 'Practitioners who actually do the work, not just leadership. Real capability is known to the people doing it, not the people describing it upward' },
+              { label: 'Format', value: 'Works remotely and in person; the map should be a shared, visible artefact: a living document, not a slide filed away after the session' },
               { label: 'State to be rigorous about', value: 'PARTIAL. Create the middle category and use it honestly. The instinct to round PARTIAL up to HAVE IT is what puts a hole under an EPIC-level bet' },
               { label: 'Output', value: 'Layered, segmented map with today\'s states and the target states; gap list with closure route (build / hire / partner / buy) and honest timeline for each' },
-              { label: 'What to attach to', value: 'Gaps go straight onto the delivery roadmap as work items — not absorbed as scheduling assumptions, not filed as "things to address later"' },
+              { label: 'What to attach to', value: 'Gaps go straight onto the delivery roadmap as work items, not absorbed as scheduling assumptions, not filed as "things to address later"' },
             ].map(item => (
               <div key={item.label} className="rounded-lg p-5"
                 style={{ border: `1px solid rgba(138,75,60,0.14)` }}>
@@ -387,7 +387,7 @@ export default function CapabilityMappingPage() {
         </Container>
       </LightSection>
 
-      {/* S9 — AI Reactivated */}
+      {/* S9 - AI Reactivated */}
       <DarkSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.55)">AI-reactivated</SectionLabel>
@@ -395,7 +395,7 @@ export default function CapabilityMappingPage() {
             AI genuinely closes some capability gaps. It also produces a convincing imitation of the ones it has not closed.
           </SectionHeadingDark>
           <Body dark className="">
-            The distinguishing test — can we judge this work? — is what separates a capability you
+            The distinguishing test (can we judge this work?) is what separates a capability you
             have from an output you can merely obtain. A gap that looks closed on the surface but has
             no human judgment underneath it is the most dangerous cell on the map: solid on the
             surface, hollow underneath, and most devastating at the foundational layer where it
@@ -407,13 +407,13 @@ export default function CapabilityMappingPage() {
         </Container>
       </DarkSection>
 
-      {/* S10 — Example toggle */}
+      {/* S10 - Example toggle */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Worked example</SectionLabel>
           <SectionHeadingLight>Eighteen months and no answer</SectionHeadingLight>
           <Body className="">
-            A company committed to real-time personalised recommendations — the centrepiece of the
+            A company committed to real-time personalised recommendations, the centrepiece of the
             strategy. Two teams, eighteen months, and it had not landed. Nobody could say why.
             The map produced the answer in one session. The two approaches below differ in method,
             not in scenario.
@@ -424,7 +424,7 @@ export default function CapabilityMappingPage() {
         </Container>
       </LightSection>
 
-      {/* S11 — Framework connections */}
+      {/* S11 - Framework connections */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Framework connections</SectionLabel>
@@ -459,7 +459,7 @@ export default function CapabilityMappingPage() {
         </Container>
       </LightSection>
 
-      {/* S12 — Related methods */}
+      {/* S12 - Related methods */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Related methods</SectionLabel>
@@ -496,7 +496,7 @@ export default function CapabilityMappingPage() {
         </Container>
       </LightSection>
 
-      {/* S13 — Sources */}
+      {/* S13 - Sources */}
       <LightSection>
         <Container prose>
           <SectionLabel accent="rgba(138,75,60,0.65)">Sources and further reading</SectionLabel>
@@ -529,7 +529,7 @@ export default function CapabilityMappingPage() {
                   {s.title}
                   <span className="font-normal ml-2"
                     style={{ color: 'var(--color-neutral-500)' }}>
-                    — {s.author} ({s.year})
+                    : {s.author} ({s.year})
                   </span>
                 </p>
                 <p className="mt-1"

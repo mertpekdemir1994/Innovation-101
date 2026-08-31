@@ -47,14 +47,14 @@ const CARDS = [
   {
     color: INDIGO,
     badge: 'Genuine closure',
-    head: 'AI genuinely closes some capability gaps — and this is real.',
-    body: 'Capabilities that once required a specialist — analytical work, prototyping, a range of technical production tasks — are now substantially accessible to a small team with AI tools. An honest capability map today will find that several gaps that would have been red three years ago are now amber or green. Take the win. Refusing to update the map would be its own dishonesty.',
+    head: 'AI genuinely closes some capability gaps, and this is real.',
+    body: 'Capabilities that once required a specialist (analytical work, prototyping, a range of technical production tasks) are now substantially accessible to a small team with AI tools. An honest capability map today will find that several gaps that would have been red three years ago are now amber or green. Take the win. Refusing to update the map would be its own dishonesty.',
   },
   {
     color: AMBER,
     badge: 'Deceptive fill',
     head: 'AI produces a convincing imitation of a capability it has not closed.',
-    body: 'Pipeline reliability appeared to close: code was being generated, quickly, and it looked competent. The honest question: could anyone in the building JUDGE that work — tell good from bad, catch a silent error, notice when the tool was confidently wrong? Nobody could. That is not a capability. It is access to an output. The difference is invisible until the output is wrong, at which point there is nobody who can tell, or fix it.',
+    body: 'Pipeline reliability appeared to close: code was being generated, quickly, and it looked competent. The honest question: could anyone in the building JUDGE that work: tell good from bad, catch a silent error, notice when the tool was confidently wrong? Nobody could. That is not a capability. It is access to an output. The difference is invisible until the output is wrong, at which point there is nobody who can tell, or fix it.',
   },
   {
     color: AMBER,
@@ -66,7 +66,7 @@ const CARDS = [
     color: BRICK,
     badge: 'Honest synthesis',
     head: 'Update the map honestly. Hold "CAN WE JUDGE THIS?" as the test.',
-    body: 'For every gap that AI appears to close, ask: can we judge this work? Can we tell good from bad, catch the error, and take responsibility for the result? If the answer is no, the honest state is PARTIAL at best — and at the FOUNDATIONAL layer, an un-judgeable dependency is silently carrying everything above it. That is the most dangerous capability map: one whose foundation is a tool nobody in the organization can evaluate.',
+    body: 'For every gap that AI appears to close, ask: can we judge this work? Can we tell good from bad, catch the error, and take responsibility for the result? If the answer is no, the honest state is PARTIAL at best, and at the FOUNDATIONAL layer, an un-judgeable dependency is silently carrying everything above it. That is the most dangerous capability map: one whose foundation is a tool nobody in the organization can evaluate.',
   },
 ]
 
@@ -87,7 +87,7 @@ export default function CMAIReactivated() {
   function cellStroke(cell: CellDef): string {
     const s = isAI ? cell.aiState : cell.humanState
     if (s === 'indigo')    return `${INDIGO}0.70)`
-    if (s === 'deceptive') return `${BRICK}0.68)`   // same as HAVE IT — the deception
+    if (s === 'deceptive') return `${BRICK}0.68)`   // same as HAVE IT - the deception
     if (s === 'have')      return `${BRICK}0.70)`
     if (s === 'partial')   return `${AMBER}0.58)`
     return `${AMBER}0.42)`
@@ -155,7 +155,7 @@ export default function CMAIReactivated() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label={isAI
-          ? 'AI mode: REAL-TIME SERVING genuinely closes (indigo). PIPELINE RELIABILITY shows as HAVE IT — but this is a deceptive fill: the surface appears solid, but the underlying capability is still absent. Nobody in the organization can judge the AI output.'
+          ? 'AI mode: REAL-TIME SERVING genuinely closes (indigo). PIPELINE RELIABILITY shows as HAVE IT, but this is a deceptive fill: the surface appears solid, but the underlying capability is still absent. Nobody in the organization can judge the AI output.'
           : 'Human mode: the capability map in its actual state. DATA QUALITY partial, PIPELINE RELIABILITY a genuine gap.'}
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
@@ -190,7 +190,7 @@ export default function CMAIReactivated() {
           <text x={SVG_W / 2} y={15} textAnchor="middle" fontSize="4.5"
             fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
             fill={`${AMBER}0.72)`} style={{ userSelect: 'none' }}>
-            ⚠ PIPELINE RELIABILITY: SOLID ON THE SURFACE — HOLLOW UNDERNEATH
+            ⚠ PIPELINE RELIABILITY: SOLID ON THE SURFACE, HOLLOW UNDERNEATH
           </text>
         )}
 
@@ -251,7 +251,7 @@ export default function CMAIReactivated() {
                   <text x={cell.cx} y={cell.cy + 2} textAnchor="middle" dominantBaseline="middle"
                     fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
                     fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}>
-                    OUTPUT — NOT CAPABILITY
+                    OUTPUT, NOT CAPABILITY
                   </text>
                 </>
               )}
@@ -287,7 +287,7 @@ export default function CMAIReactivated() {
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
           fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>
           {isAI
-            ? 'Can we judge this work? If not, the honest state is PARTIAL — not HAVE IT.'
+            ? 'Can we judge this work? If not, the honest state is PARTIAL, not HAVE IT.'
             : 'Human view: the map as it honestly is.'}
         </text>
       </svg>

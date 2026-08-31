@@ -40,8 +40,8 @@ const CELLS: CapCell[] = [
     blocks: ['fe-l2', 'fe-l3'],
     info: {
       tag: 'FOUNDATIONAL · FRONT-END',
-      headline: 'PARTIAL — good enough for reporting, not for real-time decisions.',
-      body: 'Data quality was assessed as present for two years because it was checked against the wrong requirement: reporting. For reporting it was fine. For driving a real-time decision it was nowhere near sufficient. PARTIAL is the most dangerous state because it is indistinguishable from HAVE IT on any flat capability list. Every capability resting on this one — real-time serving and, above it, the personalization initiative — is partially resting on something that is not what it appears to be.',
+      headline: 'PARTIAL: good enough for reporting, not for real-time decisions.',
+      body: 'Data quality was assessed as present for two years because it was checked against the wrong requirement: reporting. For reporting it was fine. For driving a real-time decision it was nowhere near sufficient. PARTIAL is the most dangerous state because it is indistinguishable from HAVE IT on any flat capability list. Every capability resting on this one (real-time serving and, above it, the personalization initiative) is partially resting on something that is not what it appears to be.',
     },
   },
   {
@@ -50,8 +50,8 @@ const CELLS: CapCell[] = [
     blocks: ['be-l2', 'be-l3'],
     info: {
       tag: 'FOUNDATIONAL · BACK-END · GAP',
-      headline: 'GAP — held together by one person\'s undocumented knowledge.',
-      body: 'Pipeline reliability was a genuine gap: the capability existed only in one engineer\'s head, undocumented, and unavailable when that person was away. It was never listed as a gap because it was never asked about directly — it was simply assumed. Everything stacked above it (live system operations, and above that, the real-time recommendations the strategy was named after) was standing on a single person\'s private knowledge. This is the foundational gap that destabilized the entire right column. Click "propagate upward" to see what rests on it.',
+      headline: 'GAP: held together by one person\'s undocumented knowledge.',
+      body: 'Pipeline reliability was a genuine gap: the capability existed only in one engineer\'s head, undocumented, and unavailable when that person was away. It was never listed as a gap because it was never asked about directly. It was simply assumed. Everything stacked above it (live system operations, and above that, the real-time recommendations the strategy was named after) was standing on a single person\'s private knowledge. This is the foundational gap that destabilized the entire right column. Click "propagate upward" to see what rests on it.',
     },
   },
   {
@@ -60,8 +60,8 @@ const CELLS: CapCell[] = [
     blocks: ['fe-l3'],
     info: {
       tag: 'OPERATIONAL · FRONT-END',
-      headline: 'PARTIAL — serving logic exists, but cannot operate reliably at real-time latency.',
-      body: 'The real-time serving capability was partially built: the team could serve data to a front end, but not at the sub-second latency that real-time personalization requires. This partial capability was recorded as present in most planning documents. It rests on the data quality foundational capability, which is also PARTIAL — so this partial operational capability is itself standing on a partial foundation.',
+      headline: 'PARTIAL: serving logic exists, but cannot operate reliably at real-time latency.',
+      body: 'The real-time serving capability was partially built: the team could serve data to a front end, but not at the sub-second latency that real-time personalization requires. This partial capability was recorded as present in most planning documents. It rests on the data quality foundational capability, which is also PARTIAL, so this partial operational capability is itself standing on a partial foundation.',
     },
   },
   {
@@ -70,7 +70,7 @@ const CELLS: CapCell[] = [
     blocks: ['be-l3'],
     info: {
       tag: 'OPERATIONAL · BACK-END · AT RISK',
-      headline: 'PARTIAL — and standing on a foundational GAP.',
+      headline: 'PARTIAL: and standing on a foundational GAP.',
       body: 'Live system operations was partially present: the team could operate a live system, but only in conditions of moderate load and stable pipeline behavior. It rested on the pipeline reliability foundational capability, which was a genuine GAP. A partial operational capability resting on a missing foundation is worse than it looks: the partial appears to be holding, right up until the pipeline has a problem, at which point the team discovers there is no reliable way to restore it.',
     },
   },
@@ -80,8 +80,8 @@ const CELLS: CapCell[] = [
     blocks: [],
     info: {
       tag: 'EPIC-LEVEL · FRONT-END',
-      headline: 'HAVE IT — staffed, funded, and standing on a partial foundation.',
-      body: 'The personalization capability was the centrepiece of the strategy: two teams staffed against it, fully funded, visible to leadership. It had been worked on for eighteen months. What no map had captured was what it depended on: real-time serving (PARTIAL), which itself depended on data quality (PARTIAL). The EPIC-level capability existed at the top of the stack — but the bottom of the stack was insufficient. The capability was real; the ground it stood on was not.',
+      headline: 'HAVE IT: staffed, funded, and standing on a partial foundation.',
+      body: 'The personalization capability was the centrepiece of the strategy: two teams staffed against it, fully funded, visible to leadership. It had been worked on for eighteen months. What no map had captured was what it depended on: real-time serving (PARTIAL), which itself depended on data quality (PARTIAL). The EPIC-level capability existed at the top of the stack, but the bottom of the stack was insufficient. The capability was real; the ground it stood on was not.',
     },
   },
   {
@@ -90,8 +90,8 @@ const CELLS: CapCell[] = [
     blocks: [],
     info: {
       tag: 'EPIC-LEVEL · BACK-END · AT RISK',
-      headline: 'HAVE IT — but the entire back-end column below it is compromised.',
-      body: 'Real-time recommendations required live system operations (PARTIAL) resting on pipeline reliability (GAP). The EPIC-level capability existed: teams worked on it, code was written, the architecture was sound. What was absent was the foundation. The two teams working on this initiative were, without knowing it, being asked to build a house on a hole. The moment pipeline reliability failed — which it did, whenever the one person who knew it was unavailable — the entire column above it could not function.',
+      headline: 'HAVE IT: but the entire back-end column below it is compromised.',
+      body: 'Real-time recommendations required live system operations (PARTIAL) resting on pipeline reliability (GAP). The EPIC-level capability existed: teams worked on it, code was written, the architecture was sound. What was absent was the foundation. The two teams working on this initiative were, without knowing it, being asked to build a house on a hole. The moment pipeline reliability failed, which it did, whenever the one person who knew it was unavailable, the entire column above it could not function.',
     },
   },
 ]
@@ -308,7 +308,7 @@ export default function CMInteractive() {
           <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
             fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>
-            TARGET view — all capabilities as delivery requires. Toggle to TODAY to see the gaps.
+            TARGET view: all capabilities as delivery requires. Toggle to TODAY to see the gaps.
           </text>
         )}
       </svg>
@@ -375,7 +375,7 @@ export default function CMInteractive() {
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                   {activeCell.today === 'gap'
                     ? `Everything that depends on ${activeCell.label} is at risk: ${activeCell.blocks.map(bid => CELLS.find(c => c.id === bid)?.label).join(' and ')}. These capabilities cannot be stronger than their foundation. Click the SVG cell to activate propagation.`
-                    : `PARTIAL is more dangerous than GAP because it is mistaken for present. ${activeCell.label} appears on the list as a tick — and the ${activeCell.blocks.map(bid => CELLS.find(c => c.id === bid)?.label).join(' and ')} above it proceed as though it is solid.`}
+                    : `PARTIAL is more dangerous than GAP because it is mistaken for present. ${activeCell.label} appears on the list as a tick, and the ${activeCell.blocks.map(bid => CELLS.find(c => c.id === bid)?.label).join(' and ')} above it proceed as though it is solid.`}
                 </p>
               </div>
             )}
@@ -394,7 +394,7 @@ export default function CMInteractive() {
               You are looking at TODAY
             </p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
-              The gaps between TARGET and TODAY are the delivery gaps — the specific missing capabilities that
+              The gaps between TARGET and TODAY are the delivery gaps, the specific missing capabilities that
               will stop you shipping. Click any capability to explore it. Click <strong>PIPELINE RELIABILITY</strong>{' '}
               (the foundational GAP) to see instability propagate upward.
             </p>
