@@ -58,28 +58,28 @@ type Detail = { title: string; body: string; tip: string }
 
 const DETAILS: Record<QuadrantId | 'gap', Detail> = {
   says: {
-    title: 'SAYS — the stated',
-    body: "What the person says out loud: their direct quotes, stated preferences, and explicit explanations. The most visible quadrant and the least reliable on its own — people say what they believe, what presents them well, or what the conversation calls for. SAYS is the starting point, not the destination.",
+    title: 'SAYS: the stated',
+    body: "What the person says out loud: their direct quotes, stated preferences, and explicit explanations. The most visible quadrant and the least reliable on its own. People say what they believe, what presents them well, or what the conversation calls for. SAYS is the starting point, not the destination.",
     tip: 'Pair with DOES: when SAYS and DOES contradict each other, you have found something real.',
   },
   thinks: {
-    title: 'THINKS — the believed',
-    body: "What occupies the person's mind: their beliefs, mental models, preoccupations, and unspoken assumptions. THINKS may differ from SAYS — social pressure, embarrassment, or politeness often produces a gap between the stated and the believed. This is the quadrant of tacit knowledge.",
-    tip: "Harder to fill than SAYS — it requires careful reading of tone, hesitation, and what is conspicuously absent from the conversation.",
+    title: 'THINKS: the believed',
+    body: "What occupies the person's mind: their beliefs, mental models, preoccupations, and unspoken assumptions. THINKS may differ from SAYS: social pressure, embarrassment, or politeness often produces a gap between the stated and the believed. This is the quadrant of tacit knowledge.",
+    tip: "Harder to fill than SAYS. It requires careful reading of tone, hesitation, and what is conspicuously absent from the conversation.",
   },
   does: {
-    title: 'DOES — the actual',
-    body: "What the person actually does: observed behavior, recorded actions, measurable choices. DOES is drawn from field observation and behavioral data, not self-report. When DOES contradicts SAYS, trust DOES — behavior does not perform for an audience the way words do.",
+    title: 'DOES: the actual',
+    body: "What the person actually does: observed behavior, recorded actions, measurable choices. DOES is drawn from field observation and behavioral data, not self-report. When DOES contradicts SAYS, trust DOES: behavior does not perform for an audience the way words do.",
     tip: "The most reliable quadrant for surfacing the Says-vs-Does contradiction. Behavior is the evidence; words are the presentation.",
   },
   feels: {
-    title: 'FEELS — the interpretive heart',
-    body: "The person's emotional state: their anxieties, hopes, shame, pride, and frustrations. FEELS is the hardest quadrant to fill honestly and the most valuable — the emotional truth beneath behavior is usually what a design must actually address. Every entry should trace to evidence from the research, not assumption.",
-    tip: "The emotion the person names ('I'm frustrated') is often not the deepest emotion. Read carefully for what they do not name — the shame, the avoidance, the quiet sense of failure.",
+    title: 'FEELS: the interpretive heart',
+    body: "The person's emotional state: their anxieties, hopes, shame, pride, and frustrations. FEELS is the hardest quadrant to fill honestly and the most valuable. The emotional truth beneath behavior is usually what a design must actually address. Every entry should trace to evidence from the research, not assumption.",
+    tip: "The emotion the person names ('I'm frustrated') is often not the deepest emotion. Read carefully for what they do not name: the shame, the avoidance, the quiet sense of failure.",
   },
   gap: {
-    title: 'THE GAP — SAYS vs DOES',
-    body: "The most valuable move in empathy mapping is finding where SAYS and DOES contradict each other — and then understanding, through FEELS, why. The person who says 'I know I should save more' and avoids the statements is telling you something no individual quadrant could reveal. The gap between SAYS and DOES is not a puzzle to resolve; it is the insight to design from.",
+    title: 'THE GAP: SAYS vs DOES',
+    body: "The most valuable move in empathy mapping is finding where SAYS and DOES contradict each other, and then understanding, through FEELS, why. The person who says 'I know I should save more' and avoids the statements is telling you something no individual quadrant could reveal. The gap between SAYS and DOES is not a puzzle to resolve; it is the insight to design from.",
     tip: "FEELS explains the gap. When you find the SAYS-vs-DOES contradiction, look at FEELS for the emotional truth that explains why the behavior diverges from the words.",
   },
 }
@@ -134,7 +134,7 @@ export default function EMPInteractive() {
       </div>
 
       {/* Canvas */}
-      <div className="w-full select-none mb-6" aria-label="Empathy map — click a quadrant or use the buttons above to explore">
+      <div className="w-full select-none mb-6" aria-label="Empathy map, click a quadrant or use the buttons above to explore">
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}
           width="100%"
@@ -180,7 +180,7 @@ export default function EMPInteractive() {
                 style={{ cursor: 'pointer' }}
                 role="button"
                 aria-pressed={active === q.id}
-                aria-label={`${q.label} quadrant — click to explore`}
+                aria-label={`${q.label} quadrant, click to explore`}
               >
                 {/* Hit area */}
                 <rect x={q.rect.x - 2} y={q.rect.y - 2} width={q.rect.w + 4} height={q.rect.h + 4} fill="transparent" />
@@ -272,7 +272,7 @@ export default function EMPInteractive() {
             )
           })}
 
-          {/* GAP connector — SAYS vs DOES */}
+          {/* GAP connector - SAYS vs DOES */}
           <AnimatePresence>
             {active === 'gap' && (
               <motion.g

@@ -34,7 +34,7 @@ const FRAMEWORK_LINKS = [
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Discovery Sprint',
-    note: 'A fast empathy map at the start of a Discovery Sprint aligns the whole team — including those who were not in the interviews — around a shared, evidence-based understanding of the person behind the backlog. It prevents the sprint from optimizing for an imagined user.',
+    note: 'A fast empathy map at the start of a Discovery Sprint aligns the whole team (including those who were not in the interviews) around a shared, evidence-based understanding of the person behind the backlog. It prevents the sprint from optimizing for an imagined user.',
   },
   {
     slug: 'design-sprint',
@@ -59,22 +59,22 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'personas-archetypes',
     name: 'Personas & Archetypes',
-    rel: 'An empathy map often feeds directly into a persona — the map is the fast synthesis, the persona is the shareable, referenceable portrait. The empathy map is the working document; the persona is the artifact the team carries forward. The emotional truth in the Feels quadrant is the material the persona most needs.',
+    rel: 'An empathy map often feeds directly into a persona. The map is the fast synthesis, the persona is the shareable, referenceable portrait. The empathy map is the working document; the persona is the artifact the team carries forward. The emotional truth in the Feels quadrant is the material the persona most needs.',
   },
   {
     slug: 'in-depth-interviews',
     name: 'In-Depth Interviews',
-    rel: 'The primary source of evidence for every quadrant, especially the emotional register that allows FEELS to be filled honestly. Without good interviews — ones that reach the unspoken — the empathy map has no raw material for its most valuable quadrant.',
+    rel: 'The primary source of evidence for every quadrant, especially the emotional register that allows FEELS to be filled honestly. Without good interviews (ones that reach the unspoken) the empathy map has no raw material for its most valuable quadrant.',
   },
   {
     slug: 'journey-mapping',
     name: 'Journey Mapping',
-    rel: 'Complementary: the empathy map captures the person\'s inner world at a point in time — their beliefs, behaviors, and emotional state. The journey map sequences their experience across time. Used together, empathy maps give the emotional depth that journey maps can reference for each stage.',
+    rel: 'Complementary: the empathy map captures the person\'s inner world at a point in time: their beliefs, behaviors, and emotional state. The journey map sequences their experience across time. Used together, empathy maps give the emotional depth that journey maps can reference for each stage.',
   },
   {
     slug: null,
     name: 'Jobs To Be Done',
-    rel: "A deeper lens on the same person. JTBD asks what progress the person is trying to make — what they are hiring the product to do. The empathy map's tensions, especially the Says-vs-Does gap and the emotional truth in Feels, often point directly to the underlying job and the reasons the person struggles to make progress.",
+    rel: "A deeper lens on the same person. JTBD asks what progress the person is trying to make: what they are hiring the product to do. The empathy map's tensions, especially the Says-vs-Does gap and the emotional truth in Feels, often point directly to the underlying job and the reasons the person struggles to make progress.",
   },
 ]
 
@@ -84,7 +84,7 @@ export default function EmpathyMappingPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -112,21 +112,21 @@ export default function EmpathyMappingPage() {
               className="mb-3 max-w-[600px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              A four-quadrant canvas &mdash; Says, Thinks, Does, Feels &mdash; that captures one person&rsquo;s experience, where the insight lives in the gaps between the quadrants.
+              A four-quadrant canvas (Says, Thinks, Does, Feels) that captures one person&rsquo;s experience, where the insight lives in the gaps between the quadrants.
             </p>
 
             <p
               className="max-w-[520px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
             >
-              What people say is rarely the whole story. The empathy map exists to expose the distance between what they say, what they do, and what they feel &mdash; and that distance is where the design problem actually lives.
+              What people say is rarely the whole story. The empathy map exists to expose the distance between what they say, what they do, and what they feel, and that distance is where the design problem actually lives.
             </p>
           </div>
         </Container>
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -137,7 +137,7 @@ export default function EmpathyMappingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -147,8 +147,8 @@ export default function EmpathyMappingPage() {
 
             <div className="flex flex-col gap-5">
               <Body>
-                An empathy map is a structured canvas, usually divided into four quadrants &mdash; Says, Thinks, Does, and
-                Feels &mdash; used to synthesize what a team has learned about a person into a single shared artifact. Where
+                An empathy map is a structured canvas, usually divided into four quadrants (Says, Thinks, Does, and
+                Feels) used to synthesize what a team has learned about a person into a single shared artifact. Where
                 affinity mapping clusters <em>all</em> the research into themes, an empathy map focuses on <em>one</em> person
                 and organizes what you know about them into four dimensions so the team can see them whole.
               </Body>
@@ -157,7 +157,7 @@ export default function EmpathyMappingPage() {
                 an empathy map lives in the gaps and contradictions between quadrants: when what someone <em>says</em> differs
                 from what they <em>think</em>, or when what they <em>do</em> contradicts how they <em>feel</em>. A person who
                 says &ldquo;I know I should save more,&rdquo; does nothing about it, and feels quiet shame is telling you
-                something no single quadrant could reveal &mdash; and it is exactly the kind of tension worth designing for.
+                something no single quadrant could reveal, and it is exactly the kind of tension worth designing for.
                 The map forces a distinction between the said and the thought, the done and the felt, and the distance between
                 them is the gold.
               </Body>
@@ -172,7 +172,7 @@ export default function EmpathyMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive canvas   DARK
+          S4 - Interactive canvas   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -192,13 +192,13 @@ export default function EmpathyMappingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={NAVY}>When to deploy it</SectionLabel>
-            <SectionHeadingLight>A fast synthesis tool — not a substitute for research.</SectionHeadingLight>
+            <SectionHeadingLight>A fast synthesis tool, not a substitute for research.</SectionHeadingLight>
 
             <div className="grid md:grid-cols-2 gap-8 mt-8">
               <div>
@@ -230,7 +230,7 @@ export default function EmpathyMappingPage() {
                 >Do not lean on it when</p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    "You have no real research. Filling an empathy map from imagination is the single most common abuse of the method — it produces confident fiction dressed as insight.",
+                    "You have no real research. Filling an empathy map from imagination is the single most common abuse of the method. It produces confident fiction dressed as insight.",
                     "You need to synthesize a large volume of data across many people. Use affinity mapping, which clusters all the research; an empathy map focuses on one person and is not designed for cross-participant pattern-finding.",
                     "You treat the map as a final deliverable. Its value is the shared understanding it builds and the tensions it surfaces, not the artifact. Do not mistake a filled canvas for a finished insight.",
                   ].map((item, i) => (
@@ -251,7 +251,7 @@ export default function EmpathyMappingPage() {
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: an empathy map is only as true as the research beneath it, and its most valuable
-                output &mdash; the Feels quadrant and the Says-vs-Does tension &mdash; is inferred, not observed. Done carelessly
+                output (the Feels quadrant and the Says-vs-Does tension) is inferred, not observed. Done carelessly
                 or from assumption, it reassures the team with a tidy picture instead of challenging them with a real one.
               </p>
             </div>
@@ -260,7 +260,7 @@ export default function EmpathyMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -273,7 +273,7 @@ export default function EmpathyMappingPage() {
                 {
                   n: '01',
                   title: 'Draw the canvas.',
-                  body: "Four quadrants, Says, Thinks, Does, Feels, around a central representation of the person. Some versions add Pains and Gains at the bottom; the four quadrants are the core. The canvas itself is trivial — a whiteboard, a digital template, a piece of paper with lines drawn on it. What matters is the evidence and the honest reading.",
+                  body: "Four quadrants, Says, Thinks, Does, Feels, around a central representation of the person. Some versions add Pains and Gains at the bottom; the four quadrants are the core. The canvas itself is trivial: a whiteboard, a digital template, a piece of paper with lines drawn on it. What matters is the evidence and the honest reading.",
                 },
                 {
                   n: '02',
@@ -288,12 +288,12 @@ export default function EmpathyMappingPage() {
                 {
                   n: '04',
                   title: 'Read across the quadrants for contradictions.',
-                  body: "The valuable work is comparative, not descriptive. Where does Says diverge from Does? Where does Feels explain a behavior that Says would not predict? Hunt the contradictions. A map with no tension is usually a map filled from assumption — real research rarely produces a person with no internal conflict.",
+                  body: "The valuable work is comparative, not descriptive. Where does Says diverge from Does? Where does Feels explain a behavior that Says would not predict? Hunt the contradictions. A map with no tension is usually a map filled from assumption. Real research rarely produces a person with no internal conflict.",
                 },
                 {
                   n: '05',
                   title: 'Name the tension worth designing for.',
-                  body: "Identify the central gap — usually the contradiction between what the person says or does and what they feel — and treat it as the thing the design must address. The empathy map is a thinking tool on the way to a framed design problem, not a destination. It feeds a point of view, a How Might We question, or a persona — what comes next is where the synthesis is used.",
+                  body: "Identify the central gap (usually the contradiction between what the person says or does and what they feel) and treat it as the thing the design must address. The empathy map is a thinking tool on the way to a framed design problem, not a destination. It feeds a point of view, a How Might We question, or a persona: what comes next is where the synthesis is used.",
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -315,24 +315,24 @@ export default function EmpathyMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={NAVY}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like — and what prevents it.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and what prevents it.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
               When it goes well
             </h3>
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                'Every entry traces to real research evidence — a quote, an observed behavior, or a carefully inferred emotion drawn from the emotional register of the interview.',
-                'The map surfaces a genuine tension — usually a contradiction between what the person says and what they do, explained by what they feel.',
+                'Every entry traces to real research evidence: a quote, an observed behavior, or a carefully inferred emotion drawn from the emotional register of the interview.',
+                'The map surfaces a genuine tension, usually a contradiction between what the person says and what they do, explained by what they feel.',
                 "The Feels quadrant carries real emotional weight: not a single bland word but a specific, inferred emotional truth that the person may never have named.",
                 "The team reads across the quadrants for gaps, rather than just filling each one in isolation and declaring the exercise complete.",
-                "It is used as a stepping stone to a point of view, a How Might We question, or a persona — not filed away as a finished deliverable.",
+                "It is used as a stepping stone to a point of view, a How Might We question, or a persona, not filed away as a finished deliverable.",
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span style={{ color: NAVY, flexShrink: 0, marginTop: 3 }}>✓</span>
@@ -384,7 +384,7 @@ export default function EmpathyMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -394,14 +394,14 @@ export default function EmpathyMappingPage() {
             <Body>
               Empathy mapping is quick and collaborative by design. It works well as a short, focused session where the team
               fills the quadrants together from the research, then steps back to read across them. Its speed is a feature:
-              the session should take 45&ndash;90 minutes for a single well-researched person. Do not over-engineer it.
+              the session should take 45-90 minutes for a single well-researched person. Do not over-engineer it.
             </Body>
 
             <div className="flex flex-col gap-7 mt-10">
               {[
                 {
                   label: 'Work from real research, visibly',
-                  body: "Keep the source research — interview quotes, observation notes — in front of the team as they fill the map, so each entry can be traced to evidence. A sticky note that cannot be sourced to the research is an assumption. The discipline of pointing to the source is the main guard against the imagination-filled map.",
+                  body: "Keep the source research (interview quotes, observation notes) in front of the team as they fill the map, so each entry can be traced to evidence. A sticky note that cannot be sourced to the research is an assumption. The discipline of pointing to the source is the main guard against the imagination-filled map.",
                 },
                 {
                   label: 'One map, one person',
@@ -413,11 +413,11 @@ export default function EmpathyMappingPage() {
                 },
                 {
                   label: 'Build shared understanding, not just the artifact',
-                  body: "The map is not the output. The shared understanding the team builds by filling it together is the output. Every team member who fills a sticky note is building their own model of the person. The conversation about which notes belong in Feels — and which ones are assumptions — is where the value is generated.",
+                  body: "The map is not the output. The shared understanding the team builds by filling it together is the output. Every team member who fills a sticky note is building their own model of the person. The conversation about which notes belong in Feels, and which ones are assumptions, is where the value is generated.",
                 },
                 {
                   label: 'Remote: works with light facilitation',
-                  body: "Empathy mapping works well remotely on shared digital canvases (Miro, Mural, FigJam, named as common examples). The key facilitation requirement is enforcing the silent individual fill phase before discussion — without it, the dominant voice in the room defines the map before the evidence is examined.",
+                  body: "Empathy mapping works well remotely on shared digital canvases (Miro, Mural, FigJam, named as common examples). The key facilitation requirement is enforcing the silent individual fill phase before discussion. Without it, the dominant voice in the room defines the map before the evidence is examined.",
                 },
               ].map(({ label, body }) => (
                 <div key={label} className="flex gap-4">
@@ -441,18 +441,18 @@ export default function EmpathyMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — AI and this method   DARK
+          S9 - AI and this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={NAVY}>AI and this method</SectionLabel>
-            <SectionHeadingDark>AI fills Says and Does well. Thinks and Feels are inferences — and the inference is where the method lives.</SectionHeadingDark>
+            <SectionHeadingDark>AI fills Says and Does well. Thinks and Feels are inferences, and the inference is where the method lives.</SectionHeadingDark>
             <p
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see which quadrants AI handles reliably &mdash; and where it produces a
+              Toggle between modes to see which quadrants AI handles reliably, and where it produces a
               plausible, emotionally flat map that misses the tension worth designing for.
             </p>
             <EMPAIReactivated />
@@ -461,7 +461,7 @@ export default function EmpathyMappingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -482,7 +482,7 @@ export default function EmpathyMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Frameworks   LIGHT
+          S11 - Frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -524,7 +524,7 @@ export default function EmpathyMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -564,7 +564,7 @@ export default function EmpathyMappingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources & further reading   LIGHT
+          S13 - Sources & further reading   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -578,19 +578,19 @@ export default function EmpathyMappingPage() {
                   title:  'Gamestorming',
                   author: 'Dave Gray, Sunni Brown, and James Macanufo',
                   year:   '2010',
-                  note:   "The book that popularized the empathy map format and remains the best source on the structure and intent of the four-quadrant canvas. Gray's framing of the method emphasizes the Feels quadrant and the reading-across discipline — making the gaps between quadrants the productive output, not the completeness of each.",
+                  note:   "The book that popularized the empathy map format and remains the best source on the structure and intent of the four-quadrant canvas. Gray's framing of the method emphasizes the Feels quadrant and the reading-across discipline, making the gaps between quadrants the productive output, not the completeness of each.",
                 },
                 {
                   title:  'This Is Service Design Thinking',
                   author: 'Marc Stickdorn and Jakob Schneider',
                   year:   '2011',
-                  note:   'Situates empathy mapping within service design practice, where understanding the emotional experience of a user at each service touchpoint is central to the design task. The emphasis on the emotional and contextual dimensions of the person — what they feel throughout a service journey — is directly relevant to the Feels quadrant.',
+                  note:   'Situates empathy mapping within service design practice, where understanding the emotional experience of a user at each service touchpoint is central to the design task. The emphasis on the emotional and contextual dimensions of the person (what they feel throughout a service journey) is directly relevant to the Feels quadrant.',
                 },
                 {
                   title:  'Interviewing Users',
                   author: 'Steve Portigal',
                   year:   '2013',
-                  note:   "The definitive guide to gathering the research — and the emotional signal — that a good empathy map depends on. Portigal's techniques for reading tone, silence, and what is not said are exactly what separates a Feels quadrant filled with real emotional truth from one filled with surface words. The quality of the interview determines the quality of the map.",
+                  note:   "The definitive guide to gathering the research, and the emotional signal, that a good empathy map depends on. Portigal's techniques for reading tone, silence, and what is not said are exactly what separates a Feels quadrant filled with real emotional truth from one filled with surface words. The quality of the interview determines the quality of the map.",
                 },
               ].map(({ title, author, year, note }) => (
                 <div

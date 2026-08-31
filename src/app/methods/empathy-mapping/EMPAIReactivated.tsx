@@ -341,7 +341,7 @@ export default function EMPAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}
               >Where AI is reliable</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.60)', lineHeight: 'var(--leading-relaxed)' }}>
-                Given interview transcripts and behavioral data, AI populates SAYS and DOES quickly and accurately — these are observable and stated, so extraction is a task AI does well. This is genuinely useful for assembling the observable half of the map from a large corpus of research.
+                Given interview transcripts and behavioral data, AI populates SAYS and DOES quickly and accurately: these are observable and stated, so extraction is a task AI does well. This is genuinely useful for assembling the observable half of the map from a large corpus of research.
               </p>
             </div>
             <div
@@ -353,7 +353,7 @@ export default function EMPAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(245,158,11,0.72)' }}
               >Where AI flattens the truth</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.60)', lineHeight: 'var(--leading-relaxed)' }}>
-                THINKS and especially FEELS are inferred, not stated. AI fills them from surface signals — the words the person used, the sentiment of the transcript. It misses the un-stated emotional truth: the quiet shame, the avoidance, the sense of failure that saturates the tone without ever being named outright. Exactly the emotion the Feels quadrant exists to hold.
+                THINKS and especially FEELS are inferred, not stated. AI fills them from surface signals: the words the person used, the sentiment of the transcript. It misses the un-stated emotional truth: the quiet shame, the avoidance, the sense of failure that saturates the tone without ever being named outright. Exactly the emotion the Feels quadrant exists to hold.
               </p>
             </div>
           </motion.div>
@@ -368,7 +368,7 @@ export default function EMPAIReactivated() {
         )}
       </AnimatePresence>
 
-      {/* Synthesis card — always visible */}
+      {/* Synthesis card - always visible */}
       <div
         className="rounded-xl p-5"
         style={{ background: `${NAVY}0.10)`, border: `1px solid ${NAVY}0.25)` }}
@@ -378,7 +378,7 @@ export default function EMPAIReactivated() {
           style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.60)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-          Use AI for SAYS and DOES — fast, accurate, handles volume well. Use human judgment for THINKS, FEELS, and the interpretation of the gap. The method&rsquo;s value lives in the inferred half, and that is exactly where AI&rsquo;s surface-level inference is most confidently wrong.
+          Use AI for SAYS and DOES: fast, accurate, handles volume well. Use human judgment for THINKS, FEELS, and the interpretation of the gap. The method&rsquo;s value lives in the inferred half, and that is exactly where AI&rsquo;s surface-level inference is most confidently wrong.
         </p>
       </div>
     </div>

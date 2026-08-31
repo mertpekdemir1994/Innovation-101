@@ -7,7 +7,7 @@ const NAVY = 'rgba(31,58,95,'
 const SVG_W = 700
 const SVG_H = 440
 
-// Quadrant rects — 24px horizontal gap, 44px vertical gap
+// Quadrant rects - 24px horizontal gap, 44px vertical gap
 const TL = { x: 10,  y: 10,  w: 328, h: 188 }  // SAYS
 const TR = { x: 362, y: 10,  w: 328, h: 188 }  // THINKS
 const BL = { x: 10,  y: 242, w: 328, h: 188 }  // DOES
@@ -223,7 +223,7 @@ export default function EMPEstablishing() {
           style={{ userSelect: 'none' }}
           variants={fadeIn}
           transition={{ ...(prefersReduced ? { duration: 0 } : { duration: 0.40, ease }), delay: prefersReduced ? 0 : 1.0 }}
-        >one person — four perspectives — the insight lives in the gaps between them</motion.text>
+        >one person, four perspectives, the insight lives in the gaps between them</motion.text>
       </svg>
     </motion.div>
   )

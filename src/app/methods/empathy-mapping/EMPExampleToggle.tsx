@@ -64,7 +64,7 @@ export default function EMPExampleToggle() {
               </p>
             </div>
 
-            {/* The four quadrants — what the team found */}
+            {/* The four quadrants - what the team found */}
             <div className="grid sm:grid-cols-2 gap-3 mb-6">
               {[
                 {
@@ -83,9 +83,9 @@ export default function EMPExampleToggle() {
                   entries: [
                     '"Retirement is so far away I can\'t really picture it."',
                     '"I don\'t really understand how the pension numbers work."',
-                    '"Other things — rent, travel, saving for a house — feel more real."',
+                    '"Other things, rent, travel, saving for a house, feel more real."',
                   ],
-                  note: 'Inferred from the texture of the conversation — what the person circled around without stating directly.',
+                  note: 'Inferred from the texture of the conversation: what the person circled around without stating directly.',
                 },
                 {
                   label: 'DOES',
@@ -101,7 +101,7 @@ export default function EMPExampleToggle() {
                   label: 'FEELS',
                   isObservable: false,
                   entries: [
-                    'Quiet shame whenever retirement comes up — a feeling of already being behind.',
+                    'Quiet shame whenever retirement comes up, a feeling of already being behind.',
                     'Genuine anxiety when confronted with pension numbers she doesn\'t understand.',
                     'A background sense of failure that she rarely names, and doesn\'t mention in the interview.',
                   ],
@@ -138,7 +138,7 @@ export default function EMPExampleToggle() {
                   <ul className="flex flex-col gap-1.5 mb-3">
                     {entries.map((e, i) => (
                       <li key={i} className="flex gap-2">
-                        <span style={{ color: label === 'FEELS' ? `${NAVY}0.55)` : 'var(--color-neutral-400)', flexShrink: 0, marginTop: 1 }}>—</span>
+                        <span style={{ color: label === 'FEELS' ? `${NAVY}0.55)` : 'var(--color-neutral-400)', flexShrink: 0, marginTop: 1 }}>-</span>
                         <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                           {e}
                         </span>
@@ -161,7 +161,7 @@ export default function EMPExampleToggle() {
               <p
                 className="font-mono uppercase tracking-widest mb-2"
                 style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.65)` }}
-              >The Says-vs-Does gap — and what it revealed</p>
+              >The Says-vs-Does gap, and what it revealed</p>
               <p
                 className="font-semibold mb-3"
                 style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)', lineHeight: 1.35 }}
@@ -169,7 +169,7 @@ export default function EMPExampleToggle() {
                 SAYS: &ldquo;I know I should save more.&rdquo; DOES: avoids everything to do with it. FEELS: quiet shame that makes every interaction feel like a reminder of failure.
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                The contradiction between SAYS and DOES was stark — but it was FEELS that explained it. The user was not failing to save because she lacked information. She already knew what she should do. She was failing to save because every interaction with retirement planning made her feel like she was confronting evidence of her own inadequacy — and she avoided it the way one avoids anything painful. The insight reframed the product entirely: the problem was not a lack of information; it was a shame loop that made engagement feel worse than avoidance. The design pivoted from providing more data to making progress feel achievable and non-threatening. The opening screen changed from a projected retirement balance (the number that felt like an accusation) to a small, completable step that felt like winning rather than losing.
+                The contradiction between SAYS and DOES was stark, but it was FEELS that explained it. The user was not failing to save because she lacked information. She already knew what she should do. She was failing to save because every interaction with retirement planning made her feel like she was confronting evidence of her own inadequacy, and she avoided it the way one avoids anything painful. The insight reframed the product entirely: the problem was not a lack of information; it was a shame loop that made engagement feel worse than avoidance. The design pivoted from providing more data to making progress feel achievable and non-threatening. The opening screen changed from a projected retirement balance (the number that felt like an accusation) to a small, completable step that felt like winning rather than losing.
               </p>
             </div>
 
@@ -182,7 +182,7 @@ export default function EMPExampleToggle() {
                 style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
               >What made this possible</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                The insight came from reading across the quadrants, not from any single one. SAYS and DOES in isolation looked like a simple consistency problem. FEELS, carefully filled from the emotional register of the interview rather than from the words the person used, explained the contradiction. The team spent twice as long on FEELS as on the other three quadrants combined — and that time produced the reframing insight the design pivoted on.
+                The insight came from reading across the quadrants, not from any single one. SAYS and DOES in isolation looked like a simple consistency problem. FEELS, carefully filled from the emotional register of the interview rather than from the words the person used, explained the contradiction. The team spent twice as long on FEELS as on the other three quadrants combined, and that time produced the reframing insight the design pivoted on.
               </p>
             </div>
           </motion.div>
@@ -203,7 +203,7 @@ export default function EMPExampleToggle() {
               <p
                 className="font-mono uppercase tracking-widest mb-1"
                 style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}
-              >Same scenario — AI assistance applied</p>
+              >Same scenario: AI assistance applied</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 The same interview transcripts are fed to AI. The AI is asked to complete an empathy map for the user described in the research. The output arrives in seconds.
               </p>
@@ -230,7 +230,7 @@ export default function EMPExampleToggle() {
                     'Expresses limited understanding of pension mechanisms.',
                     'Prioritizes present-day financial goals over long-term planning.',
                   ],
-                  verdict: "AI paraphrased the user's stated beliefs accurately. Correct but not deeper than what the person said aloud — the tacit assumptions that didn't surface verbally are absent.",
+                  verdict: "AI paraphrased the user's stated beliefs accurately. Correct but not deeper than what the person said aloud. The tacit assumptions that didn't surface verbally are absent.",
                 },
                 {
                   label: 'DOES',
@@ -240,7 +240,7 @@ export default function EMPExampleToggle() {
                     'Has maintained static pension contributions over multiple years.',
                     'Opens the planning tool periodically but does not take action.',
                   ],
-                  verdict: "AI accurately captured the behavioral description from the transcript. Correct and reliable — these were explicitly stated behaviors.",
+                  verdict: "AI accurately captured the behavioral description from the transcript. Correct and reliable: these were explicitly stated behaviors.",
                 },
                 {
                   label: 'FEELS',
@@ -250,7 +250,7 @@ export default function EMPExampleToggle() {
                     '"Expressed uncertainty" about financial decisions.',
                     'Seems concerned about long-term financial security.',
                   ],
-                  verdict: 'AI extracted the emotion words the person used ("frustrated," "unsure") and inferred "concern" from context. It missed the deeper, un-stated emotional truth — the quiet shame and sense of failure — because those emotions were never named outright.',
+                  verdict: 'AI extracted the emotion words the person used ("frustrated," "unsure") and inferred "concern" from context. It missed the deeper, un-stated emotional truth (the quiet shame and sense of failure) because those emotions were never named outright.',
                 },
               ].map(({ label, quality, entries, verdict }) => (
                 <div
@@ -282,7 +282,7 @@ export default function EMPExampleToggle() {
                     <ul className="flex flex-col gap-1.5 mb-3">
                       {entries.map((e, i) => (
                         <li key={i} className="flex gap-2">
-                          <span style={{ color: `${INDIGO}0.50)`, flexShrink: 0, marginTop: 1 }}>—</span>
+                          <span style={{ color: `${INDIGO}0.50)`, flexShrink: 0, marginTop: 1 }}>-</span>
                           <span
                             style={{
                               fontSize: 'var(--text-xs)',
@@ -319,7 +319,7 @@ export default function EMPExampleToggle() {
                 The AI map showed SAYS and DOES as neutral data points sitting side by side. It did not make the interpretive leap: that the contradiction between them, explained by shame, was the entire insight.
               </p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
-                A team working from the AI map would have seen a user who was &ldquo;frustrated and uncertain&rdquo; about retirement. They would very likely have built a tool with better information, clearer charts, simpler explanations — exactly the wrong solution. The FEELS quadrant said &ldquo;frustrated,&rdquo; which points to communication design. The real FEELS entry — quiet shame and a sense of failure — points to emotional experience design. The difference between those two design directions is the difference between a tool the user will open and one she will continue to avoid.
+                A team working from the AI map would have seen a user who was &ldquo;frustrated and uncertain&rdquo; about retirement. They would very likely have built a tool with better information, clearer charts, simpler explanations: exactly the wrong solution. The FEELS quadrant said &ldquo;frustrated,&rdquo; which points to communication design. The real FEELS entry (quiet shame and a sense of failure) points to emotional experience design. The difference between those two design directions is the difference between a tool the user will open and one she will continue to avoid.
               </p>
             </div>
 
@@ -333,7 +333,7 @@ export default function EMPExampleToggle() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.65)` }}
               >What this tells you about AI + empathy mapping</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI assembled SAYS and DOES quickly and correctly — genuinely useful for handling a large transcript corpus. But the method&rsquo;s value lives in FEELS and in the human interpretation of the gap between SAYS and DOES. Both of those require a reading of the emotional register that AI can not do: the inference of what someone did not say, from how they said everything else. The strongest practice uses AI for the observable quadrants and reserves the inferred ones for human judgment.
+                AI assembled SAYS and DOES quickly and correctly, genuinely useful for handling a large transcript corpus. But the method&rsquo;s value lives in FEELS and in the human interpretation of the gap between SAYS and DOES. Both of those require a reading of the emotional register that AI can not do: the inference of what someone did not say, from how they said everything else. The strongest practice uses AI for the observable quadrants and reserves the inferred ones for human judgment.
               </p>
             </div>
           </motion.div>
