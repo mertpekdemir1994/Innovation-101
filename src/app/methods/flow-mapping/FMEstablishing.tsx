@@ -18,7 +18,7 @@ const EN_CX=EN_X+EN_W/2, EN_CY=EN_Y+EN_H/2   // 48, 123
 // Fork junction (visual dot where branches diverge)
 const FORK_CX=112, FORK_CY=123
 
-// Branch A — documented top path (y~36)
+// Branch A: documented top path (y~36)
 const A_X=192, A_Y=22, A_W=90, A_H=26
 const A_CX=A_X+A_W/2, A_CY=A_Y+A_H/2         // 237, 35
 const OA_X=490, OA_Y=22, OA_W=150, OA_H=26
@@ -28,7 +28,7 @@ const OA_CX=OA_X+OA_W/2, OA_CY=OA_Y+OA_H/2   // 565, 35
 const DE_X=348, DE_Y=62, DE_W=106, DE_H=26
 const DE_CX=DE_X+DE_W/2, DE_CY=DE_Y+DE_H/2   // 401, 75
 
-// Branch B — documented middle path + loop (y~123)
+// Branch B: documented middle path + loop (y~123)
 const B_X=192, B_Y=110, B_W=90, B_H=26
 const B_CX=B_X+B_W/2, B_CY=B_Y+B_H/2         // 237, 123
 const B2_X=352, B2_Y=110, B2_W=90, B2_H=26
@@ -36,7 +36,7 @@ const B2_CX=B2_X+B2_W/2, B2_CY=B2_Y+B2_H/2   // 397, 123
 const OB_X=490, OB_Y=110, OB_W=150, OB_H=26
 const OB_CX=OB_X+OB_W/2, OB_CY=OB_Y+OB_H/2   // 565, 123
 
-// Branch C — unintended/accreted bottom path (y~210)
+// Branch C: unintended/accreted bottom path (y~210)
 const C_X=192, C_Y=200, C_W=90, C_H=26
 const C_CX=C_X+C_W/2, C_CY=C_Y+C_H/2         // 237, 213
 const RD_X=352, RD_Y=200, RD_W=90
@@ -124,7 +124,7 @@ export default function FMEstablishing() {
           style={{ transformOrigin: `${FORK_CX}px ${FORK_CY}px` }}
         />
 
-        {/* ── BRANCH A — documented top path ────────────────────────── */}
+        {/* ── BRANCH A: documented top path ────────────────────────── */}
         {/* Fork → VALIDATE line */}
         <motion.line
           x1={FORK_CX} y1={FORK_CY} x2={A_X} y2={A_CY}
@@ -170,7 +170,7 @@ export default function FMEstablishing() {
             fill={`${TEAL}0.90)`} style={{ userSelect: 'none' }}>RESOLVED ✓</text>
         </motion.g>
 
-        {/* ── BRANCH B — documented middle path ─────────────────────── */}
+        {/* ── BRANCH B: documented middle path ─────────────────────── */}
         {/* Fork → PROCESS line */}
         <motion.line
           x1={FORK_CX} y1={FORK_CY} x2={B_X} y2={B_CY}

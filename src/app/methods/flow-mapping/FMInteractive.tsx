@@ -49,7 +49,7 @@ const ZONES: Record<ZoneId, ZoneInfo> = {
   entry: {
     tag: 'ENTRY POINT',
     headline: 'Where everyone starts. Or should start.',
-    body: 'The entry point is the moment a person enters the flow. In a well-designed product there should be one clear entry. In reality, flows often acquire multiple de facto entry points — one documented, several undocumented — each carrying real traffic. Mapping the entry point precisely is the first discipline: trace back until you find the actual start, not the start the spec describes.',
+    body: 'The entry point is the moment a person enters the flow. In a well-designed product there should be one clear entry. In reality, flows often acquire multiple de facto entry points (one documented, several undocumented) each carrying real traffic. Mapping the entry point precisely is the first discipline: trace back until you find the actual start, not the start the spec describes.',
   },
   validate: {
     tag: 'DOCUMENTED STEP',
@@ -59,46 +59,46 @@ const ZONES: Record<ZoneId, ZoneInfo> = {
   resolved: {
     tag: 'OUTCOME',
     headline: 'A successful exit from the flow.',
-    body: 'The flow reaches resolution here. In a healthy flow there are a small number of distinct outcomes, clearly defined. The flow map reveals whether that is true of the real process — or whether what looks like a single outcome is in fact several undocumented variants, each reached via a different path, each behaving slightly differently, each its own maintenance burden.',
+    body: 'The flow reaches resolution here. In a healthy flow there are a small number of distinct outcomes, clearly defined. The flow map reveals whether that is true of the real process, or whether what looks like a single outcome is in fact several undocumented variants, each reached via a different path, each behaving slightly differently, each its own maintenance burden.',
   },
   deadEnd: {
-    tag: 'DEAD END — PATHOLOGY',
+    tag: 'DEAD END: PATHOLOGY',
     headline: 'A branch that leads nowhere.',
-    body: 'A person enters this branch and cannot progress. There is no next step, no fallback, no recovery path. The person stalls, abandons, or forces their way back by closing and restarting. Dead ends are invisible in the documented flow because nobody designed them: they are discovered only by tracing where each branch actually goes, not where it is supposed to go. They explain a category of abandonment that no one can point to a cause for — until the map shows the dead end.',
+    body: 'A person enters this branch and cannot progress. There is no next step, no fallback, no recovery path. The person stalls, abandons, or forces their way back by closing and restarting. Dead ends are invisible in the documented flow because nobody designed them: they are discovered only by tracing where each branch actually goes, not where it is supposed to go. They explain a category of abandonment that no one can point to a cause for, until the map shows the dead end.',
     isPathology: true,
   },
   process: {
     tag: 'DOCUMENTED STEP',
     headline: 'Another step in the official flow.',
-    body: 'A step that appears in the documentation. What the documentation does not show: there is a loop back from a downstream step that routes people to this node again. The loop is common enough to appear on any real-world trace of this flow, and completely absent from every official description of it. People who encounter the loop appear, from the data, to simply be "slow" — because the extra time they spend is invisible in aggregate.',
+    body: 'A step that appears in the documentation. What the documentation does not show: there is a loop back from a downstream step that routes people to this node again. The loop is common enough to appear on any real-world trace of this flow, and completely absent from every official description of it. People who encounter the loop appear, from the data, to be "slow", because the extra time they spend is invisible in aggregate.',
   },
   approve: {
     tag: 'DECISION POINT',
-    headline: 'A fork in the official flow — with an undocumented return.',
+    headline: 'A fork in the official flow, with an undocumented return.',
     body: 'At this step the flow officially branches to its outcome. What the documented flow does not show: there is a path from here that feeds back to PROCESS, trapping users in a cycle. The cycle emerged because a downstream error state had no recovery path: the only available action was to route backward. Users who encounter the loop repeat work they already completed, often with no indication of why. This is not a user failure. It is a structural problem the flow creates.',
     isPathology: false,
   },
   complete: {
     tag: 'OUTCOME',
-    headline: 'The main successful exit — reached via three different routes.',
+    headline: 'The main successful exit, reached via three different routes.',
     body: 'The main resolution of the flow. Three distinct routes lead here: the official documented path (PROCESS → APPROVE), the redundant accreted path (ESCALATE → MANUAL STEP), and any trace that survives the LOOP. Multiple routes to the same outcome mean multiple maintenance burdens, multiple sources of behavioral inconsistency, and multiple things that can silently break in different ways.',
   },
   loop: {
-    tag: 'LOOP — PATHOLOGY',
+    tag: 'LOOP: PATHOLOGY',
     headline: 'A cycle that traps people without telling them why.',
-    body: 'The loop is not in any documentation. It emerged because an error state at APPROVE had no forward recovery path: the only available action was to route back to PROCESS. People who encounter this loop repeat work they already did — sometimes repeatedly — with no indication of why they are being sent backward. In the analytics, their sessions appear as extended but not erroneous. In reality, the flow has trapped them. A person going round a loop is not failing to understand your product. Your product is failing to let them out.',
+    body: 'The loop is not in any documentation. It emerged because an error state at APPROVE had no forward recovery path: the only available action was to route back to PROCESS. People who encounter this loop repeat work they already did, sometimes repeatedly, with no indication of why they are being sent backward. In the analytics, their sessions appear as extended but not erroneous. In reality, the flow has trapped them. A person going round a loop is not failing to understand your product. Your product is failing to let them out.',
     isPathology: true,
   },
   escalate: {
-    tag: 'UNINTENDED BRANCH — PATHOLOGY',
+    tag: 'UNINTENDED BRANCH: PATHOLOGY',
     headline: 'A fork nobody planned, which accreted over time.',
     body: 'This branch exists because of history, not design. An edge case surfaced. A workaround was created. The workaround became a permanent path. The workaround was never documented because it bypassed an official step that was not working correctly in that case. Nobody ever designed the fork; it accumulated. It now carries real traffic, receives its own implicit maintenance attention, behaves slightly differently from the official path, and appears on no diagram. Until this map.',
     isPathology: true,
   },
   manual: {
-    tag: 'REDUNDANT PATH — PATHOLOGY',
+    tag: 'REDUNDANT PATH: PATHOLOGY',
     headline: 'A second route to the same outcome, maintained separately.',
-    body: 'This step exists on a parallel path to COMPLETE — the same outcome reached by the main documented route (PROCESS → APPROVE). Nobody chose this duplication; it accumulated as the flow grew. Each redundant path is a separate maintenance burden, a separate source of inconsistency in the user experience, and a separate thing that can silently break independently of the main path. Identifying the redundant paths is what makes rationalization possible: you cannot simplify a flow whose full topology you have never seen.',
+    body: 'This step exists on a parallel path to COMPLETE: the same outcome reached by the main documented route (PROCESS → APPROVE). Nobody chose this duplication; it accumulated as the flow grew. Each redundant path is a separate maintenance burden, a separate source of inconsistency in the user experience, and a separate thing that can silently break independently of the main path. Identifying the redundant paths is what makes rationalization possible: you cannot simplify a flow whose full topology you have never seen.',
     isPathology: true,
   },
 }
@@ -218,7 +218,7 @@ export default function FMInteractive() {
             transition={{ duration: 0.18 }}
             onClick={() => setActive(active === 'entry' ? null : 'entry')}
             style={{ cursor: 'pointer' }}
-            role="button" aria-pressed={active === 'entry'} aria-label="SUBMIT — entry point"
+            role="button" aria-pressed={active === 'entry'} aria-label="SUBMIT, entry point"
           >
             <rect x={EN_X - 4} y={EN_Y - 4} width={EN_W + 8} height={EN_H + 8} rx={9} fill="transparent" />
             {active === 'entry' && (
@@ -281,7 +281,7 @@ export default function FMInteractive() {
             transition={{ duration: 0.18 }}
             onClick={() => setActive(active === 'deadEnd' ? null : 'deadEnd')}
             style={{ cursor: 'pointer' }}
-            role="button" aria-pressed={active === 'deadEnd'} aria-label="REVIEW QUEUE — dead end pathology"
+            role="button" aria-pressed={active === 'deadEnd'} aria-label="REVIEW QUEUE, dead end pathology"
           >
             <rect x={DE_X - 4} y={DE_Y - 4} width={DE_W + 8} height={DE_H + 8} rx={8} fill="transparent" />
             {active === 'deadEnd' && <rect x={DE_X - 2} y={DE_Y - 2} width={DE_W + 4} height={DE_H + 4} rx={6} fill="none" stroke={`${AMBER}0.55)`} strokeWidth={1.5} />}
@@ -329,7 +329,7 @@ export default function FMInteractive() {
             transition={{ duration: 0.18 }}
             onClick={() => setActive(active === 'approve' ? null : 'approve')}
             style={{ cursor: 'pointer' }}
-            role="button" aria-pressed={active === 'approve'} aria-label="APPROVE decision point — also feeds a loop"
+            role="button" aria-pressed={active === 'approve'} aria-label="APPROVE decision point, also feeds a loop"
           >
             <rect x={B2_X - 4} y={B2_Y - 4} width={B2_W + 8} height={B2_H + 8} rx={8} fill="transparent" />
             {active === 'approve' && <rect x={B2_X - 2} y={B2_Y - 2} width={B2_W + 4} height={B2_H + 4} rx={6} fill="none" stroke={`${TEAL}0.55)`} strokeWidth={1.5} />}
@@ -349,7 +349,7 @@ export default function FMInteractive() {
             transition={{ duration: 0.18 }}
             onClick={() => setActive(active === 'complete' ? null : 'complete')}
             style={{ cursor: 'pointer' }}
-            role="button" aria-pressed={active === 'complete'} aria-label="COMPLETE outcome — reached via multiple routes"
+            role="button" aria-pressed={active === 'complete'} aria-label="COMPLETE outcome, reached via multiple routes"
           >
             <rect x={OB_X - 4} y={OB_Y - 4} width={OB_W + 8} height={OB_H + 8} rx={8} fill="transparent" />
             {active === 'complete' && <rect x={OB_X - 2} y={OB_Y - 2} width={OB_W + 4} height={OB_H + 4} rx={6} fill="none" stroke={`${TEAL}0.55)`} strokeWidth={1.5} />}
@@ -369,7 +369,7 @@ export default function FMInteractive() {
             transition={{ duration: 0.18 }}
             onClick={() => setActive(active === 'loop' ? null : 'loop')}
             style={{ cursor: 'pointer' }}
-            role="button" aria-pressed={active === 'loop'} aria-label="Loop — a cycle that traps people"
+            role="button" aria-pressed={active === 'loop'} aria-label="Loop, a cycle that traps people"
           >
             <path
               d={`M ${B2_CX},${B2_CY + B2_H/2} C ${B2_CX},${B2_CY + 58} ${B_CX},${B_CY + 58} ${B_CX},${B_CY + B_H/2}`}
@@ -380,7 +380,7 @@ export default function FMInteractive() {
               markerEnd="url(#fmi-arrow-loop)"
               style={{ transition: 'stroke 0.18s' }}
             />
-            {/* Loop label — also serves as hit target */}
+            {/* Loop label: also serves as hit target */}
             <rect x={(B_CX + B2_CX)/2 - 28} y={B_CY + 62} width={56} height={18} rx={4} fill="transparent" />
             <text x={(B_CX + B2_CX) / 2} y={B_CY + 73}
               textAnchor="middle" dominantBaseline="middle"
@@ -395,7 +395,7 @@ export default function FMInteractive() {
             transition={{ duration: 0.18 }}
             onClick={() => setActive(active === 'escalate' ? null : 'escalate')}
             style={{ cursor: 'pointer' }}
-            role="button" aria-pressed={active === 'escalate'} aria-label="ESCALATE — unintended branch"
+            role="button" aria-pressed={active === 'escalate'} aria-label="ESCALATE, unintended branch"
           >
             <rect x={C_X - 4} y={C_Y - 4} width={C_W + 8} height={C_H + 8} rx={8} fill="transparent" />
             {active === 'escalate' && <rect x={C_X - 2} y={C_Y - 2} width={C_W + 4} height={C_H + 4} rx={6} fill="none" stroke={`${AMBER}0.55)`} strokeWidth={1.5} />}
@@ -420,7 +420,7 @@ export default function FMInteractive() {
             transition={{ duration: 0.18 }}
             onClick={() => setActive(active === 'manual' ? null : 'manual')}
             style={{ cursor: 'pointer' }}
-            role="button" aria-pressed={active === 'manual'} aria-label="MANUAL STEP — redundant path pathology"
+            role="button" aria-pressed={active === 'manual'} aria-label="MANUAL STEP, redundant path pathology"
           >
             <rect x={RD_X - 4} y={RD_Y - 4} width={RD_W + 8} height={RD_H + 8} rx={8} fill="transparent" />
             {active === 'manual' && <rect x={RD_X - 2} y={RD_Y - 2} width={RD_W + 4} height={RD_H + 4} rx={6} fill="none" stroke={`${AMBER}0.55)`} strokeWidth={1.5} />}

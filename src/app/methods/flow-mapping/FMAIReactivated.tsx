@@ -69,7 +69,7 @@ export default function FMAIReactivated() {
         </div>
       </div>
 
-      {/* SVG — same topology, pathologies fade in AI mode */}
+      {/* SVG: same topology, pathologies fade in AI mode */}
       <div className="w-full select-none mb-10" aria-hidden="true">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ display: 'block', overflow: 'visible' }}>
           <defs>
@@ -282,7 +282,7 @@ export default function FMAIReactivated() {
                   fill={`${INDIGO}0.60)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30 }}
-                >AI DRAWS THIS FAST — LOOKS COMPLETE</motion.text>
+                >AI DRAWS THIS FAST, LOOKS COMPLETE</motion.text>
 
                 {/* "INVISIBLE TO AI" badge over pathology area */}
                 <motion.text key="ai-invisible"
@@ -335,7 +335,7 @@ export default function FMAIReactivated() {
               >Where AI is genuinely fast</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
                 Given a description, process documentation, or a spec, AI can generate a clean, structured
-                flow diagram very quickly — tracing branches, laying out decision points, producing something
+                flow diagram quickly, tracing branches, laying out decision points, producing something
                 readable and professional. As a drafting aid, this is real uplift: turning a pile of
                 documentation into a legible topology used to be tedious work. The diagram it produces
                 looks complete. That is exactly the problem.
@@ -348,7 +348,7 @@ export default function FMAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}
               >Where it is structurally blind</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI maps the flow AS DESCRIBED — the documented flow, the official version, the story the
+                AI maps the flow AS DESCRIBED: the documented flow, the official version, the story the
                 organization tells itself. The workarounds people actually use, the undocumented branch, the
                 loop that nobody documented because nobody planned it, the path that is technically deprecated
                 but still carries a third of the traffic: none of this is written down anywhere. AI cannot
@@ -366,10 +366,10 @@ export default function FMAIReactivated() {
           style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
-          Use AI to draft the documented flow fast — it is genuinely useful as a first-pass scaffold and faster
+          Use AI to draft the documented flow fast; it is genuinely useful as a first-pass scaffold and faster
           than building from scratch. Then treat that draft as a hypothesis to be broken: go watch real people
           use the thing, find the workarounds, add the branches AI could never have known about. The gap between
-          the AI&rsquo;s diagram and the real flow is, quite literally, the finding. The value of flow mapping is in
+          the AI&rsquo;s diagram and the real flow is, literally, the finding. The value of flow mapping is in
           what differs from the documented version, and that is exactly what AI is structurally unable to surface.
         </p>
       </div>
