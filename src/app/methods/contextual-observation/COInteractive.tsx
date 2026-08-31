@@ -15,19 +15,19 @@ const ELEMENT_DATA: Record<NonNullable<El>, { label: string; headline: string; b
   stated: {
     label: 'STATED TOOL',
     headline: 'What they say they use',
-    body: 'The screen, the software, the official system. In the interview, participants described using this — it is the tool they know they should use and the one they will mention when asked. Observation shows whether it is actually central to their real workflow.',
+    body: 'The screen, the software, the official system. In the interview, participants described using this: it is the tool they know they should use and the one they will mention when asked. Observation shows whether it is actually central to their real workflow.',
     color: `${AMBER}1)`,
   },
   workaround: {
     label: 'WORKAROUND',
     headline: 'The real question behind the sticky note',
-    body: '"Can I make payroll?" is not an accounting question — it is a cash-flow anxiety question. The sticky note exists because the accounting software does not answer that question quickly enough. Workarounds are always a symptom of a gap between what the tool does and what the person actually needs.',
+    body: '"Can I make payroll?" is not an accounting question. It is a cash-flow anxiety question. The sticky note exists because the accounting software does not answer that question quickly enough. Workarounds are always a symptom of a gap between what the tool does and what the person actually needs.',
     color: `${SAGE}1)`,
   },
   friction: {
     label: 'FRICTION POINT',
     headline: 'Where the real effort goes',
-    body: 'This pile of papers and invoices is not disorganisation — it is an improvised system. The person is expending effort here that an ideal tool would eliminate. Friction points reveal the real job the user is doing, which is almost never the job the software was designed for.',
+    body: 'This pile of papers and invoices is not disorganisation. It is an improvised system. The person is expending effort here that an ideal tool would eliminate. Friction points reveal the real job the user is doing, which is almost never the job the software was designed for.',
     color: `${SAGE}1)`,
   },
   'env-detail': {
@@ -39,7 +39,7 @@ const ELEMENT_DATA: Record<NonNullable<El>, { label: string; headline: string; b
   'say-do-gap': {
     label: 'SAY-vs-DO GAP',
     headline: 'The space between what they say and what they actually do',
-    body: 'Everything to the left of this line is what the user would describe in an interview. Everything to the right is what contextual observation reveals. The gap is not dishonesty — it is the difference between self-perception and behaviour. This is the core of what makes observation irreplaceable.',
+    body: 'Everything to the left of this line is what the user would describe in an interview. Everything to the right is what contextual observation reveals. The gap is not dishonesty. It is the difference between self-perception and behaviour. This is the core of what makes observation irreplaceable.',
     color: 'rgba(255,255,255,0.75)',
   },
 }
@@ -267,7 +267,7 @@ export default function COInteractive() {
           style={{ userSelect: 'none', transition: 'fill 0.25s' }}>THE GAP</text>
 
         {/* ── HIT AREAS (transparent, clickable) ── */}
-        {/* STATED — screen area */}
+        {/* STATED - screen area */}
         <rect
           x={152} y={95} width={120} height={82}
           fill="transparent"
@@ -282,7 +282,7 @@ export default function COInteractive() {
           aria-pressed={isHit('stated')}
           aria-label="Click to reveal insight: Stated tool (the computer screen)"
         />
-        {/* WORKAROUND — sticky note */}
+        {/* WORKAROUND - sticky note */}
         <rect
           x={362} y={136} width={60} height={42}
           fill="transparent"
@@ -297,7 +297,7 @@ export default function COInteractive() {
           aria-pressed={isHit('workaround')}
           aria-label="Click to reveal insight: Workaround (sticky note)"
         />
-        {/* FRICTION — paper pile */}
+        {/* FRICTION - paper pile */}
         <rect
           x={414} y={146} width={74} height={30}
           fill="transparent"
@@ -312,7 +312,7 @@ export default function COInteractive() {
           aria-pressed={isHit('friction')}
           aria-label="Click to reveal insight: Friction point (paper pile)"
         />
-        {/* ENVIRONMENTAL DETAIL — shoebox */}
+        {/* ENVIRONMENTAL DETAIL - shoebox */}
         <rect
           x={484} y={154} width={88} height={24}
           fill="transparent"
@@ -327,7 +327,7 @@ export default function COInteractive() {
           aria-pressed={isHit('env-detail')}
           aria-label="Click to reveal insight: Environmental detail (shoebox of receipts)"
         />
-        {/* SAY-vs-DO GAP — gap zone */}
+        {/* SAY-vs-DO GAP - gap zone */}
         <rect
           x={274} y={72} width={104} height={98}
           fill="transparent"

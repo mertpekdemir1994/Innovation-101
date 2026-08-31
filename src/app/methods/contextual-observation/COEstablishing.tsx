@@ -238,7 +238,7 @@ export default function COEstablishing() {
         </motion.g>
 
         {/* ── ANNOTATIONS ── */}
-        {/* STATED label + underline (amber — screen/official side) */}
+        {/* STATED label + underline (amber - screen/official side) */}
         <motion.g variants={fade} transition={annT}>
           <text
             x={213} y={90}
@@ -251,7 +251,7 @@ export default function COEstablishing() {
             stroke={`${AMBER}0.28)`} strokeWidth={1} strokeDasharray="4 3" />
         </motion.g>
 
-        {/* REAL label + underline (sage — papers/workaround side) */}
+        {/* REAL label + underline (sage - papers/workaround side) */}
         <motion.g variants={fade} transition={annT}>
           <text
             x={468} y={90}

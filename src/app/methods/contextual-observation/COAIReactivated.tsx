@@ -57,7 +57,7 @@ export default function COAIReactivated() {
         aria-label={
           isAI
             ? 'AI mode: camera frame highlights only the computer screen, while sticky notes, papers, and shoebox outside the frame are dimmed'
-            : 'Human mode: full observation scene visible — person at desk with computer, sticky notes, papers, and shoebox'
+            : 'Human mode: full observation scene visible, person at desk with computer, sticky notes, papers, and shoebox'
         }
       >
         <defs>
@@ -315,7 +315,7 @@ export default function COAIReactivated() {
               },
               {
                 h: 'The insight that was missed',
-                b: 'The real discovery — that users\' most urgent question is not "how do I enter a transaction" but "can I make payroll this week" — only became visible when a researcher sat in the same room and saw the whole desk, not just the screen.',
+                b: 'The real discovery, that users\' most urgent question is not "how do I enter a transaction" but "can I make payroll this week," only became visible when a researcher sat in the same room and saw the whole desk, not just the screen.',
               },
             ].map((card, i) => (
               <div
@@ -341,7 +341,7 @@ export default function COAIReactivated() {
             {[
               {
                 h: 'The whole environment is the data',
-                b: 'A human observer sees the sticky note, the shoebox, the confused look, the moment someone switches to a spreadsheet instead of the official tool. The environment itself is the research instrument — not just what is on the screen.',
+                b: 'A human observer sees the sticky note, the shoebox, the confused look, the moment someone switches to a spreadsheet instead of the official tool. The environment itself is the research instrument, not just what is on the screen.',
               },
               {
                 h: 'Say-vs-do is visible in person',
@@ -366,7 +366,7 @@ export default function COAIReactivated() {
       <div className="mt-4 rounded-lg p-4 border border-white/8" style={{ background: 'rgba(255,255,255,0.04)' }}>
         <p className="text-[10px] font-semibold uppercase tracking-wider text-white/28 mb-1">Synthesis</p>
         <p className="text-xs text-white/42 leading-relaxed">
-          AI excels at analysing what happens inside the system it can see: clicks, hesitations, paths, drop-off rates. What it cannot see is the environment around the system — the workarounds, the parallel tools, the questions users are actually trying to answer. Contextual observation is irreplaceable precisely because the most important research data is not on the screen.
+          AI excels at analysing what happens inside the system it can see: clicks, hesitations, paths, drop-off rates. What it cannot see is the environment around the system: the workarounds, the parallel tools, the questions users are actually trying to answer. Contextual observation is irreplaceable precisely because the most important research data is not on the screen.
         </p>
       </div>
     </div>
