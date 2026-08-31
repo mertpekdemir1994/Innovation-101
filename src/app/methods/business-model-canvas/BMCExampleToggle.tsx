@@ -8,7 +8,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'A company that sells software to large enterprises through a direct sales team wants to move down-market and serve small businesses. Everyone in the room agrees it is a growth opportunity. They use the Business Model Canvas to see what the move actually requires.'
+const SCENARIO = 'A company that sells software to large enterprises through a direct sales team wants to move down-market and serve small businesses. Everyone in the room agrees it is a growth opportunity. They use the Business Model Canvas to see what the move requires.'
 
 export default function BMCExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -84,11 +84,11 @@ export default function BMCExampleToggle() {
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 They changed one block: customer segment, from enterprise to small business. And then they did
                 the thing the method is actually for, which is following the dependency links to see what moved
-                with it. Almost everything did. The value proposition had to change — small businesses do not need,
-                and will not pay for, the enterprise feature set. The channel had to change — a direct sales team
-                cannot economically call on thousands of small accounts. The customer relationship had to change —
+                with it. Almost everything did. The value proposition had to change: small businesses do not need,
+                and will not pay for, the enterprise feature set. The channel had to change: a direct sales team
+                cannot economically call on thousands of small accounts. The customer relationship had to change:
                 dedicated account managers are impossible at small-business price points. The revenue stream had
-                to change — large annual contracts become small monthly subscriptions.
+                to change: large annual contracts become small monthly subscriptions.
               </p>
             </div>
 
@@ -96,19 +96,19 @@ export default function BMCExampleToggle() {
               style={{ border: `2px solid ${AMBER}0.45)`, background: `${AMBER}0.05)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
                 style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.80)` }}>
-                ⚠ The break — this is the method
+                ⚠ The break: this is the method
               </p>
               <p className="font-semibold mb-3"
                 style={{ fontSize: 'var(--text-sm)', color: `${AMBER}0.88)` }}>
-                With small monthly subscriptions as the revenue stream, the existing cost structure — built
-                around an expensive direct sales force — simply did not work. The cost of acquiring a
+                With small monthly subscriptions as the revenue stream, the existing cost structure, built
+                around an expensive direct sales force, did not work. The cost of acquiring a
                 small-business customer through direct sales exceeded what that customer would ever pay.
                 Two blocks contradicted each other outright.
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 That contradiction was the finding. It arrived on a whiteboard rather than in the P&amp;L eighteen
-                months later. The move down-market was not impossible — but it was not an extension of the
-                current business model. It required a genuinely different one: self-serve channel, product-led
+                months later. The move down-market was not impossible, but it was not an extension of the
+                current business model. It required a different one: self-serve channel, product-led
                 onboarding, a fundamentally different cost structure. Now the team could argue about <em>that</em>, honestly,
                 instead of about whether small businesses were an attractive market.
               </p>
@@ -125,7 +125,7 @@ export default function BMCExampleToggle() {
                 that the product could be simplified without losing what customers valued, that the freemium
                 conversion rate would hold. Those went to concept testing and assumption mapping. The canvas
                 organised the guesses. It did not settle them. A completed canvas is a hypothesis, and they
-                knew that — which is why the work was not done when they finished filling it in.
+                knew that, which is why the work was not done when they finished filling it in.
               </p>
             </div>
           </motion.div>
@@ -143,7 +143,7 @@ export default function BMCExampleToggle() {
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The traditional approach above is what the team actually did. This tab imagines the same
-                team had asked AI to produce the small-business canvas — to show where it genuinely helps
+                team had asked AI to produce the small-business canvas, to show where it helps
                 and what it structurally cannot do.
               </p>
             </div>
@@ -171,9 +171,9 @@ export default function BMCExampleToggle() {
                 But it was nine confident guesses arranged beautifully
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                Would these small businesses actually adopt a self-serve product? Would the freemium conversion
+                Would these small businesses adopt a self-serve product? Would the freemium conversion
                 rate be anywhere near what the model implied? Could the product be simplified without losing the
-                thing enterprise customers valued — which might not be what small businesses value at all? The AI
+                thing enterprise customers valued, which might not be what small businesses value at all? The AI
                 had no way to know. And the plausibility of the output was exactly what made it dangerous: it was
                 the version nobody in the room would challenge, because it sounded right, and it arrived carrying
                 the authority of a finished artifact.
@@ -187,7 +187,7 @@ export default function BMCExampleToggle() {
                 Where AI earned its keep was the opposite use
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                Handed the team&rsquo;s own canvas and asked to attack it, AI was genuinely sharp. It flagged quickly
+                Handed the team&rsquo;s own canvas and asked to attack it, AI was sharp. It flagged quickly
                 that the retained direct-sales cost structure could not survive a monthly subscription revenue
                 stream at small-business price points; that a self-serve channel was inconsistent with a
                 dedicated-account-manager relationship block the team had left unchanged out of habit; and that
@@ -202,7 +202,7 @@ export default function BMCExampleToggle() {
               <p className="font-mono uppercase tracking-widest mb-2"
                 style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.62)` }}>The honest readout</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                Never ask AI to write the canvas — it produces a beautiful hypothesis and you will mistake it for
+                Never ask AI to write the canvas. It produces a beautiful hypothesis and you will mistake it for
                 a business. Ask it to break the canvas: to find the contradiction between block three and block
                 seven, which is the thing the method exists to surface. Then go and test the assumptions with real
                 small businesses, because a perfectly coherent business model can still be completely wrong, and

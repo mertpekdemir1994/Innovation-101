@@ -9,8 +9,8 @@ const BMCInteractive   = dynamic(() => import('./BMCInteractive'),   { ssr: fals
 const BMCAIReactivated = dynamic(() => import('./BMCAIReactivated'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Business Model Canvas — Methods — Innovation 101',
-  description: 'A one-page model of how a business creates, delivers, and captures value across nine linked blocks — used to see whether the whole thing actually holds together.',
+  title: 'Business Model Canvas - Methods - Innovation 101',
+  description: 'A one-page model of how a business creates, delivers, and captures value across nine linked blocks, used to see whether the whole thing holds together.',
 }
 
 const PLUM = '#6B4A77'
@@ -52,25 +52,25 @@ const FRAMEWORK_LINKS = [
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Build / Learn',
-    note: 'The canvas holds the hypotheses the Build-Measure-Learn loop exists to test. Every block is an assumption — which segment, which channel, which revenue mechanism, which cost model. The canvas makes those assumptions explicit and organised before the loop begins, so each experiment targets a named claim rather than a vague belief.',
+    note: 'The canvas holds the hypotheses the Build-Measure-Learn loop exists to test. Every block is an assumption: which segment, which channel, which revenue mechanism, which cost model. The canvas makes those assumptions explicit and organised before the loop begins, so each experiment targets a named claim rather than a vague belief.',
   },
   {
     slug: 'double-diamond',
     name: 'Double Diamond',
     phase: 'Define / Deliver',
-    note: 'In the Define phase, the canvas maps the business model behind the concept and checks whether it holds together. In Deliver, it is revisited as the model becomes concrete — ensuring that operational commitments (channel, cost structure, partnerships) are consistent with the value proposition and segment choices made earlier.',
+    note: 'In the Define phase, the canvas maps the business model behind the concept and checks whether it holds together. In Deliver, it is revisited as the model becomes concrete, ensuring that operational commitments (channel, cost structure, partnerships) are consistent with the value proposition and segment choices made earlier.',
   },
   {
     slug: 'fde',
     name: 'Front-End of Innovation',
     phase: 'Concept development / Business case',
-    note: 'During concept development, the canvas is the business model behind the concept, made explicit and checkable. At the business case stage, the coherence between blocks determines whether the concept is investable — not just desirable, but financially viable as a whole model.',
+    note: 'During concept development, the canvas is the business model behind the concept, made explicit and checkable. At the business case stage, the coherence between blocks determines whether the concept is investable: not just desirable, but financially viable as a whole model.',
   },
   {
     slug: 'design-thinking',
     name: 'Design Thinking',
     phase: 'Define',
-    note: 'Design Thinking addresses desirability, feasibility, and viability. The canvas is the viability half of that question — does the business model that delivers the desirable solution actually work? It is the structured check that the viable business model exists, not just the desirable product.',
+    note: 'Design Thinking addresses desirability, feasibility, and viability. The canvas is the viability half of that question: does the business model that delivers the desirable solution work? It is the structured check that the viable business model exists, not just the desirable product.',
   },
 ]
 
@@ -78,7 +78,7 @@ const RELATED_METHODS = [
   {
     slug: 'value-proposition-canvas',
     name: 'Value Proposition Canvas',
-    rel: 'The nesting sibling, by the same authors. The Value Proposition Canvas zooms into one block — the value proposition against the customer segment — and does it in depth, forcing an honest match between what customers need and what you offer. The Business Model Canvas is the whole board, and its concern is whether all nine blocks fit together. Use the VPC to get one block right; use the BMC to see whether the whole thing stands up.',
+    rel: 'The nesting sibling, by the same authors. The Value Proposition Canvas zooms into one block (the value proposition against the customer segment) and does it in depth, forcing an honest match between what customers need and what you offer. The Business Model Canvas is the whole board, and its concern is whether all nine blocks fit together. Use the VPC to get one block right; use the BMC to see whether the whole thing stands up.',
   },
   {
     slug: 'assumption-mapping',
@@ -88,12 +88,12 @@ const RELATED_METHODS = [
   {
     slug: 'concept-testing',
     name: 'Concept Testing',
-    rel: 'Where the canvas\'s riskiest assumptions go to meet reality. Coherence is not truth, and a perfectly consistent business model can still be one nobody wants. Concept Testing checks whether the value proposition, the channel, and the revenue model actually work with real customers — not just with each other.',
+    rel: 'Where the canvas\'s riskiest assumptions go to meet reality. Coherence is not truth, and a perfectly consistent business model can still be one nobody wants. Concept Testing checks whether the value proposition, the channel, and the revenue model work with real customers, not just with each other.',
   },
   {
     slug: 'ten-types-innovation',
     name: '10 Types of Innovation',
-    rel: 'Complementary lenses on the same object. The 10 Types framework diagnoses where innovation is happening — or not happening — across ten dimensions from configuration to experience. The canvas describes how the business model works as a whole. Together they show both what the model is and where it is and is not being innovated.',
+    rel: 'Complementary lenses on the same object. The 10 Types framework diagnoses where innovation is happening (or not happening) across ten dimensions from configuration to experience. The canvas describes how the business model works as a whole. Together they show both what the model is and where it is and is not being innovated.',
   },
 ]
 
@@ -102,7 +102,7 @@ const RELATED_METHODS = [
 export default function BMCPage() {
   return (
     <>
-      {/* S1 — Header DARK */}
+      {/* S1 - Header DARK */}
       <DarkSection>
         <span
           className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
@@ -121,8 +121,8 @@ export default function BMCPage() {
         </h1>
         <p className="mb-4 max-w-[680px]"
           style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}>
-          A one-page model of how a business creates, delivers, and captures value across nine linked blocks —
-          used to see whether the whole thing actually holds together.
+          A one-page model of how a business creates, delivers, and captures value across nine linked blocks,
+          used to see whether the whole thing holds together.
         </p>
         <p className="max-w-[540px]"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.36)', fontStyle: 'italic' }}>
@@ -131,20 +131,20 @@ export default function BMCPage() {
         </p>
       </DarkSection>
 
-      {/* S2 — Establishing visual DARK */}
+      {/* S2 - Establishing visual DARK */}
       <DarkSection>
         <SectionLabel accent={PLUM}>The visual</SectionLabel>
         <SectionHeadingDark>Nine blocks. One structure. The links between them are the method.</SectionHeadingDark>
         <p className="max-w-prose mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.55)', lineHeight: 'var(--leading-relaxed)' }}>
           The canonical nine-block canvas, but built as a coherence engine rather than a form.
-          The blocks are visibly linked — which blocks constrain which, and what changes when one block moves.
+          The blocks are visibly linked: which blocks constrain which, and what changes when one block moves.
           One link is already under tension.
         </p>
         <BMCEstablishing />
       </DarkSection>
 
-      {/* S3 — What it is LIGHT */}
+      {/* S3 - What it is LIGHT */}
       <LightSection>
         <Container prose>
           <SectionLabel accent={PLUM}>What it is</SectionLabel>
@@ -162,7 +162,7 @@ export default function BMCPage() {
             But the canvas is almost universally misunderstood as a form, and this is the thing worth being
             clear about: the method is not filling in the boxes. Anyone can fill in nine boxes plausibly,
             and doing so produces a satisfying feeling of completion that is entirely unearned. The method
-            is coherence. The nine blocks are not independent — they are linked, and they constrain each other.
+            is coherence. The nine blocks are not independent. They are linked, and they constrain each other.
             Choose a premium, high-touch channel and your cost structure changes. Choose a new customer segment
             and your value proposition, your channels, and your customer relationships all move with it,
             whether you update them or not.
@@ -176,24 +176,24 @@ export default function BMCPage() {
         </Container>
       </LightSection>
 
-      {/* S4 — Interactive DARK */}
+      {/* S4 - Interactive DARK */}
       <DarkSection>
         <SectionLabel accent={PLUM}>Try it</SectionLabel>
         <SectionHeadingDark>Change one block. Watch another break. That is the method.</SectionHeadingDark>
         <p className="max-w-prose mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
-          Click any block to see what it holds and what it depends on — no block stands alone. Use the
+          Click any block to see what it holds and what it depends on. No block stands alone. Use the
           scenario buttons to see how changing one block propagates, and how a premium channel change produces
           a visible break in the cost structure. The break is the payoff.
         </p>
         <BMCInteractive />
       </DarkSection>
 
-      {/* S5 — When to deploy LIGHT */}
+      {/* S5 - When to deploy LIGHT */}
       <LightSection>
         <Container prose>
           <SectionLabel accent={PLUM}>When to deploy it</SectionLabel>
-          <SectionHeadingLight>Use it when you need to see the whole model at once — and check whether it holds.</SectionHeadingLight>
+          <SectionHeadingLight>Use it when you need to see the whole model at once and check whether it holds.</SectionHeadingLight>
 
           <div className="grid md:grid-cols-2 gap-8 mt-8">
             <div>
@@ -202,7 +202,7 @@ export default function BMCPage() {
               <ul className="flex flex-col gap-3">
                 {[
                   'You need to check whether the parts of a business model are consistent with each other.',
-                  'You are changing one part of a business — a new segment, a new channel, a new revenue model — and need to see what else must change with it.',
+                  'You are changing one part of a business (a new segment, a new channel, a new revenue model) and need to see what else must change with it.',
                   'Different people in the room hold different models of the business, and you need one shared, visible artifact to argue against.',
                   'You are evaluating a new venture and want to expose untested assumptions in an organised way.',
                 ].map((item, i) => (
@@ -220,10 +220,10 @@ export default function BMCPage() {
                 style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>Do not lean on it when</p>
               <ul className="flex flex-col gap-3">
                 {[
-                  'You want depth on the customer and the offer specifically — that is the Value Proposition Canvas, which zooms into a single block and does it properly.',
-                  'You want to explore the full range of innovation interventions beyond the model itself — the canvas describes what IS; other methods help you decide what to CHANGE.',
+                  'You want depth on the customer and the offer specifically: that is the Value Proposition Canvas, which zooms into a single block and does it properly.',
+                  'You want to explore the full range of innovation interventions beyond the model itself: the canvas describes what IS; other methods help you decide what to CHANGE.',
                   'Filling it in will be treated as the work. A completed canvas is a hypothesis; if the organisation mistakes it for a plan, the canvas has done harm.',
-                  'The business is genuinely unknown and unformed. The canvas is excellent at organising what you believe; it can make a pile of guesses look like a strategy.',
+                  'The business is unknown and unformed. The canvas is excellent at organising what you believe; it can make a pile of guesses look like a strategy.',
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
                     <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
@@ -242,19 +242,19 @@ export default function BMCPage() {
               style={{ fontSize: 'var(--text-2xs)', color: PLUM }}>The honest limit</p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
               The canvas describes; it does not validate. Every block is a claim, and the canvas has no opinion
-              about whether any of them are true. It is also static — a snapshot with no time, no competition,
-              and no dynamics. And because it is fast, tidy, and universally recognised, it produces a powerful
-              and often unwarranted sense that the business has been figured out. The canvas is a beginning.
+              about whether any of them are true. It is also static: a snapshot with no time, no competition,
+              and no dynamics. And because it is fast, tidy, and universally recognised, it produces an
+              often unwarranted sense that the business has been figured out. The canvas is a beginning.
             </p>
           </div>
         </Container>
       </LightSection>
 
-      {/* S6 — How it works LIGHT */}
+      {/* S6 - How it works LIGHT */}
       <LightSection>
         <Container prose>
           <SectionLabel accent={PLUM}>How it works</SectionLabel>
-          <SectionHeadingLight>Six steps — the last one is the only one that matters.</SectionHeadingLight>
+          <SectionHeadingLight>Six steps: the last one is the only one that matters.</SectionHeadingLight>
 
           <div className="flex flex-col gap-6 mt-8">
             {[
@@ -266,7 +266,7 @@ export default function BMCPage() {
               {
                 n: '02',
                 title: 'Work the value-creation side, then the delivery side',
-                body: 'Fill the customer-facing blocks first (segments, value propositions, channels, relationships, revenue), because they define what the business must be able to do. Then work the delivery side (key resources, activities, partners, costs), which is what it takes to actually keep that promise.',
+                body: 'Fill the customer-facing blocks first (segments, value propositions, channels, relationships, revenue), because they define what the business must be able to do. Then work the delivery side (key resources, activities, partners, costs), which is what it takes to keep that promise.',
               },
               {
                 n: '03',
@@ -306,7 +306,7 @@ export default function BMCPage() {
         </Container>
       </LightSection>
 
-      {/* S7 — Best practices LIGHT */}
+      {/* S7 - Best practices LIGHT */}
       <LightSection>
         <Container prose>
           <SectionLabel accent={PLUM}>Best practices</SectionLabel>
@@ -339,7 +339,7 @@ export default function BMCPage() {
               {[
                 { label: 'Treating it as a form.', body: 'Nine boxes filled in plausibly, admired, and filed. The filling in is not the method; the coherence check is. If nothing broke, you did not use it.' },
                 { label: 'Mistaking a completed canvas for a validated one.', body: 'It is a hypothesis, and a tidy one, which makes it more dangerous rather than less. Every block is a guess until tested.' },
-                { label: 'Changing one block and not the others.', body: 'Teams routinely swap in a new customer segment and leave the value proposition, channels, and relationships untouched — at which point the canvas is describing a business that does not exist.' },
+                { label: 'Changing one block and not the others.', body: 'Teams routinely swap in a new customer segment and leave the value proposition, channels, and relationships untouched. At that point, the canvas is describing a business that does not exist.' },
                 { label: 'A vague segment.', body: '"SMEs", "consumers", "enterprises". Vague segments make every downstream block unfalsifiable, and the canvas becomes unfalsifiable with them.' },
                 { label: 'Ignoring the contradiction.', body: 'When two blocks do not agree, the temptation is to reword until they seem to. The contradiction is the single most valuable thing the canvas produced. Do not talk it away.' },
               ].map(({ label, body }) => (
@@ -359,7 +359,7 @@ export default function BMCPage() {
         </Container>
       </LightSection>
 
-      {/* S8 — Logistics LIGHT */}
+      {/* S8 - Logistics LIGHT */}
       <LightSection>
         <Container prose>
           <div className="border-t pt-20" style={{ borderColor: 'var(--color-neutral-200)' }}>
@@ -372,7 +372,7 @@ export default function BMCPage() {
                   style={{ fontSize: 'var(--text-2xs)', color: PLUM }}>Time</p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                   A focused session of 2–3 hours to map and stress-test. Revisited whenever a significant
-                  block changes — not on a calendar cadence.
+                  block changes, not on a calendar cadence.
                 </p>
               </div>
               <div>
@@ -388,7 +388,7 @@ export default function BMCPage() {
                 <p className="font-mono uppercase tracking-widest mb-3"
                   style={{ fontSize: 'var(--text-2xs)', color: PLUM }}>Approach</p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                  Sketch several canvases — the current model, then two or three alternatives — and compare.
+                  Sketch several canvases (the current model, then two or three alternatives) and compare.
                   Write the assumptions on the canvas itself. Present it as a model to be attacked, not a
                   plan to be approved. Keep the versions.
                 </p>
@@ -398,37 +398,37 @@ export default function BMCPage() {
         </Container>
       </LightSection>
 
-      {/* S9 — AI DARK */}
+      {/* S9 - AI DARK */}
       <DarkSection>
         <SectionLabel accent={PLUM}>AI and this method</SectionLabel>
-        <SectionHeadingDark>AI fills all nine blocks in seconds, beautifully. A completed canvas was never the achievement — and now it is not even work.</SectionHeadingDark>
+        <SectionHeadingDark>AI fills all nine blocks in seconds, beautifully. A completed canvas was never the achievement, and now it is not even work.</SectionHeadingDark>
         <p className="max-w-prose mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)', lineHeight: 'var(--leading-relaxed)' }}>
-          Toggle between modes to see what changes when AI generates the canvas — and the one use where
+          Toggle between modes to see what changes when AI generates the canvas, and the one use where
           it is a genuinely valuable adversary.
         </p>
         <BMCAIReactivated />
       </DarkSection>
 
-      {/* S10 — Example LIGHT */}
+      {/* S10 - Example LIGHT */}
       <LightSection>
         <SectionLabel accent={PLUM}>In practice</SectionLabel>
         <SectionHeadingLight>An enterprise software company moves down-market. One block changes. Almost everything else breaks.</SectionHeadingLight>
         <p className="max-w-prose mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
-          Tab A shows the structured canvas working — mapping the current model, changing one block, following
-          the dependencies, and finding the contradiction that tells them what the move actually requires.
+          Tab A shows the structured canvas working: mapping the current model, changing one block, following
+          the dependencies, and finding the contradiction that tells them what the move requires.
           Tab B shows what happens when the canvas is produced by AI instead.
         </p>
         <BMCExampleToggle />
       </LightSection>
 
-      {/* S11 — Frameworks LIGHT */}
+      {/* S11 - Frameworks LIGHT */}
       <LightSection>
         <Container>
           <div className="border-t pt-8" style={{ borderColor: 'var(--color-neutral-200)' }}>
             <SectionLabel accent={PLUM}>Where it fits in the frameworks</SectionLabel>
-            <SectionHeadingLight>The canvas appears at the moments where frameworks decide what the business will actually be.</SectionHeadingLight>
+            <SectionHeadingLight>The canvas appears at the moments where frameworks decide what the business will be.</SectionHeadingLight>
 
             <div className="flex flex-col gap-6 mt-8">
               {FRAMEWORK_LINKS.map(({ slug, name, phase, note }) => (
@@ -456,7 +456,7 @@ export default function BMCPage() {
         </Container>
       </LightSection>
 
-      {/* S12 — Related methods LIGHT */}
+      {/* S12 - Related methods LIGHT */}
       <LightSection>
         <Container>
           <div className="border-t pt-8" style={{ borderColor: 'var(--color-neutral-200)' }}>
@@ -484,7 +484,7 @@ export default function BMCPage() {
         </Container>
       </LightSection>
 
-      {/* S13 — Sources LIGHT */}
+      {/* S13 - Sources LIGHT */}
       <LightSection>
         <Container prose>
           <div className="border-t pt-8" style={{ borderColor: 'var(--color-neutral-200)' }}>
@@ -499,7 +499,7 @@ export default function BMCPage() {
                 },
                 {
                   citation: 'Osterwalder, A., Pigneur, Y., Bernarda, G., & Smith, A. (2014). Value Proposition Design. Wiley.',
-                  note: 'The companion volume that goes deep on the single most important block — the value proposition against the customer segment — and provides the Value Proposition Canvas as the tool for that depth.',
+                  note: 'The companion volume that goes deep on the single most important block (the value proposition against the customer segment) and provides the Value Proposition Canvas as the tool for that depth.',
                 },
                 {
                   citation: 'Bland, D., & Osterwalder, A. (2019). Testing Business Ideas. Wiley.',
@@ -525,7 +525,7 @@ export default function BMCPage() {
                 <div>
                   <p className="font-mono uppercase tracking-widest mb-1"
                     style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
-                    Strategy &amp; Prioritization — Method 9 of 9
+                    Strategy &amp; Prioritization - Method 9 of 9
                   </p>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>
                     40 methods across 6 stage groups

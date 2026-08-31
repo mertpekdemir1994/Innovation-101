@@ -45,12 +45,12 @@ const AUTHOR_CARDS: CardSpec[] = [
   {
     accent: INDIGO,
     label: 'INSTANT, PROFESSIONAL, PLAUSIBLE',
-    body: 'AI fills all nine blocks in seconds. The result looks like competent strategy work — coherently phrased, professionally organized, internally reasonable. This is the trap: it looks like the work of a team that knows the business.',
+    body: 'AI fills all nine blocks in seconds. The result looks like competent strategy work: coherently phrased, professionally organized, internally reasonable. This is the trap: it looks like the work of a team that knows the business.',
   },
   {
     accent: AMBER,
     label: 'EVERY BLOCK IS A GUESS',
-    body: 'AI cannot know whether this segment exists, whether this channel reaches them, whether this revenue stream converts, or whether these costs are what you think. What it produces is a plausible business model — and plausible is exactly what makes an untested hypothesis dangerous.',
+    body: 'AI cannot know whether this segment exists, whether this channel reaches them, whether this revenue stream converts, or whether these costs are what you think. What it produces is a plausible business model, and plausible is exactly what makes an untested hypothesis dangerous.',
   },
   {
     accent: AMBER,
@@ -62,13 +62,13 @@ const AUTHOR_CARDS: CardSpec[] = [
 const ADVERSARY_CARDS: CardSpec[] = [
   {
     accent: INDIGO,
-    label: 'COHERENCE IS FORMAL — AI IS GOOD AT FORMAL',
+    label: 'COHERENCE IS FORMAL, AI IS GOOD AT FORMAL',
     body: 'Finding contradictions between blocks is a formal property check: does this cost structure survive that channel? Does this revenue model work at the volume this segment implies? AI can evaluate these quickly and is genuinely useful for this.',
   },
   {
     accent: INDIGO,
     label: 'GIVE IT YOUR CANVAS AND ASK IT TO BREAK IT',
-    body: 'Hand it your canvas — the one built by people who know the business — and ask where blocks contradict each other. It will find real inconsistencies, fast. This is legitimately the coherence work the method is built around.',
+    body: 'Hand it your canvas (the one built by people who know the business) and ask where blocks contradict each other. It will find real inconsistencies, fast. This is legitimately the coherence work the method is built around.',
   },
   {
     accent: PLUM,
@@ -135,8 +135,8 @@ export default function BMCAIReactivated() {
         preserveAspectRatio="xMidYMid meet"
         style={{ display: 'block' }}
         aria-label={isAuthor
-          ? 'AI-as-author mode: all nine canvas blocks are filled instantly in indigo, looking professional and plausible. Each block is marked UNVALIDATED — every entry is a guess, and the confidence is precisely what makes it dangerous.'
-          : 'AI-as-adversary mode: the Channels and Cost Structure blocks are highlighted in amber as a contradiction. AI has found that the chosen channel breaks the cost structure — this is formal coherence work AI does well.'}
+          ? 'AI-as-author mode: all nine canvas blocks are filled instantly in indigo, looking professional and plausible. Each block is marked UNVALIDATED: every entry is a guess, and the confidence is precisely what makes it dangerous.'
+          : 'AI-as-adversary mode: the Channels and Cost Structure blocks are highlighted in amber as a contradiction. AI has found that the chosen channel breaks the cost structure. This is formal coherence work AI does well.'}
       >
         <defs>
           <filter id="bmc-ai-indigo-glow" x="-35%" y="-35%" width="170%" height="170%">
@@ -288,10 +288,10 @@ export default function BMCAIReactivated() {
           THE HONEST SYNTHESIS
         </p>
         <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '13px', lineHeight: 1.65, margin: 0 }}>
-          Do not ask AI to <em>write</em> your canvas — it produces nine confident guesses arranged beautifully, and you
+          Do not ask AI to <em>write</em> your canvas. It produces nine confident guesses arranged beautifully, and you
           will believe them because they sound like a business. Ask it to <em>break</em> your canvas: to find the
           contradiction between block three and block seven, which is the thing the method exists to surface. Then
-          go and test the assumptions on real customers — because coherence is not truth.
+          go and test the assumptions on real customers, because coherence is not truth.
         </p>
       </div>
     </div>

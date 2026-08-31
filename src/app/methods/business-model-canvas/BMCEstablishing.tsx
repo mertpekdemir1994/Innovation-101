@@ -67,7 +67,7 @@ const LINKS: LinkSpec[] = [
   { d: `M ${cx('kr')},${BLK.kr.y + BLK.kr.h} L ${cx('kr')},${BLK.cost.y}` },
   // COST ←→ REV (the balance: horizontal at bottom border)
   { d: `M ${BLK.cost.x + BLK.cost.w},${cy('cost')} L ${BLK.rev.x},${cy('cost')}` },
-  // STRAINED: CH → COST (channel choice affects cost structure — the tension hint)
+  // STRAINED: CH → COST (channel choice affects cost structure, the tension hint)
   { d: `M ${cx('ch')},${BLK.ch.y + BLK.ch.h} Q ${430},${196} ${340},${BLK.cost.y + BLK.cost.h / 2}`, strained: true },
 ]
 
@@ -98,7 +98,7 @@ export default function BMCEstablishing() {
       <svg
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-        aria-label="The Business Model Canvas as a coherence engine. Nine blocks in the canonical arrangement: Key Partners, Key Activities, Key Resources, Value Propositions, Customer Relationships, Channels, Customer Segments, Cost Structure, and Revenue Streams. Dependency lines connect the blocks — Value Propositions connects to Customer Segments; Channels and Customer Relationships both depend on the Segment; Key Activities and Key Resources flow to Value Propositions and to Cost Structure. One link — between Channels and Cost Structure — is drawn under tension in amber, hinting that a premium channel choice could break the economics."
+        aria-label="The Business Model Canvas as a coherence engine. Nine blocks in the canonical arrangement: Key Partners, Key Activities, Key Resources, Value Propositions, Customer Relationships, Channels, Customer Segments, Cost Structure, and Revenue Streams. Dependency lines connect the blocks: Value Propositions connects to Customer Segments; Channels and Customer Relationships both depend on the Segment; Key Activities and Key Resources flow to Value Propositions and to Cost Structure. One link, between Channels and Cost Structure, is drawn under tension in amber, hinting that a premium channel choice could break the economics."
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
         <defs>

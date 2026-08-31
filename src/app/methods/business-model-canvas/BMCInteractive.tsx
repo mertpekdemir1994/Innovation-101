@@ -42,17 +42,17 @@ interface BlockDetail {
 
 const DETAILS: Record<BlockId, BlockDetail> = {
   kp: {
-    role: 'Who helps you create and deliver — the external network without which the model cannot run.',
+    role: 'Who helps you create and deliver: the external network without which the model cannot run.',
     dependsOn: ['Key Activities', 'Key Resources'],
     hypothesis: 'We assume these partners will commit to working with us on terms that make the model viable.',
   },
   ka: {
-    role: 'What the business must do to deliver its value proposition — the activities it cannot outsource.',
+    role: 'What the business must do to deliver its value proposition: the activities it cannot outsource.',
     dependsOn: ['Value Propositions', 'Key Resources', 'Cost Structure'],
     hypothesis: 'We assume we can perform these activities at the quality and scale the value proposition requires.',
   },
   kr: {
-    role: 'What the business must have to perform its key activities — assets, people, IP, capital.',
+    role: 'What the business must have to perform its key activities: assets, people, IP, capital.',
     dependsOn: ['Key Activities', 'Cost Structure'],
     hypothesis: 'We assume these resources are available and cost what we have estimated.',
   },
@@ -62,27 +62,27 @@ const DETAILS: Record<BlockId, BlockDetail> = {
     hypothesis: 'We assume this segment will pay for this offer and will prefer it to what exists.',
   },
   cr: {
-    role: 'How you acquire, retain, and deepen the relationship — the nature of the bond.',
+    role: 'How you acquire, retain, and deepen the relationship: the nature of the bond.',
     dependsOn: ['Customer Segments', 'Channels', 'Revenue Streams'],
     hypothesis: 'We assume customers want this type of relationship, and that we can afford it at the unit economics we have assumed.',
   },
   ch: {
-    role: 'How you reach customers and deliver the value proposition — the route to market.',
+    role: 'How you reach customers and deliver the value proposition: the route to market.',
     dependsOn: ['Customer Segments', 'Customer Relationships', 'Cost Structure'],
-    hypothesis: 'We assume this channel actually reaches the segment and converts at the rate the revenue model requires.',
+    hypothesis: 'We assume this channel reaches the segment and converts at the rate the revenue model requires.',
   },
   cs: {
-    role: 'Who the business serves — and who it deliberately does not. The foundation of every other block.',
+    role: 'Who the business serves, and who it deliberately does not. The foundation of every other block.',
     dependsOn: ['Value Propositions', 'Customer Relationships', 'Channels'],
     hypothesis: 'We assume this segment exists, is reachable, and will behave as we have assumed.',
   },
   cost: {
-    role: 'What it costs to operate the whole business model — driven by activities, resources, and channels.',
+    role: 'What it costs to operate the whole business model, driven by activities, resources, and channels.',
     dependsOn: ['Key Activities', 'Key Resources', 'Key Partners', 'Channels'],
-    hypothesis: 'We assume total cost of delivery is lower than what the revenue streams will actually bring in.',
+    hypothesis: 'We assume total cost of delivery is lower than what the revenue streams will bring in.',
   },
   rev: {
-    role: 'How and what customers pay — the mechanism by which the model captures the value it creates.',
+    role: 'How and what customers pay: the mechanism by which the model captures the value it creates.',
     dependsOn: ['Customer Segments', 'Channels', 'Value Propositions'],
     hypothesis: 'We assume customers will pay this amount, via this mechanism, at sufficient volume.',
   },
@@ -292,7 +292,7 @@ export default function BMCInteractive() {
           <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
             fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}>
-            CLICK ANY BLOCK — OR USE A SCENARIO ABOVE
+            CLICK ANY BLOCK, OR USE A SCENARIO ABOVE
           </text>
         )}
 
@@ -301,7 +301,7 @@ export default function BMCInteractive() {
           <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${AMBER}0.65)`} style={{ userSelect: 'none' }}>
-            Teams routinely change the segment and update nothing else — which is how a canvas becomes fiction.
+            Teams routinely change the segment and update nothing else, which is how a canvas becomes fiction.
           </text>
         )}
 
@@ -315,7 +315,7 @@ export default function BMCInteractive() {
         )}
       </svg>
 
-      {/* Detail panel — block click */}
+      {/* Detail panel - block click */}
       <AnimatePresence mode="wait">
         {detail && (
           <motion.div
@@ -349,7 +349,7 @@ export default function BMCInteractive() {
                 <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
                   {detail.dependsOn.map(dep => (
                     <li key={dep} style={{ fontSize: '12px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.6 }}>
-                      — {dep}
+                      - {dep}
                     </li>
                   ))}
                 </ul>
@@ -379,7 +379,7 @@ export default function BMCInteractive() {
               background: `${AMBER}0.06)`, border: `1px solid ${AMBER}0.22)`, borderRadius: '8px',
             }}>
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.14em', color: `${AMBER}0.80)`, marginBottom: '10px' }}>
-              SEGMENT CHANGE — THREE BLOCKS MUST MOVE
+              SEGMENT CHANGE: THREE BLOCKS MUST MOVE
             </p>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.80)', lineHeight: 1.55, marginBottom: '12px' }}>
               Switching to a different customer segment is never just a segment change. The value proposition must shift
@@ -405,7 +405,7 @@ export default function BMCInteractive() {
               background: `${AMBER}0.08)`, border: `2px solid ${AMBER}0.45)`, borderRadius: '8px',
             }}>
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.14em', color: `${AMBER}0.90)`, marginBottom: '10px' }}>
-              ⚠ THE BREAK — THIS IS THE METHOD
+              ⚠ THE BREAK: THIS IS THE METHOD
             </p>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.88)', lineHeight: 1.55, marginBottom: '12px' }}>
               Switching to a premium, high-touch channel changes the cost structure. The cost of serving customers
