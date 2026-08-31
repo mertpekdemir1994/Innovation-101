@@ -13,7 +13,7 @@ const ITEMS: { id: State; label: string; summary: string }[] = [
   {
     id:      'avatar',
     label:   'Avatar',
-    summary: 'A single specialized target market — the beachhead group you commit to dominating first. One market, not one person.',
+    summary: 'A single specialized target market: the beachhead group you commit to dominating first. One market, not one person.',
   },
   {
     id:      'personas',
@@ -23,25 +23,25 @@ const ITEMS: { id: State; label: string; summary: string }[] = [
   {
     id:      'segments',
     label:   'Segments',
-    summary: 'Quantitative filters — firmographic or demographic groupings derived from data. Segments size markets; they don\'t describe behavior.',
+    summary: 'Quantitative filters: firmographic or demographic groupings derived from data. Segments size markets; they don\'t describe behavior.',
   },
 ]
 
 const DETAIL: Record<State, { heading: string; description: string; keyDiff: string; link?: string }> = {
   avatar: {
     heading:     'Avatar = one market',
-    description: 'The Avatar answers: which specific group of people will we organize our entire company around first? It is a strategic beachhead commitment, not a customer profile. Your Avatar is a market level — "boutique fitness studio owners with 2–4 instructors" — not a person named Alex who likes yoga. The commitment is to a type of business or customer cluster, before you expand to other clusters.',
-    keyDiff:     'The Avatar narrows which market you serve. Personas describe who is inside that market. You need both — Avatar first, personas second.',
+    description: 'The Avatar answers: which specific group of people will we organize our entire company around first? It is a strategic beachhead commitment, not a customer profile. Your Avatar is a market level ("boutique fitness studio owners with 2–4 instructors"), not a person named Alex who likes yoga. The commitment is to a type of business or customer cluster, before you expand to other clusters.',
+    keyDiff:     'The Avatar narrows which market you serve. Personas describe who is inside that market. You need both: Avatar first, personas second.',
   },
   personas: {
     heading:     'Personas = behavioral types inside the market',
-    description: 'A persona set describes the range of humans you will actually encounter within your Avatar market. The Optimizer, the Avoider, the Newcomer — these are behavioral archetypes grounded in research, not demographic filters. A single Avatar market (boutique fitness studios) can contain multiple user personas (the owner, the front-desk manager, the instructor). Personas humanize the Avatar.',
-    keyDiff:     'Personas are tools for product and design. The Avatar is a strategy tool. Both should be built from real research — personas from interviews, the Avatar from a deliberate market commitment.',
+    description: 'A persona set describes the range of humans you will actually encounter within your Avatar market. The Optimizer, the Avoider, the Newcomer: these are behavioral archetypes grounded in research, not demographic filters. A single Avatar market (boutique fitness studios) can contain multiple user personas (the owner, the front-desk manager, the instructor). Personas humanize the Avatar.',
+    keyDiff:     'Personas are tools for product and design. The Avatar is a strategy tool. Both should be built from real research: personas from interviews, the Avatar from a deliberate market commitment.',
     link:        '/methods/personas-archetypes',
   },
   segments: {
     heading:     'Segments = quantitative market slices',
-    description: 'Segmentation is the practice of dividing a large market into groups by measurable characteristics — company size, geography, industry code, age bracket, revenue band. Segments are useful for sizing markets and planning go-to-market coverage. They do not capture behavior, urgency, or fit. The Avatar discipline often uses segment data to find the niche, then commits to a specific group within it.',
+    description: 'Segmentation is the practice of dividing a large market into groups by measurable characteristics: company size, geography, industry code, age bracket, revenue band. Segments are useful for sizing markets and planning go-to-market coverage. They do not capture behavior, urgency, or fit. The Avatar discipline often uses segment data to find the niche, then commits to a specific group within it.',
     keyDiff:     'Segments tell you the size of a group. The Avatar tells you which group you are betting on. Personas tell you how the people inside that group actually behave.',
   },
 }

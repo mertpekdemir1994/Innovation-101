@@ -19,9 +19,9 @@ const PLUM = '#6B4A77'
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const FRAMEWORK_LINKS = [
-  { slug: 'lean-startup',     name: 'Lean Startup',     phase: 'Hypothesis', note: 'The Avatar defines who you are running the first experiment for — the beachhead customer whose validation is the only validation that matters early.' },
+  { slug: 'lean-startup',     name: 'Lean Startup',     phase: 'Hypothesis', note: 'The Avatar defines who you are running the first experiment for: the beachhead customer whose validation is the only validation that matters early.' },
   { slug: 'double-diamond',   name: 'Double Diamond',   phase: 'Define',     note: 'The Avatar is a key Define output: narrowing from a broad problem space to the specific user group you are committing to solve it for.' },
-  { slug: 'agile-innovation', name: 'Agile Innovation', phase: 'Backlog',    note: 'Avatar framing shapes the backlog — features that serve the Avatar go to the top, regardless of how appealing they might be for other user types.' },
+  { slug: 'agile-innovation', name: 'Agile Innovation', phase: 'Backlog',    note: 'Avatar framing shapes the backlog: features that serve the Avatar go to the top, regardless of how appealing they might be for other user types.' },
 ]
 
 const RELATED_METHODS = [
@@ -37,7 +37,7 @@ export default function AvatarsPage() {
   return (
     <>
       {/* ────────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -79,7 +79,7 @@ export default function AvatarsPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK (scroll-in bullseye)
+          S2 - Establishing visual   DARK (scroll-in bullseye)
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -90,7 +90,7 @@ export default function AvatarsPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -100,10 +100,10 @@ export default function AvatarsPage() {
 
             <div className="flex flex-col gap-5">
               <Body>
-                An Avatar is a specific, named target market — the narrowest viable group you are willing to organize your entire go-to-market strategy around in the early phase. Not a demographic slice, not a user persona, and emphatically not a fictional character with a stock photo. The Avatar answers a strategic question: which specific type of customer will we dominate first, before we try to serve anyone else?
+                An Avatar is a specific, named target market: the narrowest viable group you are willing to organize your entire go-to-market strategy around in the early phase. Not a demographic slice, not a user persona, and emphatically not a fictional character with a stock photo. The Avatar answers a strategic question: which specific type of customer will we dominate first, before we try to serve anyone else?
               </Body>
               <Body>
-                The concept borrows its logic from military beachhead strategy: secure a small, defensible position with overwhelming force before expanding. Applied to market strategy, it means picking a group small enough that you can realistically own it — earn the reputation, generate the referrals, understand the needs at a depth that no generalist competitor can match — and using that position to take the next ring outward.
+                The concept borrows its logic from military beachhead strategy: secure a small, defensible position with overwhelming force before expanding. Applied to market strategy, it means picking a group small enough that you can realistically own it (earn the reputation, generate the referrals, understand the needs at a depth that no generalist competitor can match) and using that position to take the next ring outward.
               </Body>
               <Body>
                 The Avatar is not a permanent constraint. Geoffrey Moore&rsquo;s technology adoption lifecycle, Thiel&rsquo;s last mover advantage, and Clay Christensen&rsquo;s disruptive innovation all reach the same conclusion by different routes: win a small market completely first, then expand from strength. Amazon was the bookstore. Google was for researchers. Facebook was for Harvard students. The Avatar is the discipline of picking your bookstore moment on purpose, rather than defaulting to &ldquo;everyone who might conceivably need this.&rdquo;
@@ -114,7 +114,7 @@ export default function AvatarsPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S4 — Interactive bullseye   DARK
+          S4 - Interactive bullseye   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -125,7 +125,7 @@ export default function AvatarsPage() {
               className="mb-12 max-w-[520px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Each ring represents a different level of market commitment. Moving inward means increasing focus and decreasing addressable market — and dramatically increasing the probability of actually winning.
+              Each ring represents a different level of market commitment. Moving inward means increasing focus and decreasing addressable market, and dramatically increasing the probability of actually winning.
             </p>
             <AvatarsInteractive />
           </div>
@@ -133,7 +133,7 @@ export default function AvatarsPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -149,7 +149,7 @@ export default function AvatarsPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'You are pre-product-market fit and need to concentrate limited resources rather than spread thin across multiple potential customer types.',
-                    'Your current message is trying to speak to too many people and landing with none of them — no word-of-mouth, poor referrals, high CAC.',
+                    'Your current message is trying to speak to too many people and landing with none of them: no word-of-mouth, poor referrals, high CAC.',
                     'You need to identify which specific group\'s problem to solve first before building features for everyone.',
                     'The team has a genuine choice between multiple plausible customer groups and needs a principled way to pick one to go deep on.',
                   ].map((item, i) => (
@@ -170,7 +170,7 @@ export default function AvatarsPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'You already have strong product-market fit and a clear customer base. The Avatar discipline solves an early-stage focus problem, not a scaling one.',
-                    'You need to understand the range of behavioral types within your customer base — that is Personas & Archetypes, not an Avatar.',
+                    'You need to understand the range of behavioral types within your customer base: that is Personas & Archetypes, not an Avatar.',
                     'You are doing market sizing or segmentation analysis. Those are quantitative tools for a different question.',
                     'The commitment will be used as permanent permission to ignore everyone else. The Avatar is a first-mover discipline, not a forever constraint.',
                   ].map((item, i) => (
@@ -190,7 +190,7 @@ export default function AvatarsPage() {
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
-                The honest limit: the Avatar discipline requires a real commitment, and most leadership teams resist it. &ldquo;Why would we exclude potential customers?&rdquo; is a reasonable objection — until you do the math on how much it costs to market to five different groups simultaneously versus dominating one and expanding from strength.
+                The honest limit: the Avatar discipline requires a real commitment, and most leadership teams resist it. &ldquo;Why would we exclude potential customers?&rdquo; is a reasonable objection, until you do the math on how much it costs to market to five different groups simultaneously versus dominating one and expanding from strength.
               </p>
             </div>
           </div>
@@ -198,7 +198,7 @@ export default function AvatarsPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S6 — How it works   WARM
+          S6 - How it works   WARM
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -221,7 +221,7 @@ export default function AvatarsPage() {
                 {
                   n: '03',
                   title: 'Choose one, explicitly.',
-                  body: 'Pick one group. Write the decision down. Name the Avatar by describing the person precisely enough that a new hire can identify them in the wild — their role, their context, their most urgent pain, and the specific moment they would reach for your product. The act of writing it forces clarity that "we\'re targeting SMBs" never achieves.',
+                  body: 'Pick one group. Write the decision down. Name the Avatar by describing the person precisely enough that a new hire can identify them in the wild (their role, their context, their most urgent pain, and the specific moment they would reach for your product). The act of writing it forces clarity that "we\'re targeting SMBs" never achieves.',
                 },
                 {
                   n: '04',
@@ -255,13 +255,13 @@ export default function AvatarsPage() {
       </WarmSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good Avatar discipline looks like — and what breaks it.</SectionHeadingLight>
+            <SectionHeadingLight>What good Avatar discipline looks like, and what breaks it.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
               When it goes well
@@ -270,8 +270,8 @@ export default function AvatarsPage() {
               {[
                 'The Avatar is specific enough that someone in the market would read the description and immediately say "that\'s me."',
                 'The decision is explicit and written down, not implicit and assumed. Everyone on the team can name the Avatar from memory.',
-                'Product, marketing, and sales are all organized around the same Avatar — there is no disagreement about who the primary customer is.',
-                'The team can explain *why* this group was chosen over alternatives — the criteria and the trade-offs are understood, not just the conclusion.',
+                'Product, marketing, and sales are all organized around the same Avatar: there is no disagreement about who the primary customer is.',
+                'The team can explain *why* this group was chosen over alternatives: the criteria and the trade-offs are understood, not just the conclusion.',
                 'Expansion happens from a position of beachhead strength, with a clear playbook for taking the next ring.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
@@ -298,7 +298,7 @@ export default function AvatarsPage() {
                 },
                 {
                   mistake: 'Confusing the Avatar with a persona.',
-                  fix: 'The Avatar is a market. A persona is a behavioral type. You can have three personas within your Avatar market — the owner, the front-desk manager, the instructor. These are different tools answering different questions. See the boundary section.',
+                  fix: 'The Avatar is a market. A persona is a behavioral type. You can have three personas within your Avatar market: the owner, the front-desk manager, the instructor. These are different tools answering different questions. See the boundary section.',
                 },
                 {
                   mistake: 'Expanding before the beachhead is saturated.',
@@ -306,7 +306,7 @@ export default function AvatarsPage() {
                 },
                 {
                   mistake: 'Using the Avatar as an excuse to ignore everyone else.',
-                  fix: 'The Avatar is a sequencing discipline, not a permanent wall. Customers outside the Avatar who show up should be served. The Avatar filters proactive pursuit — it does not refuse revenue.',
+                  fix: 'The Avatar is a sequencing discipline, not a permanent wall. Customers outside the Avatar who show up should be served. The Avatar filters proactive pursuit. It does not refuse revenue.',
                 },
               ].map(({ mistake, fix }) => (
                 <div
@@ -328,7 +328,7 @@ export default function AvatarsPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S8 — Logistics   WARM
+          S8 - Logistics   WARM
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -336,26 +336,26 @@ export default function AvatarsPage() {
             <SectionLabel accent={PLUM}>Logistics</SectionLabel>
             <SectionHeadingLight>Running the Avatar selection session.</SectionHeadingLight>
             <Body>
-              Avatar selection is a leadership team exercise — product, marketing, and sales at minimum. Half a day is the right scope: enough time to surface all candidate groups, score them rigorously, and reach an explicit commitment the whole team will actually follow.
+              Avatar selection is a leadership team exercise (product, marketing, and sales at minimum). Half a day is the right scope: enough time to surface all candidate groups, score them rigorously, and reach an explicit commitment the whole team will actually follow.
             </Body>
 
             <div className="flex flex-col gap-7 mt-10">
               {[
                 {
                   label: 'Who needs to be in the room',
-                  body: 'Product leadership, head of marketing, head of sales, and the CEO or founder. If these functions are not aligned on the Avatar, the output will not be followed. Alignment in the room is the product of the session — not a prerequisite for it.',
+                  body: 'Product leadership, head of marketing, head of sales, and the CEO or founder. If these functions are not aligned on the Avatar, the output will not be followed. Alignment in the room is the product of the session, not a prerequisite for it.',
                 },
                 {
                   label: 'Candidate generation (first hour)',
-                  body: 'Each participant silently lists every plausible customer type on sticky notes — one group per note. Share and cluster. You are looking for genuinely distinct types, not variations on the same group. Expect 8–15 candidates from a motivated team.',
+                  body: 'Each participant silently lists every plausible customer type on sticky notes: one group per note. Share and cluster. You are looking for genuinely distinct types, not variations on the same group. Expect 8–15 candidates from a motivated team.',
                 },
                 {
                   label: 'Scoring each candidate (second hour)',
-                  body: 'Score each candidate on five criteria: urgency of the problem, reachability through a concentrated channel, community self-reference (will they talk to each other?), market size (large enough for a business, small enough to own), and the team\'s ability to build a distinctive advantage here. Be honest about the last one — domain knowledge and relationships are a real edge.',
+                  body: 'Score each candidate on five criteria: urgency of the problem, reachability through a concentrated channel, community self-reference (will they talk to each other?), market size (large enough for a business, small enough to own), and the team\'s ability to build a distinctive advantage here. Be honest about the last one: domain knowledge and relationships are a real edge.',
                 },
                 {
                   label: 'Making the decision (third hour)',
-                  body: 'Narrow to the top two or three candidates and debate the trade-offs explicitly. Then pick one. The test of a good Avatar decision is that the conversation about why this group over the others is productive and specific — not that the room is enthusiastic. Enthusiasm about a broad group is a warning sign, not a positive signal.',
+                  body: 'Narrow to the top two or three candidates and debate the trade-offs explicitly. Then pick one. The test of a good Avatar decision is that the conversation about why this group over the others is productive and specific, not that the room is enthusiastic. Enthusiasm about a broad group is a warning sign, not a positive signal.',
                 },
                 {
                   label: 'Writing the Avatar',
@@ -380,7 +380,7 @@ export default function AvatarsPage() {
       </WarmSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S9 — AI and this method   DARK
+          S9 - AI and this method   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -399,7 +399,7 @@ export default function AvatarsPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -407,7 +407,7 @@ export default function AvatarsPage() {
             <SectionLabel accent={PLUM}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same team. Two approaches to finding the Avatar.</SectionHeadingLight>
             <p className="mb-10" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}>
-              A scheduling software startup uses the same product and the same market opportunity — once with traditional Avatar discipline, once with AI-led market analysis. The difference in outcome reveals exactly what the Avatar discipline is doing that AI analysis is not.
+              A scheduling software startup uses the same product and the same market opportunity: once with traditional Avatar discipline, once with AI-led market analysis. The difference in outcome reveals exactly what the Avatar discipline is doing that AI analysis is not.
             </p>
             <AvatarsExampleToggle />
           </div>
@@ -415,7 +415,7 @@ export default function AvatarsPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S11 — Avatars vs Personas vs Segments   DARK
+          S11 - Avatars vs Personas vs Segments   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -434,7 +434,7 @@ export default function AvatarsPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S12 — Frameworks   LIGHT
+          S12 - Frameworks   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -442,7 +442,7 @@ export default function AvatarsPage() {
             <SectionLabel accent={PLUM}>Frameworks</SectionLabel>
             <SectionHeadingLight>Where the Avatar shows up.</SectionHeadingLight>
             <p className="mb-8" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}>
-              The Avatar appears wherever a framework requires an explicit commitment to a primary customer — typically early in the process, before resources are committed to building.
+              The Avatar appears wherever a framework requires an explicit commitment to a primary customer, typically early in the process, before resources are committed to building.
             </p>
 
             <div className="flex flex-col gap-3">
@@ -470,7 +470,7 @@ export default function AvatarsPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S13 — Related methods   LIGHT
+          S13 - Related methods   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -500,7 +500,7 @@ export default function AvatarsPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S14 — Sources & further reading   WARM
+          S14 - Sources & further reading   WARM
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>

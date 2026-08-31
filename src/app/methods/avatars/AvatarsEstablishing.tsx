@@ -22,7 +22,7 @@ export default function AvatarsEstablishing() {
   const ringIn = { hidden: { opacity: 0, scale: 0.92 }, visible: { opacity: 1, scale: 1 } }
   const fadeIn = { hidden: { opacity: 0 },              visible: { opacity: 1 } }
 
-  // staggerChildren propagates through React context — plain <svg> doesn't break it
+  // staggerChildren propagates through React context - plain <svg> doesn't break it
   const container = {
     hidden:  {},
     visible: { transition: prefersReduced ? {} : { staggerChildren: 0.17, delayChildren: 0.05 } },
@@ -50,7 +50,7 @@ export default function AvatarsEstablishing() {
           </filter>
         </defs>
 
-        {/* Ambient plum wash — child 0 in stagger */}
+        {/* Ambient plum wash - child 0 in stagger */}
         <motion.ellipse
           cx={CX} cy={CY} rx={174} ry={174}
           fill={`${PLUM}0.06)`}
@@ -95,7 +95,7 @@ export default function AvatarsEstablishing() {
           )
         })}
 
-        {/* ── Label column — appear after rings via stagger ── */}
+        {/* Label column - appear after rings via stagger */}
         {RINGS.map(({ id, r, label, sub, labelY }, i) => {
           const isBeachhead = i === 3
           return (
@@ -125,7 +125,7 @@ export default function AvatarsEstablishing() {
           )
         })}
 
-        {/* Narrowing annotation — last in stagger sequence */}
+        {/* Narrowing annotation - last in stagger sequence */}
         <motion.text
           x={CX - 170} y={CY}
           textAnchor="middle"

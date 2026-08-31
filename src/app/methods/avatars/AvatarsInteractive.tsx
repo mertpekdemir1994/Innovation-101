@@ -20,22 +20,22 @@ const RING_DETAIL: Record<RingId, { heading: string; focus: string; body: string
   'whole-market': {
     heading: 'The Whole Market',
     focus:   'Too broad to win',
-    body:    'Everyone who could conceivably use what you offer. Defined by a product category or a broad behavior — "people who budget" or "small business owners." So large and heterogeneous that committing here means committing to no one in particular. This is where companies go when they want the biggest possible addressable market slide for their pitch deck.',
+    body:    'Everyone who could conceivably use what you offer. Defined by a product category or a broad behavior: "people who budget" or "small business owners." So large and heterogeneous that committing here means committing to no one in particular. This is where companies go when they want the biggest possible addressable market slide for their pitch deck.',
   },
   segment: {
     heading: 'A Broad Segment',
     focus:   'Large, and still too diffuse',
-    body:    'A large slice of the market with some shared characteristics — an industry, a life stage, a geography, a size band. Segmentation is real progress: something is shared. But a broad segment still contains wildly different needs, budgets, and urgency levels. Marketing to a segment means compromise messaging and average solutions that don\'t fully satisfy anyone.',
+    body:    'A large slice of the market with some shared characteristics: an industry, a life stage, a geography, a size band. Segmentation is real progress: something is shared. But a broad segment still contains wildly different needs, budgets, and urgency levels. Marketing to a segment means compromise messaging and average solutions that don\'t fully satisfy anyone.',
   },
   niche: {
     heading: 'A Specific Niche',
     focus:   'Winning is now conceivable',
-    body:    'A tightly-defined group with a shared, urgent need and enough homogeneity that a single well-designed product genuinely solves it. Referrals happen naturally here because the fit is tight and the word travels within the group. You can\'t easily afford niche margins at scale — but you can build an unassailable reputation before anyone notices you exist.',
+    body:    'A tightly-defined group with a shared, urgent need and enough homogeneity that a single well-designed product genuinely solves it. Referrals happen naturally here because the fit is tight and the word travels within the group. You can\'t easily afford niche margins at scale, but you can build an unassailable reputation before anyone notices you exist.',
   },
   beachhead: {
     heading: 'The Avatar',
     focus:   'Commit everything here first',
-    body:    'The single specialized target you choose to own completely before expanding. Not the customer you want to have — the beachhead from which you take the rest of the market. The classic test: if 100 people of this exact type used your product, would you have a real business? The Avatar discipline is refusing to generalize until you\'ve dominated this one.',
+    body:    'The single specialized target you choose to own completely before expanding. Not the customer you want to have. The beachhead from which you take the rest of the market. The classic test: if 100 people of this exact type used your product, would you have a real business? The Avatar discipline is refusing to generalize until you\'ve dominated this one.',
   },
 }
 
@@ -95,7 +95,7 @@ export default function AvatarsInteractive() {
           width="100%"
           style={{ overflow: 'visible' }}
           role="group"
-          aria-label="Bullseye diagram — click a ring to learn about each market level"
+          aria-label="Bullseye diagram, click a ring to learn about each market level"
         >
           <defs>
             <filter id="av-int-glow" x="-40%" y="-40%" width="180%" height="180%">

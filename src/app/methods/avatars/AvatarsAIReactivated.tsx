@@ -155,7 +155,7 @@ export default function AvatarsAIReactivated() {
             )
           })}
 
-          {/* Center AVATAR label — always inside beachhead */}
+          {/* Center AVATAR label - always inside beachhead */}
           <motion.text
             x={CX} y={CY + 4}
             textAnchor="middle" dominantBaseline="middle"
@@ -214,7 +214,7 @@ export default function AvatarsAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${AI_C}0.70)` }}
               >What AI does well</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI is excellent at market sizing and broad segment analysis. It can ingest industry reports, synthesize TAM/SAM estimates, and surface patterns across segment data faster than any research team. For the outer rings — identifying a broad segment, understanding its size, mapping who might conceivably be interested — AI is genuinely useful.
+                AI is excellent at market sizing and broad segment analysis. It can ingest industry reports, synthesize TAM/SAM estimates, and surface patterns across segment data faster than any research team. For the outer rings (identifying a broad segment, understanding its size, mapping who might conceivably be interested), AI is genuinely useful.
               </p>
             </div>
             <div className="rounded-xl p-5"
@@ -224,14 +224,14 @@ export default function AvatarsAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(251,146,60,0.75)' }}
               >What it misses</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                The beachhead decision is not a data problem — it is a commitment problem. Which niche do <em>you</em> want to own? Which specific people are you willing to organize your entire company around? AI can tell you the size of a niche; it cannot tell you which one to commit to. The Avatar is a bet on your thesis, not an output of pattern matching.
+                The beachhead decision is not a data problem. It is a commitment problem. Which niche do <em>you</em> want to own? Which specific people are you willing to organize your entire company around? AI can tell you the size of a niche; it cannot tell you which one to commit to. The Avatar is a bet on your thesis, not an output of pattern matching.
               </p>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Honest synthesis — always visible */}
+      {/* Honest synthesis - always visible */}
       <div className="rounded-xl p-6"
         style={{ background: `${PLUM}0.08)`, border: `1px solid ${PLUM}0.20)` }}
       >
@@ -239,7 +239,7 @@ export default function AvatarsAIReactivated() {
           style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.70)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
-          Use AI to understand the rings — segment size, competitive intensity, growth rates. Use human judgment to choose which ring to commit to. The Avatar discipline is fundamentally about the courage to pick one specific group and be wrong about it, not about finding the algorithmically optimal segment. AI narrows the search space; it cannot make the bet.
+          Use AI to understand the rings: segment size, competitive intensity, growth rates. Use human judgment to choose which ring to commit to. The Avatar discipline is fundamentally about the courage to pick one specific group and be wrong about it, not about finding the algorithmically optimal segment. AI narrows the search space; it cannot make the bet.
         </p>
       </div>
     </div>
