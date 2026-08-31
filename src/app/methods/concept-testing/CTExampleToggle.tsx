@@ -56,7 +56,7 @@ export default function CTExampleToggle() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 {[
                   { label: 'PRE-SET THRESHOLD', text: 'Defined before testing: 40% of real target customers had to actually sign up and provide payment details for the concept to proceed.' },
-                  { label: 'THE COMMITMENT ASK', text: 'Instead of asking &ldquo;would you be interested?&rdquo;, they asked real target customers to sign up and provide payment details for a pilot — something real on the line.' },
+                  { label: 'THE COMMITMENT ASK', text: 'Instead of asking &ldquo;would you be interested?&rdquo;, they asked real target customers to sign up and provide payment details for a pilot, something real on the line.' },
                   { label: 'RECRUITING', text: 'Real target customers, not colleagues or friends. Screened against the actual target profile to ensure the reactions came from the right people.' },
                 ].map((col, i) => (
                   <div key={i} className="rounded p-3" style={{ background: `${PLUM}0.04)` }}>
@@ -78,7 +78,7 @@ export default function CTExampleToggle() {
                       <span className="text-xs font-semibold text-neutral-700">Stated interest</span>
                       <span className="text-sm font-semibold" style={{ color: `${PLUM}1)` }}>76%</span>
                     </div>
-                    <p className="text-xs text-neutral-500">A large majority said the concept sounded appealing — warm, encouraging, and meaningless.</p>
+                    <p className="text-xs text-neutral-500">A large majority said the concept sounded appealing, warm, encouraging, and meaningless.</p>
                   </div>
                   <div className="border-t border-neutral-100 pt-3">
                     <div className="flex items-center justify-between mb-1">
@@ -89,7 +89,7 @@ export default function CTExampleToggle() {
                   </div>
                   <div className="border-t border-neutral-100 pt-3 rounded p-2 bg-amber-50">
                     <p className="text-[9px] font-semibold uppercase tracking-wider text-amber-700 mb-1">Threshold: 40% · Verdict: × FAILS</p>
-                    <p className="text-xs text-neutral-600">28% did not clear the pre-set 40% threshold — and because the bar was set before the test, there was no way to spin the warm verbal interest into a green light.</p>
+                    <p className="text-xs text-neutral-600">28% did not clear the pre-set 40% threshold, and because the bar was set before the test, there was no way to spin the warm verbal interest into a green light.</p>
                   </div>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export default function CTExampleToggle() {
                   Probing the gap revealed the concept solved a problem people recognised but did not feel acutely enough to pay a premium for. The team repositioned to a narrower segment that felt the pain far more intensely.
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed mb-3">
-                  They re-tested against the same 40% threshold. The narrower segment returned a 52% commitment rate — above the bar. They launched to that segment.
+                  They re-tested against the same 40% threshold. The narrower segment returned a 52% commitment rate, above the bar. They launched to that segment.
                 </p>
                 <p className="text-xs font-semibold text-green-700">
                   The gaps prevented a costly launch into weak demand and pointed to the segment where real demand existed.
@@ -168,14 +168,14 @@ export default function CTExampleToggle() {
               <div className="border rounded-lg p-5 border-amber-200 bg-amber-50">
                 <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-700 mb-3">What would have happened</p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
-                  The AI confidently reproduced the executives&rsquo; optimism rather than testing it. Had the team trusted it, they would have launched into the same weak demand the real test caught — with the AI&rsquo;s confidence making the mistake feel validated.
+                  The AI confidently reproduced the executives&rsquo; optimism rather than testing it. Had the team trusted it, they would have launched into the same weak demand the real test caught, with the AI&rsquo;s confidence making the mistake feel validated.
                 </p>
               </div>
               <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.18)` }}>
                 <p className="text-[10px] font-semibold uppercase tracking-widest mb-3"
                   style={{ color: `${INDIGO}0.80)` }}>Why it fails structurally</p>
                 <p className="text-xs text-neutral-600 leading-relaxed">
-                  A simulation has nothing at stake and so can only ever produce stated preference — a costless yes. That is exactly the warm agreement the method exists to see past. AI did not make a mistake; it was asked to do something it structurally cannot do.
+                  A simulation has nothing at stake and so can only ever produce stated preference: a costless yes. That is exactly the warm agreement the method exists to see past. AI did not make a mistake; it was asked to do something it structurally cannot do.
                 </p>
               </div>
             </div>
@@ -185,7 +185,7 @@ export default function CTExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
                 style={{ color: `${INDIGO}0.80)` }}>The honest readout</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                AI could have helped design this test — writing the concept description, flagging leading questions, suggesting the commitment mechanism — and could have synthesized the real results afterward. But it could not be the test, because the test measures revealed preference and a simulated customer can only ever say a costless yes. The strongest version used real target users and a pre-set threshold. AI, at most, helped structure and analyze it.
+                AI could have helped design this test (writing the concept description, flagging leading questions, suggesting the commitment mechanism) and could have synthesized the real results afterward. But it could not be the test, because the test measures revealed preference and a simulated customer can only ever say a costless yes. The strongest version used real target users and a pre-set threshold. AI, at most, helped structure and analyze it.
               </p>
             </div>
           </motion.div>

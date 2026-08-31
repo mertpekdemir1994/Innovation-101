@@ -25,7 +25,7 @@ type Mode = 'human' | 'ai'
 
 const AI_CARDS = [
   { h: 'Design and structure the test', b: 'AI can help write a rigorous concept description, suggest a pre-set success threshold, propose commitment mechanisms, and flag leading questions before the test runs. This is useful and low-risk.' },
-  { h: 'Synthesize real results', b: 'After a test with real users, AI can cluster qualitative feedback, find patterns across sessions, and summarise the commitment data. Pattern-finding at speed — as long as the raw signal stays in view.' },
+  { h: 'Synthesize real results', b: 'After a test with real users, AI can cluster qualitative feedback, find patterns across sessions, and summarise the commitment data. Pattern-finding at speed, as long as the raw signal stays in view.' },
   { h: 'The fundamental limit: revealed preference', b: 'A simulated customer has nothing at stake and so can only produce a costless stated yes. It cannot walk away, fail to pay, or reveal the gap between interest and commitment. That gap is the entire method. AI cannot cross it.' },
 ]
 
@@ -72,7 +72,7 @@ export default function CTAIReactivated() {
         {/* Track */}
         <rect x={S_L} y={S_TOP} width={BAR_W} height={S_H} rx={4}
           fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" strokeWidth={1} />
-        {/* Stated bar — AMBER in human mode, INDIGO in AI mode */}
+        {/* Stated bar - AMBER in human mode, INDIGO in AI mode */}
         <rect x={S_L} y={S_TOP} width={BAR_W} height={S_H} rx={4}
           fill={isAI ? `${INDIGO}0.25)` : `${AMBER}0.22)`}
           stroke={isAI ? `${INDIGO}0.62)` : `${AMBER}0.60)`}
@@ -106,12 +106,12 @@ export default function CTAIReactivated() {
 
         <AnimatePresence mode="wait">
           {isAI ? (
-            /* AI mode: revealed bar absent — only dashed outline */
+            /* AI mode: revealed bar absent - only dashed outline */
             <motion.g key="ai-revealed"
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
               animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.28 }}>
-              {/* Empty outline — AI cannot produce revealed preference */}
+              {/* Empty outline - AI cannot produce revealed preference */}
               <rect x={R_L} y={BASE_Y - 18} width={BAR_W} height={18} rx={4}
                 fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" strokeWidth={1}
                 strokeDasharray="4 3" />
@@ -160,13 +160,13 @@ export default function CTAIReactivated() {
           letterSpacing={1.4} fontFamily="monospace">REVEALED</text>
         <text x={R_CX} y={46} textAnchor="middle"
           fill="rgba(255,255,255,0.28)" fontSize={6} fontFamily="monospace">
-          {isAI ? 'No stake — cannot commit' : 'What people do'}
+          {isAI ? 'No stake, cannot commit' : 'What people do'}
         </text>
         <text x={R_CX} y={BASE_Y + 12} textAnchor="middle"
           fill={isAI ? `${INDIGO}0.40)` : `${PLUM}0.45)`}
           fontSize={6} fontFamily="monospace"
           style={{ transition: 'fill 0.35s' }}>
-          {isAI ? 'Absent — structurally impossible' : 'Revealed commitment'}
+          {isAI ? 'Absent, structurally impossible' : 'Revealed commitment'}
         </text>
 
         {/* ── THRESHOLD LINE ─────────────────────────────────── */}
@@ -178,7 +178,7 @@ export default function CTAIReactivated() {
           fill={isAI ? `${INDIGO}0.60)` : 'rgba(255,255,255,0.62)'}
           fontSize={7} fontWeight={600} letterSpacing={1.2} fontFamily="monospace"
           style={{ transition: 'fill 0.35s' }}>
-          {isAI ? 'THRESHOLD — CANNOT CLEAR' : 'SUCCESS THRESHOLD'}
+          {isAI ? 'THRESHOLD: CANNOT CLEAR' : 'SUCCESS THRESHOLD'}
         </text>
         <text x={548} y={TH_Y + 5}
           fill="rgba(255,255,255,0.28)" fontSize={6} fontFamily="monospace" letterSpacing={0.8}>
@@ -226,7 +226,7 @@ export default function CTAIReactivated() {
             className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {[
               { h: 'Real target users, real stakes', b: 'The signal comes from people who actually belong to the target audience, asked to do something that costs them something. No surrogate, no simulation, no shortcut.' },
-              { h: 'The threshold is what makes it honest', b: 'Without a pre-set criterion, the team reads the result it wanted to see. With it, the revealed commitment either clears the bar or it does not — and the decision follows.' },
+              { h: 'The threshold is what makes it honest', b: 'Without a pre-set criterion, the team reads the result it wanted to see. With it, the revealed commitment either clears the bar or it does not, and the decision follows.' },
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border"
                 style={{ background: `${PLUM}0.10)`, borderColor: `${PLUM}0.26)` }}>
@@ -244,7 +244,7 @@ export default function CTAIReactivated() {
         style={{ background: 'rgba(255,255,255,0.04)' }}>
         <p className="text-[10px] font-semibold uppercase tracking-wider text-white/28 mb-1">Synthesis</p>
         <p className="text-xs text-white/42 leading-relaxed">
-          AI can help design the test well and synthesize real results afterward. It cannot substitute for the test itself, because the test measures revealed preference — real people doing costly things — and a model with nothing at stake can only produce the stated interest the method was built to see past.
+          AI can help design the test well and synthesize real results afterward. It cannot substitute for the test itself, because the test measures revealed preference (real people doing costly things) and a model with nothing at stake can only produce the stated interest the method was built to see past.
         </p>
       </div>
     </div>

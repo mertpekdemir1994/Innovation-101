@@ -34,7 +34,7 @@ const FRAMEWORK_LINKS = [
     slug: 'design-sprint',
     name: 'Design Sprint',
     phase: 'Friday',
-    note: "Friday in a Design Sprint is a five-user test of the week's prototype. The concept testing discipline — real target users, a structured commitment or reaction ask, and an honest reading of behavior — is exactly what Friday requires. Without it, Friday becomes a show-and-tell rather than a test.",
+    note: "Friday in a Design Sprint is a five-user test of the week's prototype. The concept testing discipline (real target users, a structured commitment or reaction ask, and an honest reading of behavior) is exactly what Friday requires. Without it, Friday becomes a show-and-tell rather than a test.",
   },
   {
     slug: 'agile-innovation',
@@ -54,7 +54,7 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'value-proposition-canvas',
     name: 'Value Proposition Canvas',
-    rel: 'The natural upstream method. The canvas produces a value-proposition hypothesis — a map of claimed fit between what the product offers and what the customer needs. Concept testing is how that hypothesis meets real customers before the team commits to building it. The connections drawn in the canvas become the claims the test is designed to validate or disprove.',
+    rel: 'The natural upstream method. The canvas produces a value-proposition hypothesis: a map of claimed fit between what the product offers and what the customer needs. Concept testing is how that hypothesis meets real customers before the team commits to building it. The connections drawn in the canvas become the claims the test is designed to validate or disprove.',
   },
   {
     slug: null,
@@ -64,7 +64,7 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: null,
     name: 'Assumption Mapping',
-    rel: 'Surfaces the riskiest assumptions a concept rests on, ranked by uncertainty and importance. Concept testing is how the desirability assumptions — the ones about whether people actually want this — get tested. Assumption mapping tells you what to test first; concept testing provides the evidence that replaces assumption with data.',
+    rel: 'Surfaces the riskiest assumptions a concept rests on, ranked by uncertainty and importance. Concept testing is how the desirability assumptions (the ones about whether people actually want this) get tested. Assumption mapping tells you what to test first; concept testing provides the evidence that replaces assumption with data.',
   },
   {
     slug: 'in-depth-interviews',
@@ -84,7 +84,7 @@ export default function ConceptTestingPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -112,7 +112,7 @@ export default function ConceptTestingPage() {
               className="mb-3 max-w-[600px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              Putting a concept in front of real target users to gather structured evidence on whether they would actually use or buy it &mdash; before committing to build.
+              Putting a concept in front of real target users to gather structured evidence on whether they would actually use or buy it, before committing to build.
             </p>
 
             <p
@@ -126,7 +126,7 @@ export default function ConceptTestingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -137,7 +137,7 @@ export default function ConceptTestingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -149,12 +149,12 @@ export default function ConceptTestingPage() {
               <Body>
                 Concept testing is the structured evaluation of a proposed solution with real members of the target audience,
                 to learn whether it resonates, whether it solves a real problem, and whether people would actually use or buy
-                it &mdash; before significant resources are committed to building it. Its purpose is to replace internal opinion
+                it, before significant resources are committed to building it. Its purpose is to replace internal opinion
                 and debate with external evidence from the people who actually matter.
               </Body>
               <Body>
                 Its entire value rests on one hard distinction: stated preference versus revealed preference. Ask people whether
-                they would be interested in a concept and they will, overwhelmingly, say yes &mdash; warmly and meaninglessly &mdash;
+                they would be interested in a concept and they will, overwhelmingly, say yes: warmly and meaninglessly,
                 because agreeing is free, agreeable, and costs nothing. Ask them to actually do something (sign up, provide
                 payment, commit, use it) and the warm agreement collapses into the far smaller number who genuinely want it.
                 That gap between what people say and what they do is where the truth of a concept lives, and surfacing it
@@ -172,7 +172,7 @@ export default function ConceptTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -192,13 +192,13 @@ export default function ConceptTestingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>When to deploy it</SectionLabel>
-            <SectionHeadingLight>A validation tool &mdash; not a substitute for prototyping or for a launch.</SectionHeadingLight>
+            <SectionHeadingLight>A validation tool, not a substitute for prototyping or for a launch.</SectionHeadingLight>
 
             <div className="grid md:grid-cols-2 gap-8 mt-8">
               <div>
@@ -209,7 +209,7 @@ export default function ConceptTestingPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'You have a concept concrete enough for real people to react to honestly, and you are before the point of committing to full-scale development or launch.',
-                    'You need to resolve genuine uncertainty about desirability — whether people actually want this — not just whether it functions.',
+                    'You need to resolve genuine uncertainty about desirability (whether people actually want this) not just whether it functions.',
                     'You need to choose between competing concepts based on real external response rather than internal preference or executive conviction.',
                     "You want to replace internal debate with evidence from real target users who have something on the line.",
                   ].map((item, i) => (
@@ -230,7 +230,7 @@ export default function ConceptTestingPage() {
                 >Do not lean on it when</p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    "The concept is too vague to react to honestly. Make it tangible first — prototype it — then test. Reactions to vague descriptions are worthless.",
+                    "The concept is too vague to react to honestly. Make it tangible first (prototype it) then test. Reactions to vague descriptions are worthless.",
                     "The decision has already been made and the test would be theater to justify it. A test whose result cannot change the decision is not a test; it is a confirmation exercise.",
                     "You are unwilling to define and honor a success threshold in advance. Without it, the test has no power: any warm outcome can be spun as success.",
                   ].map((item, i) => (
@@ -253,7 +253,7 @@ export default function ConceptTestingPage() {
                 The honest limit: concept testing measures desirability at a moment, with the fidelity and audience you put in
                 front of it. Tested with the wrong audience, at misleading fidelity, or with leading questions that fish for
                 approval, it produces confident but false signal. Its rigor comes entirely from real target users, an honest
-                commitment ask, and a pre-set bar — remove any of those and it becomes reassurance, not evidence.
+                commitment ask, and a pre-set bar. Remove any of those and it becomes reassurance, not evidence.
               </p>
             </div>
           </div>
@@ -261,7 +261,7 @@ export default function ConceptTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -274,7 +274,7 @@ export default function ConceptTestingPage() {
                 {
                   n: '01',
                   title: 'Define what you need to learn, and set the success criteria in advance.',
-                  body: "State the specific question and the threshold for a go decision — the level of real commitment the concept must reach. Deciding this beforehand is what makes the result interpretable rather than a vibe to be spun. Commit it to paper and share it with the stakeholders who will act on it before the test runs. A threshold that lives only in someone's head, decided after the results are seen, is no threshold at all.",
+                  body: "State the specific question and the threshold for a go decision: the level of real commitment the concept must reach. Deciding this beforehand is what makes the result interpretable rather than a vibe to be spun. Commit it to paper and share it with the stakeholders who will act on it before the test runs. A threshold that lives only in someone's head, decided after the results are seen, is no threshold at all.",
                 },
                 {
                   n: '02',
@@ -294,12 +294,12 @@ export default function ConceptTestingPage() {
                 {
                   n: '05',
                   title: 'Read revealed demand, not politeness.',
-                  body: 'Watch for genuine signals: do they lean in, ask when they can have it, try to use it, commit or pay? Treat mild verbal approval as noise, not signal. The gap between warm words and actual behavior is the truth the method exists to surface. Probe the gap — ask why someone said yes but hesitated to commit — the explanation is often the finding that drives the next iteration.',
+                  body: 'Watch for genuine signals: do they lean in, ask when they can have it, try to use it, commit or pay? Treat mild verbal approval as noise, not signal. The gap between warm words and actual behavior is the truth the method exists to surface. Probe the gap: ask why someone said yes but hesitated to commit. The explanation is often the finding that drives the next iteration.',
                 },
                 {
                   n: '06',
                   title: 'Synthesize across sessions and decide honestly.',
-                  body: 'Find the pattern across several tests, compare the revealed result to the pre-set threshold, and make the clear call the criterion demands: proceed, refine, or stop — even when the verdict is unwelcome. The hardest part of a concept test is honoring a negative result against executive pressure or team attachment to the concept. The threshold is there precisely for that moment.',
+                  body: 'Find the pattern across several tests, compare the revealed result to the pre-set threshold, and make the clear call the criterion demands: proceed, refine, or stop, even when the verdict is unwelcome. The hardest part of a concept test is honoring a negative result against executive pressure or team attachment to the concept. The threshold is there precisely for that moment.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -321,13 +321,13 @@ export default function ConceptTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like &mdash; and what to avoid.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and what to avoid.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
               When it goes well
@@ -335,10 +335,10 @@ export default function ConceptTestingPage() {
             <ul className="flex flex-col gap-3 mb-10">
               {[
                 'Success criteria are defined before testing, so the result drives a real decision rather than confirming what the team already wanted.',
-                'Real target users — not internal stand-ins — provide the reactions. The commitment ask is something real: sign-up, payment, attempt to use.',
+                'Real target users (not internal stand-ins) provide the reactions. The commitment ask is something real: sign-up, payment, attempt to use.',
                 'The team reads behavior and genuine demand signals rather than polite approval. Mild verbal interest is noted but not weighted as evidence.',
                 'The team honors the verdict, including an unwelcome one, and stops or repositions when the evidence says to.',
-                'The test is designed for the right question at the right fidelity — not overbuilt to the point of defeating the cost advantage of testing first.',
+                'The test is designed for the right question at the right fidelity, not overbuilt to the point of defeating the cost advantage of testing first.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span style={{ color: PLUM, flexShrink: 0, marginTop: 3 }}>✓</span>
@@ -364,11 +364,11 @@ export default function ConceptTestingPage() {
                 },
                 {
                   mistake: 'Defining success after seeing the results.',
-                  fix: 'The cardinal sin. With no pre-set threshold, any warm outcome can be spun as a win. The discipline of setting the criterion before the test — and sharing it publicly — is what makes the result a verdict rather than a Rorschach test the team reads the way it wants.',
+                  fix: 'The cardinal sin. With no pre-set threshold, any warm outcome can be spun as a win. The discipline of setting the criterion before the test, and sharing it publicly, is what makes the result a verdict rather than a Rorschach test the team reads the way it wants.',
                 },
                 {
                   mistake: 'Measuring stated interest and calling it validation.',
-                  fix: 'A high "would you be interested?" number feels like proof and means almost nothing. It is the baseline. Warm verbal interest is what you get before any test. Only revealed commitment — what people do when they have to actually do something — counts as signal.',
+                  fix: 'A high "would you be interested?" number feels like proof and means almost nothing. It is the baseline. Warm verbal interest is what you get before any test. Only revealed commitment (what people do when they have to actually do something) counts as signal.',
                 },
                 {
                   mistake: 'Running a test whose result cannot change the decision.',
@@ -394,7 +394,7 @@ export default function ConceptTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -404,8 +404,8 @@ export default function ConceptTestingPage() {
             <Body>
               A structured concept test runs from a few days to a couple of weeks, depending on how long
               it takes to recruit real target users and run enough sessions to see a pattern. The most
-              important logistical act &mdash; setting the success threshold in writing before anything
-              else &mdash; takes minutes and determines whether the result is a verdict or a vibe.
+              important logistical act, setting the success threshold in writing before anything
+              else, takes minutes and determines whether the result is a verdict or a vibe.
             </Body>
 
             <div className="flex flex-col gap-7 mt-10">
@@ -420,7 +420,7 @@ export default function ConceptTestingPage() {
                 },
                 {
                   label: 'Recruit carefully and screen for the real target',
-                  body: 'Getting genuine target users is often the hardest logistical part and the most important. Screen recruits against the actual target profile — not just demographics, but the behavioral and situational criteria that define who the product is actually for. A test run on the wrong people produces confident, false results.',
+                  body: 'Getting genuine target users is often the hardest logistical part and the most important. Screen recruits against the actual target profile, not just demographics, but the behavioral and situational criteria that define who the product is actually for. A test run on the wrong people produces confident, false results.',
                 },
                 {
                   label: 'Choose fidelity to fit the question',
@@ -428,7 +428,7 @@ export default function ConceptTestingPage() {
                 },
                 {
                   label: 'Run enough sessions to see a pattern',
-                  body: 'A handful of sessions (five to eight users is common for qualitative signal; larger samples for a quantitative commitment rate) lets you see past individual quirks. Throughout, structure the test around behavior and commitment rather than verbal approval. The participant\'s desire to be encouraging is the single biggest threat to honest signal — design around it by asking for commitment, not opinion.',
+                  body: 'A handful of sessions (five to eight users is common for qualitative signal; larger samples for a quantitative commitment rate) lets you see past individual quirks. Throughout, structure the test around behavior and commitment rather than verbal approval. The participant\'s desire to be encouraging is the single biggest threat to honest signal. Design around it by asking for commitment, not opinion.',
                 },
               ].map(({ label, body }) => (
                 <div key={label} className="flex gap-4">
@@ -452,7 +452,7 @@ export default function ConceptTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — AI and this method   DARK
+          S9 - AI and this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -463,7 +463,7 @@ export default function ConceptTestingPage() {
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see where AI genuinely helps a concept test &mdash; and the one thing
+              Toggle between modes to see where AI genuinely helps a concept test, and the one thing
               it fundamentally cannot do, which happens to be the whole point.
             </p>
             <CTAIReactivated />
@@ -472,7 +472,7 @@ export default function ConceptTestingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -494,7 +494,7 @@ export default function ConceptTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Frameworks   LIGHT
+          S11 - Frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -505,7 +505,7 @@ export default function ConceptTestingPage() {
               className="mb-8"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
-              Concept testing maps to the validation moment in nearly every framework &mdash; the point where
+              Concept testing maps to the validation moment in nearly every framework: the point where
               a concept meets real external evidence before the team commits to build.
             </p>
 
@@ -536,7 +536,7 @@ export default function ConceptTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -576,7 +576,7 @@ export default function ConceptTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources & further reading   LIGHT
+          S13 - Sources & further reading   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -590,19 +590,19 @@ export default function ConceptTestingPage() {
                   title:  'Testing Business Ideas',
                   author: 'David Bland and Alexander Osterwalder',
                   year:   '2019',
-                  note:   "The definitive guide to structured concept and assumption testing. Bland and Osterwalder provide a library of experiment types — from landing-page tests to fake-door studies to pre-order campaigns — each mapped to the type of assumption being tested and the risk profile of the concept. The emphasis on pre-set success criteria and revealed-preference measurement is the core discipline the book teaches and that makes the whole method trustworthy.",
+                  note:   "The definitive guide to structured concept and assumption testing. Bland and Osterwalder provide a library of experiment types (from landing-page tests to fake-door studies to pre-order campaigns) each mapped to the type of assumption being tested and the risk profile of the concept. The emphasis on pre-set success criteria and revealed-preference measurement is the core discipline the book teaches and that makes the whole method trustworthy.",
                 },
                 {
                   title:  'The Mom Test',
                   author: 'Rob Fitzpatrick',
                   year:   '2013',
-                  note:   "On getting honest signal rather than polite encouragement — essential for reading past stated interest. Fitzpatrick's central insight is that people will say anything to avoid being unkind, which means almost all concept feedback is warm, misleading, and useless until you ask for commitment or watch actual behavior. The book teaches how to design questions and interactions that surface the truth people are too polite to volunteer.",
+                  note:   "On getting honest signal rather than polite encouragement: essential for reading past stated interest. Fitzpatrick's central insight is that people will say anything to avoid being unkind, which means almost all concept feedback is warm, misleading, and useless until you ask for commitment or watch actual behavior. The book teaches how to design questions and interactions that surface the truth people are too polite to volunteer.",
                 },
                 {
                   title:  'Sprint',
                   author: 'Jake Knapp, John Zeratsky, and Braden Kowitz',
                   year:   '2016',
-                  note:   "For the five-user test format used at the end of a Design Sprint — the most widely practiced form of rapid concept testing. Knapp and team are explicit about what Friday is: a test of genuine user response to a prototype, not a show-and-tell. Their discipline around interviewing for honest reactions rather than fishing for approval reflects the same stated-vs-revealed insight that makes concept testing work as a method.",
+                  note:   "For the five-user test format used at the end of a Design Sprint, the most widely practiced form of rapid concept testing. Knapp and team are explicit about what Friday is: a test of genuine user response to a prototype, not a show-and-tell. Their discipline around interviewing for honest reactions rather than fishing for approval reflects the same stated-vs-revealed insight that makes concept testing work as a method.",
                 },
               ].map(({ title, author, year, note }) => (
                 <div

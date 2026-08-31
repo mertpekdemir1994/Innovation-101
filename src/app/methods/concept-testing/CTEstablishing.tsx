@@ -12,19 +12,19 @@ const SVG_H = 295
 const BAR_W   = 90
 const BASE_Y  = 248
 
-// STATED bar — AMBER (warm, misleading stated interest)
+// STATED bar - AMBER (warm, misleading stated interest)
 const S_CX  = 195
 const S_L   = 150   // S_CX - BAR_W/2
 const S_H   = 160   // ~76% of illustrative max
 const S_TOP = 88    // BASE_Y - S_H
 
-// REVEALED bar — PLUM (honest commitment)
+// REVEALED bar - PLUM (honest commitment)
 const R_CX  = 435
 const R_L   = 390   // R_CX - BAR_W/2
 const R_H   = 60    // ~28% of illustrative max
 const R_TOP = 188   // BASE_Y - R_H
 
-// THRESHOLD line — white (pre-set, at ~40%)
+// THRESHOLD line - white (pre-set, at ~40%)
 const TH_Y  = 168   // 80px from base; S_H(160)>80 ✓, R_H(60)<80 ✓
 
 // Gap zone center

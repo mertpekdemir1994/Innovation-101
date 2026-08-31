@@ -30,17 +30,17 @@ type Scenario = 'below' | 'above'
 
 const DETAILS: Record<NonNullable<El>, { heading: string; body: string; key: string }> = {
   stated: {
-    heading: 'Stated Preference — What People Say',
-    body: 'When you ask people whether they would be interested in a concept, the answer is almost always warm and encouraging — because agreeing is free, polite, and costs nothing. Stated preference is the signal that feels like validation and means very little. A concept test that measures only this learns almost nothing about real demand.',
+    heading: 'Stated Preference: What People Say',
+    body: 'When you ask people whether they would be interested in a concept, the answer is almost always warm and encouraging, because agreeing is free, polite, and costs nothing. Stated preference is the signal that feels like validation and means very little. A concept test that measures only this learns almost nothing about real demand.',
     key: 'High stated interest is the default. It is not evidence of demand.',
   },
   revealed: {
-    heading: 'Revealed Preference — What People Do',
-    body: 'When you ask people to actually commit — sign up, provide payment details, pre-order, or try to use the concept — the warm agreement collapses into a much smaller, more honest number. Revealed preference is what people do when something real is on the line. It is the only honest signal of demand, and it is almost always far lower than the stated level.',
+    heading: 'Revealed Preference: What People Do',
+    body: 'When you ask people to actually commit (sign up, provide payment details, pre-order, or try to use the concept) the warm agreement collapses into a much smaller, more honest number. Revealed preference is what people do when something real is on the line. It is the only honest signal of demand, and it is almost always far lower than the stated level.',
     key: 'Revealed commitment is the truth. Everything else is politeness.',
   },
   threshold: {
-    heading: 'The Pre-Set Success Threshold — The Line Drawn First',
+    heading: 'The Pre-Set Success Threshold: The Line Drawn First',
     body: 'Before testing, you define the specific level of revealed commitment the concept must reach to proceed. This is what makes the test honest. Set afterward, any warm result can be spun as success; set in advance, the threshold turns the result into a verdict the team cannot rationalize. The act of pre-committing the criterion, and sharing it with stakeholders before the test runs, is the discipline that separates a concept test from a confirmation exercise.',
     key: 'Set the threshold before you see the results, or the test has no power.',
   },
@@ -121,7 +121,7 @@ export default function CTInteractive() {
           fill={`${AMBER}0.45)`} fontSize={6.5} fontFamily="monospace">Stated preference</text>
         {/* Hit area */}
         <rect x={S_L - 6} y={S_TOP - 16} width={BAR_W + 12} height={S_H + 30}
-          fill="transparent" role="button" tabIndex={0} aria-label="Stated preference — click to learn more"
+          fill="transparent" role="button" tabIndex={0} aria-label="Stated preference, click to learn more"
           style={hitStyle}
           onClick={() => setActive(a => a === 'stated' ? null : 'stated')}
           onKeyDown={e => e.key === 'Enter' && setActive(a => a === 'stated' ? null : 'stated')} />
@@ -146,7 +146,7 @@ export default function CTInteractive() {
           animate={{ height: sc.h, y: R_TOP }}
           transition={{ duration: prefersReduced ? 0 : 0.42 }}
         />
-        {/* Percentage — changes with scenario */}
+        {/* Percentage - changes with scenario */}
         <motion.text
           x={R_CX} textAnchor="middle"
           fill={`${PLUM}${active === 'revealed' ? '1.0)' : '0.82)'}`}
@@ -174,7 +174,7 @@ export default function CTInteractive() {
           fill={`${PLUM}0.45)`} fontSize={6.5} fontFamily="monospace">Revealed commitment</text>
         {/* Hit area (full track height) */}
         <rect x={R_L - 6} y={S_TOP - 16} width={BAR_W + 12} height={S_H + 30}
-          fill="transparent" role="button" tabIndex={0} aria-label="Revealed preference — click to learn more"
+          fill="transparent" role="button" tabIndex={0} aria-label="Revealed preference, click to learn more"
           style={hitStyle}
           onClick={() => setActive(a => a === 'revealed' ? null : 'revealed')}
           onKeyDown={e => e.key === 'Enter' && setActive(a => a === 'revealed' ? null : 'revealed')} />
@@ -196,7 +196,7 @@ export default function CTInteractive() {
           letterSpacing={0.8}>SET IN ADVANCE · 40%</text>
         {/* Hit area for threshold */}
         <rect x={105} y={TH_Y - 8} width={435} height={16}
-          fill="transparent" role="button" tabIndex={0} aria-label="Success threshold — click to learn more"
+          fill="transparent" role="button" tabIndex={0} aria-label="Success threshold, click to learn more"
           style={hitStyle}
           onClick={() => setActive(a => a === 'threshold' ? null : 'threshold')}
           onKeyDown={e => e.key === 'Enter' && setActive(a => a === 'threshold' ? null : 'threshold')} />
