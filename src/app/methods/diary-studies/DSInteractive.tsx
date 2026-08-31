@@ -30,7 +30,7 @@ const ENTRIES: EntryFull[] = [
   {
     id: 0, x: 92, day: 'DAY 1', time: '7:30 AM',
     context: 'ROUTINE', location: 'Home', emotion: 'NEUTRAL', pattern: false, cardY: 116,
-    detail: 'Opened the app first thing. Daily setup done in under a minute. Simple flow — everything where expected. No friction, no confusion. Just did what it was supposed to do.',
+    detail: 'Opened the app first thing. Daily setup done in under a minute. Simple flow, everything where expected. No friction, no confusion. Just did what it was supposed to do.',
     quote: '"Just doing what it says. No thoughts about it."',
   },
   {
@@ -60,12 +60,12 @@ const ENTRIES: EntryFull[] = [
   {
     id: 5, x: 570, day: 'DAY 13', time: '11:00 AM',
     context: 'WEEKEND', location: 'Home', emotion: 'RESIGNED', pattern: true, cardY: 84,
-    detail: 'Back to simple things only. Stopped trying to capture complicated or in-context moments — they never make it into the app anyway. Just logging easy things from home now.',
+    detail: 'Back to simple things only. Stopped trying to capture complicated or in-context moments, they never make it into the app anyway. Just logging easy things from home now.',
     quote: '"It\'s fine for simple stuff. The complex moments I\'ve just given up on."',
   },
 ]
 
-const PATTERN_TEXT = 'Across 4 of 6 entries — DAY 3, DAY 7, DAY 10, DAY 13 — the same thing happened: a moment worth capturing occurred in a context that didn\'t allow it. Busy, social, in transit, or time-pressured. The two entries that worked (DAY 1 and DAY 5) happened at home with uninterrupted time. The pattern isn\'t about general dissatisfaction — it\'s about CONTEXT. The experience breaks down precisely when the moment and the logging can\'t coexist.'
+const PATTERN_TEXT = 'Across 4 of 6 entries (DAY 3, DAY 7, DAY 10, DAY 13) the same thing happened: a moment worth capturing occurred in a context that didn\'t allow it. Busy, social, in transit, or time-pressured. The two entries that worked (DAY 1 and DAY 5) happened at home with uninterrupted time. The pattern isn\'t about general dissatisfaction. It\'s about CONTEXT. The experience breaks down precisely when the moment and the logging can\'t coexist.'
 
 export default function DSInteractive() {
   const [revealedCount, setRevealedCount] = useState(1)
@@ -200,7 +200,7 @@ export default function DSInteractive() {
                 <text x={378} y={AXIS_Y + 50} textAnchor="middle"
                   fontSize="4.8" fontFamily="system-ui, sans-serif" letterSpacing="0.09em"
                   fill={`${SAGE}0.70)`} style={{ userSelect: 'none' }}>
-                  CONTEXT FRICTION PATTERN — DAY 3 / 7 / 10 / 13
+                  CONTEXT FRICTION PATTERN: DAY 3 / 7 / 10 / 13
                 </text>
               </motion.g>
             )}
@@ -267,7 +267,7 @@ export default function DSInteractive() {
             </p>
             <p className="mt-3 text-[9px] font-mono uppercase tracking-widest"
               style={{ color: `${SAGE}0.55)` }}>
-              ↑ INVISIBLE IN ANY SINGLE ENTRY — ONLY VISIBLE ACROSS THE ACCUMULATION
+              ↑ INVISIBLE IN ANY SINGLE ENTRY, ONLY VISIBLE ACROSS THE ACCUMULATION
             </p>
           </motion.div>
         ) : selectedEntry ? (
@@ -288,7 +288,7 @@ export default function DSInteractive() {
                   style={{ color: `${SAGE}0.60)` }}>SELF-LOGGED ENTRY</p>
                 <p className="font-mono text-xs font-semibold uppercase tracking-widest"
                   style={{ color: selectedEntry.pattern ? `${SAGE}1)` : 'rgba(255,255,255,0.85)' }}>
-                  {selectedEntry.context} — {selectedEntry.day}
+                  {selectedEntry.context}: {selectedEntry.day}
                 </p>
               </div>
               <div className="text-right shrink-0">
@@ -308,7 +308,7 @@ export default function DSInteractive() {
               <div className="mt-3 pt-3 border-t" style={{ borderColor: `${SAGE}0.18)` }}>
                 <p className="text-[9px] font-mono uppercase tracking-widest"
                   style={{ color: `${SAGE}0.55)` }}>
-                  ★ PART OF THE RECURRING PATTERN — {revealedCount >= 4 ? 'REVEAL PATTERN WHEN READY' : 'CONTINUE TO SEE MORE'}
+                  ★ PART OF THE RECURRING PATTERN: {revealedCount >= 4 ? 'REVEAL PATTERN WHEN READY' : 'CONTINUE TO SEE MORE'}
                 </p>
               </div>
             )}
@@ -324,8 +324,8 @@ export default function DSInteractive() {
             <p className="text-[9px] font-mono uppercase tracking-widest"
               style={{ color: 'rgba(255,255,255,0.25)' }}>
               {canRevealMore
-                ? 'CLICK AN ENTRY TO SEE WHAT THE PARTICIPANT LOGGED — OR ADVANCE TO THE NEXT DAY'
-                : 'ALL ENTRIES VISIBLE — CLICK ANY ENTRY TO EXPLORE IT, OR REVEAL THE LONGITUDINAL PATTERN'}
+                ? 'CLICK AN ENTRY TO SEE WHAT THE PARTICIPANT LOGGED, OR ADVANCE TO THE NEXT DAY'
+                : 'ALL ENTRIES VISIBLE, CLICK ANY ENTRY TO EXPLORE IT, OR REVEAL THE LONGITUDINAL PATTERN'}
             </p>
           </motion.div>
         )}

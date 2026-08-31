@@ -149,7 +149,7 @@ export default function DSEstablishing() {
           )
         })}
 
-        {/* Pattern arc — appears after entries */}
+        {/* Pattern arc - appears after entries */}
         <motion.g
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
@@ -171,7 +171,7 @@ export default function DSEstablishing() {
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.3, delay: prefersReduced ? 0 : 0.68 }}
           style={{ userSelect: 'none' }}>
-          SIX SELF-LOGGED ENTRIES OVER TWO WEEKS — THE PATTERN IS IN THE ACCUMULATION
+          SIX SELF-LOGGED ENTRIES OVER TWO WEEKS: THE PATTERN IS IN THE ACCUMULATION
         </motion.text>
       </svg>
     </div>

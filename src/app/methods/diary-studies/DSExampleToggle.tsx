@@ -61,7 +61,7 @@ export default function DSExampleToggle() {
                 style={{ color: `${SAGE}1)` }}>The study: two weeks of in-the-moment logging</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 The team ran a two-week diary study. Participants logged what they listened to, when, where, and
-                &mdash; crucially &mdash; how they felt and what they were doing at that precise moment. Not a daily
+                (crucially) how they felt and what they were doing at that precise moment. Not a daily
                 summary. Not a weekly reflection. The moment, captured in the moment, as their real days unfolded.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
@@ -84,11 +84,11 @@ export default function DSExampleToggle() {
                 {[
                   {
                     finding: 'Music consumption was driven by context and mood, not genre',
-                    detail: 'The same person wanted completely different music for focusing, for commuting, for cooking, for winding down. The entries showed this clearly, moment by moment. It was not that they liked different genres — it was that different contexts required different emotional states, and the music was doing emotional work, not aesthetic work.',
+                    detail: 'The same person wanted completely different music for focusing, for commuting, for cooking, for winding down. The entries showed this clearly, moment by moment. It was not that they liked different genres. It was that different contexts required different emotional states, and the music was doing emotional work, not aesthetic work.',
                   },
                   {
                     finding: 'Recurring friction: the moment of choosing',
-                    detail: 'Across many entries, the same pattern surfaced. Whenever a context changed — finishing the commute and sitting down to work, or moving from cooking to eating — there was friction. The participant had to stop and choose. Entries logged this as a felt interruption: "had to switch, spent 4 minutes looking," "couldn\'t find what I wanted, just put on something." That friction appeared in interview data as nothing at all.',
+                    detail: 'Across many entries, the same pattern surfaced. Whenever a context changed (finishing the commute and sitting down to work, or moving from cooking to eating) there was friction. The participant had to stop and choose. Entries logged this as a felt interruption: "had to switch, spent 4 minutes looking," "couldn\'t find what I wanted, just put on something." That friction appeared in interview data as nothing at all.',
                   },
                   {
                     finding: 'The pattern was invisible in any single entry',
@@ -121,8 +121,8 @@ export default function DSExampleToggle() {
                   The insight lived in the accumulation
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
-                  Every part of the insight &mdash; the context-mood coupling, the choosing-friction, the wrong
-                  unit of genre &mdash; came from real people logging their actual listening, in the moment, over
+                  Every part of the insight (the context-mood coupling, the choosing-friction, the wrong
+                  unit of genre) came from real people logging their actual listening, in the moment, over
                   time. None of it appeared in retrospective interviews. None of it could be reconstructed. It was
                   only visible once the entries accumulated and the pattern across them emerged.
                 </p>
@@ -143,7 +143,7 @@ export default function DSExampleToggle() {
               <p className="text-xs text-neutral-600 leading-relaxed">
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Two paths:</span>{' '}
                 The real Spotify research was human-led. This tab considers two ways AI might enter
-                this scenario &mdash; one unsound (framed as a hypothetical), one genuinely useful.
+                this scenario: one unsound (framed as a hypothetical), one genuinely useful.
               </p>
             </div>
 
@@ -159,7 +159,7 @@ export default function DSExampleToggle() {
               </div>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 Imagine the team had skipped the real study and asked an AI to generate plausible diary entries
-                from a synthetic Spotify participant &mdash; to simulate what a real study might find.
+                from a synthetic Spotify participant, to simulate what a real study might find.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 The output would have been fluent and reasonable. And hollow.
@@ -172,11 +172,11 @@ export default function DSExampleToggle() {
                   },
                   {
                     label: 'What was missing',
-                    body: 'The context-mood friction that happened in real moments when the listening switched. The "spent 4 minutes looking for something that fit" that appeared 8 times across the real study. The repeated in-the-moment failure that no survey and no interview and no synthetic output ever shows — because it is precisely the kind of moment that disappears in retrospect.',
+                    body: 'The context-mood friction that happened in real moments when the listening switched. The "spent 4 minutes looking for something that fit" that appeared 8 times across the real study. The repeated in-the-moment failure that no survey and no interview and no synthetic output ever shows, because it is precisely the kind of moment that disappears in retrospect.',
                   },
                   {
                     label: 'Why it would have misled',
-                    body: 'A team working from synthetic diary entries would have confirmed their existing understanding: people listen by occasion, genre preference matters, the library needs more content. They would have built a better music library. Not Daily Mixes. Not Discover Weekly. The breakthrough insight — context and mood, not genre — was not in the average; it was in the real accumulated in-the-moment record.',
+                    body: 'A team working from synthetic diary entries would have confirmed their existing understanding: people listen by occasion, genre preference matters, the library needs more content. They would have built a better music library. Not Daily Mixes. Not Discover Weekly. The breakthrough insight (context and mood, not genre) was not in the average; it was in the real accumulated in-the-moment record.',
                   },
                 ].map(item => (
                   <div key={item.label} className="rounded p-3"
@@ -187,7 +187,7 @@ export default function DSExampleToggle() {
                 ))}
               </div>
               <p className="text-xs font-semibold text-amber-700">
-                A synthetic diary is fiction. It produces the plausible average with no lived experience behind it &mdash;
+                A synthetic diary is fiction. It produces the plausible average with no lived experience behind it,
                 exactly the confident, groundless output that defeats the purpose.
               </p>
             </div>
@@ -203,11 +203,11 @@ export default function DSExampleToggle() {
                 {[
                   {
                     role: 'Supporting participation throughout',
-                    detail: 'AI sends smart in-the-moment reminders timed to likely listening moments. When a participant logs something terse ("was commuting, music was fine"), AI follows up: "What were you listening to? How did it feel when you first sat down?" This lifts the quality and richness of entries &mdash; directly attacking the method\'s main failure mode of thin, dwindling participation. The entries remain real; AI helps them be fuller.',
+                    detail: 'AI sends smart in-the-moment reminders timed to likely listening moments. When a participant logs something terse ("was commuting, music was fine"), AI follows up: "What were you listening to? How did it feel when you first sat down?" This lifts the quality and richness of entries, directly attacking the method\'s main failure mode of thin, dwindling participation. The entries remain real; AI helps them be fuller.',
                   },
                   {
                     role: 'Analyzing the accumulated real entries at scale',
-                    detail: 'Across 12 participants logging for 2 weeks, the team might have 800–1,200 entries. AI clusters them by context, tags recurring emotional markers, and surfaces the longitudinal pattern &mdash; "context-friction-dropout appears in 61% of transition-moment entries" &mdash; faster than a team reading manually. This is pattern detection at a scale that human analysis would take days to achieve. It works because the entries are real.',
+                    detail: 'Across 12 participants logging for 2 weeks, the team might have 800–1,200 entries. AI clusters them by context, tags recurring emotional markers, and surfaces the longitudinal pattern ("context-friction-dropout appears in 61% of transition-moment entries") faster than a team reading manually. This is pattern detection at a scale that human analysis would take days to achieve. It works because the entries are real.',
                   },
                 ].map(item => (
                   <div key={item.role} className="rounded p-4"
@@ -235,7 +235,7 @@ export default function DSExampleToggle() {
                   <p className="text-xs text-neutral-700 leading-relaxed">
                     The entries. The lived two weeks. The in-the-moment emotional record no one else could
                     produce. The insight still came entirely from real people living their real listening.
-                    AI analyzed and supported &mdash; it did not substitute.
+                    AI analyzed and supported. It did not substitute.
                   </p>
                 </div>
               </div>

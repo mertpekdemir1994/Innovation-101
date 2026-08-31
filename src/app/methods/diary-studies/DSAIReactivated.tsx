@@ -193,7 +193,7 @@ export default function DSAIReactivated() {
                   <text x={378} y={AXIS_Y + 50} textAnchor="middle"
                     fontSize="4.8" fontFamily="system-ui, sans-serif" letterSpacing="0.09em"
                     fill={`${INDIGO}0.65)`} style={{ userSelect: 'none' }}>
-                    AI: FRICTION/AVOIDANCE CLUSTER — 4 / 6 ENTRIES — CONTEXT VARIABLE
+                    AI: FRICTION/AVOIDANCE CLUSTER: 4 / 6 ENTRIES, CONTEXT VARIABLE
                   </text>
                   {/* AI speed badge */}
                   <rect x={14} y={14} width={108} height={16} rx={3}
@@ -212,7 +212,7 @@ export default function DSAIReactivated() {
             fill="rgba(255,255,255,0.18)"
             style={{ userSelect: 'none' }}>
             {isAI
-              ? 'AI CAN CLUSTER AND TAG REAL ENTRIES AT SCALE — BUT THE REAL ENTRIES MUST COME FROM REAL PARTICIPANTS'
+              ? 'AI CAN CLUSTER AND TAG REAL ENTRIES AT SCALE, BUT THE REAL ENTRIES MUST COME FROM REAL PARTICIPANTS'
               : 'HUMAN RESEARCHER READS ACROSS THE ACCUMULATION TO SURFACE THE LONGITUDINAL PATTERN'}
           </text>
         </svg>
@@ -228,11 +228,11 @@ export default function DSAIReactivated() {
               {[
                 {
                   label: 'IN THE MOMENT',
-                  body: 'Each entry was captured by the participant at the time of the experience — not reconstructed later. That real-time, in-context record is what makes the emotion and the dropout legible: the researcher can read exactly when and why the pattern emerged.',
+                  body: 'Each entry was captured by the participant at the time of the experience, not reconstructed later. That real-time, in-context record is what makes the emotion and the dropout legible: the researcher can read exactly when and why the pattern emerged.',
                 },
                 {
                   label: 'ACCUMULATED OVER TIME',
-                  body: 'No single entry reveals the pattern. It is invisible until enough entries pile up across different days and contexts. The longitudinal accumulation is the method\'s core mechanism — and it requires real calendar time with real participants.',
+                  body: 'No single entry reveals the pattern. It is invisible until enough entries pile up across different days and contexts. The longitudinal accumulation is the method\'s core mechanism, and it requires real calendar time with real participants.',
                 },
                 {
                   label: 'THE PATTERN SURFACES',
@@ -254,15 +254,15 @@ export default function DSAIReactivated() {
               {[
                 {
                   label: 'AI SCALES ANALYSIS',
-                  body: 'With a real corpus of diary entries — from 10 participants across 2 weeks — AI can cluster entries, tag recurring contexts and emotions, and surface the longitudinal pattern faster than a team reading manually. This is genuinely valuable once the real entries exist.',
+                  body: 'With a real corpus of diary entries (from 10 participants across 2 weeks) AI can cluster entries, tag recurring contexts and emotions, and surface the longitudinal pattern faster than a team reading manually. This is genuinely valuable once the real entries exist.',
                 },
                 {
                   label: 'AI SUPPORTS LOGGING',
-                  body: 'AI can help sustain participation: sending smart in-the-moment reminders, prompting follow-up questions when a log is terse ("You said you were frustrated — what happened?"), and reducing the friction that causes participation to collapse. This directly attacks the method\'s main failure mode.',
+                  body: 'AI can help sustain participation: sending smart in-the-moment reminders, prompting follow-up questions when a log is terse ("You said you were frustrated, what happened?"), and reducing the friction that causes participation to collapse. This directly attacks the method\'s main failure mode.',
                 },
                 {
                   label: 'AI CANNOT BE THE PARTICIPANT',
-                  body: 'A "synthetic diary" — AI generating plausible entries — is fiction. It produces the confident average of what a participant might log, with no lived experience behind it. The whole point of the method is the real, in-the-moment record from real people living real days. That cannot be generated.',
+                  body: 'A "synthetic diary" (AI generating plausible entries) is fiction. It produces the confident average of what a participant might log, with no lived experience behind it. The whole point of the method is the real, in-the-moment record from real people living real days. That cannot be generated.',
                 },
               ].map(item => (
                 <div key={item.label} className="rounded-lg border p-4"
