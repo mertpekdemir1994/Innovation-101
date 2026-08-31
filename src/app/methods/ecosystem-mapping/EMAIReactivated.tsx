@@ -220,7 +220,7 @@ export default function EMAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}
               >Where AI is strong</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI can rapidly assemble the documented, visible structure of a well-understood ecosystem — the obvious actors and the textbook flows between them. For a known domain like a rental marketplace, AI quickly produces the platform, hosts, guests, payment provider structure: the standard two-sided-market description. Genuinely useful as a starting scaffold and faster than building from scratch.
+                AI can rapidly assemble the documented, visible structure of a well-understood ecosystem: the obvious actors and the textbook flows between them. For a known domain like a rental marketplace, AI quickly produces the platform, hosts, guests, payment provider structure: the standard two-sided-market description. Genuinely useful as a starting scaffold and faster than building from scratch.
               </p>
             </div>
             <div className="rounded-xl p-5"
@@ -230,20 +230,20 @@ export default function EMAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}
               >Where AI goes faint</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI maps the ecosystem as it is commonly described. The non-obvious actors — the quiet intermediary, the informal power broker, the emerging complementor — are the ones least likely to appear in the common description of a domain, and they are where the insight almost always lives. The AI draws the two-sided-market view fast; the hidden actors that actually move the system require human system-knowledge and a deliberate hunt for what isn&rsquo;t obvious.
+                AI maps the ecosystem as it is commonly described. The non-obvious actors (the quiet intermediary, the informal power broker, the emerging complementor) are the ones least likely to appear in the common description of a domain, and they are where the insight almost always lives. The AI draws the two-sided-market view fast; the hidden actors that actually move the system require human system-knowledge and a deliberate hunt for what isn&rsquo;t obvious.
               </p>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Synthesis — always visible */}
+      {/* Synthesis - always visible */}
       <div className="rounded-xl p-6" style={{ background: `${TEAL}0.08)`, border: `1px solid ${TEAL}0.20)` }}>
         <p className="font-mono uppercase tracking-widest mb-3"
           style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
-          AI accelerates the assembly and analysis of the visible ecosystem — real value. It can produce the documented structure of a domain fast, model how value flows through the mapped system, and keep the map current as the ecosystem shifts. But the distinctive payoff of ecosystem mapping is spotting the non-obvious actor and the informal flow that reveal where a system can actually be moved. That depends on human system-knowledge and the deliberate hunt for what the common description omits — which is exactly what AI, reasoning from that common description, is least likely to surface. Use AI to build the visible scaffold; hunt for the hidden actors yourself.
+          AI accelerates the assembly and analysis of the visible ecosystem: real value. It can produce the documented structure of a domain fast, model how value flows through the mapped system, and keep the map current as the ecosystem shifts. But the distinctive payoff of ecosystem mapping is spotting the non-obvious actor and the informal flow that reveal where a system can actually be moved. That depends on human system-knowledge and the deliberate hunt for what the common description omits, which is exactly what AI, reasoning from that common description, is least likely to surface. Use AI to build the visible scaffold; hunt for the hidden actors yourself.
         </p>
       </div>
     </div>

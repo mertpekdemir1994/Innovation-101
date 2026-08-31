@@ -38,7 +38,7 @@ const CONNECTIONS: ConnectionDef[] = [
 
 const ACTOR_DETAIL: Record<ActorId, { role: string; flowsTo: string; flowsFrom: string; leverage: string }> = {
   platform: {
-    role: 'The focal actor — the marketplace infrastructure connecting supply (hosts) and demand (guests), setting the terms of trade and controlling the matching algorithm.',
+    role: 'The focal actor: the marketplace infrastructure connecting supply (hosts) and demand (guests), setting the terms of trade and controlling the matching algorithm.',
     flowsTo: 'Access, visibility, and pricing to hosts; search, trust signals, and accommodation access to guests; fees to payment providers; reporting to regulators.',
     flowsFrom: 'Listings from hosts; booking demand and payments from guests; transaction processing from payment providers; permits and constraints from regulators; operational support from cleaning and co-host services.',
     leverage: 'The platform controls the matching algorithm, the pricing model, the trust system, and the terms of trade. Interventions here ripple to every actor in the system.',
@@ -47,25 +47,25 @@ const ACTOR_DETAIL: Record<ActorId, { role: string; flowsTo: string; flowsFrom: 
     role: 'The supply side. Individuals or property managers who list their properties for short-term rental. The primary creator of inventory in the system.',
     flowsTo: 'Listings, availability, pricing, and in-person hosting quality to the platform and guests.',
     flowsFrom: 'Booking revenue from the platform; professional photos from photographers (a key driver of booking rate); operational support from cleaning and co-host services.',
-    leverage: 'Host quality and listing photo quality are primary drivers of conversion. Moderate switching costs — hosts will defect to competing platforms if economics shift significantly.',
+    leverage: 'Host quality and listing photo quality are primary drivers of conversion. Moderate switching costs: hosts will defect to competing platforms if economics shift significantly.',
   },
   guests: {
     role: 'The demand side. Travelers seeking short-term accommodation and the source of revenue for the whole system.',
     flowsTo: 'Booking demand, payments, and reviews (a critical trust signal that feeds the platform\'s matching algorithm).',
     flowsFrom: 'Access to accommodation, pricing transparency, and trust signals from the platform and hosts.',
-    leverage: 'Revenue driver with low switching costs. Guest reviews and behavior data are primary inputs to the matching algorithm — guests collectively shape which listings succeed.',
+    leverage: 'Revenue driver with low switching costs. Guest reviews and behavior data are primary inputs to the matching algorithm: guests collectively shape which listings succeed.',
   },
   payment: {
-    role: 'Payment processing infrastructure — typically a third-party provider handling all financial transactions between guests, hosts, and the platform.',
+    role: 'Payment processing infrastructure, typically a third-party provider handling all financial transactions between guests, hosts, and the platform.',
     flowsTo: 'Reliable, fraud-resistant transaction processing; timely settlement of funds to hosts.',
     flowsFrom: 'Transaction fees from every booking.',
-    leverage: 'Low visible leverage, high systemic risk. A payment provider failure or regulatory action would halt all transactions — often invisible in the two-sided-market framing until it fails.',
+    leverage: 'Low visible leverage, high systemic risk. A payment provider failure or regulatory action would halt all transactions, often invisible in the two-sided-market framing until it fails.',
   },
   photographers: {
-    role: 'Professional photographers who photograph host listings. A non-obvious value-creating actor — not part of the standard two-sided-market description of a rental marketplace.',
+    role: 'Professional photographers who photograph host listings. A non-obvious value-creating actor, not part of the standard two-sided-market description of a rental marketplace.',
     flowsTo: 'Professional listing photos to hosts, which drive dramatically higher booking rates per internal platform data.',
     flowsFrom: 'Fees from hosts; indirectly, a viable market from the platform\'s economic health.',
-    leverage: 'High hidden leverage. A primary driver of supply-side quality and booking conversion. This insight — specific to this business\'s real data — led directly to the platform providing professional photography as a service.',
+    leverage: 'High hidden leverage. A primary driver of supply-side quality and booking conversion. This insight, specific to this business\'s real data, led directly to the platform providing professional photography as a service.',
   },
   cleaning: {
     role: 'Cleaning services and co-host managers handling the operational work of running a short-term rental. Part of a supporting economy that emerged around the platform.',
@@ -77,13 +77,13 @@ const ACTOR_DETAIL: Record<ActorId, { role: string; flowsTo: string; flowsFrom: 
     role: 'Local housing authorities and city governments with the power to permit, constrain, tax, or shut down short-term rental activity in a geography.',
     flowsTo: 'Permits, operating constraints, compliance requirements, and in extreme cases, market shutdowns.',
     flowsFrom: 'Tax revenue from platform activity; community pressure and political signals from neighbors.',
-    leverage: 'Existential at the geographic level. A regulator who restricts short-term rentals can effectively close a local market. Peripheral on the map but decisive — what neighbors do directly shapes what regulators decide.',
+    leverage: 'Existential at the geographic level. A regulator who restricts short-term rentals can effectively close a local market. Peripheral on the map but decisive: what neighbors do directly shapes what regulators decide.',
   },
   neighbors: {
     role: 'Residential neighbors and local communities affected by short-term rental activity: noise, parking, neighborhood character, housing availability.',
-    flowsTo: 'Community pressure, trust or distrust, and political signals to local regulators — shaping the regulatory environment the platform operates in.',
+    flowsTo: 'Community pressure, trust or distrust, and political signals to local regulators, shaping the regulatory environment the platform operates in.',
     flowsFrom: 'Positive or negative externalities from rental activity: noise, congestion, and changed neighborhood character.',
-    leverage: 'High indirect leverage through regulators. Neighbor hostility → community organizing → regulatory pressure → market constraint. This informal, trust-based dynamic rarely appears in documented ecosystem descriptions — AI-generated maps almost always miss it.',
+    leverage: 'High indirect leverage through regulators. Neighbor hostility → community organizing → regulatory pressure → market constraint. This informal, trust-based dynamic rarely appears in documented ecosystem descriptions. AI-generated maps almost always miss it.',
   },
 }
 
@@ -175,7 +175,7 @@ export default function EMInteractive() {
                 style={{ cursor: 'pointer' }}
                 role="button"
                 aria-pressed={isActive}
-                aria-label={`${actor.label.join(' ')} — click to explore`}
+                aria-label={`${actor.label.join(' ')}, click to explore`}
               >
                 {/* Hit area */}
                 <circle cx={actor.cx} cy={actor.cy} r={actor.r + 8} fill="transparent" />
@@ -260,7 +260,7 @@ export default function EMInteractive() {
                 }}
               >{activeActor.label.join(' ')}
                 {!activeActor.obvious && (
-                  <span style={{ marginLeft: 8, opacity: 0.65 }}>— NON-OBVIOUS ACTOR</span>
+                  <span style={{ marginLeft: 8, opacity: 0.65 }}>- NON-OBVIOUS ACTOR</span>
                 )}
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>

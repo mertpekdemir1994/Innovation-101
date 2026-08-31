@@ -52,9 +52,9 @@ export default function EMExampleToggle() {
               >Scenario</p>
               <p className="font-semibold mb-2"
                 style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}
-              >A fast-growing short-term rental marketplace — mapping the ecosystem to find growth levers and head off threats</p>
+              >A fast-growing short-term rental marketplace: mapping the ecosystem to find growth levers and head off threats</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
-                The team&rsquo;s instinctive framing is a two-sided market: hosts on the supply side, guests on the demand side. The ecosystem mapping session is run to find out if the real system is more complicated than that — and where the leverage is.
+                The team&rsquo;s instinctive framing is a two-sided market: hosts on the supply side, guests on the demand side. The ecosystem mapping session is run to find out if the real system is more complicated than that, and where the leverage is.
               </p>
             </div>
 
@@ -69,27 +69,27 @@ export default function EMExampleToggle() {
                   {
                     actor: 'Hosts',
                     obvious: true,
-                    finding: 'Primary supply-side actors. Listing quality is highly variable — and it becomes clear in the session that what separates high-booking hosts from low-booking hosts is not the properties themselves.',
+                    finding: 'Primary supply-side actors. Listing quality is highly variable, and it becomes clear in the session that what separates high-booking hosts from low-booking hosts is not the properties themselves.',
                   },
                   {
                     actor: 'Guests',
                     obvious: true,
-                    finding: 'Primary demand-side actors. Booking behavior and reviews are the visible output, but the map surfaces that what guests actually book on is a specific quality signal — one that leads directly to the photographer finding.',
+                    finding: 'Primary demand-side actors. Booking behavior and reviews are the visible output, but the map surfaces that what guests actually book on is a specific quality signal, one that leads directly to the photographer finding.',
                   },
                   {
                     actor: 'Payment Providers',
                     obvious: true,
-                    finding: 'Standard infrastructure. Mapped and noted. Low insight here, as expected — but worth having explicit in case of a payment-related regulatory action.',
+                    finding: 'Standard infrastructure. Mapped and noted. Low insight here, as expected, but worth having explicit in case of a payment-related regulatory action.',
                   },
                   {
                     actor: 'Professional Photographers',
                     obvious: false,
-                    finding: 'The breakthrough actor. Cross-referencing the map with actual booking data, the team found that listings with professional photography booked dramatically more than those without — a difference the two-sided framing had never surfaced. Photographers were a hidden value-creating actor whose service directly determined host success. This insight led directly to the platform offering professional photography as a service.',
+                    finding: 'The breakthrough actor. Cross-referencing the map with actual booking data, the team found that listings with professional photography booked dramatically more than those without, a difference the two-sided framing had never surfaced. Photographers were a hidden value-creating actor whose service directly determined host success. This insight led directly to the platform offering professional photography as a service.',
                   },
                   {
                     actor: 'Cleaning Services & Co-host Managers',
                     obvious: false,
-                    finding: 'An entire supporting operational economy had emerged around the platform. Cleaning services and co-host managers were the operational infrastructure that allowed hosts to scale — and the platform&rsquo;s supply side could only grow as fast as this layer could. It had never appeared in any product or growth conversation.',
+                    finding: 'An entire supporting operational economy had emerged around the platform. Cleaning services and co-host managers were the operational infrastructure that allowed hosts to scale, and the platform&rsquo;s supply side could only grow as fast as this layer could. It had never appeared in any product or growth conversation.',
                   },
                   {
                     actor: 'Local Regulators & Housing Authorities',
@@ -150,9 +150,9 @@ export default function EMExampleToggle() {
             >
               <p className="font-mono uppercase tracking-widest mb-1"
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(99,102,241,0.70)' }}
-              >Same scenario — AI assistance applied</p>
+              >Same scenario: AI assistance applied</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
-                The same team gives the AI the domain — a short-term rental marketplace — and asks for an ecosystem map. The AI generates a draft quickly.
+                The same team gives the AI the domain (a short-term rental marketplace) and asks for an ecosystem map. The AI generates a draft quickly.
               </p>
             </div>
 
@@ -161,7 +161,7 @@ export default function EMExampleToggle() {
                 {
                   actor: 'Hosts, Guests, Platform, Payment Providers',
                   obvious: true,
-                  aiRead: 'AI produces this layer cleanly and fast — the standard two-sided marketplace structure with payment infrastructure. Accurate, well-labeled, and a solid scaffold for the obvious actors and their primary flows.',
+                  aiRead: 'AI produces this layer cleanly and fast: the standard two-sided marketplace structure with payment infrastructure. Accurate, well-labeled, and a solid scaffold for the obvious actors and their primary flows.',
                   gap: 'This is the starting point, not the finding. The obvious actors were not where the strategic insight lived.',
                   confidence: 'HIGH',
                 },
@@ -169,28 +169,28 @@ export default function EMExampleToggle() {
                   actor: 'Professional Photographers',
                   obvious: false,
                   aiRead: 'Not surfaced as a significant actor. In the generic description of a rental marketplace, professional photographers are not a headline player. AI mentions photography as a listing quality factor, but does not identify photographers as a distinct, value-creating actor in the system.',
-                  gap: 'This was the breakthrough insight in the traditional run — and it was specific to this business&rsquo;s real booking data, not the generic domain description. AI cannot surface a finding that lives in proprietary data rather than in common knowledge.',
+                  gap: 'This was the breakthrough insight in the traditional run, and it was specific to this business&rsquo;s real booking data, not the generic domain description. AI cannot surface a finding that lives in proprietary data rather than in common knowledge.',
                   confidence: 'MISSED',
                 },
                 {
                   actor: 'Cleaning Services & Co-host Managers',
                   obvious: false,
                   aiRead: 'Mentioned in passing as "operational service providers" without being identified as a systemic actor whose capacity constrains supply-side growth. Not positioned as a strategic factor in the map.',
-                  gap: 'The supporting economy around the platform was invisible in the AI map — present in the real system but absent from the documented description of how such marketplaces work.',
+                  gap: 'The supporting economy around the platform was invisible in the AI map, present in the real system but absent from the documented description of how such marketplaces work.',
                   confidence: 'LOW',
                 },
                 {
                   actor: 'Local Regulators',
                   obvious: false,
                   aiRead: 'Included but treated as background regulatory context rather than an existential actor with the power to close markets. Listed but not analyzed for leverage.',
-                  gap: 'The regulatory actor was positioned correctly but its leverage — and the causal path from neighbors through community pressure to regulatory action — was not mapped.',
+                  gap: 'The regulatory actor was positioned correctly but its leverage, and the causal path from neighbors through community pressure to regulatory action, was not mapped.',
                   confidence: 'PARTIAL',
                 },
                 {
                   actor: 'Neighbors & Community',
                   obvious: false,
                   aiRead: 'Not included as an actor. The informal, trust-based relationship between neighbors and local regulatory behavior is not part of the documented structure of a rental marketplace. It appears in no dataset and in no standard description of the domain.',
-                  gap: 'This was the invisible causal path that explained the platform&rsquo;s regulatory risk. AI cannot map a dynamic that is informal, trust-based, and rarely documented — which is exactly the description of the most consequential flows in most real ecosystems.',
+                  gap: 'This was the invisible causal path that explained the platform&rsquo;s regulatory risk. AI cannot map a dynamic that is informal, trust-based, and rarely documented, which is exactly the description of the most consequential flows in most real ecosystems.',
                   confidence: 'MISSED',
                 },
               ].map(item => (
@@ -251,7 +251,7 @@ export default function EMExampleToggle() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
               >What this tells you about AI + ecosystem mapping</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI produced the visible ecosystem fast and gave a solid scaffold for the obvious structure. The distinctive value — the hidden photographer actor whose effect on bookings was specific to real data, and the informal neighbor dynamic that mapped the platform&rsquo;s regulatory risk — came from human system-knowledge and the deliberate search for what the common description omits. The strongest approach uses AI to assemble the visible actors quickly, then applies human inquiry specifically to find the non-obvious ones. Use AI as the scaffold; use the session to hunt what it cannot see.
+                AI produced the visible ecosystem fast and gave a solid scaffold for the obvious structure. The distinctive value (the hidden photographer actor whose effect on bookings was specific to real data, and the informal neighbor dynamic that mapped the platform&rsquo;s regulatory risk) came from human system-knowledge and the deliberate search for what the common description omits. The strongest approach uses AI to assemble the visible actors quickly, then applies human inquiry specifically to find the non-obvious ones. Use AI as the scaffold; use the session to hunt what it cannot see.
               </p>
             </div>
           </motion.div>
