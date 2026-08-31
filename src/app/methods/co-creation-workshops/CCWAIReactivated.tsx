@@ -21,7 +21,7 @@ const T2 = { cx: 425, cy: 232 }
 
 type Mode = 'human' | 'ai'
 
-// AI support badges — shown at periphery in AI mode
+// AI support badges - shown at periphery in AI mode
 const AI_BADGES = [
   { x: 130, y: 12, w: 96,  label: 'AI: AGENDA',    id: 'agenda'   },
   { x: 480, y: 12, w: 106, label: 'AI: STIMULUS',  id: 'stimulus' },
@@ -62,7 +62,7 @@ export default function CCWAIReactivated() {
       <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
         style={{ overflow: 'visible' }}
         aria-label={isAI
-          ? 'AI mode: AI support badges (agenda, stimulus, synthesis) appear around the periphery in indigo. A simulated-participant node appears crossed out in indigo. Real participant nodes remain in clay and are annotated: REAL PARTICIPANTS — CANNOT BE SIMULATED. The core human collaboration stays highlighted.'
+          ? 'AI mode: AI support badges (agenda, stimulus, synthesis) appear around the periphery in indigo. A simulated-participant node appears crossed out in indigo. Real participant nodes remain in clay and are annotated: REAL PARTICIPANTS, CANNOT BE SIMULATED. The core human collaboration stays highlighted.'
           : 'Human co-creation mode: four participants and two team members contribute actively to the shared canvas. All contribution lines active in clay. The collaboration is fully human.'}>
         <defs>
           <filter id="ccw-ai-clay-glow" x="-30%" y="-30%" width="160%" height="160%">
@@ -142,7 +142,7 @@ export default function CCWAIReactivated() {
             strokeWidth={0.9} strokeDasharray="4 3" />
         ))}
 
-        {/* Participant nodes — remain clay and active even in AI mode */}
+        {/* Participant nodes - remain clay and active even in AI mode */}
         {[
           { ...P1, anchor: 'end' as const,   lx: P1.cx - PR - 4, ly: P1.cy },
           { ...P2, anchor: 'end' as const,   lx: P2.cx - PR - 4, ly: P2.cy },
@@ -176,7 +176,7 @@ export default function CCWAIReactivated() {
           </g>
         ))}
 
-        {/* AI support badges + "CANNOT SIMULATE" node — AI mode only */}
+        {/* AI support badges + "CANNOT SIMULATE" node - AI mode only */}
         <AnimatePresence>
           {isAI && (
             <motion.g key="ai-elements"
@@ -242,7 +242,7 @@ export default function CCWAIReactivated() {
             {[
               {
                 h: 'Importance is specific to your model',
-                b: 'The value of co-creation comes from the actual participation of the people it serves — their specific lived experience, their real mental models, their actual priorities. That cannot be generated from what has been written about "users in general."',
+                b: 'The value of co-creation comes from the actual participation of the people it serves: their specific lived experience, their real mental models, their actual priorities. That cannot be generated from what has been written about "users in general."',
               },
               {
                 h: 'Ownership is a human relationship',
@@ -270,11 +270,11 @@ export default function CCWAIReactivated() {
               },
               {
                 h: 'AI can help synthesize outputs',
-                b: "After a workshop, AI can help cluster ideas, surface themes, and summarize. Useful for pattern-finding across many participant contributions — watch that it doesn't flatten participants' real, specific language into generic summary.",
+                b: "After a workshop, AI can help cluster ideas, surface themes, and summarize. Useful for pattern-finding across many participant contributions, watch that it doesn't flatten participants' real, specific language into generic summary.",
               },
               {
                 h: 'AI cannot be the participants',
-                b: "A simulated participant has no lived experience to contribute — only a generic average of what has been written. Using AI to stand in for participants replaces real co-creation with a guess about users, forfeiting both the grounded insight and any ownership.",
+                b: "A simulated participant has no lived experience to contribute, only a generic average of what has been written. Using AI to stand in for participants replaces real co-creation with a guess about users, forfeiting both the grounded insight and any ownership.",
               },
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border"
@@ -293,7 +293,7 @@ export default function CCWAIReactivated() {
         style={{ background: 'rgba(255,255,255,0.04)' }}>
         <p className="text-[10px] font-semibold uppercase tracking-wider text-white/28 mb-1">Synthesis</p>
         <p className="text-xs text-white/42 leading-relaxed">
-          Use AI to support the workshop — preparing it, supplying stimulus, and synthesizing its output. But keep real people at the center of the making: the grounded insight from real co-creation and the ownership that eases adoption both require actual participation, which AI can neither be nor manufacture.
+          Use AI to support the workshop: preparing it, supplying stimulus, and synthesizing its output. But keep real people at the center of the making: the grounded insight from real co-creation and the ownership that eases adoption both require actual participation, which AI can neither be nor manufacture.
         </p>
       </div>
     </div>

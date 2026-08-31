@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'A health system wants to redesign a chronic-care programme that patients and frontline nurses both find frustrating. The team could design a fix and ask for feedback — or it could design WITH the patients and nurses who live the experience. Both approaches address the same problem. Toggle between them.'
+const SCENARIO = 'A health system wants to redesign a chronic-care programme that patients and frontline nurses both find frustrating. The team could design a fix and ask for feedback, or it could design WITH the patients and nurses who live the experience. Both approaches address the same problem. Toggle between them.'
 
 export default function CCWExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -64,16 +64,16 @@ export default function CCWExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${CLAY}1)` }}>How the workshop ran</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
-                The team ran a genuine co-creation workshop — inviting real patients and frontline
+                The team ran a genuine co-creation workshop, inviting real patients and frontline
                 nurses, the people who live the programme, as active contributors. Crucially, the session
                 was structured for making, not reacting. Participants were not shown a finished redesign to
-                approve; they were given tangible materials — journey templates, cards, sketching supplies,
-                rough concepts to modify — and built and reshaped the experience alongside the team.
+                approve; they were given tangible materials (journey templates, cards, sketching supplies,
+                rough concepts to modify) and built and reshaped the experience alongside the team.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 The session began with a short orientation: enough context for participants to contribute as
                 makers, not enough finished thinking to anchor them to the team&rsquo;s assumptions. Then the
-                building started — from both sides of the table at once.
+                building started, from both sides of the table at once.
               </p>
             </div>
 
@@ -85,7 +85,7 @@ export default function CCWExampleToggle() {
                 {[
                   {
                     contributor: 'PATIENTS',
-                    insight: 'The waiting-room check-in — which the team considered a trivial administrative step — was the most stressful moment in the entire patient journey.',
+                    insight: 'The waiting-room check-in (which the team considered a trivial administrative step) was the most stressful moment in the entire patient journey.',
                     note: 'The team had designed around clinical outcomes. Patients reframed a "minor" administrative step as the emotional crux. It showed up in their exact language: "that moment is when I feel most like a number."',
                     clay: true,
                   },
@@ -98,7 +98,7 @@ export default function CCWExampleToggle() {
                   {
                     contributor: 'BOTH',
                     insight: 'The language the eventual solution used to communicate with patients came directly from how patients described the programme in their own words during the session.',
-                    note: "The grounded texture — specific, surprising, in people's own words — is exactly what a feedback session could not have produced. It came from participants building with the team, not reacting to the team's framing.",
+                    note: "The grounded texture, specific, surprising, in people's own words, is exactly what a feedback session could not have produced. It came from participants building with the team, not reacting to the team's framing.",
                     clay: false,
                   },
                 ].map((item, i) => (
@@ -126,7 +126,7 @@ export default function CCWExampleToggle() {
             <div className="border rounded-lg p-5"
               style={{ borderColor: `${CLAY}0.30)`, background: `${CLAY}0.04)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-3"
-                style={{ color: `${CLAY}1)` }}>The outcome — and the ownership that came with it</p>
+                style={{ color: `${CLAY}1)` }}>The outcome, and the ownership that came with it</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The redesigned programme was grounded in ways a team-led design followed by a feedback
                 session could not have produced: specific to these patients&rsquo; actual priorities, shaped by
@@ -135,8 +135,8 @@ export default function CCWExampleToggle() {
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 And something else happened that mattered as much as the concept: the patients and nurses
                 who co-created it became its advocates. Having helped build the redesign, they were invested
-                in it and understood it from the inside. When it came to rollout — the hardest part of any
-                change — the people affected were already champions rather than skeptics.
+                in it and understood it from the inside. When it came to rollout (the hardest part of any
+                change) the people affected were already champions rather than skeptics.
               </p>
               <p className="text-sm font-semibold" style={{ color: `${CLAY}0.88)` }}>
                 Designing WITH the served people produced both a better-grounded solution and the ownership that carried it into practice. Those two things came together, and neither was available the other way.
@@ -158,7 +158,7 @@ export default function CCWExampleToggle() {
               <p className="text-xs text-neutral-600 leading-relaxed">
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The real chronic-care case was human-led. This tab imagines the team had instead leaned on
-                AI in place of the workshop — to show where it genuinely helps, and where it hits the
+                AI in place of the workshop, to show where it genuinely helps, and where it hits the
                 method&rsquo;s core limit.
               </p>
             </div>
@@ -175,8 +175,8 @@ export default function CCWExampleToggle() {
               </div>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 Used as a preparation aid, AI genuinely helped. It drafted a workshop agenda with
-                well-structured generative activities, produced stimulus concepts — rough chronic-care
-                journey sketches for participants to build on and modify — and identified analogous
+                well-structured generative activities, produced stimulus concepts (rough chronic-care
+                journey sketches for participants to build on and modify) and identified analogous
                 programmes from other healthcare contexts as provocations. After a workshop, it could
                 help synthesize the many contributions by clustering themes across participant responses.
               </p>
@@ -195,7 +195,7 @@ export default function CCWExampleToggle() {
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 Asked to stand in for the patients and nurses, AI hit the method&rsquo;s limit immediately.
                 Its &ldquo;patient perspective&rdquo; on chronic care was a generic average of what has been written
-                about the experience — articulate, plausible, and about a different set of patients than
+                about the experience, articulate, plausible, and about a different set of patients than
                 these. The specific, surprising insights that made the real co-created solution work came
                 from these actual people, with these specific experiences.
               </p>
@@ -204,12 +204,12 @@ export default function CCWExampleToggle() {
                   {
                     tag: "AI's patient perspective",
                     ai: '"Patients in chronic-care programmes typically report frustration with long wait times, communication gaps with clinical staff, and difficulty navigating appointment systems."',
-                    note: "A reasonable, generic summary of chronic-care research. The insight that a specific check-in moment was the emotional crux — the most important finding — would not appear in what has been written. It was specific to these patients and their experience of this programme.",
+                    note: "A reasonable, generic summary of chronic-care research. The insight that a specific check-in moment was the emotional crux (the most important finding) would not appear in what has been written. It was specific to these patients and their experience of this programme.",
                   },
                   {
                     tag: "AI on operational redesign",
                     ai: '"Scheduling optimization and reduced handoff points are well-established levers for improving chronic-care programme efficiency. A unified scheduling system would address the main friction points."',
-                    note: "Generic best practice — the nurses' specific knowledge that the team's proposed adjustment would create three new handoff failures was not in any published source. It came from the people who run the programme, and it could only come from them.",
+                    note: "Generic best practice. The nurses' specific knowledge that the team's proposed adjustment would create three new handoff failures was not in any published source. It came from the people who run the programme, and it could only come from them.",
                   },
                 ].map((item, i) => (
                   <div key={i} className="rounded p-3"
@@ -242,7 +242,7 @@ export default function CCWExampleToggle() {
                 <p className="text-xs text-neutral-700 leading-relaxed">
                   Even if the AI&rsquo;s redesign had been excellent, it would have arrived with none of the
                   ownership. No patient or nurse had helped build it; no one was invested. At rollout,
-                  the affected people would meet it as something done to them — and adoption would face
+                  the affected people would meet it as something done to them, and adoption would face
                   exactly the resistance co-creation exists to dissolve.
                 </p>
               </div>
@@ -255,7 +255,7 @@ export default function CCWExampleToggle() {
                 style={{ color: `${INDIGO}0.80)` }}>The honest readout</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 AI could have prepared and synthesized around the workshop. But it could not be the
-                patients and nurses, and it could not manufacture their ownership — and those are the
+                patients and nurses, and it could not manufacture their ownership, and those are the
                 method&rsquo;s entire value. The strongest version kept real patients and nurses at the center
                 of the making. AI, at most, supported the room. It could not replace the people in it.
               </p>

@@ -274,15 +274,15 @@ export default function CCWInteractive() {
             {[
               {
                 label: 'MAKING TOGETHER',
-                body: 'Participants and team build around one shared canvas. Their contributions become part of the solution. The idea is genuinely co-created — no one person or group owns it alone.',
+                body: 'Participants and team build around one shared canvas. Their contributions become part of the solution. The idea is genuinely co-created: no one person or group owns it alone.',
               },
               {
                 label: 'GROUNDED OUTPUT',
-                body: "Because participants shape the concept directly, the solution carries their real language, mental models, and priorities — not the team's assumptions about them. Ideas the team never would have had surface naturally.",
+                body: "Because participants shape the concept directly, the solution carries their real language, mental models, and priorities, not the team's assumptions about them. Ideas the team never would have had surface naturally.",
               },
               {
                 label: 'SHARED OWNERSHIP',
-                body: 'Having helped build the solution, participants are invested in it. They arrive at rollout as advocates, not skeptics. Ownership is a core deliverable — and it cannot be added on afterward.',
+                body: 'Having helped build the solution, participants are invested in it. They arrive at rollout as advocates, not skeptics. Ownership is a core deliverable, and it cannot be added on afterward.',
               },
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
@@ -309,7 +309,7 @@ export default function CCWInteractive() {
               },
               {
                 label: "TEAM'S ASSUMPTIONS ONLY",
-                body: "Without participant contributions shaping the concept, the solution reflects what the team imagined about users — not what users actually need. The grounded insight is exactly what is missing.",
+                body: "Without participant contributions shaping the concept, the solution reflects what the team imagined about users, not what users actually need. The grounded insight is exactly what is missing.",
               },
               {
                 label: 'NO OWNERSHIP BUILT',

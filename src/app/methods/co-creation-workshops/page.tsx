@@ -22,13 +22,13 @@ const FRAMEWORK_LINKS = [
     slug: 'double-diamond',
     name: 'Double Diamond',
     phase: 'Develop',
-    note: 'The Develop phase opens the second diamond with concept generation — creating solutions with the people they serve. Co-creation workshops are one of the most direct expressions of the Develop phase: inviting users and stakeholders into the generative process itself, so the concepts that emerge are grounded in real priorities and already carry ownership before they reach testing.',
+    note: 'The Develop phase opens the second diamond with concept generation: creating solutions with the people they serve. Co-creation workshops are one of the most direct expressions of the Develop phase: inviting users and stakeholders into the generative process itself, so the concepts that emerge are grounded in real priorities and already carry ownership before they reach testing.',
   },
   {
     slug: 'design-sprint',
     name: 'Design Sprint',
     phase: 'Wednesday',
-    note: 'Wednesday in a Design Sprint is when the team generates and sharpens solution concepts after Tuesday\'s Lightning Demos and sketching. Co-creation elements — where participants actively shape concepts rather than merely reacting — fit most naturally here, bringing the people the solution serves into the concept-refinement stage before committing to a prototype.',
+    note: 'Wednesday in a Design Sprint is when the team generates and sharpens solution concepts after Tuesday\'s Lightning Demos and sketching. Co-creation elements (where participants actively shape concepts rather than merely reacting) fit most naturally here, bringing the people the solution serves into the concept-refinement stage before committing to a prototype.',
   },
   {
     slug: 'lean-startup',
@@ -40,7 +40,7 @@ const FRAMEWORK_LINKS = [
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Sprint',
-    note: 'Co-creation workshops within an Agile Innovation engagement bring users and stakeholders into sprint work as active contributors rather than audience members. This is most valuable at the start of a sprint cycle — before the team commits to what to build — or at the start of a discovery sprint, where the brief itself is being shaped.',
+    note: 'Co-creation workshops within an Agile Innovation engagement bring users and stakeholders into sprint work as active contributors rather than audience members. This is most valuable at the start of a sprint cycle (before the team commits to what to build) or at the start of a discovery sprint, where the brief itself is being shaped.',
   },
 ]
 
@@ -54,22 +54,22 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'crazy-8s',
     name: 'Crazy 8s',
-    rel: 'A common activity run INSIDE a co-creation workshop: Crazy 8s is a structured way to get every participant — including non-designers — contributing ideas individually before the group builds on them. Its individual-first structure prevents the loudest voice from anchoring everyone, which is especially valuable in co-creation contexts. A natural fit: the eight-minute constraint gives all participants a way in, and the resulting variety gives the group something real to build from.',
+    rel: 'A common activity run INSIDE a co-creation workshop: Crazy 8s is a structured way to get every participant (including non-designers) contributing ideas individually before the group builds on them. Its individual-first structure prevents the loudest voice from anchoring everyone, which is especially valuable in co-creation contexts. A natural fit: the eight-minute constraint gives all participants a way in, and the resulting variety gives the group something real to build from.',
   },
   {
     slug: 'analogs-precursors',
     name: 'Analogs & Precursors',
-    rel: 'Strong stimulus material to bring into a co-creation session: analogous examples and precedents from other domains give participants provocations to build on and react against. Rather than starting from a blank canvas, participants can modify, combine, or reject the analogous examples — a reliable way to get non-designers generating real material fast.',
+    rel: 'Strong stimulus material to bring into a co-creation session: analogous examples and precedents from other domains give participants provocations to build on and react against. Rather than starting from a blank canvas, participants can modify, combine, or reject the analogous examples: a reliable way to get non-designers generating real material fast.',
   },
   {
     slug: 'in-depth-interviews',
     name: 'In-Depth Interviews',
-    rel: 'THE KEY DISTINCTION. Interviews are design-FOR: you learn from people, they are subjects; you go away and design based on what you heard. Co-creation is design-WITH: you make with people, they are contributors; what they build becomes part of the solution. Interviews gather understanding; co-creation builds solutions and ownership together. They are complementary, not interchangeable — interviews often inform what participants bring to the co-creation session.',
+    rel: 'THE KEY DISTINCTION. Interviews are design-FOR: you learn from people, they are subjects; you go away and design based on what you heard. Co-creation is design-WITH: you make with people, they are contributors; what they build becomes part of the solution. Interviews gather understanding; co-creation builds solutions and ownership together. They are complementary, not interchangeable. Interviews often inform what participants bring to the co-creation session.',
   },
   {
     slug: 'rapid-prototyping',
     name: 'Rapid Prototyping',
-    rel: 'Co-created concepts get made tangible to learn from — the natural next step after a workshop. Prototyping and co-creation pair naturally because participants can even build rough prototypes in the session itself, using physical materials or digital tools. The co-created concept becomes the brief for the prototype; the prototype tests whether the concept worked as intended.',
+    rel: 'Co-created concepts get made tangible to learn from: the natural next step after a workshop. Prototyping and co-creation pair naturally because participants can even build rough prototypes in the session itself, using physical materials or digital tools. The co-created concept becomes the brief for the prototype; the prototype tests whether the concept worked as intended.',
   },
   {
     slug: 'how-might-we',
@@ -84,7 +84,7 @@ export default function CoCreationWorkshopsPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -113,7 +113,7 @@ export default function CoCreationWorkshopsPage() {
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
               Inviting the people a solution is meant to serve into the creation process itself, as
-              active contributors who build and shape concepts alongside the team &mdash; not just react to them.
+              active contributors who build and shape concepts alongside the team, not just react to them.
             </p>
 
             <p
@@ -128,7 +128,7 @@ export default function CoCreationWorkshopsPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -139,18 +139,18 @@ export default function CoCreationWorkshopsPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>What it is</SectionLabel>
-            <SectionHeadingLight>Designing WITH people, not FOR them &mdash; and why it is a fundamentally different thing.</SectionHeadingLight>
+            <SectionHeadingLight>Designing WITH people, not FOR them, and why it is a fundamentally different thing.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5">
               <Body>
-                A co-creation workshop invites the people a solution is meant to serve &mdash; users,
-                customers, frontline staff &mdash; into the generative process itself, as active contributors
+                A co-creation workshop invites the people a solution is meant to serve (users,
+                customers, frontline staff) into the generative process itself, as active contributors
                 who build, modify, and reimagine concepts alongside the team. It is fundamentally different
                 from gathering feedback or running interviews: participants are not reacting to the
                 team&rsquo;s ideas, they are helping create them. The distinction is the whole method. In research,
@@ -161,8 +161,8 @@ export default function CoCreationWorkshopsPage() {
                 the solutions themselves are better grounded: because the people being served are shaping
                 the concept directly, the output carries their real language, their mental models, and
                 their actual priorities, rather than the team&rsquo;s assumptions about them. Ideas that would
-                never have occurred to the team &mdash; because they come from lived experience the team does not
-                have &mdash; surface naturally when the people with that experience are building alongside you.
+                never have occurred to the team, because they come from lived experience the team does not
+                have, surface naturally when the people with that experience are building alongside you.
               </Body>
               <Body>
                 Second, and often underrated, co-creation builds ownership. When the people affected by
@@ -179,20 +179,20 @@ export default function CoCreationWorkshopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={CLAY}>Design WITH people, not FOR them. See the difference.</SectionLabel>
-            <SectionHeadingDark>Contribution, not reaction, is the dividing line. Toggle between the two &mdash; and see why it matters.</SectionHeadingDark>
+            <SectionHeadingDark>Contribution, not reaction, is the dividing line. Toggle between the two, and see why it matters.</SectionHeadingDark>
             <p
               className="mb-10 max-w-[560px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Toggle between design-WITH and design-FOR to see how the same people, in the same
               room, produce entirely different results depending on whether they are contributing
-              or reacting &mdash; and why only contribution produces grounded insight and ownership.
+              or reacting, and why only contribution produces grounded insight and ownership.
             </p>
             <CCWInteractive />
           </div>
@@ -200,7 +200,7 @@ export default function CoCreationWorkshopsPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -216,10 +216,10 @@ export default function CoCreationWorkshopsPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You want solutions grounded in the real language, mental models, and priorities of the people they serve — not just the team\'s assumptions about them.',
+                    'You want solutions grounded in the real language, mental models, and priorities of the people they serve, not just the team\'s assumptions about them.',
                     'The people affected have lived experience or context the team genuinely lacks and could contribute directly.',
                     'Later adoption will depend on buy-in from users, customers, or frontline staff, and building ownership early will smooth it.',
-                    'You are generating or shaping concepts — not just validating a finished one — and want the served people to help create them.',
+                    'You are generating or shaping concepts, not just validating a finished one, and want the served people to help create them.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
                       <span style={{ color: CLAY, flexShrink: 0, marginTop: 2 }}>→</span>
@@ -238,10 +238,10 @@ export default function CoCreationWorkshopsPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You actually need feedback on a finished concept — that is concept testing or an interview, not co-creation. Do not dress a feedback session up as co-creation.',
+                    'You actually need feedback on a finished concept: that is concept testing or an interview, not co-creation. Do not dress a feedback session up as co-creation.',
                     'The participants lack the context to contribute meaningfully. Without enough grounding, people cannot genuinely co-create and the session produces little.',
                     'You are unwilling to let participants genuinely shape the outcome. Inviting "co-creation" when decisions are already made is tokenism that erodes trust.',
-                    'The problem is so highly technical that participants cannot contribute directly — though they can often still shape the experience around it.',
+                    'The problem is so highly technical that participants cannot contribute directly, though they can often still shape the experience around it.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
                       <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
@@ -260,7 +260,7 @@ export default function CoCreationWorkshopsPage() {
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: co-creation&rsquo;s value depends entirely on genuine contribution and genuine
-                influence. Its defining failure mode is the session that is really feedback in disguise &mdash;
+                influence. Its defining failure mode is the session that is really feedback in disguise:
                 participants reacting rather than building, which forfeits both the grounded insight and
                 the ownership. Its other failures are inviting people without the context to contribute,
                 and failing to give them tangible materials to build with. Set up for real making, or do
@@ -272,7 +272,7 @@ export default function CoCreationWorkshopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -284,13 +284,13 @@ export default function CoCreationWorkshopsPage() {
               {[
                 {
                   n: '01',
-                  title: 'Invite the right participants — the people the solution serves.',
+                  title: 'Invite the right participants: the people the solution serves.',
                   body: 'Bring in actual users, customers, or frontline staff, the people with the lived experience the solution must fit, and make sure they have enough context to contribute meaningfully. A short orientation that lowers the intimidation of "designing" pays off in richer contribution.',
                 },
                 {
                   n: '02',
                   title: 'Set it up as making, not reacting.',
-                  body: 'Design the session around participants building, modifying, and reimagining — not approving or rejecting. The structure itself must invite contribution; if the team presents and participants respond, it has become a feedback session. This is the design decision that matters most.',
+                  body: 'Design the session around participants building, modifying, and reimagining, not approving or rejecting. The structure itself must invite contribution; if the team presents and participants respond, it has become a feedback session. This is the design decision that matters most.',
                 },
                 {
                   n: '03',
@@ -300,7 +300,7 @@ export default function CoCreationWorkshopsPage() {
                 {
                   n: '04',
                   title: 'Use structured generative activities.',
-                  body: 'Run the session through activities that channel contribution — often hosting methods like Crazy 8s inside the workshop, and using Analogs & Precursors as stimulus. Structure gives every participant a way in and keeps the making productive rather than scattered.',
+                  body: 'Run the session through activities that channel contribution, often hosting methods like Crazy 8s inside the workshop, and using Analogs & Precursors as stimulus. Structure gives every participant a way in and keeps the making productive rather than scattered.',
                 },
                 {
                   n: '05',
@@ -310,7 +310,7 @@ export default function CoCreationWorkshopsPage() {
                 {
                   n: '06',
                   title: "Capture the output and the ownership.",
-                  body: "Synthesize what was created — keeping participants' real language and priorities intact — and recognize the investment built. The participants who co-created are now advocates. Both the grounded concept and the ownership are deliverables of the session.",
+                  body: "Synthesize what was created, keeping participants' real language and priorities intact, and recognize the investment built. The participants who co-created are now advocates. Both the grounded concept and the ownership are deliverables of the session.",
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -333,13 +333,13 @@ export default function CoCreationWorkshopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like &mdash; and the mistakes that turn co-creation into feedback in disguise.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and the mistakes that turn co-creation into feedback in disguise.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4"
               style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
@@ -348,9 +348,9 @@ export default function CoCreationWorkshopsPage() {
             <ul className="flex flex-col gap-3 mb-10">
               {[
                 "Participants genuinely shape the solution rather than approving or rejecting it, and their language and priorities show up in the output.",
-                "The right people are in the room — those the solution serves — with enough context to contribute.",
+                "The right people are in the room (those the solution serves) with enough context to contribute.",
                 "People are given tangible materials to build with, so non-designers can make, not just talk.",
-                "Adoption is eased downstream because the people affected helped build it — they arrive as advocates.",
+                "Adoption is eased downstream because the people affected helped build it, they arrive as advocates.",
                 "The session is structured for contribution (often hosting activities like Crazy 8s), keeping the making productive.",
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
@@ -370,11 +370,11 @@ export default function CoCreationWorkshopsPage() {
               {[
                 {
                   mistake: 'Running a feedback session disguised as co-creation.',
-                  fix: 'The defining failure: participants react to the team\'s finished idea rather than build with the team. Structure the session so people genuinely contribute and shape the outcome — presenting a finished concept at any point is the tell that it has become feedback.',
+                  fix: 'The defining failure: participants react to the team\'s finished idea rather than build with the team. Structure the session so people genuinely contribute and shape the outcome. Presenting a finished concept at any point is the tell that it has become feedback.',
                 },
                 {
                   mistake: 'Inviting participants who lack the context to contribute.',
-                  fix: 'People without enough grounding cannot meaningfully co-create. Choose participants with the relevant lived experience and give them the context they need — a short warm-up that frames the space without anchoring them to the team\'s existing thinking.',
+                  fix: 'People without enough grounding cannot meaningfully co-create. Choose participants with the relevant lived experience and give them the context they need: a short warm-up that frames the space without anchoring them to the team\'s existing thinking.',
                 },
                 {
                   mistake: 'Failing to give people tangible materials to build with.',
@@ -382,7 +382,7 @@ export default function CoCreationWorkshopsPage() {
                 },
                 {
                   mistake: 'Tokenistic inclusion.',
-                  fix: "Inviting 'co-creation' when the decisions are already made is worse than not asking — it erodes trust and is worse than a straightforward feedback session. Only co-create if participants can genuinely influence the result.",
+                  fix: "Inviting 'co-creation' when the decisions are already made is worse than not asking. It erodes trust and is worse than a straightforward feedback session. Only co-create if participants can genuinely influence the result.",
                 },
                 {
                   mistake: "Losing participants' real language in synthesis.",
@@ -409,13 +409,13 @@ export default function CoCreationWorkshopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>Logistics</SectionLabel>
-            <SectionHeadingLight>Recruit the right people, prepare real materials, and structure the session for making &mdash; not presenting.</SectionHeadingLight>
+            <SectionHeadingLight>Recruit the right people, prepare real materials, and structure the session for making, not presenting.</SectionHeadingLight>
             <Body>
               Co-creation works best with a cross-functional group: the people who will use or be
               affected by the solution, alongside the team building it. Recruit participants with real
@@ -428,7 +428,7 @@ export default function CoCreationWorkshopsPage() {
               {[
                 {
                   label: 'Prepare tangible making materials in advance',
-                  body: 'The single most important logistical act. Have concrete materials ready — sketch supplies, cards, props, building kits, templates, rough prototypes to modify — so participants can build rather than just discuss. The materials are what make co-creation possible for non-designers; their absence is the most common failure mode.',
+                  body: 'The single most important logistical act. Have concrete materials ready (sketch supplies, cards, props, building kits, templates, rough prototypes to modify) so participants can build rather than just discuss. The materials are what make co-creation possible for non-designers; their absence is the most common failure mode.',
                 },
                 {
                   label: 'Design the session as a sequence of generative activities',
@@ -440,11 +440,11 @@ export default function CoCreationWorkshopsPage() {
                 },
                 {
                   label: 'Facilitate for contribution, protect quieter voices',
-                  body: "The facilitator's job is to draw out genuine input from everyone — not let the team or the loudest participant dominate. Techniques that ensure individual contribution before group discussion (as in Crazy 8s) help every participant actually shape the output.",
+                  body: "The facilitator's job is to draw out genuine input from everyone, not let the team or the loudest participant dominate. Techniques that ensure individual contribution before group discussion (as in Crazy 8s) help every participant actually shape the output.",
                 },
                 {
                   label: 'Plan to honor the contributions afterward',
-                  body: "Decide in advance how participants' contributions will be captured, carried into the solution, and acknowledged. Nothing erodes co-creation's ownership benefit faster than people seeing their input ignored. Common formats include in-person workshops with physical materials and remote sessions on a shared digital canvas — named as common examples, not endorsements.",
+                  body: "Decide in advance how participants' contributions will be captured, carried into the solution, and acknowledged. Nothing erodes co-creation's ownership benefit faster than people seeing their input ignored. Common formats include in-person workshops with physical materials and remote sessions on a shared digital canvas, named as common examples, not endorsements.",
                 },
               ].map(({ label, body }) => (
                 <div key={label} className="flex gap-4">
@@ -469,18 +469,18 @@ export default function CoCreationWorkshopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — How AI is evolving this method   DARK
+          S9 - How AI is evolving this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={CLAY}>AI and this method</SectionLabel>
-            <SectionHeadingDark>AI can help run the workshop and synthesize what comes out of it. It cannot be the people in the room &mdash; or manufacture the ownership they build.</SectionHeadingDark>
+            <SectionHeadingDark>AI can help run the workshop and synthesize what comes out of it. It cannot be the people in the room, or manufacture the ownership they build.</SectionHeadingDark>
             <p
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see where AI genuinely assists a co-creation session &mdash;
+              Toggle between modes to see where AI genuinely assists a co-creation session,
               and the two things it fundamentally cannot supply: real participation and real ownership.
             </p>
             <CCWAIReactivated />
@@ -489,19 +489,19 @@ export default function CoCreationWorkshopsPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>In-depth example</SectionLabel>
-            <SectionHeadingLight>The same problem. Two approaches &mdash; one surfaces what the team couldn&rsquo;t know, one misses it entirely.</SectionHeadingLight>
+            <SectionHeadingLight>The same problem. Two approaches, one surfaces what the team couldn&rsquo;t know, one misses it entirely.</SectionHeadingLight>
             <p
               className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A health system redesigning a frustrating chronic-care programme. The team could design
-              a fix and ask for feedback &mdash; or design WITH the patients and frontline nurses who live
+              a fix and ask for feedback, or design WITH the patients and frontline nurses who live
               the experience. Toggle between the traditional approach and a hypothetical AI-first
               approach to see what each produces, and what each misses.
             </p>
@@ -511,7 +511,7 @@ export default function CoCreationWorkshopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Used in these frameworks   LIGHT
+          S11 - Used in these frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -554,7 +554,7 @@ export default function CoCreationWorkshopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -594,7 +594,7 @@ export default function CoCreationWorkshopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources   LIGHT
+          S13 - Sources   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -608,19 +608,19 @@ export default function CoCreationWorkshopsPage() {
                   title:  'Convivial Toolbox',
                   author: 'Liz Sanders and Pieter Jan Stappers',
                   year:   '2012',
-                  note:   "The definitive source for generative co-creation and participatory design. Sanders and Stappers' framework distinguishes between designing FOR (expert-led, user as subject), designing WITH (collaborative, user as partner), and designing BY (user-led), and makes the case for why the design-with stance produces both better-grounded solutions and the shared ownership that eases adoption. Their treatment of generative tools — the tangible materials that enable non-designers to contribute as makers — directly underpins the method's logistics requirements.",
+                  note:   "The definitive source for generative co-creation and participatory design. Sanders and Stappers' framework distinguishes between designing FOR (expert-led, user as subject), designing WITH (collaborative, user as partner), and designing BY (user-led), and makes the case for why the design-with stance produces both better-grounded solutions and the shared ownership that eases adoption. Their treatment of generative tools (the tangible materials that enable non-designers to contribute as makers) directly underpins the method's logistics requirements.",
                 },
                 {
                   title:  'Gamestorming',
                   author: 'Dave Gray, Sunni Brown, and James Macanufo',
                   year:   '2010',
-                  note:   "For collaborative workshop activities that channel group contribution. Gray, Brown, and Macanufo's catalogue of generative activities — many of which work well inside a co-creation session — provides the structural vocabulary for running sessions that produce genuine making rather than discussion. Their treatment of group dynamics and facilitation for divergence is directly relevant to the co-creation facilitator's job of ensuring everyone contributes.",
+                  note:   "For collaborative workshop activities that channel group contribution. Gray, Brown, and Macanufo's catalogue of generative activities (many of which work well inside a co-creation session) provides the structural vocabulary for running sessions that produce genuine making rather than discussion. Their treatment of group dynamics and facilitation for divergence is directly relevant to the co-creation facilitator's job of ensuring everyone contributes.",
                 },
                 {
                   title:  'This Is Service Design Doing',
                   author: 'Marc Stickdorn, Markus Edgar Hormess, Adam Lawrence, and Jakob Schneider',
                   year:   '2018',
-                  note:   "For co-creation in service design practice. Stickdorn et al.'s account of co-creation as a core service design method — alongside the practical tools and facilitation approaches that make it work in real organizational settings — is the most comprehensive practical guide to the method as applied in service contexts. Their emphasis on involving frontline staff alongside customers as co-creators reflects the method's full scope.",
+                  note:   "For co-creation in service design practice. Stickdorn et al.'s account of co-creation as a core service design method (alongside the practical tools and facilitation approaches that make it work in real organizational settings) is the most comprehensive practical guide to the method as applied in service contexts. Their emphasis on involving frontline staff alongside customers as co-creators reflects the method's full scope.",
                 },
               ].map(({ title, author, year, note }) => (
                 <div
