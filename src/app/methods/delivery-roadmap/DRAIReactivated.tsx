@@ -43,13 +43,13 @@ const CARDS = [
     color: INDIGO,
     badge: 'Genuine uplift',
     head: 'AI is excellent at roadmap mechanics.',
-    body: 'Dependency detection between bets, capacity modelling against team bandwidth, sequencing option generation, and ongoing maintenance of the roadmap document itself — these are real, practical gains. AI can generate a well-structured, dependency-aware sequencing of work in minutes and flag when adding a new bet violates an existing dependency. Use it for this.',
+    body: 'Dependency detection between bets, capacity modelling against team bandwidth, sequencing option generation, and ongoing maintenance of the roadmap document itself: these are real, practical gains. AI can generate a well-structured, dependency-aware sequencing of work in minutes and flag when adding a new bet violates an existing dependency. Use it for this.',
   },
   {
     color: AMBER,
     badge: 'Cannot judge',
     head: 'AI cannot tell you which bet is existential.',
-    body: 'Which assumption, if wrong, kills the entire endeavour? That judgment requires knowing the business, the competitive context, the team\'s actual capability, and the organisation\'s risk tolerance. AI cannot make this judgment. It will sequence bets in a plausible order — but plausible is not the same as right, and a confidently wrong sequence is worse than an uncertain right one.',
+    body: 'Which assumption, if wrong, kills the entire endeavour? That judgment requires knowing the business, the competitive context, the team\'s actual capability, and the organisation\'s risk tolerance. AI cannot make this judgment. It will sequence bets in a plausible order, but plausible is not the same as right, and a confidently wrong sequence is worse than an uncertain right one.',
   },
   {
     color: AMBER,
@@ -61,7 +61,7 @@ const CARDS = [
     color: BRICK,
     badge: 'Honest synthesis',
     head: 'Use AI for mechanics. Hold the gradient yourself.',
-    body: 'The right disposition: let AI handle dependency mapping, capacity modelling, and maintenance — it is genuinely better at these tasks. But the confidence gradient — which bets are firm and which are loose, which assumption is existential — must come from a human who understands the actual risk landscape. Review any AI-generated roadmap for false precision before it is shared. Reintroduce the gradient. Reintroduce the looseness at the far end.',
+    body: 'The right disposition: let AI handle dependency mapping, capacity modelling, and maintenance. It is genuinely better at these tasks. But the confidence gradient (which bets are firm and which are loose, which assumption is existential) must come from a human who understands the actual risk landscape. Review any AI-generated roadmap for false precision before it is shared. Reintroduce the gradient. Reintroduce the looseness at the far end.',
   },
 ]
 
@@ -153,7 +153,7 @@ export default function DRAIReactivated() {
           <text x={SVG_W / 2} y={20} textAnchor="middle" fontSize="5"
             fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
             fill={`${AMBER}0.78)`} style={{ userSelect: 'none' }}>
-            ⚠ FALSE PRECISION — THE WRONG ROADMAP, BEAUTIFULLY MADE
+            ⚠ FALSE PRECISION: THE WRONG ROADMAP, BEAUTIFULLY MADE
           </text>
         )}
 
@@ -256,7 +256,7 @@ export default function DRAIReactivated() {
             <text x={280} y={218} textAnchor="middle" fontSize="3.6"
               fontFamily="var(--font-mono)" letterSpacing="0.07em"
               fill={`${INDIGO}0.50)`} style={{ userSelect: 'none' }}>
-              AI: MECHANICS ASSISTANCE — GENUINE UPLIFT
+              AI: MECHANICS ASSISTANCE, GENUINE UPLIFT
             </text>
           </>
         )}

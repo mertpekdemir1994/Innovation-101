@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'A company is building a logistics platform that matches drivers to deliveries in real time. The technical crux is a routing algorithm at scale — the team has never run this at the volume the business requires. The commercial question is whether operations teams in partner companies will actually adopt a new workflow. Both are genuine bets. The team must decide which goes first.'
+const SCENARIO = 'A company is building a logistics platform that matches drivers to deliveries in real time. The technical crux is a routing algorithm at scale. The team has never run this at the volume the business requires. The commercial question is whether operations teams in partner companies will actually adopt a new workflow. Both are genuine bets. The team must decide which goes first.'
 
 export default function DRExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -71,7 +71,7 @@ export default function DRExampleToggle() {
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 The team mapped its assumptions and identified the riskiest one: not whether operations
-                teams would adopt — that was a commercial risk, manageable — but whether the routing
+                teams would adopt (that was a commercial risk, manageable) but whether the routing
                 algorithm could actually work at the required scale. If it could not, no amount of
                 adoption work would matter. The technical question was existential. It went first.
               </p>
@@ -82,7 +82,7 @@ export default function DRExampleToggle() {
               style={{ border: `1px solid ${BRICK}0.15)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
                 style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.60)` }}>
-                Bet 1 — Technical proof of concept (weeks 1–3)
+                Bet 1: Technical proof of concept (weeks 1-3)
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 The team ran the algorithm against simulated load data, then against anonymised historical
@@ -99,10 +99,10 @@ export default function DRExampleToggle() {
               style={{ border: `1px solid ${BRICK}0.15)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
                 style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.60)` }}>
-                Bet 2 — Smallest real release to one operations team
+                Bet 2: Smallest real release to one operations team
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                With the technical foundation confirmed, the team built the smallest real product —
+                With the technical foundation confirmed, the team built the smallest real product,
                 not a prototype, but a working system for one operations team at one partner company.
                 Pre-committed criteria: adoption rate above 70% within four weeks, and dispatch
                 error rate below 3%. Both were met. The commercial question was answered. The team
@@ -116,11 +116,11 @@ export default function DRExampleToggle() {
               style={{ border: `1px solid ${BRICK}0.15)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
                 style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.60)` }}>
-                The learning arrow fires — bet 3 is reshaped before it begins
+                The learning arrow fires: bet 3 is reshaped before it begins
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 The pilot had been planned as a three-region expansion with no override feature.
-                The release finding — that override capability was operationally essential — triggered
+                The release finding (that override capability was operationally essential) triggered
                 a reshape before the pilot started. The pilot was scoped to two regions, with override
                 built in, and the gate criteria updated to include override usage patterns. This is what
                 the learning arrow does: a finding in bet 2 reshaped bet 3 before resources were committed
@@ -138,7 +138,7 @@ export default function DRExampleToggle() {
               <p className="font-semibold"
                 style={{ fontSize: 'var(--text-sm)', color: `${BRICK}0.80)` }}>
                 Near bets were precisely specified with pre-committed gate criteria. Far bets were
-                deliberately loose — described in intent, not in features. The roadmap was not a promise;
+                deliberately loose, described in intent, not in features. The roadmap was not a promise;
                 it was a sequence of bets, and its far end was allowed to stay uncertain until evidence
                 warranted specifying it.
               </p>
@@ -159,7 +159,7 @@ export default function DRExampleToggle() {
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The traditional approach above was what the team actually did. This tab imagines the same
-                team had used AI to build their roadmap — to show where AI genuinely helps and what it
+                team had used AI to build their roadmap, to show where AI genuinely helps and what it
                 structurally cannot do.
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function DRExampleToggle() {
               <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
                 <p className="font-mono uppercase tracking-widest"
                   style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.80)` }}>
-                  Where AI genuinely helped — and the help was real
+                  Where AI genuinely helped, and the help was real
                 </p>
                 <span className="font-mono text-xs px-2 py-0.5 rounded-full"
                   style={{ background: `${INDIGO}0.12)`, color: `${INDIGO}0.75)`, border: `1px solid ${INDIGO}0.25)` }}>
@@ -178,7 +178,7 @@ export default function DRExampleToggle() {
                 </span>
               </div>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                At the mechanics level, AI was excellent. It mapped dependencies between bets automatically —
+                At the mechanics level, AI was excellent. It mapped dependencies between bets automatically,
                 flagging that the override feature discovered in bet 2 would need to be accounted for in
                 the pilot scope, and that skipping this would create a technical debt that would compound.
                 It produced a capacity model against team bandwidth within minutes, and maintained the
@@ -192,15 +192,15 @@ export default function DRExampleToggle() {
               style={{ border: `1px solid rgba(245,158,11,0.22)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(245,158,11,0.80)' }}>
-                What it could not do — the sequencing judgment
+                What it could not do: the sequencing judgment
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                When asked to sequence the roadmap, the AI produced a plausible order — and it was the
+                When asked to sequence the roadmap, the AI produced a plausible order, and it was the
                 wrong one. It placed adoption work first, because that was the commercially visible deliverable,
                 and the technical PoC third, because it had no commercial output. This is the convenience
                 ordering: demo-able first, existential question last. The AI had no way to know that the
                 routing algorithm question, if wrong, would invalidate every bet that followed. That judgment
-                requires knowing which assumption is fatal — and that is not a sequencing problem; it is a
+                requires knowing which assumption is fatal, and that is not a sequencing problem; it is a
                 risk judgment about the specific business and its specific constraints.
               </p>
             </div>
@@ -210,7 +210,7 @@ export default function DRExampleToggle() {
               style={{ border: `1px solid rgba(245,158,11,0.22)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(245,158,11,0.80)' }}>
-                The dangerous artefact — the 12-month plan, beautifully made
+                The dangerous artefact: the 12-month plan, beautifully made
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 The AI produced a fully specified 12-month delivery plan: every bet precisely defined,
@@ -218,7 +218,7 @@ export default function DRExampleToggle() {
                 twelve. It was beautiful. It was also a Gantt chart wearing the language of a roadmap.
                 The far end was as specified as the near end, which is exactly the lie. The stakeholders
                 treated it as a plan. The team treated it as a plan. Nobody resisted it, because it
-                looked better than the honest, gradient version — and looking better was its flaw.
+                looked better than the honest, gradient version, and looking better was its flaw.
               </p>
             </div>
 
@@ -228,9 +228,9 @@ export default function DRExampleToggle() {
               <p className="font-mono uppercase tracking-widest mb-2"
                 style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.65)` }}>The honest readout</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                Use AI for mechanics — dependency mapping, capacity modelling, document maintenance.
-                It is genuinely better at these tasks. But the sequencing judgment — which bet is
-                existential, which goes first, which can stay loose — must come from a human who
+                Use AI for mechanics: dependency mapping, capacity modelling, document maintenance.
+                It is genuinely better at these tasks. But the sequencing judgment (which bet is
+                existential, which goes first, which can stay loose) must come from a human who
                 understands the actual risk. Review any AI-generated roadmap for false precision before
                 it is shared. Reintroduce the gradient. The looseness at the far end is not a defect
                 to be smoothed away. It is the honesty.

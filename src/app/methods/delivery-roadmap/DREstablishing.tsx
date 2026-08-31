@@ -7,7 +7,7 @@ const AMBER = 'rgba(245,158,11,'
 
 const SVG_W = 700, SVG_H = 268
 
-// Bet boxes — height increases (uncertainty grows) left to right
+// Bet boxes - height increases (uncertainty grows) left to right
 // CY = 134 (center y for all boxes)
 const CY = 134
 
@@ -29,7 +29,7 @@ const GATES = [
   { x: 435, label: 'GATE 3' },
 ]
 
-// Learning arrows — backward bezier curves (later bet → earlier bet)
+// Learning arrows - backward bezier curves (later bet -> earlier bet)
 // Arrow A: BET 4 → BET 2 (big reshape loop, peaks at y=44)
 const LEARN_A = 'M 514,90 C 514,42 204,42 204,108'
 // Arrow B: BET 3 → BET 1 (smaller feedback, peaks at y=64)
@@ -53,7 +53,7 @@ export default function DREstablishing() {
       <svg
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-        aria-label="Confidence-gradient bet sequence. Four bet boxes sit left to right: PROOF (now, firm solid border), RELEASE (next, mostly solid), PILOT (later, dashed border), ROLLOUT (far, very faded and dashed). Gate markers sit between each pair. Two learning arrows curve backwards from later bets to earlier bets, showing how what you learn reshapes what comes next."
+        aria-label="Confidence-gradient bet sequence. Four bet boxes sit left to right: PROOF (now, firm solid border), RELEASE (next, mostly solid), PILOT (later, dashed border), ROLLOUT (far, faded and dashed). Gate markers sit between each pair. Two learning arrows curve backwards from later bets to earlier bets, showing how what you learn reshapes what comes next."
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
         <defs>
@@ -152,7 +152,7 @@ export default function DREstablishing() {
           </motion.g>
         ))}
 
-        {/* Learning arrow A — BET 4 → BET 2 (larger, higher arc) */}
+        {/* Learning arrow A - BET 4 -> BET 2 (larger, higher arc) */}
         <motion.path
           d={LEARN_A}
           fill="none"
@@ -174,7 +174,7 @@ export default function DREstablishing() {
           WHAT YOU LEARN RESHAPES WHAT COMES NEXT
         </motion.text>
 
-        {/* Learning arrow B — BET 3 → BET 1 (smaller arc) */}
+        {/* Learning arrow B - BET 3 -> BET 1 (smaller arc) */}
         <motion.path
           d={LEARN_B}
           fill="none"

@@ -32,39 +32,39 @@ type InfoEntry = { tag: string; headline: string; body: string }
 
 const INFO: Record<BetId | GateId, InfoEntry> = {
   proof: {
-    tag: 'BET 1 — PROOF OF CONCEPT',
+    tag: 'BET 1: PROOF OF CONCEPT',
     headline: 'Test the riskiest technical assumption, early and cheaply.',
-    body: 'The first bet proves whether the hard thing can actually be done — not a feature, not a demo, but the specific technical or feasibility question that would kill the idea if wrong. It goes FIRST because finding this problem in week three is cheap; finding it in month nine is catastrophic. Nothing in the rest of the roadmap can proceed until this answer exists.',
+    body: 'The first bet proves whether the hard thing can actually be done: not a feature, not a demo, but the specific technical or feasibility question that would kill the idea if wrong. It goes FIRST because finding this problem in week three is cheap; finding it in month nine is catastrophic. Nothing in the rest of the roadmap can proceed until this answer exists.',
   },
   release: {
-    tag: 'BET 2 — SMALLEST REAL RELEASE',
+    tag: 'BET 2: SMALLEST REAL RELEASE',
     headline: 'Ship the minimum real thing to real users.',
-    body: 'The second bet puts something real in front of real users: not a prototype, not a proof — a product. It tests whether the thing actually works for people, not just in theory. Dependencies: the PoC question must be answered first. You cannot build a real product on an unproven foundation. Near-term and reasonably specified, but its exact shape will shift based on what the PoC taught you.',
+    body: 'The second bet puts something real in front of real users: not a prototype, not a proof: a product. It tests whether the thing actually works for people, not just in theory. Dependencies: the PoC question must be answered first. You cannot build a real product on an unproven foundation. Near-term and reasonably specified, but its exact shape will shift based on what the PoC taught you.',
   },
   pilot: {
-    tag: 'BET 3 — CONTAINED PILOT',
+    tag: 'BET 3: CONTAINED PILOT',
     headline: 'Run the full solution in a bounded slice of the real world.',
-    body: 'The third bet applies the full solution to a controlled segment — real customers, real operations, real economics, but deliberately bounded. It tests whether the delivery model scales, not just the product concept. Drawn looser because its exact shape depends on what the Release bet revealed. If Release went badly, this bet may not look like this at all.',
+    body: 'The third bet applies the full solution to a controlled segment: real customers, real operations, real economics, but deliberately bounded. It tests whether the delivery model scales, not just the product concept. Drawn looser because its exact shape depends on what the Release bet revealed. If Release went badly, this bet may not look like this at all.',
   },
   rollout: {
-    tag: 'BET 4 — STAGED ROLLOUT',
+    tag: 'BET 4: STAGED ROLLOUT',
     headline: 'Scale the proven delivery model, wave by wave.',
-    body: 'The fourth bet expands from the pilot into broader scale. Drawn LOOSEST because it depends most on previous bets — the pilot may have revealed operational constraints that change what rollout means entirely. An honest roadmap shows this uncertainty. A traditional roadmap hides it behind the same uniform box style as week two. The far end is loose because it genuinely is.',
+    body: 'The fourth bet expands from the pilot into broader scale. Drawn LOOSEST because it depends most on previous bets. The pilot may have revealed operational constraints that change what rollout means entirely. An honest roadmap shows this uncertainty. A traditional roadmap hides it behind the same uniform box style as week two. The far end is loose because it genuinely is.',
   },
   gate1: {
-    tag: 'GATE 1 — PROOF TO RELEASE',
+    tag: 'GATE 1: PROOF TO RELEASE',
     headline: 'Can the hard thing actually be built at the required scale?',
-    body: 'Gate 1 carries the pre-committed criteria from the PoC. GO means the technical approach works — proceed to building the real product. NO-GO means you have learned something fundamental that changes the plan: maybe the approach changes, maybe the product concept changes. A gate you would never actually stop at is not a gate.',
+    body: 'Gate 1 carries the pre-committed criteria from the PoC. GO means the technical approach works: proceed to building the real product. NO-GO means you have learned something fundamental that changes the plan: maybe the approach changes, maybe the product concept changes. A gate you would never actually stop at is not a gate.',
   },
   gate2: {
-    tag: 'GATE 2 — RELEASE TO PILOT',
+    tag: 'GATE 2: RELEASE TO PILOT',
     headline: 'Does the real thing actually work for real people?',
-    body: 'Gate 2 carries what usability testing, early metrics, and user feedback produced from the Release bet. GO means you have a real product that creates value — proceed to the pilot to test operational scale. NO-GO means the product needs more work before you run a pilot of it. This gate is what prevents the organisation from piloting a broken product.',
+    body: 'Gate 2 carries what usability testing, early metrics, and user feedback produced from the Release bet. GO means you have a real product that creates value: proceed to the pilot to test operational scale. NO-GO means the product needs more work before you run a pilot of it. This gate is what prevents the organisation from piloting a broken product.',
   },
   gate3: {
-    tag: 'GATE 3 — PILOT TO ROLLOUT',
+    tag: 'GATE 3: PILOT TO ROLLOUT',
     headline: 'Can the delivery model operate at scale with real economics?',
-    body: 'Gate 3 carries the pre-committed operational and customer criteria from the Pilot. GO means the delivery model works — economics viable, operations scalable, support manageable. NO-GO means fix the operational model before expanding. That fix is what makes the gate meaningful rather than a ceremony stacked on top of known failure.',
+    body: 'Gate 3 carries the pre-committed operational and customer criteria from the Pilot. GO means the delivery model works: economics viable, operations scalable, support manageable. NO-GO means fix the operational model before expanding. That fix is what makes the gate meaningful rather than a ceremony stacked on top of known failure.',
   },
 }
 
@@ -119,7 +119,7 @@ export default function DRInteractive() {
 
       {/* SVG */}
       <div role="status" aria-live="polite" className="sr-only">
-        {severed ? 'Learning arrows severed. The roadmap has become a schedule — all bets appear equally confident.' : ''}
+        {severed ? 'Learning arrows severed. The roadmap has become a schedule, all bets appear equally confident.' : ''}
         {view === 'convenience' ? 'Convenience ordering: riskiest assumption scheduled last.' : ''}
       </div>
 
@@ -162,7 +162,7 @@ export default function DRInteractive() {
           <text x={SVG_W / 2} y={22} textAnchor="middle" fontSize="5"
             fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
             fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
-            ⚠ ROADMAP → SCHEDULE — ALL BETS APPEAR EQUALLY CONFIDENT
+            ⚠ ROADMAP → SCHEDULE: ALL BETS APPEAR EQUALLY CONFIDENT
           </text>
         )}
 
@@ -230,14 +230,14 @@ export default function DRInteractive() {
                 <text x={b.x + b.w / 2} y={b.y - 6} textAnchor="middle" fontSize="3.5"
                   fontFamily="var(--font-mono)" letterSpacing="0.07em"
                   fill={`${AMBER}0.70)`} style={{ userSelect: 'none' }}>
-                  EXISTENTIAL RISK — SCHEDULED LAST
+                  EXISTENTIAL RISK, SCHEDULED LAST
                 </text>
               )}
               {view === 'convenience' && b.id === 'release' && (
                 <text x={b.x + b.w / 2} y={b.y - 6} textAnchor="middle" fontSize="3.5"
                   fontFamily="var(--font-mono)" letterSpacing="0.07em"
                   fill={`${BRICK}0.50)`} style={{ userSelect: 'none' }}>
-                  COMFORTABLE — FIRST
+                  COMFORTABLE, FIRST
                 </text>
               )}
               {view === 'convenience' && b.id === 'rollout' && (
@@ -364,7 +364,7 @@ export default function DRInteractive() {
           >
             <p className="font-mono uppercase tracking-widest mb-1"
               style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.70)` }}>
-              LEARNING SEVERED — THE ROADMAP IS NOW A SCHEDULE
+              LEARNING SEVERED: THE ROADMAP IS NOW A SCHEDULE
             </p>
             <p className="font-semibold mb-3"
               style={{ fontSize: 'var(--text-base)', color: `${AMBER}0.85)` }}>
@@ -372,7 +372,7 @@ export default function DRInteractive() {
             </p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
               Without learning arrows feeding back to reshape earlier bets, there is no reason for the far
-              end to stay loose. The plan can be fully specified all the way out — and it will be, because
+              end to stay loose. The plan can be fully specified all the way out, and it will be, because
               the organisation needs certainty and the roadmap is now a commitment device rather than a
               sequenced series of bets. The far end looks just as solid as week two, which is the lie that
               traditional roadmaps tell. The confidence gradient WAS the honesty. Without it, you have a
@@ -392,18 +392,18 @@ export default function DRInteractive() {
           >
             <p className="font-mono uppercase tracking-widest mb-1"
               style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.70)` }}>
-              ⚠ SEQUENCE BY CONVENIENCE — THE CLASSIC MISTAKE
+              ⚠ SEQUENCE BY CONVENIENCE: THE CLASSIC MISTAKE
             </p>
             <p className="font-semibold mb-3"
               style={{ fontSize: 'var(--text-base)', color: `${AMBER}0.85)` }}>
               Easy work first, existential question last.
             </p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-              In a convenience-ordered roadmap, the team starts with what is familiar and demo-able —
-              user interface work, integrations, comfortable features — and defers the riskiest assumption
+              In a convenience-ordered roadmap, the team starts with what is familiar and demo-able
+              (user interface work, integrations, comfortable features) and defers the riskiest assumption
               to the end. The result: nine months of invested delivery before the team discovers whether
               the hard thing is even possible. The PoC question that would have killed the project in week
-              three becomes a fatal finding in month nine. Ordering by convenience is not laziness — it
+              three becomes a fatal finding in month nine. Ordering by convenience is not laziness. It
               feels responsible. The team is shipping. The stakeholders are seeing progress. The problem
               is that the &ldquo;progress&rdquo; is building on an unproven foundation.
             </p>

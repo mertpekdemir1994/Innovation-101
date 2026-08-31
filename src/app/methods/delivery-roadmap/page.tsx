@@ -38,7 +38,7 @@ const FRAMEWORK_LINKS = [
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Backlog / Planning',
-    note: 'Agile explicitly argues against long fixed roadmaps — the delivery roadmap gives Agile teams a risk-ordered bet sequence to work from rather than a feature backlog that implies equal priority.',
+    note: 'Agile explicitly argues against long fixed roadmaps. The delivery roadmap gives Agile teams a risk-ordered bet sequence to work from rather than a feature backlog that implies equal priority.',
   },
   {
     slug: 'double-diamond',
@@ -50,13 +50,13 @@ const FRAMEWORK_LINKS = [
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Build',
-    note: 'Lean Startup&rsquo;s core logic — riskiest assumptions first, cheapest test possible — is the sequencing principle for the delivery roadmap. The roadmap operationalises Build-Measure-Learn across multiple bets.',
+    note: 'Lean Startup&rsquo;s core logic (riskiest assumptions first, cheapest test possible) is the sequencing principle for the delivery roadmap. The roadmap operationalises Build-Measure-Learn across multiple bets.',
   },
   {
     slug: 'fde',
     name: 'Front-End of Innovation',
     phase: 'Development Planning',
-    note: 'Pointed tension: FDE requires that central roadmaps subordinate themselves to discoveries from field work and experiments. The delivery roadmap must be structured so that field findings can reshape near-term bets — not just annotate a fixed plan.',
+    note: 'Pointed tension: FDE requires that central roadmaps subordinate themselves to discoveries from field work and experiments. The delivery roadmap must be structured so that field findings can reshape near-term bets, not just annotate a fixed plan.',
   },
 ]
 
@@ -74,7 +74,7 @@ const RELATED_METHODS = [
   {
     slug: 'pilot-launches',
     name: 'Pilot Launches',
-    rel: 'The roadmap carries the staged rollout — the pilot is the third bet, and the gate criteria for moving from pilot to wave-based rollout live here.',
+    rel: 'The roadmap carries the staged rollout: the pilot is the third bet, and the gate criteria for moving from pilot to wave-based rollout live here.',
   },
   {
     slug: 'post-launch-feedback-loops',
@@ -84,7 +84,7 @@ const RELATED_METHODS = [
   {
     slug: null,
     name: 'Capability Building',
-    rel: 'If the delivery sequence requires capability that does not yet exist, building it is itself a roadmap bet — not a prerequisite that lives outside the plan.',
+    rel: 'If the delivery sequence requires capability that does not yet exist, building it is itself a roadmap bet, not a prerequisite that lives outside the plan.',
   },
   {
     slug: 'mvp-mlp',
@@ -103,7 +103,7 @@ const RELATED_METHODS = [
 export default function DeliveryRoadmapPage() {
   return (
     <>
-      {/* S1 — Header */}
+      {/* S1 - Header */}
       <DarkSection>
         <Container prose>
           <SectionLabel accent="rgba(138,75,60,0.55)">Method · Delivery &amp; Validation</SectionLabel>
@@ -123,7 +123,7 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </DarkSection>
 
-      {/* S2 — Establishing visual */}
+      {/* S2 - Establishing visual */}
       <DarkSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.55)">The signature visual</SectionLabel>
@@ -132,7 +132,7 @@ export default function DeliveryRoadmapPage() {
             Near bets are firm: solid borders, precise scope, pre-committed gate criteria.
             Far bets are deliberately loose: dashed borders, intent rather than features, provisionally
             shaped. The learning arrows that curve backwards from later bets to earlier ones are not
-            decoration — they are the mechanism by which the roadmap stays honest as evidence arrives.
+            decoration. They are the mechanism by which the roadmap stays honest as evidence arrives.
           </Body>
           <div className="mt-10">
             <DREstablishing />
@@ -140,28 +140,28 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </DarkSection>
 
-      {/* S3 — What it is */}
+      {/* S3 - What it is */}
       <LightSection>
         <Container prose>
           <SectionLabel accent="rgba(138,75,60,0.65)">What it is</SectionLabel>
           <SectionHeadingLight>A sequence of bets, not a list of commitments</SectionHeadingLight>
           <div className="space-y-4">
             <Body className="">
-              A delivery roadmap is a time-ordered sequence of bets — decisions to invest in
-              a specific thing with a specific expectation of what it will prove or produce — where
+              A delivery roadmap is a time-ordered sequence of bets (decisions to invest in
+              a specific thing with a specific expectation of what it will prove or produce) where
               each bet&rsquo;s scope and specification is calibrated to how much you currently know.
               Near bets are fully specified. Far bets are deliberately loose. The gradient is the
               honest acknowledgment that you cannot fully specify what you have not yet started learning.
             </Body>
             <Body className="">
               The sequence is ordered first by uncertainty and dependency, not by commercial visibility
-              or convenience. The riskiest assumption — the one that, if wrong, invalidates everything
-              that follows — goes first, specified cheaply. Only after that question is answered do
+              or convenience. The riskiest assumption (the one that, if wrong, invalidates everything
+              that follows) goes first, specified cheaply. Only after that question is answered do
               you commit resources to the next rung.
             </Body>
             <Body className="">
-              Gates separate bets. Each gate carries pre-committed criteria — set before the bet starts,
-              not after the evidence arrives — that determine whether to proceed, adjust, or stop.
+              Gates separate bets. Each gate carries pre-committed criteria (set before the bet starts,
+              not after the evidence arrives) that determine whether to proceed, adjust, or stop.
               A gate you would never actually stop at is not a gate; it is a ceremony. A real gate
               shapes what you build next.
             </Body>
@@ -169,13 +169,13 @@ export default function DeliveryRoadmapPage() {
               The learning arrows are the structural difference between a delivery roadmap and a
               Gantt chart. They run backwards: from later bets to earlier ones, reshaping the near
               term as evidence accumulates. When those arrows fire, the roadmap changes. That
-              changeability is not a sign of poor planning — it is the point.
+              changeability is not a sign of poor planning. It is the point.
             </Body>
           </div>
         </Container>
       </LightSection>
 
-      {/* S4 — Interactive */}
+      {/* S4 - Interactive */}
       <DarkSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.55)">Explore the interactions</SectionLabel>
@@ -183,7 +183,7 @@ export default function DeliveryRoadmapPage() {
           <Body dark className="">
             Click any bet to see what it tests and what depends on it. Toggle sequence order to
             see what happens when risk is reordered for convenience. Sever the learning arrows and
-            watch the roadmap degrade into a rigid schedule — the gradient disappears, every bet
+            watch the roadmap degrade into a rigid schedule: the gradient disappears, every bet
             looks equally confident, and the honesty is gone.
           </Body>
           <div className="mt-10">
@@ -192,7 +192,7 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </DarkSection>
 
-      {/* S5 — When to deploy */}
+      {/* S5 - When to deploy */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">When to deploy</SectionLabel>
@@ -211,9 +211,9 @@ export default function DeliveryRoadmapPage() {
               {
                 head: 'Not yet ready when',
                 items: [
-                  'The riskiest assumption has not yet been named — sequence before mapping is premature',
+                  'The riskiest assumption has not yet been named, sequence before mapping is premature',
                   'There is only one viable next step with no sequencing decision to make',
-                  'The organisation will not accept gates that can actually stop work — a roadmap without real gates is a schedule',
+                  'The organisation will not accept gates that can actually stop work, a roadmap without real gates is a schedule',
                   'You are planning across portfolios rather than sequencing within one delivery effort (use the Ambition Matrix instead)',
                 ],
               },
@@ -241,7 +241,7 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </LightSection>
 
-      {/* S6 — How it works */}
+      {/* S6 - How it works */}
       <LightSection>
         <Container prose>
           <SectionLabel accent="rgba(138,75,60,0.65)">How it works</SectionLabel>
@@ -251,22 +251,22 @@ export default function DeliveryRoadmapPage() {
               {
                 n: '01',
                 head: 'Map assumptions before you sequence',
-                body: 'Run Assumption Mapping first. The leap-of-faith assumption — the riskiest one, the one whose failure invalidates everything — goes to the front of the roadmap regardless of its commercial visibility. You cannot sequence responsibly without knowing which assumption is existential.',
+                body: 'Run Assumption Mapping first. The leap-of-faith assumption (the riskiest one, the one whose failure invalidates everything) goes to the front of the roadmap regardless of its commercial visibility. You cannot sequence responsibly without knowing which assumption is existential.',
               },
               {
                 n: '02',
                 head: 'Order by uncertainty and dependency, not convenience',
-                body: 'The riskiest bet goes first because it is cheapest to fail at the beginning. Ordering by convenience — building what is familiar and demo-able, deferring the existential question — is the most common sequencing error. When you catch yourself doing it, stop and ask: what happens if the hard thing turns out not to work?',
+                body: 'The riskiest bet goes first because it is cheapest to fail at the beginning. Ordering by convenience (building what is familiar and demo-able, deferring the existential question) is the most common sequencing error. When you catch yourself doing it, stop and ask: what happens if the hard thing turns out not to work?',
               },
               {
                 n: '03',
                 head: 'Specify near bets precisely; keep far bets deliberately loose',
-                body: 'Near bets should have precise scope, clear deliverables, and pre-committed gate criteria. Far bets should describe intent, not features — they are provisionally shaped because they depend on what the near bets will teach you. The gradient is honesty. Collapsing it to uniform specification is the lie that turns a roadmap into a Gantt chart.',
+                body: 'Near bets should have precise scope, clear deliverables, and pre-committed gate criteria. Far bets should describe intent, not features. They are provisionally shaped because they depend on what the near bets will teach you. The gradient is honesty. Collapsing it to uniform specification is the lie that turns a roadmap into a Gantt chart.',
               },
               {
                 n: '04',
                 head: 'Design gate criteria before the bet starts',
-                body: 'Pre-commit the criteria for each gate before the bet begins, not after the data arrives. The threshold — what &ldquo;go&rdquo; means, what &ldquo;no-go&rdquo; means, and critically, what a &ldquo;no-go&rdquo; would change — must be agreed when the organisation is not yet invested in a particular outcome. A gate that nobody would actually stop at is a ceremony, not a decision point.',
+                body: 'Pre-commit the criteria for each gate before the bet begins, not after the data arrives. The threshold (what &ldquo;go&rdquo; means, what &ldquo;no-go&rdquo; means, and critically, what a &ldquo;no-go&rdquo; would change) must be agreed when the organisation is not yet invested in a particular outcome. A gate that nobody would actually stop at is a ceremony, not a decision point.',
               },
               {
                 n: '05',
@@ -298,7 +298,7 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </LightSection>
 
-      {/* S7 — Crawl / walk / run (ADDED SECTION) */}
+      {/* S7 - Crawl / walk / run (ADDED SECTION) */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Sequencing ambition</SectionLabel>
@@ -307,7 +307,7 @@ export default function DeliveryRoadmapPage() {
             <Body className="">
               The confidence-gradient sequence structures HOW you deliver. But the roadmap also
               carries a second dimension: HOW MUCH you attempt at each rung. Ambition must be earned
-              through gate performance — the most common sequencing failure is not wrong risk ordering
+              through gate performance. The most common sequencing failure is not wrong risk ordering
               but starting at full ambition before the foundation has been proven.
             </Body>
           </div>
@@ -327,7 +327,7 @@ export default function DeliveryRoadmapPage() {
               },
               {
                 name: 'Thin slice then thicken',
-                desc: 'Deliver an end-to-end thin slice — every capability, but in minimal form — then deepen each dimension as evidence warrants. Useful when proving integration is the main risk.',
+                desc: 'Deliver an end-to-end thin slice (every capability, but in minimal form) then deepen each dimension as evidence warrants. Useful when proving integration is the main risk.',
               },
               {
                 name: 'Horizon 1 / 2 / 3',
@@ -353,7 +353,7 @@ export default function DeliveryRoadmapPage() {
               Core rule: ambition must be earned.
             </p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-              The anti-pattern — running first — appears as organisational confidence, not recklessness.
+              The anti-pattern, running first, appears as organisational confidence, not recklessness.
               The team knows the problem well. The leadership wants to show speed. The stakeholders
               want full-scope delivery. The result is a commitment to full ambition before the
               foundation has been proven. When the foundation fails, the scale of the failure is
@@ -363,11 +363,11 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </LightSection>
 
-      {/* S8 — Best practices */}
+      {/* S8 - Best practices */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Best practices</SectionLabel>
-          <SectionHeadingLight>What good looks like — and the mistakes</SectionHeadingLight>
+          <SectionHeadingLight>What good looks like, and the mistakes</SectionHeadingLight>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div>
               <p className="font-semibold mb-4"
@@ -401,8 +401,8 @@ export default function DeliveryRoadmapPage() {
               <ul className="space-y-3">
                 {[
                   'Convenience ordering: familiar and demo-able work first, existential question scheduled last',
-                  'Uniform specification: far-end bets are as precisely defined as near-end ones — hidden uncertainty',
-                  'Sham gates: criteria that no reasonable outcome would fail — ceremonies, not decisions',
+                  'Uniform specification: far-end bets are as precisely defined as near-end ones, hidden uncertainty',
+                  'Sham gates: criteria that no reasonable outcome would fail, ceremonies, not decisions',
                   'Sham looseness: the roadmap is described as Agile, but commitments and dates are fixed',
                   'Severed learning: findings from bets are noted but do not actually reshape subsequent bets',
                   'Feature accumulation: new ideas are added to the far end without displacing anything',
@@ -422,16 +422,16 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </LightSection>
 
-      {/* S9 — Logistics */}
+      {/* S9 - Logistics */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Logistics</SectionLabel>
           <SectionHeadingLight>What running this requires</SectionHeadingLight>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { label: 'Time required', value: 'Ongoing — initial sequence in 1–2 weeks; revisited on a cadence as evidence arrives' },
+              { label: 'Time required', value: 'Ongoing: initial sequence in 1–2 weeks; revisited on a cadence as evidence arrives' },
               { label: 'Group size', value: 'Team lead(s) plus stakeholders for gate decisions; one or two people maintain the living document' },
-              { label: 'Format', value: 'Works remotely and in person; the bet sequence should be a shared, visible artefact — not a slide deck filed away' },
+              { label: 'Format', value: 'Works remotely and in person; the bet sequence should be a shared, visible artefact, not a slide deck filed away' },
               { label: 'Prerequisites', value: 'Assumption mapping completed; riskiest assumption named; team has authority to actually stop at a gate' },
               { label: 'Outputs', value: 'Sequenced bet list with horizon labels; gate criteria for each transition; learning arrow definitions' },
               { label: 'Revisit cadence', value: 'Weekly or fortnightly between gates; mandatory review at each gate; triggered review when a major finding fires a learning arrow' },
@@ -451,7 +451,7 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </LightSection>
 
-      {/* S10 — AI Reactivated */}
+      {/* S10 - AI Reactivated */}
       <DarkSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.55)">AI-reactivated</SectionLabel>
@@ -459,7 +459,7 @@ export default function DeliveryRoadmapPage() {
           <Body dark className="">
             AI is genuinely excellent at roadmap mechanics: dependency detection, capacity modelling,
             sequencing option generation, and maintenance. The danger is that it also produces uniformly
-            confident plans — losing the gradient that is the roadmap&rsquo;s honesty. The toggle below
+            confident plans, losing the gradient that is the roadmap&rsquo;s honesty. The toggle below
             shows what is gained and what is lost.
           </Body>
           <div className="mt-10">
@@ -468,7 +468,7 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </DarkSection>
 
-      {/* S11 — Example toggle */}
+      {/* S11 - Example toggle */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Worked example</SectionLabel>
@@ -476,8 +476,8 @@ export default function DeliveryRoadmapPage() {
           <Body className="">
             A team building a real-time driver-matching platform faces two genuine risks: whether the
             routing algorithm holds at scale (technical and existential) and whether operations teams
-            will adopt a new workflow (commercial and manageable). The sequencing decision — and what
-            happens when AI builds the roadmap instead — illustrates the method&rsquo;s core logic.
+            will adopt a new workflow (commercial and manageable). The sequencing decision, and what
+            happens when AI builds the roadmap instead, illustrates the method&rsquo;s core logic.
           </Body>
           <div className="mt-10">
             <DRExampleToggle />
@@ -485,7 +485,7 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </LightSection>
 
-      {/* S12 — Framework connections */}
+      {/* S12 - Framework connections */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Framework connections</SectionLabel>
@@ -519,7 +519,7 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </LightSection>
 
-      {/* S13 — Related methods */}
+      {/* S13 - Related methods */}
       <LightSection>
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Related methods</SectionLabel>
@@ -528,7 +528,7 @@ export default function DeliveryRoadmapPage() {
             style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)', lineHeight: 'var(--leading-relaxed)' }}>
             The delivery roadmap is connective tissue: it sequences and orders the other Delivery &amp;
             Validation methods, carries the gate criteria between them, and provides the structure into
-            which their outputs feed. These connections are not incidental — the methods listed below
+            which their outputs feed. These connections are not incidental. The methods listed below
             each have a specific place in the bet sequence.
           </p>
           <div className="space-y-3">
@@ -556,7 +556,7 @@ export default function DeliveryRoadmapPage() {
         </Container>
       </LightSection>
 
-      {/* S14 — Sources */}
+      {/* S14 - Sources */}
       <LightSection>
         <Container prose>
           <SectionLabel accent="rgba(138,75,60,0.65)">Sources and further reading</SectionLabel>
@@ -576,12 +576,12 @@ export default function DeliveryRoadmapPage() {
               {
                 author: 'Richard Rumelt',
                 title: 'Good Strategy / Bad Strategy',
-                note: 'The distinction between a real plan (a coherent sequence of choices) and a list of goals dressed as strategy — directly applicable to the roadmap-vs-commitment-device problem.',
+                note: 'The distinction between a real plan (a coherent sequence of choices) and a list of goals dressed as strategy: directly applicable to the roadmap-vs-commitment-device problem.',
               },
               {
                 author: 'Clayton Christensen',
                 title: 'The Innovator&rsquo;s Dilemma',
-                note: 'The logic of starting small, in a contained space, and expanding only as the delivery model proves itself — the progression logic behind crawl-walk-run.',
+                note: 'The logic of starting small, in a contained space, and expanding only as the delivery model proves itself, the progression logic behind crawl-walk-run.',
               },
               {
                 author: 'Roger Martin',
@@ -596,7 +596,7 @@ export default function DeliveryRoadmapPage() {
                   <span dangerouslySetInnerHTML={{ __html: s.title }} />
                   <span className="font-normal ml-2"
                     style={{ color: 'var(--color-neutral-500)' }}>
-                    — {s.author}
+                    - {s.author}
                   </span>
                 </p>
                 <p className="mt-1"
