@@ -102,7 +102,7 @@ export default function CMEstablishing() {
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Layered capability map. Three layers from bottom to top: FOUNDATIONAL (data quality, pipeline reliability), OPERATIONAL (real-time serving, live system ops), EPIC-LEVEL (personalisation, real-time recs). Split into front-end and back-end segments. DATA QUALITY is PARTIAL; PIPELINE RELIABILITY is a GAP, a missing foundational capability. LIVE SYSTEM OPS and REAL-TIME RECS above the gap are unsupported: they depend on something that is not there."
-        style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
       >
         <defs>
           {/* Amber glow for GAP cells - the glowing absence */}

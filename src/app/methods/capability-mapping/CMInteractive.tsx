@@ -207,7 +207,7 @@ export default function CMInteractive() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Interactive layered capability map. Toggle between TODAY (current state) and TARGET (what delivery requires). Click any capability to explore it. Click a foundational gap to see instability propagate upward."
-        style={{ width: '100%', maxWidth: SVG_W, display: 'block', overflow: 'visible' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}
       >
         <defs>
           <filter id="cm-int-glow" x="-25%" y="-25%" width="150%" height="150%">
