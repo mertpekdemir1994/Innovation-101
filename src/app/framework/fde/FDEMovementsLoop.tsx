@@ -31,7 +31,7 @@ const MOVEMENTS: Movement[] = [
     objective:
       'The Embed movement is the foundation everything else rests on. An FDE establishes a deep, ongoing presence at a specific customer site, learning the actual workflows, organizational politics, informal decision-making processes, and the problems that never make it into a formal requirements document. Every other part of the FDE model depends on this depth. An FDE who builds in the field without genuine embeddedness builds solutions to the problems they can see, not the problems that actually matter.',
     description: [
-      'Embeddedness is not a soft relationship-building activity. It is the research methodology. The goal is to develop knowledge the customer themselves could not have articulated in a requirements document — the gap between what users say they need and what they actually do, the informal workarounds that have been in place so long that no one mentions them, the organizational constraints that shape every decision.',
+      'Embeddedness is not a soft relationship-building activity. It is the research methodology. The goal is to develop knowledge the customer themselves could not have articulated in a requirements document: the gap between what users say they need and what they actually do, the informal workarounds that have been in place so long that no one mentions them, the organizational constraints that shape every decision.',
       'At Palantir, FDEs were often assigned to a single customer for a year or more. The depth of institutional knowledge built over a year of close collaboration with a government agency or financial institution produced insights that no amount of sales calls, requirements gathering, or user research would have surfaced.',
     ],
     activities: [
@@ -43,12 +43,12 @@ const MOVEMENTS: Movement[] = [
       {
         title: 'Observation of real workflows',
         detail:
-          'The most important research happens by watching people work, not by interviewing them about their work. Users often cannot accurately describe their own workflows, partly because many workarounds and informal processes are invisible to them — they are just "how things are done." Direct observation surfaces these invisible practices.',
+          'The most important research happens by watching people work, not by interviewing them about their work. Users often cannot accurately describe their own workflows, partly because many workarounds and informal processes are invisible to them: they are just "how things are done." Direct observation surfaces these invisible practices.',
       },
       {
         title: 'Understanding organizational politics and informal power',
         detail:
-          'In complex organizations, formal org charts do not describe how decisions are actually made. The most important relationships for an FDE are often not with the named stakeholders but with the people who know where the bodies are buried — who actually controls what, who has tried to fix this before and failed, and why.',
+          'In complex organizations, formal org charts do not describe how decisions are actually made. The most important relationships for an FDE are often not with the named stakeholders but with the people who know where the bodies are buried: who actually controls what, who has tried to fix this before and failed, and why.',
       },
     ],
     keyQuestion:
@@ -62,7 +62,7 @@ const MOVEMENTS: Movement[] = [
     verb: 'Field is R&D, not COGS',
     tagline: 'The customer deployment is the experiment. The cost is research, not delivery.',
     objective:
-      "The FDE builds solutions directly in the customer's environment — custom code, custom configurations, custom integrations — to solve specific, immediate problems. Speed matters more than elegance. The solution does not need to be generalizable. It needs to work for this customer, now. But the organizational framing of this work is critical: it is not contract delivery at a defined margin. It is R&D that happens to be valuable to the customer.",
+      "The FDE builds solutions directly in the customer's environment (custom code, custom configurations, custom integrations) to solve specific, immediate problems. Speed matters more than elegance. The solution does not need to be generalizable. It needs to work for this customer, now. But the organizational framing of this work is critical: it is not contract delivery at a defined margin. It is R&D that happens to be valuable to the customer.",
     description: [
       "Barry McCardel's key insight is that customer deployments are R&D, not COGS. The cost of the field work is justified not by the margin on that specific customer but by the product learning it produces. Organizations that evaluate FDE deployments on individual customer margin have already misunderstood the model.",
       "This framing changes everything about how the work is structured. The FDE is not trying to complete a scoped contract. They are trying to understand a problem deeply enough to build something that works, and then to understand whether what they built reveals a pattern worth generalizing. The customer is the proving ground, not the end destination.",
@@ -71,7 +71,7 @@ const MOVEMENTS: Movement[] = [
       {
         title: "Rapid custom builds in the customer's environment",
         detail:
-          "Building in the customer's actual environment — their data, their systems, their organizational constraints — produces learning that no amount of internal prototyping replicates. A solution that works in the controlled environment of a product team's office is untested. A solution that works in the customer's environment is proven.",
+          "Building in the customer's actual environment (their data, their systems, their organizational constraints) produces learning that no amount of internal prototyping replicates. A solution that works in the controlled environment of a product team's office is untested. A solution that works in the customer's environment is proven.",
       },
       {
         title: 'Speed over elegance',
@@ -95,7 +95,7 @@ const MOVEMENTS: Movement[] = [
     verb: 'Find the generalizable pattern',
     tagline: 'Most field innovations are specific. A few are universal. The judgment is the hard part.',
     objective:
-      "Not everything built in the field should become a platform feature. Most field innovations are specific to a single customer's context — the particular shape of their data infrastructure, the particular constraints of their regulatory environment, the particular quirks of their organizational politics. The Extract movement is the judgment process of identifying which field innovations have cross-customer applicability and are therefore candidates for productization.",
+      "Not everything built in the field should become a platform feature. Most field innovations are specific to a single customer's context: the particular shape of their data infrastructure, the particular constraints of their regulatory environment, the particular quirks of their organizational politics. The Extract movement is the judgment process of identifying which field innovations have cross-customer applicability and are therefore candidates for productization.",
     description: [
       "The extraction judgment is hard because FDE teams are emotionally invested in their field work. The platform team must sometimes make the extraction call against the FDE team's preferences, which requires a clear governance relationship between field and core that most organizations have not established.",
       'Criteria for extraction typically include: Has this pattern been built for more than one customer independently? Does it appear across customer contexts in different industries? Would the core platform be structurally stronger with this as a native capability? Can it be generalized without losing the property that made it valuable in the field?',
@@ -118,7 +118,7 @@ const MOVEMENTS: Movement[] = [
       },
     ],
     keyQuestion:
-      'Look at the custom work your team has done across customers in the past year. Has the same kind of solution been built more than once, independently, for different customers? That repetition — not a single enthusiastic customer, but a repeated pattern — is the strongest signal of a real product opportunity.',
+      'Look at the custom work your team has done across customers in the past year. Has the same kind of solution been built more than once, independently, for different customers? That repetition (not a single enthusiastic customer, but a repeated pattern) is the strongest signal of a real product opportunity.',
   },
   {
     id: 'migrate',
@@ -128,7 +128,7 @@ const MOVEMENTS: Movement[] = [
     verb: 'Enrich the platform continuously',
     tagline: 'The platform is not a roadmap. It is the accumulated product of field discovery.',
     objective:
-      'Field-built innovations that pass the extraction judgment are taken over by the platform engineering team, generalized to work across customer contexts, and absorbed into the core product. The FDE team that built the field version transitions to the next frontier problem. Done well, this cycle continuously enriches the platform with capabilities shaped by the actual hardest problems in the customer\'s world — producing depth and specificity that competitors using traditional product processes struggle to match.',
+      'Field-built innovations that pass the extraction judgment are taken over by the platform engineering team, generalized to work across customer contexts, and absorbed into the core product. The FDE team that built the field version transitions to the next frontier problem. Done well, this cycle continuously enriches the platform with capabilities shaped by the actual hardest problems in the customer\'s world, producing depth and specificity that competitors using traditional product processes struggle to match.',
     description: [
       'The migration process carries two tensions. First, FDEs who built a field innovation often want to own the productization of it. Platform engineers who take over often change it in ways that frustrate the FDE who built the original. Managing this requires clear organizational agreements about who has authority over the migrated feature.',
       'Second, platform engineers generalizing a field innovation may optimize away the specific property that made it valuable in the field. The thing that makes a field-built solution work for a specific customer is often the very thing that gets stripped out in the name of generality. A clean handoff of the field team\'s hard-won context is as important as the technical migration itself.',
@@ -137,21 +137,21 @@ const MOVEMENTS: Movement[] = [
       {
         title: 'Handoff of field context (not just code)',
         detail:
-          "The most important thing that migrates from field to core is not the code — it is the understanding of why the solution was built the way it was. Why was this specific data structure chosen? What organizational constraint shaped this API design? What did the field team learn that made them choose this approach over the obvious alternative? This knowledge must be transferred explicitly or it disappears.",
+          "The most important thing that migrates from field to core is not the code: it is the understanding of why the solution was built the way it was. Why was this specific data structure chosen? What organizational constraint shaped this API design? What did the field team learn that made them choose this approach over the obvious alternative? This knowledge must be transferred explicitly or it disappears.",
       },
       {
         title: 'Generalization without losing core value',
         detail:
-          'The risk of productization is that in making a solution work for all customers, you remove the specific property that made it work for the customers in the field. The platform team must understand what the essential insight of the field innovation is — not just what it does, but why it works — and preserve that insight as the feature is generalized.',
+          'The risk of productization is that in making a solution work for all customers, you remove the specific property that made it work for the customers in the field. The platform team must understand what the essential insight of the field innovation is (not just what it does, but why it works) and preserve that insight as the feature is generalized.',
       },
       {
         title: 'FDE team transition to the next frontier',
         detail:
-          "The FDE team should move to new frontier problems as their field innovations migrate to core. If FDE teams stay attached to productized features, they are no longer doing FDE — they are doing product work. The field team's value is in its embeddedness and autonomy at the frontier, not in maintaining what it already built.",
+          "The FDE team should move to new frontier problems as their field innovations migrate to core. If FDE teams stay attached to productized features, they are no longer doing FDE; they are doing product work. The field team's value is in its embeddedness and autonomy at the frontier, not in maintaining what it already built.",
       },
     ],
     keyQuestion:
-      "When your team's best field or custom work gets absorbed into the standard product, what is typically lost in translation? What would a genuinely clean handoff — one that transferred the insight, not just the code — actually look like? What is the organizational structure that makes it possible?",
+      "When your team's best field or custom work gets absorbed into the standard product, what is typically lost in translation? What would a genuinely clean handoff (one that transferred the insight, not just the code) look like? What is the organizational structure that makes it possible?",
   },
 ]
 

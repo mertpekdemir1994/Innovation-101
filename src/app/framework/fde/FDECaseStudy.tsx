@@ -22,49 +22,49 @@ const MOVEMENTS: Record<MovementKey, MovementData> = {
   embed: {
     intro:
       'Palantir was founded in 2003 to help intelligence agencies analyze complex data. No two agencies had the same data infrastructure, workflows, or definition of "analysis." Building a one-size-fits-all product was impossible. The only way to solve their problems was to be present in their context.',
-    work: 'FDE teams were assigned to individual government agencies and financial institutions for periods of a year or more. The goal was not account management but genuine institutional knowledge — understanding actual workflows, organizational politics, informal decision-making processes, and problems that never made it into any formal requirements document.',
+    work: 'FDE teams were assigned to individual government agencies and financial institutions for periods of a year or more. The goal was not account management but genuine institutional knowledge: understanding actual workflows, organizational politics, informal decision-making processes, and problems that never made it into any formal requirements document.',
     artifact: {
       type: 'finding',
-      label: 'What embeddedness produced — insights no requirements document contained',
+      label: 'What embeddedness produced: insights no requirements document contained',
       lines: [
-        'Intelligence analysts had developed extensive informal workarounds to compensate for inadequate tooling — workarounds invisible to anyone not present in the environment',
+        'Intelligence analysts had developed extensive informal workarounds to compensate for inadequate tooling: workarounds invisible to anyone not present in the environment',
         'The most consequential problems were not the ones analysts articulated in requirements sessions; they were the ones they had stopped trying to solve because they assumed no software could address them',
-        'Data from different agencies was not merely in different formats; it reflected fundamentally different ontologies — how entities and relationships were conceptualized varied by agency and by team',
+        'Data from different agencies was not merely in different formats; it reflected fundamentally different ontologies: how entities and relationships were conceptualized varied by agency and by team',
         'FDE teams embedded for 12+ months developed institutional knowledge that external consultants or remote product teams could not have accumulated in any amount of time',
       ],
     },
     insight:
-      'The FDE culture at Palantir was not a deliberate strategy at the outset; it emerged as a response to reality. If every customer\'s context was genuinely different, embeddedness was not a nice-to-have relationship-building activity — it was the only viable research methodology.',
+      'The FDE culture at Palantir was not a deliberate strategy at the outset; it emerged as a response to reality. If every customer\'s context was different, embeddedness was not a nice-to-have relationship-building activity; it was the only viable research methodology.',
   },
   build: {
     intro:
-      'FDE teams built custom solutions directly in the customer\'s environment — custom code, custom configurations, custom integrations — to solve specific, immediate problems. The organizational framing was critical: these deployments were R&D, not delivery. The cost was justified by the learning it produced, not the margin on that specific customer.',
-    work: 'In 2008, a Palantir FDE team embedded with a financial services client began building tools for detecting fraud patterns in transaction data. The approach they developed — a visual graph analysis tool that made relationships between entities visible and navigable — was not in any product roadmap. It was built because the analysts needed it and the field team had the autonomy to build it.',
+      'FDE teams built custom solutions directly in the customer\'s environment (custom code, custom configurations, custom integrations) to solve specific, immediate problems. The organizational framing was critical: these deployments were R&D, not delivery. The cost was justified by the learning it produced, not the margin on that specific customer.',
+    work: 'In 2008, a Palantir FDE team embedded with a financial services client began building tools for detecting fraud patterns in transaction data. The approach they developed (a visual graph analysis tool that made relationships between entities visible and navigable) was not in any product roadmap. It was built because the analysts needed it and the field team had the autonomy to build it.',
     artifact: {
       type: 'finding',
       label: 'Two field innovations that became core platform capabilities',
       lines: [
-        'Graph analysis: a visual tool making relationships between entities navigable, built for fraud pattern detection at a financial services client (2008) — no product roadmap, pure field response to analyst need',
+        'Graph analysis: a visual tool making relationships between entities navigable, built for fraud pattern detection at a financial services client (2008); no product roadmap, pure field response to analyst need',
         'Data transformation: a layer allowing analysts to reshape data from multiple incompatible sources into a consistent format, built for a different financial client who needed it to make the engagement work',
         'Neither was in any central roadmap. Both were built because the field team had the autonomy to build what the customer needed.',
         'Cost framing: the expense of field builds was justified as R&D, not evaluated against the margin of the individual customer deployment',
       ],
     },
     insight:
-      'McCardel describes Palantir\'s product strategy at this stage as "strong opinions, weakly held — building things in the field and seeing what stuck." The chaos and the waste were not a bug in the process. They were the cost of a product discovery method that let the hardest real problems in the customer\'s world, rather than a planning committee, decide what got built.',
+      'McCardel describes Palantir\'s product strategy at this stage as "strong opinions, weakly held: building things in the field and seeing what stuck." The chaos and the waste were not a bug in the process. They were the cost of a product discovery method that let the hardest real problems in the customer\'s world, rather than a planning committee, decide what got built.',
   },
   extract: {
     intro:
-      'Not all field innovations had cross-customer applicability. Many were specific to a single customer\'s context — the particular shape of their data infrastructure, the constraints of their regulatory environment. The extraction judgment was the process of identifying which field innovations had broader applicability and were therefore candidates for productization.',
+      'Not all field innovations had cross-customer applicability. Many were specific to a single customer\'s context: the particular shape of their data infrastructure, the constraints of their regulatory environment. The extraction judgment was the process of identifying which field innovations had broader applicability and were therefore candidates for productization.',
     work: 'Palantir\'s platform team maintained visibility across all active deployments to notice when similar types of solutions were being built independently by different FDE teams. The strongest signal for extraction was independent replication: if multiple FDE teams working in different industries had each built a version of the same solution, the pattern was real.',
     artifact: {
       type: 'decision',
-      label: 'The extraction judgment — cross-context evidence, not single-customer enthusiasm',
+      label: 'The extraction judgment: cross-context evidence, not single-customer enthusiasm',
       lines: [
-        'Graph analysis (built for financial fraud detection) turned out to solve a structurally identical problem in intelligence — making relationships between entities visible — despite completely different domains.',
+        'Graph analysis (built for financial fraud detection) turned out to solve a structurally identical problem in intelligence (making relationships between entities visible) despite completely different domains.',
         'Data transformation (built to make incompatible financial data work together) turned out to address a universal problem: almost every enterprise has critical data in incompatible formats from legacy systems.',
         'The extraction criterion was not one enthusiastic customer advocating for productization. It was the same pattern emerging independently in multiple deployment contexts, often across different industries.',
-        'Palantir\'s Gotham (government/intelligence) and Foundry (commercial enterprise) evolved largely through this cross-pollination — innovations built for intelligence that turned out to solve structurally identical problems in pharmaceutical research and financial risk.',
+        'Palantir\'s Gotham (government/intelligence) and Foundry (commercial enterprise) evolved largely through this cross-pollination: innovations built for intelligence that turned out to solve structurally identical problems in pharmaceutical research and financial risk.',
       ],
     },
     insight:
@@ -73,10 +73,10 @@ const MOVEMENTS: Record<MovementKey, MovementData> = {
   migrate: {
     intro:
       'Field-built innovations that passed the extraction judgment were taken over by the platform engineering team, generalized to work across customer contexts, and absorbed into the core product. The FDE team that built the field version transitioned to the next frontier problem. Over time, this cycle produced a platform shaped by the actual hardest problems in the customer\'s world.',
-    work: 'Graph analysis and data transformation capabilities — built in the field in 2008 — were extracted, generalized, and became foundational capabilities of what would eventually become Palantir Foundry. The productization process required the platform team to generalize without losing the essential property that made each innovation work in the field.',
+    work: 'Graph analysis and data transformation capabilities (built in the field in 2008) were extracted, generalized, and became foundational capabilities of what would eventually become Palantir Foundry. The productization process required the platform team to generalize without losing the essential property that made each innovation work in the field.',
     artifact: {
       type: 'finding',
-      label: 'The Foundry origin — field innovations become core platform',
+      label: 'The Foundry origin: field innovations become core platform',
       lines: [
         'Graph analysis → Foundry\'s knowledge graph capabilities, used across dozens of Fortune 500 companies in manufacturing, finance, and healthcare',
         'Data transformation → Foundry\'s pipeline infrastructure, designed to handle the reality that enterprise data is almost always in incompatible formats from multiple legacy systems',
@@ -85,7 +85,7 @@ const MOVEMENTS: Record<MovementKey, MovementData> = {
       ],
     },
     insight:
-      'Foundry is not a product that was conceived and then built. It is the accumulated product of years of field discovery — the Embed-Build-Extract-Migrate cycle run continuously across dozens of customer deployments. The resulting platform has depth and specificity of capability that competitors building from central roadmaps struggle to match, because it was shaped by the actual hardest problems in the customer\'s world rather than by a planning committee\'s best guess.',
+      'Foundry is not a product that was conceived and then built. It is the accumulated product of years of field discovery (the Embed-Build-Extract-Migrate cycle run continuously across dozens of customer deployments). The resulting platform has depth and specificity of capability that competitors building from central roadmaps struggle to match, because it was shaped by the actual hardest problems in the customer\'s world rather than by a planning committee\'s best guess.',
   },
 }
 
@@ -100,13 +100,13 @@ const LESSONS = [
     n: '02',
     title: 'The waste is the point.',
     detail:
-      'Palantir burned significant capital on failed field deployments. Those failures were not inefficiency — they were the research cost of building a platform shaped by real problems. Organizations that optimize for zero waste in innovation also optimize for never building anything genuinely new.',
+      'Palantir burned significant capital on failed field deployments. Those failures were not inefficiency; they were the research cost of building a platform shaped by real problems. Organizations that optimize for zero waste in innovation also optimize for never building anything genuinely new.',
   },
   {
     n: '03',
-    title: 'McCardel\'s conditions are not aspirational — they are structural prerequisites.',
+    title: 'McCardel\'s conditions are not aspirational; they are structural prerequisites.',
     detail:
-      'The model worked at Palantir because premium enterprise pricing, genuinely complex problems, and real field autonomy were all simultaneously true. Remove any one and the model fails. This is not a model that can be partially adopted.',
+      'The model worked at Palantir because premium enterprise pricing, complex problems, and real field autonomy were all simultaneously true. Remove any one and the model fails. This is not a model that can be partially adopted.',
   },
 ]
 
@@ -190,7 +190,7 @@ export default function FDECaseStudy() {
         <p className="text-sm text-neutral-700 leading-relaxed">
           Unlike the other frameworks in this library, FDE&rsquo;s case study is the real Palantir Foundry
           story, drawn on public, candid accounts from former practitioners including Barry McCardel.
-          It is presented as real and sourced — not invented. No &ldquo;mock scenario&rdquo; disclaimer applies here.
+          It is presented as real and sourced, not invented. No &ldquo;mock scenario&rdquo; disclaimer applies here.
         </p>
       </div>
 

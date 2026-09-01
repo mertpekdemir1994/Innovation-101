@@ -29,10 +29,10 @@ const VARIANTS: Variant[] = [
     who: 'Palantir Technologies (emerged early 2000s)',
     summary: [
       'The original and most extreme version, described in detail through the movements above. Engineers embedded with customers for months or years, building custom solutions with radical autonomy, treating customer deployments as R&D rather than delivery, with successful field innovations migrating back to a core platform.',
-      'The model works because three conditions are simultaneously true at Palantir: the customers are large enough to pay premium prices that support the cost structure, the problems are complex enough to require genuinely custom solutions, and the organizational culture genuinely subordinates the product roadmap to field team discoveries. Remove any one of these conditions and the model breaks.',
+      'The model works because three conditions are simultaneously true at Palantir: the customers are large enough to pay premium prices that support the cost structure, the problems are complex enough to require custom solutions, and the organizational culture genuinely subordinates the product roadmap to field team discoveries. Remove any one of these conditions and the model breaks.',
     ],
     changes: [
-      { tag: 'Introduced', text: 'Full engineer embeddedness at customer sites for months or years — the FDE is not a visitor but a presence' },
+      { tag: 'Introduced', text: 'Full engineer embeddedness at customer sites for months or years: the FDE is not a visitor but a presence' },
       { tag: 'Introduced', text: 'Auftragstaktik: leadership sets high-level mission, FDE teams make all field decisions without central approval' },
       { tag: 'Introduced', text: 'Embed-Build-Extract-Migrate cycle: field-built innovations migrate back to the core platform, enriching it continuously' },
     ],
@@ -47,11 +47,11 @@ const VARIANTS: Variant[] = [
     name: 'The Distyl Model',
     who: 'Arjun Narayan at Distyl AI (cited by McCardel; no single origin date)',
     summary: [
-      "McCardel cites Distyl as the only company he is aware of truly replicating the Palantir FDE model as a startup strategy, intentionally metabolizing all the pain and tradeoffs of true forward-deployed culture. Distyl deploys engineers directly with enterprise AI customers, building custom ML and data infrastructure solutions in the customer's environment, treating each deployment as both a revenue event and a product discovery mechanism.",
+      "McCardel cites Distyl as the only company he is aware of replicating the Palantir FDE model as a startup strategy, intentionally metabolizing all the pain and tradeoffs of true forward-deployed culture. Distyl deploys engineers directly with enterprise AI customers, building custom ML and data infrastructure solutions in the customer's environment, treating each deployment as both a revenue event and a product discovery mechanism.",
       "The key difference from Palantir: Distyl chose FDE as a deliberate founding strategic decision, not discovered it as an emergent practice. The business model, pricing, hiring profile, and organizational culture were designed from day one to support FDE rather than retrofitted onto an existing company structure. The intentional version may be more replicable than Palantir's emergent one, because the tradeoffs are understood in advance.",
     ],
     changes: [
-      { tag: 'Deliberate', text: 'FDE chosen as a founding strategy, not discovered through iteration — business model and hiring profile designed around it from day one' },
+      { tag: 'Deliberate', text: 'FDE chosen as a founding strategy, not discovered through iteration: business model and hiring profile designed around it from day one' },
       { tag: 'Updated', text: 'Applied to enterprise AI / ML infrastructure, where genuine problem complexity and customer-specificity justify the FDE cost structure' },
       { tag: 'Insight', text: "Designing a company explicitly for FDE from the start may be more replicable than Palantir's emergent model, because the tradeoffs are understood in advance" },
     ],
@@ -66,16 +66,16 @@ const VARIANTS: Variant[] = [
     name: 'The Embedded Product Team',
     who: 'Synthesized from enterprise software and consulting practices (no single origin date)',
     summary: [
-      "A broader organizational pattern that shares FDE's core insight — that proximity to the customer's real context produces better product decisions — without requiring Palantir's cost structure or organizational model.",
+      "A broader organizational pattern that shares FDE's core insight (that proximity to the customer's real context produces better product decisions) without requiring Palantir's cost structure or organizational model.",
       'A small cross-functional team (typically a product manager, a designer, and one to two engineers) spends a defined period, usually four to twelve weeks, embedded with a specific customer or customer segment. They are not there to implement. They are there to understand and prototype. The embedded team develops firsthand knowledge of the customer\'s workflows, pain points, and working environment that no amount of user research from a distance replicates.',
     ],
     changes: [
-      { tag: 'Changed', text: 'Time-bounded rather than open-ended — four to twelve weeks, with a defined handoff back to the standard product process' },
+      { tag: 'Changed', text: 'Time-bounded rather than open-ended: four to twelve weeks, with a defined handoff back to the standard product process' },
       { tag: 'Changed', text: 'Focused on understanding and prototyping rather than building production systems in the field' },
       { tag: 'Used by', text: 'Enterprise software companies embedded in key accounts during new product development; internal innovation teams embedded in specific business units' },
     ],
     limitation:
-      'The time-bounded format limits the depth of knowledge that can be built. True embeddedness — the kind that surfaces the invisible workarounds and informal power structures — requires sustained presence over time, more than most organizations are willing to commit to a single customer engagement.',
+      'The time-bounded format limits the depth of knowledge that can be built. True embeddedness (the kind that surfaces the invisible workarounds and informal power structures) requires sustained presence over time, more than most organizations are willing to commit to a single customer engagement.',
     nodeOpacity: 0.50,
   },
   {
@@ -86,15 +86,15 @@ const VARIANTS: Variant[] = [
     who: 'Hex (Barry McCardel and colleagues), 2020s',
     summary: [
       "After leaving Palantir, the founding team of Hex explicitly chose not to replicate FDE at their new company. But they did not abandon all FDE-inspired practices. Instead they developed Commitment Engineering: a lighter-weight approach to embedding customer feedback into the product development process without the full cost structure of true FDE.",
-      "Product and engineering leads establish close, ongoing relationships with a small number of high-trust customers who are willing to share unfiltered feedback, participate in early-stage testing, and co-develop features. The company is building one product, not custom solutions — but the customers shaping that product are closer and more trusted than standard enterprise customer relationships.",
+      "Product and engineering leads establish close, ongoing relationships with a small number of high-trust customers who are willing to share unfiltered feedback, participate in early-stage testing, and co-develop features. The company is building one product, not custom solutions, but the customers shaping that product are closer and more trusted than standard enterprise customer relationships.",
     ],
     changes: [
-      { tag: 'Removed', text: 'Custom field builds for individual customers — Commitment Engineering feeds one shared product, not bespoke deployments' },
-      { tag: 'Preserved', text: 'Deep customer proximity and trust — a small set of high-trust partners shape the product with unfiltered ongoing input' },
-      { tag: 'Better when', text: 'Almost always, for companies not targeting Palantir-scale enterprise customers with genuinely complex, non-standardizable problems' },
+      { tag: 'Removed', text: 'Custom field builds for individual customers: Commitment Engineering feeds one shared product, not bespoke deployments' },
+      { tag: 'Preserved', text: 'Deep customer proximity and trust: a small set of high-trust partners shape the product with unfiltered ongoing input' },
+      { tag: 'Better when', text: 'Almost always, for companies not targeting Palantir-scale enterprise customers with complex, non-standardizable problems' },
     ],
     limitation:
-      'Requires genuinely high-trust, high-bandwidth customer relationships that are hard to build and maintain at scale. The model depends on customers who will tell you uncomfortable truths, not just encouraging feedback.',
+      'Requires high-trust, high-bandwidth customer relationships that are hard to build and maintain at scale. The model depends on customers who will tell you uncomfortable truths, not just encouraging feedback.',
     prompt:
       'Who are the three customers or users you could develop a Commitment Engineering relationship with? What would it look like to give them access to your early-stage product thinking in exchange for unfiltered, ongoing feedback?',
     nodeOpacity: 0.35,
@@ -179,7 +179,7 @@ export default function FDEVariantsSpectrum() {
           transition={{ duration: 0.25 }}
           className="grid md:grid-cols-2 gap-space-8"
         >
-          {/* Left — summary */}
+          {/* Left: summary */}
           <div>
             <div className="flex items-center gap-space-3 mb-space-5">
               <span
@@ -226,7 +226,7 @@ export default function FDEVariantsSpectrum() {
             )}
           </div>
 
-          {/* Right — changes */}
+          {/* Right: changes */}
           <div>
             <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-4">
               {active === 0 ? 'What it introduced' : 'How it adapts FDE'}
@@ -306,8 +306,8 @@ export default function FDEVariantsSpectrum() {
       {/* Closing statement */}
       <p className="mt-space-8 text-sm text-neutral-500 leading-relaxed max-w-prose">
         Every organization can find a place on this spectrum. The question is not &ldquo;should we do FDE?&rdquo; but
-        &ldquo;how much of FDE&rsquo;s core insight — that proximity to real customer context produces better
-        products — can we practically embed in our operating model?&rdquo;
+        &ldquo;how much of FDE&rsquo;s core insight (that proximity to real customer context produces better
+        products) can we practically embed in our operating model?&rdquo;
       </p>
     </div>
   )

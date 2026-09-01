@@ -21,7 +21,7 @@ const GROUPS: Group[] = [
         hint: 'True FDE requires premium pricing. If your per-customer revenue cannot support a full-time engineer for months or years, the economics do not work.',
       },
       {
-        q: 'Are their problems complex enough that a standardized product genuinely cannot serve them?',
+        q: 'Are their problems complex enough that a standardized product cannot serve them?',
         hint: 'If customers with comparable needs can all use the same product with minor configuration, FDE is overkill. The model is for genuine non-standardizability.',
       },
       {
@@ -36,11 +36,11 @@ const GROUPS: Group[] = [
     questions: [
       {
         q: 'Can you hire engineers who combine top-tier technical skill with customer-facing capability and independent product judgment?',
-        hint: 'This profile is exceptionally rare. An FDE who is world-class at building but cannot manage a complex customer relationship — or vice versa — cannot do true FDE.',
+        hint: 'This profile is exceptionally rare. An FDE who is world-class at building but cannot manage a complex customer relationship (or vice versa) cannot do true FDE.',
       },
       {
         q: 'Can your leadership genuinely subordinate the product roadmap to field team discoveries?',
-        hint: 'The moment leadership reasserts central control over what field teams build, FDE is over. Not "mostly" — completely. Most organizations cannot do this, which is fine.',
+        hint: 'The moment leadership reasserts central control over what field teams build, FDE is over. Not "mostly." Completely. Most organizations cannot do this, which is fine.',
       },
       {
         q: 'Can your investors tolerate a cost structure where many customer deployments will have negative individual margins?',
@@ -53,7 +53,7 @@ const GROUPS: Group[] = [
     description: 'The cultural conditions that make FDE sustainable over time',
     questions: [
       {
-        q: 'Is your organization capable of Auftragstaktik — setting a high-level mission and leaving all other decisions to people in the field?',
+        q: 'Is your organization capable of Auftragstaktik: setting a high-level mission and leaving all other decisions to people in the field?',
         hint: 'Most organizations say they want field autonomy and then, the first time a field team builds something off-roadmap, reassert central control. Genuine Auftragstaktik is rare.',
       },
       {
@@ -70,21 +70,21 @@ const GROUPS: Group[] = [
 
 function scoredRecommendation(yesCount: number): { label: string; tier: 'high' | 'medium' | 'low'; text: string; action: string } {
   if (yesCount >= 7) return {
-    label: `${yesCount}/9 — FDE may be worth exploring seriously`,
+    label: `${yesCount}/9: FDE may be worth exploring seriously`,
     tier: 'high',
     text: 'The structural conditions for FDE appear to be in place. Study the Palantir model deeply, talk to practitioners who have run it, and consider piloting with one customer before committing. Be honest about the engineer profile you need.',
     action: 'Read McCardel\'s original writing on FDE (barry.ooo), then map your actual hiring pipeline against the engineer profile he describes.',
   }
   if (yesCount >= 4) return {
-    label: `${yesCount}/9 — FDE principles are partially applicable`,
+    label: `${yesCount}/9: FDE principles are partially applicable`,
     tier: 'medium',
     text: 'True FDE is probably not the right model for your context, but FDE-inspired practices can meaningfully improve your product development. The Commitment Engineering and Embedded Product Team variants (Level 1) deliver much of FDE\'s core benefit without the full cost structure.',
-    action: 'Identify which of the three FDE-inspired practices — deeper embedding, treating some deployments as R&D, or more field autonomy — would have the highest impact on your current innovation model.',
+    action: 'Identify which of the three FDE-inspired practices (deeper embedding, treating some deployments as R&D, or more field autonomy) would have the highest impact on your current innovation model.',
   }
   return {
-    label: `${yesCount}/9 — FDE is not the right model for your context`,
+    label: `${yesCount}/9: FDE is not the right model for your context`,
     tier: 'low',
-    text: 'This is the most common and entirely respectable result. FDE is designed for a narrow set of contexts and is wrong for most organizations. But your current model\'s limitations may still draw on FDE-inspired practices — just at a much lower commitment level.',
+    text: 'This is the most common and entirely respectable result. FDE is designed for a narrow set of contexts and is wrong for most organizations. But your current model\'s limitations may still draw on FDE-inspired practices, just at a much lower commitment level.',
     action: 'Start with Commitment Engineering: identify three high-trust customers who would share unfiltered feedback in exchange for early access to your product thinking. That alone is more proximity than most product teams have.',
   }
 }

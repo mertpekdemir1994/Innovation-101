@@ -11,7 +11,7 @@ const FDEInteractiveSection = dynamic(() => import('./FDEInteractiveSection'), {
   ssr: false,
   loading: () => (
     <div className="py-space-12 flex items-center justify-center" style={{ minHeight: 400, color: 'rgba(255,255,255,0.25)' }}>
-      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram…</span>
+      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram...</span>
     </div>
   ),
 })
@@ -21,7 +21,7 @@ const FDEDiagnostic = dynamic(() => import('./FDEDiagnostic'), { ssr: false })
 
 export const metadata: Metadata = {
   title: 'Forward Deployed Engineering — Innovation 101',
-  description: 'Forward Deployed Engineering embeds highly skilled engineers directly with customers, empowered to build custom solutions in the field with radical autonomy — with successful innovations migrating back to the core platform.',
+  description: 'Forward Deployed Engineering embeds highly skilled engineers directly with customers, empowered to build custom solutions in the field with radical autonomy, with successful innovations migrating back to the core platform.',
 }
 
 
@@ -48,7 +48,7 @@ export default function FDEPage() {
     <>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          HERO — dark, full viewport
+          HERO: dark, full viewport
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
         <div
@@ -99,12 +99,12 @@ export default function FDEPage() {
       </DarkSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          THE FOUR MOVEMENTS — interactive walkthrough
+          THE FOUR MOVEMENTS: interactive walkthrough
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-12">
 
-          {/* Honest warning — moved here from hero */}
+          {/* Honest warning: moved here from hero */}
           <ScrollReveal>
             <div
               className="max-w-prose rounded-xl px-space-6 py-space-5 mb-space-10"
@@ -119,7 +119,7 @@ export default function FDEPage() {
               </p>
               <ul className="space-y-space-2 mb-space-4">
                 {[
-                  'Engineers who combine top-tier technical skill with customer-facing charisma, creative problem-solving under pressure, and independent product judgment — a profile that is exceptionally rare and expensive.',
+                  'Engineers who combine top-tier technical skill with customer-facing charisma, creative problem-solving under pressure, and independent product judgment; a profile that is exceptionally rare and expensive.',
                   "Acceptance that field teams will overlap, duplicate, and sometimes contradict each other's work. Many builds will fail. Most organizations and investors cannot stomach the waste.",
                   'Genuine subordination of the central product roadmap to field team discoveries. An organization with a planning function that controls what gets built cannot do true FDE.',
                 ].map((cond, i) => (
@@ -130,7 +130,7 @@ export default function FDEPage() {
                 ))}
               </ul>
               <p className="text-sm font-semibold italic" style={{ color: `${BRICK}0.80)` }}>
-                &ldquo;FDE is not Forward Deployed Engineering unless all three of these are true. Otherwise it is sparkling Sales Engineering.&rdquo; — Barry McCardel
+                &ldquo;FDE is not Forward Deployed Engineering unless all three of these are true. Otherwise it is sparkling Sales Engineering.&rdquo; - Barry McCardel
               </p>
             </div>
           </ScrollReveal>
@@ -155,7 +155,7 @@ export default function FDEPage() {
       </LightSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          THE CORE TRUTH — the inversion argument
+          THE CORE TRUTH: the inversion argument
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-12 md:py-space-13">
@@ -178,13 +178,13 @@ export default function FDEPage() {
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
                 Most organizations build products from offices, developing solutions based on market research,
                 user interviews, roadmap planning sessions, and requirements documents. The people who understand
-                the user&rsquo;s world most deeply — field teams, account managers, implementation consultants —
+                the user&rsquo;s world most deeply (field teams, account managers, implementation consultants)
                 are separated from the people who build the product by organizational structure, geography, and process.
               </p>
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
                 FDE collapses this separation entirely. The engineers are in the field. The field is the product
-                lab. The customer&rsquo;s real problems — not a distilled, translated, and deprioritized version of
-                them — drive what gets built next. Understanding FDE is valuable even for organizations that will
+                lab. The customer&rsquo;s real problems (not a distilled, translated, and deprioritized version of
+                them) drive what gets built next. Understanding FDE is valuable even for organizations that will
                 never implement it, because it exposes the assumptions embedded in{' '}
                 <strong className="text-neutral-900 font-semibold">every other innovation model.</strong>
               </p>
@@ -206,11 +206,11 @@ export default function FDEPage() {
               <div className="pt-space-4 border-t" style={{ borderColor: 'var(--color-neutral-200)' }}>
                 <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-2">The Auftragstaktik principle</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
-                  Palantir&rsquo;s FDE model is built on Auftragstaktik — a military doctrine in which senior leaders
+                  Palantir&rsquo;s FDE model is built on Auftragstaktik: a military doctrine in which senior leaders
                   set high-level objectives and leave all other decisions to people in the field. Senior leadership
                   defines the mission. FDEs decide how to achieve it. There is no central approval process for
                   field decisions. This doctrine is what makes FDE genuinely different from professional services
-                  or implementation consulting — and what makes it genuinely hard to run.
+                  or implementation consulting, and what makes it genuinely hard to run.
                 </p>
               </div>
             </div>
@@ -279,7 +279,7 @@ export default function FDEPage() {
       </WarmSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          EXPLORE — dark, commitment spectrum
+          EXPLORE: dark, commitment spectrum
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection>
         <Container className="pt-space-10 pb-space-4">
@@ -292,7 +292,7 @@ export default function FDEPage() {
               FDE is a spectrum, not a binary choice
             </h2>
             <p className="text-base mb-space-8 max-w-prose" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
-              Select a variant on the commitment spectrum to see what FDE looks like at that level of commitment —
+              Select a variant on the commitment spectrum to see what FDE looks like at that level of commitment:
               from the full Palantir model to Commitment Engineering, which delivers most of FDE&rsquo;s core
               benefit at a fraction of the cost.
             </p>
@@ -319,7 +319,7 @@ export default function FDEPage() {
               the original. It has evolved through practitioners leaving Palantir, founding new
               companies, and either replicating, adapting, or explicitly rejecting the model based on
               what they learned. The result is not a sequence of dated releases but a spectrum of
-              related approaches — some fully committed to the Palantir ethos, others that distill
+              related approaches: some fully committed to the Palantir ethos, others that distill
               specific FDE principles into more accessible forms. The four variants below are ordered
               from highest commitment to lowest. Select a variant to see how it works and what it
               trades off.
@@ -330,7 +330,7 @@ export default function FDEPage() {
       </WarmSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          CASE STUDY — Palantir Foundry (REAL)
+          CASE STUDY: Palantir Foundry (REAL)
       ══════════════════════════════════════════════════════════════════════ */}
       <WarmSection>
         <Container className="py-space-12">
@@ -342,7 +342,7 @@ export default function FDEPage() {
       </WarmSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          DIAGNOSTIC — Is FDE right for you?
+          DIAGNOSTIC: Is FDE right for you?
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection>
         <Container className="py-space-12">
@@ -381,11 +381,11 @@ export default function FDEPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-space-3">
             {[
               { name: 'Agile Innovation', rel: 'FDE is an extreme version of Agile Innovation run in a customer-embedded context; the Discovery Sprint becomes the customer deployment itself', slug: '/framework/agile-innovation' },
-              { name: 'Lean Startup', rel: 'FDE\'s field deployments are a form of MVP testing — each customer engagement tests the hypothesis that the platform can solve this category of problem', slug: '/framework/lean-startup' },
-              { name: 'Double Diamond', rel: 'The Embed movement is an ongoing, immersive version of the Discover phase — never-ending because the customer\'s context never stops changing', slug: '/framework/double-diamond' },
+              { name: 'Lean Startup', rel: 'FDE\'s field deployments are a form of MVP testing: each customer engagement tests the hypothesis that the platform can solve this category of problem', slug: '/framework/lean-startup' },
+              { name: 'Double Diamond', rel: 'The Embed movement is an ongoing, immersive version of the Discover phase, never-ending because the customer\'s context never stops changing', slug: '/framework/double-diamond' },
               { name: 'Design Thinking', rel: 'FDE\'s embeddedness is the most intensive possible form of the Empathize stage, carried continuously through delivery rather than done once at the start', slug: '/framework/design-thinking' },
               { name: 'Design Sprint', rel: 'Can be run inside an FDE engagement as a way to compress specific problem-solving within a broader field deployment', slug: '/framework/design-sprint' },
-              { name: 'Contextual Observation', rel: 'The Embed movement is contextual observation taken to its furthest extreme — not a research activity but a continuous operating mode', slug: '/methods/contextual-observation' },
+              { name: 'Contextual Observation', rel: 'The Embed movement is contextual observation taken to its furthest extreme: not a research activity but a continuous operating mode', slug: '/methods/contextual-observation' },
             ].map(({ name, rel, slug }, i) => (
               <ScrollReveal key={name} delay={i * 0.06}>
                 <a
@@ -416,8 +416,8 @@ export default function FDEPage() {
             </p>
             <div className="space-y-space-4">
               {[
-                { title: 'Understanding Forward Deployed Engineering', author: 'Barry McCardel — barry.ooo (primary source)' },
-                { title: 'Reflections on Palantir', author: 'Nabeel Qureshi — nabeelqu.co' },
+                { title: 'Understanding Forward Deployed Engineering', author: 'Barry McCardel, barry.ooo (primary source)' },
+                { title: 'Reflections on Palantir', author: 'Nabeel Qureshi, nabeelqu.co' },
                 { title: 'Zero to One', author: 'Peter Thiel with Blake Masters, 2014' },
                 { title: 'Team Topologies', author: 'Matthew Skelton and Manuel Pais, 2019 (on organizational design for fast flow)' },
               ].map(({ title, author }) => (
