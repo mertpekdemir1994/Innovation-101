@@ -139,7 +139,7 @@ export default function IDIEstablishing() {
                 x={r.cx} y={r.cy + r.bodyH + 34}
                 textAnchor="middle" fontSize="10.5"
                 fontFamily="var(--font-mono)" letterSpacing="0.04em"
-                fill="rgba(255,255,255,0.30)"
+                fill="rgba(255,255,255,0.65)"
                 style={{ userSelect: 'none' }}
               >{r.sub}</text>
             </motion.g>
