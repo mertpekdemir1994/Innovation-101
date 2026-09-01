@@ -309,7 +309,7 @@ export default function FDEMovementsLoop() {
         {/* Progress stepper */}
         <div
           className="flex items-center justify-center gap-space-1 mt-space-2"
-          role="tablist"
+          role="group"
           aria-label="FDE movements"
         >
           {MOVEMENTS.map((movement) => {
@@ -318,8 +318,8 @@ export default function FDEMovementsLoop() {
               <button
                 key={movement.id}
                 type="button"
-                role="tab"
-                aria-selected={isActive}
+                aria-pressed={isActive}
+                aria-label={movement.label}
                 onClick={() => handleSelect(movement.id)}
                 className="flex items-center gap-space-2 px-space-3 py-space-2 rounded-lg transition-all duration-200"
                 style={{ background: isActive ? `${BRICK}0.07)` : 'transparent' }}

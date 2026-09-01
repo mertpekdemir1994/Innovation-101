@@ -243,13 +243,13 @@ export default function FDECaseStudy() {
               border: `1px solid ${activeMovement === key ? `${BRICK}0.25)` : 'var(--color-neutral-200)'}`,
             }}
           >
-            <span className="font-mono text-2xs uppercase tracking-widest mb-space-1" style={{ color: activeMovement === key ? `${BRICK}0.65)` : 'var(--color-neutral-400)' }}>
+            <span className="font-mono text-2xs uppercase tracking-widest mb-space-1" style={{ color: activeMovement === key ? `${BRICK}0.65)` : 'var(--color-neutral-500)' }}>
               {verb}
             </span>
             <span className="font-semibold text-sm leading-snug" style={{ color: activeMovement === key ? `${BRICK}0.90)` : 'var(--color-neutral-700)' }}>
               {label}
             </span>
-            <span className="text-xs" style={{ color: activeMovement === key ? `${BRICK}0.55)` : 'var(--color-neutral-400)' }}>
+            <span className="text-xs" style={{ color: activeMovement === key ? `${BRICK}0.55)` : 'var(--color-neutral-500)' }}>
               {sub}
             </span>
           </button>

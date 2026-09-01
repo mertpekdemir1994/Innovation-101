@@ -120,7 +120,7 @@ export default function FDEVariantsSpectrum() {
         <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${BRICK}0.70)` }}>
           ← Highest commitment
         </span>
-        <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: 'var(--color-neutral-400)' }}>
+        <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: 'var(--color-neutral-500)' }}>
           Lowest commitment →
         </span>
       </div>
@@ -158,7 +158,7 @@ export default function FDEVariantsSpectrum() {
               <p
                 className="font-mono text-2xs uppercase tracking-widest text-center leading-tight transition-colors duration-200"
                 style={{
-                  color: active === i ? `${BRICK}0.90)` : 'var(--color-neutral-400)',
+                  color: active === i ? `${BRICK}0.90)` : 'var(--color-neutral-500)',
                   maxWidth: 80,
                 }}
               >
