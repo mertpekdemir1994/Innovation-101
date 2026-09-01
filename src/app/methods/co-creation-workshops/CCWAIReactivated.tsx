@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY   = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700, SVG_H = 258
 
@@ -82,7 +84,7 @@ export default function CCWAIReactivated() {
         {/* Mode label */}
         <text x={CCX} y={24} textAnchor="middle"
           fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-          fill={isAI ? `${INDIGO}0.60)` : `${CLAY}0.68)`}
+          fill={isAI ? `${INDIGO_TEXT}0.916)` : `${CLAY_TEXT}0.933)`}
           style={{ userSelect: 'none', transition: 'fill 0.35s' }}>
           {isAI ? 'AI ASSISTS AT THE EDGES · REAL PARTICIPANTS STAY AT THE CENTER' : 'DESIGN WITH · REAL PEOPLE CO-CREATING'}
         </text>
@@ -99,7 +101,7 @@ export default function CCWAIReactivated() {
             style={{ transition: 'stroke 0.35s' }} />
           <text x={CCX} y={CX + CH / 2 - 4} textAnchor="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.16em"
-            fill={`${CLAY}0.18)`} style={{ userSelect: 'none' }}>
+            fill={`${CLAY_TEXT}0.828)`} style={{ userSelect: 'none' }}>
             SHARED CANVAS
           </text>
           {/* Contribution cards */}
@@ -119,7 +121,7 @@ export default function CCWAIReactivated() {
               <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                fill={c.clay ? `${CLAY}0.88)` : 'rgba(255,255,255,0.38)'}
+                fill={c.clay ? `${CLAY_TEXT}0.975)` : 'rgba(255,255,255,0.69)'}
                 style={{ userSelect: 'none' }}>
                 {c.label}
               </text>
@@ -156,7 +158,7 @@ export default function CCWAIReactivated() {
             <text x={p.lx} y={p.ly + 1}
               textAnchor={p.anchor} dominantBaseline="middle"
               fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill={`${CLAY}0.58)`} style={{ userSelect: 'none' }}>
+              fill={`${CLAY_TEXT}0.912)`} style={{ userSelect: 'none' }}>
               PARTICIPANT
             </text>
           </g>
@@ -170,7 +172,7 @@ export default function CCWAIReactivated() {
             <circle cx={t.cx} cy={t.cy} r={DR} fill="rgba(255,255,255,0.48)" />
             <text x={t.cx} y={t.cy + PR + 10} textAnchor="middle"
               fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill="rgba(255,255,255,0.30)" style={{ userSelect: 'none' }}>
+              fill="rgba(255,255,255,0.65)" style={{ userSelect: 'none' }}>
               TEAM
             </text>
           </g>
@@ -190,7 +192,7 @@ export default function CCWAIReactivated() {
                   <text x={b.x + b.w / 2} y={b.y + 10}
                     textAnchor="middle" dominantBaseline="middle"
                     fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                    fill={`${INDIGO}0.80)`} style={{ userSelect: 'none' }}>
+                    fill={`${INDIGO_TEXT}0.958)`} style={{ userSelect: 'none' }}>
                     {b.label}
                   </text>
                 </g>
@@ -206,7 +208,7 @@ export default function CCWAIReactivated() {
                   stroke={`${INDIGO}0.55)`} strokeWidth={1} />
                 <text x={350} y={25 + PR + 10} textAnchor="middle"
                   fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                  fill={`${INDIGO}0.55)`} style={{ userSelect: 'none' }}>
+                  fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}>
                   AI SIM ≠ REAL
                 </text>
               </g>
@@ -214,7 +216,7 @@ export default function CCWAIReactivated() {
               {/* "REAL PARTICIPANTS: CANNOT BE REPLACED" annotation */}
               <text x={CCX} y={SVG_H - 4} textAnchor="middle"
                 fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                fill={`${CLAY}0.50)`} style={{ userSelect: 'none' }}>
+                fill={`${CLAY_TEXT}0.895)`} style={{ userSelect: 'none' }}>
                 REAL PARTICIPANTS · LIVED EXPERIENCE · CANNOT BE SIMULATED OR REPLACED
               </text>
             </motion.g>
@@ -225,7 +227,7 @@ export default function CCWAIReactivated() {
         {!isAI && (
           <text x={CCX} y={SVG_H - 4} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.16)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
             REAL PARTICIPATION · GROUNDED INSIGHT · SHARED OWNERSHIP
           </text>
         )}

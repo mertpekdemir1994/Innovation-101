@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const CLAY = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
 const SVG_W = 700
 const SVG_H = 258
@@ -94,7 +95,7 @@ export default function CCWEstablishing() {
             stroke={`${CLAY}0.30)`} strokeWidth={1.2} />
           <text x={CCX} y={CCY + 4} textAnchor="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.16em"
-            fill={`${CLAY}0.16)`} style={{ userSelect: 'none' }}>
+            fill={`${CLAY_TEXT}0.824)`} style={{ userSelect: 'none' }}>
             SHARED CANVAS
           </text>
         </motion.g>
@@ -126,7 +127,7 @@ export default function CCWEstablishing() {
             <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-              fill={c.clay ? `${CLAY}0.88)` : 'rgba(255,255,255,0.38)'}
+              fill={c.clay ? `${CLAY_TEXT}0.975)` : 'rgba(255,255,255,0.69)'}
               style={{ userSelect: 'none' }}>
               {c.label}
             </text>
@@ -150,7 +151,7 @@ export default function CCWEstablishing() {
             <text x={p.lx} y={p.ly + 1}
               textAnchor={p.anchor} dominantBaseline="middle"
               fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill={`${CLAY}0.58)`} style={{ userSelect: 'none' }}>
+              fill={`${CLAY_TEXT}0.912)`} style={{ userSelect: 'none' }}>
               PARTICIPANT
             </text>
           </motion.g>
@@ -170,7 +171,7 @@ export default function CCWEstablishing() {
             <circle cx={t.cx} cy={t.cy} r={DR} fill="rgba(255,255,255,0.48)" />
             <text x={t.cx} y={t.cy + PR + 10} textAnchor="middle"
               fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill="rgba(255,255,255,0.30)" style={{ userSelect: 'none' }}>
+              fill="rgba(255,255,255,0.65)" style={{ userSelect: 'none' }}>
               TEAM
             </text>
           </motion.g>
