@@ -3,7 +3,9 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const TEAL  = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 380
@@ -106,7 +108,7 @@ export default function EMEstablishing() {
                 <text x={lx} y={ly - 6}
                   textAnchor="middle" dominantBaseline="auto"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${TEAL}0.55)`} style={{ userSelect: 'none' }}
+                  fill={`${TEAL_TEXT}0.905)`} style={{ userSelect: 'none' }}
                 >{c.label}</text>
               </motion.g>
             )
@@ -129,7 +131,7 @@ export default function EMEstablishing() {
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize={actor.focal ? '6.5' : '5.5'}
                   fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                  fill={`${TEAL}0.90)`} style={{ userSelect: 'none' }}
+                  fill={`${TEAL_TEXT}0.979)`} style={{ userSelect: 'none' }}
                 >{line}</text>
               ))}
             </motion.g>
@@ -149,7 +151,7 @@ export default function EMEstablishing() {
                 <text x={lx} y={ly - 6}
                   textAnchor="middle" dominantBaseline="auto"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}
+                  fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}
                 >{c.label}</text>
               </motion.g>
             )
@@ -193,13 +195,13 @@ export default function EMEstablishing() {
           <text x={22} y={SVG_H - 14}
             textAnchor="start" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${TEAL}0.50)`} style={{ userSelect: 'none' }}
+            fill={`${TEAL_TEXT}0.895)`} style={{ userSelect: 'none' }}
           >OBVIOUS ACTOR</text>
           <circle cx={130} cy={SVG_H - 14} r={5} fill={`${AMBER}0.06)`} stroke={`${AMBER}0.42)`} strokeWidth={1} />
           <text x={138} y={SVG_H - 14}
             textAnchor="start" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${AMBER}0.50)`} style={{ userSelect: 'none' }}
+            fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}
           >NON-OBVIOUS ACTOR</text>
         </motion.g>
       </svg>

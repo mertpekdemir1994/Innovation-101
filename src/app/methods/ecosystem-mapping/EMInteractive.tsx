@@ -4,7 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL  = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 380
@@ -156,7 +158,7 @@ export default function EMInteractive() {
                 <text x={lx} y={ly - 6}
                   textAnchor="middle" dominantBaseline="auto"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={c.obvious ? `${TEAL}0.55)` : `${AMBER}0.50)`}
+                  fill={c.obvious ? `${TEAL_TEXT}0.905)` : `${AMBER_TEXT}0.845)`}
                   style={{ userSelect: 'none' }}
                 >{c.label}</text>
               </motion.g>
@@ -217,7 +219,7 @@ export default function EMInteractive() {
                     textAnchor="middle" dominantBaseline="middle"
                     fontSize={actor.focal ? '6.5' : '5.5'}
                     fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                    fill={actor.obvious ? `${TEAL}0.90)` : `${AMBER}0.82)`}
+                    fill={actor.obvious ? `${TEAL_TEXT}0.979)` : `${AMBER}0.82)`}
                     style={{ userSelect: 'none', transition: 'fill 0.18s' }}
                   >{line}</text>
                 ))}
@@ -230,7 +232,7 @@ export default function EMInteractive() {
             <text x={SVG_W / 2} y={SVG_H - 8}
               textAnchor="middle" dominantBaseline="auto"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}
+              fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
             >tap any actor</text>
           )}
         </svg>

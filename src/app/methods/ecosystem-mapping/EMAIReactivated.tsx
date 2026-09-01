@@ -4,8 +4,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL   = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const SVG_H = 380
@@ -120,8 +123,8 @@ export default function EMAIReactivated() {
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                   fill={
                     aiMode
-                      ? (c.obvious ? `${INDIGO}0.55)` : `${AMBER}0.35)`)
-                      : (c.obvious ? `${TEAL}0.55)` : `${AMBER}0.50)`)
+                      ? (c.obvious ? `${INDIGO_TEXT}0.905)` : `${AMBER_TEXT}0.798)`)
+                      : (c.obvious ? `${TEAL_TEXT}0.905)` : `${AMBER_TEXT}0.845)`)
                   }
                   style={{ userSelect: 'none', transition: 'fill 0.35s' }}
                 >{c.label}</text>
@@ -166,8 +169,8 @@ export default function EMAIReactivated() {
                     fontFamily="var(--font-mono)" letterSpacing="0.10em"
                     fill={
                       aiMode
-                        ? (actor.obvious ? `${INDIGO}0.82)` : `${AMBER}0.60)`)
-                        : (actor.obvious ? `${TEAL}0.90)` : `${AMBER}0.82)`)
+                        ? (actor.obvious ? `${INDIGO_TEXT}0.962)` : `${AMBER_TEXT}0.876)`)
+                        : (actor.obvious ? `${TEAL_TEXT}0.979)` : `${AMBER}0.82)`)
                     }
                     style={{ userSelect: 'none', transition: 'fill 0.35s' }}
                   >{line}</text>
