@@ -56,7 +56,7 @@ export default function JTBDExampleToggle() {
               </p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 Conventional analysis had already failed. The team had segmented by demographics, asked customers how
-                to improve the shake — thicker, cheaper, chunkier — and made none of those changes. Nothing moved.
+                to improve the shake (thicker, cheaper, chunkier) and made none of those changes. Nothing moved.
                 They switched to a JTBD investigation: study the <em>circumstances</em> of purchase, especially the
                 moment of hiring.
               </p>
@@ -70,11 +70,11 @@ export default function JTBDExampleToggle() {
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
                 A striking number of milkshakes were bought early in the morning, by solo commuters, alone, buying
                 nothing else. Investigating that specific circumstance revealed the job: make a long, boring solo
-                commute more interesting, and stave off hunger until lunch — all manageable with one hand on the wheel.
+                commute more interesting, and stave off hunger until lunch, all manageable with one hand on the wheel.
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 That job had almost nothing to do with milkshakes as food. It was a companionship-and-engagement job
-                in disguise — and the milkshake happened to do it well: thick enough to last the whole commute, one
+                in disguise, and the milkshake happened to do it well: thick enough to last the whole commute, one
                 handle, engagingly dense to consume.
               </p>
             </div>
@@ -97,7 +97,7 @@ export default function JTBDExampleToggle() {
                 ))}
               </div>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
-                No product name. No demographic. Only progress-in-a-circumstance — which is exactly why the real competition and the real improvement suddenly become visible.
+                No product name. No demographic. Only progress-in-a-circumstance, which is exactly why the real competition and the real improvement suddenly become visible.
               </p>
             </div>
 
@@ -108,10 +108,10 @@ export default function JTBDExampleToggle() {
               </p>
               <div className="flex gap-3 flex-wrap">
                 {[
-                  { name: 'Banana', why: 'Gone too fast — leaves you hungry by 9am' },
+                  { name: 'Banana', why: 'Gone too fast, leaves you hungry by 9am' },
                   { name: 'Bagel', why: 'Dry, needs two hands, messy at the wheel' },
                   { name: 'Donut', why: 'Messy, leaves fingers sticky for the meeting' },
-                  { name: 'Boredom', why: 'Nothing — you just sit there, drained' },
+                  { name: 'Boredom', why: 'Nothing, you just sit there, drained' },
                 ].map(({ name, why }) => (
                   <div key={name} className="rounded-lg px-4 py-3 flex-1 min-w-[140px]" style={{ background: `${NAVY}0.06)`, border: `1px solid ${NAVY}0.16)` }}>
                     <p className="font-semibold mb-1" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}>{name}</p>
@@ -124,12 +124,12 @@ export default function JTBDExampleToggle() {
             {/* The winning move */}
             <div className="rounded-xl p-5 mb-4" style={{ background: `${NAVY}0.08)`, border: `1px solid ${NAVY}0.22)` }}>
               <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.65)` }}>
-                The winning move — revealed by the job
+                The winning move, revealed by the job
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-800)', lineHeight: 'var(--leading-relaxed)' }}>
                 Make it <em>thicker</em> so it lasts the whole commute (the opposite of what the feature-improvement
                 analysis had found). Move the dispenser to a fast self-serve location so commuters can grab it quickly
-                before the drive. Both improvements come directly from the job — not from asking customers what they
+                before the drive. Both improvements come directly from the job, not from asking customers what they
                 wanted in a milkshake, but from understanding what they were hiring it to do.
               </p>
             </div>
@@ -140,8 +140,8 @@ export default function JTBDExampleToggle() {
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 The investigation focused on the <em>circumstance of hiring</em>, not the product&rsquo;s features or the
-                customer&rsquo;s profile. The counterintuitive job — make a boring commute bearable, one-handed, until
-                lunch — was invisible until someone studied what was actually happening at 7am in the drive-through.
+                customer&rsquo;s profile. The counterintuitive job, make a boring commute bearable, one-handed, until
+                lunch, was invisible until someone studied what was actually happening at 7am in the drive-through.
                 The job cannot be guessed from the product. It can only be found in the situation.
               </p>
             </div>
@@ -158,7 +158,7 @@ export default function JTBDExampleToggle() {
             {/* AI scenario */}
             <div className="rounded-xl p-6 mb-6" style={{ background: `${INDIGO}0.06)`, border: `1px solid ${INDIGO}0.20)` }}>
               <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}>
-                Same scenario — AI assistance applied
+                Same scenario: AI assistance applied
               </p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 The team feeds the product description to AI: &ldquo;We sell milkshakes. Sales are flat. What are the Jobs To
@@ -216,10 +216,10 @@ export default function JTBDExampleToggle() {
                 The job the AI did not produce
               </p>
               <p className="font-semibold mb-3" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)', lineHeight: 1.35 }}>
-                The commute companion job — the one that actually drove morning sales — appears nowhere in the AI output.
+                The commute companion job, the one that actually drove morning sales, appears nowhere in the AI output.
               </p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI, reasoning from the description &ldquo;milkshake,&rdquo; produced dessert jobs and treat jobs — all anchored
+                AI, reasoning from the description &ldquo;milkshake,&rdquo; produced dessert jobs and treat jobs, all anchored
                 to the product category. The counterintuitive commute job requires knowing that a specific population
                 of people buys milkshakes at 7am, alone, while driving, for reasons that have almost nothing to do
                 with milkshakes. That knowledge lives in the drive-through observation, not in the product description.
@@ -230,7 +230,7 @@ export default function JTBDExampleToggle() {
             {/* Wrong competition */}
             <div className="rounded-xl p-5 mb-4" style={{ background: 'rgba(245,158,11,0.04)', border: '1px solid rgba(245,158,11,0.18)' }}>
               <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: 'rgba(245,158,11,0.70)' }}>
-                The competition AI named — and the competition it missed
+                The competition AI named, and the competition it missed
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -260,11 +260,11 @@ export default function JTBDExampleToggle() {
                 What this tells you about AI + JTBD
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI produced correctly-formatted job statements fast — genuinely useful for breaking out of feature-language
+                AI produced correctly-formatted job statements fast, genuinely useful for breaking out of feature-language
                 and generating a starting set to react to. But the method&rsquo;s value is the counterintuitive job that
                 the product description never implies. That job cannot be produced from a description; it can only be
                 found from investigating real circumstances of use. Had the team acted on the AI&rsquo;s output, they would
-                have doubled down on milkshake-as-dessert — exactly the framing that had already failed. The strongest
+                have doubled down on milkshake-as-dessert, exactly the framing that had already failed. The strongest
                 practice uses AI to draft and escape feature-speak, and human research to find the job that actually
                 drives behavior.
               </p>

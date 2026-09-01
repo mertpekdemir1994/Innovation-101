@@ -7,7 +7,7 @@ const NAVY = 'rgba(31,58,95,'
 const SVG_W = 700
 const SVG_H = 290
 
-// Slot positions — three horizontal panels forming one sentence of progress
+// Slot positions: three horizontal panels forming one sentence of progress
 const SLOT_Y = 68
 const SLOT_H = 158
 const MID_Y  = SLOT_Y + SLOT_H / 2  // 147
@@ -72,7 +72,7 @@ export default function JTBDEstablishing() {
             textAnchor="start" dominantBaseline="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}
-          >{'× WRONG — FEATURE / DEMOGRAPHIC'}</text>
+          >{'× WRONG: FEATURE / DEMOGRAPHIC'}</text>
           <text
             x={252} y={30}
             textAnchor="start" dominantBaseline="middle"
@@ -81,7 +81,7 @@ export default function JTBDEstablishing() {
           >{'a thicker milkshake for suburban commuters'}</text>
         </motion.g>
 
-        {/* Slot 1 — WHEN (situation) */}
+        {/* Slot 1: WHEN (situation) */}
         <motion.g variants={fadeUp} transition={T}>
           <rect
             x={S1.x} y={SLOT_Y} width={S1.w} height={SLOT_H} rx={8}
@@ -129,7 +129,7 @@ export default function JTBDEstablishing() {
           />
         </motion.g>
 
-        {/* Slot 2 — I WANT TO (motivation) */}
+        {/* Slot 2: I WANT TO (motivation) */}
         <motion.g variants={fadeUp} transition={T}>
           <rect
             x={S2.x} y={SLOT_Y} width={S2.w} height={SLOT_H} rx={8}
@@ -177,7 +177,7 @@ export default function JTBDEstablishing() {
           />
         </motion.g>
 
-        {/* Slot 3 — SO I CAN (outcome) */}
+        {/* Slot 3: SO I CAN (outcome) */}
         <motion.g variants={fadeUp} transition={T}>
           <rect
             x={S3.x} y={SLOT_Y} width={S3.w} height={SLOT_H} rx={8}
@@ -197,7 +197,7 @@ export default function JTBDEstablishing() {
             x2={S3.x + S3.w - 14} y2={SLOT_Y + 26}
             stroke="rgba(255,255,255,0.08)"
           />
-          {(['arrive at work', 'ready —', 'not depleted'] as string[]).map((ln, i) => (
+          {(['arrive at work', 'ready,', 'not depleted'] as string[]).map((ln, i) => (
             <text
               key={i} x={S3_CX} y={SLOT_Y + 60 + i * 17}
               textAnchor="middle" dominantBaseline="middle"
@@ -222,7 +222,7 @@ export default function JTBDEstablishing() {
           style={{ userSelect: 'none' }}
           variants={fadeIn}
           transition={{ ...T, delay: prefersReduced ? 0 : 0.90 }}
-        >progress, not product — circumstance, not demographic</motion.text>
+        >progress, not product; circumstance, not demographic</motion.text>
       </svg>
     </motion.div>
   )

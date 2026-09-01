@@ -32,7 +32,7 @@ const SLOT_LINES: Record<Mode, string[][]> = {
   human: [
     ['commuting alone,', 'bored and', 'hungry'],
     ['stay engaged', 'and satisfied,', 'one-handed'],
-    ['arrive at work', 'ready —', 'not depleted'],
+    ['arrive at work', 'ready,', 'not depleted'],
   ],
   ai: [
     ['I want', 'a sweet treat'],
@@ -115,7 +115,7 @@ export default function JTBDAIReactivated() {
           {/* Three slots */}
           {SLOT_GEOM.map(({ s, cx, label, sublabel }, si) => (
             <g key={si}>
-              {/* Slot rect — color transitions with mode */}
+              {/* Slot rect: color transitions with mode */}
               <rect
                 x={s.x} y={SLOT_Y} width={s.w} height={SLOT_H} rx={8}
                 fill={isAI ? `${INDIGO}0.08)` : `${NAVY}0.62)`}
@@ -138,7 +138,7 @@ export default function JTBDAIReactivated() {
                 stroke={isAI ? `${INDIGO}0.14)` : 'rgba(255,255,255,0.08)'}
                 style={{ transition: 'stroke 0.35s' }}
               />
-              {/* Content lines — swap with AnimatePresence */}
+              {/* Content lines: swap with AnimatePresence */}
               <AnimatePresence mode="wait">
                 <motion.g
                   key={`s${si}-${mode}`}
@@ -253,7 +253,7 @@ export default function JTBDAIReactivated() {
                 fill={`${INDIGO}0.45)`} style={{ userSelect: 'none' }}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 transition={{ duration: 0.28 }}
-              >AI PRODUCES THE OBVIOUS JOB — THE COUNTERINTUITIVE JOB IS NOT IN THE CATEGORY</motion.text>
+              >AI PRODUCES THE OBVIOUS JOB, THE COUNTERINTUITIVE JOB IS NOT IN THE CATEGORY</motion.text>
             )}
           </AnimatePresence>
         </svg>
@@ -285,10 +285,10 @@ export default function JTBDAIReactivated() {
                 Where AI misses the point
               </p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                The method&rsquo;s value is the counterintuitive job — the one no product description implies. AI,
+                The method&rsquo;s value is the counterintuitive job: the one no product description implies. AI,
                 anchored to the category, produces the obvious one. It also stays within the category for competition
                 (other milkshakes, not bananas and boredom), misses the emotional and social dimensions of the job,
-                and cannot surface the switching moment — all of which require real investigation of real circumstances.
+                and cannot surface the switching moment, all of which require real investigation of real circumstances.
               </p>
             </div>
           </motion.div>
@@ -304,7 +304,7 @@ export default function JTBDAIReactivated() {
           AI is genuinely useful as a drafting tool: correct format, obvious functional job, fast. For getting
           teams out of feature-language and into job-language, it works. But the method&rsquo;s whole payoff is the
           counterintuitive real job, its emotional and social dimensions, and the non-obvious cross-category
-          competition — all of which come from investigating real switching moments in real circumstances. AI,
+          competition, all of which come from investigating real switching moments in real circumstances. AI,
           reasoning from a product description, returns the job anyone would guess. The job worth finding is
           the one nobody would have guessed. Use AI to draft and react; use research to find the job that
           actually drives behavior.

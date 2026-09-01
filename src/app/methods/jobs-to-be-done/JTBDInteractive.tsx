@@ -36,25 +36,25 @@ type SlotDef = {
 const SLOTS: SlotDef[] = [
   { id: 'when',       s: S1, cx: S1_CX, label: 'WHEN',      sublabel: 'SITUATION',  lines: ['commuting alone,', 'bored and', 'hungry'] },
   { id: 'motivation', s: S2, cx: S2_CX, label: 'I WANT TO', sublabel: 'MOTIVATION', lines: ['stay engaged', 'and satisfied,', 'one-handed'] },
-  { id: 'outcome',    s: S3, cx: S3_CX, label: 'SO I CAN',  sublabel: 'OUTCOME',    lines: ['arrive at work', 'ready —', 'not depleted'] },
+  { id: 'outcome',    s: S3, cx: S3_CX, label: 'SO I CAN',  sublabel: 'OUTCOME',    lines: ['arrive at work', 'ready,', 'not depleted'] },
 ]
 
 const SLOT_DETAILS: Record<string, { heading: string; body: string; tip: string; extra?: string }> = {
   when: {
-    heading: 'WHEN — The situation',
-    body: 'The circumstance that triggers the job — not who the person is, but the moment they are in. "When I am commuting alone and my mind is drained" predicts behavior; "35-year-old suburban professional" does not. The situation is what creates the need for progress, and it is the whole job\'s foundation. If a demographic appears here, replace it with a circumstance.',
+    heading: 'WHEN: The situation',
+    body: 'The circumstance that triggers the job: not who the person is, but the moment they are in. "When I am commuting alone and my mind is drained" predicts behavior; "35-year-old suburban professional" does not. The situation is what creates the need for progress, and it is the whole job\'s foundation. If a demographic appears here, replace it with a circumstance.',
     tip: 'Test: could someone from a completely different demographic face this same situation and hire the same solution? If yes, you have a circumstance. If no, a demographic crept in.',
   },
   motivation: {
-    heading: 'I WANT TO — The motivation (the progress)',
-    body: 'The progress the person is trying to make, expressed without any product or solution inside the statement. "Stay engaged and stave off boredom and hunger" is a motivation. "Drink a milkshake" is a solution. Keep rewriting until no product or feature name remains. This slot is the demand itself — the gap between the person\'s current situation and where they want to be.',
+    heading: 'I WANT TO: The motivation (the progress)',
+    body: 'The progress the person is trying to make, expressed without any product or solution inside the statement. "Stay engaged and stave off boredom and hunger" is a motivation. "Drink a milkshake" is a solution. Keep rewriting until no product or feature name remains. This slot is the demand itself: the gap between the person\'s current situation and where they want to be.',
     tip: 'Remove your product name. If the motivation still reads as a coherent need that another product could also serve, you have a job. If not, a solution crept in.',
   },
   outcome: {
-    heading: 'SO I CAN — The outcome',
-    body: 'The deeper result the person is ultimately after — what making that progress gives them. This is where the emotional and social dimensions of the job usually surface: the feeling of readiness, the relief from boredom, the absence of guilt. "Arrive at work feeling ready, not depleted" carries both functional and emotional weight. Stopping at the functional layer misses most of the job.',
+    heading: 'SO I CAN: The outcome',
+    body: 'The deeper result the person is ultimately after: what making that progress gives them. This is where the emotional and social dimensions of the job usually surface: the feeling of readiness, the relief from boredom, the absence of guilt. "Arrive at work feeling ready, not depleted" carries both functional and emotional weight. Stopping at the functional layer misses most of the job.',
     tip: 'Ask "so I can what?" one more time. The first answer is usually functional. The second is usually emotional or social. Both belong here.',
-    extra: 'FUNCTIONAL: the practical result — EMOTIONAL: how they want to feel — SOCIAL: how they want to be perceived',
+    extra: 'FUNCTIONAL: the practical result; EMOTIONAL: how they want to feel; SOCIAL: how they want to be perceived',
   },
 }
 
@@ -120,7 +120,7 @@ export default function JTBDInteractive() {
             </filter>
           </defs>
 
-          {/* Background — tints amber in wrong view */}
+          {/* Background: tints amber in wrong view */}
           <rect
             x={0} y={0} width={SVG_W} height={SVG_H} rx={10}
             fill={view === 'wrong' ? `${AMBER}0.04)` : `${NAVY}0.06)`}
@@ -149,7 +149,7 @@ export default function JTBDInteractive() {
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                   fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}
-                >{'× WRONG — FEATURE / DEMOGRAPHIC'}</text>
+                >{'× WRONG: FEATURE / DEMOGRAPHIC'}</text>
                 <line
                   x1={24} y1={SLOT_Y + 28} x2={676} y2={SLOT_Y + 28}
                   stroke={`${AMBER}0.14)`}
@@ -171,7 +171,7 @@ export default function JTBDInteractive() {
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                   fill={`${AMBER}0.42)`} style={{ userSelect: 'none' }}
-                >{'a product · a demographic — hidden: the job · the circumstance · the real competition'}</text>
+                >{'a product · a demographic; hidden: the job · the circumstance · the real competition'}</text>
               </motion.g>
             ) : (
               /* ── JOB STATEMENT (three slots) ── */
@@ -293,8 +293,8 @@ export default function JTBDInteractive() {
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >
             {view === 'wrong'
-              ? 'product and segment — hides the job and hides the competition'
-              : 'when — motivation — outcome — the job expressed as progress in a circumstance'}
+              ? 'product and segment: hides the job and hides the competition'
+              : 'when, motivation, outcome: the job expressed as progress in a circumstance'}
           </text>
         </svg>
       </div>
@@ -340,7 +340,7 @@ export default function JTBDInteractive() {
         )}
       </AnimatePresence>
 
-      {/* Reframe note — always visible */}
+      {/* Reframe note: always visible */}
       <div
         className="rounded-xl p-5"
         style={{ background: `${NAVY}0.10)`, border: `1px solid ${NAVY}0.25)` }}
@@ -350,7 +350,7 @@ export default function JTBDInteractive() {
           style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.80)` }}
         >The reframe</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
-          Toggle between views. The wrong framing looks like market analysis — a product and a segment.
+          Toggle between views. The wrong framing looks like market analysis: a product and a segment.
           The job statement looks like a sentence of progress. They describe the same underlying need, but only
           the job statement makes the circumstances, the motivation, and the real competition visible.
           That is the whole method.
@@ -360,7 +360,7 @@ export default function JTBDInteractive() {
       {/* Three-dimension reminder */}
       <div className="grid md:grid-cols-3 gap-4 mt-5">
         {[
-          { label: 'Functional', body: 'The practical task the person is accomplishing — the thing you can observe and measure. The most visible dimension; the easiest to capture; and the least sufficient on its own.' },
+          { label: 'Functional', body: 'The practical task the person is accomplishing: the thing you can observe and measure. The most visible dimension; the easiest to capture; and the least sufficient on its own.' },
           { label: 'Emotional',  body: 'How the person wants to feel as a result of making this progress. The relief, the readiness, the confidence. Usually un-stated; requires careful inference from the research.' },
           { label: 'Social',     body: 'How the person wants to be perceived by others, or how they want to perceive themselves. Often the deepest driver of hiring and firing decisions, and the most frequently missed.' },
         ].map(({ label, body }) => (
