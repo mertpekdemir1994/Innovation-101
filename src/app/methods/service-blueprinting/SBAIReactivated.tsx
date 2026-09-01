@@ -4,8 +4,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL  = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const SLATE = 'rgba(100,116,139,'
+const SLATE_TEXT = 'rgba(143,154,171,'  // brightened text-safe variant of SLATE
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const STAGE_W = 140
@@ -85,7 +88,7 @@ export default function SBAIReactivated() {
               <text x={SCX[i]} y={HDR_TOP + HDR_H / 2 + 2}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                fill={aiMode ? `${INDIGO}0.82)` : `${TEAL}0.90)`}
+                fill={aiMode ? `${INDIGO_TEXT}0.962)` : `${TEAL_TEXT}0.979)`}
                 style={{ userSelect: 'none', transition: 'fill 0.35s' }}
               >{name}</text>
             </g>
@@ -106,7 +109,7 @@ export default function SBAIReactivated() {
           <line x1={0} y1={CA_Y + CA_H} x2={SVG_W} y2={CA_Y + CA_H} stroke="rgba(255,255,255,0.07)" strokeWidth={1} />
           <text x={4} y={CA_Y + 7} textAnchor="start" dominantBaseline="hanging"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={aiMode ? `${INDIGO}0.50)` : `${TEAL}0.55)`}
+            fill={aiMode ? `${INDIGO_TEXT}0.895)` : `${TEAL_TEXT}0.905)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >CUSTOMER ACTIONS</text>
 
@@ -118,7 +121,7 @@ export default function SBAIReactivated() {
           <line x1={0} y1={FS_Y + FS_H} x2={SVG_W} y2={FS_Y + FS_H} stroke="rgba(255,255,255,0.06)" strokeWidth={1} />
           <text x={4} y={FS_Y + 7} textAnchor="start" dominantBaseline="hanging"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={aiMode ? `${INDIGO}0.42)` : `${TEAL}0.45)`}
+            fill={aiMode ? `${INDIGO_TEXT}0.878)` : `${TEAL_TEXT}0.885)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >FRONTSTAGE</text>
 
@@ -142,7 +145,7 @@ export default function SBAIReactivated() {
           <line x1={0} y1={BS_Y + BS_H} x2={SVG_W} y2={BS_Y + BS_H} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
           <text x={4} y={BS_Y + 7} textAnchor="start" dominantBaseline="hanging"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={aiMode ? `${INDIGO}0.44)` : `${SLATE}0.58)`}
+            fill={aiMode ? `${INDIGO_TEXT}0.882)` : `${SLATE_TEXT}0.912)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >BACKSTAGE</text>
 
@@ -153,7 +156,7 @@ export default function SBAIReactivated() {
           />
           <text x={4} y={SP_Y + 7} textAnchor="start" dominantBaseline="hanging"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={aiMode ? `${INDIGO}0.38)` : `${SLATE}0.48)`}
+            fill={aiMode ? `${INDIGO_TEXT}0.87)` : `${SLATE_TEXT}0.891)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >SUPPORT PROCESSES / SYSTEMS</text>
 

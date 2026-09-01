@@ -5,8 +5,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL   = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const SLATE  = 'rgba(100,116,139,'
+const SLATE_TEXT = 'rgba(143,154,171,'  // brightened text-safe variant of SLATE
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 type Reveal = 'blueprint' | 'journey-mapping' | '5es'
 
@@ -80,7 +83,7 @@ function BlueprintMiniSVG() {
           <text x={MSCX[i]} y={2 + MHDR_H / 2 + 2}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.82)`} style={{ userSelect: 'none' }}
+            fill={`${TEAL_TEXT}0.962)`} style={{ userSelect: 'none' }}
           >S{i + 1}</text>
         </g>
       ))}
@@ -89,13 +92,13 @@ function BlueprintMiniSVG() {
       <rect x={0} y={MCA_Y} width={MW} height={MCA_H} fill={`${TEAL}0.07)`} />
       <line x1={0} y1={MCA_Y + MCA_H} x2={MW} y2={MCA_Y + MCA_H} stroke="rgba(255,255,255,0.07)" strokeWidth={1} />
       <text x={3} y={MCA_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL}0.52)`} style={{ userSelect: 'none' }}
+        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.899)`} style={{ userSelect: 'none' }}
       >CUSTOMER ACTIONS</text>
       {/* FS */}
       <rect x={0} y={MFS_Y} width={MW} height={MFS_H} fill={`${TEAL}0.04)`} />
       <line x1={0} y1={MFS_Y + MFS_H} x2={MW} y2={MFS_Y + MFS_H} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
       <text x={3} y={MFS_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL}0.42)`} style={{ userSelect: 'none' }}
+        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.878)`} style={{ userSelect: 'none' }}
       >FRONTSTAGE</text>
       {/* LOV */}
       <line x1={0} y1={MLOV_Y} x2={MW} y2={MLOV_Y}
@@ -109,12 +112,12 @@ function BlueprintMiniSVG() {
       <rect x={0} y={MBS_Y} width={MW} height={MBS_H} fill={`${SLATE}0.05)`} />
       <line x1={0} y1={MBS_Y + MBS_H} x2={MW} y2={MBS_Y + MBS_H} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
       <text x={3} y={MBS_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${SLATE}0.55)`} style={{ userSelect: 'none' }}
+        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${SLATE_TEXT}0.905)`} style={{ userSelect: 'none' }}
       >BACKSTAGE</text>
       {/* SP */}
       <rect x={0} y={MSP_Y} width={MW} height={MSP_H} fill={`${SLATE}0.08)`} />
       <text x={3} y={MSP_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${SLATE}0.45)`} style={{ userSelect: 'none' }}
+        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${SLATE_TEXT}0.885)`} style={{ userSelect: 'none' }}
       >SUPPORT PROCESSES / SYSTEMS</text>
       {/* Column dividers */}
       {[1,2,3,4].map(i => (
@@ -123,7 +126,7 @@ function BlueprintMiniSVG() {
         />
       ))}
       <text x={MW / 2} y={MH_FULL - 2} textAnchor="middle" dominantBaseline="auto"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL}0.35)`} style={{ userSelect: 'none' }}
+        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.864)`} style={{ userSelect: 'none' }}
       >ABOVE + BELOW THE LINE, FULL DELIVERY SYSTEM</text>
     </svg>
   )
@@ -142,7 +145,7 @@ function JourneyMappingMiniSVG() {
           <text x={MSCX[i]} y={2 + MHDR_H / 2 + 2}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.82)`} style={{ userSelect: 'none' }}
+            fill={`${TEAL_TEXT}0.962)`} style={{ userSelect: 'none' }}
           >S{i + 1}</text>
         </g>
       ))}
@@ -150,13 +153,13 @@ function JourneyMappingMiniSVG() {
       {/* CA: customer actions + emotion line */}
       <rect x={0} y={MCA_Y} width={MW} height={MCA_H} fill={`${TEAL}0.07)`} />
       <text x={3} y={MCA_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL}0.52)`} style={{ userSelect: 'none' }}
+        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.899)`} style={{ userSelect: 'none' }}
       >CUSTOMER ACTIONS</text>
       <line x1={0} y1={MCA_Y + MCA_H} x2={MW} y2={MCA_Y + MCA_H} stroke="rgba(255,255,255,0.07)" strokeWidth={1} />
       {/* FS */}
       <rect x={0} y={MFS_Y} width={MW} height={MFS_H} fill={`${TEAL}0.04)`} />
       <text x={3} y={MFS_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL}0.42)`} style={{ userSelect: 'none' }}
+        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.878)`} style={{ userSelect: 'none' }}
       >FRONTSTAGE</text>
       {/* Emotion line in the CA area */}
       <path d={MEM_PATH}
@@ -174,7 +177,7 @@ function JourneyMappingMiniSVG() {
       />
       <text x={MW - 3} y={MLOV_Y - 4}
         textAnchor="end" dominantBaseline="auto"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}
+        fontSize="3.5" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
       >LINE OF VISIBILITY</text>
       {/* Below LOV: dimmed hint only */}
       <rect x={0} y={MLOV_Y} width={MW} height={MH_JM - MLOV_Y}
@@ -182,7 +185,7 @@ function JourneyMappingMiniSVG() {
       />
       <text x={MW / 2} y={MLOV_Y + (MH_JM - MLOV_Y) / 2}
         textAnchor="middle" dominantBaseline="middle"
-        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.15)" style={{ userSelect: 'none' }}
+        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.575)" style={{ userSelect: 'none' }}
       >NOT IN SCOPE, STAYS ABOVE THE LINE</text>
       {/* Column dividers */}
       {[1,2,3,4].map(i => (
@@ -224,7 +227,7 @@ function FiveEsMiniSVG() {
           <text x={MSCX[i]} y={2 + MHDR_H / 2 + 2}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`${INDIGO}0.90)`} style={{ userSelect: 'none' }}
+            fill={`${INDIGO_TEXT}0.979)`} style={{ userSelect: 'none' }}
           >{label}</text>
         </g>
       ))}
@@ -234,7 +237,7 @@ function FiveEsMiniSVG() {
         />
       ))}
       <text x={MW / 2} y={MH_FULL - 2} textAnchor="middle" dominantBaseline="auto"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${INDIGO}0.40)`} style={{ userSelect: 'none' }}
+        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${INDIGO_TEXT}0.874)`} style={{ userSelect: 'none' }}
       >FIXED FIVE-PHASE EVALUATION LENS</text>
     </svg>
   )

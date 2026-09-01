@@ -3,7 +3,9 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const TEAL  = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const SLATE = 'rgba(100,116,139,'
+const SLATE_TEXT = 'rgba(143,154,171,'  // brightened text-safe variant of SLATE
 
 const SVG_W = 700
 const STAGE_W = 140
@@ -72,7 +74,7 @@ export default function SBEstablishing() {
             <text x={SCX[i]} y={HDR_TOP + HDR_H / 2 + 2}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill={`${TEAL}0.90)`} style={{ userSelect: 'none' }}
+              fill={`${TEAL_TEXT}0.979)`} style={{ userSelect: 'none' }}
             >{name}</text>
           </motion.g>
         ))}
@@ -93,7 +95,7 @@ export default function SBEstablishing() {
           <line x1={0} y1={CA_Y + CA_H} x2={SVG_W} y2={CA_Y + CA_H} stroke="rgba(255,255,255,0.07)" strokeWidth={1} />
           <text x={4} y={CA_Y + 7} textAnchor="start" dominantBaseline="hanging"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.55)`} style={{ userSelect: 'none' }}
+            fill={`${TEAL_TEXT}0.905)`} style={{ userSelect: 'none' }}
           >CUSTOMER ACTIONS</text>
           {CA_ITEMS.map((text, i) => (
             <text key={i} x={SCX[i]} y={CA_Y + CA_H / 2 + 5}
@@ -110,7 +112,7 @@ export default function SBEstablishing() {
           <line x1={0} y1={FS_Y + FS_H} x2={SVG_W} y2={FS_Y + FS_H} stroke="rgba(255,255,255,0.06)" strokeWidth={1} />
           <text x={4} y={FS_Y + 7} textAnchor="start" dominantBaseline="hanging"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.45)`} style={{ userSelect: 'none' }}
+            fill={`${TEAL_TEXT}0.885)`} style={{ userSelect: 'none' }}
           >FRONTSTAGE</text>
           {FS_ITEMS.map((text, i) => (
             <text key={i} x={SCX[i]} y={FS_Y + FS_H / 2 + 5}
@@ -148,13 +150,13 @@ export default function SBEstablishing() {
           <line x1={0} y1={BS_Y + BS_H} x2={SVG_W} y2={BS_Y + BS_H} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
           <text x={4} y={BS_Y + 7} textAnchor="start" dominantBaseline="hanging"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${SLATE}0.58)`} style={{ userSelect: 'none' }}
+            fill={`${SLATE_TEXT}0.912)`} style={{ userSelect: 'none' }}
           >BACKSTAGE</text>
           {BS_ITEMS.map((text, i) => (
             <text key={i} x={SCX[i]} y={BS_Y + BS_H / 2 + 5}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="6.5" fontFamily="var(--font-body, Inter, sans-serif)"
-              fill={`${SLATE}0.72)`} style={{ userSelect: 'none' }}
+              fill={`${SLATE_TEXT}0.941)`} style={{ userSelect: 'none' }}
             >{text}</text>
           ))}
         </motion.g>
@@ -164,13 +166,13 @@ export default function SBEstablishing() {
           <rect x={0} y={SP_Y} width={SVG_W} height={SP_H} fill={`${SLATE}0.08)`} />
           <text x={4} y={SP_Y + 7} textAnchor="start" dominantBaseline="hanging"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${SLATE}0.48)`} style={{ userSelect: 'none' }}
+            fill={`${SLATE_TEXT}0.891)`} style={{ userSelect: 'none' }}
           >SUPPORT PROCESSES / SYSTEMS</text>
           {SP_ITEMS.map((text, i) => (
             <text key={i} x={SCX[i]} y={SP_Y + SP_H / 2 + 5}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="6.5" fontFamily="var(--font-body, Inter, sans-serif)"
-              fill={`${SLATE}0.62)`} style={{ userSelect: 'none' }}
+              fill={`${SLATE_TEXT}0.92)`} style={{ userSelect: 'none' }}
             >{text}</text>
           ))}
         </motion.g>
