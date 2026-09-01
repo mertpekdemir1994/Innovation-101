@@ -286,7 +286,7 @@ export default function COEstablishing() {
           x={SVG_W / 2} y={256}
           textAnchor="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-          fill="rgba(255,255,255,0.18)"
+          fill="rgba(255,255,255,0.59)"
           style={{ userSelect: 'none' }}
           variants={fade}
           transition={{ ...annT, delay: prefersReduced ? 0 : 0.6 }}
