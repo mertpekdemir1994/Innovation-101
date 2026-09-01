@@ -230,14 +230,14 @@ export default function FDEMovementsLoop() {
 
           {/* Center labels */}
           <text x={cx} y={cy - 10} textAnchor="middle"
-            fill={`${BRICK}0.35)`} fontSize="11"
+            fill={`${BRICK}0.85)`} fontSize="11"
             fontFamily="ui-monospace, monospace" letterSpacing="0.14em"
             style={{ textTransform: 'uppercase' }}
           >
             continuous
           </text>
           <text x={cx} y={cy + 10} textAnchor="middle"
-            fill={`${BRICK}0.20)`} fontSize="10"
+            fill={`${BRICK}0.85)`} fontSize="10"
             fontFamily="ui-monospace, monospace" letterSpacing="0.12em"
             style={{ textTransform: 'uppercase' }}
           >
@@ -283,7 +283,7 @@ export default function FDEMovementsLoop() {
                 {/* Number */}
                 <text x={x} y={y - 10}
                   textAnchor="middle"
-                  fill={`${BRICK}${isActive ? '0.70)' : '0.38)'}`}
+                  fill={`${BRICK}${isActive ? '0.95)' : '0.80)'}`}
                   fontSize="10" fontFamily="ui-monospace, monospace" letterSpacing="0.10em"
                   style={{ pointerEvents: 'none' }}
                 >
@@ -293,7 +293,7 @@ export default function FDEMovementsLoop() {
                 {/* Short label */}
                 <text x={x} y={y + 8}
                   textAnchor="middle"
-                  fill={`${BRICK}${isActive ? '1.0)' : '0.55)'}`}
+                  fill={`${BRICK}${isActive ? '1.0)' : '0.80)'}`}
                   fontSize={isActive ? '14' : '13'}
                   fontWeight={isActive ? '700' : '500'}
                   fontFamily="ui-monospace, monospace" letterSpacing="0.06em"
@@ -330,7 +330,7 @@ export default function FDEMovementsLoop() {
                 />
                 <span
                   className="font-mono text-2xs uppercase tracking-widest"
-                  style={{ color: isActive ? `${BRICK}0.72)` : 'var(--color-neutral-400)' }}
+                  style={{ color: isActive ? `${BRICK}0.90)` : 'var(--color-neutral-500)' }}
                 >
                   {movement.n}
                 </span>
@@ -363,7 +363,7 @@ export default function FDEMovementsLoop() {
             </span>
             <span
               className="font-mono text-2xs uppercase tracking-widest"
-              style={{ color: `${BRICK}0.55)` }}
+              style={{ color: `${BRICK}0.85)` }}
             >
               {mv.verb}
             </span>
@@ -389,7 +389,7 @@ export default function FDEMovementsLoop() {
           >
             <p
               className="font-mono text-2xs uppercase tracking-widest mb-space-2"
-              style={{ color: `${BRICK}0.60)` }}
+              style={{ color: `${BRICK}0.85)` }}
             >
               Objective
             </p>
@@ -434,7 +434,7 @@ export default function FDEMovementsLoop() {
                     <span
                       className="shrink-0 ml-space-3 text-base"
                       style={{
-                        color: `${BRICK}0.60)`,
+                        color: `${BRICK}0.80)`,
                         transform: isOpen ? 'rotate(45deg)' : 'none',
                         display: 'inline-block',
                         transition: 'transform 0.2s',
@@ -470,7 +470,7 @@ export default function FDEMovementsLoop() {
           >
             <p
               className="font-mono text-2xs uppercase tracking-widest mb-space-3"
-              style={{ color: `${BRICK}0.65)` }}
+              style={{ color: `${BRICK}0.85)` }}
             >
               The key question
             </p>
