@@ -140,7 +140,7 @@ export default function JMInteractive() {
   return (
     <div className="flex flex-col md:flex-row gap-10 md:gap-12 items-start">
       {/* ── Journey map SVG ── */}
-      <div className="w-full md:w-[58%] shrink-0">
+      <div className="w-full md:w-illustration shrink-0">
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}
           width="100%"

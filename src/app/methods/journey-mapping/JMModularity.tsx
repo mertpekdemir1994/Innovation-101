@@ -95,7 +95,7 @@ export default function JMModularity() {
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
                 background: isActive ? `${TEAL}0.20)` : 'rgba(255,255,255,0.04)',
-                color:       isActive ? `${TEAL}0.95)` : 'rgba(255,255,255,0.35)',
+                color:       isActive ? `${TEAL_TEXT}0.99)` : 'rgba(255,255,255,0.675)',
                 border:      `1px solid ${isActive ? `${TEAL}0.50)` : 'rgba(255,255,255,0.10)'}`,
               }}
               aria-pressed={isActive}
@@ -109,7 +109,7 @@ export default function JMModularity() {
         <svg
           viewBox={`0 0 ${SVG_W} ${svgH}`}
           width="100%"
-          style={{ display: 'block', overflow: 'visible' }}
+          style={{ maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}
         >
           <defs>
             <filter id="jm-mod-glow" x="-10%" y="-60%" width="120%" height="220%">
