@@ -121,7 +121,7 @@ export default function POCInteractive() {
           {/* ONE CRITICAL QUESTION label / clickable zone */}
           <text x={APP_CX} y={27} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-            fill={active === 'question' ? `${BRICK}0.90)` : `${BRICK}0.50)`}
+            fill={active === 'question' ? `rgba(183,145,135,0.979)` : `rgba(183,145,135,0.895)`}
             style={{ userSelect: 'none', cursor: 'pointer',
               transition: 'fill 0.22s' }}>
             ONE CRITICAL QUESTION
@@ -135,7 +135,7 @@ export default function POCInteractive() {
           <text x={INP_X + INP_W / 2} y={INP_CY}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${BRICK}0.48)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.891)`} style={{ userSelect: 'none' }}>
             RAW INPUT
           </text>
 
@@ -155,7 +155,7 @@ export default function POCInteractive() {
           <text x={APP_CX} y={APP_Y + APP_H - 8}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${BRICK}0.14)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.819)`} style={{ userSelect: 'none' }}>
             PROVING RIG, INTERNAL, BARE
           </text>
 
@@ -174,7 +174,7 @@ export default function POCInteractive() {
               <text x={t.x} y={TAP_Y1 + COMP_H / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                fill={`${BRICK}0.62)`} style={{ userSelect: 'none' }}>
+                fill={`rgba(183,145,135,0.92)`} style={{ userSelect: 'none' }}>
                 {t.label}
               </text>
             </g>
@@ -183,7 +183,7 @@ export default function POCInteractive() {
           {/* Scope drift label (clickable) */}
           <text x={APP_CX} y={174} textAnchor="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={active === 'discard' ? 'rgba(217,119,6,0.85)' : 'rgba(255,255,255,0.18)'}
+            fill={active === 'discard' ? 'rgba(217,119,6,0.85)' : 'rgba(255,255,255,0.59)'}
             style={{ userSelect: 'none', cursor: 'pointer', transition: 'fill 0.22s' }}>
             ↓  SCOPE DRIFT ANTI-PATTERN  ↓
           </text>
@@ -201,7 +201,7 @@ export default function POCInteractive() {
           <text x={OUT_CX} y={OUT_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${BRICK}0.38)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}>
             VERDICT
           </text>
           <line x1={OUT_X + 10} y1={OUT_Y + 18} x2={OUT_X + OUT_W - 10} y2={OUT_Y + 18}
@@ -214,7 +214,7 @@ export default function POCInteractive() {
           <text x={IND_CX + 16} y={PASS_CY + 1}
             dominantBaseline="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-            fill={`${BRICK}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.975)`} style={{ userSelect: 'none' }}>
             PASS
           </text>
           {/* FAIL */}
@@ -223,7 +223,7 @@ export default function POCInteractive() {
           <text x={IND_CX + 16} y={FAIL_CY + 1}
             dominantBaseline="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
             FAIL
           </text>
 
@@ -238,7 +238,7 @@ export default function POCInteractive() {
               <text x={g.x + g.w / 2} y={g.y + 16}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                fill={active === 'absent' ? `${BRICK}0.55)` : 'rgba(255,255,255,0.16)'}
+                fill={active === 'absent' ? `rgba(183,145,135,0.905)` : 'rgba(255,255,255,0.58)'}
                 style={{ userSelect: 'none', transition: 'fill 0.22s' }}>
                 {g.label}
               </text>

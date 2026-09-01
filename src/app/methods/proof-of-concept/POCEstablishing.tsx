@@ -86,7 +86,7 @@ export default function POCEstablishing() {
           transition={{ duration: 0.40, delay: d(0.10) }}>
           <text x={Q_CX} y={Q_Y - 10 + 24} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-            fill={`${BRICK}0.55)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}>
             ONE CRITICAL QUESTION
           </text>
           {/* Arrow down from label to apparatus */}
@@ -110,13 +110,13 @@ export default function POCEstablishing() {
           <text x={INP_X + INP_W / 2} y={INP_CY - 5}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${BRICK}0.55)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}>
             RAW INPUT
           </text>
           <text x={INP_X + INP_W / 2} y={INP_CY + 7}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${BRICK}0.30)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.853)`} style={{ userSelect: 'none' }}>
             (real data / signal)
           </text>
         </motion.g>
@@ -144,7 +144,7 @@ export default function POCEstablishing() {
           <text x={APP_CX} y={APP_Y + APP_H - 8}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${BRICK}0.14)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.819)`} style={{ userSelect: 'none' }}>
             PROVING RIG, INTERNAL, BARE
           </text>
         </motion.g>
@@ -176,7 +176,7 @@ export default function POCEstablishing() {
             <text x={t.x} y={TAP_Y1 + COMP_H / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${BRICK}0.70)`} style={{ userSelect: 'none' }}>
+              fill={`rgba(183,145,135,0.937)`} style={{ userSelect: 'none' }}>
               {t.label}
             </text>
           </motion.g>
@@ -201,7 +201,7 @@ export default function POCEstablishing() {
           <text x={OUT_CX} y={OUT_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${BRICK}0.38)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}>
             VERDICT
           </text>
           <line x1={OUT_X + 10} y1={OUT_Y + 18} x2={OUT_X + OUT_W - 10} y2={OUT_Y + 18}
@@ -214,7 +214,7 @@ export default function POCEstablishing() {
           <text x={IND_CX + 16} y={PASS_CY + 1}
             dominantBaseline="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-            fill={`${BRICK}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.975)`} style={{ userSelect: 'none' }}>
             PASS
           </text>
           {/* FAIL row */}
@@ -223,7 +223,7 @@ export default function POCEstablishing() {
           <text x={IND_CX + 16} y={FAIL_CY + 1}
             dominantBaseline="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             FAIL
           </text>
         </motion.g>
@@ -240,13 +240,13 @@ export default function POCEstablishing() {
             <text x={g.x + g.w / 2} y={g.y + 15}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+              fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
               {g.label}
             </text>
             <text x={g.x + g.w / 2} y={g.y + 29}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-              fill="rgba(255,255,255,0.10)" style={{ userSelect: 'none' }}>
+              fill="rgba(255,255,255,0.55)" style={{ userSelect: 'none' }}>
               {g.note}
             </text>
           </motion.g>

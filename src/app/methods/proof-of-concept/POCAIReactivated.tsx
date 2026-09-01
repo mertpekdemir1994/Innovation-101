@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const SVG_H = 258
@@ -131,7 +132,7 @@ export default function POCAIReactivated() {
           {isAI && (
             <text x={APP_CX + 148} y={27} textAnchor="start"
               fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill={`${BRICK}0.62)`} style={{ userSelect: 'none' }}>
+              fill={`rgba(183,145,135,0.92)`} style={{ userSelect: 'none' }}>
               ← HUMAN JUDGMENT
             </text>
           )}
@@ -144,7 +145,7 @@ export default function POCAIReactivated() {
           <text x={INP_X + INP_W / 2} y={INP_CY}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${BRICK}0.45)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>
             RAW INPUT
           </text>
 
@@ -167,7 +168,7 @@ export default function POCAIReactivated() {
           <text x={APP_CX} y={APP_Y + APP_H - 8}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={isAI ? `${INDIGO}0.20)` : `${BRICK}0.14)`}
+            fill={isAI ? `${INDIGO_TEXT}0.832)` : `rgba(183,145,135,0.819)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>
             PROVING RIG, INTERNAL, BARE
           </text>
@@ -196,7 +197,7 @@ export default function POCAIReactivated() {
               <text x={t.x} y={TAP_Y1 + COMP_H / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                fill={isAI ? `${INDIGO}0.80)` : `${BRICK}0.62)`}
+                fill={isAI ? `${INDIGO_TEXT}0.958)` : `rgba(183,145,135,0.92)`}
                 style={{ userSelect: 'none', transition: 'fill 0.35s' }}>
                 {t.label}
               </text>
@@ -217,7 +218,7 @@ export default function POCAIReactivated() {
                 <text x={AI_BADGE.x + AI_BADGE.w / 2} y={AI_BADGE.y + AI_BADGE.h / 2 + 1}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-                  fill={`${INDIGO}0.90)`} style={{ userSelect: 'none' }}>
+                  fill={`${INDIGO_TEXT}0.979)`} style={{ userSelect: 'none' }}>
                   AI BUILDS THIS RIG FAST
                 </text>
               </motion.g>
@@ -236,7 +237,7 @@ export default function POCAIReactivated() {
           <text x={OUT_CX} y={OUT_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${BRICK}0.38)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}>
             VERDICT
           </text>
           <line x1={OUT_X + 10} y1={OUT_Y + 18} x2={OUT_X + OUT_W - 10} y2={OUT_Y + 18}
@@ -248,7 +249,7 @@ export default function POCAIReactivated() {
           <text x={IND_CX + 16} y={PASS_CY + 1}
             dominantBaseline="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-            fill={`${BRICK}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.975)`} style={{ userSelect: 'none' }}>
             PASS
           </text>
           <circle cx={IND_CX} cy={FAIL_CY} r={8}
@@ -256,7 +257,7 @@ export default function POCAIReactivated() {
           <text x={IND_CX + 16} y={FAIL_CY + 1}
             dominantBaseline="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
             FAIL
           </text>
 
@@ -264,7 +265,7 @@ export default function POCAIReactivated() {
           {isAI && (
             <text x={OUT_CX} y={156} textAnchor="middle"
               fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-              fill={`${BRICK}0.60)`} style={{ userSelect: 'none' }}>
+              fill={`rgba(183,145,135,0.916)`} style={{ userSelect: 'none' }}>
               CONDITIONS: HUMAN JUDGMENT
             </text>
           )}
@@ -278,7 +279,7 @@ export default function POCAIReactivated() {
               <text x={g.x + g.w / 2} y={g.y + 16}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                fill="rgba(255,255,255,0.14)" style={{ userSelect: 'none' }}>
+                fill="rgba(255,255,255,0.57)" style={{ userSelect: 'none' }}>
                 {g.label}
               </text>
             </g>
