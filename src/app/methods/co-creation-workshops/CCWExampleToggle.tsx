@@ -43,7 +43,7 @@ export default function CCWExampleToggle() {
 
       {/* Shared scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mr-2">
+        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">
           Shared scenario
         </span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
@@ -109,7 +109,7 @@ export default function CCWExampleToggle() {
                     }}>
                     <div className="shrink-0 w-24">
                       <span className="text-[9px] font-semibold uppercase tracking-wider block"
-                        style={{ color: item.clay ? `${CLAY}1)` : 'var(--color-neutral-400)' }}>
+                        style={{ color: item.clay ? `${CLAY}1)` : 'var(--color-neutral-500)' }}>
                         {item.contributor}
                       </span>
                     </div>
