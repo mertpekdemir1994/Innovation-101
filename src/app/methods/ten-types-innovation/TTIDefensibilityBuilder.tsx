@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 
 const PLUM  = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER = 'rgba(245,158,11,'
 
 const SVG_W = 700
@@ -287,7 +288,7 @@ export default function TTIDefensibilityBuilder() {
               x={cat.cx} y={CAT_LABEL_Y}
               textAnchor="middle"
               fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill={cats.has(cat.id) ? `${PLUM}0.88)` : `${PLUM}0.50)`}
+              fill={cats.has(cat.id) ? `${PLUM_TEXT}0.975)` : `${PLUM_TEXT}0.895)`}
               style={{ userSelect: 'none', transition: 'fill 0.25s' }}
             >
               {cat.label}
@@ -367,7 +368,7 @@ export default function TTIDefensibilityBuilder() {
                   x={tile.x + TILE_W - 8} y={TILE_Y + 13}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="8" fontFamily="var(--font-mono)"
-                  fill={`${PLUM}0.92)`}
+                  fill={`${PLUM_TEXT}0.983)`}
                   style={{ userSelect: 'none', pointerEvents: 'none' }}
                 >
                   ✓
@@ -383,7 +384,7 @@ export default function TTIDefensibilityBuilder() {
             x={SVG_W / 2} y={SVG_H - 4}
             textAnchor="middle"
             fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.22)"
+            fill="rgba(255,255,255,0.61)"
             style={{ userSelect: 'none' }}
           >
             CLICK TILES TO BUILD YOUR COMBINATION, WATCH THE SCALE RESPOND

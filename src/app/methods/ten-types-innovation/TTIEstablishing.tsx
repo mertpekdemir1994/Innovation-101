@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
 const SVG_W = 700
 const SVG_H = 280
@@ -95,7 +96,7 @@ export default function TTIEstablishing() {
               fontSize="8.5"
               fontFamily="var(--font-mono)"
               letterSpacing="0.12em"
-              fill={`${PLUM}0.80)`}
+              fill={`${PLUM_TEXT}0.958)`}
               style={{ userSelect: 'none' }}
             >
               {cat.label}
@@ -137,7 +138,7 @@ export default function TTIEstablishing() {
                   fontSize="5.5"
                   fontFamily="var(--font-mono)"
                   letterSpacing="0.08em"
-                  fill="rgba(255,255,255,0.28)"
+                  fill="rgba(255,255,255,0.64)"
                   style={{ userSelect: 'none' }}
                 >
                   {tile.noteAbove}
@@ -150,7 +151,7 @@ export default function TTIEstablishing() {
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="8.5" fontFamily="var(--font-mono)"
                   letterSpacing="0.10em"
-                  fill={`${PLUM}0.95)`}
+                  fill={`${PLUM_TEXT}0.99)`}
                   style={{ userSelect: 'none' }}
                 >
                   {tile.lines[0]}
@@ -162,7 +163,7 @@ export default function TTIEstablishing() {
                     textAnchor="middle" dominantBaseline="middle"
                     fontSize="8.5" fontFamily="var(--font-mono)"
                     letterSpacing="0.10em"
-                    fill={`${PLUM}0.95)`}
+                    fill={`${PLUM_TEXT}0.99)`}
                     style={{ userSelect: 'none' }}
                   >
                     {tile.lines[0]}
@@ -172,7 +173,7 @@ export default function TTIEstablishing() {
                     textAnchor="middle" dominantBaseline="middle"
                     fontSize="8.5" fontFamily="var(--font-mono)"
                     letterSpacing="0.10em"
-                    fill={`${PLUM}0.95)`}
+                    fill={`${PLUM_TEXT}0.99)`}
                     style={{ userSelect: 'none' }}
                   >
                     {tile.lines[1]}
@@ -199,7 +200,7 @@ export default function TTIEstablishing() {
             textAnchor="start"
             fontSize="6.5" fontFamily="var(--font-mono)"
             letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.22)"
+            fill="rgba(255,255,255,0.61)"
             style={{ userSelect: 'none' }}
           >
             ← INTERNAL / HOW THE BUSINESS WORKS
@@ -209,7 +210,7 @@ export default function TTIEstablishing() {
             textAnchor="end"
             fontSize="6.5" fontFamily="var(--font-mono)"
             letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.22)"
+            fill="rgba(255,255,255,0.61)"
             style={{ userSelect: 'none' }}
           >
             CUSTOMER-FACING / HOW IT FEELS →

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
 const SVG_W = 700
 const TILE_W = 60
@@ -171,7 +172,7 @@ export default function TTIInteractive() {
               x={cat.cx} y={CAT_LABEL_Y}
               textAnchor="middle"
               fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill={active && TILES.find(t => t.id === active)?.cat === cat.id ? `${PLUM}0.85)` : `${PLUM}0.55)`}
+              fill={active && TILES.find(t => t.id === active)?.cat === cat.id ? `${PLUM_TEXT}0.969)` : `${PLUM_TEXT}0.905)`}
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}
             >
               {cat.label}
@@ -256,7 +257,7 @@ export default function TTIInteractive() {
             x={SVG_W / 2} y={SVG_H - 4}
             textAnchor="middle"
             fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.22)"
+            fill="rgba(255,255,255,0.61)"
             style={{ userSelect: 'none' }}
           >
             CLICK ANY TILE TO READ ABOUT THAT TYPE IN DEPTH

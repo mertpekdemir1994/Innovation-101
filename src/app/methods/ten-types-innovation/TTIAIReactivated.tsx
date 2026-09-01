@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM   = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const TILE_W = 60
@@ -104,7 +106,7 @@ export default function TTIAIReactivated() {
               x={cat.cx} y={CAT_LABEL_Y}
               textAnchor="middle"
               fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill={isAI ? `${INDIGO}0.60)` : `${PLUM}0.55)`}
+              fill={isAI ? `${INDIGO_TEXT}0.916)` : `${PLUM_TEXT}0.905)`}
               style={{ userSelect: 'none', transition: 'fill 0.35s' }}
             >
               {cat.label}
@@ -146,7 +148,7 @@ export default function TTIAIReactivated() {
                       <text x={cx} y={TILE_CY}
                         textAnchor="middle" dominantBaseline="middle"
                         fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                        fill={`${PLUM}0.92)`} style={{ userSelect: 'none' }}>
+                        fill={`${PLUM_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                         {tile.lines[0]}
                       </text>
                     ) : (
@@ -154,13 +156,13 @@ export default function TTIAIReactivated() {
                         <text x={cx} y={TILE_CY - 8}
                           textAnchor="middle" dominantBaseline="middle"
                           fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                          fill={`${PLUM}0.92)`} style={{ userSelect: 'none' }}>
+                          fill={`${PLUM_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                           {tile.lines[0]}
                         </text>
                         <text x={cx} y={TILE_CY + 8}
                           textAnchor="middle" dominantBaseline="middle"
                           fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                          fill={`${PLUM}0.92)`} style={{ userSelect: 'none' }}>
+                          fill={`${PLUM_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                           {tile.lines[1]}
                         </text>
                       </>
@@ -177,7 +179,7 @@ export default function TTIAIReactivated() {
                       <text x={cx} y={TILE_CY - 16}
                         textAnchor="middle" dominantBaseline="middle"
                         fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                        fill={`${INDIGO}0.35)`} style={{ userSelect: 'none' }}>
+                        fill={`${INDIGO_TEXT}0.864)`} style={{ userSelect: 'none' }}>
                         {tile.lines[0]}
                       </text>
                     ) : (
@@ -185,13 +187,13 @@ export default function TTIAIReactivated() {
                         <text x={cx} y={TILE_CY - 24}
                           textAnchor="middle" dominantBaseline="middle"
                           fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                          fill={`${INDIGO}0.35)`} style={{ userSelect: 'none' }}>
+                          fill={`${INDIGO_TEXT}0.864)`} style={{ userSelect: 'none' }}>
                           {tile.lines[0]}
                         </text>
                         <text x={cx} y={TILE_CY - 14}
                           textAnchor="middle" dominantBaseline="middle"
                           fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                          fill={`${INDIGO}0.35)`} style={{ userSelect: 'none' }}>
+                          fill={`${INDIGO_TEXT}0.864)`} style={{ userSelect: 'none' }}>
                           {tile.lines[1]}
                         </text>
                       </>
@@ -201,7 +203,7 @@ export default function TTIAIReactivated() {
                       <text x={cx} y={TILE_CY + 10}
                         textAnchor="middle" dominantBaseline="middle"
                         fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                        fill={`${INDIGO}0.92)`} style={{ userSelect: 'none' }}>
+                        fill={`${INDIGO_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                         {tile.aiIdea[0]}
                       </text>
                     ) : (
@@ -209,13 +211,13 @@ export default function TTIAIReactivated() {
                         <text x={cx} y={TILE_CY + 3}
                           textAnchor="middle" dominantBaseline="middle"
                           fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                          fill={`${INDIGO}0.92)`} style={{ userSelect: 'none' }}>
+                          fill={`${INDIGO_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                           {tile.aiIdea[0]}
                         </text>
                         <text x={cx} y={TILE_CY + 15}
                           textAnchor="middle" dominantBaseline="middle"
                           fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                          fill={`${INDIGO}0.92)`} style={{ userSelect: 'none' }}>
+                          fill={`${INDIGO_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                           {tile.aiIdea[1]}
                         </text>
                       </>
