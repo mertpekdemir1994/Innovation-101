@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY   = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const SVG_H = 268
@@ -94,7 +96,7 @@ export default function C8AIReactivated() {
             stroke="rgba(255,255,255,0.10)" strokeWidth={1} />
           <text x={(TIMER_X1 + TIMER_X2) / 2} y={6} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={isAI ? `${INDIGO}0.40)` : `${CLAY}0.48)`}
+            fill={isAI ? `${INDIGO_TEXT}0.874)` : `${CLAY_TEXT}0.891)`}
             style={{ userSelect: 'none' }}>
             {isAI ? 'AI: INSTANT GENERATION, NO TIMER NEEDED' : '1 MIN PER PANEL'}
           </text>
@@ -108,7 +110,7 @@ export default function C8AIReactivated() {
                 <rect x={14} y={20} width={130} height={16} rx={3}
                   fill={`${INDIGO}0.18)`} stroke={`${INDIGO}0.30)`} strokeWidth={0.7} />
                 <text x={22} y={31} fontSize="5" fontFamily="var(--font-mono)"
-                  letterSpacing="0.07em" fill={`${INDIGO}0.80)`}
+                  letterSpacing="0.07em" fill={`${INDIGO_TEXT}0.958)`}
                   style={{ userSelect: 'none' }}>100 IDEAS IN SECONDS</text>
               </motion.g>
             )}
@@ -181,10 +183,10 @@ export default function C8AIReactivated() {
                     stroke={`${CLAY}0.30)`} strokeWidth={0.8} strokeDasharray="4 3" />
                   <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 7} textAnchor="middle"
                     fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-                    fill={`${CLAY}0.58)`} style={{ userSelect: 'none' }}>← THE WALL</text>
+                    fill={`${CLAY_TEXT}0.912)`} style={{ userSelect: 'none' }}>← THE WALL</text>
                   <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y + 13} textAnchor="middle"
                     fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+                    fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
                     obvious ideas run out here, constraint forces you past it
                   </text>
                 </g>
@@ -194,10 +196,10 @@ export default function C8AIReactivated() {
                     stroke={`${INDIGO}0.14)`} strokeWidth={0.8} strokeDasharray="4 3" />
                   <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 7} textAnchor="middle"
                     fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-                    fill={`${INDIGO}0.45)`} style={{ userSelect: 'none' }}>NO WALL, AI NEVER RUNS OUT OF PLAUSIBLE IDEAS</text>
+                    fill={`${INDIGO_TEXT}0.885)`} style={{ userSelect: 'none' }}>NO WALL, AI NEVER RUNS OUT OF PLAUSIBLE IDEAS</text>
                   <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y + 13} textAnchor="middle"
                     fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`${INDIGO}0.30)`} style={{ userSelect: 'none' }}>
+                    fill={`${INDIGO_TEXT}0.853)`} style={{ userSelect: 'none' }}>
                     without the wall, there is no forcing function to reach the non-obvious
                   </text>
                 </g>
@@ -208,7 +210,7 @@ export default function C8AIReactivated() {
           {/* Caption */}
           <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.16)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
             {isAI
               ? 'AI GENERATES PLAUSIBLE IDEAS INSTANTLY, AND REMOVES THE CONSTRAINT THAT PRODUCES ORIGINALITY'
               : 'THE CONSTRAINT IS THE METHOD, THE WALL IS WHERE ORIGINAL IDEAS BEGIN'}

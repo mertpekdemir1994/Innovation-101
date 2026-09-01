@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const CLAY = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
 const SVG_W = 700
 const SVG_H = 268
@@ -76,13 +77,13 @@ export default function C8Establishing() {
           })}
           <text x={TIMER_X1} y={TIMER_Y - 8} textAnchor="start"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>0 MIN</text>
+            fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>0 MIN</text>
           <text x={TIMER_X2} y={TIMER_Y - 8} textAnchor="end"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>8 MIN</text>
+            fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>8 MIN</text>
           <text x={(TIMER_X1 + TIMER_X2) / 2} y={TIMER_Y - 8} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${CLAY}0.50)`} style={{ userSelect: 'none' }}>1 MIN PER PANEL</text>
+            fill={`${CLAY_TEXT}0.895)`} style={{ userSelect: 'none' }}>1 MIN PER PANEL</text>
         </motion.g>
 
         {/* Panels */}
@@ -144,10 +145,10 @@ export default function C8Establishing() {
             stroke={`${CLAY}0.32)`} strokeWidth={0.8} strokeDasharray="4 3" />
           <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 7} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-            fill={`${CLAY}0.62)`} style={{ userSelect: 'none' }}>← THE WALL</text>
+            fill={`${CLAY_TEXT}0.92)`} style={{ userSelect: 'none' }}>← THE WALL</text>
           <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y + 13} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             obvious ideas run out here, keep going
           </text>
         </motion.g>

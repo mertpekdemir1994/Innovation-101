@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
 const SVG_W = 700
 const SVG_H = 268
@@ -144,7 +145,7 @@ export default function C8Interactive() {
           })}
           <text x={(TIMER_X1 + TIMER_X2) / 2} y={6} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${CLAY}0.48)`} style={{ userSelect: 'none' }}>1 MIN PER PANEL</text>
+            fill={`${CLAY_TEXT}0.891)`} style={{ userSelect: 'none' }}>1 MIN PER PANEL</text>
 
           {/* Panels */}
           {PANELS.map(p => {
@@ -218,7 +219,7 @@ export default function C8Interactive() {
             stroke={`${CLAY}0.28)`} strokeWidth={0.8} strokeDasharray="4 3" />
           <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 7} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-            fill={`${CLAY}0.55)`} style={{ userSelect: 'none' }}>← THE WALL</text>
+            fill={`${CLAY_TEXT}0.905)`} style={{ userSelect: 'none' }}>← THE WALL</text>
         </svg>
       </div>
 
