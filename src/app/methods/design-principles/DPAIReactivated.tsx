@@ -3,8 +3,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM   = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 type Mode = 'human' | 'ai'
 
@@ -116,7 +119,7 @@ export default function DPAIReactivated() {
                   fill={`${INDIGO}0.06)`} stroke={`${INDIGO}0.20)`} strokeWidth={0.6} />
                 <text x={pos.x + 6} y={pos.y + 1} textAnchor="start" dominantBaseline="middle"
                   fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.05em"
-                  fill={`${INDIGO}0.65)`} style={{ userSelect: 'none' }}>
+                  fill={`${INDIGO_TEXT}0.926)`} style={{ userSelect: 'none' }}>
                   {text}
                 </text>
               </motion.g>
@@ -153,17 +156,17 @@ export default function DPAIReactivated() {
                 fill={`${PLUM}0.08)`} stroke={`${PLUM}0.35)`} strokeWidth={0.8} />
               <text x={124} y={108} textAnchor="middle"
                 fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                fill={`${PLUM}0.52)`} style={{ userSelect: 'none' }}>
+                fill={`${PLUM_TEXT}0.899)`} style={{ userSelect: 'none' }}>
                 PRINCIPLE
               </text>
               <text x={124} y={118} textAnchor="middle"
                 fontSize="4.6" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
-                fill={`${PLUM}0.80)`} style={{ userSelect: 'none' }}>
+                fill={`${PLUM_TEXT}0.958)`} style={{ userSelect: 'none' }}>
                 SPEED OVER CONFIGURABILITY
               </text>
               <text x={124} y={127} textAnchor="middle"
                 fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-                fill={`${PLUM}0.42)`} style={{ userSelect: 'none' }}>
+                fill={`${PLUM_TEXT}0.878)`} style={{ userSelect: 'none' }}>
                 EVEN WHEN POWER USERS ASK
               </text>
             </motion.g>
@@ -227,12 +230,12 @@ export default function DPAIReactivated() {
               transition={{ duration: 0.22 }}>
               <text x={TX + 8} y={TY + 2} textAnchor="start"
                 fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={`${INDIGO}0.42)`} style={{ userSelect: 'none' }}>
+                fill={`${INDIGO_TEXT}0.878)`} style={{ userSelect: 'none' }}>
                 OPEN
               </text>
               <text x={CX + 8} y={CY + 2} textAnchor="start"
                 fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={`${INDIGO}0.42)`} style={{ userSelect: 'none' }}>
+                fill={`${INDIGO_TEXT}0.878)`} style={{ userSelect: 'none' }}>
                 OPEN
               </text>
             </motion.g>
@@ -244,12 +247,12 @@ export default function DPAIReactivated() {
               transition={{ duration: 0.22 }}>
               <text x={TX + 8} y={TY - 4} textAnchor="start"
                 fontSize="5.0" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
-                fill={`${PLUM}0.88)`} style={{ userSelect: 'none' }}>
+                fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}>
                 TAKEN
               </text>
               <text x={TX + 8} y={TY + 7} textAnchor="start"
                 fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={`${PLUM}0.52)`} style={{ userSelect: 'none' }}>
+                fill={`${PLUM_TEXT}0.899)`} style={{ userSelect: 'none' }}>
                 {HUMAN_PRINCIPLE.taken}
               </text>
               <text x={CX + 8} y={CY - 3} textAnchor="start"
@@ -259,7 +262,7 @@ export default function DPAIReactivated() {
               </text>
               <text x={CX + 8} y={CY + 9} textAnchor="start"
                 fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={`${AMBER}0.50)`} style={{ userSelect: 'none' }}>
+                fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
                 {HUMAN_PRINCIPLE.closed}
               </text>
             </motion.g>

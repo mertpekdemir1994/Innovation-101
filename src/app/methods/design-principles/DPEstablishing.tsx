@@ -3,7 +3,9 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const PLUM  = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700, SVG_H = 268
 
@@ -86,17 +88,17 @@ export default function DPEstablishing() {
             fill={`${PLUM}0.07)`} stroke={`${PLUM}0.28)`} strokeWidth={0.8} />
           <text x={124} y={105} textAnchor="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${PLUM}0.50)`} style={{ userSelect: 'none' }}>
+            fill={`${PLUM_TEXT}0.895)`} style={{ userSelect: 'none' }}>
             PRINCIPLE
           </text>
           <text x={124} y={116} textAnchor="middle"
             fontSize="5.0" fontFamily="var(--font-mono)" letterSpacing="0.07em" fontWeight="600"
-            fill={`${PLUM}0.80)`} style={{ userSelect: 'none' }}>
+            fill={`${PLUM_TEXT}0.958)`} style={{ userSelect: 'none' }}>
             SPEED OVER CONFIGURABILITY
           </text>
           <text x={124} y={126} textAnchor="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`${PLUM}0.44)`} style={{ userSelect: 'none' }}>
+            fill={`${PLUM_TEXT}0.882)`} style={{ userSelect: 'none' }}>
             EVEN WHEN POWER USERS ASK FOR OPTIONS
           </text>
           {/* Connecting tick from badge to path */}
@@ -158,12 +160,12 @@ export default function DPEstablishing() {
           {/* Taken label */}
           <text x={TX + 8} y={TY - 8} textAnchor="start"
             fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
-            fill={`${PLUM}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             TAKEN
           </text>
           <text x={TX + 8} y={TY + 4} textAnchor="start"
             fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`${PLUM}0.52)`} style={{ userSelect: 'none' }}>
+            fill={`${PLUM_TEXT}0.899)`} style={{ userSelect: 'none' }}>
             SPEED · SIMPLICITY
           </text>
 
@@ -175,7 +177,7 @@ export default function DPEstablishing() {
           </text>
           <text x={CX + 8} y={CY + 8} textAnchor="start"
             fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`${AMBER}0.50)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
             CONFIGURABILITY
           </text>
         </motion.g>
@@ -191,12 +193,12 @@ export default function DPEstablishing() {
           {/* Header */}
           <text x={586} y={78} textAnchor="middle"
             fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-            fill={`${AMBER}0.60)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}>
             PLATITUDE
           </text>
           <text x={586} y={89} textAnchor="middle"
             fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill="rgba(255,255,255,0.35)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.675)" style={{ userSelect: 'none' }}>
             BE USER-CENTRED
           </text>
 
@@ -218,12 +220,12 @@ export default function DPEstablishing() {
           {/* "CLOSES NOTHING" */}
           <text x={586} y={184} textAnchor="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${AMBER}0.50)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
             CLOSES NOTHING
           </text>
           <text x={586} y={193} textAnchor="middle"
             fontSize="3.2" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>
             FORK UNDECIDED
           </text>
         </motion.g>

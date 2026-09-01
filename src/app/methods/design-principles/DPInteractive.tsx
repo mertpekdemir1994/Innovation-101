@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM  = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 type PrincipleId = 'speed' | 'firsttime' | 'usercentred' | 'delight' | 'bold'
 type PrincipleType = 'real' | 'platitude'
@@ -171,7 +173,7 @@ export default function DPInteractive() {
                 fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)" strokeWidth={0.7} strokeDasharray="4 3" />
               <text x={124} y={112} textAnchor="middle" dominantBaseline="middle"
                 fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>
+                fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>
                 PRINCIPLE NOT YET SELECTED
               </text>
             </motion.g>
@@ -187,12 +189,12 @@ export default function DPInteractive() {
                 strokeWidth={0.8} />
               <text x={124} y={107} textAnchor="middle"
                 fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                fill={isReal ? `${PLUM}0.52)` : `${AMBER}0.52)`} style={{ userSelect: 'none' }}>
+                fill={isReal ? `${PLUM_TEXT}0.899)` : `${AMBER_TEXT}0.851)`} style={{ userSelect: 'none' }}>
                 {isReal ? 'PRINCIPLE: SEE BUTTON ABOVE' : 'PLATITUDE: SEE BUTTON ABOVE'}
               </text>
               <text x={124} y={120} textAnchor="middle"
                 fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
-                fill={isReal ? `${PLUM}0.82)` : `${AMBER}0.72)`} style={{ userSelect: 'none' }}>
+                fill={isReal ? `${PLUM_TEXT}0.962)` : `${AMBER}0.72)`} style={{ userSelect: 'none' }}>
                 {isReal
                   ? (selected.taken ?? 'REAL PRINCIPLE')
                   : 'CLOSES NOTHING'}
@@ -251,13 +253,13 @@ export default function DPInteractive() {
               transition={{ duration: 0.22 }}>
               <text x={TX + 8} y={TY - 4} textAnchor="start"
                 fontSize="5.0" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
-                fill={isReal ? `${PLUM}0.88)` : `${PLUM}0.45)`} style={{ userSelect: 'none' }}>
+                fill={isReal ? `${PLUM_TEXT}0.975)` : `${PLUM_TEXT}0.885)`} style={{ userSelect: 'none' }}>
                 {isReal ? 'TAKEN' : 'OPEN'}
               </text>
               {isReal && selected.taken && (
                 <text x={TX + 8} y={TY + 8} textAnchor="start"
                   fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                  fill={`${PLUM}0.52)`} style={{ userSelect: 'none' }}>
+                  fill={`${PLUM_TEXT}0.899)`} style={{ userSelect: 'none' }}>
                   {selected.taken}
                 </text>
               )}
@@ -306,13 +308,13 @@ export default function DPInteractive() {
               transition={{ duration: 0.22 }}>
               <text x={CX + 8} y={CY - 2} textAnchor="start"
                 fontSize="5.0" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
-                fill={isReal ? `${AMBER}0.85)` : `${PLUM}0.45)`} style={{ userSelect: 'none' }}>
+                fill={isReal ? `${AMBER}0.85)` : `${PLUM_TEXT}0.885)`} style={{ userSelect: 'none' }}>
                 {isReal ? 'CLOSED' : 'OPEN'}
               </text>
               {isReal && selected.closed && (
                 <text x={CX + 8} y={CY + 10} textAnchor="start"
                   fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                  fill={`${AMBER}0.50)`} style={{ userSelect: 'none' }}>
+                  fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
                   {selected.closed}
                 </text>
               )}
@@ -325,12 +327,12 @@ export default function DPInteractive() {
           <>
             <text x={TX + 8} y={TY + 2} textAnchor="start"
               fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-              fill="rgba(255,255,255,0.16)" style={{ userSelect: 'none' }}>
+              fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
               BRANCH A
             </text>
             <text x={CX + 8} y={CY + 2} textAnchor="start"
               fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-              fill="rgba(255,255,255,0.16)" style={{ userSelect: 'none' }}>
+              fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
               BRANCH B
             </text>
           </>
