@@ -186,7 +186,7 @@ function ArtifactBlock({ artifact }: { artifact: Artifact }) {
       className="rounded-xl p-space-6"
       style={{ background: 'var(--color-warm-50)', border: '1px solid var(--color-neutral-200)' }}
     >
-      <p className="font-mono text-2xs uppercase tracking-widest mb-space-4 text-neutral-400">
+      <p className="font-mono text-2xs uppercase tracking-widest mb-space-4 text-neutral-500">
         {artifact.label}
       </p>
       <div className="space-y-space-2">
@@ -206,12 +206,12 @@ function DayContent({ dayKey }: { dayKey: DayKey }) {
       <p className="text-sm text-neutral-600 leading-relaxed mb-space-5">{day.intro}</p>
 
       <div className="mb-space-5">
-        <p className="text-2xs font-semibold uppercase tracking-widest text-neutral-400 mb-space-2">The work</p>
+        <p className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mb-space-2">The work</p>
         <p className="text-sm text-neutral-700 leading-relaxed">{day.work}</p>
       </div>
 
       <div className="mb-space-5">
-        <p className="text-2xs font-semibold uppercase tracking-widest text-neutral-400 mb-space-2">Sample output</p>
+        <p className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mb-space-2">Sample output</p>
         <ArtifactBlock artifact={day.artifact} />
       </div>
 
@@ -270,7 +270,7 @@ export default function DSCaseStudy() {
             ['Framework', 'Original GV Sprint'],
           ].map(([label, val]) => (
             <div key={label}>
-              <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-1">{label}</p>
+              <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-1">{label}</p>
               <p className="text-sm font-semibold text-neutral-900">{val}</p>
             </div>
           ))}
@@ -346,7 +346,7 @@ export default function DSCaseStudy() {
       </div>
 
       {/* Key lessons */}
-      <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-4">Key lessons</p>
+      <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-4">Key lessons</p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-space-4">
         {LESSONS.map(({ n, title, detail }) => (
           <div
