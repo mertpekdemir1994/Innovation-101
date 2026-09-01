@@ -137,7 +137,7 @@ export default function IDIInteractive() {
             return (
               <g
                 key={id}
-                style={{ cursor: 'pointer', outline: 'none' }}
+                style={{ cursor: 'pointer' }}
                 onClick={() => setActiveRole(activeRole === id ? null : id)}
                 onMouseEnter={() => setHoveredRole(id)}
                 onMouseLeave={() => setHoveredRole(null)}

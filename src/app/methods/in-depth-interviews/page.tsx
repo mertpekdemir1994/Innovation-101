@@ -180,7 +180,7 @@ export default function InDepthInterviewsPage() {
               <div>
                 <p
                   className="font-mono uppercase tracking-widest mb-4"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
                 >
                   Do not rely on them when
                 </p>
@@ -192,7 +192,7 @@ export default function InDepthInterviewsPage() {
                     'The behavior you care about is too private, rare, or sensitive to be discussed candidly.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item}
                       </span>
@@ -557,7 +557,7 @@ export default function InDepthInterviewsPage() {
 
             <p
               className="mt-6"
-              style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)', fontStyle: 'italic' }}
             >
               Note: the Design Sprint deliberately does not run full in-depth interviews inside the five days; it imports their outputs. This blank is intentional.
             </p>

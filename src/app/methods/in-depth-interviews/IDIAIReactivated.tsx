@@ -159,9 +159,9 @@ export default function IDIAIReactivated() {
               }}
             >
               <div className="flex items-center justify-between mb-4">
-                <h4 className="font-semibold" style={{ fontSize: 'var(--text-base)', color: '#FAFAFA' }}>
+                <h3 className="font-semibold" style={{ fontSize: 'var(--text-base)', color: '#FAFAFA' }}>
                   {name}
-                </h4>
+                </h3>
                 {/* Human / AI pill toggle */}
                 <div
                   className="flex rounded-full p-0.5"
