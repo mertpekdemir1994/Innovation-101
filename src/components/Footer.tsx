@@ -6,7 +6,7 @@ export default function Footer() {
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: 'var(--text-xs)',
-            color: 'var(--color-neutral-400)',
+            color: 'var(--color-neutral-500)',
             letterSpacing: '0.04em',
           }}
         >
@@ -16,7 +16,7 @@ export default function Footer() {
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: 'var(--text-xs)',
-            color: 'var(--color-neutral-400)',
+            color: 'var(--color-neutral-500)',
             letterSpacing: '0.04em',
           }}
         >
