@@ -199,7 +199,7 @@ export default function AMEstablishing() {
           x={SVG_W / 2} y={SVG_H - 10}
           textAnchor="middle" dominantBaseline="auto"
           fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-          fill="rgba(255,255,255,0.18)"
+          fill="rgba(255,255,255,0.59)"
           style={{ userSelect: 'none' }}
           variants={fadeIn}
           transition={{ ...(prefersReduced ? { duration: 0 } : { duration: 0.40, ease }), delay: prefersReduced ? 0 : 1.0 }}
