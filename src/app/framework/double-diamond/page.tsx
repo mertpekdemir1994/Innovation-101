@@ -209,7 +209,7 @@ export default function DoubleDiamondPage() {
                 className="pt-space-4 border-t"
                 style={{ borderColor: 'var(--color-neutral-200)' }}
               >
-                <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-2">Real-world example</p>
+                <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-2">Real-world example</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   When Airbnb was struggling early, the founders flew to New York, stayed with hosts,
                   and observed. They discovered the real problem: listing photos were terrible. The
@@ -399,7 +399,7 @@ export default function DoubleDiamondPage() {
       <LightSection>
         <Container className="py-space-10">
           <div className="max-w-prose">
-            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-6">
+            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-6">
               Sources &amp; Further Reading
             </p>
             <div className="space-y-space-4">

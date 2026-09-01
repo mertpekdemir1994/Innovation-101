@@ -241,7 +241,7 @@ function PhaseContent({ phase }: { phase: Phase }) {
       </div>
 
       <div className="mb-space-6">
-        <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-3">Key activities</p>
+        <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-3">Key activities</p>
         <div className="space-y-space-3">
           {phase.activities.map((act) => (
             <div key={act.title} className="flex gap-space-3">

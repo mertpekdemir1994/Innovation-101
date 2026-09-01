@@ -213,7 +213,7 @@ function ArtifactBlock({ artifact }: { artifact: Artifact }) {
       className="rounded-xl p-space-6"
       style={{ background: 'var(--color-warm-50)', border: '1px solid var(--color-neutral-200)' }}
     >
-      <p className="font-mono text-2xs uppercase tracking-widest mb-space-4 text-neutral-400">
+      <p className="font-mono text-2xs uppercase tracking-widest mb-space-4 text-neutral-500">
         {artifact.label}
       </p>
       <div className="space-y-space-2">
@@ -278,14 +278,14 @@ function DiscoverContent({
           </p>
 
           <div className="mb-space-5">
-            <p className="text-2xs font-semibold uppercase tracking-widest text-neutral-400 mb-space-2">
+            <p className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mb-space-2">
               The work
             </p>
             <p className="text-sm text-neutral-700 leading-relaxed">{stream.work}</p>
           </div>
 
           <div className="mb-space-5">
-            <p className="text-2xs font-semibold uppercase tracking-widest text-neutral-400 mb-space-2">
+            <p className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mb-space-2">
               Sample output
             </p>
             <ArtifactBlock artifact={stream.artifact} />
@@ -317,7 +317,7 @@ function DefineContent() {
       </p>
 
       <div className="mb-space-2">
-        <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-3">
+        <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-3">
           Representative slice: 5 of 11 candidates evaluated
         </p>
         <div
@@ -362,11 +362,11 @@ function DefineContent() {
                     opacity: row.verdict === 'Cut' ? 0.65 : 1,
                   }}
                 >
-                  <td className="px-space-4 py-space-3 font-mono text-xs text-neutral-400">{row.n}</td>
+                  <td className="px-space-4 py-space-3 font-mono text-xs text-neutral-500">{row.n}</td>
                   <td className="px-space-4 py-space-3 text-neutral-800 text-sm">
                     {row.candidate}
                     {row.reason && (
-                      <span className="block text-xs text-neutral-400 mt-space-1">{row.reason}</span>
+                      <span className="block text-xs text-neutral-500 mt-space-1">{row.reason}</span>
                     )}
                   </td>
                   <td className="text-center px-space-3 py-space-3">
@@ -384,7 +384,7 @@ function DefineContent() {
                         Proceed →
                       </span>
                     ) : (
-                      <span className="text-sm text-neutral-400">Cut</span>
+                      <span className="text-sm text-neutral-500">Cut</span>
                     )}
                   </td>
                 </tr>
@@ -394,11 +394,11 @@ function DefineContent() {
         </div>
       </div>
 
-      <p className="text-xs text-neutral-400 mt-space-3 mb-space-8">
+      <p className="text-xs text-neutral-500 mt-space-3 mb-space-8">
         Of 11 candidates, 3 failed viability, 2 failed feasibility, and the rest scored lower across all three. Two POVs proceeded, before a dollar was spent developing them.
       </p>
 
-      <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-4">
+      <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-4">
         The two problem definitions that proceeded
       </p>
       <div className="space-y-space-4">
@@ -700,7 +700,7 @@ export default function DDCaseStudy() {
             ['Version', 'Doblin Double Diamond'],
           ].map(([label, val]) => (
             <div key={label}>
-              <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-1">
+              <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-1">
                 {label}
               </p>
               <p className="text-sm font-semibold text-neutral-900">{val}</p>
@@ -796,7 +796,7 @@ export default function DDCaseStudy() {
       </div>
 
       {/* Key lessons */}
-      <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-4">
+      <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-4">
         Key lessons
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-space-4">
