@@ -83,7 +83,7 @@ export default function APAIReactivated() {
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}
           width="100%"
-          style={{ maxWidth: 720, overflow: 'visible' }}
+          style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
           aria-label={isAI
             ? 'AI mode: dense near-zone dots cluster close to origin on the analogs axis. Far structural analogs and precursor timing points are dimmer.'
             : 'Human mode: full two-axis search space with analogs and precursors visible at equal weight.'}

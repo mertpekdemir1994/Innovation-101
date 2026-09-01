@@ -56,7 +56,7 @@ export default function APDistinction() {
           <svg
             viewBox={`0 0 ${M_W} ${M_H}`}
             width="100%"
-            style={{ maxWidth: 300, overflow: 'visible' }}
+            style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
             aria-label={`Two axes diagram: ${isAnalogs ? 'horizontal analogs axis highlighted' : 'vertical precursors axis highlighted'}`}
           >
             {/* Analogs axis */}
