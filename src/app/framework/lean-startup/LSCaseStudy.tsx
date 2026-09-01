@@ -126,7 +126,7 @@ function ArtifactBlock({ artifact }: { artifact: Artifact }) {
       className="rounded-xl p-space-6"
       style={{ background: 'var(--color-warm-50)', border: '1px solid var(--color-neutral-200)' }}
     >
-      <p className="font-mono text-2xs uppercase tracking-widest mb-space-4 text-neutral-400">
+      <p className="font-mono text-2xs uppercase tracking-widest mb-space-4 text-neutral-500">
         {artifact.label}
       </p>
       <div className="space-y-space-2">
@@ -178,7 +178,7 @@ function LoopContent({ loopKey }: { loopKey: LoopKey }) {
           >
             Build
           </span>
-          <span className="font-mono text-2xs uppercase tracking-widest text-neutral-400">
+          <span className="font-mono text-2xs uppercase tracking-widest text-neutral-500">
             {loop.mvpType}
           </span>
         </div>
@@ -187,7 +187,7 @@ function LoopContent({ loopKey }: { loopKey: LoopKey }) {
 
       {/* Measure */}
       <div className="mb-space-5">
-        <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-2">
+        <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-2">
           Measure
         </p>
         <p className="text-sm text-neutral-700 leading-relaxed mb-space-4">{loop.measureDesc}</p>
@@ -213,7 +213,7 @@ function LoopContent({ loopKey }: { loopKey: LoopKey }) {
         className="rounded-xl p-space-5"
         style={{ background: '#FFFFFF', border: '1px solid var(--color-neutral-200)' }}
       >
-        <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-2">
+        <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-2">
           Decision
         </p>
         <p className="font-semibold text-sm text-neutral-900 leading-relaxed">{loop.decision}</p>
@@ -264,7 +264,7 @@ export default function LSCaseStudy() {
             ['Framework', 'Build-Measure-Learn'],
           ].map(([label, val]) => (
             <div key={label}>
-              <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-1">
+              <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-1">
                 {label}
               </p>
               <p className="text-sm font-semibold text-neutral-900">{val}</p>
@@ -356,7 +356,7 @@ export default function LSCaseStudy() {
       </div>
 
       {/* Key lessons */}
-      <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-4">
+      <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-4">
         Key lessons
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-space-4">

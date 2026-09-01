@@ -201,7 +201,7 @@ export default function LSInteractiveSection() {
 
         {/* MVP Type Switcher (always visible below diagram) */}
         <div className="w-full mt-space-4">
-          <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-3 text-center">
+          <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-3 text-center">
             MVP types: click to explore
           </p>
           <div className="flex flex-wrap gap-space-2 justify-center">

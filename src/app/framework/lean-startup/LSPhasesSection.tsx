@@ -239,7 +239,7 @@ export default function LSPhasesSection() {
 
             {/* Activities */}
             <div className="mt-space-6 space-y-space-2">
-              <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-3">
+              <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-3">
                 Key activities
               </p>
               {phase.activities.map((act, j) => {
