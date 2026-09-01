@@ -21,6 +21,8 @@ export default function SMExampleToggle() {
         {(['traditional', 'ai'] as Tab[]).map(t => (
           <button
             key={t}
+            type="button"
+            aria-pressed={tab === t}
             onClick={() => setTab(t)}
             className="px-4 py-2 rounded-full text-xs font-semibold transition-all"
             style={{
@@ -42,7 +44,7 @@ export default function SMExampleToggle() {
 
       {/* Scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mr-2">Shared scenario</span>
+        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
       </div>
 
@@ -192,7 +194,7 @@ export default function SMExampleToggle() {
                       <div>
                         <p className="text-[9px] font-semibold uppercase tracking-widest mb-0.5"
                           style={{ color: item.obvious ? `${INDIGO}0.80)` : 'var(--color-neutral-500)' }}>{item.role}</p>
-                        <p className="text-[8px] mb-1" style={{ color: 'var(--color-neutral-400)' }}>{item.attrs}</p>
+                        <p className="text-[8px] mb-1" style={{ color: 'var(--color-neutral-500)' }}>{item.attrs}</p>
                         <p className="text-[10px] text-neutral-600 italic">{item.note}</p>
                       </div>
                       {!item.obvious && (
