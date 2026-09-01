@@ -32,10 +32,20 @@
   --color-neutral-900: #111827;
   --color-neutral-700: #374151;
   --color-neutral-600: #4B5563;
+  --color-neutral-500: #6B7280;  /* ~4.6:1 on white — the AA-safe text weight between 600 and 400 */
   --color-neutral-400: #9CA3AF;
   --color-neutral-200: #E5E7EB;
   --color-neutral-100: #F3F4F6;
   --color-neutral-50:  #F9FAFB;
+
+  /* ─── Text-safe accent variants (WCAG AA 4.5:1 on white; use only for text,
+       never for fills/borders/icons — the base tokens above already work fine
+       for those at the 3:1 non-text threshold) ─────────────────────────── */
+  --color-scenario-text:  #8D4D04;  /* darker derivative of --color-scenario, ~6.6:1 on white */
+  --stage-ideation-text:  #763F28;  /* darker derivative of --stage-ideation, ~8.1:1 on white */
+
+  /* ─── Focus ring (overridden inside .dark-section) ────────────────────── */
+  --color-focus-ring: var(--color-neutral-900);
 
   /* ─── Surface colors ─────────────────────────────────────────────────── */
   --color-background: #FFFFFF;

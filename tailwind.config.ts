@@ -22,6 +22,7 @@ const config: Config = {
         "neutral-900":  "var(--color-neutral-900)",
         "neutral-700":  "var(--color-neutral-700)",
         "neutral-600":  "var(--color-neutral-600)",
+        "neutral-500":  "var(--color-neutral-500)",
         "neutral-400":  "var(--color-neutral-400)",
         "neutral-200":  "var(--color-neutral-200)",
         "neutral-100":  "var(--color-neutral-100)",
