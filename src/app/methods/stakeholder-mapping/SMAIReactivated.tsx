@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE   = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const SVG_H = 258
@@ -59,7 +61,7 @@ function renderHumanCard(c: CardDef, x: number, y: number) {
       <rect x={x} y={y} width={CW} height={CH} rx={3} fill={fill} stroke={stroke} strokeWidth={0.9} />
       {hasNonObvious && (
         <text x={x + CW - 7} y={y + 11} textAnchor="end" fontSize="6"
-          fontFamily="system-ui, sans-serif" fill={`${SAGE}0.65)`}
+          fontFamily="system-ui, sans-serif" fill={`${SAGE_TEXT}0.926)`}
           style={{ userSelect: 'none' }}>★</text>
       )}
       <text x={x + CW / 2} y={y + 17} textAnchor="middle"
@@ -84,11 +86,11 @@ function renderAICard(c: CardDef, x: number, y: number) {
           stroke="rgba(255,255,255,0.10)"
           strokeWidth={0.7} strokeDasharray="4 3" />
         <text x={x + CW / 2} y={y + CH / 2 - 4} textAnchor="middle"
-          fontSize="12" fontFamily="system-ui, sans-serif" fill="rgba(255,255,255,0.14)"
+          fontSize="12" fontFamily="system-ui, sans-serif" fill="rgba(255,255,255,0.57)"
           style={{ userSelect: 'none' }}>?</text>
         <text x={x + CW / 2} y={y + CH / 2 + 10} textAnchor="middle"
           fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
-          fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>NOT SURFACED</text>
+          fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>NOT SURFACED</text>
       </g>
     )
   }
@@ -111,12 +113,12 @@ function renderAICard(c: CardDef, x: number, y: number) {
         fontSize="6.5" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.09em"
         fill={`${INDIGO}${nameOpacity})`} style={{ userSelect: 'none' }}>{c.name}</text>
       <text x={x + CW / 2} y={y + 49} textAnchor="middle"
-        fontSize="5" fontFamily="system-ui, sans-serif" fill={`${INDIGO}0.45)`}
+        fontSize="5" fontFamily="system-ui, sans-serif" fill={`${INDIGO_TEXT}0.885)`}
         style={{ userSelect: 'none' }}>{c.role}</text>
       {isPartial && (
         <text x={x + CW / 2} y={y + 62} textAnchor="middle"
           fontSize="4.5" fontFamily="system-ui, sans-serif"
-          fill={`${INDIGO}0.38)`} style={{ userSelect: 'none' }}>attributes incomplete</text>
+          fill={`${INDIGO_TEXT}0.87)`} style={{ userSelect: 'none' }}>attributes incomplete</text>
       )}
     </g>
   )
@@ -178,13 +180,13 @@ export default function SMAIReactivated() {
               {/* Row labels */}
               <text x={SVG_W / 2} y={12} textAnchor="middle"
                 fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
-                fill={isAI ? `${INDIGO}0.45)` : `${SAGE}0.45)`}
+                fill={isAI ? `${INDIGO_TEXT}0.885)` : `${SAGE_TEXT}0.885)`}
                 style={{ userSelect: 'none' }}>
                 {isAI ? 'AI: OBVIOUS STAKEHOLDERS (LISTED)' : 'OBVIOUS STAKEHOLDERS'}
               </text>
               <text x={SVG_W / 2} y={108} textAnchor="middle"
                 fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
-                fill={isAI ? 'rgba(255,255,255,0.20)' : `${SAGE}0.50)`}
+                fill={isAI ? 'rgba(255,255,255,0.6)' : `${SAGE_TEXT}0.895)`}
                 style={{ userSelect: 'none' }}>
                 {isAI ? 'NON-OBVIOUS (NOT SURFACED WITHOUT GUIDANCE)' : 'NON-OBVIOUS (★)'}
               </text>
@@ -201,7 +203,7 @@ export default function SMAIReactivated() {
           {/* Caption */}
           <text x={SVG_W / 2} y={SVG_H - 4} textAnchor="middle"
             fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.20)"
+            fill="rgba(255,255,255,0.6)"
             style={{ userSelect: 'none' }}>
             {isAI
               ? 'AI LISTS OBVIOUS STAKEHOLDERS QUICKLY, BUT OFTEN MISSES INFORMAL, INDIRECT, AND BLOCKING ROLES'

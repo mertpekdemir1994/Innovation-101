@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const SAGE = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 const SVG_W = 700
 const SVG_H = 258
@@ -122,7 +123,7 @@ export default function SMEstablishing() {
               {c.nonObvious && (
                 <text x={x + CW - 7} y={y + 11} textAnchor="end"
                   fontSize="6" fontFamily="system-ui, sans-serif"
-                  fill={`${SAGE}0.75)`}
+                  fill={`${SAGE_TEXT}0.948)`}
                   style={{ userSelect: 'none' }}>★</text>
               )}
 
@@ -130,13 +131,13 @@ export default function SMEstablishing() {
               <text x={x + CW / 2} y={y + 17} textAnchor="middle"
                 fontSize="6.5" fontFamily="system-ui, sans-serif"
                 fontWeight="600" letterSpacing="0.09em"
-                fill={c.nonObvious ? `${SAGE}0.92)` : 'rgba(255,255,255,0.78)'}
+                fill={c.nonObvious ? `${SAGE_TEXT}0.983)` : 'rgba(255,255,255,0.78)'}
                 style={{ userSelect: 'none' }}>{c.name}</text>
 
               {/* Role */}
               <text x={x + CW / 2} y={y + 28} textAnchor="middle"
                 fontSize="5" fontFamily="system-ui, sans-serif"
-                fill="rgba(255,255,255,0.35)"
+                fill="rgba(255,255,255,0.675)"
                 style={{ userSelect: 'none' }}>{c.role}</text>
 
               {/* Divider */}
@@ -145,7 +146,7 @@ export default function SMEstablishing() {
 
               {/* Attributes row 1 */}
               <text x={x + 8} y={y + 46} fontSize="4.8" fontFamily="system-ui, sans-serif"
-                letterSpacing="0.05em" fill="rgba(255,255,255,0.40)"
+                letterSpacing="0.05em" fill="rgba(255,255,255,0.7)"
                 style={{ userSelect: 'none' }}>
                 {`PWR ${c.power.slice(0, 3).toUpperCase()}  ·  INT ${c.interest.slice(0, 3).toUpperCase()}`}
               </text>
