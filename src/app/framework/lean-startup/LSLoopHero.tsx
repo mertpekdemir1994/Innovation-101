@@ -76,7 +76,7 @@ export default function LSLoopHero() {
 
         {/* Center labels */}
         <motion.text x={cx} y={cy - 12} textAnchor="middle"
-          fill={`${PURPLE}0.50)`} fontSize="15" fontFamily="ui-monospace, monospace"
+          fill={`${PURPLE_TEXT}0.905)`} fontSize="15" fontFamily="ui-monospace, monospace"
           letterSpacing="0.12em" style={{ textTransform: 'uppercase' }}
           initial={prefersReduced ? {} : { opacity: 0 }}
           animate={prefersReduced ? {} : { opacity: 1 }}
@@ -85,7 +85,7 @@ export default function LSLoopHero() {
           BUILD
         </motion.text>
         <motion.text x={cx} y={cy + 7} textAnchor="middle"
-          fill={`${PURPLE}0.25)`} fontSize="12" fontFamily="ui-monospace, monospace"
+          fill={`${PURPLE_TEXT}0.858)`} fontSize="12" fontFamily="ui-monospace, monospace"
           letterSpacing="0.1em" style={{ textTransform: 'uppercase' }}
           initial={prefersReduced ? {} : { opacity: 0 }}
           animate={prefersReduced ? {} : { opacity: 1 }}
@@ -94,7 +94,7 @@ export default function LSLoopHero() {
           MEASURE
         </motion.text>
         <motion.text x={cx} y={cy + 26} textAnchor="middle"
-          fill={`${PURPLE}0.15)`} fontSize="12" fontFamily="ui-monospace, monospace"
+          fill={`${PURPLE_TEXT}0.839)`} fontSize="12" fontFamily="ui-monospace, monospace"
           letterSpacing="0.1em" style={{ textTransform: 'uppercase' }}
           initial={prefersReduced ? {} : { opacity: 0 }}
           animate={prefersReduced ? {} : { opacity: 1 }}

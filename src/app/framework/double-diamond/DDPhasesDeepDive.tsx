@@ -4,6 +4,9 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PURPLE = 'rgba(124,58,237,'
+// This component renders in a LightSection (white bg) with no internal dark
+// canvas — darkened, not brightened, text-safe variant of PURPLE.
+const PURPLE_TEXT = 'rgba(108,51,206,'
 
 type PhaseId = 'discover' | 'define' | 'develop' | 'deliver'
 
@@ -186,7 +189,7 @@ function PhaseDiamond({
               letterSpacing="0.08em"
               style={{ userSelect: 'none', textTransform: 'uppercase', pointerEvents: 'none' }}
               animate={{
-                fill: active  ? `${PURPLE}0.85)` : hovered ? `${PURPLE}0.60)` : 'rgba(17,24,39,0.22)',
+                fill: active  ? `${PURPLE_TEXT}0.97)` : hovered ? `${PURPLE_TEXT}0.87)` : `${PURPLE_TEXT}0.81)`,
               }}
               transition={{ duration: 0.2 }}
             >
