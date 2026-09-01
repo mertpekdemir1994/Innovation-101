@@ -233,7 +233,7 @@ export default function DPEstablishing() {
         {/* ── CAPTION ── */}
         <motion.text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           {...fade(1.65)}>
           A principle&apos;s value is in what it closes: there must be something it closes.
         </motion.text>
