@@ -35,7 +35,7 @@ export default function BBEstablishing() {
       viewBox={`0 0 ${SVG_W} ${SVG_H}`}
       width="100%"
       preserveAspectRatio="xMidYMid meet"
-      style={{ display: 'block' }}
+      style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
       aria-label="Three overlapping circles: Desirability (top), Feasibility (bottom-left), Viability (bottom-right). Where all three overlap is the Breakthrough."
     >
       <defs>

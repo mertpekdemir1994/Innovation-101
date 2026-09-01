@@ -60,7 +60,7 @@ export default function BBAIReactivated() {
       {/* SVG */}
       <div className="w-full">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-          preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}
+          preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
           aria-label={isAI
             ? 'AI mode: Viability lens is strongest (AI can model economics), Feasibility is moderate (AI can assess technical complexity), Desirability is weakest (AI cannot feel what humans genuinely want). The centre, the integration judgment, remains human.'
             : 'Human mode: all three lenses balanced, requiring cross-functional human input across Desirability, Feasibility, and Viability.'}>
