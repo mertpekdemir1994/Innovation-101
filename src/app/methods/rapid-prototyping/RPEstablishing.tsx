@@ -173,7 +173,7 @@ export default function RPEstablishing() {
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.28, delay: prefersReduced ? 0 : 0.84 }}
           style={{ userSelect: 'none' }}>
-          THE RIGHT FIDELITY IS NOT THE HIGHEST YOU CAN BUILD — IT IS THE LOWEST THAT ANSWERS YOUR CURRENT QUESTION
+          THE RIGHT FIDELITY IS NOT THE HIGHEST YOU CAN BUILD, IT IS THE LOWEST THAT ANSWERS YOUR CURRENT QUESTION
         </motion.text>
       </svg>
     </div>

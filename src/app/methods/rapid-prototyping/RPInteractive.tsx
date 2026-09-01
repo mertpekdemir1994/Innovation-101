@@ -35,7 +35,7 @@ const RUNGS: RungDef[] = [
     name: 'PAPER SKETCH', sub: 'hand-drawn · minutes · free',
     cost: 'MINUTES / FREE', feedback: 'raw concept & structure',
     headline: 'The fastest thing you can build, and often the most honest.',
-    body: 'Hand-drawn, made in minutes, nearly free. Show someone a rough paper sketch and they comment on the concept, the flow, whether the idea solves their problem — because it is obviously unfinished, so they engage with the idea rather than the surface. No one wastes a word on colors or fonts. For most early-stage concept questions, this is the highest-learning-per-effort option available.',
+    body: 'Hand-drawn, made in minutes, nearly free. Show someone a rough paper sketch and they comment on the concept, the flow, whether the idea solves their problem, because it is obviously unfinished, so they engage with the idea rather than the surface. No one wastes a word on colors or fonts. For most early-stage concept questions, this is the highest-learning-per-effort option available.',
     note: 'Default to paper for any question of the form "does this concept make sense?". Start here before climbing up the ladder.',
   },
   {
@@ -43,16 +43,16 @@ const RUNGS: RungDef[] = [
     name: 'CONCEPTUAL VISUAL', sub: 'fast drawn or digital',
     cost: 'UNDER AN HOUR', feedback: 'concept feedback (slightly richer)',
     headline: 'A step up in legibility, still clearly rough.',
-    body: 'A fast digital or drawn representation that communicates the concept more concretely than paper — richer, slightly more grounded, still clearly unfinished. Good for sharing an idea more legibly or preparing for a slightly broader audience than a paper sketch would serve. Still in concept territory. The feedback is still concept-level; the fidelity is still low.',
+    body: 'A fast digital or drawn representation that communicates the concept more concretely than paper: richer, slightly more grounded, still clearly unfinished. Good for sharing an idea more legibly or preparing for a slightly broader audience than a paper sketch would serve. Still in concept territory. The feedback is still concept-level; the fidelity is still low.',
     note: 'Watch for feedback beginning to drift toward the surface as it starts looking more finished. The moment users comment on layout or color, you have climbed past concept territory.',
   },
   {
     id: 'click', x: 393, low: false,
     name: 'CLICKABLE MOCKUP', sub: 'e.g. Figma · interactive',
     cost: 'HOURS', feedback: 'flow & interaction feedback',
-    headline: 'The digital workhorse — once the concept is settled.',
-    body: 'An interactive mock the user can click through. More effort, and more real. Warranted specifically when the learning question is about flow or interaction — "does this navigation make sense? is this sequence right?" For digital products, this is the workhorse fidelity once the concept has been validated at a lower level. As it starts looking finished, feedback begins drifting toward the surface: color, copy, layout.',
-    note: 'Earn the clickable mock. It is warranted when the question is specifically about flow and interaction — not before. A polished-looking clickable mock before the concept is settled pulls feedback toward polish too early.',
+    headline: 'The digital workhorse, once the concept is settled.',
+    body: 'An interactive mock the user can click through. More effort, and more real. Warranted specifically when the learning question is about flow or interaction: "does this navigation make sense? is this sequence right?" For digital products, this is the workhorse fidelity once the concept has been validated at a lower level. As it starts looking finished, feedback begins drifting toward the surface: color, copy, layout.',
+    note: 'Earn the clickable mock. It is warranted when the question is specifically about flow and interaction, not before. A polished-looking clickable mock before the concept is settled pulls feedback toward polish too early.',
   },
   {
     id: 'polished', x: 558, low: false,
@@ -60,7 +60,7 @@ const RUNGS: RungDef[] = [
     cost: 'DAYS', feedback: 'polish & surface feedback ⚠',
     headline: 'Expensive, slow, and for early learning often counterproductive.',
     body: 'Looks almost like the real product. Useful for late-stage refinement questions, but for early concept learning, often counterproductive: users react to it as finished, commenting on visual polish and wording rather than whether the concept works. It can over-commit a team to a direction before it is validated, and it makes the prototype too precious to discard.',
-    note: 'Save high fidelity for late-stage questions about refinement. Spending days on a polished prototype before the concept is validated is one of the most common — and most costly — prototyping mistakes.',
+    note: 'Save high fidelity for late-stage questions about refinement. Spending days on a polished prototype before the concept is validated is one of the most common, and most costly, prototyping mistakes.',
   },
 ]
 
@@ -200,7 +200,7 @@ export default function RPInteractive() {
           <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill="rgba(255,255,255,0.13)" style={{ userSelect: 'none' }}>
-            THE FEEDBACK A PROTOTYPE INVITES DEPENDS ON HOW FINISHED IT LOOKS — ROUGHNESS IS A FEATURE
+            THE FEEDBACK A PROTOTYPE INVITES DEPENDS ON HOW FINISHED IT LOOKS, ROUGHNESS IS A FEATURE
           </text>
         </svg>
       </div>

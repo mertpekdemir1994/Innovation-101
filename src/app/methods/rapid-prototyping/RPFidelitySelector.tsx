@@ -42,21 +42,21 @@ const TABLE_ROWS: TableRow[] = [
   {
     rung: 'paper',
     approach: 'Paper sketch (hand-drawn)',
-    fidelity: 'Lowest — minutes, nearly free',
+    fidelity: 'Lowest: minutes, nearly free',
     best: '"Does this concept make sense? Is the basic idea and structure right?" The fastest way to get pure concept feedback, because it is obviously unfinished.',
     watch: 'Too abstract for questions about real interaction or timing; some users struggle to imagine the finished thing from a sketch.',
   },
   {
     rung: 'quick',
     approach: 'Quick conceptual visual',
-    fidelity: 'Low — under an hour',
+    fidelity: 'Low: under an hour',
     best: '"Can I communicate this concept a little more concretely?" A fast digital or drawn representation, richer than paper, still clearly rough.',
-    watch: 'Starting to look more done — watch for feedback beginning to drift toward the surface.',
+    watch: 'Starting to look more done; watch for feedback beginning to drift toward the surface.',
   },
   {
     rung: 'click',
     approach: 'Clickable mockup (e.g. Figma)',
-    fidelity: 'Medium — hours',
+    fidelity: 'Medium: hours',
     best: '"Does the FLOW work? Is the interaction and navigation understandable?" The right tool when the learning question is specifically about how a user moves through the experience.',
     watch: 'Looks finished, so feedback drifts to polish (color, copy, layout); easy to over-invest and grow attached before validating.',
     featured: true,
@@ -71,14 +71,14 @@ const TABLE_ROWS: TableRow[] = [
   {
     rung: null,
     approach: 'Roleplay / bodystorming',
-    fidelity: 'Low — time not materials',
+    fidelity: 'Low: time not materials',
     best: '"How does this SERVICE or human interaction actually play out?" For services and experiences, acting it out surfaces what a static artifact cannot.',
     watch: 'Needs willing participants and a little courage; can feel unnatural to some teams.',
   },
   {
     rung: null,
     approach: 'Wizard-of-Oz facade',
-    fidelity: 'Low-medium — effort in the illusion',
+    fidelity: 'Low-medium: effort in the illusion',
     best: '"Will people actually USE or act on this?" when the real system does not exist yet. Humans manually simulate what the software will eventually do.',
     watch: 'Labor-intensive to run live; tests behavior, not the real system\'s feasibility.',
   },
@@ -133,7 +133,7 @@ export default function RPFidelitySelector() {
           <div className="rounded-lg border p-4"
             style={{ background: 'var(--color-neutral-50)', borderColor: 'var(--color-neutral-200)' }}>
             <p className="text-sm" style={{ color: 'var(--color-neutral-600)' }}>
-              This approach is not on the standard paper-to-polished fidelity ladder — see the table below.
+              This approach is not on the standard paper-to-polished fidelity ladder; see the table below.
             </p>
           </div>
         ) : (
@@ -198,7 +198,7 @@ export default function RPFidelitySelector() {
                   transition={fade()}
                   className="font-mono uppercase tracking-widest text-center"
                   style={{ fontSize: 'var(--text-2xs)', color: `${CLAY}0.70)` }}>
-                  ★ the digital workhorse — earn it once the concept is settled
+                  ★ the digital workhorse, earn it once the concept is settled
                 </motion.p>
               )}
             </AnimatePresence>

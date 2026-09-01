@@ -23,31 +23,31 @@ const FRAMEWORK_LINKS = [
     slug: 'design-sprint',
     name: 'Design Sprint',
     phase: 'Wednesday / Thursday',
-    note: 'Wednesday in a Design Sprint is when the team decides on the solution to prototype. Thursday is when they build it — a realistic-looking prototype made in one day, good enough to provoke honest reactions from the Friday test users. Rapid prototyping at Design Sprint fidelity is a compressed, high-intensity version of the method, with a firm one-day build budget and a clear test on the other side.',
+    note: 'Wednesday in a Design Sprint is when the team decides on the solution to prototype. Thursday is when they build it: a realistic-looking prototype made in one day, good enough to provoke honest reactions from the Friday test users. Rapid prototyping at Design Sprint fidelity is a compressed, high-intensity version of the method, with a firm one-day build budget and a clear test on the other side.',
   },
   {
     slug: 'design-thinking',
     name: 'Design Thinking',
     phase: 'Prototype',
-    note: 'The Prototype phase is the dedicated make-it-tangible moment of Design Thinking. Rapid prototyping is the method that populates this phase — turn the most promising Ideate ideas into rough tangible forms that can be tested with real users. Design Thinking\'s Prototype phase emphasises fast, low-fidelity prototypes intended to generate learning from the Test phase, not finished artifacts intended to be handed off.',
+    note: 'The Prototype phase is the dedicated make-it-tangible moment of Design Thinking. Rapid prototyping is the method that populates this phase: turn the most promising Ideate ideas into rough tangible forms that can be tested with real users. Design Thinking\'s Prototype phase emphasises fast, low-fidelity prototypes intended to generate learning from the Test phase, not finished artifacts intended to be handed off.',
   },
   {
     slug: 'double-diamond',
     name: 'Double Diamond',
     phase: 'Develop',
-    note: 'In the Develop phase, rough solutions are built and tested to learn which directions are worth refining. Rapid prototyping is the primary build-to-learn mechanism here — producing multiple rough, testable versions of candidate directions before converging. The Develop phase deliberately expects multiple rounds of rapid prototyping and discard before the team reaches something ready to deliver.',
+    note: 'In the Develop phase, rough solutions are built and tested to learn which directions are worth refining. Rapid prototyping is the primary build-to-learn mechanism here, producing multiple rough, testable versions of candidate directions before converging. The Develop phase deliberately expects multiple rounds of rapid prototyping and discard before the team reaches something ready to deliver.',
   },
   {
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Build',
-    note: 'The Build step in the Lean Startup\'s Build–Measure–Learn loop is where rapid prototyping lives at the early stages of an idea — making something tangible to measure against, fast. The discipline is identical: build the least needed to answer the next most important question, measure the response, and learn. Lean Startup\'s MVP concept (the smallest real market thing) is the downstream relative of the rapid learning prototype.',
+    note: 'The Build step in the Lean Startup\'s Build–Measure–Learn loop is where rapid prototyping lives at the early stages of an idea, making something tangible to measure against, fast. The discipline is identical: build the least needed to answer the next most important question, measure the response, and learn. Lean Startup\'s MVP concept (the smallest real market thing) is the downstream relative of the rapid learning prototype.',
   },
   {
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Sprint',
-    note: 'Each sprint in Agile Innovation produces an increment to learn from. Rapid prototyping supplies the build-to-learn discipline within the sprint — making ideas tangible quickly enough to get feedback within the sprint cycle. The sprint\'s short timeboxes match the method\'s requirement for fast, rough, disposable artifacts rather than polished, permanent ones.',
+    note: 'Each sprint in Agile Innovation produces an increment to learn from. Rapid prototyping supplies the build-to-learn discipline within the sprint, making ideas tangible quickly enough to get feedback within the sprint cycle. The sprint\'s short timeboxes match the method\'s requirement for fast, rough, disposable artifacts rather than polished, permanent ones.',
   },
 ]
 
@@ -57,12 +57,12 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'crazy-8s',
     name: 'Crazy 8s',
-    rel: 'The natural upstream: the promising ideas selected from a Crazy 8s session are exactly what you make tangible and test with a rapid prototype. Diverge there — generate a wide range of candidate directions fast — then build-to-learn here with the most promising late-panel ideas. The two methods are sequential: Crazy 8s produces the raw material; rapid prototyping turns the best of it into something learnable.',
+    rel: 'The natural upstream: the promising ideas selected from a Crazy 8s session are exactly what you make tangible and test with a rapid prototype. Diverge there (generate a wide range of candidate directions fast) then build-to-learn here with the most promising late-panel ideas. The two methods are sequential: Crazy 8s produces the raw material; rapid prototyping turns the best of it into something learnable.',
   },
   {
     slug: null,
     name: 'Concept Testing',
-    rel: 'The disciplined partner: rapid prototyping makes the idea tangible; concept testing is the structured act of learning from real users\' reactions to it. Prototype, then test. The two methods are one sequence — rapid prototyping without a test is just building, and concept testing without a prototype is just asking people about an abstraction. Run them together.',
+    rel: 'The disciplined partner: rapid prototyping makes the idea tangible; concept testing is the structured act of learning from real users\' reactions to it. Prototype, then test. The two methods are one sequence: rapid prototyping without a test is just building, and concept testing without a prototype is just asking people about an abstraction. Run them together.',
   },
   {
     slug: null,
@@ -72,12 +72,12 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'how-might-we',
     name: 'How Might We',
-    rel: 'A well-scoped How Might We frames what the prototype should explore. The learning question that drives a prototype (“what are we trying to learn?”) and the challenge framing of a HMW (“how might we achieve X?”) are the same question from two directions. Scope the challenge with HMW, then prototype the most promising approaches to that challenge.',
+    rel: 'A well-scoped How Might We frames what the prototype should explore. The learning question that drives a prototype (&ldquo;what are we trying to learn?&rdquo;) and the challenge framing of a HMW (&ldquo;how might we achieve X?&rdquo;) are the same question from two directions. Scope the challenge with HMW, then prototype the most promising approaches to that challenge.',
   },
   {
     slug: null,
     name: 'Assumption Mapping',
-    rel: 'The riskiest assumptions a concept rests on are what a prototype should be designed to test first. Running assumption mapping after ideation and before prototyping identifies which open questions carry the most risk — and those become the learning questions that drive prototype fidelity and structure. Prototype the riskiest assumption first, not the most interesting feature.',
+    rel: 'The riskiest assumptions a concept rests on are what a prototype should be designed to test first. Running assumption mapping after ideation and before prototyping identifies which open questions carry the most risk, and those become the learning questions that drive prototype fidelity and structure. Prototype the riskiest assumption first, not the most interesting feature.',
   },
 ]
 
@@ -86,7 +86,7 @@ const RELATED_METHODS: RelatedMethod[] = [
 export default function RPPage() {
   return (
     <>
-      {/* S1 — Header DARK */}
+      {/* S1 - Header DARK */}
       <DarkSection>
         <Container>
           <div className="py-20 md:py-28">
@@ -128,7 +128,7 @@ export default function RPPage() {
         </Container>
       </DarkSection>
 
-      {/* S2 — Establishing visual DARK */}
+      {/* S2 - Establishing visual DARK */}
       <DarkSection>
         <Container>
           <div className="pb-20">
@@ -137,12 +137,12 @@ export default function RPPage() {
         </Container>
       </DarkSection>
 
-      {/* S3 — What it is LIGHT */}
+      {/* S3 - What it is LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>What it is</SectionLabel>
-            <SectionHeadingLight>Not a small product. A question made tangible — built to learn, not to keep.</SectionHeadingLight>
+            <SectionHeadingLight>Not a small product. A question made tangible, built to learn, not to keep.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5">
               <Body>
@@ -156,7 +156,7 @@ export default function RPPage() {
                 can to answer the most important open question, then learn, then build again.
               </Body>
               <Body>
-                The defining principle &mdash; and the one most often misunderstood &mdash; is that
+                The defining principle, and the one most often misunderstood, is that
                 low fidelity is the point, not a limitation to apologise for. Rapid means rough. A
                 prototype is meant to be unrefined and unpolished, because polish costs time you have
                 not yet earned and because the whole purpose is speed of learning, not quality of
@@ -175,12 +175,12 @@ export default function RPPage() {
         </Container>
       </LightSection>
 
-      {/* S4 — Interactive DARK */}
+      {/* S4 - Interactive DARK */}
       <DarkSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={CLAY}>Move up the fidelity ladder. Watch the cost rise and the feedback drift to polish.</SectionLabel>
-            <SectionHeadingDark>The sweet spot for a learning prototype is deliberately low. Click a level to see why &mdash; and what kind of feedback it invites.</SectionHeadingDark>
+            <SectionHeadingDark>The sweet spot for a learning prototype is deliberately low. Click a level to see why, and what kind of feedback it invites.</SectionHeadingDark>
             <p
               className="mb-10 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
@@ -195,7 +195,7 @@ export default function RPPage() {
         </Container>
       </DarkSection>
 
-      {/* S5 — When to deploy LIGHT */}
+      {/* S5 - When to deploy LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -212,7 +212,7 @@ export default function RPPage() {
                   {[
                     'You have a promising idea (often selected from Crazy 8s) and need to learn whether it works before investing in building it.',
                     'The team is debating an idea in the abstract and going in circles; a rough prototype turns opinion into something testable.',
-                    'You need to answer a specific open question cheaply and fast — does this flow make sense? is this concept understood?',
+                    'You need to answer a specific open question cheaply and fast: does this flow make sense? is this concept understood?',
                     'You want to test with users early, when changing direction is still cheap and the artifacts are still disposable.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
@@ -233,7 +233,7 @@ export default function RPPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'You have not defined what you are trying to learn. A prototype without a learning question is just building, and tends to drift toward polish. Decide the question first.',
-                    'The question genuinely requires high fidelity or real data to answer — some interaction or performance questions do. Match fidelity to the question rather than defaulting low.',
+                    'The question genuinely requires high fidelity or real data to answer; some interaction or performance questions do. Match fidelity to the question rather than defaulting low.',
                     'You are actually building the shippable thing. That is production work (or the MVP/MLP), not a learning prototype. Do not confuse built-to-learn with built-to-keep.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
@@ -254,7 +254,7 @@ export default function RPPage() {
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: a rapid prototype is built to answer a question and often to be
                 discarded; its value is the learning, not the artifact. Its most common failure is
-                fidelity creep &mdash; the prototype quietly becoming a polished thing the team falls
+                fidelity creep, the prototype quietly becoming a polished thing the team falls
                 in love with and cannot bear to throw away, which both wastes effort and biases the
                 team toward a direction they have not actually validated. Keep it rough, keep it
                 disposable, keep it pointed at a question.
@@ -264,7 +264,7 @@ export default function RPPage() {
         </Container>
       </LightSection>
 
-      {/* S6 — How it works LIGHT */}
+      {/* S6 - How it works LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -286,7 +286,7 @@ export default function RPPage() {
                 {
                   n: '03',
                   title: 'Build it fast and rough.',
-                  body: 'Make it quickly and cheaply — paper, a quick visual, a clickable mock, a roleplay, a Wizard-of-Oz facade — keeping it deliberately unpolished. Speed and roughness are the point; resist the urge to refine. A prototype built in fifteen minutes is not inferior to one built in a day; it is appropriately scoped to the question.',
+                  body: 'Make it quickly and cheaply (paper, a quick visual, a clickable mock, a roleplay, a Wizard-of-Oz facade) keeping it deliberately unpolished. Speed and roughness are the point; resist the urge to refine. A prototype built in fifteen minutes is not inferior to one built in a day; it is appropriately scoped to the question.',
                 },
                 {
                   n: '04',
@@ -296,7 +296,7 @@ export default function RPPage() {
                 {
                   n: '05',
                   title: 'Learn, then decide: iterate or discard.',
-                  body: 'Capture what you learned, and let it drive the next move: refine the idea and prototype again, or kill it. Expect to throw prototypes away — that is success, not waste. The learning is the deliverable. A prototype you cannot discard is a prototype you over-invested in.',
+                  body: 'Capture what you learned, and let it drive the next move: refine the idea and prototype again, or kill it. Expect to throw prototypes away; that is success, not waste. The learning is the deliverable. A prototype you cannot discard is a prototype you over-invested in.',
                 },
                 {
                   n: '06',
@@ -323,12 +323,12 @@ export default function RPPage() {
         </Container>
       </LightSection>
 
-      {/* S7 — Matching fidelity to the question LIGHT */}
+      {/* S7 - Matching fidelity to the question LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={CLAY}>Matching fidelity to the question</SectionLabel>
-            <SectionHeadingLight>Which approach when &mdash; the practical heart of the method.</SectionHeadingLight>
+            <SectionHeadingLight>Which approach when: the practical heart of the method.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5 mb-10">
               <Body>
@@ -348,8 +348,8 @@ export default function RPPage() {
                 The through-line: default low, climb only as the question demands.
               </h3>
               <Body>
-                Start at the lowest fidelity that could answer your question &mdash; usually paper
-                for a concept question &mdash; and climb deliberately only when the open question
+                Start at the lowest fidelity that could answer your question (usually paper
+                for a concept question) and climb deliberately only when the open question
                 genuinely shifts. The clickable mockup earns its place the moment the question becomes
                 about flow and interaction, not before. Every rung up costs more time and pulls
                 feedback toward polish, so each climb should buy you a specific piece of learning you
@@ -367,7 +367,7 @@ export default function RPPage() {
                   The practical path is often: paper or quick sketch to settle the concept and rough
                   layout, then a clickable mockup to test the flow and interaction, and only later a
                   high-fidelity prototype when the questions become about refinement. Jumping straight
-                  to a polished clickable mock &mdash; which AI now makes tempting &mdash; skips the
+                  to a polished clickable mock (which AI now makes tempting) skips the
                   cheap concept test and pulls feedback to the surface before the concept is settled.
                 </p>
               </div>
@@ -376,7 +376,7 @@ export default function RPPage() {
         </Container>
       </LightSection>
 
-      {/* S8 — Best practices LIGHT */}
+      {/* S8 - Best practices LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -390,7 +390,7 @@ export default function RPPage() {
             <ul className="flex flex-col gap-3 mb-10">
               {[
                 'Every prototype starts from a clear learning question, so it is built to answer something specific rather than to build.',
-                'Fidelity is matched to the question and defaults low — the least that answers it, no more.',
+                'Fidelity is matched to the question and defaults low: the least that answers it, no more.',
                 'Prototypes are made fast and rough, and the roughness is treated as a feature that keeps feedback on the concept.',
                 'They are put in front of real users early, when changing course is still cheap.',
                 'The team treats prototypes as disposable, learns, and readily throws them away.',
@@ -412,7 +412,7 @@ export default function RPPage() {
               {[
                 {
                   mistake: 'Fidelity creep.',
-                  fix: 'The signature failure: the prototype quietly becomes polished, and the team falls in love with the artifact and cannot throw it away. Keep it deliberately rough and disposable. Timebox the build — an hour, an afternoon — so it stays pointed at the question.',
+                  fix: 'The signature failure: the prototype quietly becomes polished, and the team falls in love with the artifact and cannot throw it away. Keep it deliberately rough and disposable. Timebox the build (an hour, an afternoon) so it stays pointed at the question.',
                 },
                 {
                   mistake: 'Building without a learning question.',
@@ -424,11 +424,11 @@ export default function RPPage() {
                 },
                 {
                   mistake: 'Confusing a prototype with a product.',
-                  fix: 'Treating a learning prototype as the thing to ship (or as the MVP) blurs "built to learn, then discard" with "built to keep." Know which you are making — they have different standards, different life expectancies, and different success criteria.',
+                  fix: 'Treating a learning prototype as the thing to ship (or as the MVP) blurs "built to learn, then discard" with "built to keep." Know which you are making: they have different standards, different life expectancies, and different success criteria.',
                 },
                 {
                   mistake: 'Not testing it.',
-                  fix: 'A prototype never put in front of a real person is just an artifact. The learning comes from the test, so plan the test as part of the prototype — decide who will try it, what task you will give them, and what you are watching for.',
+                  fix: 'A prototype never put in front of a real person is just an artifact. The learning comes from the test, so plan the test as part of the prototype: decide who will try it, what task you will give them, and what you are watching for.',
                 },
               ].map(({ mistake, fix }) => (
                 <div key={mistake}
@@ -448,7 +448,7 @@ export default function RPPage() {
         </Container>
       </LightSection>
 
-      {/* S9 — Logistics LIGHT */}
+      {/* S9 - Logistics LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -506,7 +506,7 @@ export default function RPPage() {
         </Container>
       </LightSection>
 
-      {/* S10 — AI and this method DARK */}
+      {/* S10 - AI and this method DARK */}
       <DarkSection>
         <Container>
           <div className="py-20">
@@ -516,7 +516,7 @@ export default function RPPage() {
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see what changes when the cost of fidelity collapses &mdash;
+              Toggle between modes to see what changes when the cost of fidelity collapses,
               and why the &ldquo;just enough to learn&rdquo; judgment matters more, not less,
               when AI makes high fidelity nearly free.
             </p>
@@ -525,7 +525,7 @@ export default function RPPage() {
         </Container>
       </DarkSection>
 
-      {/* S11 — In-depth example LIGHT */}
+      {/* S11 - In-depth example LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -536,7 +536,7 @@ export default function RPPage() {
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A team prototypes a new app feature to learn whether the concept and flow work.
-              Tab A runs the method as it was designed &mdash; rough, disposable, concept-focused.
+              Tab A runs the method as it was designed: rough, disposable, concept-focused.
               Tab B uses AI and is honest about both the genuine power and the trap.
               Both tabs are real approaches; the contrast teaches which questions each one answers.
             </p>
@@ -545,7 +545,7 @@ export default function RPPage() {
         </Container>
       </LightSection>
 
-      {/* S12 — Frameworks LIGHT */}
+      {/* S12 - Frameworks LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -586,7 +586,7 @@ export default function RPPage() {
         </Container>
       </LightSection>
 
-      {/* S13 — Related methods LIGHT */}
+      {/* S13 - Related methods LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -624,7 +624,7 @@ export default function RPPage() {
         </Container>
       </LightSection>
 
-      {/* S14 — Sources LIGHT */}
+      {/* S14 - Sources LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -637,19 +637,19 @@ export default function RPPage() {
                   title:  'Sprint',
                   author: 'Jake Knapp, John Zeratsky, and Braden Kowitz',
                   year:   '2016',
-                  note:   'The most focused account of rapid prototyping in a time-boxed, high-stakes frame. Knapp\'s Design Sprint compresses a week into five days and dedicates Thursday entirely to building a realistic-enough prototype to test on Friday. The book\'s treatment of what "good enough to learn from" means in practice — not polished, not rough to the point of incomprehensibility, but targeted at the test questions — is the clearest applied account of matching fidelity to the learning objective. The sprint prototype is the worked example of the method\'s core discipline.',
+                  note:   'The most focused account of rapid prototyping in a time-boxed, high-stakes frame. Knapp\'s Design Sprint compresses a week into five days and dedicates Thursday entirely to building a realistic-enough prototype to test on Friday. The book\'s treatment of what "good enough to learn from" means in practice (not polished, not rough to the point of incomprehensibility, but targeted at the test questions) is the clearest applied account of matching fidelity to the learning objective. The sprint prototype is the worked example of the method\'s core discipline.',
                 },
                 {
                   title:  'Creative Confidence',
                   author: 'Tom Kelley and David Kelley',
                   year:   '2013',
-                  note:   'On the mindset that makes rapid prototyping work. The Kelleys\' argument that creative capacity is learned and sustained by practice — and that the act of making things tangible fast is how ideas improve — is the theoretical foundation for why the method emphasises making over debating. Their treatment of prototyping as a way of thinking, not just a production technique, is what distinguishes rapid prototyping as a discipline from rapid prototyping as a skill. The book\'s examples of the value of rough, fast, throw-away artifacts are directly applicable to the method.',
+                  note:   'On the mindset that makes rapid prototyping work. The Kelleys\' argument that creative capacity is learned and sustained by practice, and that the act of making things tangible fast is how ideas improve, is the theoretical foundation for why the method emphasises making over debating. Their treatment of prototyping as a way of thinking, not just a production technique, is what distinguishes rapid prototyping as a discipline from rapid prototyping as a skill. The book\'s examples of the value of rough, fast, throw-away artifacts are directly applicable to the method.',
                 },
                 {
                   title:  'The Lean Startup',
                   author: 'Eric Ries',
                   year:   '2011',
-                  note:   'The build-measure-learn loop and the discipline of learning velocity are the intellectual ancestors of rapid prototyping\'s core logic. Ries\' argument that the unit of progress is validated learning, and that the goal of the build step is to produce the minimum needed to measure, maps directly onto the "least that answers the question" principle. The book also introduces the MVP concept — the downstream, market-facing relative of the learning prototype — and the distinction between the two (built to learn vs. built to keep) is the scope boundary this method page observes.',
+                  note:   'The build-measure-learn loop and the discipline of learning velocity are the intellectual ancestors of rapid prototyping\'s core logic. Ries\' argument that the unit of progress is validated learning, and that the goal of the build step is to produce the minimum needed to measure, maps directly onto the "least that answers the question" principle. The book also introduces the MVP concept (the downstream, market-facing relative of the learning prototype) and the distinction between the two (built to learn vs. built to keep) is the scope boundary this method page observes.',
                 },
               ].map(({ title, author, year, note }) => (
                 <div

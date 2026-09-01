@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'A team has a promising idea for a new app feature (selected from a Crazy 8s session) and needs to learn whether users understand the concept and whether the core flow makes sense — before investing in building it. Both versions prototype the same idea; only the approach differs.'
+const SCENARIO = 'A team has a promising idea for a new app feature (selected from a Crazy 8s session) and needs to learn whether users understand the concept and whether the core flow makes sense, before investing in building it. Both versions prototype the same idea; only the approach differs.'
 
 export default function RPExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -60,11 +60,11 @@ export default function RPExampleToggle() {
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The team named the question before building anything: do users understand this concept,
                 and does the main flow make sense? Because that question was about concept and flow
-                &mdash; not polish &mdash; they kept fidelity deliberately low.
+                (not polish) they kept fidelity deliberately low.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                They sketched the key screens on paper first, then built a rough clickable mockup
-                &mdash; just enough to click through the flow, obviously unfinished, made in an
+                They sketched the key screens on paper first, then built a rough clickable mockup,
+                just enough to click through the flow, obviously unfinished, made in an
                 afternoon. Paper for the concept question; clickable mock only when the question
                 shifted to flow.
               </p>
@@ -78,7 +78,7 @@ export default function RPExampleToggle() {
                 They put the rough mockup in front of real users. Because the prototype was so clearly
                 unfinished, users engaged with the concept rather than the surface: they talked about
                 whether the feature made sense, where the flow confused them, what they expected to
-                happen next. No one wasted a word on colors or fonts &mdash; there was nothing polished
+                happen next. No one wasted a word on colors or fonts; there was nothing polished
                 to react to.
               </p>
               <div className="space-y-3">
@@ -89,7 +89,7 @@ export default function RPExampleToggle() {
                   },
                   {
                     label: 'The artifacts were thrown away without a second thought',
-                    detail: 'Several paper and rough-mock versions were discarded happily. That was the point. Low fidelity kept the team from over-committing to the idea before it was validated — the prototypes were disposable because they were deliberately rough.',
+                    detail: 'Several paper and rough-mock versions were discarded happily. That was the point. Low fidelity kept the team from over-committing to the idea before it was validated: the prototypes were disposable because they were deliberately rough.',
                   },
                   {
                     label: 'Three jobs at once',
@@ -121,7 +121,7 @@ export default function RPExampleToggle() {
               <p className="text-xs text-neutral-600 leading-relaxed">
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Both approaches are real.</span>{' '}
                 This tab shows what actually happened when the team used AI, including both the genuine
-                upside and the trap it created. It is not a hypothetical warning &mdash; it is what
+                upside and the trap it created. It is not a hypothetical warning; it is what
                 playing with the economics of fidelity produces in practice.
               </p>
             </div>
@@ -138,8 +138,8 @@ export default function RPExampleToggle() {
               <p className="text-sm text-neutral-700 leading-relaxed">
                 For speed and reach, it was a genuine leap. A prototype that would have taken an
                 afternoon in traditional tools took fifteen minutes. And if their question had truly
-                been about how a polished flow felt &mdash; rather than whether the concept itself
-                worked &mdash; the speed would have been an unambiguous win.
+                been about how a polished flow felt, rather than whether the concept itself
+                worked, the speed would have been an unambiguous win.
               </p>
             </div>
 
@@ -152,15 +152,15 @@ export default function RPExampleToggle() {
                 {[
                   {
                     label: 'Users reacted to what they saw, not the concept',
-                    detail: 'Because the AI prototype looked finished, users reacted to it as finished: they commented on the color scheme, the button styles, the wording — and engaged far less with the underlying concept and flow. The feedback that low fidelity had always produced for free — "does this concept work?" — now required effort to extract, because the prototype kept pulling attention to the surface.',
+                    detail: 'Because the AI prototype looked finished, users reacted to it as finished: they commented on the color scheme, the button styles, the wording, and engaged far less with the underlying concept and flow. The feedback that low fidelity had always produced for free, "does this concept work?", now required effort to extract, because the prototype kept pulling attention to the surface.',
                   },
                   {
                     label: 'The team grew attached before validating',
-                    detail: 'Looking at something that already felt like a real product, the team started treating the direction as settled and grew attached to it before they had validated the concept. The beautiful AI mock made discarding it feel like a loss — which is the opposite of the throwaway mindset rapid prototyping requires.',
+                    detail: 'Looking at something that already felt like a real product, the team started treating the direction as settled and grew attached to it before they had validated the concept. The beautiful AI mock made discarding it feel like a loss, which is the opposite of the throwaway mindset rapid prototyping requires.',
                   },
                   {
                     label: 'The cheap test was skipped',
-                    detail: 'Because a polished mock was one prompt away, the team skipped the paper sketch that, in the traditional run, exposed the flow confusion instantly and for free. The AI shortcut bypassed the cheapest, fastest learning opportunity — a sketch that would have killed the bad flow before anyone invested in it.',
+                    detail: 'Because a polished mock was one prompt away, the team skipped the paper sketch that, in the traditional run, exposed the flow confusion instantly and for free. The AI shortcut bypassed the cheapest, fastest learning opportunity: a sketch that would have killed the bad flow before anyone invested in it.',
                   },
                 ].map(item => (
                   <div key={item.label} className="rounded p-3"
@@ -179,7 +179,7 @@ export default function RPExampleToggle() {
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 The teams that used AI well kept asking the old questions: what do we need to learn,
                 and what is the least that answers it? Sometimes they still started with a rough
-                sketch &mdash; even though AI could have built the polished version &mdash; precisely
+                sketch, even though AI could have built the polished version, precisely
                 because the rough version got better concept feedback. AI changed the economics; the
                 discipline of learning-first had to stay human.
               </p>

@@ -65,7 +65,7 @@ export default function RPAIReactivated() {
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
           preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}
           aria-label={isAI
-            ? 'AI mode: all fidelity levels marked AI: INSTANT — the cost of climbing the ladder has collapsed. The just enough to learn judgment is more important, not less.'
+            ? 'AI mode: all fidelity levels marked AI: INSTANT, the cost of climbing the ladder has collapsed. The just enough to learn judgment is more important, not less.'
             : 'Human mode: fidelity spectrum from rough paper sketch to polished prototype, with cost rising from left to right. Just enough to learn zone marked low.'}>
           <defs>
             <filter id="rp-ai-clay-glow" x="-30%" y="-30%" width="160%" height="160%">
@@ -100,13 +100,13 @@ export default function RPAIReactivated() {
                 <text x={(AXIS_X1 + AXIS_X2) / 2} y={AXIS_Y - 10} textAnchor="middle"
                   fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                   fill={`${INDIGO}0.70)`} style={{ userSelect: 'none' }}>
-                  AI COLLAPSES THE COST OF FIDELITY — ALL LEVELS NOW INSTANT
+                  AI COLLAPSES THE COST OF FIDELITY, ALL LEVELS NOW INSTANT
                 </text>
               </motion.g>
             )}
           </AnimatePresence>
 
-          {/* Rungs — transition between modes */}
+          {/* Rungs: transition between modes */}
           <AnimatePresence mode="wait">
             <motion.g key={mode}
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
@@ -148,7 +148,7 @@ export default function RPAIReactivated() {
                 )
               })}
 
-              {/* JUST ENOUGH TO LEARN zone — more prominent in AI mode */}
+              {/* JUST ENOUGH TO LEARN zone: more prominent in AI mode */}
               <g>
                 <line x1={ZONE_X1} y1={162} x2={ZONE_X2} y2={162}
                   stroke={`${CLAY}${isAI ? '0.55)' : '0.32)'}`} strokeWidth={isAI ? 1.2 : 0.8} />
@@ -166,12 +166,12 @@ export default function RPAIReactivated() {
                   <text x={ZONE_MID} y={194} textAnchor="middle"
                     fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                     fill={`${CLAY}0.48)`} style={{ userSelect: 'none' }}>
-                    AI removed the cost that used to enforce this — the discipline must stay human
+                    AI removed the cost that used to enforce this, the discipline must stay human
                   </text>
                 )}
               </g>
 
-              {/* Warning zone — expands in AI mode */}
+              {/* Warning zone: expands in AI mode */}
               {isAI ? (
                 <g>
                   <rect x={300} y={50} width={360} height={20} rx={3}
@@ -179,7 +179,7 @@ export default function RPAIReactivated() {
                   <text x={480} y={63} textAnchor="middle"
                     fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                     fill="rgba(245,158,11,0.55)" style={{ userSelect: 'none' }}>
-                    ⚠ AI DEFAULTS TO HIGH FIDELITY — FEEDBACK DRIFTS TO POLISH BY DEFAULT
+                    ⚠ AI DEFAULTS TO HIGH FIDELITY, FEEDBACK DRIFTS TO POLISH BY DEFAULT
                   </text>
                 </g>
               ) : (
@@ -197,8 +197,8 @@ export default function RPAIReactivated() {
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill="rgba(255,255,255,0.14)" style={{ userSelect: 'none' }}>
             {isAI
-              ? 'AI COLLAPSES THE COST OF FIDELITY — THE JUDGMENT ABOUT WHAT TO BUILD IS MORE IMPORTANT THAN EVER'
-              : 'THE RIGHT FIDELITY IS NOT THE HIGHEST YOU CAN BUILD — IT IS THE LOWEST THAT ANSWERS YOUR QUESTION'}
+              ? 'AI COLLAPSES THE COST OF FIDELITY, THE JUDGMENT ABOUT WHAT TO BUILD IS MORE IMPORTANT THAN EVER'
+              : 'THE RIGHT FIDELITY IS NOT THE HIGHEST YOU CAN BUILD, IT IS THE LOWEST THAT ANSWERS YOUR QUESTION'}
           </text>
         </svg>
       </div>
@@ -214,8 +214,8 @@ export default function RPAIReactivated() {
             className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { label: 'START LOW', body: 'Default to the lowest fidelity that could answer your question. For concept questions, that is usually paper. Only climb when the question shifts.' },
-              { label: 'CLIMB DELIBERATELY', body: 'Each rung up costs more time and pulls feedback toward polish. Climb only when the question genuinely requires higher fidelity — never for polish\'s own sake.' },
-              { label: 'MATCH THE QUESTION', body: 'The right fidelity follows from the question, not the habit. A clickable mock earns its place the moment the question becomes about flow and interaction — not before.' },
+              { label: 'CLIMB DELIBERATELY', body: 'Each rung up costs more time and pulls feedback toward polish. Climb only when the question genuinely requires higher fidelity, never for polish\'s own sake.' },
+              { label: 'MATCH THE QUESTION', body: 'The right fidelity follows from the question, not the habit. A clickable mock earns its place the moment the question becomes about flow and interaction, not before.' },
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${CLAY}0.18)`, background: `${CLAY}0.04)` }}>
@@ -233,8 +233,8 @@ export default function RPAIReactivated() {
             className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { label: 'FIDELITY IS FREE NOW', body: 'AI can generate a refined, clickable, near-real prototype in minutes. The entire cost curve of the ladder has collapsed. That is a genuine superpower when fidelity is what the question needs.' },
-              { label: 'FEEDBACK STILL DRIFTS', body: 'An AI mock looks finished, so users critique polish — color, copy, layout — instead of the concept. The fundamental problem that low fidelity solved is now the default state.' },
-              { label: 'JUDGMENT MATTERS MORE', body: 'AI removes the cost that used to enforce low fidelity. The discipline — what am I trying to learn, and what is the least that answers it? — must now be actively maintained, not built in.' },
+              { label: 'FEEDBACK STILL DRIFTS', body: 'An AI mock looks finished, so users critique polish (color, copy, layout) instead of the concept. The fundamental problem that low fidelity solved is now the default state.' },
+              { label: 'JUDGMENT MATTERS MORE', body: 'AI removes the cost that used to enforce low fidelity. The discipline (what am I trying to learn, and what is the least that answers it?) must now be actively maintained, not built in.' },
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${INDIGO}0.18)`, background: `${INDIGO}0.04)` }}>
