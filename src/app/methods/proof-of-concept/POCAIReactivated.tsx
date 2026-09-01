@@ -48,25 +48,25 @@ const INFO_CARDS = {
   human: [
     {
       tag: 'WHAT HUMANS BRING',
-      headline: 'Choosing the right question — and reading the conditions.',
-      body: 'The critical judgment in a PoC is deciding which question to prove first. That choice is strategic: it depends on what is genuinely uncertain, what failure would be most costly, and what result would unlock the next decision. AI does not make that judgment. Nor does it read the gap between sandbox proof conditions and the messy reality the product must eventually work in.',
+      headline: 'Choosing the right question, and reading the conditions.',
+      body: 'The critical judgment in a PoC is deciding which question to prove first. That choice is strategic: it depends on what is genuinely uncertain, what failure would be most costly, and what result would enable the next decision. AI does not make that judgment. Nor does it read the gap between sandbox proof conditions and the messy reality the product must eventually work in.',
     },
   ],
   ai: [
     {
       tag: 'GENUINE AI UPLIFT',
-      headline: 'AI can build the proving rig fast — often hours instead of weeks.',
+      headline: 'AI can build the proving rig fast, often hours instead of weeks.',
       body: 'When the question is clear, AI can dramatically accelerate rig construction: generating data-processing pipelines, evaluation logic, and comparison machinery that would take a specialist days or weeks to write. A well-scoped PoC is exactly the kind of tightly-defined, outcome-focused build where AI coding assistance gives the most leverage. The time-to-verdict can shrink dramatically.',
     },
     {
       tag: 'HUMAN JUDGMENT STAYS',
-      headline: 'AI proves whatever question you point it at — you must choose the right one.',
+      headline: 'AI proves whatever question you point it at; you must choose the right one.',
       body: 'AI\'s leverage is in rig construction, not question selection. It will build a fast rig for a poorly-chosen question just as readily as for the right one. The human responsibility is: which question first, what counts as a verdict, and whether the proof conditions are close enough to reality for the result to mean what you think it means.',
     },
     {
       tag: 'THE GAP THAT REMAINS',
       headline: 'AI proofs run in clean conditions. Reality is messier.',
-      body: 'AI-built PoCs are proven in controlled, often ideal conditions. The qualifying judgement — which domains, data types, or edge cases degrade the result, and whether those matter in production — is a human call. A result that "works" in the sandbox may not survive the real data, real scale, or real environment. Naming those conditions precisely is what makes the verdict actionable.',
+      body: 'AI-built PoCs are proven in controlled, often ideal conditions. The qualifying judgement (which domains, data types, or edge cases degrade the result, and whether those matter in production) is a human call. A result that "works" in the sandbox may not survive the real data, real scale, or real environment. Naming those conditions precisely is what makes the verdict actionable.',
     },
   ],
 }
@@ -103,7 +103,7 @@ export default function POCAIReactivated() {
       </div>
 
       {/* SVG rig */}
-      <div aria-label={`Proving rig — ${isAI ? 'AI-assisted mode: apparatus highlighted indigo (fast build). Question and verdict conditions remain brick (human judgment).' : 'Traditional human-led mode.'}`}>
+      <div aria-label={`Proving rig: ${isAI ? 'AI-assisted mode: apparatus highlighted indigo (fast build). Question and verdict conditions remain brick (human judgment).' : 'Traditional human-led mode.'}`}>
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
           preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}>
           <defs>
@@ -121,7 +121,7 @@ export default function POCAIReactivated() {
             </filter>
           </defs>
 
-          {/* Question label — always BRICK (human judgment) */}
+          {/* Question label: always BRICK (human judgment) */}
           <text x={APP_CX} y={27} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.18em"
             fill={`${BRICK}${isAI ? '0.90)' : '0.55)'}`}
@@ -154,7 +154,7 @@ export default function POCAIReactivated() {
             strokeWidth={1.2} strokeDasharray="5 3"
             style={{ transition: 'stroke 0.35s' }} />
 
-          {/* Apparatus — indigo in AI mode */}
+          {/* Apparatus: indigo in AI mode */}
           <rect x={APP_X - 3} y={APP_Y - 3} width={APP_W + 6} height={APP_H + 6} rx={9}
             fill="none" stroke={isAI ? `${INDIGO}0.06)` : `${BRICK}0.06)`}
             strokeWidth={6}
@@ -169,7 +169,7 @@ export default function POCAIReactivated() {
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={isAI ? `${INDIGO}0.20)` : `${BRICK}0.14)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>
-            PROVING RIG — INTERNAL — BARE
+            PROVING RIG, INTERNAL, BARE
           </text>
 
           {/* Internal bus */}
@@ -230,7 +230,7 @@ export default function POCAIReactivated() {
             strokeWidth={1.2} strokeDasharray="5 3"
             style={{ transition: 'stroke 0.35s' }} />
 
-          {/* Readout box — always BRICK (human reads verdict) */}
+          {/* Readout box: always BRICK (human reads verdict) */}
           <rect x={OUT_X} y={OUT_Y} width={OUT_W} height={OUT_H} rx={5}
             fill={`${BRICK}0.04)`} stroke={`${BRICK}0.22)`} strokeWidth={1.0} />
           <text x={OUT_CX} y={OUT_Y + 11}

@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'A logistics company suspects it can predict delivery delays 24 hours in advance using its existing route, weather, and driver-history data — and route to different fulfilment options before the delay occurs. But it doesn\'t know if the signal is strong enough. Building the full prediction system would be months of work. The PoC asks only: can the data predict delays at useful accuracy?'
+const SCENARIO = 'A logistics company suspects it can predict delivery delays 24 hours in advance using its existing route, weather, and driver-history data, and route to different fulfilment options before the delay occurs. But it doesn\'t know if the signal is strong enough. Building the full prediction system would be months of work. The PoC asks only: can the data predict delays at useful accuracy?'
 
 export default function POCExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -61,16 +61,16 @@ export default function POCExampleToggle() {
             {/* The question, precisely named */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${BRICK}0.22)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${BRICK}1)` }}>The one question — named precisely</p>
+                style={{ color: `${BRICK}1)` }}>The one question, named precisely</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
-                The team resisted the temptation to ask &ldquo;will our delay-prediction product work?&rdquo; — a
+                The team resisted the temptation to ask &ldquo;will our delay-prediction product work?&rdquo;, a
                 question with no provable answer at this stage. Instead they named the critical uncertain
                 thing: <span className="font-semibold">&ldquo;Using the existing route, weather, and driver-history data, can we predict delivery delays
                 more than 24 hours in advance with accuracy above 75% on the last 18 months of real data?&rdquo;</span>
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 Crucially, they also named the pass/fail threshold in advance: accuracy above 75% on real
-                historical data. Not &ldquo;it feels promising&rdquo; — a number, set before the test ran.
+                historical data. Not &ldquo;it feels promising&rdquo;, a number, set before the test ran.
               </p>
             </div>
 
@@ -99,10 +99,10 @@ export default function POCExampleToggle() {
                 </p>
                 <ul className="flex flex-col gap-2">
                   {[
-                    'No interface — results read from a notebook, not a dashboard',
-                    'No real-time data feeds — tested on 18 months of historical data only',
-                    'No routing logic — the PoC proved prediction, not the full system',
-                    'No production engineering — would be discarded after',
+                    'No interface, results read from a notebook, not a dashboard',
+                    'No real-time data feeds, tested on 18 months of historical data only',
+                    'No routing logic, the PoC proved prediction, not the full system',
+                    'No production engineering, would be discarded after',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-2">
                       <span className="text-neutral-300 shrink-0">×</span>
@@ -116,9 +116,9 @@ export default function POCExampleToggle() {
             {/* Real messy data */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${BRICK}0.20)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${BRICK}1)` }}>Tested on real messy data — not cleaned samples</p>
+                style={{ color: `${BRICK}1)` }}>Tested on real messy data, not cleaned samples</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
-                The team insisted on testing with 18 months of actual, uncleaned operational data —
+                The team insisted on testing with 18 months of actual, uncleaned operational data,
                 the same data the system would eventually work with. They resisted the temptation to
                 clean it first, which would have made the rig succeed in conditions unlike production.
                 The messy data was the point: if the signal wasn&rsquo;t strong enough to work in messy
@@ -130,7 +130,7 @@ export default function POCExampleToggle() {
             <div className="border rounded-lg p-5"
               style={{ borderColor: `${BRICK}0.30)`, background: `${BRICK}0.05)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-3"
-                style={{ color: `${BRICK}1)` }}>The verdict — qualified and useful</p>
+                style={{ color: `${BRICK}1)` }}>The verdict, qualified and useful</p>
               <div className="flex items-start gap-3 mb-4">
                 <span className="text-xs font-semibold px-2 py-0.5 rounded"
                   style={{ background: `${BRICK}0.12)`, color: `${BRICK}1)`, whiteSpace: 'nowrap', marginTop: 2 }}>
@@ -138,7 +138,7 @@ export default function POCExampleToggle() {
                 </span>
                 <p className="text-sm font-semibold text-neutral-900">
                   Worked for standard domestic routes (83% accuracy). Degraded significantly for
-                  cross-border deliveries (58% — below threshold).
+                  cross-border deliveries (58%, below threshold).
                 </p>
               </div>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
@@ -147,7 +147,7 @@ export default function POCExampleToggle() {
                 a different structure that the current data sources couldn&rsquo;t capture well enough.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
-                The rig was discarded. The knowledge carried forward — reshaping what to build: a domestic-first
+                The rig was discarded. The knowledge carried forward, reshaping what to build: a domestic-first
                 product, with cross-border as a phase-two problem requiring different data sources. That
                 decision, made now, saved months of building the wrong thing.
               </p>
@@ -171,7 +171,7 @@ export default function POCExampleToggle() {
               <p className="text-xs text-neutral-600 leading-relaxed">
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The logistics PoC above was built by a specialist team over roughly a week. This tab
-                imagines the same question tested with AI coding assistance — to show where AI genuinely
+                imagines the same question tested with AI coding assistance, to show where AI genuinely
                 compresses time, and where the human judgment calls remain.
               </p>
             </div>
@@ -190,12 +190,12 @@ export default function POCExampleToggle() {
                 With AI assistance, what would have taken a data specialist four to five days took
                 closer to six hours. AI generated the full data-ingestion pipeline, wrote the
                 normalisation logic for all three data sources, built the gradient-boosted model
-                configuration, and produced the evaluation and accuracy-measurement code — all from
+                configuration, and produced the evaluation and accuracy-measurement code, all from
                 a clear description of the question and the data structure.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 This is where AI gives the most leverage in a PoC: the rig is tightly scoped,
-                outcome-focused, and internal — exactly the kind of build where AI coding assistance
+                outcome-focused, and internal, exactly the kind of build where AI coding assistance
                 compounds speed without the complexity of production concerns. The time-to-verdict
                 compressed dramatically. That is a genuine, substantial win.
               </p>
@@ -209,12 +209,12 @@ export default function POCExampleToggle() {
                 {[
                   {
                     tag: 'WHICH QUESTION TO PROVE',
-                    text: 'AI built the rig fast — for whatever question it was pointed at. Choosing to prove prediction accuracy first (not routing logic, not real-time performance, not the interface) was a strategic call about what was genuinely uncertain and what a positive result would unlock. AI does not make that call. Point AI at the wrong question and you get a fast answer to the wrong thing.',
+                    text: 'AI built the rig fast, for whatever question it was pointed at. Choosing to prove prediction accuracy first (not routing logic, not real-time performance, not the interface) was a strategic call about what was genuinely uncertain and what a positive result would enable. AI does not make that call. Point AI at the wrong question and you get a fast answer to the wrong thing.',
                     note: 'Human judgment: question selection, threshold setting, what "good" means',
                   },
                   {
                     tag: 'SANDBOX ≠ REAL CONDITIONS',
-                    text: 'The AI-built rig ran in a clean environment with well-structured historical data. The degradation on cross-border routes — the qualifying finding that reshaped the product direction — emerged because the human team insisted on running against real messy production data, including the poorly-structured cross-border records. A team that accepted the clean-sandbox result as the verdict would have missed it.',
+                    text: 'The AI-built rig ran in a clean environment with well-structured historical data. The degradation on cross-border routes (the qualifying finding that reshaped the product direction) emerged because the human team insisted on running against real messy production data, including the poorly-structured cross-border records. A team that accepted the clean-sandbox result as the verdict would have missed it.',
                     note: 'Human judgment: reading the gap between proof conditions and production reality',
                   },
                 ].map((item, i) => (
@@ -237,7 +237,7 @@ export default function POCExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
                 style={{ color: `${INDIGO}0.80)` }}>The honest readout</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                AI compresses rig-building substantially and genuinely — this is one of the clearest
+                AI compresses rig-building substantially and genuinely, this is one of the clearest
                 examples of AI giving a team real leverage. The human work that remained was not
                 diminished by that speed: choosing the right question, setting the verdict threshold
                 in advance, and reading the gap between sandbox conditions and production reality are

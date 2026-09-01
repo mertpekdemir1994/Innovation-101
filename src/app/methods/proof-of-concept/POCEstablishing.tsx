@@ -61,7 +61,7 @@ export default function POCEstablishing() {
 
   return (
     <div className="w-full"
-      aria-label="Proving rig diagram. A bare apparatus connects an input block on the left to a pass/fail readout on the right. Above the apparatus: 'ONE CRITICAL QUESTION'. Inside: three internal stages — Ingest, Process, Evaluate. Below: three ghosted absent elements — No Interface, No Extra Features, No Product Shell. The rig is built only to answer the one question. Everything else is deliberately excluded.">
+      aria-label="Proving rig diagram. A bare apparatus connects an input block on the left to a pass/fail readout on the right. Above the apparatus: 'ONE CRITICAL QUESTION'. Inside: three internal stages (Ingest, Process, Evaluate). Below: three ghosted absent elements (No Interface, No Extra Features, No Product Shell). The rig is built only to answer the one question. Everything else is deliberately excluded.">
       <svg ref={ref} viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
         preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}>
         <defs>
@@ -145,7 +145,7 @@ export default function POCEstablishing() {
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${BRICK}0.14)`} style={{ userSelect: 'none' }}>
-            PROVING RIG — INTERNAL — BARE
+            PROVING RIG, INTERNAL, BARE
           </text>
         </motion.g>
 

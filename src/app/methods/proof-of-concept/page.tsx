@@ -23,19 +23,19 @@ const FRAMEWORK_LINKS = [
     slug: 'double-diamond',
     name: 'Double Diamond',
     phase: 'Develop / Deliver',
-    note: 'A PoC typically belongs at the boundary of the Double Diamond\'s second diamond — at the end of Develop, when a concept is being tested for feasibility before committing to delivery. It can also appear early in Deliver: before building begins in earnest, a PoC de-risks the hardest technical assumption. The Double Diamond\'s diverge-converge rhythm makes explicit where the PoC sits: just before convergence on what to build.',
+    note: 'A PoC typically belongs at the boundary of the Double Diamond\'s second diamond, at the end of Develop, when a concept is being tested for feasibility before committing to delivery. It can also appear early in Deliver: before building begins in earnest, a PoC de-risks the hardest technical assumption. The Double Diamond\'s diverge-converge rhythm makes explicit where the PoC sits: just before convergence on what to build.',
   },
   {
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Build',
-    note: 'In the Lean Startup\'s Build-Measure-Learn loop, a PoC occupies the earliest, smallest possible Build: build only what tests the riskiest assumption. It is the instrument that generates the data point for the Measure stage. The Lean Startup\'s discipline — build the smallest thing that tests the most critical uncertain assumption — is the PoC\'s exact logic applied to the BML loop.',
+    note: 'In the Lean Startup\'s Build-Measure-Learn loop, a PoC occupies the earliest, smallest possible Build: build only what tests the riskiest assumption. It is the instrument that generates the data point for the Measure stage. The Lean Startup\'s discipline, build the smallest thing that tests the most critical uncertain assumption, is the PoC\'s exact logic applied to the BML loop.',
   },
   {
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Sprint (Technical Spike)',
-    note: 'In Agile Innovation, a PoC maps directly to the concept of a technical spike: a short, focused piece of work designed to resolve a specific technical uncertainty before it is baked into a sprint commitment. A spike is a team-sanctioned PoC. The key Agile discipline applies: the spike is time-boxed, discarded after answering its question, and its findings feed the backlog — not a living codebase.',
+    note: 'In Agile Innovation, a PoC maps directly to the concept of a technical spike: a short, focused piece of work designed to resolve a specific technical uncertainty before it is baked into a sprint commitment. A spike is a team-sanctioned PoC. The key Agile discipline applies: the spike is time-boxed, discarded after answering its question, and its findings feed the backlog, not a living codebase.',
   },
   {
     slug: 'front-end-of-innovation',
@@ -55,12 +55,12 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'rapid-prototyping',
     name: 'Rapid Prototyping',
-    rel: 'The next step up the staircase of increasing realness. A PoC asks: can this work internally? A prototype asks: does this concept work for people? The prototype is rougher and more visible than a finished product, but it is designed to be used by people — unlike the PoC, which is internal and deliberately bare. The PoC de-risks the hardest technical bet; the prototype de-risks the concept with users. They sit in sequence, not competition.',
+    rel: 'The next step up the staircase of increasing realness. A PoC asks: can this work internally? A prototype asks: does this concept work for people? The prototype is rougher and more visible than a finished product, but it is designed to be used by people, unlike the PoC, which is internal and deliberately bare. The PoC de-risks the hardest technical bet; the prototype de-risks the concept with users. They sit in sequence, not competition.',
   },
   {
     slug: 'concept-testing',
     name: 'Concept Testing',
-    rel: 'Where the PoC tests technical feasibility (can this work?), concept testing tests desirability (do people want this?). They address different risks and should not be confused. A team that runs a successful PoC has proven the technical hard part is possible — they still need concept testing to validate that what is possible is also wanted. Both are de-risking instruments aimed at different bets.',
+    rel: 'Where the PoC tests technical feasibility (can this work?), concept testing tests desirability (do people want this?). They address different risks and should not be confused. A team that runs a successful PoC has proven the technical hard part is possible; they still need concept testing to validate that what is possible is also wanted. Both are de-risking instruments aimed at different bets.',
   },
   {
     slug: 'how-might-we',
@@ -70,7 +70,7 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'assumption-mapping',
     name: 'Assumption Mapping',
-    rel: 'Assumption Mapping helps identify which bets to prove first: it maps assumptions by importance and certainty, surfacing the ones that are both critical and genuinely in doubt. The output of an Assumption Mapping session can directly feed the PoC question — the most important, least certain technical assumption is the right candidate for a PoC. Use mapping to choose the question; use the PoC to answer it.',
+    rel: 'Assumption Mapping helps identify which bets to prove first: it maps assumptions by importance and certainty, surfacing the ones that are both critical and genuinely in doubt. The output of an Assumption Mapping session can directly feed the PoC question: the most important, least certain technical assumption is the right candidate for a PoC. Use mapping to choose the question; use the PoC to answer it.',
   },
   {
     slug: null,
@@ -85,7 +85,7 @@ export default function ProofOfConceptPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -114,7 +114,7 @@ export default function ProofOfConceptPage() {
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
               A deliberately bare, internal experiment built to answer the one critical question
-              a concept depends on &mdash; before committing to build it.
+              a concept depends on, before committing to build it.
             </p>
 
             <p
@@ -129,7 +129,7 @@ export default function ProofOfConceptPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -140,7 +140,7 @@ export default function ProofOfConceptPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -162,13 +162,13 @@ export default function ProofOfConceptPage() {
                 one critical, genuinely uncertain question: the technical bet the concept stands or falls
                 on. Every component in the rig exists only because it is necessary to generate the
                 verdict. A component that does not serve the question does not belong. This is not
-                minimalism for its own sake &mdash; it is minimalism as a proof of seriousness about what is
+                minimalism for its own sake; it is minimalism as a proof of seriousness about what is
                 actually being tested.
               </Body>
               <Body>
                 The output of a PoC is a verdict, not a deliverable. It works. It does not work. Or:
                 it works under specific, named conditions that you must now carry forward. That qualified
-                verdict &mdash; especially its conditions &mdash; is often more valuable than a clean pass, because
+                verdict, especially its conditions, is often more valuable than a clean pass, because
                 it tells you exactly where the signal breaks down and what assumptions you must not import
                 into what you build next. The rig is discarded. The knowledge carries forward: to a
                 prototype, to an MVP, or to a decision to stop before spending more.
@@ -179,19 +179,19 @@ export default function ProofOfConceptPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive proving rig   DARK
+          S4 - Interactive proving rig   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
           <div className="py-20">
-            <SectionLabel accent={BRICK}>The proving rig — explore what it includes, excludes, and produces.</SectionLabel>
+            <SectionLabel accent={BRICK}>The proving rig: explore what it includes, excludes, and produces.</SectionLabel>
             <SectionHeadingDark>Click the parts of the rig to understand the discipline behind each choice.</SectionHeadingDark>
             <p
               className="mb-10 max-w-[560px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Each element of a PoC is a deliberate decision: what is included, what is absent, and
-              what the verdict means. Explore the rig to see the discipline behind each one &mdash;
+              what the verdict means. Explore the rig to see the discipline behind each one,
               including the anti-pattern that quietly turns a PoC into something else.
             </p>
             <POCInteractive />
@@ -200,13 +200,13 @@ export default function ProofOfConceptPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={BRICK}>When to deploy it</SectionLabel>
-            <SectionHeadingLight>When you have a specific, technically uncertain question that a concept stands or falls on &mdash; and building first would be the expensive way to find out.</SectionHeadingLight>
+            <SectionHeadingLight>When you have a specific, technically uncertain question that a concept stands or falls on, and building first would be the expensive way to find out.</SectionHeadingLight>
 
             <div className="grid md:grid-cols-2 gap-8 mt-8">
               <div>
@@ -238,9 +238,9 @@ export default function ProofOfConceptPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'The technical question is not genuinely uncertain — if you already know it is possible, you do not need a PoC, you need to build.',
+                    'The technical question is not genuinely uncertain; if you already know it is possible, you do not need a PoC, you need to build.',
                     'You are using "PoC" as a label to avoid committing to production quality, while building something you intend to ship. That is not a PoC; it is a product with technical debt baked in.',
-                    'The question cannot be answered by internal experiment alone — some questions (market adoption, user desirability) require real users and belong to a prototype or pilot instead.',
+                    'The question cannot be answered by internal experiment alone; some questions (market adoption, user desirability) require real users and belong to a prototype or pilot instead.',
                     'There is no clear pass/fail threshold. If you cannot define what "it works" means before you start, you will rationalise whatever result you get.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
@@ -260,7 +260,7 @@ export default function ProofOfConceptPage() {
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: the PoC answers the question you point it at. If the question is wrong
-                &mdash; too vague, not the most critical bet, or tested under conditions unlike reality &mdash; the
+                (too vague, not the most critical bet, or tested under conditions unlike reality) the
                 verdict is misleading even if technically accurate. The discipline is in the question, the
                 threshold, and the integrity of the conditions. Get those right before you build the rig.
               </p>
@@ -270,7 +270,7 @@ export default function ProofOfConceptPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -283,27 +283,27 @@ export default function ProofOfConceptPage() {
                 {
                   n: '01',
                   title: 'Name the one critical question precisely.',
-                  body: 'A PoC starts with a specific, answerable question — not a general hope. "Can this work?" is not a question a PoC can answer; "Can we predict delivery delays with accuracy above 75% using existing data?" is. The precision matters because it determines what gets built and what counts as a verdict. A vague question produces a verdict you will rationalise rather than use.',
+                  body: 'A PoC starts with a specific, answerable question, not a general hope. "Can this work?" is not a question a PoC can answer; "Can we predict delivery delays with accuracy above 75% using existing data?" is. The precision matters because it determines what gets built and what counts as a verdict. A vague question produces a verdict you will rationalise rather than use.',
                 },
                 {
                   n: '02',
                   title: 'Name the pass/fail threshold before you start.',
-                  body: 'Set the criterion for a verdict before the rig runs — not after seeing the results. This is the discipline that prevents motivated reasoning from turning an ambiguous result into a "pass" because the team wanted it to work. If you cannot name a specific threshold in advance, you do not yet have a testable question.',
+                  body: 'Set the criterion for a verdict before the rig runs, not after seeing the results. This is the discipline that prevents motivated reasoning from turning an ambiguous result into a "pass" because the team wanted it to work. If you cannot name a specific threshold in advance, you do not yet have a testable question.',
                 },
                 {
                   n: '03',
                   title: 'Build only what answers the question.',
-                  body: 'Assemble only the components necessary to generate the verdict. No interface, no extra features, no production engineering, no completeness. Every addition that does not directly serve the critical question is scope drift — it costs time without buying more certainty about the one thing being proved. This discipline is harder than it sounds: there is always a temptation to make the rig slightly more useful, or slightly more complete.',
+                  body: 'Assemble only the components necessary to generate the verdict. No interface, no extra features, no production engineering, no completeness. Every addition that does not directly serve the critical question is scope drift; it costs time without buying more certainty about the one thing being proved. This discipline is harder than it sounds: there is always a temptation to make the rig slightly more useful, or slightly more complete.',
                 },
                 {
                   n: '04',
                   title: 'Test under conditions close enough to reality to matter.',
-                  body: 'Use real data, real infrastructure, and real conditions wherever possible — or be explicit about what you idealised and why. A PoC that proves the question only in a clean sandbox environment has answered a slightly different question than the one you have in production. The proof conditions must be named as part of the verdict.',
+                  body: 'Use real data, real infrastructure, and real conditions wherever possible, or be explicit about what you idealised and why. A PoC that proves the question only in a clean sandbox environment has answered a slightly different question than the one you have in production. The proof conditions must be named as part of the verdict.',
                 },
                 {
                   n: '05',
                   title: 'Deliver the verdict with its conditions. Discard the rig.',
-                  body: 'Communicate the result precisely: what was proven, under what conditions, and what remains uncertain. Name the conditions of a qualified verdict explicitly — they are not a failure of the PoC, they are its most valuable output, because they tell you what to build and what to avoid. Then discard the rig. The knowledge it produced carries forward; the artifact does not.',
+                  body: 'Communicate the result precisely: what was proven, under what conditions, and what remains uncertain. Name the conditions of a qualified verdict explicitly: they are not a failure of the PoC, they are its most valuable output, because they tell you what to build and what to avoid. Then discard the rig. The knowledge it produced carries forward; the artifact does not.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -326,13 +326,13 @@ export default function ProofOfConceptPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={BRICK}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like &mdash; and the failure modes that quietly turn a PoC into something else.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and the failure modes that quietly turn a PoC into something else.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4"
               style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
@@ -340,10 +340,10 @@ export default function ProofOfConceptPage() {
             </h3>
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                'The question is specific and the pass/fail threshold is set before the rig runs — not after seeing the results.',
+                'The question is specific and the pass/fail threshold is set before the rig runs, not after seeing the results.',
                 'The rig contains only what is needed to answer the question, and nothing else.',
                 'Real data and real conditions are used, or the idealisation is named explicitly as a limit of the verdict.',
-                'A qualified verdict — it works under these conditions, degrades under those — is treated as valuable, not as a partial failure.',
+                'A qualified verdict (it works under these conditions, degrades under those) is treated as valuable, not as a partial failure.',
                 'The rig is discarded after the verdict, and the knowledge carries forward into what is built next.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
@@ -366,12 +366,12 @@ export default function ProofOfConceptPage() {
                   fix: 'The most common and costly failure. The rig was built to prove, with shortcuts that are deliberate and appropriate for an experiment. Those shortcuts are not appropriate in production code. Growing the PoC into the product carries all of them into something that must be maintained, scaled, and supported. Discard the rig. Build the product properly from the knowledge the rig produced.',
                 },
                 {
-                  mistake: 'Scope drift — adding things that don\'t serve the critical question.',
+                  mistake: 'Scope drift: adding things that don\'t serve the critical question.',
                   fix: 'The moment the PoC acquires an interface, an extra feature, or some polish, it has become a half-built, unvalidated product. Each addition feels cheap at the time. They accumulate. The discipline: if this component does not directly help answer the one question, it does not belong. Every addition that doesn\'t serve the question is time that didn\'t buy certainty.',
                 },
                 {
                   mistake: 'Not naming the threshold before running the test.',
-                  fix: 'Without a pre-committed threshold, a motivated team will rationalise whatever result they get. "78% accuracy — that\'s promising enough" and "78% accuracy — we set 80% as the target, and this tells us why" are entirely different verdicts. Set the threshold before the rig runs. The discipline is in the commitment, not just the number.',
+                  fix: 'Without a pre-committed threshold, a motivated team will rationalise whatever result they get. "78% accuracy, that\'s promising enough" and "78% accuracy, we set 80% as the target, and this tells us why" are entirely different verdicts. Set the threshold before the rig runs. The discipline is in the commitment, not just the number.',
                 },
                 {
                   mistake: 'Using "PoC" as a label for something you intend to ship.',
@@ -402,17 +402,17 @@ export default function ProofOfConceptPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={BRICK}>Logistics</SectionLabel>
-            <SectionHeadingLight>Small team, short timeframe, real data &mdash; and a pre-committed verdict criterion.</SectionHeadingLight>
+            <SectionHeadingLight>Small team, short timeframe, real data, and a pre-committed verdict criterion.</SectionHeadingLight>
             <Body>
-              A PoC typically involves a very small team: one to four people, usually technically
+              A PoC typically involves a small team: one to four people, usually technically
               skilled in the domain being tested. Timescales range from a day for a narrow technical
-              question to a few weeks for a more complex proof — but always bounded. If the PoC is
+              question to a few weeks for a more complex proof, but always bounded. If the PoC is
               taking months, the scope has drifted or the question was not precise enough.
             </Body>
             <div className="mt-8 grid md:grid-cols-3 gap-5">
@@ -445,7 +445,7 @@ export default function ProofOfConceptPage() {
                 Remote vs in-person
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                The proving rig itself is typically built and run entirely remotely — there is no
+                The proving rig itself is typically built and run entirely remotely; there is no
                 in-person element to the experiment. The human-judgment moments (naming the question,
                 interpreting the verdict, deciding what to build next) benefit from close collaboration
                 but do not require physical co-location. PoCs work well across distributed teams.
@@ -456,19 +456,19 @@ export default function ProofOfConceptPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — AI Reactivated   DARK
+          S9 - AI Reactivated   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={BRICK}>AI &amp; Proof of Concept</SectionLabel>
-            <SectionHeadingDark>AI can build the rig dramatically faster. The judgment calls &mdash; which question, which conditions, what the verdict means &mdash; stay human.</SectionHeadingDark>
+            <SectionHeadingDark>AI can build the rig dramatically faster. The judgment calls (which question, which conditions, what the verdict means) stay human.</SectionHeadingDark>
             <p
               className="mb-10 max-w-[560px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               The PoC is one of the places where AI gives genuinely substantial time leverage: the
-              rig is tightly scoped, outcome-focused, and internal &mdash; precisely the conditions where
+              rig is tightly scoped, outcome-focused, and internal, precisely the conditions where
               AI coding assistance compounds speed most. Toggle to see where that leverage is real
               and where the human role remains load-bearing.
             </p>
@@ -478,18 +478,18 @@ export default function ProofOfConceptPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — Example toggle   LIGHT
+          S10 - Example toggle   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={BRICK}>In practice</SectionLabel>
-            <SectionHeadingLight>A logistics team asks: can the data predict delays? See what a well-run PoC produces &mdash; and what AI changes about the time it takes.</SectionHeadingLight>
+            <SectionHeadingLight>A logistics team asks: can the data predict delays? See what a well-run PoC produces, and what AI changes about the time it takes.</SectionHeadingLight>
             <p className="mb-8"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
               A well-formed PoC question, a threshold set in advance, real messy data, and a
               qualified verdict that reshaped what to build. See the traditional approach first,
-              then compare what AI changes &mdash; and what it does not.
+              then compare what AI changes, and what it does not.
             </p>
             <POCExampleToggle />
           </div>
@@ -497,7 +497,7 @@ export default function ProofOfConceptPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Framework connections   DARK
+          S11 - Framework connections   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -511,13 +511,13 @@ export default function ProofOfConceptPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={BRICK}>Related methods</SectionLabel>
-            <SectionHeadingLight>The PoC in context &mdash; and the staircase it belongs to.</SectionHeadingLight>
+            <SectionHeadingLight>The PoC in context, and the staircase it belongs to.</SectionHeadingLight>
 
             <div className="flex flex-col gap-4 mt-2">
               {RELATED_METHODS.map(m => (
@@ -555,7 +555,7 @@ export default function ProofOfConceptPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources   LIGHT
+          S13 - Sources   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -573,13 +573,13 @@ export default function ProofOfConceptPage() {
                   title: 'Testing Business Ideas',
                   author: 'David Bland &amp; Alexander Osterwalder',
                   year: '2019',
-                  note: 'A comprehensive playbook for de-risking assumptions with appropriately-sized experiments. Provides specific experiment types and evidence strength ratings — the PoC sits at the technical end of its experiment spectrum.',
+                  note: 'A comprehensive playbook for de-risking assumptions with appropriately-sized experiments. Provides specific experiment types and evidence strength ratings; the PoC sits at the technical end of its experiment spectrum.',
                 },
                 {
                   title: 'Escaping the Build Trap',
                   author: 'Melissa Perri',
                   year: '2018',
-                  note: 'Clear analysis of what happens when organisations build without adequately de-risking first — and the structural and cultural conditions that lead to it. The PoC is one of the primary instruments for avoiding the build trap at the technical level.',
+                  note: 'Clear analysis of what happens when organisations build without adequately de-risking first, and the structural and cultural conditions that lead to it. The PoC is one of the primary instruments for avoiding the build trap at the technical level.',
                 },
               ].map(s => (
                 <div key={s.title}
@@ -587,7 +587,7 @@ export default function ProofOfConceptPage() {
                   style={{ background: 'var(--color-neutral-50)', border: '1px solid var(--color-neutral-100)' }}>
                   <p className="font-semibold mb-1"
                     style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}>
-                    <span dangerouslySetInnerHTML={{ __html: s.title }} /> &mdash; <span dangerouslySetInnerHTML={{ __html: s.author }} />{' '}
+                    <span dangerouslySetInnerHTML={{ __html: s.title }} />: <span dangerouslySetInnerHTML={{ __html: s.author }} />{' '}
                     <span style={{ fontWeight: 400, color: 'var(--color-neutral-400)' }}>({s.year})</span>
                   </p>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>

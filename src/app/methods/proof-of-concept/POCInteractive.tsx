@@ -54,14 +54,14 @@ const ZONES: Zone[] = [
   {
     id: 'question',
     tag: 'WHAT IT INCLUDES',
-    headline: 'One critical, genuinely uncertain question — and everything in the rig serves it.',
+    headline: 'One critical, genuinely uncertain question, and everything in the rig serves it.',
     body: 'A PoC contains only what is needed to answer the one question the concept depends on that is genuinely in doubt. Every component in the proving rig exists only to answer that question. The discipline starts with precision: "can this technically work?" is a provable question. "Will this be a good product?" is not. If a component does not serve the question, it does not belong in the rig.',
     hitX: APP_CX, hitY: 28, hitW: 280, hitH: 28,
   },
   {
     id: 'apparatus',
     tag: 'THE RIG',
-    headline: 'Bare, unpolished, internal — built only to answer, then typically discarded.',
+    headline: 'Bare, unpolished, internal, built only to answer, then typically discarded.',
     body: 'The apparatus is built as small and as rough as it can be while still answering the question. No interface worth speaking of, no production engineering, no completeness. It is internal: no one outside the team uses it. And it is typically thrown away the moment it has answered. The proof was the point; the artifact was not. Trying to grow the PoC into the production system carries all its shortcuts into something that must be maintained.',
     hitX: APP_CX, hitY: APP_CY, hitW: APP_W + 4, hitH: APP_H + 4,
   },
@@ -75,15 +75,15 @@ const ZONES: Zone[] = [
   {
     id: 'verdict',
     tag: 'THE DELIVERABLE',
-    headline: 'The verdict is the deliverable — not the artifact. Then discard the rig.',
-    body: 'The PoC produces one thing of lasting value: a clear verdict. It works. It does not work. Or: it works only under conditions you must now name — which data, which scale, which environment. That qualified verdict, especially its stated conditions, is far more valuable than the artifact. After the verdict, throw the rig away and carry the knowledge forward: to a prototype, to an MVP, or to a decision to stop before spending more.',
+    headline: 'The verdict is the deliverable, not the artifact. Then discard the rig.',
+    body: 'The PoC produces one thing of lasting value: a clear verdict. It works. It does not work. Or: it works only under conditions you must now name: which data, which scale, which environment. That qualified verdict, especially its stated conditions, is far more valuable than the artifact. After the verdict, throw the rig away and carry the knowledge forward: to a prototype, to an MVP, or to a decision to stop before spending more.',
     hitX: OUT_CX, hitY: OUT_Y + OUT_H / 2, hitW: OUT_W + 4, hitH: OUT_H + 4,
   },
   {
     id: 'discard',
     tag: 'THE ANTI-PATTERN',
     headline: 'The moment it acquires an interface, it stops being a PoC.',
-    body: 'Scope drift is the PoC\'s defining failure. It begins the moment the team adds something that does not serve the critical question — a cleaner interface, an extra feature, some polish. Each addition feels cheap at the time. But they accumulate, and suddenly the PoC has become a half-built, unvalidated product with all the shortcuts of an experiment and none of the rigour of a product. The other failure: growing the PoC into production. The artifact was built to prove, not to ship.',
+    body: 'Scope drift is the PoC\'s defining failure. It begins the moment the team adds something that does not serve the critical question: a cleaner interface, an extra feature, some polish. Each addition feels cheap at the time. But they accumulate, and suddenly the PoC has become a half-built, unvalidated product with all the shortcuts of an experiment and none of the rigour of a product. The other failure: growing the PoC into production. The artifact was built to prove, not to ship.',
     hitX: APP_CX, hitY: 175, hitW: 220, hitH: 18,
   },
 ]
@@ -156,7 +156,7 @@ export default function POCInteractive() {
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${BRICK}0.14)`} style={{ userSelect: 'none' }}>
-            PROVING RIG — INTERNAL — BARE
+            PROVING RIG, INTERNAL, BARE
           </text>
 
           {/* Internal bus */}
