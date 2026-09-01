@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
 const SVG_W = 700
 const SVG_H = 262
@@ -111,12 +112,12 @@ export default function RPInteractive() {
             strokeLinecap="round" strokeLinejoin="round" />
           <text x={AXIS_X1+2} y={AXIS_Y+10} textAnchor="start"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
             ROUGH · FAST
           </text>
           <text x={AXIS_X2+4} y={AXIS_Y+10} textAnchor="start"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
             HIGH FIDELITY →
           </text>
 
@@ -174,7 +175,7 @@ export default function RPInteractive() {
                 {isSelected && (
                   <text x={r.x} y={AXIS_Y + 22} textAnchor="middle"
                     fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                    fill={r.low ? `${CLAY}0.75)` : 'rgba(255,255,255,0.42)'}
+                    fill={r.low ? `${CLAY_TEXT}0.948)` : 'rgba(255,255,255,0.71)'}
                     style={{ userSelect: 'none' }}>
                     → {r.feedback}
                   </text>
@@ -192,14 +193,14 @@ export default function RPInteractive() {
             stroke={`${CLAY}0.32)`} strokeWidth={0.8} />
           <text x={ZONE_MID} y={182} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${CLAY}0.72)`} style={{ userSelect: 'none' }}>
+            fill={`${CLAY_TEXT}0.941)`} style={{ userSelect: 'none' }}>
             JUST ENOUGH TO LEARN
           </text>
 
           {/* ── Caption ── */}
           <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.13)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.565)" style={{ userSelect: 'none' }}>
             THE FEEDBACK A PROTOTYPE INVITES DEPENDS ON HOW FINISHED IT LOOKS, ROUGHNESS IS A FEATURE
           </text>
         </svg>

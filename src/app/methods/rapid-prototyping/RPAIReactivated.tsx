@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY   = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const SVG_H = 262
@@ -99,7 +101,7 @@ export default function RPAIReactivated() {
                   fill={`${INDIGO}0.08)`} stroke={`${INDIGO}0.18)`} strokeWidth={0.6} />
                 <text x={(AXIS_X1 + AXIS_X2) / 2} y={AXIS_Y - 10} textAnchor="middle"
                   fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                  fill={`${INDIGO}0.70)`} style={{ userSelect: 'none' }}>
+                  fill={`${INDIGO_TEXT}0.937)`} style={{ userSelect: 'none' }}>
                   AI COLLAPSES THE COST OF FIDELITY, ALL LEVELS NOW INSTANT
                 </text>
               </motion.g>
@@ -159,13 +161,13 @@ export default function RPAIReactivated() {
                 <text x={ZONE_MID} y={182} textAnchor="middle"
                   fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                   fill={`${CLAY}${isAI ? '0.90)' : '0.72)'}`}
-                  style={{ filter: isAI ? `drop-shadow(0 0 6px ${CLAY}0.40))` : 'none', userSelect: 'none' }}>
+                  style={{ filter: isAI ? `drop-shadow(0 0 6px ${CLAY_TEXT}0.874))` : 'none', userSelect: 'none' }}>
                   {isAI ? '← THIS JUDGMENT MATTERS MORE, NOT LESS' : 'JUST ENOUGH TO LEARN'}
                 </text>
                 {isAI && (
                   <text x={ZONE_MID} y={194} textAnchor="middle"
                     fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                    fill={`${CLAY}0.48)`} style={{ userSelect: 'none' }}>
+                    fill={`${CLAY_TEXT}0.891)`} style={{ userSelect: 'none' }}>
                     AI removed the cost that used to enforce this, the discipline must stay human
                   </text>
                 )}
@@ -178,14 +180,14 @@ export default function RPAIReactivated() {
                     fill="rgba(245,158,11,0.07)" stroke="rgba(245,158,11,0.18)" strokeWidth={0.6} />
                   <text x={480} y={63} textAnchor="middle"
                     fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill="rgba(245,158,11,0.55)" style={{ userSelect: 'none' }}>
+                    fill="rgba(245,158,11,0.861)" style={{ userSelect: 'none' }}>
                     ⚠ AI DEFAULTS TO HIGH FIDELITY, FEEDBACK DRIFTS TO POLISH BY DEFAULT
                   </text>
                 </g>
               ) : (
                 <text x={558} y={56} textAnchor="middle"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                  fill="rgba(245,158,11,0.40)" style={{ userSelect: 'none' }}>
+                  fill="rgba(245,158,11,0.814)" style={{ userSelect: 'none' }}>
                   ⚠ FEEDBACK DRIFTS TO POLISH PAST HERE
                 </text>
               )}
@@ -195,7 +197,7 @@ export default function RPAIReactivated() {
           {/* Caption */}
           <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.14)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.57)" style={{ userSelect: 'none' }}>
             {isAI
               ? 'AI COLLAPSES THE COST OF FIDELITY, THE JUDGMENT ABOUT WHAT TO BUILD IS MORE IMPORTANT THAN EVER'
               : 'THE RIGHT FIDELITY IS NOT THE HIGHEST YOU CAN BUILD, IT IS THE LOWEST THAT ANSWERS YOUR QUESTION'}

@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const CLAY = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
 const SVG_W = 700
 const SVG_H = 262
@@ -73,12 +74,12 @@ export default function RPEstablishing() {
             strokeLinecap="round" strokeLinejoin="round" />
           <text x={AXIS_X1+2} y={AXIS_Y+10} textAnchor="start"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             ROUGH · FAST
           </text>
           <text x={AXIS_X2+4} y={AXIS_Y+10} textAnchor="start"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             HIGH FIDELITY →
           </text>
         </motion.g>
@@ -133,7 +134,7 @@ export default function RPEstablishing() {
         >
           <text x={558} y={WARNING_Y} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill="rgba(245,158,11,0.44)" style={{ userSelect: 'none' }}>
+            fill="rgba(245,158,11,0.826)" style={{ userSelect: 'none' }}>
             ⚠ FEEDBACK DRIFTS TO POLISH PAST HERE
           </text>
         </motion.g>
@@ -154,13 +155,13 @@ export default function RPEstablishing() {
           {/* Label */}
           <text x={ZONE_MID} y={JUST_Y} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${CLAY}0.80)`}
-            style={{ filter: `drop-shadow(0 0 5px ${CLAY}0.25))`, userSelect: 'none' }}>
+            fill={`${CLAY_TEXT}0.958)`}
+            style={{ filter: `drop-shadow(0 0 5px ${CLAY_TEXT}0.843))`, userSelect: 'none' }}>
             JUST ENOUGH TO LEARN
           </text>
           <text x={ZONE_MID} y={JUST_SUB_Y} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${CLAY}0.38)`} style={{ userSelect: 'none' }}>
+            fill={`${CLAY_TEXT}0.87)`} style={{ userSelect: 'none' }}>
             default low · the lowest that answers your question
           </text>
         </motion.g>
