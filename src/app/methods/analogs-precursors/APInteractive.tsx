@@ -395,7 +395,7 @@ export default function APInteractive() {
                 </span>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-wider text-neutral-400">What they solved</p>
+                <p className="text-[9px] font-semibold uppercase tracking-wider text-neutral-500">What they solved</p>
                 <p className="text-sm text-neutral-700 leading-relaxed">{d.solved}</p>
               </div>
               <div className="space-y-1 border-t pt-4" style={{ borderColor: `${CLAY}0.15)` }}>
@@ -460,11 +460,11 @@ export default function APInteractive() {
                 </span>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-wider text-neutral-400">What it was</p>
+                <p className="text-[9px] font-semibold uppercase tracking-wider text-neutral-500">What it was</p>
                 <p className="text-sm text-neutral-700 leading-relaxed">{d.what}</p>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-wider text-neutral-400">What happened</p>
+                <p className="text-[9px] font-semibold uppercase tracking-wider text-neutral-500">What happened</p>
                 <p className="text-sm text-neutral-700 leading-relaxed">{d.whatHappened}</p>
               </div>
               <div className="space-y-1 border-t pt-4" style={{ borderColor: 'rgba(255,255,255,0.10)' }}>

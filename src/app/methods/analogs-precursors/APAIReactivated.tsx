@@ -314,7 +314,7 @@ export default function APAIReactivated() {
             </div>
             <div className="rounded-lg border p-5 space-y-2"
               style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.02)' }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400">
+              <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500">
                 Precursors: the human advantage
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
