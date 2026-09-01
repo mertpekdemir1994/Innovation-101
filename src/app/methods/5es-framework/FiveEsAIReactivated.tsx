@@ -168,7 +168,7 @@ export default function FiveEsAIReactivated() {
                       x={PCX[i]} y={CONTENT_Y + 14}
                       textAnchor="middle" dominantBaseline="hanging"
                       fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                      fill={`${INDIGO}0.65)`} style={{ userSelect: 'none' }}
+                      fill={`${INDIGO_TEXT}0.926)`} style={{ userSelect: 'none' }}
                       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                       transition={{ duration: 0.28 }}
                     >AI STRONG</motion.text>
@@ -178,7 +178,7 @@ export default function FiveEsAIReactivated() {
                       x={PCX[i]} y={CONTENT_Y + 14}
                       textAnchor="middle" dominantBaseline="hanging"
                       fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                      fill="rgba(255,255,255,0.25)" style={{ userSelect: 'none' }}
+                      fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}
                       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                       transition={{ duration: 0.28 }}
                     >AI WEAK</motion.text>

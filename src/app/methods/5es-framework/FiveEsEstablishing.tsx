@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 const TEAL  = 'rgba(42,111,122,'
 const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W   = 700
 const PHASE_W = 140
@@ -158,7 +159,7 @@ export default function FiveEsEstablishing() {
                     x={PCX[i]} y={CONTENT_Y + 14}
                     textAnchor="middle" dominantBaseline="hanging"
                     fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`${TEAL}0.65)`} style={{ userSelect: 'none' }}
+                    fill={`${TEAL_TEXT}0.926)`} style={{ userSelect: 'none' }}
                     variants={fadeIn} transition={{ ...fT, delay: 0.6 }}
                   >OVER-INVESTED</motion.text>
                 )}
@@ -167,7 +168,7 @@ export default function FiveEsEstablishing() {
                     x={PCX[i]} y={CONTENT_Y + 14}
                     textAnchor="middle" dominantBaseline="hanging"
                     fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`${AMBER}0.60)`} style={{ userSelect: 'none' }}
+                    fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}
                     variants={fadeIn} transition={{ ...fT, delay: 0.7 }}
                   >MOST NEGLECTED</motion.text>
                 )}
@@ -176,7 +177,7 @@ export default function FiveEsEstablishing() {
                     x={PCX[i]} y={CONTENT_Y + 14}
                     textAnchor="middle" dominantBaseline="hanging"
                     fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`${AMBER}0.52)`} style={{ userSelect: 'none' }}
+                    fill={`${AMBER_TEXT}0.851)`} style={{ userSelect: 'none' }}
                     variants={fadeIn} transition={{ ...fT, delay: 0.65 }}
                   >NEGLECTED</motion.text>
                 )}
@@ -190,7 +191,7 @@ export default function FiveEsEstablishing() {
           x={SVG_W / 2} y={SVG_H - 4}
           textAnchor="middle" dominantBaseline="auto"
           fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-          fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={{ ...fT, delay: 0.8 }}
         >TYPICAL DESIGN INVESTMENT BY PHASE</motion.text>
       </svg>
