@@ -19,7 +19,7 @@ export default function VPCExampleToggle() {
       {/* Tab toggle */}
       <div className="flex gap-2 mb-6">
         {(['traditional', 'ai'] as Tab[]).map(t => (
-          <button key={t} onClick={() => setTab(t)}
+          <button key={t} type="button" aria-pressed={tab === t} onClick={() => setTab(t)}
             className="px-4 py-2 rounded-full text-xs font-semibold transition-all"
             style={{
               background: tab === t
@@ -37,7 +37,7 @@ export default function VPCExampleToggle() {
       {/* Scenario label */}
       <div className="rounded-lg px-4 py-3 mb-5"
         style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mr-2">Scenario</span>
+        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">Scenario</span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
       </div>
 
@@ -60,7 +60,7 @@ export default function VPCExampleToggle() {
                   { label: 'DESIRED GAINS', items: ['clients see project status without needing a meeting', 'approvals in minutes, not days'] },
                 ].map((col, i) => (
                   <div key={i} className="rounded p-3" style={{ background: `${PLUM}0.04)` }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-2 text-neutral-400">{col.label}</p>
+                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-2 text-neutral-500">{col.label}</p>
                     {col.items.map((item, j) => (
                       <p key={j} className="text-xs text-neutral-700 leading-snug mb-1">&bull; {item}</p>
                     ))}
@@ -156,7 +156,7 @@ export default function VPCExampleToggle() {
                   ].map(([f, t], i) => (
                     <p key={i} className="text-xs text-neutral-600 mb-1">{f} → {t}</p>
                   ))}
-                  <p className="text-[9px] mt-2 text-neutral-400">Zero gaps shown</p>
+                  <p className="text-[9px] mt-2 text-neutral-500">Zero gaps shown</p>
                 </div>
               </div>
             </div>
