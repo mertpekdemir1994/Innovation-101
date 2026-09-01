@@ -7,7 +7,7 @@ const TEAL = 'rgba(13,148,136,'
 // ── Lemniscate / figure-eight geometry ───────────────────────────────────────
 //
 //  Left loop  = problem space:  Empathize (upper-left)  |  Define (lower-left)
-//  Crossing   = Test — the hinge where the path passes through on its return
+//  Crossing   = Test: the hinge where the path passes through on its return
 //  Right loop = solution space: Ideate   (upper-right)  |  Prototype (lower-right)
 //
 //  Path travels one continuous direction:
@@ -17,7 +17,7 @@ const TEAL = 'rgba(13,148,136,'
 const CX = 380, CY = 190   // center / Test position
 
 // ── Node x/y (t=0.5 on each lobe bezier) ────────────────────────────────────
-// Computed analytically — see bezier midpoint formula in code below.
+// Computed analytically: see bezier midpoint formula in code below.
 const NX_L = 235, NX_R = 525
 const NY_U = 126, NY_D = 254
 
@@ -30,7 +30,7 @@ const NODES = [
 ]
 
 // ── External label positions (outward from CX,CY) ───────────────────────────
-// Test sits at center — its label goes below.
+// Test sits at center: its label goes below.
 const LABELS = [
   { id: 'empathize', lx: 185, ly: 104, anchor: 'end'    as const },
   { id: 'define',    lx: 185, ly: 276, anchor: 'end'    as const },
@@ -90,7 +90,7 @@ function arrowPts(seg: P4, t: number, sc = 8, wg = 4.5): string {
   ].join(' ')
 }
 
-// Arrowhead placements: (segIndex, t) — each in the correct travel direction
+// Arrowhead placements: (segIndex, t), each in the correct travel direction
 // seg0 t=0.35 → LEFT-DOWN  (Empathize → left extreme)
 // seg1 t=0.25 → DOWN-RIGHT (left extreme → bottom of left lobe)
 // seg2 t=0.25 → RIGHT-UP   (center → Ideate)
@@ -108,7 +108,7 @@ const NODE_R = 22
 export default function DTStagesHero() {
   const prefersReduced = useReducedMotion()
 
-  // Position of the "iterate" label — midpoint of seg4 offset outward slightly
+  // Position of the "iterate" label: midpoint of seg4 offset outward slightly
   const [ix, iy] = bpt(SEGS[4], 0.5)   // ≈ (323, 142)
 
   return (

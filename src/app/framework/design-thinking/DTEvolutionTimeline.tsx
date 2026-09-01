@@ -12,10 +12,10 @@ const VERSIONS = [
     org: 'Herbert Simon / Stanford',
     badge: 'Origin',
     summary:
-      'Herbert Simon\'s The Sciences of the Artificial (1969) argued that design is a distinct way of thinking — a science of how things ought to be, separate from the natural sciences that study how things are. Stanford professors Robert McKim and Rolf Faste then developed methods for teaching designerly thinking, especially the idea of deep, empathic understanding of the user as the starting point.',
+      'Herbert Simon\'s The Sciences of the Artificial (1969) argued that design is a distinct way of thinking: a science of how things ought to be, separate from the natural sciences that study how things are. Stanford professors Robert McKim and Rolf Faste then developed methods for teaching designerly thinking, especially the idea of deep, empathic understanding of the user as the starting point.',
     changes: [
       { tag: 'Introduced', text: 'Design as a generalizable mode of reasoning, not just an aesthetic craft' },
-      { tag: 'Introduced', text: 'Empathy with the user as the root of good design — not personal preference or technical specification' },
+      { tag: 'Introduced', text: 'Empathy with the user as the root of good design, not personal preference or technical specification' },
       { tag: 'Research base', text: 'Stanford engineering curriculum: McKim\'s "Experiences in Visual Thinking" (1972) and Faste\'s design methodology courses' },
     ],
     limitation:
@@ -27,14 +27,14 @@ const VERSIONS = [
     org: 'Hasso Plattner Institute of Design (d.school)',
     badge: 'Foundation',
     summary:
-      'The d.school formalized design thinking into a teachable, five-stage process — Empathize, Define, Ideate, Prototype, Test — so that students from any discipline could learn and apply it. This is the canonical model most people mean by "Design Thinking." Explicitly non-linear: the stages are a flexible scaffold, not a rigid sequence.',
+      'The d.school formalized design thinking into a teachable, five-stage process (Empathize, Define, Ideate, Prototype, Test) so that students from any discipline could learn and apply it. This is the canonical model most people mean by "Design Thinking." Explicitly non-linear: the stages are a flexible scaffold, not a rigid sequence.',
     changes: [
       { tag: 'Introduced', text: 'Five named stages: Empathize, Define, Ideate, Prototype, Test' },
-      { tag: 'Introduced', text: 'Explicit non-linearity — testing sends you back to ideating, or even to empathizing' },
-      { tag: 'Added', text: 'Interdisciplinary pedagogy — designed for business, medicine, engineering, and education students alike' },
+      { tag: 'Introduced', text: 'Explicit non-linearity: testing sends you back to ideating, or even to empathizing' },
+      { tag: 'Added', text: 'Interdisciplinary pedagogy, designed for business, medicine, engineering, and education students alike' },
     ],
     limitation:
-      'Because it is taught simply, it is often applied superficially — sticky-note rituals rather than genuine inquiry. The Empathize stage in particular is frequently rushed, producing shallow understanding dressed in the vocabulary of empathy.',
+      'Because it is taught simply, it is often applied superficially: sticky-note rituals rather than genuine inquiry. The Empathize stage in particular is frequently rushed, producing shallow understanding dressed in the vocabulary of empathy.',
   },
   {
     year: '2009',
@@ -45,7 +45,7 @@ const VERSIONS = [
       'IDEO did the most to bring design thinking into the business mainstream. Tim Brown\'s 2009 book Change by Design defined design thinking for a generation of business leaders and introduced the three-lens model (Desirability, Feasibility, Viability) as the evaluative frame. IDEO also reframed the work as three broad spaces: Inspiration, Ideation, and Implementation.',
     changes: [
       { tag: 'Added', text: 'Desirability-Feasibility-Viability: every viable solution must satisfy all three lenses simultaneously' },
-      { tag: 'Changed', text: 'Three spaces over five stages: Inspiration, Ideation, Implementation — broader and less sequential framing' },
+      { tag: 'Changed', text: 'Three spaces over five stages: Inspiration, Ideation, Implementation, broader and less sequential framing' },
       { tag: 'Added', text: 'Human-centered design (HCD) toolkit published openly, spreading the approach into social and nonprofit sectors worldwide' },
     ],
     limitation:
@@ -75,7 +75,7 @@ const VERSIONS = [
       'As design thinking became a corporate buzzword, a serious body of critique emerged, much of it from people who value the approach and want it used well. These critiques are worth holding alongside the practice, not as attacks, but as the honest limits a mature practitioner must keep in view.',
     changes: [
       { tag: 'Critique', text: 'Often applied as theater: sticky notes and workshops that produce the appearance of innovation without the substance' },
-      { tag: 'Critique', text: 'Empathize stage frequently done shallowly — a few interviews standing in for genuine understanding' },
+      { tag: 'Critique', text: 'Empathize stage frequently done shallowly, a few interviews standing in for genuine understanding' },
       { tag: 'Critique', text: 'Underplays the hard work of implementation: the front-end ideation is not the whole job; some problems need deep domain expertise, not a cross-functional team with markers' },
     ],
     limitation:

@@ -32,14 +32,14 @@ const STAGES: Record<StageKey, StageData> = {
     work: '"Shadowing" sessions with 18 teenagers across different neighbourhoods, spending unstructured time with them after school. Open-ended conversations, not about the library, but about their days, their pressures, and where they actually went. Observation in the branches at the hours teens were present.',
     artifact: {
       type: 'quote',
-      label: 'Raw observation — Teen T-09, age 15',
+      label: 'Raw observation: Teen T-09, age 15',
       lines: [
         'Participant T-09 comes to the central branch almost every day after school but never checks out a book and never uses a computer. She sits at a corner table doing homework.',
         '"It\'s quiet, it\'s free, and nobody\'s asking me anything. My house is loud and my little brothers are everywhere." She had no idea the library ran any teen programs.',
       ],
     },
     insight:
-      'The teenagers who still came were not coming for books, technology, or programs. They were coming for something the library had almost by accident and was not consciously providing: a safe, calm, free, unsupervised-but-protected third place between school and home. The board\'s assumption — that teens wanted more technology — was contradicted by nearly every observation.',
+      'The teenagers who still came were not coming for books, technology, or programs. They were coming for something the library had almost by accident and was not consciously providing: a safe, calm, free, unsupervised-but-protected third place between school and home. The board\'s assumption, that teens wanted more technology, was contradicted by nearly every observation.',
   },
   define: {
     intro:
@@ -49,12 +49,12 @@ const STAGES: Record<StageKey, StageData> = {
       type: 'pov',
       label: 'The reframed point of view',
       lines: [
-        'A teenager under pressure from school and a crowded home needs a place that feels like it is genuinely theirs — calm, free, and free of demands — because what they are missing is not entertainment or technology, but a third place where they can simply be.',
+        'A teenager under pressure from school and a crowded home needs a place that feels like it is genuinely theirs (calm, free, and free of demands) because what they are missing is not entertainment or technology, but a third place where they can simply be.',
         'The library already is this for a few; it just does not know it, name it, or offer it on purpose.',
       ],
     },
     insight:
-      'The reframe killed the gaming-lab-and-makerspace plan, which would have made the space louder and more demanding — the opposite of the need. It unlocked a completely different design direction centred on belonging and calm, not features. A good problem statement did not point at a solution; it opened a space the team had not been looking at.',
+      'The reframe killed the gaming-lab-and-makerspace plan, which would have made the space louder and more demanding, the opposite of the need. It opened a completely different design direction centred on belonging and calm, not features. A good problem statement did not point at a solution; it opened a space the team had not been looking at.',
   },
   ideate: {
     intro:
@@ -62,7 +62,7 @@ const STAGES: Record<StageKey, StageData> = {
     work: '"How might we make teenagers feel the library is genuinely theirs?" Several ideation sessions, deferring judgment, going for quantity, including deliberately wild ideas. Roughly 90 ideas generated, then clustered and narrowed.',
     artifact: {
       type: 'finding',
-      label: 'Sample of the range — 90 ideas generated',
+      label: 'Sample of the range: 90 ideas generated',
       lines: [
         'Teen-only room with teens setting the rules',
         '"No-questions" quiet zones signposted explicitly',
@@ -74,12 +74,12 @@ const STAGES: Record<StageKey, StageData> = {
       ],
     },
     insight:
-      'The strongest ideas shared a theme: give teenagers genuine ownership and a calm space, rather than give them more stuff. The team selected a small bundle to prototype — a teen-governed room, teen-set rules, and a teen advisory board with real input. The convergence came from asking which ideas best expressed the reframed point of view, not which were easiest to build.',
+      'The strongest ideas shared a theme: give teenagers genuine ownership and a calm space, rather than give them more stuff. The team selected a small bundle to prototype: a teen-governed room, teen-set rules, and a teen advisory board with real input. The convergence came from asking which ideas best expressed the reframed point of view, not which were easiest to build.',
   },
   prototype: {
     intro:
       'Rather than renovate anything, the team built the roughest possible version of the idea in one branch.',
-    work: 'They cordoned off an underused area of the central branch with temporary furniture — beanbags, soft lighting, and a hand-lettered sign saying the space was the teens\' to shape. They convened a volunteer teen group and let them set the rules and rearrange the space. Total cost: almost nothing.',
+    work: 'They cordoned off an underused area of the central branch with temporary furniture (beanbags, soft lighting, and a hand-lettered sign saying the space was the teens\' to shape). They convened a volunteer teen group and let them set the rules and rearrange the space. Total cost: almost nothing.',
     artifact: {
       type: 'finding',
       label: 'Prototype specification',
@@ -93,7 +93,7 @@ const STAGES: Record<StageKey, StageData> = {
       ],
     },
     insight:
-      'The prototype was a question made physical: does genuine ownership and calm change how teenagers experience the library? The cheapest possible version was also the most honest — it removed all assumptions about what "the right furniture" or "the right rules" should be and let real teenagers decide.',
+      'The prototype was a question made physical: does genuine ownership and calm change how teenagers experience the library? The cheapest possible version was also the most honest; it removed all assumptions about what "the right furniture" or "the right rules" should be and let real teenagers decide.',
   },
   test: {
     intro:
@@ -105,13 +105,13 @@ const STAGES: Record<StageKey, StageData> = {
       lines: [
         'Daily teen visits rose sharply over two weeks, mostly by word of mouth',
         'Teens immediately rewrote the adult-drafted "quiet at all times" rule',
-        'Teen-set replacement: "quiet corner / talking corner" split — an insight staff would never have designed',
+        'Teen-set replacement: "quiet corner / talking corner" split, an insight staff would never have designed',
         'Tension surfaced: teens wanted a totally adult-free space, which the library could not fully allow for safeguarding reasons',
         'Result: the test validated the core direction and sent the team back to Define the safeguarding sub-problem',
       ],
     },
     insight:
-      'The test validated the core direction and reshaped the details. The teen-governed quiet/talking split was an insight no amount of internal planning would have produced. The safeguarding tension, surfaced early and cheaply, was flagged for its own focused design work. The Test stage looped the team back rather than simply confirming the plan — which is exactly what good testing does.',
+      'The test validated the core direction and reshaped the details. The teen-governed quiet/talking split was an insight no amount of internal planning would have produced. The safeguarding tension, surfaced early and cheaply, was flagged for its own focused design work. The Test stage looped the team back rather than confirming the plan, which is exactly what good testing does.',
   },
 }
 

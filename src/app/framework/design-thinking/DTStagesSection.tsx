@@ -27,7 +27,7 @@ const STAGES: Stage[] = [
     mode: 'Understand',
     tagline: 'Understand the people you serve before you do anything else',
     objective:
-      'Empathize is the foundation the whole process stands on. The goal is to set aside your assumptions and develop genuine, firsthand understanding of the people you are designing for — what they do, what they say, what they think, and crucially what they feel.',
+      'Empathize is the foundation the whole process stands on. The goal is to set aside your assumptions and develop genuine, firsthand understanding of the people you are designing for: what they do, what they say, what they think, and crucially what they feel.',
     description: [
       'This is not market research at a distance. It is getting close enough to people\'s real lives that you notice the things they would never think to tell you, and the gap between what they say and what they actually do.',
       'The test of genuine empathy work is whether the team learned something that genuinely surprised it. If nothing surprised you, you probably confirmed your assumptions rather than challenging them.',
@@ -56,7 +56,7 @@ const STAGES: Stage[] = [
     mode: 'Frame',
     tagline: 'Frame the right problem before you try to solve any problem',
     objective:
-      'Define is where the raw, messy understanding gathered in Empathize is synthesised into a single, sharp problem statement — a point of view. This is the hinge of the whole process. A well-framed problem makes the solution space productive; a badly framed one sends the team off solving the wrong thing beautifully.',
+      'Define is where the raw, messy understanding gathered in Empathize is synthesised into a single, sharp problem statement: a point of view. This is the hinge of the whole process. A well-framed problem makes the solution space productive; a badly framed one sends the team off solving the wrong thing beautifully.',
     description: [
       'The Define stage resists the pull toward solutions and insists on naming, precisely and in human terms, what is actually worth solving. A good problem statement names the need, not the answer.',
       'The classic Define output is a point-of-view statement: a specific user, their deep need (stated as a verb), and a non-obvious insight drawn from the empathy work that reframes the problem. The quality of everything downstream depends on the quality of this statement.',
@@ -97,7 +97,7 @@ const STAGES: Stage[] = [
       },
       {
         title: 'Defer judgment',
-        detail: 'Separate generating from evaluating. Wild ideas matter even when they are unworkable — they stretch the team\'s sense of what is possible and frequently contain a usable kernel.',
+        detail: 'Separate generating from evaluating. Wild ideas matter even when they are unworkable; they stretch the team\'s sense of what is possible and frequently contain a usable kernel.',
       },
       {
         title: 'Then converge',
@@ -114,9 +114,9 @@ const STAGES: Stage[] = [
     mode: 'Make',
     tagline: 'Make ideas tangible, fast and cheap',
     objective:
-      'Prototype turns promising ideas into something people can see, touch, and react to — at the lowest possible cost and effort. A Design Thinking prototype is not a polished early version of the product; it is a question made physical, built only well enough to learn something specific from a real person\'s reaction.',
+      'Prototype turns promising ideas into something people can see, touch, and react to, at the lowest possible cost and effort. A Design Thinking prototype is not a polished early version of the product; it is a question made physical, built only well enough to learn something specific from a real person\'s reaction.',
     description: [
-      'The discipline is to build the least you can that still generates genuine response, and to stay unattached — because the prototype exists to be tested and very possibly thrown away.',
+      'The discipline is to build the least you can that still generates genuine response, and to stay unattached, because the prototype exists to be tested and possibly thrown away.',
       'The mental shift that separates good prototyping from bad is to see the prototype as a question rather than a small first draft of the solution. When the prototype is framed as a draft of the product, teams over-invest, grow attached, and start defending it instead of learning from it.',
     ],
     activities: [
@@ -143,10 +143,10 @@ const STAGES: Stage[] = [
     mode: 'Learn',
     tagline: 'Learn from real people, then iterate',
     objective:
-      'Test puts the prototype in front of the real people you are designing for and learns from their genuine response. The goal is not to prove the idea right; it is to learn — including, and especially, learning that the idea is wrong.',
+      'Test puts the prototype in front of the real people you are designing for and learns from their genuine response. The goal is not to prove the idea right; it is to learn, including, and especially, learning that the idea is wrong.',
     description: [
       'Test is where the loop-back lives: what you learn here sends you forward to refine, or back to ideate, define, or even empathize. A good test is run with curiosity about what will be discovered, not anxiety about being validated.',
-      'The most common failure in the Test stage is treating it as a box-ticking validation — looking for confirmation rather than genuinely trying to discover what is wrong. Ask people to do tasks rather than to give opinions, since behavior is honest where politeness is not.',
+      'The most common failure in the Test stage is treating it as a box-ticking validation: looking for confirmation rather than genuinely trying to discover what is wrong. Ask people to do tasks rather than to give opinions, since behavior is honest where politeness is not.',
     ],
     activities: [
       {
@@ -163,7 +163,7 @@ const STAGES: Stage[] = [
       },
     ],
     keyQuestion:
-      'Before testing, write the three things you most want to learn — and be honest that "learn" includes "discover this is wrong." After testing: which stage does what you learned send you back to?',
+      'Before testing, write the three things you most want to learn, and be honest that "learn" includes "discover this is wrong." After testing: which stage does what you learned send you back to?',
   },
 ]
 
@@ -191,7 +191,7 @@ export default function DTStagesSection() {
 
   return (
     <div className="grid md:grid-cols-[1fr_2fr] gap-space-10 relative">
-      {/* Left — sticky stage nav */}
+      {/* Left: sticky stage nav */}
       <div className="hidden md:block">
         <div className="sticky top-24 space-y-space-2">
           {STAGES.map((stage) => (
@@ -230,7 +230,7 @@ export default function DTStagesSection() {
         </div>
       </div>
 
-      {/* Right — stage content */}
+      {/* Right: stage content */}
       <div className="space-y-space-12 md:space-y-space-13">
         {STAGES.map((stage, i) => (
           <div key={stage.id} ref={(el) => { sectionRefs.current[i] = el }}>

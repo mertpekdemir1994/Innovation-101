@@ -11,7 +11,7 @@ const DTInteractiveSection = dynamic(() => import('./DTInteractiveSection'), {
   ssr: false,
   loading: () => (
     <div className="py-space-12 flex items-center justify-center" style={{ minHeight: 400, color: 'rgba(255,255,255,0.25)' }}>
-      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram…</span>
+      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram...</span>
     </div>
   ),
 })
@@ -47,7 +47,7 @@ export default function DesignThinkingPage() {
     <>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          HERO — dark, full viewport
+          HERO: dark, full viewport
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
         <div
@@ -73,7 +73,7 @@ export default function DesignThinkingPage() {
           </p>
         </Container>
 
-        {/* Five-stage diagram — full width, outside Container */}
+        {/* Five-stage diagram: full width, outside Container */}
         <div className="relative z-10 w-full px-space-6 md:px-space-10 pb-space-12 pt-space-2">
           <DTStagesHero />
         </div>
@@ -162,14 +162,14 @@ export default function DesignThinkingPage() {
                 Design Thinking makes two moves that most problem-solving skips. First: it separates
                 understanding from solving, spending real effort making sure the team is solving the
                 right problem before rushing to solve any problem. Second: it makes ideas tangible
-                early and cheaply — prototypes that let real people react before teams commit.
+                early and cheaply: prototypes that let real people react before teams commit.
               </p>
               <ol className="space-y-space-3">
                 {[
-                  'Observe and engage with the people you are designing for — firsthand, not through surveys or assumptions.',
+                  'Observe and engage with the people you are designing for, firsthand, not through surveys or assumptions.',
                   'Frame the problem precisely around a real human need, as a point of view that opens solutions rather than closing them.',
                   'Generate many possible solutions before evaluating any of them. Volume before judgment.',
-                  'Build the minimum rough prototype to answer a specific question — not a draft of the product, but a question made physical.',
+                  'Build the minimum rough prototype to answer a specific question: not a draft of the product, but a question made physical.',
                   'Test with real people and let their actual response guide the next iteration. Expect to loop back.',
                 ].map((step, i) => (
                   <li key={i} className="flex items-start gap-space-4">
@@ -188,7 +188,7 @@ export default function DesignThinkingPage() {
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   A designer asked to improve an MRI scanner spent time in the hospital watching
                   children being scanned. Many were so terrified they had to be sedated. The real
-                  problem was not the machine&apos;s engineering — it was the child&apos;s
+                  problem was not the machine&apos;s engineering; it was the child&apos;s
                   experience. The team reframed the scanner as an adventure: pirate ship, jungle,
                   a story the child was part of. Sedation rates dropped dramatically. Nothing about
                   the machine changed. Everything about the human experience did.
@@ -260,7 +260,7 @@ export default function DesignThinkingPage() {
       </WarmSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          EXPLORE — dark, interactive
+          EXPLORE: dark, interactive
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection>
         <Container className="pt-space-10 pb-space-4">
@@ -274,7 +274,7 @@ export default function DesignThinkingPage() {
             </h2>
             <p className="text-base mb-space-8 max-w-prose" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               Select a stage to explore its mindset, activities, and a real-world example. The IDEO
-              three-lens model — Desirability, Feasibility, Viability — is surfaced below each stage
+              three-lens model (Desirability, Feasibility, Viability) is surfaced below each stage
               panel; click a lens to see what it means.
             </p>
           </ScrollReveal>
@@ -339,7 +339,7 @@ export default function DesignThinkingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-space-3">
             {[
-              { name: 'Design Sprint', rel: 'A Design Sprint is a compressed, five-day expression of the Design Thinking stages — understand, sketch, decide, prototype, test — time-boxed for speed', slug: '/framework/design-sprint' },
+              { name: 'Design Sprint', rel: 'A Design Sprint is a compressed, five-day expression of the Design Thinking stages (understand, sketch, decide, prototype, test) time-boxed for speed', slug: '/framework/design-sprint' },
               { name: 'Lean Startup', rel: 'Design Thinking frames the right human problem; Lean Startup rigorously tests its business viability through Build-Measure-Learn', slug: '/framework/lean-startup' },
               { name: 'Double Diamond', rel: 'The Double Diamond and Design Thinking share the same core logic: diverge to understand, converge to define, diverge to explore, converge to deliver', slug: '/framework/double-diamond' },
               { name: 'How Might We', rel: 'The core method for translating a Define point of view into Ideate challenges', slug: '/methods/how-might-we' },
@@ -378,7 +378,7 @@ export default function DesignThinkingPage() {
                 { title: 'Change by Design', author: 'Tim Brown, 2009' },
                 { title: 'Creative Confidence', author: 'Tom Kelley and David Kelley, 2013' },
                 { title: 'The Sciences of the Artificial', author: 'Herbert Simon, 1969' },
-                { title: 'IDEO Design Kit — Human-Centered Design Toolkit', author: 'IDEO.org' },
+                { title: 'IDEO Design Kit: Human-Centered Design Toolkit', author: 'IDEO.org' },
               ].map(({ title, author }) => (
                 <div key={title} className="flex items-start gap-space-4 py-space-4 border-b border-neutral-100 last:border-0">
                   <div

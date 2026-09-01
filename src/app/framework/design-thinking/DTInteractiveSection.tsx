@@ -15,52 +15,52 @@ const STAGE_DETAIL: Record<StageKey, {
   example: { co: string; text: string }
 }> = {
   empathize: {
-    headline: 'Empathize — Start with the human, not the assumption',
+    headline: 'Empathize: start with the human, not the assumption',
     description:
       'Set aside your assumptions and develop genuine, firsthand understanding of the people you are designing for. This means getting close enough to their real lives that you notice the things they would never think to tell you. The test: did you learn something that genuinely surprised you?',
     prompt: 'What do you know about the experience of the people you are designing for that did NOT come from a survey, a report, or your own assumptions? If the honest answer is thin, your first job is to get closer to them.',
     example: {
-      co: 'IDEO — Shopping Cart (1999)',
-      text: 'Asked to redesign the supermarket shopping cart, the team did not start by sketching carts. They went into stores and watched — shoppers, baggers, and store managers. They discovered that carts were stolen, children were unsafe in them, and most shoppers made short, targeted trips rather than the big weekly shop carts assumed. The empathy work produced the brief.',
+      co: 'IDEO: Shopping Cart (1999)',
+      text: 'Asked to redesign the supermarket shopping cart, the team did not start by sketching carts. They went into stores and watched: shoppers, baggers, and store managers. They discovered that carts were stolen, children were unsafe in them, and most shoppers made short, targeted trips rather than the big weekly shop carts assumed. The empathy work produced the brief.',
     },
   },
   define: {
-    headline: 'Define — Frame the right problem, not the first one',
+    headline: 'Define: frame the right problem, not the first one',
     description:
-      'Synthesise the empathy work into a sharp, human-centered point of view. The classic form: "[specific user] needs to [verb / need] because [surprising insight from real observation]." A good POV names the need, not the answer — and opens the solution space rather than closing it.',
+      'Synthesise the empathy work into a sharp, human-centered point of view. The classic form: "[specific user] needs to [verb / need] because [surprising insight from real observation]." A good POV names the need, not the answer, and opens the solution space rather than closing it.',
     prompt: 'Write your current challenge as a point-of-view statement. Does it name a human need, or does it secretly contain a solution? If it contains a solution, you have not finished defining.',
     example: {
-      co: 'Children\'s MRI — GE Healthcare',
-      text: 'The original problem handed to the team was "improve the scanner." Empathy work — watching terrified, sedated children — produced a completely different Define. The reframed POV: "A frightened child needs the scan to feel safe and even exciting, because it is the fear, not the machine, that is the real obstacle." That reframe in Define, not any cleverness in Ideate, was the breakthrough.',
+      co: 'Children\'s MRI: GE Healthcare',
+      text: 'The original problem handed to the team was "improve the scanner." Empathy work, watching terrified, sedated children, produced a completely different Define. The reframed POV: "A frightened child needs the scan to feel safe and even exciting, because it is the fear, not the machine, that is the real obstacle." That reframe in Define, not any cleverness in Ideate, was the breakthrough.',
     },
   },
   ideate: {
-    headline: 'Ideate — Volume before judgment',
+    headline: 'Ideate: volume before judgment',
     description:
-      'With a sharp POV in hand, generate as many possible solutions as you can — deferring judgment, welcoming wild ideas, building on each other\'s thinking. The best idea is rarely the first one. Premature evaluation kills the flow that produces volume and forces a group toward safe, obvious territory.',
+      'With a sharp POV in hand, generate as many possible solutions as you can, deferring judgment, welcoming wild ideas, building on each other\'s thinking. The best idea is rarely the first one. Premature evaluation kills the flow that produces volume and forces a group toward safe, obvious territory.',
     prompt: 'Write "How might we..." in front of the need in your point-of-view statement. Now generate ten answers without judging any of them. If the first three were obvious, the value is usually in numbers seven through ten.',
     example: {
-      co: 'IDEO — Ideation Rules',
+      co: 'IDEO: Ideation Rules',
       text: 'IDEO posts explicit rules in ideation sessions: defer judgment, encourage wild ideas, build on the ideas of others, stay focused on the topic, one conversation at a time, be visual, go for quantity. In one consumer-product session, a deliberately "wild" idea that the team nearly skipped contained the structural insight that became the shipped product\'s defining feature.',
     },
   },
   prototype: {
-    headline: 'Prototype — A question made physical',
+    headline: 'Prototype: a question made physical',
     description:
-      'A Design Thinking prototype is not a polished early version of the product. It is the minimum artifact needed to learn something specific from a real person\'s reaction, built only well enough to generate genuine response. Stay unattached — the prototype is disposable; the learning is the asset.',
+      'A Design Thinking prototype is not a polished early version of the product. It is the minimum artifact needed to learn something specific from a real person\'s reaction, built only well enough to generate genuine response. Stay unattached; the prototype is disposable; the learning is the asset.',
     prompt: 'Take your strongest idea. What is the cheapest, roughest thing you could build this week that would let a real person react to it? What specific question would that prototype answer?',
     example: {
-      co: 'Children\'s MRI — Adventure Series',
+      co: 'Children\'s MRI: Adventure Series',
       text: 'The adventure-room solution was prototyped long before any machine was painted. The team mocked up the experience, the story script, the decoration, and the way a technician would frame the scan as an adventure, in rough, cheap form, with real children and staff. These low-fidelity prototypes answered "does turning the scan into a story actually calm the child?" cheaply, before any full production investment.',
     },
   },
   test: {
-    headline: 'Test — Hunt for what is wrong, not what is right',
+    headline: 'Test: hunt for what is wrong, not what is right',
     description:
-      'Test puts the prototype in front of real people and learns from their genuine response. The goal is not validation — it is learning, including learning that the idea is wrong. Ask people to do tasks rather than give opinions; behavior is honest where politeness is not. Expect to loop back.',
-    prompt: 'Before testing, write the three things you most want to learn — and be honest that "learn" includes "discover this is wrong." After testing: which stage does what you learned send you back to?',
+      'Test puts the prototype in front of real people and learns from their genuine response. The goal is not validation; it is learning, including learning that the idea is wrong. Ask people to do tasks rather than give opinions; behavior is honest where politeness is not. Expect to loop back.',
+    prompt: 'Before testing, write the three things you most want to learn, and be honest that "learn" includes "discover this is wrong." After testing: which stage does what you learned send you back to?',
     example: {
-      co: 'Meridian Library — Teen Space',
+      co: 'Meridian Library: Teen Space',
       text: 'Testing the pop-up teen space over two weeks revealed that teens immediately rewrote the adult-drafted rules, replacing "quiet at all times" with their own "quiet corner / talking corner" split. That insight would never have been designed without watching real teenagers in a real space. The test also surfaced the safeguarding tension early, sending the team back to Define that specific sub-problem.',
     },
   },
@@ -70,7 +70,7 @@ const THREE_LENSES: Record<NonNullable<LensKey>, { title: string; question: stri
   desirability: {
     title: 'Desirability',
     question: 'Do people actually want this?',
-    detail: 'The human lens — the heart of Design Thinking. Start here. A solution nobody wants does not deserve to be built, no matter how clever or technically impressive it is. Desirability is what the Empathize and Define stages exist to ensure.',
+    detail: 'The human lens: the heart of Design Thinking. Start here. A solution nobody wants does not deserve to be built, no matter how clever or technically impressive it is. Desirability is what the Empathize and Define stages exist to ensure.',
     color: `${TEAL}`,
   },
   feasibility: {
@@ -102,7 +102,7 @@ function ThreeLensViz({ activeLens, setActiveLens }: { activeLens: LensKey; setA
   return (
     <div className="mt-space-8">
       <p className="font-mono text-2xs uppercase tracking-widest mb-space-4" style={{ color: 'rgba(255,255,255,0.35)' }}>
-        IDEO three-lens model — click each to explore
+        IDEO three-lens model, click each to explore
       </p>
       <div className="grid grid-cols-3 gap-space-2 mb-space-4">
         {lensKeys.map((key) => {
