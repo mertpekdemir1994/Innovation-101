@@ -87,7 +87,7 @@ export default function PLAIReactivated() {
         aria-label={isAI
           ? 'AI mode: zone turns indigo showing AI design help. Three amber markers highlight the judgments AI cannot make: representativeness, unmodeled operational reality, and the go/no-go decision.'
           : 'Human mode: full pilot zone in brick, all elements visible.'}
-        style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
       >
         <defs>
           <filter id="pl-ai-glow" x="-20%" y="-20%" width="140%" height="140%">
