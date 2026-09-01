@@ -40,7 +40,7 @@ export default function AvatarsEstablishing() {
       variants={container}
       aria-hidden="true"
     >
-      <svg viewBox="0 0 560 400" width="100%" style={{ maxWidth: 720, overflow: 'visible' }}>
+      <svg viewBox="0 0 560 400" width="100%" style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}>
         <defs>
           <filter id="av-est-glow" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="6" result="blur" />

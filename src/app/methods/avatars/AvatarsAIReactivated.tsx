@@ -92,7 +92,7 @@ export default function AvatarsAIReactivated() {
 
       {/* ── Bullseye SVG ── */}
       <div className="w-full flex justify-center mb-10 select-none" aria-hidden="true">
-        <svg viewBox="0 0 560 400" width="100%" style={{ maxWidth: 720, overflow: 'visible' }}>
+        <svg viewBox="0 0 560 400" width="100%" style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}>
           <defs>
             <filter id="av-ai-glow-outer" x="-40%" y="-40%" width="180%" height="180%">
               <feGaussianBlur stdDeviation="10" result="blur" />
