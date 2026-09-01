@@ -69,7 +69,7 @@ export default function SMAIReactivated() {
         aria-label={isAI
           ? 'AI-generated causal loop diagram. Only the BALANCING loop B1 (defect rate → testing → defect rate) is clearly visible: this is the documented, believed causality. The REINFORCING loop R1 (delivery pressure → technical debt → more pressure) is faint or absent. A warning reads: your failed theory, elegantly drawn.'
           : 'Complete causal loop diagram showing both loops: REINFORCING R1 (delivery pressure → technical debt → delivery pressure) and BALANCING B1 (defect rate → testing → defect rate). The leverage point glows above the DELIVERY PRESSURE node.'}
-        style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
       >
         <defs>
           <filter id="sm-ai-teal-glow" x="-35%" y="-35%" width="170%" height="170%">

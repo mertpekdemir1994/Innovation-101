@@ -88,7 +88,7 @@ export default function SMInteractive() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Interactive causal loop diagram. Select an intervention above to see what happens."
-        style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
       >
         <defs>
           <filter id="sm-int-teal-glow" x="-35%" y="-35%" width="170%" height="170%">
