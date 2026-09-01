@@ -131,7 +131,7 @@ export default function SCCEstablishing() {
         x={632} y={295}
         textAnchor="middle"
         fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-        fill={`${PLUM}0.28)`}
+        fill={`${PLUM_TEXT}0.849)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? { opacity: 1 } : { opacity: 0 })}
@@ -162,7 +162,7 @@ export default function SCCEstablishing() {
         x={128} y={226}
         textAnchor="middle"
         fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-        fill={`${PLUM}0.48)`}
+        fill={`${PLUM_TEXT}0.891)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? { opacity: 1 } : { opacity: 0 })}
@@ -175,7 +175,7 @@ export default function SCCEstablishing() {
         x={SVG_W / 2} y={SVG_H - 6}
         textAnchor="middle"
         fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-        fill="rgba(255,255,255,0.14)"
+        fill="rgba(255,255,255,0.57)"
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? { opacity: 1 } : { opacity: 0 })}
