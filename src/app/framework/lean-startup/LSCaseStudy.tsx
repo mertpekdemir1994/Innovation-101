@@ -312,7 +312,7 @@ export default function LSCaseStudy() {
             <span
               className="font-mono text-2xs uppercase tracking-widest mb-space-1"
               style={{
-                color: activeLoop === key ? `${PURPLE}0.65)` : 'var(--color-neutral-400)',
+                color: activeLoop === key ? `${PURPLE}0.65)` : 'var(--color-neutral-500)',
               }}
             >
               {sub}

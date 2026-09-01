@@ -131,7 +131,7 @@ export default function LSEvolutionTimeline() {
               </div>
               <p
                 className="font-mono text-2xs uppercase tracking-widest text-center leading-tight transition-colors duration-200"
-                style={{ color: active === i ? `${PURPLE}0.85)` : 'var(--color-neutral-400)' }}
+                style={{ color: active === i ? `${PURPLE}0.85)` : 'var(--color-neutral-500)' }}
               >
                 {ver.year}
               </p>
