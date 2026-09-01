@@ -14,8 +14,8 @@ export const metadata = {
 
 const CREDENTIALS = [
   'Deloitte Consulting LLP - Innovation & Product Strategy (formerly known as Doblin)',
-  'MS, Engineering Design & Innovation — Northwestern University',
-  'BS, Mechanical Engineering — Illinois Institute of Technology',
+  'MS, Engineering Design & Innovation: Northwestern University',
+  'BS, Mechanical Engineering: Illinois Institute of Technology',
   'Chicago, IL',
 ]
 
@@ -26,7 +26,7 @@ export default function AboutPage() {
     <>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          HERO — dark, no photo, specific opening claim
+          HERO: dark, no photo, specific opening claim
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection className="relative overflow-hidden">
         <Container>
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 maxWidth: '44ch',
               }}
             >
-              A practitioner&apos;s reference built from real consulting work —
+              A practitioner&apos;s reference built from real consulting work:
               specific about what each tool is for, and honest about where it
               stops working.
             </p>
@@ -73,7 +73,7 @@ export default function AboutPage() {
 
 
       {/* ═══════════════════════════════════════════════════════════════════
-          WHAT THIS IS — no template, just two strong paragraphs
+          WHAT THIS IS: no template, just two strong paragraphs
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container prose>
@@ -91,7 +91,7 @@ export default function AboutPage() {
               steps, get this outcome. It doesn&apos;t tell you which tool to
               reach for when your client has too much data to act on, or what to
               do when discovery has surfaced six equally credible problem frames.
-              The real questions are never &ldquo;how do I run a journey map&rdquo; —
+              The real questions are never &ldquo;how do I run a journey map&rdquo;;
               they&apos;re &ldquo;is a journey map the right tool right now, and if
               not, what is.&rdquo;
             </p>
@@ -99,7 +99,7 @@ export default function AboutPage() {
               Innovation 101 is organized around those questions. Every method
               explains where it fits in the process, what kind of problem it
               solves, and where its limits are. The frameworks section maps six
-              end-to-end approaches — not as alternatives to pick between, but as
+              end-to-end approaches: not as alternatives to pick between, but as
               lenses for different types of problems. The scenarios section
               connects specific situations to the tools that actually address them.
             </Body>
@@ -109,7 +109,7 @@ export default function AboutPage() {
 
 
       {/* ═══════════════════════════════════════════════════════════════════
-          MERT — photo + bio together, no "THE PRACTITIONER" eyebrow
+          MERT: photo + bio together, no "THE PRACTITIONER" eyebrow
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container prose>
@@ -121,7 +121,7 @@ export default function AboutPage() {
             }}
           >
 
-            {/* Name + role — above the grid so it spans full width */}
+            {/* Name + role: above the grid so it spans full width */}
             <div style={{ paddingTop: '3rem', marginBottom: '2rem' }}>
               <h2
                 className="font-display font-semibold"
@@ -292,7 +292,7 @@ export default function AboutPage() {
 
 
       {/* ═══════════════════════════════════════════════════════════════════
-          HOW IT WAS BUILT — no template headline, direct and specific
+          HOW IT WAS BUILT: no template headline, direct and specific
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection>
         <Container prose>
@@ -324,7 +324,7 @@ export default function AboutPage() {
             </p>
 
             <Body dark>
-              Mert built the substance of this site — the selection of methods,
+              Mert built the substance of this site: the selection of methods,
               the frameworks they sit inside, the editorial calls about what
               belongs and what doesn&apos;t, the language for describing where
               each tool actually works and where it doesn&apos;t. That part
@@ -334,7 +334,7 @@ export default function AboutPage() {
               Claude and Claude Code handled the production. Claude drafted
               content from Mert&apos;s outlines and notes, structured the site
               architecture, and translated design decisions into working code.
-              The split isn&apos;t a technicality — it&apos;s the actual point.
+              The split isn&apos;t a technicality: it&apos;s the actual point.
               AI is genuinely good at fluent production. It&apos;s not the thing
               that decides what&apos;s true.
             </Body>
