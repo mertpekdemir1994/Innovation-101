@@ -187,7 +187,7 @@ export default function EMAIReactivated() {
                   x={350} y={198 + 60}
                   textAnchor="middle" dominantBaseline="hanging"
                   fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                  fill={`${INDIGO}0.55)`} style={{ userSelect: 'none' }}
+                  fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30 }}
                 >AI MAPS THE VISIBLE WEB</motion.text>
@@ -196,7 +196,7 @@ export default function EMAIReactivated() {
                   x={88} y={294 + 36}
                   textAnchor="middle" dominantBaseline="hanging"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${AMBER}0.45)`} style={{ userSelect: 'none' }}
+                  fill={`${AMBER_TEXT}0.83)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30 }}
                 >AI MISSES</motion.text>
