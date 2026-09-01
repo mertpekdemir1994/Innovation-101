@@ -69,7 +69,7 @@ function AvatarMiniSVG({ active }: { active: boolean }) {
       ))}
       <text x={60} y={63} textAnchor="middle" dominantBaseline="middle"
         fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={active ? 'rgba(255,255,255,0.90)' : 'rgba(255,255,255,0.40)'}
+        fill={active ? 'rgba(255,255,255,0.90)' : 'rgba(255,255,255,0.7)'}
         style={{ userSelect: 'none' }}
       >AVATAR</text>
     </svg>

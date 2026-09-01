@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
 const CX = 188, CY = 200
 
@@ -111,14 +112,14 @@ export default function AvatarsEstablishing() {
                 x={LX + 8} y={labelY}
                 textAnchor="start" dominantBaseline="middle"
                 fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                fill={isBeachhead ? 'rgba(255,255,255,0.85)' : `${PLUM}0.82)`}
+                fill={isBeachhead ? 'rgba(255,255,255,0.85)' : `${PLUM_TEXT}0.962)`}
                 style={{ userSelect: 'none' }}
               >{label}</text>
               <text
                 x={LX + 8} y={labelY + 13}
                 textAnchor="start" dominantBaseline="middle"
                 fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                fill="rgba(255,255,255,0.28)"
+                fill="rgba(255,255,255,0.64)"
                 style={{ userSelect: 'none' }}
               >{sub}</text>
             </motion.g>
