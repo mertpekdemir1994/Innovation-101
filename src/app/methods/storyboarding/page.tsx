@@ -130,7 +130,7 @@ export default function StoryboardingPage() {
           cannot draw reveal the parts of the idea that do not work.
         </p>
         <p className="max-w-[540px]"
-          style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.36)', fontStyle: 'italic' }}>
+          style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}>
           A deck lets you write &ldquo;and then it intelligently surfaces the right answer.&rdquo; A storyboard
           makes you draw it. The frame you cannot draw is the idea you do not have.
         </p>
@@ -219,7 +219,7 @@ export default function StoryboardingPage() {
             </div>
             <div>
               <p className="font-mono uppercase tracking-widest mb-4"
-                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>Do not lean on it when</p>
+                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>Do not lean on it when</p>
               <ul className="flex flex-col gap-3">
                 {[
                   'You want to generate many concept directions quickly; that is Crazy 8s, which produces breadth; storyboarding asks one concept to go deep.',
@@ -228,7 +228,7 @@ export default function StoryboardingPage() {
                   'The team is drawing frames they cannot yet draw, and labelling them rather than naming the gap. A storyboard filled with labels is a slide deck.',
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
-                    <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                    <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                     <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                       {item}
                     </span>
@@ -335,7 +335,7 @@ export default function StoryboardingPage() {
             </div>
 
             <p className="font-mono uppercase tracking-widest mt-8 mb-4"
-              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>The mistakes</p>
+              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>The mistakes</p>
             <div className="grid gap-3">
               {[
                 { label: 'Drawing what the product does instead of what the user does.', body: 'A storyboard full of product screens and UI wireframes is a prototype in disguise. The sequence should follow the person, not the interface. What is the user doing, and why, in each frame?' },
@@ -526,7 +526,7 @@ export default function StoryboardingPage() {
               <div className="flex items-center justify-between flex-wrap gap-6">
                 <div>
                   <p className="font-mono uppercase tracking-widest mb-1"
-                    style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                    style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                     Ideation &amp; Prototyping — Method 6 of 6
                   </p>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>

@@ -389,7 +389,7 @@ export default function SBInteractive() {
         )}
       </AnimatePresence>
 
-      <p className="mt-4 text-xs font-mono tracking-wide" style={{ color: 'rgba(255,255,255,0.25)' }}>
+      <p className="mt-4 text-xs font-mono tracking-wide" style={{ color: 'var(--color-dark-muted)' }}>
         Click any frame to reveal what it shows and what it assumes.
       </p>
     </div>

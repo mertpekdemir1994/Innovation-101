@@ -91,7 +91,7 @@ export default function SBExampleToggle() {
         border: '1px solid var(--color-neutral-200)',
       }}>
         <p className="text-xs font-mono tracking-widest mb-1"
-          style={{ color: 'var(--color-neutral-400)' }}>
+          style={{ color: 'var(--color-neutral-500)' }}>
           SCENARIO
         </p>
         <p className="text-sm" style={{ color: 'var(--color-neutral-600)' }}>
