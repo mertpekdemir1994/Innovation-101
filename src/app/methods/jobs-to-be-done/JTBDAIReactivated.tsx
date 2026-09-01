@@ -251,7 +251,7 @@ export default function JTBDAIReactivated() {
                 x={350} y={SVG_H - 6}
                 textAnchor="middle" dominantBaseline="auto"
                 fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                fill={`${INDIGO}0.45)`} style={{ userSelect: 'none' }}
+                fill={`${INDIGO_TEXT}0.885)`} style={{ userSelect: 'none' }}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 transition={{ duration: 0.28 }}
               >AI PRODUCES THE OBVIOUS JOB, THE COUNTERINTUITIVE JOB IS NOT IN THE CATEGORY</motion.text>

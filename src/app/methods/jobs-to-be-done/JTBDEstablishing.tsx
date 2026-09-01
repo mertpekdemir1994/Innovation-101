@@ -218,7 +218,7 @@ export default function JTBDEstablishing() {
           x={SVG_W / 2} y={SVG_H - 8}
           textAnchor="middle" dominantBaseline="auto"
           fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-          fill="rgba(255,255,255,0.18)"
+          fill="rgba(255,255,255,0.59)"
           style={{ userSelect: 'none' }}
           variants={fadeIn}
           transition={{ ...T, delay: prefersReduced ? 0 : 0.90 }}
