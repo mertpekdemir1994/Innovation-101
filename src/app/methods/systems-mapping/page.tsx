@@ -407,7 +407,7 @@ export default function SystemsMappingPage() {
                     {f.name}
                   </Link>
                   <span className="font-mono uppercase tracking-widest"
-                    style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                    style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                     {f.phase}
                   </span>
                 </div>
@@ -488,7 +488,7 @@ export default function SystemsMappingPage() {
                   {b.title}
                 </p>
                 <p className="font-mono mb-2"
-                  style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)' }}>
+                  style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)' }}>
                   {b.author} · {b.year}
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -503,7 +503,7 @@ export default function SystemsMappingPage() {
             <div className="flex items-center justify-between flex-wrap gap-6">
               <div>
                 <p className="font-mono uppercase tracking-widest mb-1"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Experience &amp; Systems Mapping — Method 6 of 6
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>
