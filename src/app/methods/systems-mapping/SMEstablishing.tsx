@@ -242,7 +242,7 @@ export default function SMEstablishing() {
         {/* ── CAPTION ── */}
         <motion.text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="3.8"
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           {...fade(1.78)}>
           The symptom is on the right. The leverage is on the left. Nobody had tried it there.
         </motion.text>
