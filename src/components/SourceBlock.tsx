@@ -7,7 +7,7 @@ type SourceBlockProps = {
 export default function SourceBlock({ sourceBook, sourceAuthor, amazonAffiliateUrl }: SourceBlockProps) {
   return (
     <div className="border border-neutral-200 rounded-lg p-space-6 mt-space-10">
-      <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-space-4">
+      <p className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-space-4">
         Source &amp; Further Reading
       </p>
       <p className="text-neutral-900 font-semibold mb-space-1">{sourceBook}</p>

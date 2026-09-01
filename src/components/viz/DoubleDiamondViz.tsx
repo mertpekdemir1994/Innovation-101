@@ -409,7 +409,7 @@ function MethodDrawer({ slug, onClose }: { slug: string; onClose: () => void }) 
                 type="button"
                 onClick={onClose}
                 aria-label="Close method drawer"
-                className="p-space-2 rounded hover:bg-neutral-100 transition-colors text-neutral-400 hover:text-neutral-900"
+                className="p-space-2 rounded hover:bg-neutral-100 transition-colors text-neutral-500 hover:text-neutral-900"
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />

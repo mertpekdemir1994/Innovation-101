@@ -39,7 +39,7 @@ function Item({ title, children, open, onToggle }: ItemProps) {
           aria-hidden
           animate={prefersReduced ? {} : { rotate: open ? 180 : 0 }}
           transition={spring.snappy}
-          className="flex-shrink-0 ml-space-4 text-neutral-400"
+          className="flex-shrink-0 ml-space-4 text-neutral-500"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
