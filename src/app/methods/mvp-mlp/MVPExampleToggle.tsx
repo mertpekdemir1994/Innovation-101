@@ -42,7 +42,7 @@ export default function MVPExampleToggle() {
 
       {/* Shared scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mr-2">
+        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">
           Shared scenario
         </span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
@@ -121,7 +121,7 @@ export default function MVPExampleToggle() {
                 ].map(col => (
                   <div key={col.label}>
                     <p className="text-[9px] font-mono font-semibold uppercase tracking-wider mb-2"
-                      style={{ color: col.label.includes('cut') ? 'var(--color-neutral-400)' : `${BRICK}0.80)` }}>
+                      style={{ color: col.label.includes('cut') ? 'var(--color-neutral-500)' : `${BRICK}0.80)` }}>
                       {col.label}
                     </p>
                     <ul className="flex flex-col gap-1">

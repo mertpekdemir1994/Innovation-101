@@ -226,7 +226,7 @@ export default function MVPMLPPage() {
               <table className="w-full text-sm" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
                 <thead>
                   <tr>
-                    <th className="text-left py-3 pr-4" style={{ fontSize: 'var(--text-2xs)', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--color-neutral-400)', borderBottom: '1px solid var(--color-neutral-100)', fontWeight: 400 }}></th>
+                    <th className="text-left py-3 pr-4" style={{ fontSize: 'var(--text-2xs)', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--color-neutral-500)', borderBottom: '1px solid var(--color-neutral-100)', fontWeight: 400 }}></th>
                     <th className="text-left py-3 px-4" style={{ fontSize: 'var(--text-2xs)', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '0.12em', color: BRICK, borderBottom: '1px solid var(--color-neutral-100)', fontWeight: 600 }}>Minimum Viable Product</th>
                     <th className="text-left py-3 pl-4" style={{ fontSize: 'var(--text-2xs)', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '0.12em', color: BRICK, borderBottom: '1px solid var(--color-neutral-100)', fontWeight: 600 }}>Minimum Lovable Product</th>
                   </tr>
@@ -375,7 +375,7 @@ export default function MVPMLPPage() {
 
               <div>
                 <p className="font-mono uppercase tracking-widest mb-4"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do not lean on it when
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -386,7 +386,7 @@ export default function MVPMLPPage() {
                     'There is no clear success criterion: without defining what "adoption" would mean in advance, you will rationalise whatever result you get.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item}
                       </span>
@@ -781,7 +781,7 @@ export default function MVPMLPPage() {
                   <p className="font-semibold mb-1"
                     style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}>
                     {s.title}: {s.author}{' '}
-                    <span style={{ fontWeight: 400, color: 'var(--color-neutral-400)' }}>({s.year})</span>
+                    <span style={{ fontWeight: 400, color: 'var(--color-neutral-500)' }}>({s.year})</span>
                   </p>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                     {s.note}
