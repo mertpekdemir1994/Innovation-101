@@ -129,7 +129,7 @@ export default function FMInteractive() {
       <div className="w-full select-none mb-8"
         aria-label="Interactive flow topology. Click any node or pathology to learn about it."
       >
-        <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ display: 'block', overflow: 'visible' }}>
+        <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}>
           <defs>
             <filter id="fm-int-glow" x="-40%" y="-40%" width="180%" height="180%">
               <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />

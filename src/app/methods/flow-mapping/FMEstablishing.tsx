@@ -60,7 +60,7 @@ export default function FMEstablishing() {
       aria-label="Branching flow topology: one entry point forks into three paths. Top path: SUBMIT → VALIDATE → RESOLVED (with a DEAD END branch off VALIDATE leading nowhere). Middle path: SUBMIT → PROCESS → APPROVE → COMPLETE (with a LOOP back from APPROVE to PROCESS). Bottom path (unintended, accreted): SUBMIT → ESCALATE → MANUAL STEP → COMPLETE (a redundant route to the same outcome). Pathologies marked: DEAD END, LOOP, UNINTENDED BRANCH, REDUNDANT PATH."
     >
       <svg ref={ref} viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-        style={{ display: 'block', overflow: 'visible' }}>
+        style={{ maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}>
         <defs>
           <filter id="fm-est-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />
