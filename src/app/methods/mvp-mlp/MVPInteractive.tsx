@@ -121,7 +121,7 @@ export default function MVPInteractive() {
           <text x={CORE_CX} y={CORE_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-            fill={coreHi ? `${BRICK}0.80)` : `${BRICK}0.52)`}
+            fill={coreHi ? `rgba(183,145,135,0.958)` : `rgba(183,145,135,0.899)`}
             style={{ userSelect: 'none', transition: 'fill 0.22s' }}>
             SHARED CORE · IDENTICAL IN BOTH PRODUCTS
           </text>
@@ -135,7 +135,7 @@ export default function MVPInteractive() {
               <text x={t.x + t.w / 2} y={t.y + t.h / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                fill={`${BRICK}0.80)`} style={{ userSelect: 'none' }}>
+                fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}>
                 {t.label}
               </text>
             </g>
@@ -168,14 +168,14 @@ export default function MVPInteractive() {
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}>MVP</text>
             <text x={MVP_CX} y={MVP_Y + 31} textAnchor="middle" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${BRICK}0.32)`} style={{ userSelect: 'none' }}>TUNED FOR</text>
+              fill={`rgba(183,145,135,0.857)`} style={{ userSelect: 'none' }}>TUNED FOR</text>
             <text x={MVP_CX} y={MVP_Y + 48} textAnchor="middle" dominantBaseline="middle"
               fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
               fill={`${BRICK}${mvpIsActive ? '0.95)' : '0.65)'}`}
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}>LEARNING</text>
             <text x={MVP_CX} y={MVP_Y + 64} textAnchor="middle" dominantBaseline="middle"
               fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-              fill={`${BRICK}0.45)`} style={{ userSelect: 'none' }}>FAST · CHEAP · HONEST SIGNAL</text>
+              fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>FAST · CHEAP · HONEST SIGNAL</text>
           </g>
 
           {/* MLP badge */}
@@ -195,14 +195,14 @@ export default function MVPInteractive() {
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}>MLP</text>
             <text x={MLP_CX} y={MLP_Y + 31} textAnchor="middle" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${BRICK}0.32)`} style={{ userSelect: 'none' }}>TUNED FOR</text>
+              fill={`rgba(183,145,135,0.857)`} style={{ userSelect: 'none' }}>TUNED FOR</text>
             <text x={MLP_CX} y={MLP_Y + 48} textAnchor="middle" dominantBaseline="middle"
               fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
               fill={`${BRICK}${mlpIsActive ? '0.95)' : '0.65)'}`}
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}>LOVE</text>
             <text x={MLP_CX} y={MLP_Y + 64} textAnchor="middle" dominantBaseline="middle"
               fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-              fill={`${BRICK}0.45)`} style={{ userSelect: 'none' }}>CRAFT · RESONANCE · ADVOCATES</text>
+              fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>CRAFT · RESONANCE · ADVOCATES</text>
           </g>
 
           {/* Cut pile */}
@@ -214,7 +214,7 @@ export default function MVPInteractive() {
             <text x={CUT_CX} y={CUT_Y - 8}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill={cutsHi ? `${BRICK}0.55)` : 'rgba(255,255,255,0.16)'}
+              fill={cutsHi ? `rgba(183,145,135,0.905)` : 'rgba(255,255,255,0.58)'}
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}>
               SHARED CUT PILE · BOTH DISCARDED THESE
             </text>
@@ -231,7 +231,7 @@ export default function MVPInteractive() {
                 <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 1}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+                  fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
                   {c.label}
                 </text>
               </g>

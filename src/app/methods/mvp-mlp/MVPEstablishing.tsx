@@ -85,7 +85,7 @@ export default function MVPEstablishing() {
           <text x={CORE_CX} y={CORE_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-            fill={`${BRICK}0.52)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.899)`} style={{ userSelect: 'none' }}>
             SHARED CORE · IDENTICAL IN BOTH PRODUCTS
           </text>
         </motion.g>
@@ -102,7 +102,7 @@ export default function MVPEstablishing() {
             <text x={t.x + t.w / 2} y={t.y + t.h / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-              fill={`${BRICK}0.80)`} style={{ userSelect: 'none' }}>
+              fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}>
               {t.label}
             </text>
           </motion.g>
@@ -122,7 +122,7 @@ export default function MVPEstablishing() {
           <text x={CORE_CX + 7} y={(CORE_Y + CORE_H + CUT_Y) / 2}
             dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${BRICK}0.28)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.849)`} style={{ userSelect: 'none' }}>
             BOTH CUT
           </text>
         </motion.g>
@@ -137,25 +137,25 @@ export default function MVPEstablishing() {
           <text x={MVP_CX} y={MVP_Y + 18}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
-            fill={`${BRICK}0.50)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.895)`} style={{ userSelect: 'none' }}>
             MVP
           </text>
           <text x={MVP_CX} y={MVP_Y + 31}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${BRICK}0.32)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.857)`} style={{ userSelect: 'none' }}>
             TUNED FOR
           </text>
           <text x={MVP_CX} y={MVP_Y + 48}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
-            fill={`${BRICK}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.975)`} style={{ userSelect: 'none' }}>
             LEARNING
           </text>
           <text x={MVP_CX} y={MVP_Y + 64}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill={`${BRICK}0.45)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>
             FAST · CHEAP · HONEST SIGNAL
           </text>
         </motion.g>
@@ -170,25 +170,25 @@ export default function MVPEstablishing() {
           <text x={MLP_CX} y={MLP_Y + 18}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
-            fill={`${BRICK}0.50)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.895)`} style={{ userSelect: 'none' }}>
             MLP
           </text>
           <text x={MLP_CX} y={MLP_Y + 31}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${BRICK}0.32)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.857)`} style={{ userSelect: 'none' }}>
             TUNED FOR
           </text>
           <text x={MLP_CX} y={MLP_Y + 48}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
-            fill={`${BRICK}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.975)`} style={{ userSelect: 'none' }}>
             LOVE
           </text>
           <text x={MLP_CX} y={MLP_Y + 64}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill={`${BRICK}0.45)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>
             CRAFT · RESONANCE · ADVOCATES
           </text>
         </motion.g>
@@ -201,7 +201,7 @@ export default function MVPEstablishing() {
           <text x={CUT_CX} y={CUT_Y - 8}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.16)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
             SHARED CUT PILE · BOTH DISCARDED THESE
           </text>
           <rect x={CUT_X} y={CUT_Y} width={CUT_W} height={CUT_H} rx={6}
@@ -221,7 +221,7 @@ export default function MVPEstablishing() {
             <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+              fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
               {c.label}
             </text>
           </motion.g>

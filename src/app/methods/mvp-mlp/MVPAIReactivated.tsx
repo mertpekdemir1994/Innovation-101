@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const SVG_H = 266
@@ -130,7 +131,7 @@ export default function MVPAIReactivated() {
           <text x={CORE_CX} y={CORE_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-            fill={`${BRICK}0.52)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.899)`} style={{ userSelect: 'none' }}>
             SHARED CORE · IDENTICAL IN BOTH PRODUCTS
           </text>
 
@@ -143,7 +144,7 @@ export default function MVPAIReactivated() {
               <text x={t.x + t.w / 2} y={t.y + t.h / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                fill={`${BRICK}0.80)`} style={{ userSelect: 'none' }}>
+                fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}>
                 {t.label}
               </text>
             </g>
@@ -169,19 +170,19 @@ export default function MVPAIReactivated() {
             style={{ opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s, stroke 0.35s' }} />
           <text x={MVP_CX} y={MVP_Y + 18} textAnchor="middle" dominantBaseline="middle"
             fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
-            fill={`${BRICK}0.50)`}
+            fill={`rgba(183,145,135,0.895)`}
             style={{ userSelect: 'none', opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s' }}>MVP</text>
           <text x={MVP_CX} y={MVP_Y + 31} textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${BRICK}0.32)`}
+            fill={`rgba(183,145,135,0.857)`}
             style={{ userSelect: 'none', opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s' }}>TUNED FOR</text>
           <text x={MVP_CX} y={MVP_Y + 48} textAnchor="middle" dominantBaseline="middle"
             fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
-            fill={`${BRICK}0.88)`}
+            fill={`rgba(183,145,135,0.975)`}
             style={{ userSelect: 'none', opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s' }}>LEARNING</text>
           <text x={MVP_CX} y={MVP_Y + 64} textAnchor="middle" dominantBaseline="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill={`${BRICK}0.45)`}
+            fill={`rgba(183,145,135,0.885)`}
             style={{ userSelect: 'none', opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s' }}>FAST · CHEAP · HONEST SIGNAL</text>
 
           {/* MLP badge: highlighted in AI mode */}
@@ -195,19 +196,19 @@ export default function MVPAIReactivated() {
             style={{ transition: 'fill 0.35s, stroke 0.35s' }} />
           <text x={MLP_CX} y={MLP_Y + 18} textAnchor="middle" dominantBaseline="middle"
             fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
-            fill={isAI ? `${INDIGO}0.65)` : `${BRICK}0.50)`}
+            fill={isAI ? `${INDIGO_TEXT}0.926)` : `rgba(183,145,135,0.895)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>MLP</text>
           <text x={MLP_CX} y={MLP_Y + 31} textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={isAI ? `${INDIGO}0.42)` : `${BRICK}0.32)`}
+            fill={isAI ? `${INDIGO_TEXT}0.878)` : `rgba(183,145,135,0.857)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>TUNED FOR</text>
           <text x={MLP_CX} y={MLP_Y + 48} textAnchor="middle" dominantBaseline="middle"
             fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
-            fill={isAI ? `${INDIGO}0.92)` : `${BRICK}0.88)`}
+            fill={isAI ? `${INDIGO_TEXT}0.983)` : `rgba(183,145,135,0.975)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>LOVE</text>
           <text x={MLP_CX} y={MLP_Y + 64} textAnchor="middle" dominantBaseline="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill={isAI ? `${INDIGO}0.55)` : `${BRICK}0.45)`}
+            fill={isAI ? `${INDIGO_TEXT}0.905)` : `rgba(183,145,135,0.885)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>CRAFT · RESONANCE · ADVOCATES</text>
 
           {/* AI cost-collapse badge (AI mode only) */}
@@ -223,7 +224,7 @@ export default function MVPAIReactivated() {
                 <text x={AI_BADGE.x + AI_BADGE.w / 2} y={AI_BADGE.y + AI_BADGE.h / 2 + 1}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-                  fill={`${INDIGO}0.90)`} style={{ userSelect: 'none' }}>
+                  fill={`${INDIGO_TEXT}0.979)`} style={{ userSelect: 'none' }}>
                   AI MAKES THIS CHEAP NOW
                 </text>
               </motion.g>
@@ -244,7 +245,7 @@ export default function MVPAIReactivated() {
                 <text x={MLP_X - 20} y={MLP_Y + 48}
                   textAnchor="end" dominantBaseline="middle"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${BRICK}0.70)`} style={{ userSelect: 'none' }}>
+                  fill={`rgba(183,145,135,0.937)`} style={{ userSelect: 'none' }}>
                   TASTE: HUMAN
                 </text>
                 {/* INTERPRETATION annotation near cut pile */}
@@ -253,13 +254,13 @@ export default function MVPAIReactivated() {
                 <text x={CORE_X - 14} y={CUT_Y + CUT_H / 2}
                   textAnchor="end" dominantBaseline="middle"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${BRICK}0.58)`} style={{ userSelect: 'none' }}>
+                  fill={`rgba(183,145,135,0.912)`} style={{ userSelect: 'none' }}>
                   INTERPRETATION:
                 </text>
                 <text x={CORE_X - 14} y={CUT_Y + CUT_H / 2 + 10}
                   textAnchor="end" dominantBaseline="middle"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${BRICK}0.58)`} style={{ userSelect: 'none' }}>
+                  fill={`rgba(183,145,135,0.912)`} style={{ userSelect: 'none' }}>
                   HUMAN JUDGMENT
                 </text>
               </motion.g>
@@ -270,7 +271,7 @@ export default function MVPAIReactivated() {
           <text x={CUT_CX} y={CUT_Y - 8}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.16)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
             SHARED CUT PILE · BOTH DISCARDED THESE
           </text>
           <rect x={CUT_X} y={CUT_Y} width={CUT_W} height={CUT_H} rx={6}
@@ -284,7 +285,7 @@ export default function MVPAIReactivated() {
               <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+                fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
                 {c.label}
               </text>
             </g>
