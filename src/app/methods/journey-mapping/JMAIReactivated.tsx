@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AI_C = 'rgba(99,102,241,'
 
 const SVG_W = 700
@@ -116,7 +117,7 @@ export default function JMAIReactivated() {
                 x={SCX[i]} y={HDR_TOP + HDR_H / 2 + 2}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                fill={aiMode ? `${AI_C}0.80)` : `${TEAL}0.85)`}
+                fill={aiMode ? `rgba(141,143,245,0.958)` : `${TEAL_TEXT}0.969)`}
                 style={{ userSelect: 'none', transition: 'fill 0.35s' }}
               >{name}</text>
             </g>
@@ -140,7 +141,7 @@ export default function JMAIReactivated() {
           ].map(({ label, y }) => (
             <text key={label} x={4} y={y} textAnchor="start" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}
+              fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
             >{label}</text>
           ))}
 

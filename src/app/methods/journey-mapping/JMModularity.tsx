@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 
 const SVG_W = 700
 const STAGE_W = 140
@@ -135,7 +136,7 @@ export default function JMModularity() {
                 x={SCX[i]} y={HDR_TOP + HDR_H / 2 + 2}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                fill={`${TEAL}0.85)`} style={{ userSelect: 'none' }}
+                fill={`${TEAL_TEXT}0.969)`} style={{ userSelect: 'none' }}
               >{name}</text>
             </g>
           ))}
@@ -175,7 +176,7 @@ export default function JMModularity() {
                   {/* Lane label at left */}
                   <text x={4} y={laneY + height / 2} textAnchor="start" dominantBaseline="middle"
                     fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                    fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}
+                    fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
                   >{label}</text>
 
                   {isEmotions ? (
@@ -217,7 +218,7 @@ export default function JMModularity() {
                         x={SCX[i]} y={laneY + height / 2}
                         textAnchor="middle" dominantBaseline="middle"
                         fontSize="6.5" fontFamily="var(--font-body, Inter, sans-serif)"
-                        fill={id === 'thoughts' ? 'rgba(255,255,255,0.50)' : id === 'opportunities' ? `${TEAL}0.72)` : 'rgba(255,255,255,0.62)'}
+                        fill={id === 'thoughts' ? 'rgba(255,255,255,0.50)' : id === 'opportunities' ? `${TEAL_TEXT}0.941)` : 'rgba(255,255,255,0.62)'}
                         fontStyle={id === 'thoughts' ? 'italic' : 'normal'}
                         style={{ userSelect: 'none' }}
                       >{text}</text>

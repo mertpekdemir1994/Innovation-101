@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const TEAL = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 
 // ── Geometry ──────────────────────────────────────────────────────────────────
 const SVG_W = 700
@@ -96,7 +97,7 @@ export default function JMEstablishing() {
               x={SCX[i]} y={HDR_TOP + HDR_H / 2 + 2}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill={`${TEAL}0.85)`} style={{ userSelect: 'none' }}
+              fill={`${TEAL_TEXT}0.969)`} style={{ userSelect: 'none' }}
             >{label}</text>
           </motion.g>
         ))}
@@ -123,15 +124,15 @@ export default function JMEstablishing() {
         <motion.g variants={fadeIn} transition={labelT}>
           <text x={4} y={LANE_A_Y + LANE_A_H / 2} textAnchor="start" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
           >ACTIONS</text>
           <text x={4} y={LANE_T_Y + LANE_T_H / 2} textAnchor="start" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
           >THOUGHTS</text>
           <text x={4} y={LANE_E_Y + LANE_E_H / 2} textAnchor="start" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
           >EMOTIONS</text>
         </motion.g>
 
@@ -161,7 +162,7 @@ export default function JMEstablishing() {
           <circle cx={280} cy={EY.gap} r={3} fill="rgba(251,146,60,0.80)" />
           <text x={284} y={EY.gap - 8} textAnchor="start" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(251,146,60,0.65)" style={{ userSelect: 'none' }}
+            fill="rgba(251,146,60,0.902)" style={{ userSelect: 'none' }}
           >THE GAP</text>
         </motion.g>
 

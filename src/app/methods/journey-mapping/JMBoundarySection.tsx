@@ -5,8 +5,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 const SLATE = 'rgba(100,116,139,'
+const SLATE_TEXT = 'rgba(143,154,171,'  // brightened text-safe variant of SLATE
 
 type Reveal = 'journey' | '5es' | 'blueprint'
 
@@ -77,7 +80,7 @@ function JourneyMiniSVG() {
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.35)`} strokeWidth={1} />
           <text x={cx} y={18} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.82)`} style={{ userSelect: 'none' }}
+            fill={`${TEAL_TEXT}0.962)`} style={{ userSelect: 'none' }}
           >STAGE {i + 1}</text>
         </g>
       ))}
@@ -85,10 +88,10 @@ function JourneyMiniSVG() {
       <line x1={0} y1={34} x2={MINI_W} y2={34} stroke="rgba(255,255,255,0.08)" strokeWidth={1} />
       {/* Lane labels */}
       <text x={3} y={50} textAnchor="start" dominantBaseline="middle"
-        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}
+        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
       >ACTIONS</text>
       <text x={3} y={70} textAnchor="start" dominantBaseline="middle"
-        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}
+        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
       >THOUGHTS</text>
       <line x1={0} y1={80} x2={MINI_W} y2={80} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
       {/* Emotion line */}
@@ -101,7 +104,7 @@ function JourneyMiniSVG() {
         />
       ))}
       <text x={MINI_W / 2} y={126} textAnchor="middle" fontSize="4" fontFamily="var(--font-mono)"
-        fill="rgba(255,255,255,0.25)" style={{ userSelect: 'none' }}
+        fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}
       >FLEXIBLE STAGES, EXPERIENCER&apos;S SIDE ONLY</text>
     </svg>
   )
@@ -121,7 +124,7 @@ function FiveEsSVG() {
             fill={`${INDIGO}0.18)`} stroke={`${INDIGO}0.55)`} strokeWidth={1.5} />
           <text x={MINI_SCX[i]} y={18} textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${INDIGO}0.90)`} style={{ userSelect: 'none' }}
+            fill={`${INDIGO_TEXT}0.979)`} style={{ userSelect: 'none' }}
           >{p}</text>
         </g>
       ))}
@@ -133,7 +136,7 @@ function FiveEsSVG() {
         />
       ))}
       <text x={MINI_W / 2} y={126} textAnchor="middle" fontSize="4" fontFamily="var(--font-mono)"
-        fill={`${INDIGO}0.40)`} style={{ userSelect: 'none' }}
+        fill={`${INDIGO_TEXT}0.874)`} style={{ userSelect: 'none' }}
       >FIXED PHASES, CONSISTENT EVALUATION LENS</text>
     </svg>
   )
@@ -151,17 +154,17 @@ function BlueprintSVG() {
       <line x1={0} y1={34} x2={MINI_W} y2={34} stroke="rgba(255,255,255,0.08)" strokeWidth={1} />
       {/* Experiencer lanes (above) */}
       <text x={3} y={50} textAnchor="start" dominantBaseline="middle"
-        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}
+        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
       >ACTIONS</text>
       <text x={3} y={68} textAnchor="start" dominantBaseline="middle"
-        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}
+        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
       >THOUGHTS</text>
       {/* Emotion line */}
       <path d={MINI_PATH} stroke={`${TEAL}0.75)`} strokeWidth={1.5} strokeLinecap="round" fill="none" />
       {/* LINE OF VISIBILITY */}
       <line x1={0} y1={115} x2={MINI_W} y2={115} stroke="rgba(255,255,255,0.45)" strokeWidth={1.5} strokeDasharray="4 3" />
       <text x={MINI_W - 4} y={112} textAnchor="end" fontSize="4" fontFamily="var(--font-mono)"
-        fill="rgba(255,255,255,0.45)" style={{ userSelect: 'none' }}
+        fill="rgba(255,255,255,0.725)" style={{ userSelect: 'none' }}
       >LINE OF VISIBILITY</text>
       {/* Backstage lanes (below) */}
       {[
@@ -172,12 +175,12 @@ function BlueprintSVG() {
         <g key={label}>
           <line x1={0} y1={y - 8} x2={MINI_W} y2={y - 8} stroke={`${SLATE}0.15)`} strokeWidth={1} />
           <text x={3} y={y} textAnchor="start" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" fill={`${SLATE}0.55)`} style={{ userSelect: 'none' }}
+            fontSize="4" fontFamily="var(--font-mono)" fill={`${SLATE_TEXT}0.905)`} style={{ userSelect: 'none' }}
           >{label}</text>
         </g>
       ))}
       <text x={MINI_W / 2} y={196} textAnchor="middle" fontSize="4" fontFamily="var(--font-mono)"
-        fill={`${SLATE}0.45)`} style={{ userSelect: 'none' }}
+        fill={`${SLATE_TEXT}0.885)`} style={{ userSelect: 'none' }}
       >BACKSTAGE ADDED, OPERATIONAL MACHINERY</text>
     </svg>
   )

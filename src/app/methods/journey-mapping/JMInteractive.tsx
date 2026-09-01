@@ -179,7 +179,7 @@ export default function JMInteractive() {
           ].map(({ label, y }) => (
             <text key={label} x={4} y={y} textAnchor="start" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none', pointerEvents: 'none' }}
+              fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none', pointerEvents: 'none' }}
             >{label}</text>
           ))}
 
