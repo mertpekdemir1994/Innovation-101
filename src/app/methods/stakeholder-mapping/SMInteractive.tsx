@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, LayoutGroup, useReducedMotion } from 'framer-motion'
 
 const SAGE = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 type StakeholderId =
   | 'end-user' | 'decision-maker' | 'budget-holder' | 'regulator'
@@ -111,9 +112,9 @@ const SORT_LABELS: Record<SortMode, string> = {
 }
 
 function attitudeColor(a: Attitude): string {
-  if (a === 'supporter') return `${SAGE}0.88)`
+  if (a === 'supporter') return `${SAGE_TEXT}0.975)`
   if (a === 'blocker')   return 'rgba(245,158,11,0.85)'
-  return 'rgba(255,255,255,0.45)'
+  return 'rgba(255,255,255,0.725)'
 }
 
 function AttrChip({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
@@ -122,7 +123,7 @@ function AttrChip({ label, value, highlight }: { label: string; value: string; h
       className="text-[8px] font-mono uppercase tracking-wide px-1.5 py-0.5 rounded"
       style={{
         background: highlight ? `${SAGE}0.15)` : 'rgba(255,255,255,0.06)',
-        color: highlight ? `${SAGE}0.90)` : 'rgba(255,255,255,0.42)',
+        color: highlight ? `${SAGE_TEXT}0.979)` : 'rgba(255,255,255,0.71)',
         border: highlight ? `1px solid ${SAGE}0.30)` : '1px solid rgba(255,255,255,0.08)',
       }}
     >
@@ -147,7 +148,7 @@ export default function SMInteractive() {
       {/* Sort controls */}
       <div className="flex flex-wrap gap-2 mb-6">
         <span className="text-[9px] font-semibold uppercase tracking-widest self-center mr-1"
-          style={{ color: 'rgba(255,255,255,0.30)' }}>SORT BY</span>
+          style={{ color: 'rgba(255,255,255,0.65)' }}>SORT BY</span>
         {(Object.keys(SORT_LABELS) as SortMode[]).map(mode => (
           <button
             key={mode}
@@ -156,7 +157,7 @@ export default function SMInteractive() {
             style={{
               background: sort === mode ? `${SAGE}0.14)` : 'rgba(255,255,255,0.05)',
               border: `1px solid ${sort === mode ? `${SAGE}0.38)` : 'rgba(255,255,255,0.10)'}`,
-              color: sort === mode ? `${SAGE}1)` : 'rgba(255,255,255,0.45)',
+              color: sort === mode ? `${SAGE_TEXT}1)` : 'rgba(255,255,255,0.725)',
             }}
           >
             {SORT_LABELS[mode]}
@@ -184,8 +185,8 @@ export default function SMInteractive() {
                       <div style={{ width: 2, minHeight: 20, marginTop: 2, borderRadius: 1, background: `${SAGE}0.50)`, flexShrink: 0 }} />
                       <div>
                         <span className="font-mono text-[9px] uppercase tracking-widest mr-2"
-                          style={{ color: `${SAGE}0.85)` }}>{group.label}</span>
-                        <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.35)' }}>{group.sublabel}</span>
+                          style={{ color: `${SAGE_TEXT}0.969)` }}>{group.label}</span>
+                        <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.675)' }}>{group.sublabel}</span>
                       </div>
                     </div>
                   </motion.div>
@@ -216,15 +217,15 @@ export default function SMInteractive() {
                       {/* Non-obvious badge */}
                       {s.nonObvious && (
                         <div className="text-[7px] font-mono uppercase tracking-widest mb-1"
-                          style={{ color: `${SAGE}0.70)` }}>★ non-obvious</div>
+                          style={{ color: `${SAGE_TEXT}0.926)` }}>★ non-obvious</div>
                       )}
                       {/* Name */}
                       <p className="font-mono text-[9px] uppercase tracking-widest mb-0.5 font-semibold"
-                        style={{ color: s.nonObvious ? `${SAGE}0.92)` : 'rgba(255,255,255,0.80)' }}>
+                        style={{ color: s.nonObvious ? `${SAGE_TEXT}0.984)` : 'rgba(255,255,255,0.80)' }}>
                         {s.name}
                       </p>
                       {/* Role */}
-                      <p className="text-[9px] mb-2" style={{ color: 'rgba(255,255,255,0.35)' }}>{s.role}</p>
+                      <p className="text-[9px] mb-2" style={{ color: 'rgba(255,255,255,0.675)' }}>{s.role}</p>
                       {/* Attribute chips */}
                       <div className="flex flex-wrap gap-1">
                         <AttrChip label="PWR" value={s.power} highlight={sort === 'power-interest' && s.power === 'high'} />
@@ -266,9 +267,9 @@ export default function SMInteractive() {
             <div className="flex items-start justify-between gap-4 mb-3">
               <div>
                 <p className="font-mono text-[9px] uppercase tracking-widest mb-1"
-                  style={{ color: `${SAGE}0.60)` }}>SELECTED STAKEHOLDER</p>
+                  style={{ color: `${SAGE_TEXT}0.916)` }}>SELECTED STAKEHOLDER</p>
                 <p className="font-mono text-xs font-semibold uppercase tracking-widest"
-                  style={{ color: selectedStakeholder.nonObvious ? `${SAGE}1)` : 'rgba(255,255,255,0.90)' }}>
+                  style={{ color: selectedStakeholder.nonObvious ? `${SAGE_TEXT}1)` : 'rgba(255,255,255,0.90)' }}>
                   {selectedStakeholder.name}
                 </p>
               </div>
@@ -283,7 +284,7 @@ export default function SMInteractive() {
             </p>
             {selectedStakeholder.nonObvious && (
               <div className="mt-3 pt-3 border-t" style={{ borderColor: `${SAGE}0.18)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: `${SAGE}0.65)` }}>
+                <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: `${SAGE_TEXT}0.926)` }}>
                   ★ NON-OBVIOUS, teams frequently omit this stakeholder from initial research plans
                 </p>
               </div>
@@ -298,7 +299,7 @@ export default function SMInteractive() {
             style={{ borderColor: 'rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}
           >
             <p className="text-[9px] font-mono uppercase tracking-widest"
-              style={{ color: 'rgba(255,255,255,0.25)' }}>
+              style={{ color: 'rgba(255,255,255,0.625)' }}>
               {sort === 'cast'
                 ? 'SELECT A CARD TO SEE FULL ATTRIBUTES, THEN SORT THE CAST BY POWER, ATTITUDE, OR INFLUENCE'
                 : 'SELECT A CARD TO UNDERSTAND WHAT THIS STAKEHOLDER CONTRIBUTES AND WHAT THEY RISK'}

@@ -41,9 +41,9 @@ const CARDS: CardDef[] = [
 ]
 
 function attitudeColor(a: Attitude): string {
-  if (a === 'supporter') return `${SAGE}0.82)`
+  if (a === 'supporter') return `${SAGE_TEXT}0.962)`
   if (a === 'blocker')   return 'rgba(245,158,11,0.80)'
-  return 'rgba(255,255,255,0.45)'
+  return 'rgba(255,255,255,0.725)'
 }
 
 export default function SMEstablishing() {
@@ -74,7 +74,7 @@ export default function SMEstablishing() {
         <motion.text
           x={SVG_W / 2} y={12} textAnchor="middle"
           fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
-          fill="rgba(255,255,255,0.22)"
+          fill="rgba(255,255,255,0.61)"
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.4, delay: prefersReduced ? 0 : 0.05 }}
           style={{ userSelect: 'none' }}
@@ -84,7 +84,7 @@ export default function SMEstablishing() {
         <motion.text
           x={SVG_W / 2} y={108} textAnchor="middle"
           fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
-          fill={`${SAGE}0.55)`}
+          fill={`${SAGE_TEXT}0.905)`}
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.4, delay: prefersReduced ? 0 : 0.32 }}
           style={{ userSelect: 'none' }}
@@ -165,7 +165,7 @@ export default function SMEstablishing() {
         <motion.text
           x={SVG_W / 2} y={SVG_H - 4} textAnchor="middle"
           fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
-          fill="rgba(255,255,255,0.20)"
+          fill="rgba(255,255,255,0.6)"
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.4, delay: prefersReduced ? 0 : 0.65 }}
           style={{ userSelect: 'none' }}
