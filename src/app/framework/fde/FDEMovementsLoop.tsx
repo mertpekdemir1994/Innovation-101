@@ -408,7 +408,7 @@ export default function FDEMovementsLoop() {
           </div>
 
           {/* Key activities */}
-          <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-3">
+          <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-3">
             Key activities
           </p>
           <div className="space-y-space-2 mb-space-6">

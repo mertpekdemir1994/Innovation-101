@@ -204,7 +204,7 @@ export default function FDEPage() {
                 problem occurred, rather than receiving a report about it three months later?
               </p>
               <div className="pt-space-4 border-t" style={{ borderColor: 'var(--color-neutral-200)' }}>
-                <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-2">The Auftragstaktik principle</p>
+                <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-2">The Auftragstaktik principle</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   Palantir&rsquo;s FDE model is built on Auftragstaktik: a military doctrine in which senior leaders
                   set high-level objectives and leave all other decisions to people in the field. Senior leadership
@@ -411,7 +411,7 @@ export default function FDEPage() {
       <LightSection>
         <Container className="py-space-10">
           <div className="max-w-prose">
-            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-6">
+            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-6">
               Sources &amp; Further Reading
             </p>
             <div className="space-y-space-4">
