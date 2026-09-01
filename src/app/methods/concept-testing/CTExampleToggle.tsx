@@ -37,7 +37,7 @@ export default function CTExampleToggle() {
       {/* Scenario label */}
       <div className="rounded-lg px-4 py-3 mb-5"
         style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mr-2">Scenario</span>
+        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">Scenario</span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
       </div>
 
@@ -60,7 +60,7 @@ export default function CTExampleToggle() {
                   { label: 'RECRUITING', text: 'Real target customers, not colleagues or friends. Screened against the actual target profile to ensure the reactions came from the right people.' },
                 ].map((col, i) => (
                   <div key={i} className="rounded p-3" style={{ background: `${PLUM}0.04)` }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-2 text-neutral-400">{col.label}</p>
+                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-2 text-neutral-500">{col.label}</p>
                     <p className="text-xs text-neutral-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: col.text }} />
                   </div>
                 ))}

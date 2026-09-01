@@ -43,7 +43,7 @@ export default function TTIExampleToggle() {
 
       {/* Scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mr-2">Shared scenario</span>
+        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
       </div>
 
