@@ -16,7 +16,8 @@ const PCX = [70, 210, 350, 490, 630] as const
 const HDR_TOP = 8, HDR_H = 40
 const CONTENT_Y = 52
 const BAR_BASE  = 152
-const SVG_H     = 168
+const ANNOT_Y   = 172
+const SVG_H     = 206
 
 const INV_HUMAN = [0.34, 0.54, 0.91, 0.26, 0.14] as const
 // In AI mode: Engage is strong (data-rich signals); bookends are near-zero (faint signals)
@@ -131,7 +132,7 @@ export default function FiveEsAIReactivated() {
                 <text
                   x={PCX[i]} y={HDR_TOP + HDR_H / 2 + 1}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                   fill={
                     isCoreInAI ? `${INDIGO_TEXT}0.983)` :
                     isBookendInAI ? 'rgba(255,255,255,0.61)' :
@@ -165,9 +166,9 @@ export default function FiveEsAIReactivated() {
                 <AnimatePresence>
                   {aiMode && isCoreInAI && (
                     <motion.text key="ai-strong"
-                      x={PCX[i]} y={CONTENT_Y + 14}
+                      x={PCX[i]} y={ANNOT_Y}
                       textAnchor="middle" dominantBaseline="hanging"
-                      fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                       fill={`${INDIGO_TEXT}0.926)`} style={{ userSelect: 'none' }}
                       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                       transition={{ duration: 0.28 }}
@@ -175,9 +176,9 @@ export default function FiveEsAIReactivated() {
                   )}
                   {aiMode && isBookendInAI && (
                     <motion.text key="ai-weak"
-                      x={PCX[i]} y={CONTENT_Y + 14}
+                      x={PCX[i]} y={ANNOT_Y}
                       textAnchor="middle" dominantBaseline="hanging"
-                      fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                       fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}
                       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                       transition={{ duration: 0.28 }}
@@ -190,9 +191,9 @@ export default function FiveEsAIReactivated() {
 
           {/* Bottom label */}
           <text
-            x={SVG_W / 2} y={SVG_H - 4}
+            x={SVG_W / 2} y={SVG_H - 6}
             textAnchor="middle" dominantBaseline="auto"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
           >
             {aiMode ? 'AI EVALUATION CONFIDENCE BY PHASE' : 'TYPICAL DESIGN INVESTMENT BY PHASE'}

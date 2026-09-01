@@ -14,7 +14,8 @@ const PCX = [70, 210, 350, 490, 630] as const
 const HDR_TOP = 8, HDR_H = 40
 const CONTENT_Y = 52
 const BAR_BASE  = 152
-const SVG_H     = 160
+const TAP_Y     = 166
+const SVG_H     = 184
 
 const INV = [0.34, 0.54, 0.91, 0.26, 0.14] as const
 const BAR_H_MAX = BAR_BASE - CONTENT_Y - 8
@@ -168,7 +169,7 @@ export default function FiveEsInteractive() {
                   <text
                     x={PCX[i]} y={HDR_TOP + HDR_H / 2 + 1}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                     fill={phase.bookend
                       ? (isActive ? `${AMBER}0.95)` : `${AMBER}0.78)`)
                       : (isActive ? `${TEAL_TEXT}0.996)` : `${TEAL_TEXT}0.962)`)}
@@ -198,9 +199,9 @@ export default function FiveEsInteractive() {
                 {/* Click cue - only when nothing is selected */}
                 {!active && (
                   <text
-                    x={PCX[i]} y={SVG_H - 6}
-                    textAnchor="middle" dominantBaseline="auto"
-                    fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                    x={PCX[i]} y={TAP_Y}
+                    textAnchor="middle" dominantBaseline="hanging"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                     fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
                   >tap</text>
                 )}

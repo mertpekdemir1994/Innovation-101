@@ -102,7 +102,7 @@ function JourneyMappingMiniSVG() {
   }, '')
 
   return (
-    <svg viewBox={`0 0 ${MW} ${MH_JM}`} width="100%" style={{ display: 'block' }}>
+    <svg viewBox={`0 0 ${MW} ${MH_JM}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}>
       <rect x={0} y={0} width={MW} height={MH_JM} rx={6} fill={`${TEAL}0.05)`} />
 
       {/* Variable-width stage headers */}
@@ -118,7 +118,7 @@ function JourneyMappingMiniSVG() {
           />
           <text x={JM_STAGE_CX[i]} y={4 + MHDR_H/2 + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+            fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
             fill={`${TEAL_TEXT}0.958)`} style={{ userSelect: 'none' }}
           >{label.slice(0, 4)}</text>
         </g>
@@ -136,7 +136,7 @@ function JourneyMappingMiniSVG() {
       {/* Actions row */}
       <line x1={0} y1={34} x2={MW} y2={34} stroke="rgba(255,255,255,0.06)" strokeWidth={1} />
       <text x={4} y={38} textAnchor="start" dominantBaseline="hanging"
-        fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
         fill={`${TEAL_TEXT}0.885)`} style={{ userSelect: 'none' }}
       >ACTIONS</text>
       {JM_STAGE_CX.map((cx, i) => (
@@ -153,7 +153,7 @@ function JourneyMappingMiniSVG() {
         />
       ))}
       <text x={4} y={MH_JM - 6} textAnchor="start" dominantBaseline="auto"
-        fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
         fill={`${TEAL_TEXT}0.874)`} style={{ userSelect: 'none' }}
       >EMOTION</text>
     </svg>
@@ -163,7 +163,7 @@ function JourneyMappingMiniSVG() {
 function ServiceBlueprintingMiniSVG() {
   const STAGES = ['D', 'C', 'S', 'U', 'R']
   return (
-    <svg viewBox={`0 0 ${MW} ${MH_SB}`} width="100%" style={{ display: 'block' }}>
+    <svg viewBox={`0 0 ${MW} ${MH_SB}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}>
       <rect x={0} y={0} width={MW} height={MH_SB} rx={6} fill={`${TEAL}0.04)`} />
 
       {/* Stage headers */}
@@ -183,7 +183,7 @@ function ServiceBlueprintingMiniSVG() {
       {/* Customer Actions */}
       <rect x={0} y={MSB_CA_Y} width={MW} height={MSB_CA_H} fill={`${TEAL}0.07)`} />
       <text x={4} y={MSB_CA_Y+5} textAnchor="start" dominantBaseline="hanging"
-        fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
         fill={`${TEAL_TEXT}0.895)`} style={{ userSelect: 'none' }}
       >CUSTOMER ACTIONS</text>
 
@@ -193,7 +193,7 @@ function ServiceBlueprintingMiniSVG() {
         stroke="rgba(255,255,255,0.05)" strokeWidth={1}
       />
       <text x={4} y={MSB_FS_Y+5} textAnchor="start" dominantBaseline="hanging"
-        fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
         fill={`${TEAL_TEXT}0.874)`} style={{ userSelect: 'none' }}
       >FRONTSTAGE</text>
 
@@ -203,21 +203,21 @@ function ServiceBlueprintingMiniSVG() {
       />
       <text x={MW-4} y={MSB_LOV_Y-4}
         textAnchor="end" dominantBaseline="auto"
-        fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+        fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.09em"
         fill="rgba(255,255,255,0.50)" style={{ userSelect: 'none' }}
       >LINE OF VISIBILITY</text>
 
       {/* Backstage */}
       <rect x={0} y={MSB_BS_Y} width={MW} height={MSB_BS_H} fill="rgba(100,116,139,0.06)" />
       <text x={4} y={MSB_BS_Y+5} textAnchor="start" dominantBaseline="hanging"
-        fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
         fill="rgba(143,154,171,0.905)" style={{ userSelect: 'none' }}
       >BACKSTAGE</text>
 
       {/* Support Processes */}
       <rect x={0} y={MSB_SP_Y} width={MW} height={MSB_SP_H} fill="rgba(100,116,139,0.09)" />
       <text x={4} y={MSB_SP_Y+5} textAnchor="start" dominantBaseline="hanging"
-        fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
         fill="rgba(143,154,171,0.885)" style={{ userSelect: 'none' }}
       >SUPPORT PROCESSES</text>
     </svg>
