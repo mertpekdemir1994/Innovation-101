@@ -131,7 +131,7 @@ export default function CTEstablishing() {
         <motion.text
           x={R_CX} y={R_TOP - 10}
           textAnchor="middle"
-          fill={`${PLUM}0.90)`}
+          fill={`${PLUM_TEXT}0.979)`}
           fontSize={14} fontWeight={600} fontFamily="monospace"
           initial={{ opacity: 0 }}
           animate={{ opacity: show ? 1 : 0 }}
@@ -213,7 +213,7 @@ export default function CTEstablishing() {
         <motion.text
           x={SVG_W / 2} y={SVG_H - 6}
           textAnchor="middle"
-          fill="rgba(255,255,255,0.20)" fontSize={6.5} fontFamily="monospace"
+          fill="rgba(255,255,255,0.6)" fontSize={6.5} fontFamily="monospace"
           letterSpacing={0.8}
           initial={{ opacity: 0 }}
           animate={{ opacity: show ? 1 : 0 }}

@@ -194,7 +194,7 @@ export default function CTAIReactivated() {
             <motion.text
               key="ai-note"
               x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
-              fill={`${INDIGO}0.42)`} fontSize={6.5} fontFamily="monospace" letterSpacing={0.8}
+              fill={`${INDIGO_TEXT}0.878)`} fontSize={6.5} fontFamily="monospace" letterSpacing={0.8}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
             >
