@@ -72,7 +72,7 @@ export default function HMWEstablishing() {
             x={PROB_CX} y={PROB_Y + 18}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.30)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.65)" style={{ userSelect: 'none' }}
           >PROBLEM SPACE</text>
           <line
             x1={PROB_X + 16} y1={PROB_Y + 29} x2={PROB_X + PROB_W - 16} y2={PROB_Y + 29}
@@ -82,7 +82,7 @@ export default function HMWEstablishing() {
             x={PROB_CX} y={PROB_Y + 44}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.42)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.71)" style={{ userSelect: 'none' }}
           >INSIGHT</text>
           {([
             ['Users abandon checkout',         PROB_Y + 68,  '7',   0.80],
@@ -175,7 +175,7 @@ export default function HMWEstablishing() {
             x={SOL_CX} y={PROB_Y + 18}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.40)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >HOW MIGHT WE</text>
           <line
             x1={SOL_X + 16} y1={PROB_Y + 29} x2={SOL_X + SOL_W - 16} y2={PROB_Y + 29}
@@ -197,7 +197,7 @@ export default function HMWEstablishing() {
             x={SOL_CX} y={PROB_Y + 135}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-inter,sans-serif)" fontStyle="italic"
-            fill="rgba(255,255,255,0.38)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.69)" style={{ userSelect: 'none' }}
           >specific problem. open solution space.</text>
         </motion.g>
       </svg>

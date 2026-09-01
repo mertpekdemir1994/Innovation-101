@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY   = 'rgba(31,58,95,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const SVG_H = 244
@@ -117,7 +118,7 @@ export default function HMWAIReactivated() {
             x={PROB_CX} y={PROB_Y + 18}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.28)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           >PROBLEM SPACE</text>
           <line
             x1={PROB_X + 16} y1={PROB_Y + 29} x2={PROB_X + PROB_W - 16} y2={PROB_Y + 29}
@@ -127,7 +128,7 @@ export default function HMWAIReactivated() {
             x={PROB_CX} y={PROB_Y + 44}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.40)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >INSIGHT</text>
           {([
             ['Users abandon checkout',          PROB_Y + 68, '6.5', 0.74],
@@ -170,7 +171,7 @@ export default function HMWAIReactivated() {
               key={word} x={DOOR_CX} y={PROB_Y + 60 + i * 18}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill={aiMode ? `${INDIGO}0.75)` : 'rgba(255,255,255,0.78)'}
+              fill={aiMode ? `${INDIGO_TEXT}0.948)` : 'rgba(255,255,255,0.78)'}
               style={{ userSelect: 'none', transition: 'fill 0.35s' }}
             >{word}</text>
           ))}
@@ -217,7 +218,7 @@ export default function HMWAIReactivated() {
               x={SOL_CX} y={PROB_Y + 18}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill="rgba(255,255,255,0.40)" style={{ userSelect: 'none' }}
+              fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
             >HOW MIGHT WE</text>
             <line
               x1={SOL_X + 16} y1={PROB_Y + 29} x2={SOL_X + SOL_W - 16} y2={PROB_Y + 29}
@@ -239,7 +240,7 @@ export default function HMWAIReactivated() {
               x={SOL_CX} y={PROB_Y + 148}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill="rgba(255,255,255,0.30)" style={{ userSelect: 'none' }}
+              fill="rgba(255,255,255,0.65)" style={{ userSelect: 'none' }}
             >1 QUESTION, CALIBRATED SCOPE</text>
           </motion.g>
 
@@ -252,7 +253,7 @@ export default function HMWAIReactivated() {
               x={SOL_CX} y={PROB_Y + 14}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${INDIGO}0.60)`} style={{ userSelect: 'none' }}
+              fill={`${INDIGO_TEXT}0.916)`} style={{ userSelect: 'none' }}
             >20 QUESTIONS, 4 SECONDS, NO SCOPE</text>
             <line
               x1={SOL_X + 10} y1={PROB_Y + 22} x2={SOL_X + SOL_W - 10} y2={PROB_Y + 22}

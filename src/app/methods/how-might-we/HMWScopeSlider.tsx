@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY  = 'rgba(31,58,95,'
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 284
@@ -130,7 +131,7 @@ export default function HMWScopeSlider() {
             x={PROB_CX} y={PROB_Y + 18}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.28)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           >PROBLEM SPACE</text>
           <line
             x1={PROB_X + 16} y1={PROB_Y + 29} x2={PROB_X + PROB_W - 16} y2={PROB_Y + 29}
@@ -140,7 +141,7 @@ export default function HMWScopeSlider() {
             x={PROB_CX} y={PROB_Y + 44}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.40)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >INSIGHT</text>
           {([
             ['Users abandon checkout',          PROB_Y + 68, '6.5', 0.74],
@@ -226,7 +227,7 @@ export default function HMWScopeSlider() {
                 x={SOL_CX} y={SOL_Y + 18}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                fill={data.warn ? `${AMBER}0.55)` : 'rgba(255,255,255,0.40)'}
+                fill={data.warn ? `${AMBER_TEXT}0.861)` : 'rgba(255,255,255,0.7)'}
                 style={{ userSelect: 'none' }}
               >HOW MIGHT WE</text>
               <line
@@ -276,19 +277,19 @@ export default function HMWScopeSlider() {
             x={BAR_X} y={BAR_Y - 6}
             textAnchor="start" dominantBaseline="auto"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           >NARROW</text>
           <text
             x={BAR_X + BAR_MAX_W} y={BAR_Y - 6}
             textAnchor="end" dominantBaseline="auto"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           >BROAD</text>
           <text
             x={BAR_X + BAR_MAX_W / 2} y={BAR_Y - 6}
             textAnchor="middle" dominantBaseline="auto"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
           >← SCOPE BREADTH →</text>
 
           {/* Note below bar */}
