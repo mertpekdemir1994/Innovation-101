@@ -48,7 +48,7 @@ export default function SWOTEstablishing() {
       viewport={{ once: true, margin: '-80px' }}
       aria-label="SWOT grid showing four quadrants and cross-pairing connections"
     >
-      <svg viewBox="0 0 640 420" width="100%" style={{ maxWidth: 700, overflow: 'visible' }}>
+      <svg viewBox="0 0 640 420" width="100%" style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}>
         <defs>
           <filter id="swot-est-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="6" result="blur" />
