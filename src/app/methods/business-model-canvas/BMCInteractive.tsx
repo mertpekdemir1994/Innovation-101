@@ -203,7 +203,7 @@ export default function BMCInteractive() {
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
         preserveAspectRatio="xMidYMid meet"
-        style={{ display: 'block' }}
+        style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
         aria-label="Interactive Business Model Canvas. Click any block to explore what it holds and what it depends on. Use the scenario buttons to see how changing one block propagates to others, and how a premium channel change breaks the cost structure."
       >
         <defs>
