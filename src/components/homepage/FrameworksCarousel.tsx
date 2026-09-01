@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
@@ -233,19 +233,18 @@ export default function FrameworksCarousel() {
     })
   }, [])
 
-  useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'ArrowRight') next()
-      if (e.key === 'ArrowLeft') prev()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowRight') next()
+    if (e.key === 'ArrowLeft') prev()
   }, [next, prev])
 
   const fw: Framework = FRAMEWORKS[active]
 
+  // onKeyDown here catches Left/Right bubbled up from the focusable prev/next/dot
+  // buttons inside; the region itself is never a keyboard-interaction target on its own.
   return (
-    <div role="region" aria-label="Frameworks carousel">
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+    <div role="region" aria-label="Frameworks carousel" onKeyDown={handleKeyDown}>
 
       {/* ── Slide ─────────────────────────────────────────────────────────── */}
       <div style={{ overflow: 'hidden', borderRadius: '8px' }}>
