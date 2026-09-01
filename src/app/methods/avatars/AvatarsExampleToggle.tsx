@@ -103,7 +103,7 @@ export default function AvatarsExampleToggle() {
             style={{ background: 'var(--color-neutral-50)', border: '1px solid var(--color-neutral-200)' }}
           >
             <p className="font-mono uppercase tracking-widest mb-2"
-              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
             >Avatar chosen</p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)', fontWeight: 600 }}>
               {d.outcome}

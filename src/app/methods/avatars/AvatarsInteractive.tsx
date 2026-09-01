@@ -115,7 +115,7 @@ export default function AvatarsInteractive() {
             return (
               <g
                 key={id}
-                style={{ cursor: 'pointer', outline: 'none' }}
+                style={{ cursor: 'pointer' }}
                 onClick={() => setActiveRing(activeRing === id ? null : id)}
                 onMouseEnter={() => setHoveredRing(id)}
                 onMouseLeave={() => setHoveredRing(null)}

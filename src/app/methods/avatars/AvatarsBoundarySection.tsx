@@ -137,7 +137,6 @@ export default function AvatarsBoundarySection() {
             style={{
               background: active === id ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.03)',
               border:     `1px solid ${active === id ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.08)'}`,
-              outline:    'none',
             }}
             aria-pressed={active === id}
           >
@@ -171,9 +170,9 @@ export default function AvatarsBoundarySection() {
 
               {/* Text */}
               <div className="flex-1">
-                <h4 className="font-semibold mb-3"
+                <h3 className="font-semibold mb-3"
                   style={{ fontSize: 'var(--text-xl)', color: '#FAFAFA' }}
-                >{DETAIL[active].heading}</h4>
+                >{DETAIL[active].heading}</h3>
                 <p className="mb-5"
                   style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.62)' }}
                 >{DETAIL[active].description}</p>
