@@ -64,7 +64,7 @@ export default function JTBDExampleToggle() {
 
             {/* What the investigation found */}
             <div className="rounded-xl p-6 mb-6" style={{ background: 'var(--color-neutral-50)', border: '1px solid var(--color-neutral-100)' }}>
-              <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+              <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                 What the investigation revealed
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
@@ -103,7 +103,7 @@ export default function JTBDExampleToggle() {
 
             {/* True competition */}
             <div className="rounded-xl p-5 mb-6" style={{ background: 'var(--color-neutral-50)', border: '1px solid var(--color-neutral-100)' }}>
-              <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+              <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                 The real competition (not other milkshakes)
               </p>
               <div className="flex gap-3 flex-wrap">
@@ -135,7 +135,7 @@ export default function JTBDExampleToggle() {
             </div>
 
             <div className="rounded-lg p-4" style={{ background: 'var(--color-neutral-50)', border: '1px solid var(--color-neutral-100)' }}>
-              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                 What made this possible
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -168,7 +168,7 @@ export default function JTBDExampleToggle() {
 
             {/* AI-generated job statements */}
             <div className="flex flex-col gap-3 mb-6">
-              <p className="font-mono uppercase tracking-widest" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+              <p className="font-mono uppercase tracking-widest" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                 AI-generated job statements
               </p>
               {[
@@ -197,7 +197,7 @@ export default function JTBDExampleToggle() {
                   <div className="grid sm:grid-cols-3 gap-0 divide-x divide-neutral-100 p-0">
                     {(['WHEN', 'I WANT TO', 'SO I CAN'] as const).map((slotLabel, si) => (
                       <div key={slotLabel} className="p-3">
-                        <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                        <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                           {slotLabel}
                         </p>
                         <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
