@@ -5,10 +5,10 @@ import { motion, useReducedMotion } from 'framer-motion'
 const NAVY = 'rgba(31,58,95,'
 
 const SVG_W = 700
-const SVG_H = 350
-const CL_W  = 200
-const CL_H  = 116
-const STRIP_H = 42
+const SVG_H = 500
+const CL_W  = 280
+const CL_H  = 190
+const STRIP_H = 64
 
 type ClusterId = 'progress' | 'social' | 'firstweek' | 'identity'
 
@@ -25,34 +25,35 @@ const CLUSTERS: ClusterDef[] = [
     id: 'progress',
     insightLines: ['People quit when', 'progress feels invisible'],
     cards: ['skipped, felt meaningless', 'no sense of improving', 'same as 6 months ago', "can't tell if working"],
-    tlx: 75, tly: 58,
+    tlx: 40, tly: 40,
   },
   {
     id: 'social',
     insightLines: ['Accountability only', 'works when mutual'],
     cards: ['shows up when expected', 'solo goals feel optional', 'group chat kept me going', "dies when I'm alone"],
-    tlx: 425, tly: 58,
+    tlx: 380, tly: 40,
   },
   {
     id: 'firstweek',
     insightLines: ['The first session', 'sets the ceiling'],
     cards: ["didn't know the rules", 'felt judged the first time', 'figured out by watching', '3 sessions to feel normal'],
-    tlx: 75, tly: 212,
+    tlx: 40, tly: 255,
   },
   {
     id: 'identity',
     insightLines: ['People exercise for', 'who they want to become'],
     cards: ['doing it for future me', 'current pain, future reward', 'want to be that person', 'identity, not fitness'],
-    tlx: 425, tly: 212,
+    tlx: 380, tly: 255,
   },
 ]
 
-// Card offsets relative to cluster TL
+// Card offsets relative to cluster TL — stacked single-column so each card
+// has room for its full text at a legible font size
 const CARD_OFF = [
-  { dx: 10,  dy: 46 },
-  { dx: 106, dy: 46 },
-  { dx: 10,  dy: 70 },
-  { dx: 106, dy: 70 },
+  { dx: 10, dy: 74 },
+  { dx: 10, dy: 100 },
+  { dx: 10, dy: 126 },
+  { dx: 10, dy: 152 },
 ] as const
 
 export default function AMEstablishing() {
@@ -150,10 +151,10 @@ export default function AMEstablishing() {
 
             {/* "INSIGHT" micro label */}
             <text
-              x={cl.tlx + CL_W / 2} y={cl.tly + 11}
+              x={cl.tlx + CL_W / 2} y={cl.tly + 16}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-              fill="rgba(255,255,255,0.7)"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fill="rgba(255,255,255,0.85)"
               style={{ userSelect: 'none' }}
             >INSIGHT</text>
 
@@ -161,31 +162,31 @@ export default function AMEstablishing() {
             {cl.insightLines.map((line, i) => (
               <text
                 key={i}
-                x={cl.tlx + CL_W / 2} y={cl.tly + 22 + i * 13}
+                x={cl.tlx + CL_W / 2} y={cl.tly + 34 + i * 18}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="5.5" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
-                fill="rgba(255,255,255,0.88)"
+                fontSize="11" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
+                fill="rgba(255,255,255,0.92)"
                 style={{ userSelect: 'none' }}
               >{line}</text>
             ))}
 
-            {/* Cards */}
+            {/* Cards — one per row, full cluster width */}
             {cl.cards.map((cardText, i) => {
               const off = CARD_OFF[i]
               return (
                 <g key={i}>
                   <rect
                     x={cl.tlx + off.dx} y={cl.tly + off.dy}
-                    width={84} height={18} rx={3}
+                    width={CL_W - 20} height={22} rx={3}
                     fill="rgba(255,255,255,0.07)"
                     stroke="rgba(255,255,255,0.20)"
                     strokeWidth={0.8}
                   />
                   <text
-                    x={cl.tlx + off.dx + 5} y={cl.tly + off.dy + 9}
+                    x={cl.tlx + off.dx + 8} y={cl.tly + off.dy + 12}
                     textAnchor="start" dominantBaseline="middle"
-                    fontSize="4.5" fontFamily="var(--font-inter,sans-serif)"
-                    fill="rgba(255,255,255,0.58)"
+                    fontSize="11" fontFamily="var(--font-inter,sans-serif)"
+                    fill="rgba(255,255,255,0.72)"
                     style={{ userSelect: 'none' }}
                   >{cardText}</text>
                 </g>
@@ -196,9 +197,9 @@ export default function AMEstablishing() {
 
         {/* Bottom caption */}
         <motion.text
-          x={SVG_W / 2} y={SVG_H - 10}
+          x={SVG_W / 2} y={SVG_H - 14}
           textAnchor="middle" dominantBaseline="auto"
-          fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
           fill="rgba(255,255,255,0.59)"
           style={{ userSelect: 'none' }}
           variants={fadeIn}

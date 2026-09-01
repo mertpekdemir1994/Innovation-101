@@ -8,10 +8,10 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
-const SVG_H = 350
-const CL_W  = 200
-const CL_H  = 116
-const STRIP_H = 42
+const SVG_H = 500
+const CL_W  = 280
+const CL_H  = 190
+const STRIP_H = 64
 
 type ClusterId = 'progress' | 'social' | 'firstweek' | 'identity'
 
@@ -30,36 +30,37 @@ const CLUSTERS: ClusterDef[] = [
     insightLines: ['People quit when', 'progress feels invisible'],
     aiCategory: 'Progress Tracking',
     cards: ['skipped, felt meaningless', 'no sense of improving', 'same as 6 months ago', "can't tell if working"],
-    tlx: 75, tly: 58,
+    tlx: 40, tly: 40,
   },
   {
     id: 'social',
     insightLines: ['Accountability only', 'works when mutual'],
     aiCategory: 'Social Features',
     cards: ['shows up when expected', 'solo goals feel optional', 'group chat kept me going', "dies when I'm alone"],
-    tlx: 425, tly: 58,
+    tlx: 380, tly: 40,
   },
   {
     id: 'firstweek',
     insightLines: ['The first session', 'sets the ceiling'],
     aiCategory: 'Onboarding',
     cards: ["didn't know the rules", 'felt judged the first time', 'figured out by watching', '3 sessions to feel normal'],
-    tlx: 75, tly: 212,
+    tlx: 40, tly: 255,
   },
   {
     id: 'identity',
     insightLines: ['People exercise for', 'who they want to become'],
     aiCategory: 'User Motivation',
     cards: ['doing it for future me', 'current pain, future reward', 'want to be that person', 'identity, not fitness'],
-    tlx: 425, tly: 212,
+    tlx: 380, tly: 255,
   },
 ]
 
+// Cards stacked single-column so each has room for its full text
 const CARD_OFF = [
-  { dx: 10,  dy: 46 },
-  { dx: 106, dy: 46 },
-  { dx: 10,  dy: 70 },
-  { dx: 106, dy: 70 },
+  { dx: 10, dy: 74 },
+  { dx: 10, dy: 100 },
+  { dx: 10, dy: 126 },
+  { dx: 10, dy: 152 },
 ] as const
 
 type Mode = 'human' | 'ai'
@@ -133,16 +134,16 @@ export default function AMAIReactivated() {
                 transition={prefersReduced ? { duration: 0 } : { duration: 0.25 }}
               >
                 <rect
-                  x={SVG_W / 2 - 130} y={SVG_H - 28}
-                  width={260} height={18} rx={4}
+                  x={SVG_W / 2 - 240} y={SVG_H - 40}
+                  width={480} height={26} rx={4}
                   fill={`${INDIGO}0.12)`}
                   stroke={`${INDIGO}0.28)`}
                   strokeWidth={0.8}
                 />
                 <text
-                  x={SVG_W / 2} y={SVG_H - 19}
+                  x={SVG_W / 2} y={SVG_H - 27}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                   fill={`${INDIGO_TEXT}0.937)`}
                   style={{ userSelect: 'none' }}
                 >AI GROUPS BY SURFACE SIMILARITY: LABELS AS CATEGORIES</text>
@@ -196,19 +197,19 @@ export default function AMAIReactivated() {
                 >
                   {/* Micro label */}
                   <text
-                    x={cl.tlx + CL_W / 2} y={cl.tly + 11}
+                    x={cl.tlx + CL_W / 2} y={cl.tly + 16}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-                    fill={isAI ? `${INDIGO_TEXT}0.905)` : 'rgba(255,255,255,0.7)'}
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                    fill={isAI ? `${INDIGO_TEXT}0.905)` : 'rgba(255,255,255,0.85)'}
                     style={{ userSelect: 'none' }}
                   >{isAI ? 'CATEGORY' : 'INSIGHT'}</text>
 
                   {isAI ? (
                     /* AI mode: category label - single centered line */
                     <text
-                      x={cl.tlx + CL_W / 2} y={cl.tly + 29}
+                      x={cl.tlx + CL_W / 2} y={cl.tly + 40}
                       textAnchor="middle" dominantBaseline="middle"
-                      fontSize="6" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
+                      fontSize="11" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
                       fill={`${INDIGO_TEXT}0.979)`}
                       style={{ userSelect: 'none' }}
                     >{cl.aiCategory}</text>
@@ -217,10 +218,10 @@ export default function AMAIReactivated() {
                     cl.insightLines.map((line, i) => (
                       <text
                         key={i}
-                        x={cl.tlx + CL_W / 2} y={cl.tly + 22 + i * 13}
+                        x={cl.tlx + CL_W / 2} y={cl.tly + 34 + i * 18}
                         textAnchor="middle" dominantBaseline="middle"
-                        fontSize="5.5" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
-                        fill="rgba(255,255,255,0.88)"
+                        fontSize="11" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
+                        fill="rgba(255,255,255,0.92)"
                         style={{ userSelect: 'none' }}
                       >{line}</text>
                     ))
@@ -228,24 +229,24 @@ export default function AMAIReactivated() {
                 </motion.g>
               </AnimatePresence>
 
-              {/* Cards */}
+              {/* Cards — one per row, full cluster width */}
               {cl.cards.map((cardText, i) => {
                 const off = CARD_OFF[i]
                 return (
                   <g key={i}>
                     <rect
                       x={cl.tlx + off.dx} y={cl.tly + off.dy}
-                      width={84} height={18} rx={3}
+                      width={CL_W - 20} height={22} rx={3}
                       fill="rgba(255,255,255,0.07)"
                       stroke={isAI ? `${INDIGO}0.22)` : 'rgba(255,255,255,0.20)'}
                       strokeWidth={0.8}
                       style={{ transition: 'stroke 0.35s' }}
                     />
                     <text
-                      x={cl.tlx + off.dx + 5} y={cl.tly + off.dy + 9}
+                      x={cl.tlx + off.dx + 8} y={cl.tly + off.dy + 12}
                       textAnchor="start" dominantBaseline="middle"
-                      fontSize="4.5" fontFamily="var(--font-inter,sans-serif)"
-                      fill={isAI ? `${INDIGO_TEXT}0.92)` : 'rgba(255,255,255,0.58)'}
+                      fontSize="11" fontFamily="var(--font-inter,sans-serif)"
+                      fill={isAI ? `${INDIGO_TEXT}0.92)` : 'rgba(255,255,255,0.72)'}
                       style={{ userSelect: 'none', transition: 'fill 0.35s' }}
                     >{cardText}</text>
                   </g>
