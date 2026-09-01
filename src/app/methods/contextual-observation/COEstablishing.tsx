@@ -42,7 +42,7 @@ export default function COEstablishing() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ maxWidth: 720, overflow: 'visible' }}
+        style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
       >
         <defs>
           <filter id="co-est-glow" x="-30%" y="-30%" width="160%" height="160%">

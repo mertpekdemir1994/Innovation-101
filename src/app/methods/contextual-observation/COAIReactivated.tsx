@@ -55,7 +55,7 @@ export default function COAIReactivated() {
       <svg
         viewBox="0 0 700 248"
         width="100%"
-        style={{ maxWidth: 720, overflow: 'visible' }}
+        style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
         aria-label={
           isAI
             ? 'AI mode: camera frame highlights only the computer screen, while sticky notes, papers, and shoebox outside the frame are dimmed'
