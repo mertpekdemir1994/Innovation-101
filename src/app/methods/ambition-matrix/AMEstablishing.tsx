@@ -100,7 +100,7 @@ export default function AMEstablishing() {
             <text
               x={z.cx} y={z.cy + 4}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize={z.id === 'transformational' ? '6.5' : '8'}
+              fontSize="9"
               fontFamily="var(--font-mono)"
               letterSpacing="0.12em"
               fill={`${PLUM_TEXT}0.979)`}
@@ -113,20 +113,20 @@ export default function AMEstablishing() {
         {/* X axis tick labels */}
         <motion.text
           x={GX} y={GB + 22} textAnchor="start"
-          fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           variants={fade} transition={gridT}
         >EXISTING</motion.text>
         <motion.text
           x={GR} y={GB + 22} textAnchor="end"
-          fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           variants={fade} transition={gridT}
         >NEW</motion.text>
         {/* X-axis title */}
         <motion.text
           x={MX} y={GB + 40} textAnchor="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
           variants={fade} transition={gridT}
         >MARKET / CUSTOMER →</motion.text>
@@ -134,13 +134,13 @@ export default function AMEstablishing() {
         {/* Y axis tick labels */}
         <motion.text
           x={GX - 8} y={GB} textAnchor="end"
-          fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           variants={fade} transition={gridT}
         >EXISTING</motion.text>
         <motion.text
           x={GX - 8} y={GY + 6} textAnchor="end"
-          fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           variants={fade} transition={gridT}
         >NEW</motion.text>
@@ -148,7 +148,7 @@ export default function AMEstablishing() {
         <motion.text
           transform={`translate(28, ${MY}) rotate(-90)`}
           textAnchor="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
           variants={fade} transition={gridT}
         >↑ OFFERING / PRODUCT</motion.text>
