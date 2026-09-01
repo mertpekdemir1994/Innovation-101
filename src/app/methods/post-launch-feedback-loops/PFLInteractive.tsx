@@ -150,7 +150,7 @@ export default function PFLInteractive() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Interactive feedback loop. Click a stage to explore it. Click a break point to sever the loop at that junction and see what a broken loop produces."
-        style={{ width: '100%', maxWidth: SVG_W, display: 'block', cursor: 'default' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block', cursor: 'default' }}
       >
         <defs>
           <filter id="pfl-int-glow" x="-20%" y="-20%" width="140%" height="140%">
