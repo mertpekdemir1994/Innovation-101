@@ -168,7 +168,7 @@ export default function JourneyMappingPage() {
               </div>
 
               <div>
-                <p className="font-mono uppercase tracking-widest mb-4" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                <p className="font-mono uppercase tracking-widest mb-4" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do not lean on it when
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -179,7 +179,7 @@ export default function JourneyMappingPage() {
                     'You have not done research. A journey map built from assumption is a confident diagram of the team\'s wishful thinking, worse than no map, because it looks authoritative.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item}
                       </span>
@@ -494,7 +494,7 @@ export default function JourneyMappingPage() {
               ))}
             </div>
 
-            <p className="mt-6" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)', fontStyle: 'italic' }}>
+            <p className="mt-6" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)', fontStyle: 'italic' }}>
               Note: The Design Sprint typically imports an existing journey map or persona rather than building one fresh in five days, and FDE uses embedded observation rather than workshop-based mapping. These reflect real differences in how the method is used within each framework.
             </p>
           </div>

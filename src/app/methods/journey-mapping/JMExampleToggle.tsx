@@ -53,17 +53,17 @@ export default function JMExampleToggle() {
   return (
     <div>
       {/* Tab pills */}
-      <div className="flex gap-2 mb-8" role="tablist" aria-label="Choose example version">
+      <div className="flex gap-2 mb-8" role="group" aria-label="Choose example version">
         {TABS.map(({ id, label }) => (
           <button
             key={id}
-            role="tab"
-            aria-selected={activeTab === id}
+            type="button"
+            aria-pressed={activeTab === id}
             onClick={() => setActiveTab(id)}
             className="rounded-full px-5 py-1.5 text-sm font-semibold transition-colors"
             style={{
               background: activeTab === id ? 'rgba(42,111,122,0.12)' : 'transparent',
-              color:      activeTab === id ? 'var(--color-neutral-900)' : 'var(--color-neutral-400)',
+              color:      activeTab === id ? 'var(--color-neutral-900)' : 'var(--color-neutral-500)',
               border:     `1px solid ${activeTab === id ? 'rgba(42,111,122,0.35)' : 'var(--color-neutral-200)'}`,
             }}
           >{label}</button>
@@ -73,7 +73,6 @@ export default function JMExampleToggle() {
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
-          role="tabpanel"
           initial={prefersReduced ? { opacity: 1 } : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={prefersReduced ? { opacity: 0 } : { opacity: 0, y: -6 }}
@@ -109,7 +108,7 @@ export default function JMExampleToggle() {
             style={{ background: 'var(--color-neutral-50)', border: '1px solid var(--color-neutral-100)' }}
           >
             <p className="font-mono uppercase tracking-widest mb-2"
-              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
             >Finding</p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
               {d.finding}

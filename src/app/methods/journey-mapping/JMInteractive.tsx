@@ -215,7 +215,7 @@ export default function JMInteractive() {
             return (
               <g
                 key={id}
-                style={{ cursor: 'pointer', outline: 'none' }}
+                style={{ cursor: 'pointer' }}
                 onClick={() => setActiveStage(activeStage === id ? null : id)}
                 onMouseEnter={() => setHoveredStage(id)}
                 onMouseLeave={() => setHoveredStage(null)}
