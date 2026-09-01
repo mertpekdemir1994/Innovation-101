@@ -28,7 +28,7 @@ export default function AboutPage() {
       {/* ═══════════════════════════════════════════════════════════════════
           HERO: dark, no photo, specific opening claim
       ══════════════════════════════════════════════════════════════════════ */}
-      <DarkSection className="relative overflow-hidden">
+      <DarkSection className="relative overflow-hidden" ariaLabelledBy="about-hero-heading">
         <Container>
           <div style={{ paddingTop: '6rem', paddingBottom: '6rem', maxWidth: '38rem' }}>
             <p
@@ -44,6 +44,7 @@ export default function AboutPage() {
               About this site
             </p>
             <h1
+              id="about-hero-heading"
               className="font-display font-semibold text-balance"
               style={{
                 fontSize: 'clamp(2.25rem, 5vw, 3.5rem)',
@@ -75,9 +76,10 @@ export default function AboutPage() {
       {/* ═══════════════════════════════════════════════════════════════════
           WHAT THIS IS: no template, just two strong paragraphs
       ══════════════════════════════════════════════════════════════════════ */}
-      <LightSection>
+      <LightSection ariaLabelledBy="what-this-is-heading">
         <Container prose>
           <div style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+            <h2 id="what-this-is-heading" className="sr-only">What this is</h2>
             <p
               style={{
                 fontSize: 'var(--text-lg)',
@@ -111,7 +113,7 @@ export default function AboutPage() {
       {/* ═══════════════════════════════════════════════════════════════════
           MERT: photo + bio together, no "THE PRACTITIONER" eyebrow
       ══════════════════════════════════════════════════════════════════════ */}
-      <LightSection>
+      <LightSection ariaLabelledBy="mert-heading">
         <Container prose>
           <div
             style={{
@@ -124,6 +126,7 @@ export default function AboutPage() {
             {/* Name + role: above the grid so it spans full width */}
             <div style={{ paddingTop: '3rem', marginBottom: '2rem' }}>
               <h2
+                id="mert-heading"
                 className="font-display font-semibold"
                 style={{
                   fontSize: 'clamp(1.75rem, 3.5vw, 2.25rem)',
@@ -139,7 +142,7 @@ export default function AboutPage() {
                   fontFamily: 'var(--font-mono)',
                   fontSize: 'var(--text-2xs)',
                   letterSpacing: '0.08em',
-                  color: 'var(--color-neutral-400)',
+                  color: 'var(--color-neutral-500)',
                   textTransform: 'uppercase',
                 }}
               >
@@ -294,10 +297,11 @@ export default function AboutPage() {
       {/* ═══════════════════════════════════════════════════════════════════
           HOW IT WAS BUILT: no template headline, direct and specific
       ══════════════════════════════════════════════════════════════════════ */}
-      <DarkSection>
+      <DarkSection ariaLabelledBy="how-it-was-built-heading">
         <Container prose>
           <div style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
 
+            <h2 id="how-it-was-built-heading" className="sr-only">How it was built</h2>
             <p
               style={{
                 fontFamily: 'var(--font-mono)',
@@ -316,7 +320,7 @@ export default function AboutPage() {
                 fontSize: 'var(--text-2xs)',
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.30)',
+                color: 'var(--color-dark-muted)',
                 marginBottom: '2rem',
               }}
             >
