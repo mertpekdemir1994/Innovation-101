@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
@@ -58,21 +59,21 @@ function stateColors(s: State, unsupported = false) {
     fill: unsupported ? `${AMBER}0.05)` : `${BRICK}0.13)`,
     stroke: unsupported ? `${AMBER}0.50)` : `${BRICK}0.72)`,
     dash: '', sw: 1.6,
-    label: unsupported ? `${AMBER}0.65)` : `${BRICK}0.85)`,
+    label: unsupported ? `${AMBER_TEXT}0.891)` : `${BRICK_TEXT}0.969)`,
     stateTag: 'HAVE IT',
   }
   if (s === 'partial') return {
     fill: `${AMBER}0.07)`,
     stroke: `${AMBER}0.58)`,
     dash: '6 3', sw: 1.3,
-    label: `${AMBER}0.78)`,
+    label: `${AMBER_TEXT}0.932)`,
     stateTag: 'PARTIAL',
   }
   return {
     fill: 'rgba(10,5,4,0.72)',
     stroke: `${AMBER}0.42)`,
     dash: '4 4', sw: 1.1,
-    label: `${AMBER}0.60)`,
+    label: `${AMBER_TEXT}0.876)`,
     stateTag: 'GAP',
   }
 }
@@ -158,7 +159,7 @@ export default function CMEstablishing() {
             x={42} y={L[ln].cy}
             textAnchor="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${BRICK}0.40)`} style={{ userSelect: 'none' }}
+            fill={`rgba(183,145,135,0.874)`} style={{ userSelect: 'none' }}
             transform={`rotate(-90 42 ${L[ln].cy})`}
             {...fade(layerDelay[ln])}>
             {L[ln].label}
@@ -236,7 +237,7 @@ export default function CMEstablishing() {
         {/* Caption */}
         <motion.text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.24)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }}
           {...fade(1.5)}>
           Capability is a stack. A gap at the foundation holds up everything above it.
         </motion.text>
