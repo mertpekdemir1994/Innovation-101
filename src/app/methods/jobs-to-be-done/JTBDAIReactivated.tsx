@@ -94,7 +94,7 @@ export default function JTBDAIReactivated() {
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}
           width="100%"
-          style={{ display: 'block', overflow: 'visible' }}
+          style={{ maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}
         >
           <defs>
             <filter id="jtbd-ai-glow" x="-30%" y="-30%" width="160%" height="160%">
