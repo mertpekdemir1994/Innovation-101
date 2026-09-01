@@ -255,7 +255,7 @@ export default function TTIDefensibilityBuilder() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ overflow: 'visible' }}
+        style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
         role="group"
         aria-label={`Defensibility builder, ${count} of 10 types selected. ${meter.srText}`}
       >

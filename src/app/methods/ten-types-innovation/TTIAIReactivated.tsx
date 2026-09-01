@@ -74,7 +74,7 @@ export default function TTIAIReactivated() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ overflow: 'visible' }}
+        style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
         aria-hidden="true"
       >
         <defs>
