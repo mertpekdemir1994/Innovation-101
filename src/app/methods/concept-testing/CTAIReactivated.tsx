@@ -3,8 +3,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM   = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W  = 700
 const SVG_H  = 278
@@ -81,7 +84,7 @@ export default function CTAIReactivated() {
           style={{ transition: 'fill 0.35s, stroke 0.35s' }} />
         {/* Percentage */}
         <text x={S_CX} y={S_TOP - 10} textAnchor="middle"
-          fill={isAI ? `${INDIGO}0.88)` : `${AMBER}0.85)`}
+          fill={isAI ? `${INDIGO_TEXT}0.975)` : `${AMBER}0.85)`}
           fontSize={13} fontWeight={600} fontFamily="monospace"
           style={{ transition: 'fill 0.35s' }}>76%</text>
         {/* Labels */}
@@ -89,11 +92,11 @@ export default function CTAIReactivated() {
           fill="rgba(255,255,255,0.60)" fontSize={7.5} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">STATED</text>
         <text x={S_CX} y={46} textAnchor="middle"
-          fill="rgba(255,255,255,0.28)" fontSize={6} fontFamily="monospace">
+          fill="rgba(255,255,255,0.64)" fontSize={6} fontFamily="monospace">
           {isAI ? 'AI simulates warm interest' : 'What people say'}
         </text>
         <text x={S_CX} y={BASE_Y + 12} textAnchor="middle"
-          fill={isAI ? `${INDIGO}0.50)` : `${AMBER}0.50)`}
+          fill={isAI ? `${INDIGO_TEXT}0.895)` : `${AMBER_TEXT}0.845)`}
           fontSize={6} fontFamily="monospace"
           style={{ transition: 'fill 0.35s' }}>
           {isAI ? 'AI-generated (stated only)' : 'Stated preference'}
@@ -116,22 +119,22 @@ export default function CTAIReactivated() {
                 fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" strokeWidth={1}
                 strokeDasharray="4 3" />
               <text x={R_CX} y={BASE_Y - 5} textAnchor="middle"
-                fill="rgba(255,255,255,0.30)" fontSize={6.5} fontFamily="monospace">—</text>
+                fill="rgba(255,255,255,0.65)" fontSize={6.5} fontFamily="monospace">—</text>
               {/* Cannot produce label */}
               <rect x={R_L - 4} y={S_TOP + 10} width={BAR_W + 8} height={80} rx={4}
                 fill={`${INDIGO}0.05)`} stroke={`${INDIGO}0.15)`} strokeWidth={1}
                 strokeDasharray="4 3" />
               <text x={R_CX} y={S_TOP + 42} textAnchor="middle"
-                fill={`${INDIGO}0.45)`} fontSize={6.5} fontWeight={600} fontFamily="monospace"
+                fill={`${INDIGO_TEXT}0.885)`} fontSize={6.5} fontWeight={600} fontFamily="monospace"
                 letterSpacing={0.6}>AI CANNOT</text>
               <text x={R_CX} y={S_TOP + 54} textAnchor="middle"
-                fill={`${INDIGO}0.45)`} fontSize={6.5} fontWeight={600} fontFamily="monospace"
+                fill={`${INDIGO_TEXT}0.885)`} fontSize={6.5} fontWeight={600} fontFamily="monospace"
                 letterSpacing={0.6}>PRODUCE</text>
               <text x={R_CX} y={S_TOP + 66} textAnchor="middle"
-                fill={`${INDIGO}0.45)`} fontSize={6.5} fontWeight={600} fontFamily="monospace"
+                fill={`${INDIGO_TEXT}0.885)`} fontSize={6.5} fontWeight={600} fontFamily="monospace"
                 letterSpacing={0.6}>REVEALED</text>
               <text x={R_CX} y={S_TOP + 78} textAnchor="middle"
-                fill={`${INDIGO}0.30)`} fontSize={5.5} fontFamily="monospace">No stake · no commitment</text>
+                fill={`${INDIGO_TEXT}0.853)`} fontSize={5.5} fontFamily="monospace">No stake · no commitment</text>
             </motion.g>
           ) : (
             /* Human mode: genuine revealed bar */
@@ -143,7 +146,7 @@ export default function CTAIReactivated() {
                 fill={`${PLUM}0.32)`} stroke={`${PLUM}0.68)`} strokeWidth={1.5}
                 filter="url(#ct-ai-glow)" />
               <text x={R_CX} y={BASE_Y - R_H - 10} textAnchor="middle"
-                fill={`${PLUM}0.88)`} fontSize={13} fontWeight={600} fontFamily="monospace">28%</text>
+                fill={`${PLUM_TEXT}0.975)`} fontSize={13} fontWeight={600} fontFamily="monospace">28%</text>
               {/* Verdict */}
               <rect x={R_L - 4} y={BASE_Y - R_H - 28} width={BAR_W + 8} height={17} rx={3}
                 fill="rgba(245,158,11,0.10)" stroke="rgba(245,158,11,0.28)" strokeWidth={1} />
@@ -159,11 +162,11 @@ export default function CTAIReactivated() {
           fill="rgba(255,255,255,0.60)" fontSize={7.5} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">REVEALED</text>
         <text x={R_CX} y={46} textAnchor="middle"
-          fill="rgba(255,255,255,0.28)" fontSize={6} fontFamily="monospace">
+          fill="rgba(255,255,255,0.64)" fontSize={6} fontFamily="monospace">
           {isAI ? 'No stake, cannot commit' : 'What people do'}
         </text>
         <text x={R_CX} y={BASE_Y + 12} textAnchor="middle"
-          fill={isAI ? `${INDIGO}0.40)` : `${PLUM}0.45)`}
+          fill={isAI ? `${INDIGO_TEXT}0.874)` : `${PLUM_TEXT}0.885)`}
           fontSize={6} fontFamily="monospace"
           style={{ transition: 'fill 0.35s' }}>
           {isAI ? 'Absent, structurally impossible' : 'Revealed commitment'}
@@ -175,13 +178,13 @@ export default function CTAIReactivated() {
           strokeWidth={1.5} strokeDasharray="6 4"
           style={{ transition: 'stroke 0.35s' }} />
         <text x={548} y={TH_Y - 6}
-          fill={isAI ? `${INDIGO}0.60)` : 'rgba(255,255,255,0.62)'}
+          fill={isAI ? `${INDIGO_TEXT}0.916)` : 'rgba(255,255,255,0.62)'}
           fontSize={7} fontWeight={600} letterSpacing={1.2} fontFamily="monospace"
           style={{ transition: 'fill 0.35s' }}>
           {isAI ? 'THRESHOLD: CANNOT CLEAR' : 'SUCCESS THRESHOLD'}
         </text>
         <text x={548} y={TH_Y + 5}
-          fill="rgba(255,255,255,0.28)" fontSize={6} fontFamily="monospace" letterSpacing={0.8}>
+          fill="rgba(255,255,255,0.64)" fontSize={6} fontFamily="monospace" letterSpacing={0.8}>
           SET IN ADVANCE · 40%
         </text>
 

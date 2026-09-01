@@ -3,7 +3,9 @@ import { useState, useEffect, useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const PLUM  = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 295
@@ -100,12 +102,12 @@ export default function CTEstablishing() {
           fill="rgba(255,255,255,0.65)" fontSize={8} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">STATED</text>
         <text x={S_CX} y={52} textAnchor="middle"
-          fill="rgba(255,255,255,0.28)" fontSize={6.5} fontFamily="monospace"
+          fill="rgba(255,255,255,0.64)" fontSize={6.5} fontFamily="monospace"
           letterSpacing={0.8}>What people say</text>
 
         {/* Below-bar label */}
         <text x={S_CX} y={BASE_Y + 14} textAnchor="middle"
-          fill={`${AMBER}0.55)`} fontSize={6.5} fontFamily="monospace"
+          fill={`${AMBER_TEXT}0.861)`} fontSize={6.5} fontFamily="monospace"
           letterSpacing={0.6}>Stated preference</text>
 
         {/* ── REVEALED BAR (PLUM) ───────────────────────────── */}
@@ -141,12 +143,12 @@ export default function CTEstablishing() {
           fill="rgba(255,255,255,0.65)" fontSize={8} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">REVEALED</text>
         <text x={R_CX} y={52} textAnchor="middle"
-          fill="rgba(255,255,255,0.28)" fontSize={6.5} fontFamily="monospace"
+          fill="rgba(255,255,255,0.64)" fontSize={6.5} fontFamily="monospace"
           letterSpacing={0.8}>What people do</text>
 
         {/* Below-bar label */}
         <text x={R_CX} y={BASE_Y + 14} textAnchor="middle"
-          fill={`${PLUM}0.55)`} fontSize={6.5} fontFamily="monospace"
+          fill={`${PLUM_TEXT}0.905)`} fontSize={6.5} fontFamily="monospace"
           letterSpacing={0.6}>Revealed commitment</text>
 
         {/* ── THRESHOLD LINE ────────────────────────────────── */}
@@ -165,7 +167,7 @@ export default function CTEstablishing() {
             fill="rgba(255,255,255,0.70)" fontSize={7.5} fontWeight={600}
             letterSpacing={1.2} fontFamily="monospace">SUCCESS THRESHOLD</text>
           <text x={548} y={TH_Y + 5}
-            fill="rgba(255,255,255,0.35)" fontSize={6.5} fontFamily="monospace"
+            fill="rgba(255,255,255,0.675)" fontSize={6.5} fontFamily="monospace"
             letterSpacing={0.8}>SET IN ADVANCE · 40%</text>
 
           {/* Small tick marks at bars */}
@@ -193,10 +195,10 @@ export default function CTEstablishing() {
 
           {/* Gap label */}
           <text x={GAP_CX} y={136} textAnchor="middle"
-            fill="rgba(255,255,255,0.35)" fontSize={7} fontWeight={600}
+            fill="rgba(255,255,255,0.675)" fontSize={7} fontWeight={600}
             letterSpacing={1.2} fontFamily="monospace">STATED vs</text>
           <text x={GAP_CX} y={147} textAnchor="middle"
-            fill="rgba(255,255,255,0.35)" fontSize={7} fontWeight={600}
+            fill="rgba(255,255,255,0.675)" fontSize={7} fontWeight={600}
             letterSpacing={1.2} fontFamily="monospace">REVEALED GAP</text>
 
           {/* Verdict badge near revealed bar */}

@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM  = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 280
@@ -115,10 +117,10 @@ export default function CTInteractive() {
           fill="rgba(255,255,255,0.60)" fontSize={7.5} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">STATED</text>
         <text x={S_CX} y={46} textAnchor="middle"
-          fill="rgba(255,255,255,0.28)" fontSize={6.5} fontFamily="monospace">What people say</text>
+          fill="rgba(255,255,255,0.64)" fontSize={6.5} fontFamily="monospace">What people say</text>
         {/* Bottom label */}
         <text x={S_CX} y={BASE_Y + 12} textAnchor="middle"
-          fill={`${AMBER}0.45)`} fontSize={6.5} fontFamily="monospace">Stated preference</text>
+          fill={`${AMBER_TEXT}0.83)`} fontSize={6.5} fontFamily="monospace">Stated preference</text>
         {/* Hit area */}
         <rect x={S_L - 6} y={S_TOP - 16} width={BAR_W + 12} height={S_H + 30}
           fill="transparent" role="button" tabIndex={0} aria-label="Stated preference, click to learn more"
@@ -168,10 +170,10 @@ export default function CTInteractive() {
           fill="rgba(255,255,255,0.60)" fontSize={7.5} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">REVEALED</text>
         <text x={R_CX} y={46} textAnchor="middle"
-          fill="rgba(255,255,255,0.28)" fontSize={6.5} fontFamily="monospace">What people do</text>
+          fill="rgba(255,255,255,0.64)" fontSize={6.5} fontFamily="monospace">What people do</text>
         {/* Bottom label */}
         <text x={R_CX} y={BASE_Y + 12} textAnchor="middle"
-          fill={`${PLUM}0.45)`} fontSize={6.5} fontFamily="monospace">Revealed commitment</text>
+          fill={`${PLUM_TEXT}0.885)`} fontSize={6.5} fontFamily="monospace">Revealed commitment</text>
         {/* Hit area (full track height) */}
         <rect x={R_L - 6} y={S_TOP - 16} width={BAR_W + 12} height={S_H + 30}
           fill="transparent" role="button" tabIndex={0} aria-label="Revealed preference, click to learn more"
@@ -192,7 +194,7 @@ export default function CTInteractive() {
           fontSize={7} fontWeight={600} letterSpacing={1.2} fontFamily="monospace"
           style={{ transition: 'fill 0.22s' }}>SUCCESS THRESHOLD</text>
         <text x={548} y={TH_Y + 5}
-          fill="rgba(255,255,255,0.30)" fontSize={6} fontFamily="monospace"
+          fill="rgba(255,255,255,0.65)" fontSize={6} fontFamily="monospace"
           letterSpacing={0.8}>SET IN ADVANCE · 40%</text>
         {/* Hit area for threshold */}
         <rect x={105} y={TH_Y - 8} width={435} height={16}
