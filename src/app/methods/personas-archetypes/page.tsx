@@ -166,7 +166,7 @@ export default function PersonasArchetypesPage() {
               </div>
 
               <div>
-                <p className="font-mono uppercase tracking-widest mb-4" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                <p className="font-mono uppercase tracking-widest mb-4" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do not lean on it when
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -177,7 +177,7 @@ export default function PersonasArchetypesPage() {
                     'The team will make beautiful persona posters and then never look at them again. A persona that never enters a real decision is decoration.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item}
                       </span>
@@ -477,7 +477,7 @@ export default function PersonasArchetypesPage() {
               ))}
             </div>
 
-            <p className="mt-6" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)', fontStyle: 'italic' }}>
+            <p className="mt-6" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)', fontStyle: 'italic' }}>
               Note: the Design Sprint tends to import an existing persona rather than build one in the five days, and FDE relies on continuous direct embedding rather than distilled personas. These blanks are intentional.
             </p>
           </div>

@@ -169,7 +169,7 @@ export default function PABoundarySection() {
       {/* State switcher */}
       <div
         className="flex flex-wrap gap-2 mb-10"
-        role="tablist"
+        role="group"
         aria-label="Compare personas, avatars, and segments"
       >
         {STATES.map(({ id, label, short }) => {
@@ -177,8 +177,8 @@ export default function PABoundarySection() {
           return (
             <button
               key={id}
-              role="tab"
-              aria-selected={isActive}
+              type="button"
+              aria-pressed={isActive}
               onClick={() => setActive(id)}
               className="px-4 py-2 rounded-full font-semibold transition-colors"
               style={{
@@ -201,7 +201,6 @@ export default function PABoundarySection() {
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
-              role="tabpanel"
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={prefersReduced ? { opacity: 0 } : { opacity: 0, scale: 0.97 }}

@@ -129,7 +129,7 @@ export default function PAInteractive() {
             return (
               <g
                 key={id}
-                style={{ cursor: 'pointer', outline: 'none' }}
+                style={{ cursor: 'pointer' }}
                 onClick={() => setActiveCard(activeCard === id ? null : id)}
                 onMouseEnter={() => setHoveredCard(id)}
                 onMouseLeave={() => setHoveredCard(null)}
