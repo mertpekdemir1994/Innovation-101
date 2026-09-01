@@ -1,25 +1,44 @@
 // Shared layout and typography primitives for all method pages.
 // Method pages MUST import from here. MUST NOT define these locally.
 
-export function DarkSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+type SectionProps = {
+  children: React.ReactNode
+  className?: string
+  /** id of the heading inside this section, for a labeled landmark. Optional. */
+  ariaLabelledBy?: string
+}
+
+export function DarkSection({ children, className = '', ariaLabelledBy }: SectionProps) {
   return (
-    <section className={`dark-section${className ? ` ${className}` : ''}`} style={{ background: 'var(--color-dark)' }}>
+    <section
+      className={`dark-section${className ? ` ${className}` : ''}`}
+      style={{ background: 'var(--color-dark)' }}
+      aria-labelledby={ariaLabelledBy}
+    >
       {children}
     </section>
   )
 }
 
-export function LightSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+export function LightSection({ children, className = '', ariaLabelledBy }: SectionProps) {
   return (
-    <section className={className || undefined} style={{ background: 'var(--color-background)' }}>
+    <section
+      className={className || undefined}
+      style={{ background: 'var(--color-background)' }}
+      aria-labelledby={ariaLabelledBy}
+    >
       {children}
     </section>
   )
 }
 
-export function WarmSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+export function WarmSection({ children, className = '', ariaLabelledBy }: SectionProps) {
   return (
-    <section className={className || undefined} style={{ background: 'var(--color-warm-50)' }}>
+    <section
+      className={className || undefined}
+      style={{ background: 'var(--color-warm-50)' }}
+      aria-labelledby={ariaLabelledBy}
+    >
       {children}
     </section>
   )
@@ -52,9 +71,10 @@ export function SectionLabel({
   )
 }
 
-export function SectionHeadingDark({ children }: { children: React.ReactNode }) {
+export function SectionHeadingDark({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
     <h2
+      id={id}
       className="font-display font-semibold mb-6"
       style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', lineHeight: 1.15, color: '#FAFAFA' }}
     >
@@ -63,9 +83,10 @@ export function SectionHeadingDark({ children }: { children: React.ReactNode }) 
   )
 }
 
-export function SectionHeadingLight({ children }: { children: React.ReactNode }) {
+export function SectionHeadingLight({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
     <h2
+      id={id}
       className="font-display font-semibold mb-6"
       style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', lineHeight: 1.15, color: 'var(--color-neutral-900)' }}
     >

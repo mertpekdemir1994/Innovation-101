@@ -129,7 +129,7 @@ export default function ComingSoon({ accent, glowRgb, heading, body, footer }: C
             style={{
               fontSize: 'var(--text-sm)',
               lineHeight: 'var(--leading-normal)',
-              color: 'rgba(255,255,255,0.22)',
+              color: 'var(--color-dark-muted)',
             }}
           >
             {footer}
