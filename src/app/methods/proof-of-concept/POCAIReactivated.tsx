@@ -106,7 +106,7 @@ export default function POCAIReactivated() {
       {/* SVG rig */}
       <div aria-label={`Proving rig: ${isAI ? 'AI-assisted mode: apparatus highlighted indigo (fast build). Question and verdict conditions remain brick (human judgment).' : 'Traditional human-led mode.'}`}>
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-          preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}>
+          preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}>
           <defs>
             <filter id="poc-ai-glow" x="-30%" y="-30%" width="160%" height="160%">
               <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur" />
