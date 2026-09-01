@@ -226,7 +226,7 @@ export default function PilotLaunchesPage() {
 
               <div>
                 <p className="font-mono uppercase tracking-widest mb-4"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do NOT use Pilot Launches when
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -365,7 +365,7 @@ export default function PilotLaunchesPage() {
               <div className="rounded-lg p-5"
                 style={{ border: '1px solid var(--color-neutral-200)' }}>
                 <p className="font-mono uppercase tracking-widest mb-3"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Go wide immediately
                 </p>
                 <ul className="flex flex-col gap-2">
