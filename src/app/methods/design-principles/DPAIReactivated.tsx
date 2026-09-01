@@ -68,7 +68,7 @@ export default function DPAIReactivated() {
         aria-label={isAI
           ? 'Fork in AI mode. Four beautiful AI-generated principles float around the junction, but neither branch closes, the fork is undecided.'
           : 'Fork in human mode. A specific principle sits on the incoming path, the lower branch is closed with an X barrier.'}
-        style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
       >
         <defs>
           <filter id="dp-ai-plum-glow" x="-30%" y="-30%" width="160%" height="160%">
