@@ -4,7 +4,9 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700, SVG_H = 268, CY = 134
 
@@ -142,9 +144,9 @@ export default function DRAIReactivated() {
         {!isAI && (
           <g>
             <text x={22} y={18} fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${BRICK}0.50)`} style={{ userSelect: 'none' }}>FIRM</text>
+              fill={`rgba(183,145,135,0.895)`} style={{ userSelect: 'none' }}>FIRM</text>
             <text x={564} y={18} textAnchor="end" fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${BRICK}0.28)`} style={{ userSelect: 'none' }}>LOOSE</text>
+              fill={`rgba(183,145,135,0.849)`} style={{ userSelect: 'none' }}>LOOSE</text>
           </g>
         )}
 
@@ -223,7 +225,7 @@ export default function DRAIReactivated() {
               markerEnd="url(#dr-ai-arr-b)" />
             <text x={360} y={36} textAnchor="middle" fontSize="3.4"
               fontFamily="var(--font-mono)" letterSpacing="0.07em"
-              fill={`${AMBER}0.35)`} style={{ userSelect: 'none' }}>
+              fill={`${AMBER_TEXT}0.798)`} style={{ userSelect: 'none' }}>
               WHAT YOU LEARN RESHAPES WHAT COMES NEXT
             </text>
           </>
@@ -248,14 +250,14 @@ export default function DRAIReactivated() {
                   fill={`${INDIGO}0.08)`} stroke={`${INDIGO}0.28)`} strokeWidth={0.8} rx={2} />
                 <text x={m.x} y={m.y + 2} textAnchor="middle" fontSize="3.8"
                   fontFamily="var(--font-mono)" letterSpacing="0.06em"
-                  fill={`${INDIGO}0.72)`} style={{ userSelect: 'none' }}>
+                  fill={`${INDIGO_TEXT}0.941)`} style={{ userSelect: 'none' }}>
                   {m.label}
                 </text>
               </g>
             ))}
             <text x={280} y={218} textAnchor="middle" fontSize="3.6"
               fontFamily="var(--font-mono)" letterSpacing="0.07em"
-              fill={`${INDIGO}0.50)`} style={{ userSelect: 'none' }}>
+              fill={`${INDIGO_TEXT}0.895)`} style={{ userSelect: 'none' }}>
               AI: MECHANICS ASSISTANCE, GENUINE UPLIFT
             </text>
           </>
@@ -264,7 +266,7 @@ export default function DRAIReactivated() {
         {/* Caption */}
         <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>
+          fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>
           {isAI
             ? 'It looks better and is worse. The gradient was the honesty.'
             : 'Near bets are firm. Far bets are deliberately loose. The arrows are the honesty.'}

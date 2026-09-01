@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700, SVG_H = 268, CY = 134
 
@@ -180,7 +181,7 @@ export default function DRInteractive() {
               filter={active === g.id ? 'url(#dr-int-glow)' : undefined} />
             <text x={g.x} y={78} textAnchor="middle" fontSize="3.8"
               fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill={active === g.id ? `${BRICK}0.70)` : `${BRICK}0.35)`}
+              fill={active === g.id ? `rgba(183,145,135,0.937)` : `rgba(183,145,135,0.864)`}
               style={{ userSelect: 'none' }}>
               {g.label}
             </text>
@@ -236,7 +237,7 @@ export default function DRInteractive() {
               {view === 'convenience' && b.id === 'release' && (
                 <text x={b.x + b.w / 2} y={b.y - 6} textAnchor="middle" fontSize="3.5"
                   fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                  fill={`${BRICK}0.50)`} style={{ userSelect: 'none' }}>
+                  fill={`rgba(183,145,135,0.895)`} style={{ userSelect: 'none' }}>
                   COMFORTABLE, FIRST
                 </text>
               )}
@@ -282,7 +283,7 @@ export default function DRInteractive() {
         {!severed && (
           <text x={360} y={36} textAnchor="middle" fontSize="3.4"
             fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`${AMBER}0.38)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.808)`} style={{ userSelect: 'none' }}>
             WHAT YOU LEARN RESHAPES WHAT COMES NEXT
           </text>
         )}
@@ -290,7 +291,7 @@ export default function DRInteractive() {
         {/* Caption */}
         <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}>
+          fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
           {severed
             ? 'The gradient is gone. Every box looks equally confident. That is the lie.'
             : 'Click any bet or gate. Toggle sequence order or sever the learning arrows.'}

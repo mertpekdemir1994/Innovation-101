@@ -82,9 +82,9 @@ export default function DREstablishing() {
           <line x1={22} y1={24} x2={564} y2={24}
             stroke={`${BRICK}0.22)`} strokeWidth={0.8} />
           <text x={22} y={18} fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${BRICK}0.50)`} style={{ userSelect: 'none' }}>FIRM</text>
+            fill={`rgba(183,145,135,0.895)`} style={{ userSelect: 'none' }}>FIRM</text>
           <text x={564} y={18} textAnchor="end" fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${BRICK}0.28)`} style={{ userSelect: 'none' }}>LOOSE</text>
+            fill={`rgba(183,145,135,0.849)`} style={{ userSelect: 'none' }}>LOOSE</text>
           <path d="M 70,24 L 530,24" stroke={`${BRICK}0.18)`} strokeWidth={0.8}
             markerEnd="url(#dr-est-arr)" />
         </motion.g>
@@ -99,12 +99,12 @@ export default function DREstablishing() {
               fill={`${BRICK}0.08)`} stroke={`${BRICK}0.32)`} strokeWidth={0.9} />
             <text x={g.x} y={78} textAnchor="middle" fontSize="3.8"
               fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill={`${BRICK}0.38)`} style={{ userSelect: 'none' }}>
+              fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}>
               {g.label}
             </text>
             <text x={g.x} y={190} textAnchor="middle" fontSize="3.4"
               fontFamily="var(--font-mono)" letterSpacing="0.06em"
-              fill={`${BRICK}0.24)`} style={{ userSelect: 'none' }}>
+              fill={`rgba(183,145,135,0.84)`} style={{ userSelect: 'none' }}>
               PROCEED · ADJUST · STOP
             </text>
           </motion.g>
