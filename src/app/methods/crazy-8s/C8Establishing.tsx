@@ -156,7 +156,7 @@ export default function C8Establishing() {
         {/* Caption */}
         <motion.text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
           fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-          fill="rgba(255,255,255,0.16)"
+          fill="rgba(255,255,255,0.58)"
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.3, delay: prefersReduced ? 0 : 0.90 }}
