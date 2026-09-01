@@ -158,7 +158,7 @@ export default function TLInteractive() {
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
         preserveAspectRatio="xMidYMid meet"
-        style={{ display: 'block' }}
+        style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
         aria-label="Interactive twelve-lever panel. Click any lever to explore its innovation potential."
       >
         <defs>

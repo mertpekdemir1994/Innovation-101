@@ -123,7 +123,7 @@ export default function TLAIReactivated() {
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
         preserveAspectRatio="xMidYMid meet"
-        style={{ display: 'block' }}
+        style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
         aria-label={isAI ? 'AI mode: all twelve levers are populated with AI-generated ideas, but the choice of which lever to pull stays human.' : 'Human mode: twelve-lever panel with over-pulled and high-leverage levers marked.'}
       >
         <defs>
