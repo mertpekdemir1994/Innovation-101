@@ -60,7 +60,7 @@ export default function PAAIReactivated() {
     <div>
       {/* ── SVG illustration ── */}
       <div className="w-full flex justify-center mb-12 select-none" aria-hidden="true">
-        <svg viewBox="0 0 720 258" width="100%" style={{ maxWidth: 800, overflow: 'visible' }}>
+        <svg viewBox="0 0 720 258" width="100%" style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}>
           <defs>
             <filter id="pa-ai-glow" x="-40%" y="-40%" width="180%" height="180%">
               <feGaussianBlur stdDeviation="5" result="blur" />

@@ -102,7 +102,7 @@ export default function PAInteractive() {
   return (
     <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-start">
       {/* ── SVG illustration ── */}
-      <div className="w-full md:w-[54%] shrink-0">
+      <div className="w-full md:w-illustration shrink-0">
         <svg
           viewBox="0 0 720 258"
           width="100%"
