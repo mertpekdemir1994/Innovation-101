@@ -41,7 +41,7 @@ export default function AMEstablishing() {
       variants={container}
       aria-hidden="true"
     >
-      <svg viewBox="0 0 560 450" width="100%" style={{ maxWidth: 680, overflow: 'visible' }}>
+      <svg viewBox="0 0 560 450" width="100%" style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}>
         <defs>
           <filter id="am-est-glow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="7" result="blur" />
