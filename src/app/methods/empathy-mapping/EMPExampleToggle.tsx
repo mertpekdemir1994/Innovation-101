@@ -123,7 +123,7 @@ export default function EMPExampleToggle() {
                       className="font-mono uppercase tracking-widest"
                       style={{
                         fontSize: 'var(--text-2xs)',
-                        color: label === 'FEELS' ? `${NAVY}0.70)` : 'var(--color-neutral-400)',
+                        color: label === 'FEELS' ? `${NAVY}0.70)` : 'var(--color-neutral-500)',
                         fontWeight: label === 'FEELS' ? 600 : 400,
                       }}
                     >{label}</p>
@@ -131,14 +131,14 @@ export default function EMPExampleToggle() {
                       className="font-mono uppercase tracking-widest"
                       style={{
                         fontSize: 'var(--text-2xs)',
-                        color: isObservable ? 'var(--color-neutral-400)' : `${NAVY}0.55)`,
+                        color: isObservable ? 'var(--color-neutral-500)' : `${NAVY}0.55)`,
                       }}
                     >{isObservable ? 'OBSERVED' : 'INFERRED'}</span>
                   </div>
                   <ul className="flex flex-col gap-1.5 mb-3">
                     {entries.map((e, i) => (
                       <li key={i} className="flex gap-2">
-                        <span style={{ color: label === 'FEELS' ? `${NAVY}0.55)` : 'var(--color-neutral-400)', flexShrink: 0, marginTop: 1 }}>-</span>
+                        <span style={{ color: label === 'FEELS' ? `${NAVY}0.55)` : 'var(--color-neutral-500)', flexShrink: 0, marginTop: 1 }}>-</span>
                         <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                           {e}
                         </span>
@@ -179,7 +179,7 @@ export default function EMPExampleToggle() {
             >
               <p
                 className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
               >What made this possible</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 The insight came from reading across the quadrants, not from any single one. SAYS and DOES in isolation looked like a simple consistency problem. FEELS, carefully filled from the emotional register of the interview rather than from the words the person used, explained the contradiction. The team spent twice as long on FEELS as on the other three quadrants combined, and that time produced the reframing insight the design pivoted on.
