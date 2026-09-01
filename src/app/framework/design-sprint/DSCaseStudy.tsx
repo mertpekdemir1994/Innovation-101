@@ -307,7 +307,7 @@ export default function DSCaseStudy() {
           >
             <span
               className="font-mono text-2xs uppercase tracking-widest mb-space-1"
-              style={{ color: activeDay === key ? `${CLAY}0.65)` : 'var(--color-neutral-400)' }}
+              style={{ color: activeDay === key ? `${CLAY}0.65)` : 'var(--color-neutral-500)' }}
             >
               {mode}
             </span>
@@ -319,7 +319,7 @@ export default function DSCaseStudy() {
             </span>
             <span
               className="text-xs"
-              style={{ color: activeDay === key ? `${CLAY}0.55)` : 'var(--color-neutral-400)' }}
+              style={{ color: activeDay === key ? `${CLAY}0.55)` : 'var(--color-neutral-500)' }}
             >
               {sub}
             </span>
