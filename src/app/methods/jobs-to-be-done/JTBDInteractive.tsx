@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY  = 'rgba(31,58,95,'
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 type View   = 'wrong' | 'right'
 type SlotId = 'when' | 'motivation' | 'outcome' | null
@@ -148,7 +149,7 @@ export default function JTBDInteractive() {
                   x={350} y={SLOT_Y + 18}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                  fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}
+                  fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}
                 >{'× WRONG: FEATURE / DEMOGRAPHIC'}</text>
                 <line
                   x1={24} y1={SLOT_Y + 28} x2={676} y2={SLOT_Y + 28}
@@ -170,7 +171,7 @@ export default function JTBDInteractive() {
                   x={350} y={SLOT_Y + 120}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${AMBER}0.42)`} style={{ userSelect: 'none' }}
+                  fill={`${AMBER_TEXT}0.82)`} style={{ userSelect: 'none' }}
                 >{'a product · a demographic; hidden: the job · the circumstance · the real competition'}</text>
               </motion.g>
             ) : (
@@ -202,7 +203,7 @@ export default function JTBDInteractive() {
                         x={s.cx} y={SLOT_Y + 16}
                         textAnchor="middle" dominantBaseline="middle"
                         fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-                        fill={isActive ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.40)'}
+                        fill={isActive ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.7)'}
                         opacity={dimmed ? 0.35 : 1}
                         style={{ userSelect: 'none', transition: 'opacity 0.28s' }}
                       >{s.label}</text>
@@ -227,7 +228,7 @@ export default function JTBDInteractive() {
                         x={s.cx} y={SLOT_Y + 138}
                         textAnchor="middle" dominantBaseline="middle"
                         fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                        fill="rgba(255,255,255,0.25)"
+                        fill="rgba(255,255,255,0.625)"
                         opacity={dimmed ? 0.35 : 1}
                         style={{ userSelect: 'none', transition: 'opacity 0.28s' }}
                       >{s.sublabel}</text>
@@ -289,7 +290,7 @@ export default function JTBDInteractive() {
             x={SVG_W / 2} y={SVG_H - 6}
             textAnchor="middle" dominantBaseline="auto"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={view === 'wrong' ? `${AMBER}0.30)` : 'rgba(255,255,255,0.16)'}
+            fill={view === 'wrong' ? `${AMBER_TEXT}0.783)` : 'rgba(255,255,255,0.58)'}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >
             {view === 'wrong'

@@ -71,13 +71,13 @@ export default function JTBDEstablishing() {
             x={24} y={30}
             textAnchor="start" dominantBaseline="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
           >{'× WRONG: FEATURE / DEMOGRAPHIC'}</text>
           <text
             x={252} y={30}
             textAnchor="start" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-inter,sans-serif)" fontStyle="italic"
-            fill="rgba(255,255,255,0.30)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.65)" style={{ userSelect: 'none' }}
           >{'a thicker milkshake for suburban commuters'}</text>
         </motion.g>
 
@@ -94,7 +94,7 @@ export default function JTBDEstablishing() {
             x={S1_CX} y={SLOT_Y + 16}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-            fill="rgba(255,255,255,0.40)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >WHEN</text>
           <line
             x1={S1.x + 14} y1={SLOT_Y + 26}
@@ -113,7 +113,7 @@ export default function JTBDEstablishing() {
             x={S1_CX} y={SLOT_Y + 138}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.25)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}
           >SITUATION</text>
         </motion.g>
 
@@ -142,7 +142,7 @@ export default function JTBDEstablishing() {
             x={S2_CX} y={SLOT_Y + 16}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-            fill="rgba(255,255,255,0.40)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >I WANT TO</text>
           <line
             x1={S2.x + 14} y1={SLOT_Y + 26}
@@ -161,7 +161,7 @@ export default function JTBDEstablishing() {
             x={S2_CX} y={SLOT_Y + 138}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.25)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}
           >MOTIVATION</text>
         </motion.g>
 
@@ -190,7 +190,7 @@ export default function JTBDEstablishing() {
             x={S3_CX} y={SLOT_Y + 16}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-            fill="rgba(255,255,255,0.40)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >SO I CAN</text>
           <line
             x1={S3.x + 14} y1={SLOT_Y + 26}
@@ -209,7 +209,7 @@ export default function JTBDEstablishing() {
             x={S3_CX} y={SLOT_Y + 138}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.25)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}
           >OUTCOME</text>
         </motion.g>
 

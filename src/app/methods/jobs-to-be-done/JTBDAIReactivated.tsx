@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY   = 'rgba(31,58,95,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 type Mode = 'human' | 'ai'
 
@@ -129,7 +130,7 @@ export default function JTBDAIReactivated() {
                 x={cx} y={SLOT_Y + 14}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-                fill={isAI ? `${INDIGO}0.58)` : 'rgba(255,255,255,0.40)'}
+                fill={isAI ? `${INDIGO_TEXT}0.912)` : 'rgba(255,255,255,0.7)'}
                 style={{ userSelect: 'none', transition: 'fill 0.35s' }}
               >{label}</text>
               <line
@@ -159,7 +160,7 @@ export default function JTBDAIReactivated() {
                     x={cx} y={SLOT_Y + 108}
                     textAnchor="middle" dominantBaseline="middle"
                     fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                    fill={isAI ? `${INDIGO}0.45)` : 'rgba(255,255,255,0.25)'}
+                    fill={isAI ? `${INDIGO_TEXT}0.885)` : 'rgba(255,255,255,0.625)'}
                     style={{ userSelect: 'none' }}
                   >{sublabel}</text>
                 </motion.g>
@@ -198,14 +199,14 @@ export default function JTBDAIReactivated() {
             x={78} y={ROW_Y + ROW_H / 2 - 6}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={isAI ? `${INDIGO}0.62)` : 'rgba(255,255,255,0.42)'}
+            fill={isAI ? `${INDIGO_TEXT}0.92)` : 'rgba(255,255,255,0.71)'}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >{comp.label}</text>
           <text
             x={78} y={ROW_Y + ROW_H / 2 + 8}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={isAI ? `${INDIGO}0.38)` : 'rgba(255,255,255,0.28)'}
+            fill={isAI ? `${INDIGO_TEXT}0.87)` : 'rgba(255,255,255,0.64)'}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >{comp.sublabel}</text>
 
@@ -233,7 +234,7 @@ export default function JTBDAIReactivated() {
                       x={icx} y={iy + ITEM_H / 2}
                       textAnchor="middle" dominantBaseline="middle"
                       fontSize="5" fontFamily="var(--font-inter,sans-serif)"
-                      fill={isAI ? `${INDIGO}0.80)` : 'rgba(255,255,255,0.78)'}
+                      fill={isAI ? `${INDIGO_TEXT}0.958)` : 'rgba(255,255,255,0.78)'}
                       style={{ userSelect: 'none' }}
                     >{item}</text>
                   </g>
