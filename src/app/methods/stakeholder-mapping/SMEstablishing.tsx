@@ -59,7 +59,7 @@ export default function SMEstablishing() {
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
         preserveAspectRatio="xMidYMid meet"
-        style={{ display: 'block' }}
+        style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
       >
         <defs>
           <filter id="sm-est-glow" x="-20%" y="-20%" width="140%" height="140%">
