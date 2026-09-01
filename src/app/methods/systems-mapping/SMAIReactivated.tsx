@@ -3,8 +3,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL   = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 type Mode = 'human' | 'ai'
 
@@ -117,7 +120,7 @@ export default function SMAIReactivated() {
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.55)`} strokeWidth={1.4} />
           <text x={PRESSURE_CX} y={PRESSURE_CY} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
-            fill={`${TEAL}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             DELIVERY PRESSURE
           </text>
         </motion.g>
@@ -129,7 +132,7 @@ export default function SMAIReactivated() {
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.55)`} strokeWidth={1.4} />
           <text x={DEBT_CX} y={DEBT_CY} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
-            fill={`${TEAL}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             TECHNICAL DEBT
           </text>
         </motion.g>
@@ -142,7 +145,7 @@ export default function SMAIReactivated() {
           filter={isAI ? 'url(#sm-ai-indigo-glow)' : undefined} />
         <text x={DEFECT_CX} y={DEFECT_CY} textAnchor="middle" dominantBaseline="middle"
           fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
-          fill={isAI ? `${INDIGO}0.88)` : `${AMBER}0.85)`} style={{ userSelect: 'none' }}>
+          fill={isAI ? `${INDIGO_TEXT}0.975)` : `${AMBER}0.85)`} style={{ userSelect: 'none' }}>
           DEFECT RATE
         </text>
 
@@ -153,7 +156,7 @@ export default function SMAIReactivated() {
           strokeWidth={isAI ? 1.6 : 1.2} />
         <text x={TESTING_CX} y={TESTING_CY} textAnchor="middle" dominantBaseline="middle"
           fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
-          fill={isAI ? `${INDIGO}0.80)` : `${TEAL}0.78)`} style={{ userSelect: 'none' }}>
+          fill={isAI ? `${INDIGO_TEXT}0.958)` : `${TEAL_TEXT}0.954)`} style={{ userSelect: 'none' }}>
           TESTING
         </text>
 
@@ -166,10 +169,10 @@ export default function SMAIReactivated() {
             stroke={`${TEAL}0.70)`} strokeWidth={1.8} markerEnd="url(#sm-ai-arr)" />
           <text x={117} y={118} textAnchor="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" fontWeight="600"
-            fill={`${TEAL}0.45)`} style={{ userSelect: 'none' }}>R1</text>
+            fill={`${TEAL_TEXT}0.885)`} style={{ userSelect: 'none' }}>R1</text>
           <text x={117} y={130} textAnchor="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.30)`} style={{ userSelect: 'none' }}>REINFORCING</text>
+            fill={`${TEAL_TEXT}0.853)`} style={{ userSelect: 'none' }}>REINFORCING</text>
         </motion.g>
 
         {/* BALANCING LOOP (prominent in AI mode: this is what AI draws) */}
@@ -188,10 +191,10 @@ export default function SMAIReactivated() {
             markerEnd={isAI ? 'url(#sm-ai-arr-indigo)' : 'url(#sm-ai-arr-neg)'} />
           <text x={516} y={115} textAnchor="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" fontWeight="600"
-            fill={isAI ? `${INDIGO}0.58)` : `${TEAL}0.35)`} style={{ userSelect: 'none' }}>B1</text>
+            fill={isAI ? `${INDIGO_TEXT}0.912)` : `${TEAL_TEXT}0.864)`} style={{ userSelect: 'none' }}>B1</text>
           <text x={516} y={127} textAnchor="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={isAI ? `${INDIGO}0.45)` : `${TEAL}0.25)`} style={{ userSelect: 'none' }}>BALANCING</text>
+            fill={isAI ? `${INDIGO_TEXT}0.885)` : `${TEAL_TEXT}0.843)`} style={{ userSelect: 'none' }}>BALANCING</text>
         </motion.g>
 
         {/* Cross-arrow with delay (absent in AI mode) */}
@@ -202,7 +205,7 @@ export default function SMAIReactivated() {
             markerEnd="url(#sm-ai-arr-neg)" />
           <text x={299} y={44} textAnchor="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}>⏱ DELAY</text>
+            fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>⏱ DELAY</text>
         </motion.g>
 
         {/* Leverage point (absent in AI mode) */}
@@ -213,7 +216,7 @@ export default function SMAIReactivated() {
             fill={`${TEAL}0.18)`} stroke={`${TEAL}0.88)`} strokeWidth={1.2} />
           <text x={PRESSURE_CX} y={33} textAnchor="middle"
             fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.72)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.941)`} style={{ userSelect: 'none' }}>
             LEVERAGE POINT
           </text>
         </motion.g>

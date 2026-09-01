@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL  = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 type Intervention = 'none' | 'symptom' | 'leverage'
 
@@ -121,13 +123,13 @@ export default function SMInteractive() {
             filter={isLeverage ? 'url(#sm-int-teal-glow)' : undefined} />
           <text x={PRESSURE_CX} y={PRESSURE_CY} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
-            fill={`${TEAL}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             DELIVERY PRESSURE
           </text>
           {isLeverage && (
             <text x={PRESSURE_CX} y={PRESSURE_CY - 14} textAnchor="middle"
               fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${TEAL}0.80)`} style={{ userSelect: 'none' }}>
+              fill={`${TEAL_TEXT}0.958)`} style={{ userSelect: 'none' }}>
               ⚡ LEVERAGE POINT
             </text>
           )}
@@ -140,7 +142,7 @@ export default function SMInteractive() {
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.55)`} strokeWidth={1.4} />
           <text x={DEBT_CX} y={DEBT_CY} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
-            fill={`${TEAL}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             TECHNICAL DEBT
           </text>
         </motion.g>
@@ -160,7 +162,7 @@ export default function SMInteractive() {
           </text>
           <text x={DEFECT_CX} y={DEFECT_CY + 14} textAnchor="middle"
             fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${AMBER}0.50)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
             THE SYMPTOM
           </text>
         </motion.g>
@@ -175,13 +177,13 @@ export default function SMInteractive() {
             filter={isSymptom ? 'url(#sm-int-teal-glow)' : undefined} />
           <text x={TESTING_CX} y={TESTING_CY} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
-            fill={`${TEAL}0.78)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.954)`} style={{ userSelect: 'none' }}>
             TESTING
           </text>
           {isSymptom && (
             <text x={TESTING_CX} y={TESTING_CY - 14} textAnchor="middle"
               fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${TEAL}0.75)`} style={{ userSelect: 'none' }}>
+              fill={`${TEAL_TEXT}0.948)`} style={{ userSelect: 'none' }}>
               ↑ MORE TESTING
             </text>
           )}
@@ -196,10 +198,10 @@ export default function SMInteractive() {
             stroke={`${TEAL}0.70)`} strokeWidth={1.8} markerEnd="url(#sm-int-arr)" />
           <text x={117} y={126} textAnchor="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" fontWeight="600"
-            fill={`${TEAL}0.45)`} style={{ userSelect: 'none' }}>R1</text>
+            fill={`${TEAL_TEXT}0.885)`} style={{ userSelect: 'none' }}>R1</text>
           <text x={117} y={137} textAnchor="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.30)`} style={{ userSelect: 'none' }}>REINFORCING</text>
+            fill={`${TEAL_TEXT}0.853)`} style={{ userSelect: 'none' }}>REINFORCING</text>
         </motion.g>
 
         {/* BALANCING LOOP arcs */}
@@ -212,10 +214,10 @@ export default function SMInteractive() {
             markerEnd="url(#sm-int-arr-neg)" />
           <text x={516} y={120} textAnchor="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" fontWeight="600"
-            fill={`${TEAL}0.35)`} style={{ userSelect: 'none' }}>B1</text>
+            fill={`${TEAL_TEXT}0.864)`} style={{ userSelect: 'none' }}>B1</text>
           <text x={516} y={131} textAnchor="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.25)`} style={{ userSelect: 'none' }}>BALANCING</text>
+            fill={`${TEAL_TEXT}0.843)`} style={{ userSelect: 'none' }}>BALANCING</text>
         </motion.g>
 
         {/* CROSS-ARROW with delay */}
@@ -226,7 +228,7 @@ export default function SMInteractive() {
             markerEnd="url(#sm-int-arr-neg)" />
           <text x={299} y={47} textAnchor="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}>⏱ DELAY</text>
+            fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>⏱ DELAY</text>
         </motion.g>
 
         {/* Symptom intervention: ABSORBED annotation */}
@@ -244,7 +246,7 @@ export default function SMInteractive() {
               </text>
               <text x={516} y={172} textAnchor="middle"
                 fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}>
+                fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>
                 B1 restores the system
               </text>
             </motion.g>
@@ -261,12 +263,12 @@ export default function SMInteractive() {
               transition={{ duration: 0.28, delay: prefersReduced ? 0 : 0.35 }}>
               <text x={117} y={160} textAnchor="middle"
                 fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-                fill={`${TEAL}0.85)`} style={{ userSelect: 'none' }}>
+                fill={`${TEAL_TEXT}0.969)`} style={{ userSelect: 'none' }}>
                 SYSTEM SHIFTS
               </text>
               <text x={117} y={172} textAnchor="middle"
                 fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={`${TEAL}0.58)`} style={{ userSelect: 'none' }}>
+                fill={`${TEAL_TEXT}0.912)`} style={{ userSelect: 'none' }}>
                 R1 loop weakens
               </text>
             </motion.g>

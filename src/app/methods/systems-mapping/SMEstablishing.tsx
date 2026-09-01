@@ -3,7 +3,9 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const TEAL  = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700, SVG_H = 268
 
@@ -87,7 +89,7 @@ export default function SMEstablishing() {
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.55)`} strokeWidth={1.4} />
           <text x={PRESSURE_CX} y={PRESSURE_CY} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
-            fill={`${TEAL}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             DELIVERY PRESSURE
           </text>
 
@@ -96,7 +98,7 @@ export default function SMEstablishing() {
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.55)`} strokeWidth={1.4} />
           <text x={DEBT_CX} y={DEBT_CY} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
-            fill={`${TEAL}0.88)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             TECHNICAL DEBT
           </text>
 
@@ -110,7 +112,7 @@ export default function SMEstablishing() {
           </text>
           <text x={DEFECT_CX} y={DEFECT_CY + 14} textAnchor="middle"
             fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${AMBER}0.50)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
             THE SYMPTOM
           </text>
 
@@ -119,7 +121,7 @@ export default function SMEstablishing() {
             fill={`${TEAL}0.08)`} stroke={`${TEAL}0.42)`} strokeWidth={1.2} />
           <text x={TESTING_CX} y={TESTING_CY} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
-            fill={`${TEAL}0.78)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.954)`} style={{ userSelect: 'none' }}>
             TESTING
           </text>
         </motion.g>
@@ -142,21 +144,21 @@ export default function SMEstablishing() {
         <motion.g {...fade(0.62)}>
           <text x={117} y={128} textAnchor="middle"
             fontSize="7.0" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
-            fill={`${TEAL}0.55)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.905)`} style={{ userSelect: 'none' }}>
             R1
           </text>
           <text x={117} y={140} textAnchor="middle"
             fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.38)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.87)`} style={{ userSelect: 'none' }}>
             REINFORCING ↗
           </text>
           {/* "+" labels on reinforcing arrows */}
           <text x={42} y={133} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)"
-            fill={`${TEAL}0.48)`} style={{ userSelect: 'none' }}>+</text>
+            fill={`${TEAL_TEXT}0.891)`} style={{ userSelect: 'none' }}>+</text>
           <text x={194} y={133} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)"
-            fill={`${TEAL}0.48)`} style={{ userSelect: 'none' }}>+</text>
+            fill={`${TEAL_TEXT}0.891)`} style={{ userSelect: 'none' }}>+</text>
         </motion.g>
 
         {/* BALANCING LOOP: right arc (DEFECT RATE → TESTING) */}
@@ -178,21 +180,21 @@ export default function SMEstablishing() {
         <motion.g {...fade(1.08)}>
           <text x={516} y={122} textAnchor="middle"
             fontSize="7.0" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
-            fill={`${TEAL}0.45)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.885)`} style={{ userSelect: 'none' }}>
             B1
           </text>
           <text x={516} y={134} textAnchor="middle"
             fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.30)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.853)`} style={{ userSelect: 'none' }}>
             BALANCING ↘
           </text>
           {/* "+" and "−" on balancing arrows */}
           <text x={594} y={130} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)"
-            fill={`${TEAL}0.42)`} style={{ userSelect: 'none' }}>+</text>
+            fill={`${TEAL_TEXT}0.878)`} style={{ userSelect: 'none' }}>+</text>
           <text x={484} y={130} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)"
-            fill={`${AMBER}0.50)`} style={{ userSelect: 'none' }}>−</text>
+            fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>−</text>
         </motion.g>
 
         {/* ── CROSS-ARROW (DELIVERY PRESSURE → DEFECT RATE via shortcuts, with DELAY) ── */}
@@ -212,12 +214,12 @@ export default function SMEstablishing() {
           </text>
           <text x={299} y={52} textAnchor="middle"
             fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${AMBER}0.65)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.891)`} style={{ userSelect: 'none' }}>
             DELAY: MONTHS LATER
           </text>
           <text x={299} y={65} textAnchor="middle"
             fontSize="3.2" fontFamily="var(--font-mono)" letterSpacing="0.05em"
-            fill={`${AMBER}0.42)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.82)`} style={{ userSelect: 'none' }}>
             shortcuts → defects
           </text>
         </motion.g>
@@ -229,7 +231,7 @@ export default function SMEstablishing() {
             fill={`${TEAL}0.20)`} stroke={`${TEAL}0.90)`} strokeWidth={1.2} />
           <text x={PRESSURE_CX} y={38} textAnchor="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.75)`} style={{ userSelect: 'none' }}>
+            fill={`${TEAL_TEXT}0.948)`} style={{ userSelect: 'none' }}>
             LEVERAGE POINT
           </text>
           {/* Tick from diamond to PRESSURE box */}
