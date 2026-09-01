@@ -22,19 +22,19 @@ const FRAMEWORK_LINKS = [
     slug: 'double-diamond',
     name: 'Double Diamond',
     phase: 'Define',
-    note: 'The Define phase converges the research findings from Discover into a clear problem framing. At this moment, the cascade is the tool for translating that problem understanding into strategic choices — defining the where-to-play and how-to-win that will bound the Develop and Deliver phases. A strategic choice cascade run during Define prevents the second diamond from exploring in directions the organisation cannot or should not pursue.',
+    note: 'The Define phase converges the research findings from Discover into a clear problem framing. At this moment, the cascade is the tool for translating that problem understanding into strategic choices: defining the where-to-play and how-to-win that will bound the Develop and Deliver phases. A strategic choice cascade run during Define prevents the second diamond from exploring in directions the organisation cannot or should not pursue.',
   },
   {
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Strategy framing',
-    note: 'The Lean Startup\'s Build-Measure-Learn loop tests assumptions within a strategic bet. The cascade provides the framing for that bet — the where-to-play and how-to-win that the business model expresses and that each iteration of the loop is designed to test. Without an explicit cascade, Lean Startup teams risk iterating rapidly within an arena or on a how-to-win that was never genuinely chosen, treating the speed of iteration as a substitute for the quality of the strategic bet.',
+    note: 'The Lean Startup\'s Build-Measure-Learn loop tests assumptions within a strategic bet. The cascade provides the framing for that bet: the where-to-play and how-to-win that the business model expresses and that each iteration of the loop is designed to test. Without an explicit cascade, Lean Startup teams risk iterating rapidly within an arena or on a how-to-win that was never genuinely chosen, treating the speed of iteration as a substitute for the quality of the strategic bet.',
   },
   {
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Roadmap / Backlog framing',
-    note: 'In Agile Innovation, the cascade sets the strategic choices that prioritise what the portfolio pursues — which arenas, which ways of winning — so that sprint-level work stays connected to a coherent strategic direction rather than accumulating in every direction at once. Without a cascade, agile teams can work very efficiently on things that do not collectively add up to a strategy.',
+    note: 'In Agile Innovation, the cascade sets the strategic choices that prioritise what the portfolio pursues (which arenas, which ways of winning) so that sprint-level work stays connected to a coherent strategic direction rather than accumulating in every direction at once. Without a cascade, agile teams can work efficiently on things that do not collectively add up to a strategy.',
   },
 ]
 
@@ -53,22 +53,22 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'ten-types-innovation',
     name: '10 Types of Innovation',
-    rel: 'Feeds the how-to-win choice: the ten types — profit model, network, structure, process, product performance, product system, service, channel, brand, customer engagement — are dimensions on which a how-to-win can be built. Most strategies compete only on product performance; the 10 Types framework reveals the other nine dimensions on which a defensible, hard-to-copy way of winning can be constructed. Use it to enrich and stress-test the how-to-win choice in the cascade.',
+    rel: 'Feeds the how-to-win choice: the ten types (profit model, network, structure, process, product performance, product system, service, channel, brand, customer engagement) are dimensions on which a how-to-win can be built. Most strategies compete only on product performance; the 10 Types framework reveals the other nine dimensions on which a defensible, hard-to-copy way of winning can be constructed. Use it to enrich and stress-test the how-to-win choice in the cascade.',
   },
   {
     slug: 'balanced-breakthrough',
     name: 'Balanced Breakthrough',
-    rel: 'Complementary evaluation: the cascade sets the strategic choices; Balanced Breakthrough checks that the specific concepts emerging from those choices are desirable (people want them), feasible (the organisation can deliver them), and viable (the economics work). The cascade answers "where do we play and how do we win?"; Balanced Breakthrough answers "does this specific concept actually pass all three lenses?" — the two tools operate at different levels of abstraction and are natural complements.',
+    rel: 'Complementary evaluation: the cascade sets the strategic choices; Balanced Breakthrough checks that the specific concepts emerging from those choices are desirable (people want them), feasible (the organisation can deliver them), and viable (the economics work). The cascade answers "where do we play and how do we win?"; Balanced Breakthrough answers "does this specific concept actually pass all three lenses?"; the two tools operate at different levels of abstraction and are natural complements.',
   },
   {
     slug: 'competitive-landscape-analysis',
     name: 'Competitive Landscape Analysis',
-    rel: 'Informs both where-to-play and how-to-win: understanding the competitive field — who is competing, on what dimensions, in which arenas, with what gaps and white spaces — is direct input to the cascade\'s two most important choices. A where-to-play chosen without a competitive landscape analysis is chosen in a vacuum; a how-to-win that does not account for what competitors do and cannot replicate is a how-to-win that will not be defensible.',
+    rel: 'Informs both where-to-play and how-to-win: understanding the competitive field (who is competing, on what dimensions, in which arenas, with what gaps and white spaces) is direct input to the cascade\'s two most important choices. A where-to-play chosen without a competitive landscape analysis is chosen in a vacuum; a how-to-win that does not account for what competitors do and cannot replicate is a how-to-win that will not be defensible.',
   },
   {
     slug: null,
     name: 'Capability Building',
-    rel: 'The natural downstream (in Delivery & Validation): the cascade names the capabilities required to win as its fourth choice. Capability Building is how the organisation actually develops those capabilities — the specific programmes, investments, and organisational changes needed to close the gap between the capabilities the cascade requires and the capabilities the organisation currently has. The cascade names the destination; Capability Building is the journey.',
+    rel: 'The natural downstream (in Delivery & Validation): the cascade names the capabilities required to win as its fourth choice. Capability Building is how the organisation actually develops those capabilities: the specific programmes, investments, and organisational changes needed to close the gap between the capabilities the cascade requires and the capabilities the organisation currently has. The cascade names the destination; Capability Building is the journey.',
   },
 ]
 
@@ -77,7 +77,7 @@ const RELATED_METHODS: RelatedMethod[] = [
 export default function SCCPage() {
   return (
     <>
-      {/* S1 — Header DARK */}
+      {/* S1 - Header DARK */}
       <DarkSection>
         <Container>
           <div className="py-20 md:py-28">
@@ -104,8 +104,8 @@ export default function SCCPage() {
               className="mb-3 max-w-[640px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              Five linked choices &mdash; aspiration, where to play, how to win, capabilities,
-              systems &mdash; that must fit together as a coherent whole, because a strategy is
+              Five linked choices (aspiration, where to play, how to win, capabilities,
+              systems) that must fit together as a coherent whole, because a strategy is
               not a vision and not a plan, it is a set of hard choices that reinforce one another.
             </p>
 
@@ -119,7 +119,7 @@ export default function SCCPage() {
         </Container>
       </DarkSection>
 
-      {/* S2 — Establishing visual DARK */}
+      {/* S2 - Establishing visual DARK */}
       <DarkSection>
         <Container>
           <div className="pb-20">
@@ -128,12 +128,12 @@ export default function SCCPage() {
         </Container>
       </DarkSection>
 
-      {/* S3 — What it is LIGHT */}
+      {/* S3 - What it is LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>What it is</SectionLabel>
-            <SectionHeadingLight>Not a plan, not a vision. A set of five linked choices that must cohere — and the hardest part is what you rule out.</SectionHeadingLight>
+            <SectionHeadingLight>Not a plan, not a vision. A set of five linked choices that must cohere, and the hardest part is what you rule out.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5">
               <Body>
@@ -141,7 +141,7 @@ export default function SCCPage() {
                 &ldquo;Playing to Win,&rdquo; defines strategy as a set of five integrated, cascading
                 choices. First, the WINNING ASPIRATION: what does winning actually look like, what is the
                 purpose and the definition of success? Second, WHERE TO PLAY: in which markets, segments,
-                geographies, channels, and product categories will we compete &mdash; and, just as
+                geographies, channels, and product categories will we compete, and, just as
                 importantly, where will we not? Third, HOW TO WIN: within those chosen arenas, how will
                 we create unique value and sustainable advantage? Fourth, CAPABILITIES: what set of
                 activities and capabilities must we have in place to win the way we have chosen? Fifth,
@@ -152,16 +152,16 @@ export default function SCCPage() {
               <Body>
                 Its central insight is that strategy is a set of CHOICES, not a plan, a vision, or
                 an aspiration alone. Many organisations mistake a vision statement, a budget, or a list
-                of goals for strategy. The cascade insists that strategy is about deciding &mdash;
+                of goals for strategy. The cascade insists that strategy is about deciding:
                 choosing where to play and how to win means choosing where NOT to play and how NOT to
-                win &mdash; and a strategy that tries to play everywhere and win every way is not a
+                win, and a strategy that tries to play everywhere and win every way is not a
                 strategy at all. The discipline is in the hard choices and the things they rule out.
               </Body>
               <Body>
                 The second insight is that the choices CASCADE and must reinforce one another. They
                 are not five independent boxes to fill; each constrains and informs the next, and they
-                must cohere as a whole. Where-to-play and how-to-win &mdash; the heart of the strategy
-                &mdash; must fit together, and both must be supported by real capabilities and the right
+                must cohere as a whole. Where-to-play and how-to-win, the heart of the strategy,
+                must fit together, and both must be supported by real capabilities and the right
                 management systems. If the capabilities do not support the how-to-win, or the
                 where-to-play contradicts the aspiration, the strategy breaks no matter how good any
                 single choice looks. The cascade is a test of coherence as much as a set of questions.
@@ -171,7 +171,7 @@ export default function SCCPage() {
         </Container>
       </LightSection>
 
-      {/* S4 — Interactive DARK */}
+      {/* S4 - Interactive DARK */}
       <DarkSection>
         <Container>
           <div className="py-20">
@@ -182,7 +182,7 @@ export default function SCCPage() {
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Click any choice to reveal what it means and how it connects to the others.
-              Where to Play and How to Win are the heart &mdash; they must fit each other tightly,
+              Where to Play and How to Win are the heart, they must fit each other tightly,
               and everything else in the cascade must fit around them.
             </p>
             <SCCInteractive />
@@ -190,7 +190,7 @@ export default function SCCPage() {
         </Container>
       </DarkSection>
 
-      {/* S5 — When to deploy LIGHT */}
+      {/* S5 - When to deploy LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -207,7 +207,7 @@ export default function SCCPage() {
                   {[
                     'You need to set or clarify a real strategy, and want to move past vision statements and goal lists to actual choices.',
                     'A team is trying to play everywhere and win every way, and needs to be forced into the hard choices strategy requires.',
-                    'You need to check whether an existing strategy is coherent — whether the where-to-play, how-to-win, capabilities, and systems actually fit together.',
+                    'You need to check whether an existing strategy is coherent: whether the where-to-play, how-to-win, capabilities, and systems actually fit together.',
                     'You are aligning a leadership team around a shared, explicit set of strategic choices.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
@@ -250,8 +250,8 @@ export default function SCCPage() {
                 The honest limit: the cascade is a framework for making and testing strategic choices;
                 it does not make the choices for you, and it does not supply the market and capability
                 understanding the choices require. Its most common failure is being completed without
-                genuine choosing — five boxes filled with comprehensive, non-committal answers that
-                avoid the hard trade-offs — which produces the appearance of strategy without its
+                genuine choosing: five boxes filled with comprehensive, non-committal answers that
+                avoid the hard trade-offs, which produces the appearance of strategy without its
                 substance. The value is entirely in the honesty and coherence of the choices.
               </p>
             </div>
@@ -259,7 +259,7 @@ export default function SCCPage() {
         </Container>
       </LightSection>
 
-      {/* S6 — How it works LIGHT */}
+      {/* S6 - How it works LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -271,17 +271,17 @@ export default function SCCPage() {
                 {
                   n: '01',
                   title: 'Define the winning aspiration.',
-                  body: 'State what winning actually looks like — the purpose and the concrete definition of success, not a vague mission. This frames every choice below it. A winning aspiration is specific enough that any strategic choice below it can be evaluated against it: does this where-to-play serve our aspiration? Does this how-to-win realise it? Without a concrete aspiration, there is no way to evaluate the choices that follow.',
+                  body: 'State what winning actually looks like: the purpose and the concrete definition of success, not a vague mission. This frames every choice below it. A winning aspiration is specific enough that any strategic choice below it can be evaluated against it: does this where-to-play serve our aspiration? Does this how-to-win realise it? Without a concrete aspiration, there is no way to evaluate the choices that follow.',
                 },
                 {
                   n: '02',
-                  title: 'Choose where to play — and where not to.',
-                  body: 'Decide the specific markets, segments, geographies, channels, and categories you will compete in, and be explicit about where you will NOT. This is the defining act of choice; refusing to choose here is refusing to have a strategy. The exclusions are where the strategic value lives — a where-to-play that includes everywhere is a non-choice. Name what you are giving up. That discomfort is the evidence that real choosing is happening.',
+                  title: 'Choose where to play, and where not to.',
+                  body: 'Decide the specific markets, segments, geographies, channels, and categories you will compete in, and be explicit about where you will NOT. This is the defining act of choice; refusing to choose here is refusing to have a strategy. The exclusions are where the strategic value lives; a where-to-play that includes everywhere is a non-choice. Name what you are giving up. That discomfort is the evidence that real choosing is happening.',
                 },
                 {
                   n: '03',
                   title: 'Choose how to win.',
-                  body: 'Within the chosen arenas, decide how you will create unique, sustainable value and advantage. Where-to-play and how-to-win are the heart of the strategy and must fit each other: a how-to-win that would work in every arena is not a competitive advantage. The source of advantage might be product superiority, cost structure, customer relationships, proprietary assets, or something else — but it must be genuinely distinctive in the chosen where-to-play and hard for competitors to replicate.',
+                  body: 'Within the chosen arenas, decide how you will create unique, sustainable value and advantage. Where-to-play and how-to-win are the heart of the strategy and must fit each other: a how-to-win that would work in every arena is not a competitive advantage. The source of advantage might be product superiority, cost structure, customer relationships, proprietary assets, or something else, but it must be genuinely distinctive in the chosen where-to-play and hard for competitors to replicate.',
                 },
                 {
                   n: '04',
@@ -291,12 +291,12 @@ export default function SCCPage() {
                 {
                   n: '05',
                   title: 'Define the management systems.',
-                  body: 'Decide the systems, structures, and measures needed to build those capabilities and sustain the choices — what makes the strategy hold in practice rather than on paper. Without management systems, strategies are intentions. The systems close the loop: they provide the measurement and governance that catch drift from the strategic direction before it compounds.',
+                  body: 'Decide the systems, structures, and measures needed to build those capabilities and sustain the choices: what makes the strategy hold in practice rather than on paper. Without management systems, strategies are intentions. The systems close the loop: they provide the measurement and governance that catch drift from the strategic direction before it compounds.',
                 },
                 {
                   n: '06',
                   title: 'Test the whole cascade for coherence.',
-                  body: 'Step back and check that the five choices reinforce one another: does the where-to-play serve the aspiration? Does how-to-win fit where-to-play? Do the capabilities support how-to-win? Do the systems build the capabilities? A strategy is only as strong as its coherence; fix any choice that contradicts the others, and iterate until the cascade locks together. Coherence is not a one-time check — revisit it as conditions change.',
+                  body: 'Step back and check that the five choices reinforce one another: does the where-to-play serve the aspiration? Does how-to-win fit where-to-play? Do the capabilities support how-to-win? Do the systems build the capabilities? A strategy is only as strong as its coherence; fix any choice that contradicts the others, and iterate until the cascade locks together. Coherence is not a one-time check; revisit it as conditions change.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -318,7 +318,7 @@ export default function SCCPage() {
         </Container>
       </LightSection>
 
-      {/* S7 — Best practices LIGHT */}
+      {/* S7 - Best practices LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -392,7 +392,7 @@ export default function SCCPage() {
         </Container>
       </LightSection>
 
-      {/* S8 — Logistics LIGHT */}
+      {/* S8 - Logistics LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -413,7 +413,7 @@ export default function SCCPage() {
                 },
                 {
                   label: 'Anchor the choices in real evidence',
-                  body: 'The cascade organises choices; it does not supply the understanding behind them. Bring real inputs — market and competitive analysis for where-to-play, a clear source of advantage for how-to-win, an honest capability audit — so the choices reflect reality rather than ambition alone. A cascade built on assumptions produces a strategy that will fail when it meets the market.',
+                  body: 'The cascade organises choices; it does not supply the understanding behind them. Bring real inputs (market and competitive analysis for where-to-play, a clear source of advantage for how-to-win, an honest capability audit) so the choices reflect reality rather than ambition alone. A cascade built on assumptions produces a strategy that will fail when it meets the market.',
                 },
                 {
                   label: 'Spend the most time on where-to-play and how-to-win',
@@ -449,7 +449,7 @@ export default function SCCPage() {
         </Container>
       </LightSection>
 
-      {/* S9 — AI and this method DARK */}
+      {/* S9 - AI and this method DARK */}
       <DarkSection>
         <Container>
           <div className="py-20">
@@ -460,7 +460,7 @@ export default function SCCPage() {
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Toggle between modes to see where AI can genuinely help articulate and pressure-test
-              the cascade &mdash; and why the essential act, choice and exclusion, resists it.
+              the cascade, and why the essential act, choice and exclusion, resists it.
               AI&rsquo;s inclusive default runs directly against the discipline that strategy requires.
             </p>
             <SCCAIReactivated />
@@ -468,7 +468,7 @@ export default function SCCPage() {
         </Container>
       </DarkSection>
 
-      {/* S10 — In-depth example LIGHT */}
+      {/* S10 - In-depth example LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -481,14 +481,14 @@ export default function SCCPage() {
               A mid-sized company competing in many segments and winning in none works the cascade
               together. The hard part is the where-to-play: naming which segments to exit. Everything
               else follows from that choice. Toggle to see what a hypothetical AI-run cascade might
-              have produced &mdash; and why the comprehensive output it generates is the opposite of strategy.
+              have produced, and why the comprehensive output it generates is the opposite of strategy.
             </p>
             <SCCExampleToggle />
           </div>
         </Container>
       </LightSection>
 
-      {/* S11 — Frameworks LIGHT */}
+      {/* S11 - Frameworks LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -499,7 +499,7 @@ export default function SCCPage() {
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               The cascade maps to the strategy-and-framing moments of the major innovation
-              frameworks &mdash; when teams need to decide where to play and how to win, not
+              frameworks, when teams need to decide where to play and how to win, not
               just how to execute. It is intentionally absent at hands-on discovery, ideation,
               and delivery phases, where the strategic direction it sets is taken as given.
             </p>
@@ -530,7 +530,7 @@ export default function SCCPage() {
         </Container>
       </LightSection>
 
-      {/* S12 — Related methods LIGHT */}
+      {/* S12 - Related methods LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -568,7 +568,7 @@ export default function SCCPage() {
         </Container>
       </LightSection>
 
-      {/* S13 — Sources LIGHT */}
+      {/* S13 - Sources LIGHT */}
       <LightSection>
         <Container prose>
           <div className="py-20">
@@ -581,19 +581,19 @@ export default function SCCPage() {
                   title:  'Playing to Win: How Strategy Really Works',
                   author: 'A.G. Lafley and Roger Martin',
                   year:   '2013',
-                  note:   'The definitive source for the Strategic Choice Cascade. Lafley and Martin built the framework from Lafley\'s two tenures as CEO of Procter & Gamble and Martin\'s decades of strategy work at Monitor and the Rotman School. Their core argument — that strategy is a set of reinforcing choices, not a plan or a vision, and that the two most important are where-to-play and how-to-win — is the origin of the cascade. The book\'s insistence that strategy is about deciding what NOT to do, and its treatment of the cascade as a coherence test as much as a question set, is the intellectual foundation this method page builds on.',
+                  note:   'The definitive source for the Strategic Choice Cascade. Lafley and Martin built the framework from Lafley\'s two tenures as CEO of Procter & Gamble and Martin\'s decades of strategy work at Monitor and the Rotman School. Their core argument, that strategy is a set of reinforcing choices, not a plan or a vision, and that the two most important are where-to-play and how-to-win, is the origin of the cascade. The book\'s insistence that strategy is about deciding what NOT to do, and its treatment of the cascade as a coherence test as much as a question set, is the intellectual foundation this method page builds on.',
                 },
                 {
                   title:  'Good Strategy Bad Strategy',
                   author: 'Richard Rumelt',
                   year:   '2011',
-                  note:   'Rumelt\'s account of what distinguishes real strategy (hard choices with a coherent logic) from the "fluff" that impersonates it (vague aspirations, generic goals, a list of actions without an underlying diagnosis). His concept of the "kernel of good strategy" — a diagnosis, a guiding policy, and coherent actions — complements the cascade by providing a different language for the same underlying discipline: strategy requires hard, specific choices about where to direct effort, not comprehensive statements of intention.',
+                  note:   'Rumelt\'s account of what distinguishes real strategy (hard choices with a coherent logic) from the "fluff" that impersonates it (vague aspirations, generic goals, a list of actions without an underlying diagnosis). His concept of the "kernel of good strategy" (a diagnosis, a guiding policy, and coherent actions) complements the cascade by providing a different language for the same underlying discipline: strategy requires hard, specific choices about where to direct effort, not comprehensive statements of intention.',
                 },
                 {
                   title:  'Competitive Strategy',
                   author: 'Michael Porter',
                   year:   '1980',
-                  note:   'The foundational text on strategic positioning that underpins the where-to-play and how-to-win choices. Porter\'s five forces, his generic strategies (cost leadership, differentiation, focus), and his concept of strategic fit — that a strategy is a set of mutually reinforcing activities, not a single choice — provide the theoretical grounding for why the cascade\'s choices must cohere and why a how-to-win that is not genuinely distinctive in the chosen arena is not a competitive advantage.',
+                  note:   'The foundational text on strategic positioning that underpins the where-to-play and how-to-win choices. Porter\'s five forces, his generic strategies (cost leadership, differentiation, focus), and his concept of strategic fit (that a strategy is a set of mutually reinforcing activities, not a single choice) provide the theoretical grounding for why the cascade\'s choices must cohere and why a how-to-win that is not genuinely distinctive in the chosen arena is not a competitive advantage.',
                 },
               ].map(({ title, author, year, note }) => (
                 <div

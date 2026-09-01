@@ -34,9 +34,9 @@ const CHOICES: {
     sub: 'what does winning look like?',
     heart: false,
     headline: 'The purpose and definition of success that frames every choice below it.',
-    body: 'Not a vague mission or a list of values. A winning aspiration states concretely what winning actually looks like — for the organisation, for the people it serves, and in the competitive context it operates in. It frames the where-to-play and how-to-win by defining what "winning" means. Without a concrete aspiration, there is no way to evaluate whether a given where-to-play or how-to-win actually serves it.',
+    body: 'Not a vague mission or a list of values. A winning aspiration states concretely what winning actually looks like: for the organisation, for the people it serves, and in the competitive context it operates in. It frames the where-to-play and how-to-win by defining what "winning" means. Without a concrete aspiration, there is no way to evaluate whether a given where-to-play or how-to-win actually serves it.',
     links: 'Every other choice should be assessed against the aspiration. Where-to-play must serve it; how-to-win must realise it; capabilities and systems must sustain it. If any choice contradicts the aspiration, the cascade breaks from the top.',
-    keyQuestion: 'What does winning actually look like — for customers, for the organisation, in the competitive landscape?',
+    keyQuestion: 'What does winning actually look like, for customers, for the organisation, in the competitive landscape?',
   },
   {
     id: 'where',
@@ -44,10 +44,10 @@ const CHOICES: {
     label: 'WHERE TO PLAY',
     sub: 'which markets, segments, channels?',
     heart: true,
-    headline: 'The defining act of choice — which arenas, and critically, which NOT.',
-    body: 'Where-to-play is the cascade\'s hardest choice, and its most important. It names the specific markets, segments, geographies, channels, and product categories in which the organisation will compete — and is just as explicit about where it will not. Playing everywhere is not a choice; it is the absence of strategy. The exclusions are where the strategic value lives.',
+    headline: 'The defining act of choice: which arenas, and critically, which NOT.',
+    body: 'Where-to-play is the cascade\'s hardest choice, and its most important. It names the specific markets, segments, geographies, channels, and product categories in which the organisation will compete, and is just as explicit about where it will not. Playing everywhere is not a choice; it is the absence of strategy. The exclusions are where the strategic value lives.',
     links: 'Where-to-play is one half of the strategy\'s heart. It must serve the winning aspiration, and it must fit tightly with how-to-win: the two choices must reinforce each other. A where-to-play choice changes what capabilities are required and what management systems are needed. Changing where-to-play ripples through every choice below it.',
-    keyQuestion: 'In which specific arenas will we compete — and which arenas are we explicitly choosing to leave?',
+    keyQuestion: 'In which specific arenas will we compete, and which arenas are we explicitly choosing to leave?',
   },
   {
     id: 'how',
@@ -55,10 +55,10 @@ const CHOICES: {
     label: 'HOW TO WIN',
     sub: 'how do we create unique value there?',
     heart: true,
-    headline: 'The source of advantage — how you create unique, hard-to-copy value in the chosen arenas.',
-    body: 'How-to-win answers the question: within the chosen where-to-play, what do we do that creates unique value and sustainable advantage? It must be genuinely distinctive — not something any well-managed competitor could also do. The source of advantage might be product superiority, cost leadership, customer relationships, network effects, proprietary assets, or some combination — but it must be real and defensible in the specific arenas chosen.',
-    links: 'How-to-win is the second half of the strategy\'s heart. It must fit the where-to-play: a how-to-win that would work in every arena is not a strategy. It drives the capabilities choices directly — the required activities and assets follow from the chosen way of winning. If the capabilities cannot support the how-to-win, the how-to-win is a wish, not a strategy.',
-    keyQuestion: 'In our chosen arenas, what do we do that creates unique, hard-to-copy value — and why would customers choose us over alternatives?',
+    headline: 'The source of advantage: how you create unique, hard-to-copy value in the chosen arenas.',
+    body: 'How-to-win answers the question: within the chosen where-to-play, what do we do that creates unique value and sustainable advantage? It must be genuinely distinctive, not something any well-managed competitor could also do. The source of advantage might be product superiority, cost leadership, customer relationships, network effects, proprietary assets, or some combination, but it must be real and defensible in the specific arenas chosen.',
+    links: 'How-to-win is the second half of the strategy\'s heart. It must fit the where-to-play: a how-to-win that would work in every arena is not a strategy. It drives the capabilities choices directly: the required activities and assets follow from the chosen way of winning. If the capabilities cannot support the how-to-win, the how-to-win is a wish, not a strategy.',
+    keyQuestion: 'In our chosen arenas, what do we do that creates unique, hard-to-copy value, and why would customers choose us over alternatives?',
   },
   {
     id: 'capabilities',
@@ -68,8 +68,8 @@ const CHOICES: {
     heart: false,
     headline: 'The set of activities the organisation must be distinctively good at to win the chosen way.',
     body: 'Capabilities are the reinforcing activities and assets the organisation must have to deliver the how-to-win in the chosen where-to-play. They are not generic operational competence; they are the specific things the organisation must be distinctively able to do to win the way it has chosen. If a capability is not linked to the how-to-win, it may be valuable but it is not strategic.',
-    links: 'Capabilities flow directly from how-to-win: the chosen way of winning determines what the organisation must be able to do. Absent or weak capabilities make the how-to-win hollow. Identifying capability gaps turns those gaps into priorities — either the organisation builds the capability (which may feed into Delivery & Validation work), or it must change the how-to-win to match its real capabilities. The management systems below must build and sustain these capabilities.',
-    keyQuestion: 'What must we be distinctively able to do — better than competitors and consistently enough to sustain our how-to-win?',
+    links: 'Capabilities flow directly from how-to-win: the chosen way of winning determines what the organisation must be able to do. Absent or weak capabilities make the how-to-win hollow. Identifying capability gaps turns those gaps into priorities: either the organisation builds the capability (which may feed into Delivery & Validation work), or it must change the how-to-win to match its real capabilities. The management systems below must build and sustain these capabilities.',
+    keyQuestion: 'What must we be distinctively able to do, better than competitors and consistently enough to sustain our how-to-win?',
   },
   {
     id: 'systems',
@@ -105,14 +105,14 @@ export default function SCCInteractive() {
     <div className="w-full space-y-6">
       <p className="font-mono uppercase tracking-widest"
         style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.55)` }}>
-        Click any choice to reveal it and its connections — Where to Play and How to Win are the heart
+        Click any choice to reveal it and its connections, Where to Play and How to Win are the heart
       </p>
 
       <div className="w-full">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
           preserveAspectRatio="xMidYMid meet"
           style={{ display: 'block', cursor: 'pointer' }}
-          aria-label="Interactive Strategic Choice Cascade — click a choice to learn what it means and how it connects to the others"
+          aria-label="Interactive Strategic Choice Cascade, click a choice to learn what it means and how it connects to the others"
           role="img">
 
           <defs>
@@ -200,7 +200,7 @@ export default function SCCInteractive() {
             )
           })}
 
-          {/* Right-side coherence arc — shows when WHERE or HOW active */}
+          {/* Right-side coherence arc: shows when WHERE or HOW active */}
           <motion.g animate={{ opacity: (active === 'where' || active === 'how' || active === 'capabilities' || active === 'systems') ? 0.45 : active ? 0.10 : 0.22 }} transition={fade}>
             <path
               d={`M ${BOX_RIGHT},${482} C 616,${482} 616,${66} ${BOX_RIGHT},${66}`}
@@ -216,7 +216,7 @@ export default function SCCInteractive() {
             </text>
           </motion.g>
 
-          {/* WHERE↔HOW heart arc — highlights when WHERE or HOW active */}
+          {/* WHERE↔HOW heart arc: highlights when WHERE or HOW active */}
           <motion.g animate={{ opacity: (active === 'where' || active === 'how') ? 1 : active ? 0.12 : 0.40 }} transition={fade}>
             <path
               d={`M ${BOX_LEFT},${170} C 148,${170} 148,${274} ${BOX_LEFT},${274}`}
@@ -232,12 +232,12 @@ export default function SCCInteractive() {
             </text>
           </motion.g>
 
-          {/* AMBER coherence-break warning — shows in idle state as hint */}
+          {/* AMBER coherence-break warning: shows in idle state as hint */}
           {!active && (
             <text x={CX} y={SVG_H - 6} textAnchor="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
               fill={`${AMBER}0.30)`} style={{ userSelect: 'none' }}>
-              CHANGING ONE CHOICE RIPPLES THROUGH THE OTHERS — A CONTRADICTION BREAKS THE CASCADE
+              CHANGING ONE CHOICE RIPPLES THROUGH THE OTHERS, A CONTRADICTION BREAKS THE CASCADE
             </text>
           )}
         </svg>
@@ -304,7 +304,7 @@ export default function SCCInteractive() {
             style={{ border: '1px dashed rgba(255,255,255,0.10)' }}>
             <p className="font-mono uppercase tracking-widest"
               style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.22)' }}>
-              Select any choice above — Where to Play and How to Win are the heart
+              Select any choice above, Where to Play and How to Win are the heart
             </p>
           </motion.div>
         )}

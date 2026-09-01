@@ -42,7 +42,7 @@ export default function SCCEstablishing() {
       width="100%"
       preserveAspectRatio="xMidYMid meet"
       style={{ display: 'block' }}
-      aria-label="Strategic Choice Cascade: five choices flowing top to bottom — Winning Aspiration, Where to Play (the heart), How to Win (the heart), Capabilities, Management Systems — with reinforcing feedback links showing all choices must cohere as a mutually-reinforcing whole."
+      aria-label="Strategic Choice Cascade: five choices flowing top to bottom: Winning Aspiration, Where to Play (the heart), How to Win (the heart), Capabilities, Management Systems, with reinforcing feedback links showing all choices must cohere as a mutually-reinforcing whole."
     >
       <defs>
         <filter id="scc-est-glow" x="-40%" y="-40%" width="180%" height="180%">
@@ -179,7 +179,7 @@ export default function SCCEstablishing() {
         initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? { opacity: 1 } : { opacity: 0 })}
         transition={tr(1.14)}>
-        STRATEGY IS NOT FIVE BOXES FILLED INDEPENDENTLY — IT IS FIVE CHOICES THAT MUST REINFORCE ONE ANOTHER
+        STRATEGY IS NOT FIVE BOXES FILLED INDEPENDENTLY, IT IS FIVE CHOICES THAT MUST REINFORCE ONE ANOTHER
       </motion.text>
     </svg>
   )

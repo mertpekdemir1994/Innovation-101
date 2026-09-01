@@ -59,14 +59,14 @@ export default function SCCExampleToggle() {
                 style={{ color: `${PLUM}1)` }}>The hard part was the choosing</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The leadership team worked the cascade together. Their winning aspiration was clear
-                enough — to be the most trusted partner for clients in their core categories, not
+                enough: to be the most trusted partner for clients in their core categories, not
                 simply a broad-based provider. That framing turned out to matter.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 But where-to-play forced the decision the company had been avoiding. Rather than
                 continuing to compete across every segment, they chose to concentrate on the specific
-                segments where they had a genuine right to win — where their relationships, reputation,
-                and operational strengths gave them a defensible edge — and explicitly decided to exit
+                segments where they had a genuine right to win, where their relationships, reputation,
+                and operational strengths gave them a defensible edge, and explicitly decided to exit
                 or de-prioritise the others. Naming what they would give up was uncomfortable. It was
                 also exactly the strategic act.
               </p>
@@ -80,12 +80,12 @@ export default function SCCExampleToggle() {
                 {[
                   {
                     choice: 'WHERE TO PLAY → HOW TO WIN',
-                    body: 'How-to-win was made to fit that narrowed where-to-play: a source of advantage — deep client relationships, high-touch service at a level generalist competitors could not economically match — that was real in the chosen segments, even though it would not have worked across all the segments they were abandoning. The heart of the strategy clicked into place when these two choices fit each other.',
+                    body: 'How-to-win was made to fit that narrowed where-to-play: a source of advantage (deep client relationships, high-touch service at a level generalist competitors could not economically match) that was real in the chosen segments, even though it would not have worked across all the segments they were abandoning. The heart of the strategy clicked into place when these two choices fit each other.',
                     heart: true,
                   },
                   {
                     choice: 'CAPABILITIES',
-                    body: 'They audited capabilities honestly against that how-to-win and found gaps — specifically in their account management depth and their sector-specialist knowledge base in the chosen segments. Building those became explicit priorities rather than background noise.',
+                    body: 'They audited capabilities honestly against that how-to-win and found gaps: specifically in their account management depth and their sector-specialist knowledge base in the chosen segments. Building those became explicit priorities rather than background noise.',
                     heart: false,
                   },
                   {
@@ -118,7 +118,7 @@ export default function SCCExampleToggle() {
             {/* Result */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${PLUM}0.22)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${PLUM}1)` }}>What they got — and why it worked</p>
+                style={{ color: `${PLUM}1)` }}>What they got, and why it worked</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The result was a real strategy, not because any single choice was brilliant, but
                 because the choices were genuine (they gave things up) and coherent (they fit together).
@@ -126,7 +126,7 @@ export default function SCCExampleToggle() {
                 company spread thin into a focused competitor.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                The value came entirely from the hard, reinforcing choices — above all the choice of
+                The value came entirely from the hard, reinforcing choices, above all the choice of
                 where NOT to play. Without naming the exclusions, the cascade would have been a
                 well-intentioned vision statement, and the company would have remained spread thin.
               </p>
@@ -147,7 +147,7 @@ export default function SCCExampleToggle() {
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical.</span>{' '}
                 This tab imagines what might happen if leadership had asked an AI to build the strategy
                 using the cascade, since the real case was human-led. It illustrates a specific failure
-                mode — AI&apos;s inclusive, plausibility-seeking default — not a claim about what any
+                mode, AI&apos;s inclusive, plausibility-seeking default, not a claim about what any
                 particular tool would produce.
               </p>
             </div>
@@ -155,7 +155,7 @@ export default function SCCExampleToggle() {
             {/* What the AI produced */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${INDIGO}0.90)` }}>The AI cascade: thorough, articulate — and the tell</p>
+                style={{ color: `${INDIGO}0.90)` }}>The AI cascade: thorough, articulate, and the tell</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The AI produced a thorough, articulate, well-structured cascade, and that was the tell.
                 Its winning aspiration was inspiring: to be the most valued partner for clients across
@@ -163,7 +163,7 @@ export default function SCCExampleToggle() {
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 Its where-to-play, rather than making the hard cut, helpfully affirmed the appeal of
-                essentially all the segments the company was already in — with thoughtful reasons each
+                all the segments the company was already in, with thoughtful reasons each
                 was attractive. Its how-to-win offered several plausible ways to compete, each with
                 merit. The document read like a strategy: five boxes, confidently filled, comprehensive
                 and balanced.
@@ -175,8 +175,8 @@ export default function SCCExampleToggle() {
                 <p className="text-sm text-neutral-700 leading-relaxed">
                   It had performed the opposite of strategy. The everywhere-to-play where-to-play was
                   precisely the company&apos;s actual problem, and the AI had validated it rather than
-                  resolved it. The single most important act — deciding which segments to exit so the
-                  company could win in the rest — was exactly what the AI&apos;s inclusive,
+                  resolved it. The single most important act, deciding which segments to exit so the
+                  company could win in the rest, was exactly what the AI&apos;s inclusive,
                   plausibility-seeking default would not do. Choosing to exit attractive-looking arenas
                   is a bet AI has no basis or accountability to make.
                 </p>
@@ -191,16 +191,16 @@ export default function SCCExampleToggle() {
               <div className="space-y-3">
                 {[
                   {
-                    label: 'Everywhere to play — the exact non-choice that was the problem',
-                    detail: 'AI\'s where-to-play covered all the segments with reasons each was attractive. This was not a failure of knowledge — it was a feature of how AI works. A plausibility-maximising model covering all bases is doing exactly what it\'s designed to do. Strategy requires the opposite: choosing which attractive-looking arenas to abandon. That exclusion AI will not make.',
+                    label: 'Everywhere to play: the exact non-choice that was the problem',
+                    detail: 'AI\'s where-to-play covered all the segments with reasons each was attractive. This was not a failure of knowledge; it was a feature of how AI works. A plausibility-maximising model covering all bases is doing exactly what it\'s designed to do. Strategy requires the opposite: choosing which attractive-looking arenas to abandon. That exclusion AI will not make.',
                   },
                   {
-                    label: 'Several ways to win — commitment-free',
+                    label: 'Several ways to win, commitment-free',
                     detail: 'The how-to-win offered multiple plausible approaches, each defensible. But a strategy requires one way to win in the chosen arenas, not a menu of options. AI\'s instinct to present options with pros and cons, rather than committing, is the inverse of strategy.',
                   },
                   {
                     label: 'A complete-looking document that lent false confidence',
-                    detail: 'Because the output had all five boxes confidently filled and read like a real strategy, it risked giving leadership the feeling that the strategic work was done. Had they adopted it, they would have kept competing across every segment and winning nowhere — dressed up in strategic language. The appearance of strategy is sometimes more dangerous than no strategy at all.',
+                    detail: 'Because the output had all five boxes confidently filled and read like a real strategy, it risked giving leadership the feeling that the strategic work was done. Had they adopted it, they would have kept competing across every segment and winning nowhere, dressed up in strategic language. The appearance of strategy is sometimes more dangerous than no strategy at all.',
                   },
                 ].map(item => (
                   <div key={item.label} className="rounded p-3"
@@ -240,7 +240,7 @@ export default function SCCExampleToggle() {
                   <p className="text-xs text-neutral-700 leading-relaxed">
                     Deciding which segments to exit. Committing to one way to win and giving others up.
                     Making the bet on a particular where-and-how and owning the consequences. The courage
-                    to exclude — which is the whole point of strategy and the one thing AI&apos;s inclusive
+                    to exclude, which is the whole point of strategy and the one thing AI&apos;s inclusive
                     default consistently avoids.
                   </p>
                 </div>

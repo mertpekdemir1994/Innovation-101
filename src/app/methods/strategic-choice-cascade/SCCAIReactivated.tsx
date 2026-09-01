@@ -19,8 +19,8 @@ type Mode = 'human' | 'ai'
 
 const HUMAN_CHOICES = [
   { id: 'aspiration',   cy: 66,  label: 'WINNING ASPIRATION',  sub: 'what does winning look like?',          heart: false, aiBadge: null },
-  { id: 'where',        cy: 170, label: 'WHERE TO PLAY',       sub: 'which markets, segments, channels?',    heart: true,  aiBadge: 'AI LISTS ALL OPTIONS — WON\'T EXCLUDE' },
-  { id: 'how',          cy: 274, label: 'HOW TO WIN',          sub: 'how do we create unique value there?',  heart: true,  aiBadge: 'AI OFFERS MULTIPLE WAYS — WON\'T COMMIT' },
+  { id: 'where',        cy: 170, label: 'WHERE TO PLAY',       sub: 'which markets, segments, channels?',    heart: true,  aiBadge: 'AI LISTS ALL OPTIONS, WON\'T EXCLUDE' },
+  { id: 'how',          cy: 274, label: 'HOW TO WIN',          sub: 'how do we create unique value there?',  heart: true,  aiBadge: 'AI OFFERS MULTIPLE WAYS, WON\'T COMMIT' },
   { id: 'capabilities', cy: 378, label: 'CAPABILITIES',        sub: 'what must we be able to do?',           heart: false, aiBadge: 'AI CAN ENUMERATE THESE' },
   { id: 'systems',      cy: 482, label: 'MANAGEMENT SYSTEMS',  sub: 'what systems and measures sustain it?', heart: false, aiBadge: 'AI CAN SUGGEST THESE' },
 ]
@@ -60,7 +60,7 @@ export default function SCCAIReactivated() {
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
           preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}
           aria-label={isAI
-            ? 'AI mode: AI can enumerate options and check coherence, but Where to Play and How to Win remain human choices — AI\'s inclusive default produces plausible non-strategies that refuse to exclude.'
+            ? 'AI mode: AI can enumerate options and check coherence, but Where to Play and How to Win remain human choices; AI\'s inclusive default produces plausible non-strategies that refuse to exclude.'
             : 'Human mode: five linked choices flowing top to bottom, Where to Play and How to Win highlighted as the heart that must fit together.'}>
 
           <defs>
@@ -214,7 +214,7 @@ export default function SCCAIReactivated() {
                   <text x={CX} y={234} textAnchor="middle"
                     fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                     fill={`${PLUM}0.50)`} style={{ userSelect: 'none' }}>
-                    AI&apos;s inclusive default avoids exactly this — it will not exclude
+                    AI&apos;s inclusive default avoids exactly this: it will not exclude
                   </text>
                 </g>
               )}
@@ -226,8 +226,8 @@ export default function SCCAIReactivated() {
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
             fill="rgba(255,255,255,0.14)" style={{ userSelect: 'none' }}>
             {isAI
-              ? 'AI CAN FILL ALL FIVE BOXES — BUT STRATEGY IS DECIDING WHAT NOT TO DO, AND THAT IS WHAT AI AVOIDS'
-              : 'THE HARDEST CHOICE IS WHERE NOT TO PLAY — AND THAT IS EXACTLY WHERE THE STRATEGIC VALUE LIVES'}
+              ? 'AI CAN FILL ALL FIVE BOXES, BUT STRATEGY IS DECIDING WHAT NOT TO DO, AND THAT IS WHAT AI AVOIDS'
+              : 'THE HARDEST CHOICE IS WHERE NOT TO PLAY, AND THAT IS EXACTLY WHERE THE STRATEGIC VALUE LIVES'}
           </text>
         </svg>
       </div>
@@ -242,7 +242,7 @@ export default function SCCAIReactivated() {
             transition={{ duration: 0.18 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { label: 'REAL CHOICES', body: 'The cascade forces real choices — including explicit decisions about where NOT to play and how NOT to win. Without those exclusions, the cascade is five boxes filled with aspiration, not strategy.' },
+              { label: 'REAL CHOICES', body: 'The cascade forces real choices: including explicit decisions about where NOT to play and how NOT to win. Without those exclusions, the cascade is five boxes filled with aspiration, not strategy.' },
               { label: 'THE HEART MUST FIT', body: 'Where-to-play and how-to-win must fit each other tightly. The cascade is only as strong as that joint. Test the fit repeatedly, and treat any misalignment as a broken strategy, not a minor inconsistency.' },
               { label: 'TEST THE WHOLE', body: 'The five choices are not independent. Test them as a chain: does each reinforce the next? A contradiction anywhere in the cascade means the strategy fails not because a single choice is wrong, but because the choices do not cohere.' },
             ].map(item => (
@@ -269,12 +269,12 @@ export default function SCCAIReactivated() {
               {
                 label: 'WHERE AI STRUGGLES',
                 color: AMBER,
-                body: 'Asked to choose, AI will present options with pros and cons rather than commit. Its instinct to cover all the bases — offend no possibility — is the precise opposite of strategy. A where-to-play that includes everywhere is a non-choice, and AI\'s default is exactly that.',
+                body: 'Asked to choose, AI will present options with pros and cons rather than commit. Its instinct to cover all the bases (offend no possibility) is the precise opposite of strategy. A where-to-play that includes everywhere is a non-choice, and AI\'s default is exactly that.',
               },
               {
                 label: 'THE BET STAYS HUMAN',
                 color: PLUM,
-                body: 'A real strategic choice is a bet — a commitment of the organisation\'s resources and future on a particular where-and-how, made under uncertainty, owned by accountable leaders. That act of decision, and the courage to exclude, cannot be delegated to a model that bears none of the consequences.',
+                body: 'A real strategic choice is a bet: a commitment of the organisation\'s resources and future on a particular where-and-how, made under uncertainty, owned by accountable leaders. That act of decision, and the courage to exclude, cannot be delegated to a model that bears none of the consequences.',
               },
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
