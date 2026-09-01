@@ -241,7 +241,7 @@ export default function SBEstablishing() {
         <motion.text x={SVG_W / 2} y={SVG_H - 7}
           textAnchor="middle" fontSize="3.8"
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
           {...fade(1.40)}>
           The story cannot get from frame three to frame five. The gap is the finding.
         </motion.text>
