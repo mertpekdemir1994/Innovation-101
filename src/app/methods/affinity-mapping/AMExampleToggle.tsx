@@ -68,7 +68,7 @@ export default function AMExampleToggle() {
             <div className="mb-6">
               <p
                 className="font-mono uppercase tracking-widest mb-4"
-                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
               >The raw observations, before clustering</p>
               <div className="grid sm:grid-cols-2 gap-3 mb-4">
                 {[
@@ -89,7 +89,7 @@ export default function AMExampleToggle() {
                   >
                     <p
                       className="font-mono uppercase tracking-widest mb-1.5"
-                      style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                      style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
                     >{note}</p>
                     <p
                       style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}
@@ -127,7 +127,7 @@ export default function AMExampleToggle() {
             >
               <p
                 className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
               >What the cluster made possible</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 The named insight, children brush with their whole fist, pointed directly to a design direction that Oral-B had never considered: make the handle fatter. Not a feature. Not an aesthetic update. A structural change that matched the grip children actually use. The Oral-B Squish Grip became one of the most commercially successful product redesigns of its decade. The insight was not in any single observation. It was in the cluster.

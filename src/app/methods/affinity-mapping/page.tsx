@@ -234,7 +234,7 @@ export default function AffinityMappingPage() {
               <div>
                 <p
                   className="font-mono uppercase tracking-widest mb-4"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
                 >Do not reach for it when</p>
                 <ul className="flex flex-col gap-3">
                   {[
@@ -244,7 +244,7 @@ export default function AffinityMappingPage() {
                     'Speed is the priority and good-enough structure is sufficient. A quick thematic sort without the naming discipline produces categories, not insights, but that may be enough for a fast decision.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item}
                       </span>

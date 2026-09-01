@@ -352,7 +352,7 @@ export default function AMInteractive() {
               {/* Dismiss hint */}
               <p
                 className="text-center mt-4"
-                style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)' }}
+                style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)' }}
               >
                 Tap <strong style={{ color: `${NAVY}0.60)` }}>{cluster.insightLines.join(' ')}</strong> again to close
               </p>
