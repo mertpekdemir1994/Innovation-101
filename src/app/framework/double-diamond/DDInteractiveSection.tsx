@@ -6,13 +6,13 @@ import type { Phase, PhaseContent } from '@/components/viz/DoubleDiamondViz'
 const phaseContent: Record<Phase, PhaseContent> = {
   discover: {
     phase: 'discover',
-    headline: 'Discover — diverge to understand the problem space',
+    headline: 'Discover: diverge to understand the problem space',
     activities: [
       {
         id: 'discover-user-research',
         title: 'User Research',
-        summary: 'Ethnographic and contextual research into how people experience the problem space. The goal is not to confirm assumptions but to challenge them — observe what people do, not just what they say.',
-        prompt: 'What would you need to see, hear, or learn to be genuinely surprised about this problem?',
+        summary: 'Ethnographic and contextual research into how people experience the problem space. The goal is not to confirm assumptions but to challenge them: observe what people do, not just what they say.',
+        prompt: 'What would you need to see, hear, or learn to be surprised about this problem?',
         methodSlug: 'user-interviews',
       },
       {
@@ -25,19 +25,19 @@ const phaseContent: Record<Phase, PhaseContent> = {
         id: 'discover-capability-map',
         title: 'Capability & Technology Scan',
         summary: 'Audit existing organisational capabilities, manufacturing assets, distribution relationships, and technology. Map what is newly possible. Understand the boundaries of what is buildable.',
-        prompt: 'What does your organisation do genuinely well that could be relevant here?',
+        prompt: 'What does your organisation do well that could be relevant here?',
       },
     ],
   },
   define: {
     phase: 'define',
-    headline: 'Define — converge to frame the right problem',
+    headline: 'Define: converge to frame the right problem',
     activities: [
       {
         id: 'define-synthesis',
         title: 'Synthesis & Insight Generation',
-        summary: 'Synthesise everything learned in Discover into insights — patterns of need, behaviour, or tension that reveal what is really going on. An insight is not a finding; it is an interpretation of a finding that points toward opportunity.',
-        prompt: 'What did you learn that genuinely surprised you? What assumption did the research overturn?',
+        summary: 'Synthesise everything learned in Discover into insights: patterns of need, behaviour, or tension that reveal what is going on. An insight is not a finding; it is an interpretation of a finding that points toward opportunity.',
+        prompt: 'What did you learn that surprised you? What assumption did the research overturn?',
         methodSlug: 'how-might-we',
       },
       {
@@ -50,31 +50,31 @@ const phaseContent: Record<Phase, PhaseContent> = {
   },
   develop: {
     phase: 'develop',
-    headline: 'Develop — diverge to explore potential solutions',
+    headline: 'Develop: diverge to explore potential solutions',
     activities: [
       {
         id: 'develop-ideation',
         title: 'Concept Generation',
         summary: 'Generate a wide range of concepts before evaluating any of them. Diverge first. Volume before quality. The best ideas rarely come first. Use How Might We questions from Define to open up the solution space.',
-        prompt: 'List ten very different types of solutions to your POV — not ten variations of the same solution.',
+        prompt: 'List ten different types of solutions to your POV, not ten variations of the same solution.',
         methodSlug: 'how-might-we',
       },
       {
         id: 'develop-prototype',
         title: 'Rapid Prototyping',
-        summary: 'Build rough, fast representations of your top concepts — paper, sketches, role-play, or digital mocks — and expose them to people. The goal is to learn, not to impress. Fail fast and learn faster.',
+        summary: 'Build rough, fast representations of your top concepts (paper, sketches, role-play, or digital mocks) and expose them to people. The goal is to learn, not to impress. Fail fast and learn faster.',
         prompt: 'What is the cheapest and fastest way to test whether people want this?',
       },
     ],
   },
   deliver: {
     phase: 'deliver',
-    headline: 'Deliver — converge to ship the right solution',
+    headline: 'Deliver: converge to ship the right solution',
     activities: [
       {
         id: 'deliver-validation',
         title: 'Validation',
-        summary: 'User research confirms people want, understand, and will use the solution. Not just that they say they like it in a test — evidence they will genuinely adopt it in their real context.',
+        summary: 'User research confirms people want, understand, and will use the solution. Not just that they say they like it in a test; evidence they will adopt it in their real context.',
         prompt: 'What is the evidence that people will use this in their real lives, not just in a test environment?',
       },
       {

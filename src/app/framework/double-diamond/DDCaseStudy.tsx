@@ -17,9 +17,9 @@ const PHASE_DEFS: { key: Phase; label: string; sub: string; mode: string }[] = [
 ]
 
 const STREAMS: { key: StreamKey; label: string; question: string }[] = [
-  { key: 'desirability', label: 'Desirability', question: 'What do people actually need?' },
+  { key: 'desirability', label: 'Desirability', question: 'What do people need?' },
   { key: 'viability', label: 'Viability', question: 'Where is there a business?' },
-  { key: 'feasibility', label: 'Feasibility', question: 'What can Northvale actually do?' },
+  { key: 'feasibility', label: 'Feasibility', question: 'What can Northvale do?' },
 ]
 
 type Artifact = { type: 'quote' | 'finding'; label: string; lines: string[] }
@@ -29,37 +29,37 @@ const STREAM_DATA: Record<StreamKey, { work: string; artifact: Artifact; pattern
     work: 'In-home ethnography with 60 households across the US, UK, Germany, and Japan. Researchers spent two to three hours in each home watching people clean, restock, and manage their household supplies, then interviewed them about frustrations and workarounds.',
     artifact: {
       type: 'quote',
-      label: 'Field observation — Participant H-014, Munich',
+      label: 'Field observation: Participant H-014, Munich',
       lines: [
         'Participant H-014 keeps a handwritten list on the fridge of things "about to run out." She photographs it before shopping. She has run out of dishwasher tablets three times this month anyway.',
         '"I don\'t mind buying it. I mind realizing at 9pm that we\'re out."',
       ],
     },
     pattern:
-      'The pain was rarely about how well a product cleaned. It was about managing the system of supplies — the mental load of tracking, remembering, and never quite running out. Cleaning efficacy was table stakes; supply anxiety was the unmet need.',
+      'The pain was rarely about how well a product cleaned. It was about managing the system of supplies: the mental load of tracking, remembering, and never quite running out. Cleaning efficacy was table stakes; supply anxiety was the unmet need.',
   },
   viability: {
     work: "Market sizing of eight adjacent categories. Business-model benchmarking of twelve companies that had extended from a product business into services or subscription. Margin teardown of Northvale's own portfolio to understand which economic models the company already knew how to run.",
     artifact: {
       type: 'finding',
-      label: 'Market model — Subscription viability',
+      label: 'Market model: Subscription viability',
       lines: [
         'The household-supply subscription market was growing ~18% annually.',
-        'Attractive contribution margins required roughly 40,000–60,000 active subscribers — the point where logistics and acquisition costs amortize.',
+        'Attractive contribution margins required roughly 40,000–60,000 active subscribers, the point where logistics and acquisition costs amortize.',
         'Below that threshold, the economics lose money on every box shipped.',
       ],
     },
     pattern:
-      'There was a real, growing, profitable business in recurring replenishment — but only at scale. Any concept here had to have a credible path to ~50,000 subscribers fast.',
+      'There was a real, growing, profitable business in recurring replenishment, but only at scale. Any concept here had to have a credible path to ~50,000 subscribers fast.',
   },
   feasibility: {
-    work: "An internal capability audit. What can the eleven plants flex to make? What do the retail relationships actually permit? What is the R&D pipeline? What does Northvale categorically lack?",
+    work: "An internal capability audit. What can the eleven plants flex to make? What do the retail relationships permit? What is the R&D pipeline? What does Northvale categorically lack?",
     artifact: {
       type: 'finding',
-      label: 'Capability map — Summary',
+      label: 'Capability map: Summary',
       lines: [
         'STRONG: chemical formulation, high-volume manufacturing, retail distribution, brand trust.',
-        "WEAK: e-commerce, subscription billing, connected devices, direct customer relationships — Northvale has never sold directly to a consumer in its history.",
+        "WEAK: e-commerce, subscription billing, connected devices, direct customer relationships: Northvale has never sold directly to a consumer in its history.",
       ],
     },
     pattern:
@@ -140,7 +140,7 @@ const LESSONS = [
     n: '03',
     title: 'A concept without a business-model hypothesis is incomplete.',
     detail:
-      'Developing product, business model, and delivery in parallel — rather than designing the product and retrofitting a business model later — is the structural thing that separates the Doblin approach from the original.',
+      'Developing product, business model, and delivery in parallel, rather than designing the product and retrofitting a business model later, is the structural thing that separates the Doblin approach from the original.',
   },
 ]
 
@@ -318,7 +318,7 @@ function DefineContent() {
 
       <div className="mb-space-2">
         <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-3">
-          Representative slice — 5 of 11 candidates evaluated
+          Representative slice: 5 of 11 candidates evaluated
         </p>
         <div
           className="overflow-x-auto rounded-xl"
@@ -395,7 +395,7 @@ function DefineContent() {
       </div>
 
       <p className="text-xs text-neutral-400 mt-space-3 mb-space-8">
-        Of 11 candidates, 3 failed viability, 2 failed feasibility, and the rest scored lower across all three. Two POVs proceeded — before a dollar was spent developing them.
+        Of 11 candidates, 3 failed viability, 2 failed feasibility, and the rest scored lower across all three. Two POVs proceeded, before a dollar was spent developing them.
       </p>
 
       <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-4">
@@ -410,10 +410,10 @@ function DefineContent() {
             className="font-mono text-2xs uppercase tracking-widest mb-space-3"
             style={{ color: `${PURPLE}0.70)` }}
           >
-            POV 1 — Replenishment
+            POV 1: Replenishment
           </p>
           <p className="text-base text-neutral-800 leading-relaxed italic">
-            &ldquo;Households with recurring supply needs need replenishment that removes the friction of remembering, ordering, and waiting, because the failure mode that actually hurts is running out, not choosing the wrong product.&rdquo;
+            &ldquo;Households with recurring supply needs need replenishment that removes the friction of remembering, ordering, and waiting, because the failure mode that hurts is running out, not choosing the wrong product.&rdquo;
           </p>
         </blockquote>
         <blockquote
@@ -424,7 +424,7 @@ function DefineContent() {
             className="font-mono text-2xs uppercase tracking-widest mb-space-3"
             style={{ color: `${PURPLE}0.70)` }}
           >
-            POV 2 — System
+            POV 2: System
           </p>
           <p className="text-base text-neutral-800 leading-relaxed italic">
             &ldquo;Households managing cleaning need a coherent system rather than a drawer of incompatible products, because the mental load of managing many products is the real burden, not the performance of any one of them.&rdquo;
@@ -449,7 +449,7 @@ function DevelopContent() {
       {
         label: 'Business model',
         content:
-          'Subscription margin modeled at the 50,000-subscriber threshold identified in the Viability research stream — the break-even point where unit economics become attractive.',
+          'Subscription margin modeled at the 50,000-subscriber threshold identified in the Viability research stream: the break-even point where unit economics become attractive.',
       },
       {
         label: 'Delivery',
@@ -461,7 +461,7 @@ function DevelopContent() {
       {
         label: 'Product',
         content:
-          'A curated, coordinated set of cleaning products designed to work as one system, in refillable durable vessels — the physical expression of the "coherent system" POV.',
+          'A curated, coordinated set of cleaning products designed to work as one system, in refillable durable vessels: the physical expression of the "coherent system" POV.',
       },
       {
         label: 'Business model',
@@ -479,7 +479,7 @@ function DevelopContent() {
   return (
     <div>
       <p className="text-sm text-neutral-600 leading-relaxed mb-space-6">
-        The Doblin difference in Develop: a concept is never just a product idea. Every concept is developed across three dimensions at once — what it is, how it makes money, and how it reaches people. A product idea without a business-model hypothesis is treated as incomplete.
+        The Doblin difference in Develop: a concept is never just a product idea. Every concept is developed across three dimensions at once: what it is, how it makes money, and how it reaches people. A product idea without a business-model hypothesis is treated as incomplete.
       </p>
 
       <div className="flex gap-space-3 mb-space-6">
@@ -546,7 +546,7 @@ function DevelopContent() {
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 The sensor and AI versions were most loved but required device and software capability Northvale lacked.{' '}
-                <strong className="text-neutral-900">Resolution:</strong> launch the scheduled box, partner with an existing smart-home platform to add prediction later — a phased path that respects feasibility now and desirability later.
+                <strong className="text-neutral-900">Resolution:</strong> launch the scheduled box, partner with an existing smart-home platform to add prediction later, a phased path that respects feasibility now and desirability later.
               </p>
             </div>
           )}
@@ -558,7 +558,7 @@ function DevelopContent() {
         style={{ border: `1px solid ${PURPLE}0.20)`, background: `${PURPLE}0.03)` }}
       >
         <p className="font-semibold text-sm text-neutral-900 mb-space-5">
-          The Doblin triple gate — required before either concept moved to Deliver
+          The Doblin triple gate: required before either concept moved to Deliver
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-space-5">
           {[
@@ -679,7 +679,7 @@ export default function DDCaseStudy() {
           Mock scenario
         </span>
         <p className="text-sm text-neutral-600 leading-relaxed">
-          Northvale Home is an invented company and this engagement is illustrative. It is written to show what the work and outputs of each Double Diamond phase actually look like in practice. The methods, artifacts, and decision logic are realistic; the company and its results are fictional.
+          Northvale Home is an invented company and this engagement is illustrative. It is written to show what the work and outputs of each Double Diamond phase look like in practice. The methods, artifacts, and decision logic are realistic; the company and its results are fictional.
         </p>
       </div>
 
@@ -726,7 +726,7 @@ export default function DDCaseStudy() {
             Identify two new revenue streams capable of reaching $500M each within five years.
           </p>
           <p className="text-sm text-neutral-500 mt-space-3">
-            Constraint: leverage existing manufacturing, distribution, or brand relationships.
+            Constraint: use existing manufacturing, distribution, or brand relationships.
           </p>
         </div>
       </div>

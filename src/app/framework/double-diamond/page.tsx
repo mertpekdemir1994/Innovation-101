@@ -10,7 +10,7 @@ const DDInteractiveSection = dynamic(() => import('./DDInteractiveSection'), {
   ssr: false,
   loading: () => (
     <div className="py-space-12 flex items-center justify-center" style={{ minHeight: 400, color: 'rgba(255,255,255,0.25)' }}>
-      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram…</span>
+      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram...</span>
     </div>
   ),
 })
@@ -53,7 +53,7 @@ export default function DoubleDiamondPage() {
     <>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          HERO — dark, full viewport
+          HERO: dark, full viewport
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
         {/* Radial purple glow behind diamond */}
@@ -89,7 +89,7 @@ export default function DoubleDiamondPage() {
 
         </Container>
 
-        {/* Diamond SVG — intentionally outside Container, full viewport width */}
+        {/* Diamond SVG: intentionally outside Container, full viewport width */}
         <div className="relative z-10 w-full px-space-6 md:px-space-10 pb-space-12 pt-space-6">
           <DiamondHero />
         </div>
@@ -108,7 +108,7 @@ export default function DoubleDiamondPage() {
       </DarkSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          FOUR PHASES DEEP DIVE — sticky scroll through each phase
+          FOUR PHASES DEEP DIVE: sticky scroll through each phase
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-12">
@@ -133,7 +133,7 @@ export default function DoubleDiamondPage() {
       </LightSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          THE CORE TRUTH — white, bold statement
+          THE CORE TRUTH: white, bold statement
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-12 md:py-space-13">
@@ -159,9 +159,9 @@ export default function DoubleDiamondPage() {
           <ScrollReveal delay={0.1}>
             <div className="max-w-prose space-y-space-4 mb-space-8">
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
-                Most innovation efforts fail not because teams cannot find solutions — they fail
+                Most innovation efforts fail not because teams cannot find solutions; they fail
                 because teams solve the wrong problem. A product team builds a feature nobody
-                wanted. A service team redesigns a process that was not actually broken. An
+                wanted. A service team redesigns a process that was not broken. An
                 organization invests millions in an answer to a question nobody asked.
               </p>
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
@@ -192,7 +192,7 @@ export default function DoubleDiamondPage() {
                   'Expand your understanding of the problem space. Gather more information than you think you need. Challenge every assumption.',
                   'Narrow down to the real problem. Synthesise what you learned and define exactly what you are and are not trying to solve.',
                   'Expand again. Generate more ideas than any one of them deserves. Build concepts before evaluating them.',
-                  'Narrow again. Test, refine, and deliver the solution that actually works.',
+                  'Narrow again. Test, refine, and deliver the solution that works.',
                 ].map((step, i) => (
                   <li key={i} className="flex items-start gap-space-4">
                     <span
@@ -213,7 +213,7 @@ export default function DoubleDiamondPage() {
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   When Airbnb was struggling early, the founders flew to New York, stayed with hosts,
                   and observed. They discovered the real problem: listing photos were terrible. The
-                  solution — professional photography — came directly from understanding the problem
+                  solution, professional photography, came directly from understanding the problem
                   firsthand. This is the first diamond working as intended.
                 </p>
               </div>
@@ -223,7 +223,7 @@ export default function DoubleDiamondPage() {
       </LightSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          WHEN TO USE — warm surface, two-column grid
+          WHEN TO USE: warm surface, two-column grid
       ══════════════════════════════════════════════════════════════════════ */}
       <WarmSection>
         <Container className="py-space-10">
@@ -283,7 +283,7 @@ export default function DoubleDiamondPage() {
       </WarmSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          EXPLORE THE FRAMEWORK — dark, interactive viz
+          EXPLORE THE FRAMEWORK: dark, interactive viz
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection>
         <Container className="pt-space-10 pb-space-4">
@@ -310,7 +310,7 @@ export default function DoubleDiamondPage() {
       </DarkSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          EVOLUTION — interactive timeline of versions
+          EVOLUTION: interactive timeline of versions
       ══════════════════════════════════════════════════════════════════════ */}
       <WarmSection>
         <Container className="py-space-12">
@@ -332,7 +332,7 @@ export default function DoubleDiamondPage() {
       </WarmSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          CASE STUDY — warm surface
+          CASE STUDY: warm surface
       ══════════════════════════════════════════════════════════════════════ */}
       <WarmSection>
         <Container className="py-space-12">
@@ -345,7 +345,7 @@ export default function DoubleDiamondPage() {
       </WarmSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          CONNECTIONS — dark, method links
+          CONNECTIONS: dark, method links
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection>
         <Container className="py-space-12">
@@ -368,7 +368,7 @@ export default function DoubleDiamondPage() {
               { name: 'Design Sprint', rel: 'Compresses the Develop phase into five days', slug: 'design-sprint' },
               { name: 'Lean Startup', rel: 'Build–Measure–Learn maps onto the Deliver phase', slug: 'lean-startup' },
               { name: '10 Types of Innovation', rel: 'Natural tool to use in Develop with the Doblin version', slug: '10-types-of-innovation' },
-              { name: 'Jobs To Be Done', rel: 'Powerful lens for the Define phase', slug: 'jobs-to-be-done' },
+              { name: 'Jobs To Be Done', rel: 'Useful lens for the Define phase', slug: 'jobs-to-be-done' },
               { name: 'Ambition Matrix', rel: 'Used in Develop to map concepts against ambition level', slug: 'ambition-matrix' },
               { name: 'How Might We', rel: 'Primary method for translating Define insights into Develop challenges', slug: 'how-might-we' },
             ].map(({ name, rel, slug }, i) => (
@@ -394,7 +394,7 @@ export default function DoubleDiamondPage() {
       </DarkSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          SOURCES — light, clean list
+          SOURCES: light, clean list
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-10">

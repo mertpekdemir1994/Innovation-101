@@ -22,7 +22,7 @@ const VERSIONS = [
       },
     ],
     limitation:
-      'Acknowledged by its creators as too linear — it implied a clear beginning and end, excluded the messiness of real design work, and told the story of a process rather than the story of impact.',
+      'Acknowledged by its creators as too linear: it implied a clear beginning and end, excluded the messiness of real design work, and told the story of a process rather than the story of impact.',
   },
   {
     year: '2019',
@@ -38,11 +38,11 @@ const VERSIONS = [
       },
       {
         tag: 'Added',
-        text: 'Leadership & engagement as an outer layer — the diamonds sit inside an organisational context that must be actively managed',
+        text: 'Leadership & engagement as an outer layer, the diamonds sit inside an organisational context that must be actively managed',
       },
       {
         tag: 'Changed',
-        text: 'Explicit iteration — making and testing ideas can happen inside Discover; no solution is ever finished',
+        text: 'Explicit iteration, making and testing ideas can happen inside Discover; no solution is ever finished',
       },
     ],
     limitation: null,
@@ -69,7 +69,7 @@ const VERSIONS = [
       },
     ],
     limitation:
-      'Adds rigour but significant overhead. Right for corporate innovation with a financial mandate — can be overkill for early-stage or social innovation.',
+      'Adds rigour but significant overhead. Right for corporate innovation with a financial mandate; can be overkill for early-stage or social innovation.',
   },
   {
     year: 'Continuous',
@@ -85,11 +85,11 @@ const VERSIONS = [
       },
       {
         tag: 'Added',
-        text: 'Discovery team leads delivery team — findings feed directly into the next sprint\'s work',
+        text: 'Discovery team leads delivery team, findings feed directly into the next sprint\'s work',
       },
       {
         tag: 'Requires',
-        text: 'Two distinct teams or two distinct modes — conflating them means failing at both',
+        text: 'Two distinct teams or two distinct modes; conflating them means failing at both',
       },
     ],
     limitation:
@@ -101,7 +101,7 @@ const VERSIONS = [
     org: 'RSD community & systemic design practitioners',
     badge: 'Extension',
     summary:
-      'Extended the framework for challenges no single team can solve with a single solution — policy, climate, health equity, and organisational culture change.',
+      'Extended the framework for challenges no single team can solve with a single solution: policy, climate, health equity, and organisational culture change.',
     changes: [
       {
         tag: 'Added',
@@ -117,7 +117,7 @@ const VERSIONS = [
       },
     ],
     limitation:
-      'Significant additional complexity. Appropriate for systemic challenges — policy, climate, culture change. Not for product development cycles.',
+      'Significant additional complexity. Appropriate for systemic challenges: policy, climate, culture change. Not for product development cycles.',
   },
 ]
 

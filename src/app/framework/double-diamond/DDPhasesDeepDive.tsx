@@ -28,15 +28,15 @@ const PHASES: Phase[] = [
     label: 'Discover',
     mode: 'Diverge',
     tagline: 'Understand the problem space before you define it',
-    objective: 'Expand your understanding beyond what you think you already know. Discover is not about finding answers — it is about discovering whether you are asking the right question.',
+    objective: 'Expand your understanding beyond what you think you already know. Discover is not about finding answers; it is about discovering whether you are asking the right question.',
     description: [
-      'Most teams under-invest in Discover. Under pressure to show progress, they move to solutions before they have genuinely understood the problem. Discover is the phase that prevents this. It requires going out into the world, observing people in context, and gathering information that challenges your current assumptions.',
-      'Discover is deliberately broad. You are not yet trying to narrow anything down. You are trying to understand the full landscape of the problem — from the people experiencing it, to the commercial environment around it, to the organisational capabilities that might address it.',
+      'Most teams under-invest in Discover. Under pressure to show progress, they move to solutions before they have understood the problem. Discover is the phase that prevents this. It requires going out into the world, observing people in context, and gathering information that challenges your current assumptions.',
+      'Discover is deliberately broad. You are not yet trying to narrow anything down. You are trying to understand the full landscape of the problem: from the people experiencing it, to the commercial environment around it, to the organisational capabilities that might address it.',
     ],
     activities: [
       {
         title: 'User Research',
-        detail: 'Ethnographic and contextual research into how people actually experience the problem. The goal is to challenge assumptions, not confirm them.',
+        detail: 'Ethnographic and contextual research into how people experience the problem. The goal is to challenge assumptions, not confirm them.',
       },
       {
         title: 'Market Scan',
@@ -44,10 +44,10 @@ const PHASES: Phase[] = [
       },
       {
         title: 'Capability Audit',
-        detail: 'Assess your organisational assets — manufacturing, distribution, technology, partnerships. Understand the boundaries of what is genuinely buildable.',
+        detail: 'Assess your organisational assets: manufacturing, distribution, technology, partnerships. Understand the boundaries of what is buildable.',
       },
     ],
-    keyQuestion: 'What would you need to see, hear, or learn to be genuinely surprised about this problem?',
+    keyQuestion: 'What would you need to see, hear, or learn to be surprised about this problem?',
     path: 'M 0 120 L 200 0 L 200 240 Z',
     cx: 133,
   },
@@ -59,20 +59,20 @@ const PHASES: Phase[] = [
     tagline: 'Frame the right problem with precision',
     objective: 'Synthesise everything you learned in Discover into a clear, specific problem statement. Define is the single highest-leverage moment in the Double Diamond.',
     description: [
-      'Define is where the discipline of the Double Diamond shows itself. After deliberately broadening your understanding in Discover, you now deliberately narrow down. You are not narrowing to a solution — you are narrowing to the precise problem worth solving.',
-      'A strong Define output is a Point of View: [User] needs [need] because [insight]. It is specific enough to act on but broad enough to allow creative exploration in Develop. A good POV also makes explicit what you are NOT trying to solve — the decisions made at Define determine the entire character of Diamond 2.',
+      'Define is where the discipline of the Double Diamond shows itself. After deliberately broadening your understanding in Discover, you now deliberately narrow down. You are not narrowing to a solution; you are narrowing to the precise problem worth solving.',
+      'A strong Define output is a Point of View: [User] needs [need] because [insight]. It is specific enough to act on but broad enough to allow creative exploration in Develop. A good POV also makes explicit what you are NOT trying to solve; the decisions made at Define determine the entire character of Diamond 2.',
     ],
     activities: [
       {
         title: 'Synthesis & Insight Generation',
-        detail: 'Identify patterns in your Discover research. An insight is an interpretation of a finding — it points toward what is really going on, not just what was observed.',
+        detail: 'Identify patterns in your Discover research. An insight is an interpretation of a finding; it points toward what is going on, not just what was observed.',
       },
       {
         title: 'Point of View Statement',
         detail: 'Write a clear problem statement. This becomes the frame for everything in Diamond 2. Define both what you will and will not be solving.',
       },
     ],
-    keyQuestion: 'What did you learn in Discover that genuinely surprised you? What assumption did the research overturn?',
+    keyQuestion: 'What did you learn in Discover that surprised you? What assumption did the research overturn?',
     path: 'M 200 0 L 400 120 L 200 240 Z',
     cx: 267,
   },
@@ -84,13 +84,13 @@ const PHASES: Phase[] = [
     tagline: 'Explore the solution space before committing',
     objective: 'Generate a wide range of concepts before evaluating any of them. Diverge first. Volume before quality. The best ideas rarely come first.',
     description: [
-      'Develop is the second divergent phase — and it requires the same discipline as Discover. Do not narrow down too quickly. Do not evaluate concepts before you have generated a wide range of them. The pressure to converge is intense at this stage, but resisting it is essential.',
-      'The key discipline of Develop is building to learn, not building to impress. Rapid, rough prototypes expose concepts to real feedback early. A concept that tests well at low fidelity is worth developing further. A concept that fails early is valuable — it saves the time and resources that would have gone into building it properly.',
+      'Develop is the second divergent phase, and it requires the same discipline as Discover. Do not narrow down too quickly. Do not evaluate concepts before you have generated a wide range of them. The pressure to converge is intense at this stage, but resisting it is essential.',
+      'The key discipline of Develop is building to learn, not building to impress. Rapid, rough prototypes expose concepts to real feedback early. A concept that tests well at low fidelity is worth developing further. A concept that fails early is valuable; it saves the time and resources that would have gone into building it properly.',
     ],
     activities: [
       {
         title: 'Concept Generation',
-        detail: 'Generate many very different types of solutions — not ten variations of the same idea. Use How Might We questions from Define to open the solution space.',
+        detail: 'Generate many different types of solutions, not ten variations of the same idea. Use How Might We questions from Define to open the solution space.',
       },
       {
         title: 'Rapid Prototyping',
@@ -107,15 +107,15 @@ const PHASES: Phase[] = [
     label: 'Deliver',
     mode: 'Converge',
     tagline: 'Ship the right solution with confidence',
-    objective: 'Converge on the solution that genuinely works. Validate it rigorously before committing to full-scale delivery.',
+    objective: 'Converge on the solution that works. Validate it rigorously before committing to full-scale delivery.',
     description: [
-      'Deliver is the second convergent phase. The same discipline as Define applies: narrow down with intention, not with haste. The difference is that now you are narrowing from concepts to a single solution — one that has been tested, refined, and validated.',
-      'Delivery in the Double Diamond is not just about shipping a product. It is about ensuring that what gets shipped is the solution that people actually want, that the business model sustaining it is viable, and that the organisation can actually build and deliver it. All three questions need answers before you ship.',
+      'Deliver is the second convergent phase. The same discipline as Define applies: narrow down with intention, not with haste. The difference is that now you are narrowing from concepts to a single solution: one that has been tested, refined, and validated.',
+      'Delivery in the Double Diamond is not just about shipping a product. It is about ensuring that what gets shipped is the solution that people want, that the business model sustaining it is viable, and that the organisation can build and deliver it. All three questions need answers before you ship.',
     ],
     activities: [
       {
         title: 'Validation',
-        detail: 'Confirm that people want, understand, and will use the solution — not just that they like it in a test, but that they will genuinely adopt it in their real context.',
+        detail: 'Confirm that people want, understand, and will use the solution, not just that they like it in a test, but that they will adopt it in their real context.',
       },
       {
         title: 'Feasibility & Launch',
@@ -143,7 +143,7 @@ function PhaseDiamond({
       className="w-full"
       style={{ overflow: 'visible' }}
       role="group"
-      aria-label="Double Diamond phases — click to navigate"
+      aria-label="Double Diamond phases, click to navigate"
     >
       {PHASES.map((phase) => {
         const active  = phase.id === activeId
