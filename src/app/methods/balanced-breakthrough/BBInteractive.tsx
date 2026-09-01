@@ -284,7 +284,7 @@ export default function BBInteractive() {
                 role="button"
                 aria-pressed={active === id}
                 aria-label={`${region.label}: ${region.sublabel}`}
-                style={{ cursor: 'pointer', outline: 'none' }}
+                style={{ cursor: 'pointer' }}
                 onClick={() => select(id)}
                 onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(id) } }}
                 onFocus={() => setFocused(id)}

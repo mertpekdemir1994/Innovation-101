@@ -224,7 +224,7 @@ export default function BBPage() {
 
               <div>
                 <p className="font-mono uppercase tracking-widest mb-4"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do not lean on it when
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -235,7 +235,7 @@ export default function BBPage() {
                     'You need a tool for generating ideas rather than evaluating them: Balanced Breakthrough is an evaluative lens, not an ideation method.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item}
                       </span>
