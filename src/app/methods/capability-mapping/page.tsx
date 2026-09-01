@@ -11,7 +11,7 @@ const BRICK = '#8A4B3C'
 // ─── Layout primitives ───────────────────────────────────────────────────────
 
 function DarkSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return <section className={`w-full bg-neutral-950 ${className}`}>{children}</section>
+  return <section className={`w-full bg-neutral-950 ${className}`} style={{ '--color-focus-ring': 'var(--color-dark-text)' } as React.CSSProperties}>{children}</section>
 }
 function LightSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return <section className={`w-full bg-white ${className}`}>{children}</section>

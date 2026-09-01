@@ -12,7 +12,7 @@ const BRICK = '#8A4B3C'
 
 function DarkSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
-    <section className={`w-full bg-neutral-950 ${className}`}>
+    <section className={`w-full bg-neutral-950 ${className}`} style={{ '--color-focus-ring': 'var(--color-dark-text)' } as React.CSSProperties}>
       {children}
     </section>
   )

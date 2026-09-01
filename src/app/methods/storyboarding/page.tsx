@@ -19,7 +19,7 @@ const CLAY = '#B5613E'
 
 function DarkSection({ children }: { children: React.ReactNode }) {
   return (
-    <section style={{ background: 'var(--color-dark)' }}>
+    <section className="dark-section" style={{ background: 'var(--color-dark)' }}>
       <div className="max-w-content mx-auto px-6 md:px-8 py-20 md:py-28">
         {children}
       </div>

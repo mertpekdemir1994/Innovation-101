@@ -19,7 +19,7 @@ const PLUM = '#6B4A77'
 
 function DarkSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
-    <section className={`bg-neutral-950 text-white ${className}`}>
+    <section className={`bg-neutral-950 text-white ${className}`} style={{ '--color-focus-ring': 'var(--color-dark-text)' } as React.CSSProperties}>
       <div className="max-w-content mx-auto px-6 py-24">
         {children}
       </div>
