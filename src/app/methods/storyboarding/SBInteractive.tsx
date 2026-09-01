@@ -3,7 +3,9 @@ import { useState, useRef } from 'react'
 import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion'
 
 const CLAY  = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W  = 680
 const SVG_H  = 160
@@ -224,7 +226,7 @@ export default function SBInteractive() {
               <text x={fx + FW / 2} y={LABEL_Y}
                 textAnchor="middle" fontSize="4.4"
                 fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                fill={sel ? `${CLAY}0.85)` : `${CLAY}0.50)`}
+                fill={sel ? `${CLAY_TEXT}0.969)` : `${CLAY_TEXT}0.895)`}
                 style={{ userSelect: 'none' }}>
                 {FRAME_TITLES[i]}
               </text>
@@ -255,7 +257,7 @@ export default function SBInteractive() {
               <text x={fx + FW / 2} y={FY + 52}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="32" fontFamily="var(--font-mono)" fontWeight="600"
-                fill={`${AMBER}0.62)`} style={{ userSelect: 'none' }}
+                fill={`${AMBER_TEXT}0.882)`} style={{ userSelect: 'none' }}
                 filter="url(#sb-int-amber-glow)">
                 ?
               </text>

@@ -3,7 +3,9 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const CLAY  = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 228
@@ -170,7 +172,7 @@ export default function SBEstablishing() {
               <text x={fx + FRAME_W / 2} y={LABEL_Y}
                 textAnchor="middle" fontSize="4.8"
                 fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                fill={`${CLAY}0.58)`} style={{ userSelect: 'none' }}>
+                fill={`${CLAY_TEXT}0.912)`} style={{ userSelect: 'none' }}>
                 {FRAME_LABELS[i]}
               </text>
             </motion.g>
@@ -196,7 +198,7 @@ export default function SBEstablishing() {
           <text x={FRAME_X[3] + FRAME_W / 2} y={FRAME_Y + 58}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="36" fontFamily="var(--font-mono)" fontWeight="600"
-            fill={`${AMBER}0.65)`} style={{ userSelect: 'none' }}
+            fill={`${AMBER_TEXT}0.891)`} style={{ userSelect: 'none' }}
             filter="url(#sb-est-amber-glow)">
             ?
           </text>
@@ -204,13 +206,13 @@ export default function SBEstablishing() {
           <text x={FRAME_X[3] + FRAME_W / 2} y={FRAME_Y + 88}
             textAnchor="middle" fontSize="3.8"
             fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>
             THE FRAME
           </text>
           <text x={FRAME_X[3] + FRAME_W / 2} y={FRAME_Y + 97}
             textAnchor="middle" fontSize="3.8"
             fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>
             NOBODY COULD DRAW
           </text>
           {/* Label below */}
@@ -230,7 +232,7 @@ export default function SBEstablishing() {
           <text x={FRAME_X[4] + FRAME_W / 2} y={LABEL_Y}
             textAnchor="middle" fontSize="4.8"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={`${CLAY}0.40)`} style={{ userSelect: 'none' }}>
+            fill={`${CLAY_TEXT}0.874)`} style={{ userSelect: 'none' }}>
             {FRAME_LABELS[4]}
           </text>
         </motion.g>

@@ -3,8 +3,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY   = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 680
 const SVG_H = 130
@@ -161,25 +164,25 @@ export default function SBAIReactivated() {
                   <text x={fx + FW / 2} y={FY + 30}
                     textAnchor="middle" fontSize="5.5"
                     fontFamily="var(--font-mono)"
-                    fill={`${INDIGO}0.55)`} style={{ userSelect: 'none' }}>
+                    fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}>
                     intelligently
                   </text>
                   <text x={fx + FW / 2} y={FY + 40}
                     textAnchor="middle" fontSize="5.5"
                     fontFamily="var(--font-mono)"
-                    fill={`${INDIGO}0.55)`} style={{ userSelect: 'none' }}>
+                    fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}>
                     surfaces
                   </text>
                   <text x={fx + FW / 2} y={FY + 50}
                     textAnchor="middle" fontSize="5.5"
                     fontFamily="var(--font-mono)"
-                    fill={`${INDIGO}0.55)`} style={{ userSelect: 'none' }}>
+                    fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}>
                     right answer
                   </text>
                   <text x={fx + FW / 2} y={FY + 74}
                     textAnchor="middle" fontSize="4.0"
                     fontFamily="var(--font-mono)" letterSpacing="0.06em"
-                    fill={`${AMBER}0.65)`} style={{ userSelect: 'none' }}>
+                    fill={`${AMBER_TEXT}0.891)`} style={{ userSelect: 'none' }}>
                     ← A LABEL, NOT A FRAME
                   </text>
                 </>
@@ -190,7 +193,7 @@ export default function SBAIReactivated() {
                 <text x={fx + FW / 2} y={FY + 48}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="28" fontFamily="var(--font-mono)" fontWeight="600"
-                  fill={`${AMBER}0.62)`} style={{ userSelect: 'none' }}
+                  fill={`${AMBER_TEXT}0.882)`} style={{ userSelect: 'none' }}
                   filter="url(#sb-ai-amber-glow)">
                   ?
                 </text>
@@ -201,7 +204,7 @@ export default function SBAIReactivated() {
                 <text x={fx + FW / 2} y={FY + FH - 8}
                   textAnchor="middle" fontSize="3.8"
                   fontFamily="var(--font-mono)" letterSpacing="0.06em"
-                  fill={`${INDIGO}0.40)`} style={{ userSelect: 'none' }}>
+                  fill={`${INDIGO_TEXT}0.874)`} style={{ userSelect: 'none' }}>
                   RENDERED
                 </text>
               )}
@@ -210,7 +213,7 @@ export default function SBAIReactivated() {
                 textAnchor="middle" fontSize="4.0"
                 fontFamily="var(--font-mono)" letterSpacing="0.08em"
                 fontWeight={isGap ? '600' : undefined}
-                fill={isAuthor ? `${INDIGO}0.50)` : isGap ? `${AMBER}0.78)` : `${CLAY}0.48)`}
+                fill={isAuthor ? `${INDIGO_TEXT}0.895)` : isGap ? `${AMBER}0.78)` : `${CLAY_TEXT}0.891)`}
                 style={{ userSelect: 'none' }}>
                 {i === 0 ? '1' : i === 1 ? '2' : i === 2 ? '3' : isGap ? '?' : '5'}
               </text>
@@ -223,7 +226,7 @@ export default function SBAIReactivated() {
           <text x={SVG_W / 2} y={SVG_H - 6}
             textAnchor="middle" fontSize="3.6"
             fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`${INDIGO}0.35)`} style={{ userSelect: 'none' }}>
+            fill={`${INDIGO_TEXT}0.864)`} style={{ userSelect: 'none' }}>
             COMPLETE · PROFESSIONAL · THE GAP IS STILL THERE
           </text>
         )}
@@ -231,7 +234,7 @@ export default function SBAIReactivated() {
           <text x={SVG_W / 2} y={SVG_H - 6}
             textAnchor="middle" fontSize="3.6"
             fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`${AMBER}0.40)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.814)`} style={{ userSelect: 'none' }}>
             AI CANNOT CROSS THE GAP EITHER, IT CAN ONLY FIND IT FASTER
           </text>
         )}
