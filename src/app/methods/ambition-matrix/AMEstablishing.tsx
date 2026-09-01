@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
 // Grid geometry
 const GX = 80, GY = 40, GW = 400, GH = 340
@@ -102,7 +103,7 @@ export default function AMEstablishing() {
               fontSize={z.id === 'transformational' ? '6.5' : '8'}
               fontFamily="var(--font-mono)"
               letterSpacing="0.12em"
-              fill={`${PLUM}0.90)`}
+              fill={`${PLUM_TEXT}0.979)`}
               style={{ userSelect: 'none' }}
             >{z.label}</text>
           </motion.g>

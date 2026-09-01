@@ -82,12 +82,12 @@ export default function AMInteractive() {
           <line x1={GX} y1={MY} x2={GR} y2={MY} stroke="rgba(255,255,255,0.08)" strokeWidth={1} strokeDasharray="4 5" />
 
           {/* Axis labels */}
-          <text x={GX} y={GB + 22} textAnchor="start" fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>EXISTING</text>
-          <text x={GR} y={GB + 22} textAnchor="end"   fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>NEW</text>
-          <text x={MX} y={GB + 40} textAnchor="middle" fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fill="rgba(255,255,255,0.15)" style={{ userSelect: 'none' }}>MARKET / CUSTOMER →</text>
-          <text x={GX - 8} y={GB}      textAnchor="end" fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>EXISTING</text>
-          <text x={GX - 8} y={GY + 6} textAnchor="end" fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>NEW</text>
-          <text transform={`translate(28, ${MY}) rotate(-90)`} textAnchor="middle" fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fill="rgba(255,255,255,0.15)" style={{ userSelect: 'none' }}>↑ OFFERING / PRODUCT</text>
+          <text x={GX} y={GB + 22} textAnchor="start" fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>EXISTING</text>
+          <text x={GR} y={GB + 22} textAnchor="end"   fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>NEW</text>
+          <text x={MX} y={GB + 40} textAnchor="middle" fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fill="rgba(255,255,255,0.575)" style={{ userSelect: 'none' }}>MARKET / CUSTOMER →</text>
+          <text x={GX - 8} y={GB}      textAnchor="end" fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>EXISTING</text>
+          <text x={GX - 8} y={GY + 6} textAnchor="end" fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>NEW</text>
+          <text transform={`translate(28, ${MY}) rotate(-90)`} textAnchor="middle" fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fill="rgba(255,255,255,0.575)" style={{ userSelect: 'none' }}>↑ OFFERING / PRODUCT</text>
 
           {/* Clickable zone nodes */}
           {ZONES.map(({ id, label, cx, cy, rx, ry }) => {
