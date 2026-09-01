@@ -137,7 +137,7 @@ export default function SWOTAnalysisPage() {
                 </ul>
               </div>
               <div>
-                <p className="font-mono uppercase tracking-widest mb-4" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                <p className="font-mono uppercase tracking-widest mb-4" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do not lean on it when
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -148,7 +148,7 @@ export default function SWOTAnalysisPage() {
                     'You need prioritization among the moves. SWOT surfaces strategic options; it does not rank them. Take the crossings to a prioritization method afterwards.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>{item}</span>
                     </li>
                   ))}
@@ -362,14 +362,14 @@ export default function SWOTAnalysisPage() {
                   style={{ background: 'var(--color-neutral-50)', border: '1px solid var(--color-neutral-200)' }}
                 >
                   <p className="font-semibold mb-1" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}>
-                    {source.title} <span style={{ color: 'var(--color-neutral-400)', fontWeight: 400 }}>({source.year})</span>
+                    {source.title} <span style={{ color: 'var(--color-neutral-500)', fontWeight: 400 }}>({source.year})</span>
                   </p>
                   <p className="mb-2" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>{source.author}</p>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>{source.description}</p>
                 </div>
               ))}
             </div>
-            <p className="mt-8" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="mt-8" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)', lineHeight: 'var(--leading-relaxed)' }}>
               The cross-pairing step is also known as TOWS, formalized by Heinz Weihrich (1982).
             </p>
           </div>

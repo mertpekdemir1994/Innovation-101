@@ -28,6 +28,8 @@ export default function SWOTExampleToggle() {
         ] as const).map(({ id, label }) => (
           <button
             key={id}
+            type="button"
+            aria-pressed={tab === id}
             onClick={() => setTab(id)}
             style={{
               fontFamily: 'var(--font-mono)',
@@ -46,7 +48,7 @@ export default function SWOTExampleToggle() {
 
       {/* Scenario context */}
       <div style={{ background: 'var(--color-neutral-50)', border: '1px solid var(--color-neutral-200)', borderRadius: '6px', padding: '16px 20px', marginBottom: '24px' }}>
-        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: 'var(--color-neutral-400)', marginBottom: '6px' }}>SCENARIO</p>
+        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: 'var(--color-neutral-500)', marginBottom: '6px' }}>SCENARIO</p>
         <p style={{ fontSize: '14px', color: 'var(--color-neutral-700)', lineHeight: 1.65 }}>
           A regional grocery chain, facing the arrival of a national online grocery player in its markets, runs a SWOT to decide how to respond. Both tabs analyze the same situation; only the method differs.
         </p>
@@ -66,7 +68,7 @@ export default function SWOTExampleToggle() {
                 ].map((item, i) => (
                   <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                     <div>
-                      <p style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: 'var(--color-neutral-400)', marginBottom: '4px' }}>BEFORE</p>
+                      <p style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: 'var(--color-neutral-500)', marginBottom: '4px' }}>BEFORE</p>
                       <p style={{ fontSize: '13px', color: 'var(--color-neutral-500)', fontStyle: 'italic' }}>{item.before}</p>
                     </div>
                     <div>
@@ -117,7 +119,7 @@ export default function SWOTExampleToggle() {
 
             {/* AI output = platitudes */}
             <div style={{ marginBottom: '20px' }}>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: 'var(--color-neutral-400)', marginBottom: '12px' }}>WHAT AI PRODUCED: INSTANTLY</p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: 'var(--color-neutral-500)', marginBottom: '12px' }}>WHAT AI PRODUCED: INSTANTLY</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '12px' }}>
                 {[
                   { label: 'STRENGTHS',     color: PLUM,  items: ['Strong local presence', 'Loyal customers', 'Established brand'] },
