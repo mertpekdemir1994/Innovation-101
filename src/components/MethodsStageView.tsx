@@ -89,7 +89,7 @@ function MethodCard({ frontmatter }: { frontmatter: MethodFrontmatter }) {
               <div>
                 <p
                   className="font-mono uppercase tracking-widest mb-1"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
                 >
                   Time required
                 </p>
@@ -101,7 +101,7 @@ function MethodCard({ frontmatter }: { frontmatter: MethodFrontmatter }) {
               <div>
                 <p
                   className="font-mono uppercase tracking-widest mb-1"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
                 >
                   Group size
                 </p>
@@ -113,7 +113,7 @@ function MethodCard({ frontmatter }: { frontmatter: MethodFrontmatter }) {
               <div>
                 <p
                   className="font-mono uppercase tracking-widest mb-1"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
                 >
                   Format
                 </p>
