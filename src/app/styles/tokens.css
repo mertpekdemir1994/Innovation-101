@@ -106,10 +106,16 @@
   --space-14: 10rem;     /* 160px */
 
   /* ─── Layout widths ──────────────────────────────────────────────────── */
-  --width-content: 75rem;    /* 1200px — standard content max */
-  --width-prose:   45rem;    /*  720px — detail page column  */
-  --width-wide:    87.5rem;  /* 1400px — full-bleed sections  */
-  --width-panel:   20rem;    /*  320px — side panels/drawers  */
+  --width-content:      75rem;    /* 1200px — standard content max */
+  --width-prose:        45rem;    /*  720px — detail page column  */
+  --width-wide:         87.5rem;  /* 1400px — full-bleed sections  */
+  --width-panel:        20rem;    /*  320px — side panels/drawers  */
+  --width-illustration: 40rem;    /*  640px — SVG diagram box, all method/framework
+                                       illustrations. Below `md:` illustrations are
+                                       full-width; at `md:` and above they cap here —
+                                       as a standalone block (left-aligned, not
+                                       centered) or as the fixed diagram column next
+                                       to a detail panel. */
 
   /* ─── Border radius ──────────────────────────────────────────────────── */
   --radius-none: 0;

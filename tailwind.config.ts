@@ -92,10 +92,14 @@ const config: Config = {
 
       // ─── Layout widths ──────────────────────────────────────────────────
       maxWidth: {
-        content: "var(--width-content)",
-        prose:   "var(--width-prose)",
-        wide:    "var(--width-wide)",
-        panel:   "var(--width-panel)",
+        content:      "var(--width-content)",
+        prose:        "var(--width-prose)",
+        wide:         "var(--width-wide)",
+        panel:        "var(--width-panel)",
+        illustration: "var(--width-illustration)",
+      },
+      width: {
+        illustration: "var(--width-illustration)",
       },
 
       // ─── Border radius ──────────────────────────────────────────────────
