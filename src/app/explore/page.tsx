@@ -49,7 +49,7 @@ export default function ExplorePage() {
               >
                 {INTERACTIVE_TYPE_LABELS[frontmatter.interactiveType] ?? frontmatter.interactiveType}
               </span>
-              <h3 className="font-semibold text-neutral-900 mb-2">{frontmatter.title}</h3>
+              <h2 className="font-semibold text-neutral-900 mb-2">{frontmatter.title}</h2>
               <p className="text-sm text-neutral-600 leading-relaxed">{frontmatter.oneLiner}</p>
             </Link>
           ))}
