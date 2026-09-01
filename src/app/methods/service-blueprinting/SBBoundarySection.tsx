@@ -259,7 +259,6 @@ export default function SBBoundarySection() {
             style={{
               background: active === id ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.03)',
               border:     `1px solid ${active === id ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.08)'}`,
-              outline:    'none',
             }}
             aria-pressed={active === id}
           >
