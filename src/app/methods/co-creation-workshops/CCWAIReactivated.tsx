@@ -62,7 +62,7 @@ export default function CCWAIReactivated() {
 
       {/* SVG */}
       <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-        style={{ overflow: 'visible' }}
+        style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
         aria-label={isAI
           ? 'AI mode: AI support badges (agenda, stimulus, synthesis) appear around the periphery in indigo. A simulated-participant node appears crossed out in indigo. Real participant nodes remain in clay and are annotated: REAL PARTICIPANTS, CANNOT BE SIMULATED. The core human collaboration stays highlighted.'
           : 'Human co-creation mode: four participants and two team members contribute actively to the shared canvas. All contribution lines active in clay. The collaboration is fully human.'}>

@@ -96,7 +96,7 @@ export default function CCWInteractive() {
           ? 'Design-FOR mode: participants are dimmed, contribution lines removed, REACT labels appear at participant positions. Canvas labeled TEAM\'S IDEA with only team contributions visible. A presentation arrow points from canvas toward participants.'
           : 'Design-WITH mode: all four participants and two team members are actively connected to the shared canvas by contribution lines. Canvas is full of mixed contributions from all parties.'}>
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-          preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}>
+          preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}>
           <defs>
             <filter id="ccw-int-glow" x="-30%" y="-30%" width="160%" height="160%">
               <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur" />
