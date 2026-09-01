@@ -127,7 +127,7 @@ export default function DRInteractive() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Interactive delivery roadmap. Click any bet or gate to explore it. Toggle sequence order and learning arrows."
-        style={{ width: '100%', maxWidth: SVG_W, display: 'block', overflow: 'visible' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}
       >
         <defs>
           <filter id="dr-int-glow" x="-30%" y="-30%" width="160%" height="160%">

@@ -109,7 +109,7 @@ export default function DRAIReactivated() {
         aria-label={isAI
           ? 'AI mode: all bets are equally solid, the confidence gradient is lost, producing false precision to the far end. Mechanics assistance shown in indigo.'
           : 'Human mode: confidence gradient intact. Near bets solid, far bets loose and dashed.'}
-        style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
       >
         <defs>
           <filter id="dr-ai-glow" x="-30%" y="-30%" width="160%" height="160%">
