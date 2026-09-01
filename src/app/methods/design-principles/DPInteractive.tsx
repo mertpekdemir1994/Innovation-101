@@ -119,7 +119,7 @@ export default function DPInteractive() {
               className="rounded-full px-4 py-2 text-sm"
               style={{
                 background: 'transparent',
-                color: 'rgba(255,255,255,0.28)',
+                color: 'var(--color-dark-muted)',
                 border: '1.5px solid rgba(255,255,255,0.12)',
                 fontFamily: 'var(--font-sans)',
                 fontWeight: 600,

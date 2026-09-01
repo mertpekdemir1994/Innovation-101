@@ -465,7 +465,7 @@ export default function DesignPrinciplesPage() {
           {/* Framework connections */}
           <div>
             <p className="font-mono uppercase tracking-widest mb-6"
-              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
               Frameworks
             </p>
             <div className="space-y-5">
@@ -503,7 +503,7 @@ export default function DesignPrinciplesPage() {
                       {f.name}
                     </Link>
                     <span className="font-mono uppercase tracking-widest"
-                      style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                      style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                       {f.phase}
                     </span>
                   </div>
@@ -517,7 +517,7 @@ export default function DesignPrinciplesPage() {
           {/* Related methods */}
           <div>
             <p className="font-mono uppercase tracking-widest mb-6"
-              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
               Related methods
             </p>
             <div className="space-y-5">
@@ -567,7 +567,7 @@ export default function DesignPrinciplesPage() {
           <div className="flex items-center justify-between flex-wrap gap-6">
             <div>
               <p className="font-mono uppercase tracking-widest mb-1"
-                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                 Strategy &amp; Prioritization — Method 8 of 9
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>
