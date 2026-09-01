@@ -138,13 +138,13 @@ export default function UTInteractive() {
           <line x1={22} y1={22} x2={46} y2={22} stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" />
           <text x={50} y={22} dominantBaseline="middle" fontSize="4.0"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill="rgba(255,255,255,0.45)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.725)" style={{ userSelect: 'none' }}>
             INTENDED PATH
           </text>
           <line x1={22} y1={34} x2={46} y2={34} stroke={`${BRICK}0.85)`} strokeWidth="1.5" />
           <text x={50} y={34} dominantBaseline="middle" fontSize="4.0"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={`${BRICK}0.85)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.969)`} style={{ userSelect: 'none' }}>
             ACTUAL PATH
           </text>
         </g>
@@ -161,7 +161,7 @@ export default function UTInteractive() {
               <text x={NODE_CX[i]} y={N_CY}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                fill={isUnreached ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.80)'}
+                fill={isUnreached ? 'rgba(255,255,255,0.61)' : 'rgba(255,255,255,0.80)'}
                 style={{ userSelect: 'none' }}>
                 {n.label}
               </text>
@@ -172,7 +172,7 @@ export default function UTInteractive() {
         {/* NOT REACHED label */}
         <text x={521} y={103} textAnchor="middle" dominantBaseline="middle"
           fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-          fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+          fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
           NOT REACHED
         </text>
 
@@ -269,12 +269,12 @@ export default function UTInteractive() {
         <motion.g animate={{ opacity: active ? 0.20 : 1 }} transition={{ duration: 0.22 }}>
           <text x={510} y={72} textAnchor="middle" dominantBaseline="middle"
             fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${BRICK}0.42)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.878)`} style={{ userSelect: 'none' }}>
             THE DIVERGENCE
           </text>
           <text x={510} y={83} textAnchor="middle" dominantBaseline="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`${BRICK}0.30)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.853)`} style={{ userSelect: 'none' }}>
             IS THE FINDING
           </text>
         </motion.g>

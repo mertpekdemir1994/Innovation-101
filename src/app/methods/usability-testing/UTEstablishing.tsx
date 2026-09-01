@@ -99,13 +99,13 @@ export default function UTEstablishing() {
           <line x1={22} y1={22} x2={46} y2={22} stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" />
           <text x={50} y={22} dominantBaseline="middle" fontSize="4.0"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill="rgba(255,255,255,0.45)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.725)" style={{ userSelect: 'none' }}>
             INTENDED PATH
           </text>
           <line x1={22} y1={34} x2={46} y2={34} stroke={`${BRICK}0.85)`} strokeWidth="1.5" />
           <text x={50} y={34} dominantBaseline="middle" fontSize="4.0"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={`${BRICK}0.85)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.969)`} style={{ userSelect: 'none' }}>
             ACTUAL PATH
           </text>
         </motion.g>
@@ -122,7 +122,7 @@ export default function UTEstablishing() {
               <text x={NODE_CX[i]} y={N_CY}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                fill={isUnreached ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.80)'}
+                fill={isUnreached ? 'rgba(255,255,255,0.61)' : 'rgba(255,255,255,0.80)'}
                 style={{ userSelect: 'none' }}>
                 {n.label}
               </text>
@@ -193,7 +193,7 @@ export default function UTEstablishing() {
             <text x={f.lx} y={f.ly}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
-              fill={f.label === 'WRONG TURN' ? `${AMBER}0.85)` : `${BRICK}0.85)`}
+              fill={f.label === 'WRONG TURN' ? `${AMBER}0.85)` : `rgba(183,145,135,0.969)`}
               style={{ userSelect: 'none' }}>
               {f.label}
             </text>
@@ -205,13 +205,13 @@ export default function UTEstablishing() {
           <text x={510} y={72}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${BRICK}0.42)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.878)`} style={{ userSelect: 'none' }}>
             THE DIVERGENCE
           </text>
           <text x={510} y={83}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`${BRICK}0.30)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.853)`} style={{ userSelect: 'none' }}>
             IS THE FINDING
           </text>
         </motion.g>

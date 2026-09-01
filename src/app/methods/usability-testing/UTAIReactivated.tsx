@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 const BRICK  = 'rgba(138,75,60,'
 const AMBER  = 'rgba(245,158,11,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700, SVG_H = 268
 const N_W = 78, N_H = 30, N_CY = 124
@@ -124,7 +125,7 @@ export default function UTAIReactivated() {
             stroke={isAI ? `${INDIGO}0.75)` : 'rgba(255,255,255,0.45)'} strokeWidth="1.5" />
           <text x={50} y={22} dominantBaseline="middle" fontSize="4.0"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={isAI ? `${INDIGO}0.75)` : 'rgba(255,255,255,0.45)'}
+            fill={isAI ? `${INDIGO_TEXT}0.948)` : 'rgba(255,255,255,0.725)'}
             style={{ userSelect: 'none' }}>
             {isAI ? 'AI REVIEWS THIS PATH' : 'INTENDED PATH'}
           </text>
@@ -132,7 +133,7 @@ export default function UTAIReactivated() {
             stroke={isAI ? 'rgba(138,75,60,0.20)' : `${BRICK}0.85)`} strokeWidth="1.5" />
           <text x={50} y={34} dominantBaseline="middle" fontSize="4.0"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={isAI ? 'rgba(138,75,60,0.20)' : `${BRICK}0.85)`}
+            fill={isAI ? 'rgba(183,145,135,0.832)' : `rgba(183,145,135,0.969)`}
             style={{ userSelect: 'none' }}>
             {isAI ? 'NOT ACCESSIBLE TO AI' : 'ACTUAL PATH'}
           </text>
@@ -150,7 +151,7 @@ export default function UTAIReactivated() {
               <text x={NODE_CX[i]} y={N_CY}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                fill={isUnreached ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.80)'}
+                fill={isUnreached ? 'rgba(255,255,255,0.61)' : 'rgba(255,255,255,0.80)'}
                 style={{ userSelect: 'none' }}>
                 {n.label}
               </text>
@@ -161,7 +162,7 @@ export default function UTAIReactivated() {
         {/* NOT REACHED */}
         <text x={521} y={103} textAnchor="middle" dominantBaseline="middle"
           fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-          fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+          fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
           NOT REACHED
         </text>
 
@@ -211,7 +212,7 @@ export default function UTAIReactivated() {
               <text x={f.lx} y={f.ly}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
-                fill={f.label === 'WRONG TURN' ? `${AMBER}0.85)` : `${BRICK}0.85)`}
+                fill={f.label === 'WRONG TURN' ? `${AMBER}0.85)` : `rgba(183,145,135,0.969)`}
                 style={{ userSelect: 'none' }}>
                 {f.label}
               </text>
@@ -231,7 +232,7 @@ export default function UTAIReactivated() {
               <text x={flag.x} y={flag.y}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={`${INDIGO}0.80)`} style={{ userSelect: 'none' }}>
+                fill={`${INDIGO_TEXT}0.958)`} style={{ userSelect: 'none' }}>
                 {flag.text}
               </text>
             </motion.g>
@@ -256,12 +257,12 @@ export default function UTAIReactivated() {
         <motion.g animate={{ opacity: isAI ? 0.15 : 1 }} transition={{ duration: 0.30 }}>
           <text x={510} y={72} textAnchor="middle" dominantBaseline="middle"
             fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${BRICK}0.42)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.878)`} style={{ userSelect: 'none' }}>
             THE DIVERGENCE
           </text>
           <text x={510} y={83} textAnchor="middle" dominantBaseline="middle"
             fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`${BRICK}0.30)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.853)`} style={{ userSelect: 'none' }}>
             IS THE FINDING
           </text>
         </motion.g>
