@@ -4,6 +4,7 @@ import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700, SVG_H = 268
 
@@ -169,7 +170,7 @@ export default function DREstablishing() {
         />
         <motion.text x={360} y={36} textAnchor="middle" fontSize="3.4"
           fontFamily="var(--font-mono)" letterSpacing="0.07em"
-          fill={`${AMBER}0.45)`} style={{ userSelect: 'none' }}
+          fill={`${AMBER_TEXT}0.83)`} style={{ userSelect: 'none' }}
           {...fade(1.60)}>
           WHAT YOU LEARN RESHAPES WHAT COMES NEXT
         </motion.text>
@@ -195,7 +196,7 @@ export default function DREstablishing() {
           x={SVG_W / 2} y={SVG_H - 7}
           textAnchor="middle" fontSize="4.0"
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.24)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }}
           {...fade(2.0)}>
           Near bets are firm. Far bets are deliberately loose. The arrows are the honesty.
         </motion.text>
