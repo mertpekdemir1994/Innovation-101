@@ -11,7 +11,7 @@ const DSInteractiveSection = dynamic(() => import('./DSInteractiveSection'), {
   ssr: false,
   loading: () => (
     <div className="py-space-12 flex items-center justify-center" style={{ minHeight: 400, color: 'rgba(255,255,255,0.25)' }}>
-      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram…</span>
+      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram...</span>
     </div>
   ),
 })
@@ -47,7 +47,7 @@ export default function DesignSprintPage() {
     <>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          HERO — dark, full viewport
+          HERO: dark, full viewport
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
         <div
@@ -69,12 +69,12 @@ export default function DesignSprintPage() {
             style={{ color: 'rgba(255,255,255,0.52)', lineHeight: 1.6 }}
           >
             Five focused days from problem to tested prototype. Answer a critical business question
-            through design, prototyping, and real user testing — before writing a line of production
+            through design, prototyping, and real user testing, before writing a line of production
             code.
           </p>
         </Container>
 
-        {/* Five-day diagram — full width, outside Container */}
+        {/* Five-day diagram: full width, outside Container */}
         <div className="relative z-10 w-full px-space-6 md:px-space-10 pb-space-12 pt-space-2">
           <DSDaysHero />
         </div>
@@ -142,7 +142,7 @@ export default function DesignSprintPage() {
               </p>
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
                 The Design Sprint does not replace longer innovation processes. It accelerates the
-                most expensive part of them — the moment between &ldquo;we have a promising
+                most expensive part of them: the moment between &ldquo;we have a promising
                 idea&rdquo; and{' '}
                 <strong className="text-neutral-900 font-semibold">
                   &ldquo;we know if it works.&rdquo;
@@ -163,7 +163,7 @@ export default function DesignSprintPage() {
                 {[
                   'Discussion without prototyping is largely wasted time. Teams can debate the merits of an idea for weeks without learning anything that a five-hour prototype and five user interviews would not reveal in a day.',
                   'The people closest to a problem are often the worst judges of its solution. Subject-matter expertise creates blind spots. The Design Sprint deliberately brings in outsiders through user testing on Friday.',
-                  'The pressure of a deadline produces better creative work than unlimited time. The five-day structure is not arbitrary — it is tight enough to prevent overthinking and long enough to produce something testable.',
+                  'The pressure of a deadline produces better creative work than unlimited time. The five-day structure is not arbitrary; it is tight enough to prevent overthinking and long enough to produce something testable.',
                 ].map((truth, i) => (
                   <li key={i} className="flex items-start gap-space-4">
                     <span
@@ -183,7 +183,7 @@ export default function DesignSprintPage() {
                   focused on the moment new users first encountered the product. In five days they
                   prototyped and tested three different onboarding flows, identified the specific
                   points of confusion causing early churn, and had a clear direction for a
-                  redesign — before writing a single line of production code.
+                  redesign, before writing a single line of production code.
                 </p>
               </div>
             </div>
@@ -214,7 +214,7 @@ export default function DesignSprintPage() {
               {
                 heading: 'Do not use it when',
                 items: [
-                  'The problem itself is not yet defined — run the Double Diamond\'s Discover and Define first',
+                  'The problem itself is not yet defined, run the Double Diamond\'s Discover and Define first',
                   'The solution is already decided and the work is execution',
                   'You cannot get the right decision-makers in the room for five consecutive days',
                 ],
@@ -252,7 +252,7 @@ export default function DesignSprintPage() {
       </WarmSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          EXPLORE — dark, interactive
+          EXPLORE: dark, interactive
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection>
         <Container className="pt-space-10 pb-space-4">
@@ -266,7 +266,7 @@ export default function DesignSprintPage() {
             </h2>
             <p className="text-base mb-space-8 max-w-prose" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               Select a day to explore its activities and a real-world company example. Use the
-              sprint readiness check first — or toggle to Design Sprint 2.0 to see how Monday
+              sprint readiness check first, or toggle to Design Sprint 2.0 to see how Monday
               and Tuesday merge into a single four-day format.
             </p>
           </ScrollReveal>
@@ -330,12 +330,12 @@ export default function DesignSprintPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-space-3">
             {[
-              { name: 'Double Diamond', rel: 'The Design Sprint compresses the Develop phase of the Double Diamond — it works best when the problem is already defined (Discover and Define complete)', slug: '/framework/double-diamond' },
-              { name: 'Design Thinking', rel: 'A Design Sprint is a compressed, time-boxed expression of the Design Thinking stages — understand, sketch, decide, prototype, test', slug: '/framework/design-thinking' },
+              { name: 'Double Diamond', rel: 'The Design Sprint compresses the Develop phase of the Double Diamond; it works best when the problem is already defined (Discover and Define complete)', slug: '/framework/double-diamond' },
+              { name: 'Design Thinking', rel: 'A Design Sprint is a compressed, time-boxed expression of the Design Thinking stages: understand, sketch, decide, prototype, test', slug: '/framework/design-thinking' },
               { name: 'Lean Startup', rel: 'A sprint produces a tested prototype that feeds directly into the first Build-Measure-Learn loop for ongoing iteration after the sprint', slug: '/framework/lean-startup' },
               { name: 'How Might We', rel: 'Used on Monday to reframe problems and risks as design opportunities during expert talks', slug: '/methods/how-might-we' },
-              { name: 'Crazy 8s', rel: 'A core ideation method in Tuesday\'s Four-Step Sketch — eight variations in eight minutes', slug: '/methods/crazy-8s' },
-              { name: 'Rapid Prototyping', rel: 'The core building method of Thursday — a realistic facade, not an MVP or proof of concept', slug: '/methods/rapid-prototyping' },
+              { name: 'Crazy 8s', rel: 'A core ideation method in Tuesday\'s Four-Step Sketch: eight variations in eight minutes', slug: '/methods/crazy-8s' },
+              { name: 'Rapid Prototyping', rel: 'The core building method of Thursday: a realistic facade, not an MVP or proof of concept', slug: '/methods/rapid-prototyping' },
             ].map(({ name, rel, slug }, i) => (
               <ScrollReveal key={name} delay={i * 0.06}>
                 <a
@@ -369,7 +369,7 @@ export default function DesignSprintPage() {
                 { title: 'Sprint', author: 'Jake Knapp, John Zeratsky, and Braden Kowitz, 2016' },
                 { title: 'Make Time', author: 'Jake Knapp and John Zeratsky, 2018' },
                 { title: 'Design Sprint 2.0', author: 'AJ&Smart / Jonathan Courtney, 2018' },
-                { title: 'The Sprint Book — sprintbook.com', author: 'Official companion resources' },
+                { title: 'The Sprint Book: sprintbook.com', author: 'Official companion resources' },
               ].map(({ title, author }) => (
                 <div key={title} className="flex items-start gap-space-4 py-space-4 border-b border-neutral-100 last:border-0">
                   <div

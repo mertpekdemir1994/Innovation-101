@@ -32,11 +32,11 @@ const DAYS: Record<DayKey, DayData> = {
     work: 'Journey mapping, expert interviews, How Might We notes, and target selection. The team assumed advisors avoided the tool because it was too complex. The expert talks complicated that assumption within the first hour.',
     artifact: {
       type: 'quote',
-      label: 'Critical misalignment — Advisor expert, Monday morning',
+      label: 'Critical misalignment: advisor expert, Monday morning',
       lines: [
         'The internal team had assumed advisors did not use the tool because it was too complex to navigate. One of the advisor experts described something completely different.',
         '"I don\'t open it before a meeting because by the time I\'ve made sense of the risk score, the student is already sitting in front of me. I don\'t know why it flagged them, so I can\'t use it in the conversation. So I just skim their file the old way."',
-        'The barrier was not complexity. It was that the risk score was a number with no explanation — and advisors would not act on a number they could not understand or defend to a student.',
+        'The barrier was not complexity. It was that the risk score was a number with no explanation, and advisors would not act on a number they could not understand or defend to a student.',
       ],
     },
     insight:
@@ -44,20 +44,20 @@ const DAYS: Record<DayKey, DayData> = {
   },
   tuesday: {
     intro:
-      'The team split: half ran Lightning Demos, half began individual Four-Step Sketches. The Demos ranged well outside education — the most influential came from a domain none of them had thought to look at.',
+      'The team split: half ran Lightning Demos, half began individual Four-Step Sketches. The Demos ranged well outside education; the most influential came from a domain none of them had thought to look at.',
     work: 'Lightning Demos from outside education (a doctor\'s pre-appointment patient summary, a CRM\'s "next best action" panel, a consumer credit score\'s reason codes), then individual Four-Step Sketches by every team member working independently.',
     artifact: {
       type: 'finding',
-      label: 'Tuesday output — Six solution sketches, posted anonymously',
+      label: 'Tuesday output: six solution sketches, posted anonymously',
       lines: [
         'Credit-score inspiration: the consumer credit report, which always pairs a score with a short list of the top reasons behind it, was the pivotal Lightning Demo',
-        'The advisor-turned-employee wildcard sketched a "student prep card" — like a credit report, pairing the risk flag with the two or three specific reasons (missed classes, failed quiz, stopped logging in)',
+        'The advisor-turned-employee wildcard sketched a "student prep card", like a credit report, pairing the risk flag with the two or three specific reasons (missed classes, failed quiz, stopped logging in)',
         'The prep card included one suggested opening question for the meeting, translating the data into a conversational first move',
-        'Five other concepts ranged from a simplified dashboard to a full model explainer — all posted anonymously for Wednesday',
+        'Five other concepts ranged from a simplified dashboard to a full model explainer, all posted anonymously for Wednesday',
       ],
     },
     insight:
-      'The credit-score analogy unlocked the sprint\'s direction. The structural principle — a score paired with its reasons, in plain language — translated directly to the advisor\'s problem. Six anonymous sketches posted. The team did not know yet which had come from whom.',
+      'The credit-score analogy gave the sprint its direction. The structural principle, a score paired with its reasons, in plain language, translated directly to the advisor\'s problem. Six anonymous sketches posted. The team did not know yet which had come from whom.',
   },
   wednesday: {
     intro:
@@ -65,7 +65,7 @@ const DAYS: Record<DayKey, DayData> = {
     work: 'The Art Museum (silent dot-voting), Speed Critique on each sketch, the Decider\'s Supervote, and a storyboard. One disagreement emerged and the Decider resolved it explicitly.',
     artifact: {
       type: 'decision',
-      label: 'The Decider\'s call — Wednesday afternoon',
+      label: 'The Decider\'s call: Wednesday afternoon',
       lines: [
         'The prep card concept drew by far the most dots in the Art Museum. The key disagreement: engineering wanted to expose the full risk model in the card; the advisor wildcard argued it would overwhelm.',
         'The Decider\'s Supervote went to the simple prep card: risk flag, top three plain-language reasons, one suggested opening question, and nothing more. The full model would be one click away but not on the card.',
@@ -77,21 +77,21 @@ const DAYS: Record<DayKey, DayData> = {
   },
   thursday: {
     intro:
-      'No production code. A realistic Figma prototype — fake data, fake model, real-looking screens — built by the team in one day and stitched together before the trial run.',
+      'No production code. A realistic Figma prototype (fake data, fake model, real-looking screens) built by the team in one day and stitched together before the trial run.',
     work: 'A clickable Figma prototype of the advisor\'s screen for three fictional students, each showing the prep card (risk flag, three plain-language reasons, a suggested opening question) with a "see why" link that opened a simple explanation. Divided among team members, stitched together by 3pm.',
     artifact: {
       type: 'finding',
-      label: 'Prototype specification — Thursday build',
+      label: 'Prototype specification: Thursday build',
       lines: [
         'Tool: Figma, no production code, no live data, no working model',
         'Three fictional student profiles, each with a prep card showing risk flag, three plain-language reasons, suggested opening question',
         '"See why" link per card: opens a simple one-paragraph explanation of the underlying pattern',
-        'Trial run at 4pm caught one error: one student\'s reasons did not match the suggested opening question — fixed before Friday',
+        'Trial run at 4pm caught one error: one student\'s reasons did not match the suggested opening question, fixed before Friday',
         'Five academic advisors from comparable universities confirmed for Friday interviews',
       ],
     },
     insight:
-      'The trial run earned its place. One of the three student cards had an inconsistency that the designer had missed during the build. The trial run caught it. The same inconsistency would have confused at least two of five Friday users — and might have contaminated the test results for that question.',
+      'The trial run earned its place. One of the three student cards had an inconsistency that the designer had missed during the build. The trial run caught it. The same inconsistency would have confused at least two of five Friday users, and might have contaminated the test results for that question.',
   },
   friday: {
     intro:
@@ -99,17 +99,17 @@ const DAYS: Record<DayKey, DayData> = {
     work: 'Five structured interviews: warm-up, prototype introduction, task-based interaction (advisors navigating the prep card for a fictional student meeting), debrief. Observation room with sticky-note grids per Sprint Question. Pattern synthesis after the fifth interview.',
     artifact: {
       type: 'finding',
-      label: 'Patterns across five users — Friday synthesis',
+      label: 'Patterns across five users: Friday synthesis',
       lines: [
         'All five immediately understood and trusted the prep card in a way they had never trusted the bare risk score',
-        '"Now I can walk in and say \'I noticed you\'ve missed a few classes, is everything okay?\' instead of staring at a number I can\'t explain." — Advisor 3',
-        'Four of five used the suggested opening question and called it the single most useful element — the hardest part of their job is starting a difficult conversation',
-        'The "see why" link was barely clicked: the plain-language reasons were sufficient — confirming the Decider\'s Wednesday call to keep the full model off the card',
+        '"Now I can walk in and say \'I noticed you\'ve missed a few classes, is everything okay?\' instead of staring at a number I can\'t explain." (Advisor 3)',
+        'Four of five used the suggested opening question and called it the single most useful element: the hardest part of their job is starting a difficult conversation',
+        'The "see why" link was barely clicked: the plain-language reasons were sufficient, confirming the Decider\'s Wednesday call to keep the full model off the card',
         'One friction point: two advisors wanted to add their own note to the card before the meeting, which the prototype did not allow',
       ],
     },
     insight:
-      'The Decider\'s call: proceed to development. The prep card — not a simpler or more complex version — became the core of the redesign. The editable-note request from two users was added to the build as the first feature after launch. A two-month internal argument settled in five days, by evidence.',
+      'The Decider\'s call: proceed to development. The prep card, not a simpler or more complex version, became the core of the redesign. The editable-note request from two users was added to the build as the first feature after launch. A two-month internal argument settled in five days, by evidence.',
   },
 }
 
@@ -118,7 +118,7 @@ const LESSONS = [
     n: '01',
     title: 'The sprint settled a two-month argument in five days, with evidence.',
     detail:
-      'Sales, engineering, and customer success each had a plausible theory for low adoption, and no theory had won because none had evidence. The sprint did not run more meetings — it put a realistic prototype in front of five real advisors and let their behavior decide. The real barrier (an unexplained risk score) was none of the three internal theories exactly.',
+      'Sales, engineering, and customer success each had a plausible theory for low adoption, and no theory had won because none had evidence. The sprint did not run more meetings; it put a realistic prototype in front of five real advisors and let their behavior decide. The real barrier (an unexplained risk score) was none of the three internal theories exactly.',
   },
   {
     n: '02',

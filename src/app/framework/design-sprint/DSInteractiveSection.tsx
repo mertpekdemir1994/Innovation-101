@@ -30,63 +30,63 @@ const DAY_DETAIL: Record<DayKey | 'merged', {
   example: { co: string; text: string }
 }> = {
   monday: {
-    headline: 'Monday — Map the problem, set the target',
+    headline: 'Monday: map the problem, set the target',
     description:
-      'Monday turns unspoken assumptions into shared understanding. The team maps the problem space through expert talks, surfaces the Sprint Questions that make everyone nervous, and ends the day by choosing a single target — one person, one moment — that the sprint will solve for.',
+      'Monday turns unspoken assumptions into shared understanding. The team maps the problem space through expert talks, surfaces the Sprint Questions that make everyone nervous, and ends the day by choosing a single target (one person, one moment) that the sprint will solve for.',
     prompt: '"We are designing for [person] at the moment when [specific situation]." Write your target in this format before moving to Tuesday. If you cannot fill in both blanks precisely, Monday is not done.',
     example: {
-      co: 'Flatiron Health — Oncology Platform',
-      text: 'Monday\'s expert talks at Flatiron Health revealed a critical misalignment: the internal team believed the biggest barrier was technical complexity. Clinical research coordinators described a completely different problem — they did not understand what the platform would do for them or their patients. Without Monday\'s structured knowledge-sharing, the sprint would have prototyped a solution to the wrong problem.',
+      co: 'Flatiron Health: Oncology Platform',
+      text: 'Monday\'s expert talks at Flatiron Health revealed a critical misalignment: the internal team believed the biggest barrier was technical complexity. Clinical research coordinators described a completely different problem: they did not understand what the platform would do for them or their patients. Without Monday\'s structured knowledge-sharing, the sprint would have prototyped a solution to the wrong problem.',
     },
   },
   tuesday: {
-    headline: 'Tuesday — Individual ideation, Lightning Demos',
+    headline: 'Tuesday: individual ideation, Lightning Demos',
     description:
       'No brainstorming. No building on each other\'s ideas in real time. Tuesday is individual work because individual ideation consistently outperforms group brainstorming for both quantity and quality. Lightning Demos at the start borrow structural insights from outside the industry, widening the solution space before the Four-Step Sketch narrows it.',
-    prompt: 'Name two companies outside your industry that have solved the core structural challenge in your sprint beautifully. What specific element — not the surface, but the underlying principle — could you adapt?',
+    prompt: 'Name two companies outside your industry that have solved the core structural challenge in your sprint beautifully. What specific element (not the surface, but the underlying principle) could you adapt?',
     example: {
-      co: 'Blue Bottle Coffee — E-commerce Sprint',
-      text: 'Tuesday\'s Lightning Demos ranged from specialty food sites to luxury goods retailers to subscription software onboarding flows. The most influential insight came from how a high-end watchmaker explained the craft behind each piece. Blue Bottle adapted this narrative-first approach to explain the sourcing story behind each coffee — cross-industry borrowing almost impossible in a group brainstorm.',
+      co: 'Blue Bottle Coffee: E-commerce Sprint',
+      text: 'Tuesday\'s Lightning Demos ranged from specialty food sites to luxury goods retailers to subscription software onboarding flows. The most influential insight came from how a high-end watchmaker explained the craft behind each piece. Blue Bottle adapted this narrative-first approach to explain the sourcing story behind each coffee: cross-industry borrowing almost impossible in a group brainstorm.',
     },
   },
   merged: {
-    headline: 'Day 1 (Mon + Tue) — Understand, sketch, decide by end of day',
+    headline: 'Day 1 (Mon + Tue): understand, sketch, decide by end of day',
     description:
-      'Design Sprint 2.0 merges Monday\'s problem-mapping with Tuesday\'s individual ideation into a single intensive day. The facilitation efficiency comes from tighter time-boxing and back-to-back sequencing: expert talks and How Might We clustering in the morning, Lightning Demos and the Four-Step Sketch in the afternoon. The output — a clear target and a set of anonymous solution sketches posted for Day 2 — is identical to the original two-day sequence.',
-    prompt: 'What is the core structural challenge your solution must address? Map it and your target before noon — because you will be sketching solutions in the afternoon.',
+      'Design Sprint 2.0 merges Monday\'s problem-mapping with Tuesday\'s individual ideation into a single intensive day. The facilitation efficiency comes from tighter time-boxing and back-to-back sequencing: expert talks and How Might We clustering in the morning, Lightning Demos and the Four-Step Sketch in the afternoon. The output (a clear target and a set of anonymous solution sketches posted for Day 2) is identical to the original two-day sequence.',
+    prompt: 'What is the core structural challenge your solution must address? Map it and your target before noon, because you will be sketching solutions in the afternoon.',
     example: {
-      co: 'AJ&Smart — 2.0 Compression',
+      co: 'AJ&Smart: 2.0 Compression',
       text: 'AJ&Smart developed the 2.0 format across hundreds of facilitations with large organisations. The key discovery: Monday\'s expert talks and How Might We synthesis, when run with tight time-boxing and pre-read materials distributed the day before, can compress from a full day to a focused morning without losing output quality. The pre-read is what makes the compression possible.',
     },
   },
   wednesday: {
-    headline: 'Wednesday — One direction. One storyboard.',
+    headline: 'Wednesday: one direction. One storyboard.',
     description:
-      'Wednesday is the hardest day. After Tuesday\'s output — often six or seven distinct concepts — the team must choose one direction. Not a hybrid. The Art Museum, Speed Critique, and Supervote make that choice quickly, rigorously, and without the politics that usually derail group decisions. The Storyboard turns the chosen direction into a prototype specification.',
+      'Wednesday is the hardest day. After Tuesday\'s output (often six or seven distinct concepts) the team must choose one direction. Not a hybrid. The Art Museum, Speed Critique, and Supervote make that choice quickly, rigorously, and without the politics that usually derail group decisions. The Storyboard turns the chosen direction into a prototype specification.',
     prompt: 'If you had to choose one direction right now, what would it be? What is the riskiest assumption in that direction? That assumption is what Friday\'s testing must answer.',
     example: {
-      co: 'Savioke — Relay Robot',
-      text: 'Wednesday\'s decision at Savioke revealed a genuine disagreement: engineering wanted minimal robot personality to set realistic expectations; design wanted expressive, friendly behaviors. The Decider, the CEO, chose the personality-forward direction based on Art Museum results — those sketches had attracted three times as many dots. That decision, made in minutes, shaped Relay\'s character and became central to its differentiation.',
+      co: 'Savioke: Relay Robot',
+      text: 'Wednesday\'s decision at Savioke revealed a genuine disagreement: engineering wanted minimal robot personality to set realistic expectations; design wanted expressive, friendly behaviors. The Decider, the CEO, chose the personality-forward direction based on Art Museum results: those sketches had attracted three times as many dots. That decision, made in minutes, shaped Relay\'s character and became central to its differentiation.',
     },
   },
   thursday: {
-    headline: 'Thursday — A realistic facade, nothing more',
+    headline: 'Thursday: a realistic facade, nothing more',
     description:
-      'Build something that looks and feels real enough for users to forget they are interacting with a prototype. Nothing more. Keynote, Figma, or physical materials — whatever produces realistic-looking screens or interactions fastest. No production code, no live data, no edge cases. The team divides components between members and a dedicated stitcher assembles the whole at the end of the day.',
+      'Build something that looks and feels real enough for users to forget they are interacting with a prototype. Nothing more. Keynote, Figma, or physical materials, whatever produces realistic-looking screens or interactions fastest. No production code, no live data, no edge cases. The team divides components between members and a dedicated stitcher assembles the whole at the end of the day.',
     prompt: 'What are the three to five screens or moments your prototype must include to test the riskiest assumptions from Monday? What can you explicitly leave out?',
     example: {
-      co: 'One Medical — Patient Communication',
-      text: 'Thursday\'s prototype was built entirely in Keynote in a single day. Realistic-looking screens with actual patient-facing copy, a simulated notification flow, a mock appointment booking interface — none of it functional. But when users interacted with it on Friday, clicking through slides that advanced on tap, their reactions were indistinguishable from a live product. One user said "I\'d download this today" while tapping through a Keynote presentation.',
+      co: 'One Medical: Patient Communication',
+      text: 'Thursday\'s prototype was built entirely in Keynote in a single day. Realistic-looking screens with actual patient-facing copy, a simulated notification flow, a mock appointment booking interface, none of it functional. But when users interacted with it on Friday, clicking through slides that advanced on tap, their reactions were indistinguishable from a live product. One user said "I\'d download this today" while tapping through a Keynote presentation.',
     },
   },
   friday: {
-    headline: 'Friday — Five users, six hours, a real decision',
+    headline: 'Friday: five users, six hours, a real decision',
     description:
-      'Five real users, recruited to match Monday\'s target, each interact with the prototype for 60 minutes while the rest of the team watches via video feed from a separate room. By 5pm the team knows which of Monday\'s Sprint Questions the prototype answered — and the Decider makes one of three calls: proceed, run another sprint, or abandon.',
+      'Five real users, recruited to match Monday\'s target, each interact with the prototype for 60 minutes while the rest of the team watches via video feed from a separate room. By 5pm the team knows which of Monday\'s Sprint Questions the prototype answered, and the Decider makes one of three calls: proceed, run another sprint, or abandon.',
     prompt: 'Before testing, write down the three things you most need to learn. Which question did the prototype answer clearly? Which requires another sprint?',
     example: {
-      co: 'Airbnb — Host Dashboard',
-      text: 'Friday\'s observation room at Airbnb revealed a pattern that five full days of internal work had not surfaced: hosts consistently tried to click a visual element that was not interactive, because it looked more like a button than the actual interactive elements did. This was not a conceptual problem — the underlying idea tested well. It was a visual design problem that a single day of revision resolved. Without Friday, that confusion would have reached hundreds of thousands of hosts.',
+      co: 'Airbnb: Host Dashboard',
+      text: 'Friday\'s observation room at Airbnb revealed a pattern that five full days of internal work had not surfaced: hosts consistently tried to click a visual element that was not interactive, because it looked more like a button than the actual interactive elements did. This was not a conceptual problem; the underlying idea tested well. It was a visual design problem that a single day of revision resolved. Without Friday, that confusion would have reached hundreds of thousands of hosts.',
     },
   },
 }
@@ -102,11 +102,11 @@ const READINESS_QUESTIONS = [
   },
   {
     q: 'Is there genuine uncertainty about which direction to pursue?',
-    hint: 'If the answer is already decided, a sprint is theatre — run a Lightning Decision Jam instead.',
+    hint: 'If the answer is already decided, a sprint is theatre; run a Lightning Decision Jam instead.',
   },
   {
     q: 'Do you have access to five representative users to test with on Friday?',
-    hint: 'Real users who match your Monday target — not colleagues, managers, or stakeholders.',
+    hint: 'Real users who match your Monday target, not colleagues, managers, or stakeholders.',
   },
   {
     q: 'Is there a clear Decider with genuine authority over the challenge?',
@@ -121,11 +121,11 @@ function readinessResult(yesCount: number): { label: string; text: string } {
   }
   if (yesCount === 4) return {
     label: 'Nearly ready',
-    text: 'Address the one gap before booking the week — especially if it is around the Decider or user access.',
+    text: 'Address the one gap before booking the week, especially if it is around the Decider or user access.',
   }
   if (yesCount === 3) return {
     label: 'Conditionally ready',
-    text: 'Resolve the gaps — especially around the Decider and user access — before committing to five days.',
+    text: 'Resolve the gaps, especially around the Decider and user access, before committing to five days.',
   }
   return {
     label: 'Not sprint-ready',
@@ -155,7 +155,7 @@ function ReadinessQuiz() {
   return (
     <div>
       <p className="text-sm leading-relaxed mb-space-6" style={{ color: 'rgba(255,255,255,0.55)' }}>
-        Answer five questions to see whether your challenge is sprint-ready. Be honest — a sprint
+        Answer five questions to see whether your challenge is sprint-ready. Be honest; a sprint
         that starts with the wrong setup will not produce useful results.
       </p>
 
@@ -292,7 +292,7 @@ export default function DSInteractiveSection() {
                 Design Sprint 2.0
               </p>
               <p className="font-mono text-2xs" style={{ color: 'rgba(255,255,255,0.30)' }}>
-                {sprint20 ? '4 days — Mon + Tue merged' : '5 days — original format'}
+                {sprint20 ? '4 days: Mon + Tue merged' : '5 days: original format'}
               </p>
             </div>
           </button>

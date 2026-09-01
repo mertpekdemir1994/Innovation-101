@@ -12,14 +12,14 @@ const VERSIONS = [
     org: 'Jake Knapp, John Zeratsky, Braden Kowitz at Google Ventures',
     badge: 'Foundation',
     summary:
-      'The original Design Sprint was developed and refined at Google Ventures between 2010 and 2016, tested across more than 150 startups and enterprises. It ran Monday through Friday across five distinct days — Understand, Sketch, Decide, Prototype, Test — and was designed for startups and technology companies with dedicated sprint rooms, full-week calendar blocks, and small co-located cross-functional teams. The five-day structure was considered non-negotiable; the pace and continuity were core to the sprint\'s results.',
+      'The original Design Sprint was developed and refined at Google Ventures between 2010 and 2016, tested across more than 150 startups and enterprises. It ran Monday through Friday across five distinct days (Understand, Sketch, Decide, Prototype, Test) and was designed for startups and technology companies with dedicated sprint rooms, full-week calendar blocks, and small co-located cross-functional teams. The five-day structure was considered non-negotiable; the pace and continuity were core to the sprint\'s results.',
     changes: [
-      { tag: 'Introduced', text: 'Five-day structure: Understand, Sketch, Decide, Prototype, Test — one day each, non-negotiable' },
+      { tag: 'Introduced', text: 'Five-day structure: Understand, Sketch, Decide, Prototype, Test, one day each, non-negotiable' },
       { tag: 'Introduced', text: 'The Decider role: one person with final authority over every sprint decision, explicitly named and mandatory' },
       { tag: 'Introduced', text: 'Five-user Friday testing: five representative users, one at a time, in 60-minute interviews; the team observes from a separate room' },
     ],
     limitation:
-      'The five-day, in-room format was difficult for large organisations to commit to. Recruiting five representative users for Friday testing on short notice was consistently the hardest logistical challenge. The format assumed co-location — a significant constraint as distributed teams became standard.',
+      'The five-day, in-room format was difficult for large organisations to commit to. Recruiting five representative users for Friday testing on short notice was consistently the hardest logistical challenge. The format assumed co-location, a significant constraint as distributed teams became standard.',
   },
   {
     year: '2018',
@@ -27,14 +27,14 @@ const VERSIONS = [
     org: 'AJ&Smart (Jonathan Courtney and Dee Lanier) in collaboration with Jake Knapp',
     badge: 'Adaptation',
     summary:
-      'Developed based on hundreds of sprint facilitations with large organisations across retail, healthcare, financial services, and government — contexts where the original startup-oriented format felt ill-fitting. Design Sprint 2.0 compresses five days into four by merging Monday and Tuesday through facilitation efficiencies: tighter time-boxing, simplified voting, and more structured ideation formats produce the same output in less time. Described as the most up-to-date semi-official version as of 2018.',
+      'Developed based on hundreds of sprint facilitations with large organisations across retail, healthcare, financial services, and government: contexts where the original startup-oriented format felt ill-fitting. Design Sprint 2.0 compresses five days into four by merging Monday and Tuesday through facilitation efficiencies: tighter time-boxing, simplified voting, and more structured ideation formats produce the same output in less time. Described as the most up-to-date semi-official version as of 2018.',
     changes: [
       { tag: 'Changed', text: 'Four days instead of five: Monday and Tuesday merged into a single day through tighter facilitation, without compromising output quality' },
       { tag: 'Changed', text: 'Simplified voting and more structured ideation formats, reducing facilitation overhead in large-organisation contexts' },
       { tag: 'Unchanged', text: 'The fundamental sequence, the Decider role, the Supervote, and the five-user Friday testing format all remain intact' },
     ],
     limitation:
-      'The compression of Monday and Tuesday requires an experienced facilitator to make work. In less experienced hands, merging the two days risks shortcutting the problem-mapping and expert-talk work that Monday exists to do — producing a sprint that moves quickly toward the wrong target.',
+      'The compression of Monday and Tuesday requires an experienced facilitator to make work. In less experienced hands, merging the two days risks shortcutting the problem-mapping and expert-talk work that Monday exists to do, producing a sprint that moves quickly toward the wrong target.',
   },
   {
     year: '2018',
@@ -42,7 +42,7 @@ const VERSIONS = [
     org: 'AJ&Smart',
     badge: 'Variant',
     summary:
-      'Not a compressed sprint but a different tool built on the same principles. The Lightning Decision Jam (LDJ) is optimised for a two to four hour session to make faster decisions on any subject. It runs silent individual ideation, dot voting, How Might We reframing, solution generation, prioritisation on an effort/impact matrix, and commitment to action steps — all without open discussion or debate. Where the Design Sprint answers a complex, prototype-testable question in a week, the LDJ answers a defined decision in an afternoon.',
+      'Not a compressed sprint but a different tool built on the same principles. The Lightning Decision Jam (LDJ) is optimised for a two to four hour session to make faster decisions on any subject. It runs silent individual ideation, dot voting, How Might We reframing, solution generation, prioritisation on an effort/impact matrix, and commitment to action steps, all without open discussion or debate. Where the Design Sprint answers a complex, prototype-testable question in a week, the LDJ answers a defined decision in an afternoon.',
     changes: [
       { tag: 'Introduced', text: 'Two to four hour format: completes a structured decision cycle in a single session, with no prototype or user testing' },
       { tag: 'Introduced', text: 'Effort/impact matrix: prioritises solutions by ease of execution versus expected impact, producing a clear action list at the end' },
@@ -61,7 +61,7 @@ const VERSIONS = [
     changes: [
       { tag: 'Changed', text: 'Physical materials replaced by digital facilitation tools: Miro or Mural for the board, FigJam for ideation, Lookback or Zoom for user testing' },
       { tag: 'Added', text: 'Asynchronous phases between synchronous sessions: some activities run as homework between video calls to reduce screen-time fatigue' },
-      { tag: 'Lost', text: 'The energy and spontaneous momentum of a co-located sprint room, between-session conversation, and the collective focus that physical presence creates — genuinely harder to replicate remotely' },
+      { tag: 'Lost', text: 'The energy and spontaneous momentum of a co-located sprint room, between-session conversation, and the collective focus that physical presence creates; genuinely harder to replicate remotely' },
     ],
     limitation:
       'Remote sprints introduce significant facilitation overhead: maintaining attention, preventing multitasking, and replicating the social energy that drives a co-located sprint\'s intensity all require deliberate intervention. The results are comparable; the experience is harder.',
@@ -72,11 +72,11 @@ const VERSIONS = [
     org: 'IDEO practitioners',
     badge: 'Extension',
     summary:
-      'The IDEO variant front-loads the sprint with a one to two day empathy phase — brief user interviews and observation sessions before the mapping work on Monday. This is a compressed discovery phase placed at the sprint\'s front. The original GV format assumes the team enters Monday with enough user understanding to map the challenge accurately; the IDEO variant catches the sprint when that understanding is weak, making it better when the team has limited prior knowledge of the user\'s real experience.',
+      'The IDEO variant front-loads the sprint with a one to two day empathy phase: brief user interviews and observation sessions before the mapping work on Monday. This is a compressed discovery phase placed at the sprint\'s front. The original GV format assumes the team enters Monday with enough user understanding to map the challenge accurately; the IDEO variant catches the sprint when that understanding is weak, making it better when the team has limited prior knowledge of the user\'s real experience.',
     changes: [
       { tag: 'Added', text: 'One to two day pre-sprint empathy phase: brief user interviews and observation sessions before Monday\'s mapping work begins' },
       { tag: 'Rationale', text: 'The GV sprint assumes prior user knowledge; the IDEO variant builds that knowledge into the sprint itself for teams entering without a strong research base' },
-      { tag: 'Duration', text: 'Six to seven days total — longer than the original but more self-contained for teams that cannot point to existing user research' },
+      { tag: 'Duration', text: 'Six to seven days total, longer than the original but more self-contained for teams that cannot point to existing user research' },
     ],
     limitation:
       'Adding discovery at the sprint\'s front creates a longer commitment. For teams with existing user research, the IDEO variant front-loads work that is already done. The original format is more efficient when the team genuinely already knows the user well.',
