@@ -122,7 +122,7 @@ export default function BMCAIReactivated() {
               transition: prefersReduced ? 'none' : 'all 0.2s',
               border: `1px solid ${m === mode ? (m === 'adversary' ? `${PLUM}0.60)` : `${INDIGO}0.60)`) : 'rgba(255,255,255,0.14)'}`,
               background: m === mode ? (m === 'adversary' ? `${PLUM}0.12)` : `${INDIGO}0.12)`) : 'transparent',
-              color: m === mode ? (m === 'adversary' ? `${PLUM}0.92)` : `${INDIGO}0.92)`) : 'rgba(255,255,255,0.38)',
+              color: m === mode ? (m === 'adversary' ? `${PLUM}0.92)` : `${INDIGO}0.92)`) : 'var(--color-dark-muted)',
             }}>
             {m === 'author' ? 'AI AS AUTHOR' : 'AI AS ADVERSARY'}
           </button>

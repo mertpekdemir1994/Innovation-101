@@ -190,7 +190,7 @@ export default function BMCInteractive() {
             className="rounded-full px-4 py-2 text-xs"
             style={{
               fontFamily: 'var(--font-mono)', letterSpacing: '0.08em',
-              color: 'rgba(255,255,255,0.35)',
+              color: 'var(--color-dark-muted)',
               border: '1px solid rgba(255,255,255,0.12)',
             }}>
             RESET
@@ -242,7 +242,7 @@ export default function BMCInteractive() {
               role="button"
               aria-pressed={selected === k}
               aria-label={`${LABELS[k].join(' ').trim()} block`}
-              style={{ cursor: 'pointer', outline: 'none' }}>
+              style={{ cursor: 'pointer' }}>
               <motion.rect
                 x={b.x} y={b.y} width={b.w} height={b.h} rx={3}
                 animate={{ fill: blockFill(k), stroke: blockStroke(k), strokeWidth: blockStrokeW(k) }}

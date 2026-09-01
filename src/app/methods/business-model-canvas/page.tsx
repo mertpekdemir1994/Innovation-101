@@ -19,7 +19,7 @@ const PLUM = '#6B4A77'
 
 function DarkSection({ children }: { children: React.ReactNode }) {
   return (
-    <section style={{ background: 'var(--color-dark)' }}>
+    <section className="dark-section" style={{ background: 'var(--color-dark)' }}>
       <div className="max-w-content mx-auto px-6 md:px-8 py-20 md:py-28">
         {children}
       </div>
@@ -125,7 +125,7 @@ export default function BMCPage() {
           used to see whether the whole thing holds together.
         </p>
         <p className="max-w-[540px]"
-          style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.36)', fontStyle: 'italic' }}>
+          style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}>
           Nine boxes anyone can fill in. The method is not the filling in. It is discovering that block three
           contradicts block seven, on paper, before it does so in the market.
         </p>
@@ -217,7 +217,7 @@ export default function BMCPage() {
             </div>
             <div>
               <p className="font-mono uppercase tracking-widest mb-4"
-                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>Do not lean on it when</p>
+                style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>Do not lean on it when</p>
               <ul className="flex flex-col gap-3">
                 {[
                   'You want depth on the customer and the offer specifically: that is the Value Proposition Canvas, which zooms into a single block and does it properly.',
@@ -226,7 +226,7 @@ export default function BMCPage() {
                   'The business is unknown and unformed. The canvas is excellent at organising what you believe; it can make a pile of guesses look like a strategy.',
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
-                    <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                    <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                     <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                       {item}
                     </span>
@@ -334,7 +334,7 @@ export default function BMCPage() {
             </div>
 
             <p className="font-mono uppercase tracking-widest mt-8 mb-4"
-              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>The mistakes</p>
+              style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>The mistakes</p>
             <div className="grid gap-3">
               {[
                 { label: 'Treating it as a form.', body: 'Nine boxes filled in plausibly, admired, and filed. The filling in is not the method; the coherence check is. If nothing broke, you did not use it.' },
@@ -524,7 +524,7 @@ export default function BMCPage() {
               <div className="flex items-center justify-between flex-wrap gap-6">
                 <div>
                   <p className="font-mono uppercase tracking-widest mb-1"
-                    style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                    style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                     Strategy &amp; Prioritization - Method 9 of 9
                   </p>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>
