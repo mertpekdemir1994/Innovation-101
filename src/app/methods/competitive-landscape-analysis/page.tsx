@@ -231,7 +231,7 @@ export default function CLAPage() {
 
               <div>
                 <p className="font-mono uppercase tracking-widest mb-4"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do not lean on it when
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -241,7 +241,7 @@ export default function CLAPage() {
                     'You need to understand the whole system of actors and value flows around a market, not just competitors. For that, use Ecosystem Mapping, a different altitude.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item}
                       </span>
@@ -545,7 +545,7 @@ export default function CLAPage() {
             </div>
 
             <p className="mt-6"
-              style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)', fontStyle: 'italic' }}>
+              style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)', fontStyle: 'italic' }}>
               Note: Competitive Landscape Analysis is a market discovery and positioning method. It maps to
               early understanding and &ldquo;where to play&rdquo; decisions and is intentionally blank at
               delivery and optimization phases.

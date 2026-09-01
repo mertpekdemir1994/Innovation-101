@@ -370,7 +370,7 @@ export default function CLAInteractive() {
               role="button"
               aria-pressed={panel.type === 'whitespace'}
               aria-label="White space, click to explore the un-served opportunity"
-              style={{ cursor: 'pointer', outline: 'none' }}
+              style={{ cursor: 'pointer' }}
             />
           </motion.g>
 
@@ -408,7 +408,7 @@ export default function CLAInteractive() {
                   tabIndex={0}
                   aria-label={`${c.label}: ${c.sub}`}
                   aria-pressed={isAct}
-                  style={{ cursor: 'pointer', outline: 'none' }}
+                  style={{ cursor: 'pointer' }}
                 />
               </motion.g>
             )
