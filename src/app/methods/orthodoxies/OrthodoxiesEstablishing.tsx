@@ -27,7 +27,7 @@ const LX = SX           // 152
 const LY1 = SY - WE     // 54
 const LY2 = SY + SH + WE // 210
 
-// RIGHT wall — has a pre-existing break
+// RIGHT wall: has a pre-existing break
 const RX = SX + SW      // 420
 const BRK_Y1 = SCY - 22 // 110
 const BRK_Y2 = SCY + 22 // 154
@@ -40,7 +40,7 @@ export default function OrthodoxiesEstablishing() {
 
   const ease = [0.16, 1, 0.3, 1] as [number, number, number, number]
 
-  // Walls animate from faint (0.08) to visible (1) — that is how orthodoxies operate
+  // Walls animate from faint (0.08) to visible (1): that is how orthodoxies operate
   const wallAnim = {
     hidden:  { opacity: 0.08 },
     visible: { opacity: 1 },
@@ -100,7 +100,7 @@ export default function OrthodoxiesEstablishing() {
           variants={fade} transition={envT}
         />
 
-        {/* Small idea markers — clustered inside the constraint box */}
+        {/* Small idea markers: clustered inside the constraint box */}
         {([
           [SCX - 62, SCY - 24],
           [SCX + 44, SCY - 18],
@@ -147,7 +147,7 @@ export default function OrthodoxiesEstablishing() {
             filter="url(#ortho-est-glow-sm)" />
         </motion.g>
 
-        {/* RIGHT wall — two segments with the break */}
+        {/* RIGHT wall: two segments with the break */}
         <motion.g variants={wallAnim} transition={wallT}>
           <line x1={RX} y1={LY1} x2={RX} y2={BRK_Y1}
             stroke={WALL_STROKE} strokeWidth={WALL_W}
@@ -189,7 +189,7 @@ export default function OrthodoxiesEstablishing() {
           >PREMIUM PRICING = CREDIBILITY</text>
         </motion.g>
 
-        {/* RIGHT wall label — sage, above the top segment */}
+        {/* RIGHT wall label: sage, above the top segment */}
         <motion.g variants={fade} transition={lblT}>
           <text x={RX} y={LY1 - 10} textAnchor="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"

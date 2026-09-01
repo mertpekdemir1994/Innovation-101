@@ -96,7 +96,7 @@ export default function OrthodoxiesAIReactivated() {
           {isAI ? 'CONSENSUS AS FACT' : 'IDEA SPACE'}
         </text>
 
-        {/* Idea markers (fade in AI mode — ideas disappear as consensus locks in) */}
+        {/* Idea markers (fade in AI mode: ideas disappear as consensus locks in) */}
         {([
           [SCX - 62, SCY - 24],
           [SCX + 44, SCY - 18],
@@ -125,12 +125,12 @@ export default function OrthodoxiesAIReactivated() {
           filter={isAI ? 'url(#ortho-ai-glow-sm)' : undefined}
           style={{ transition: 'stroke 0.4s, stroke-width 0.4s' }} />
 
-        {/* RIGHT wall — break open in human mode, CLOSED in AI mode */}
+        {/* RIGHT wall: break open in human mode, CLOSED in AI mode */}
         <line x1={RX} y1={LY1} x2={RX} y2={BRK_Y1}
           stroke={wallStroke} strokeWidth={wallW}
           filter={isAI ? 'url(#ortho-ai-glow-sm)' : undefined}
           style={{ transition: 'stroke 0.4s, stroke-width 0.4s' }} />
-        {/* Break connector — visible only in AI mode (seals the gap) */}
+        {/* Break connector: visible only in AI mode (seals the gap) */}
         <line x1={RX} y1={BRK_Y1} x2={RX} y2={BRK_Y2}
           stroke={`${INDIGO}0.80)`} strokeWidth={wallW + 1}
           filter="url(#ortho-ai-glow-sm)"
@@ -234,15 +234,15 @@ export default function OrthodoxiesAIReactivated() {
             {[
               {
                 h: 'AI is made of orthodoxies',
-                b: 'A language model learns from the vast body of what has been written about a field — which means it learns, and fluently reproduces, the industry\'s consensus. Ask it "how does this industry work?" and it confidently articulates the very assumptions the method exists to surface and break, presenting them as simple description.',
+                b: 'A language model learns from the vast body of what has been written about a field, which means it learns, and fluently reproduces, the industry\'s consensus. Ask it "how does this industry work?" and it confidently articulates the very assumptions the method exists to surface and break, presenting them as simple description.',
               },
               {
                 h: 'When aimed correctly, it can help',
-                b: 'Change the question from "how does this work?" to "what does this industry take for granted?" and AI can lay out candidate orthodoxies to examine. Once you have named one, AI can rapidly generate inversions and explore the opportunity space — a fast divergence aid for the flip.',
+                b: 'Change the question from "how does this work?" to "what does this industry take for granted?" and AI can lay out candidate orthodoxies to examine. Once you have named one, AI can rapidly generate inversions and explore the opportunity space: a fast divergence aid for the flip.',
               },
               {
                 h: 'The judgment stays human',
-                b: 'Recognizing that a universally-held belief is a mere assumption and worth defying remains human. AI, by construction, treats the consensus as ground truth. The ability to distrust the consensus precisely because it is the consensus is the method\'s engine — and the one thing AI cannot supply.',
+                b: 'Recognizing that a universally-held belief is a mere assumption and worth defying remains human. AI, by construction, treats the consensus as ground truth. The ability to distrust the consensus precisely because it is the consensus is the method\'s engine, and the one thing AI cannot supply.',
               },
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border"
@@ -264,11 +264,11 @@ export default function OrthodoxiesAIReactivated() {
             {[
               {
                 h: 'The walls are invisible until named',
-                b: 'Orthodoxies do not feel like assumptions — they feel like facts. The method\'s first move is to make the invisible visible: write each "of course" statement down as an assumption, not a description. That act alone begins to loosen its grip.',
+                b: 'Orthodoxies do not feel like assumptions; they feel like facts. The method\'s first move is to make the invisible visible: write each "of course" statement down as an assumption, not a description. That act alone begins to loosen its grip.',
               },
               {
                 h: 'The flip opens the space',
-                b: 'Every named orthodoxy is a locked door. Flipping it — "what if the opposite were true?" — is how the door opens. Not every inversion leads somewhere viable, but the discipline of flipping all of them is how the non-obvious opportunity gets found.',
+                b: 'Every named orthodoxy is a locked door. Flipping it, "what if the opposite were true?", is how the door opens. Not every inversion leads somewhere viable, but the discipline of flipping all of them is how the non-obvious opportunity gets found.',
               },
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border"
@@ -287,7 +287,7 @@ export default function OrthodoxiesAIReactivated() {
         style={{ background: 'rgba(255,255,255,0.04)' }}>
         <p className="text-[10px] font-semibold uppercase tracking-wider text-white/28 mb-1">Synthesis</p>
         <p className="text-xs text-white/42 leading-relaxed">
-          AI is a double-edged tool for this method. Asked to describe an industry, it reinforces the walls as fact. Asked to articulate an industry&rsquo;s assumptions and then flip a named one, it can genuinely help surface candidates and explore inversions. But keep the act of distrusting the obvious yours — that is the one thing a model trained to reproduce the consensus cannot supply.
+          AI is a double-edged tool for this method. Asked to describe an industry, it reinforces the walls as fact. Asked to articulate an industry&rsquo;s assumptions and then flip a named one, it can genuinely help surface candidates and explore inversions. But keep the act of distrusting the obvious yours; that is the one thing a model trained to reproduce the consensus cannot supply.
         </p>
       </div>
     </div>

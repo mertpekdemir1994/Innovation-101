@@ -54,17 +54,17 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'how-might-we',
     name: 'How Might We',
-    rel: 'The natural downstream handoff and the key pairing: a flipped orthodoxy — "what if customers never owned the product?" — is excellent raw material for a well-scoped How Might We question. Surface and flip here; reframe there. The relationship is directional: orthodoxies opens the space, How Might We structures the ideation prompt.',
+    rel: 'The natural downstream handoff and the key pairing: a flipped orthodoxy, "what if customers never owned the product?", is excellent raw material for a well-scoped How Might We question. Surface and flip here; reframe there. The relationship is directional: orthodoxies opens the space, How Might We structures the ideation prompt.',
   },
   {
     slug: null,
     name: 'Competitive Landscape Analysis',
-    rel: 'A powerful pairing: mapping what every competitor does the same way is one of the most reliable routes to a shared industry orthodoxy. When every player in a category has the same channel, the same pricing model, the same delivery format — that uniformity is the orthodoxy made visible. Landscape analysis surfaces it; orthodoxies names and challenges it.',
+    rel: 'A natural pairing: mapping what every competitor does the same way is one of the most reliable routes to a shared industry orthodoxy. When every player in a category has the same channel, the same pricing model, the same delivery format, that uniformity is the orthodoxy made visible. Landscape analysis surfaces it; orthodoxies names and challenges it.',
   },
   {
     slug: null,
     name: 'Analogs & Precursors',
-    rel: 'Complementary provocation: analogs and precursors show that another domain or historical era did it differently — which is direct evidence that an orthodoxy is a choice, not a law of physics. "Another industry already solved this differently" is one of the strongest arguments that a shared industry assumption is breakable.',
+    rel: 'Complementary provocation: analogs and precursors show that another domain or historical era did it differently, which is direct evidence that an orthodoxy is a choice, not a law of physics. "Another industry already solved this differently" is one of the strongest arguments that a shared industry assumption is breakable.',
   },
   {
     slug: 'in-depth-interviews',
@@ -84,7 +84,7 @@ export default function OrthodoxiesPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -126,7 +126,7 @@ export default function OrthodoxiesPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -137,7 +137,7 @@ export default function OrthodoxiesPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -148,9 +148,9 @@ export default function OrthodoxiesPage() {
             <div className="flex flex-col gap-5">
               <Body>
                 Orthodoxies are the deeply held beliefs, unwritten rules, and unquestioned assumptions about how
-                things are done in an industry or organization. They are the &ldquo;of course&rdquo; statements &mdash; of course
+                things are done in an industry or organization. They are the &ldquo;of course&rdquo; statements: of course
                 customers won&rsquo;t pay before they see it, of course this is sold through this channel, of course the
-                product has to work this way &mdash; that everyone in a field accepts as simply true. Because they are
+                product has to work this way, that everyone in a field accepts as true. Because they are
                 treated as undeniable facts rather than choices, they act as invisible constraints, quietly locking
                 companies into the same repetitive patterns and ruling out entire categories of idea before anyone
                 even considers them.
@@ -158,7 +158,7 @@ export default function OrthodoxiesPage() {
               <Body>
                 The insidious thing about an orthodoxy is that it does not feel like an assumption; it feels like
                 reality. Nobody argues about it because nobody notices it. It is the water the whole industry is
-                swimming in. And that is precisely why surfacing orthodoxies is such a powerful route to breakthrough:
+                swimming in. And that is precisely why surfacing orthodoxies is such a direct route to breakthrough:
                 the most valuable innovations frequently come from a company that identified an industry-wide
                 &ldquo;truth,&rdquo; recognized it as a mere assumption, and did the opposite. Low-cost airlines challenged
                 &ldquo;air travel is a premium service.&rdquo; Streaming challenged &ldquo;you own your media.&rdquo; Direct-to-consumer brands
@@ -167,7 +167,7 @@ export default function OrthodoxiesPage() {
               </Body>
               <Body>
                 So the method is a disciplined act of noticing and then defiance. First, surface the unquestioned
-                assumptions your industry treats as truth &mdash; the hardest part, because they are invisible from the inside.
+                assumptions your industry treats as truth, the hardest part, because they are invisible from the inside.
                 Then challenge them deliberately: for each orthodoxy, ask &ldquo;what if the opposite were true?&rdquo; and
                 explore the opportunity space that opens. The method does not assume every orthodoxy is wrong; it
                 insists that every orthodoxy is a choice, and that examining the choice is where breakthroughs hide.
@@ -178,7 +178,7 @@ export default function OrthodoxiesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -198,7 +198,7 @@ export default function OrthodoxiesPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -215,7 +215,7 @@ export default function OrthodoxiesPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'You are seeking breakthrough or category-redefining ideas, not incremental improvement, and need to escape the industry\'s default patterns.',
-                    'The team keeps producing variations on the same familiar solutions — a reliable sign that invisible constraints are at work.',
+                    'The team keeps producing variations on the same familiar solutions, a reliable sign that invisible constraints are at work.',
                     'You are entering an established industry and want to find where incumbents\' shared assumptions leave an opening.',
                     'You want to set up ideation with genuinely provocative, assumption-breaking prompts rather than safe, conventional ones.',
                   ].map((item, i) => (
@@ -236,9 +236,9 @@ export default function OrthodoxiesPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You need incremental optimization within the existing model — challenging foundational assumptions is the wrong tool for a small tuning problem.',
+                    'You need incremental optimization within the existing model; challenging foundational assumptions is the wrong tool for a small tuning problem.',
                     'The "orthodoxy" is actually a hard constraint: a law of physics, a binding regulation, a genuine safety requirement. The method targets assumed rules, not real limits, and part of the skill is telling them apart.',
-                    'The team is not prepared to sit with genuinely uncomfortable provocations — a half-hearted session that flinches from its own flips produces nothing.',
+                    'The team is not prepared to sit with genuinely uncomfortable provocations; a half-hearted session that flinches from its own flips produces nothing.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
                       <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
@@ -259,8 +259,8 @@ export default function OrthodoxiesPage() {
                 The honest limit: not every orthodoxy is wrong, and flipping one does not guarantee a viable idea.
                 The method&rsquo;s value is not that inversions are always right; it is that it forces examination of
                 assumptions that were never examined, some of which turn out to be choices worth reversing. Its
-                hardest part &mdash; and its main failure mode &mdash; is that the assumptions are genuinely invisible from
-                inside the industry, so a team relying only on insiders will simply fail to name its own deepest orthodoxies.
+                hardest part, and its main failure mode, is that the assumptions are genuinely invisible from
+                inside the industry, so a team relying only on insiders will fail to name its own deepest orthodoxies.
               </p>
             </div>
           </div>
@@ -268,7 +268,7 @@ export default function OrthodoxiesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -281,7 +281,7 @@ export default function OrthodoxiesPage() {
                 {
                   n: '01',
                   title: 'Surface the "of course" statements.',
-                  body: 'List the things everyone in your industry treats as obviously true — the assumptions about pricing, channel, ownership, format, customer behavior, business model, that no one questions. Hunt specifically for the beliefs so taken for granted they feel like facts rather than choices. If the team can name them in five minutes, they are probably not the deepest ones.',
+                  body: 'List the things everyone in your industry treats as obviously true: the assumptions about pricing, channel, ownership, format, customer behavior, business model, that no one questions. Hunt specifically for the beliefs so taken for granted they feel like facts rather than choices. If the team can name them in five minutes, they are probably not the deepest ones.',
                 },
                 {
                   n: '02',
@@ -291,22 +291,22 @@ export default function OrthodoxiesPage() {
                 {
                   n: '03',
                   title: 'State each orthodoxy plainly as an assumption.',
-                  body: 'Write each one as a clear belief — "we assume customers will not pay before delivery," "we assume the service must be delivered in person." The act of stating it as an assumption, rather than a fact, already begins to loosen its grip. An orthodoxy loses power the moment it is spoken aloud as a mere assumption rather than a description of reality.',
+                  body: 'Write each one as a clear belief: "we assume customers will not pay before delivery," "we assume the service must be delivered in person." The act of stating it as an assumption, rather than a fact, already begins to loosen its grip. An orthodoxy loses power the moment it is spoken aloud as a mere assumption rather than a description of reality.',
                 },
                 {
                   n: '04',
                   title: 'Flip each one: what if the opposite were true?',
-                  body: 'For every orthodoxy, deliberately invert it and explore the opportunity space the inversion opens. Do this for all of them, including the ones that feel absurd to flip — because the most defended assumptions often hide the biggest openings. Sit with the provocation before dismissing it.',
+                  body: 'For every orthodoxy, deliberately invert it and explore the opportunity space the inversion opens. Do this for all of them, including the ones that feel absurd to flip, because the most defended assumptions often hide the biggest openings. Sit with the provocation before dismissing it.',
                 },
                 {
                   n: '05',
                   title: 'Separate assumed rules from real constraints.',
-                  body: 'Test each orthodoxy: is this actually a law of physics, a binding regulation, or a genuine safety requirement — or just a shared belief? Discard the genuine hard limits; keep the assumed rules, which are where the opportunity lives. The method is only as good as the team\'s ability to make this distinction honestly.',
+                  body: 'Test each orthodoxy: is this actually a law of physics, a binding regulation, or a genuine safety requirement, or just a shared belief? Discard the genuine hard limits; keep the assumed rules, which are where the opportunity lives. The method is only as good as the team\'s ability to make this distinction honestly.',
                 },
                 {
                   n: '06',
                   title: 'Carry the promising flips into framing and ideation.',
-                  body: 'The most provocative flipped orthodoxies become the seeds of How Might We questions and ideation prompts. The method surfaces and inverts; the framing and ideation methods turn the openings into concepts. This handoff — from a flipped orthodoxy to a well-framed HMW question — is the method\'s most important output.',
+                  body: 'The most provocative flipped orthodoxies become the seeds of How Might We questions and ideation prompts. The method surfaces and inverts; the framing and ideation methods turn the openings into concepts. This handoff, from a flipped orthodoxy to a well-framed HMW question, is the method\'s most important output.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -329,13 +329,13 @@ export default function OrthodoxiesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={SAGE}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like &mdash; and the mistakes that prevent it.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and the mistakes that prevent it.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4"
               style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
@@ -343,11 +343,11 @@ export default function OrthodoxiesPage() {
             </h3>
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                'The team names genuinely deep orthodoxies — the assumptions so basic they felt like facts, not just surface preferences.',
+                'The team names genuinely deep orthodoxies: the assumptions so basic they felt like facts, not just surface preferences.',
                 'Outsiders and newcomers are used deliberately to spot the assumptions insiders can no longer see.',
                 'Every orthodoxy is actually flipped, including the ones that feel absurd, and the opened space is explored rather than dismissed.',
                 'Assumed rules are separated from real constraints, so effort goes to the choices that can actually be reversed.',
-                'The most provocative flips are carried forward into framing and ideation — not left as a clever exercise with no output.',
+                'The most provocative flips are carried forward into framing and ideation, not left as a clever exercise with no output.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span style={{ color: SAGE, flexShrink: 0, marginTop: 3 }}>✓</span>
@@ -366,11 +366,11 @@ export default function OrthodoxiesPage() {
               {[
                 {
                   mistake: 'Naming only shallow orthodoxies.',
-                  fix: 'Listing mild preferences ("we usually use blue in our branding") instead of foundational beliefs ("customers must own the product") produces weak flips. Push for the assumptions that feel like bedrock — the ones nobody would think to write down because they feel so obviously true.',
+                  fix: 'Listing mild preferences ("we usually use blue in our branding") instead of foundational beliefs ("customers must own the product") produces weak flips. Push for the assumptions that feel like bedrock: the ones nobody would think to write down because they feel so obviously true.',
                 },
                 {
                   mistake: 'Failing to see your own water.',
-                  fix: 'The deepest orthodoxies are invisible from inside the industry. A team relying only on insiders will miss its most important assumptions. Bring in outside eyes — and give them real license to ask "why does it have to be that way?"',
+                  fix: 'The deepest orthodoxies are invisible from inside the industry. A team relying only on insiders will miss its most important assumptions. Bring in outside eyes, and give them real license to ask "why does it have to be that way?"',
                 },
                 {
                   mistake: 'Flinching from the uncomfortable flip.',
@@ -405,7 +405,7 @@ export default function OrthodoxiesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -423,7 +423,7 @@ export default function OrthodoxiesPage() {
               {[
                 {
                   label: 'Assemble a mix of insiders and outsiders',
-                  body: 'The single most important practical choice. Insiders know the industry\'s assumptions intimately but cannot see them; outsiders — newcomers, customers, people from adjacent fields — can see them precisely because they have not absorbed them yet. Put both in the room, and give the outsiders real license to ask "why does it have to be that way?" without being dismissed as naive.',
+                  body: 'The single most important practical choice. Insiders know the industry\'s assumptions intimately but cannot see them; outsiders (newcomers, customers, people from adjacent fields) can see them precisely because they have not absorbed them yet. Put both in the room, and give the outsiders real license to ask "why does it have to be that way?" without being dismissed as naive.',
                 },
                 {
                   label: 'Create psychological safety for heresy',
@@ -431,11 +431,11 @@ export default function OrthodoxiesPage() {
                 },
                 {
                   label: 'Prompt for orthodoxies across every dimension',
-                  body: 'Do not let the list stay narrow. Deliberately probe assumptions about the business model, pricing, channel, ownership, customer behavior, product format, timing, and who the customer even is. Orthodoxies hide in every dimension, and teams tend to surface only the ones nearest the product — which are rarely the most important.',
+                  body: 'Do not let the list stay narrow. Deliberately probe assumptions about the business model, pricing, channel, ownership, customer behavior, product format, timing, and who the customer even is. Orthodoxies hide in every dimension, and teams tend to surface only the ones nearest the product, which are rarely the most important.',
                 },
                 {
                   label: 'Do the flips out loud, together',
-                  body: 'The inversion works best as a live, collective act — stating the orthodoxy, flipping it, and exploring the opening as a group — because one person\'s flip sparks another\'s. A simple repeatable prompt: "We all assume X. What if the opposite were true?" Say it aloud, every time.',
+                  body: 'The inversion works best as a live, collective act (stating the orthodoxy, flipping it, and exploring the opening as a group) because one person\'s flip sparks another\'s. A simple repeatable prompt: "We all assume X. What if the opposite were true?" Say it aloud, every time.',
                 },
                 {
                   label: 'Hand off to How Might We while the energy is high',
@@ -464,7 +464,7 @@ export default function OrthodoxiesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — How AI is evolving this method   DARK
+          S9 - How AI is evolving this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -475,7 +475,7 @@ export default function OrthodoxiesPage() {
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see where AI reinforces the walls by default &mdash; and where, aimed
+              Toggle between modes to see where AI reinforces the walls by default, and where, aimed
               correctly, it can help name and flip them.
             </p>
             <OrthodoxiesAIReactivated />
@@ -484,20 +484,20 @@ export default function OrthodoxiesPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={SAGE}>In-depth example</SectionLabel>
-            <SectionHeadingLight>The same scenario. Two approaches &mdash; one escapes the orthodoxies, one recites them.</SectionHeadingLight>
+            <SectionHeadingLight>The same scenario. Two approaches, one escapes the orthodoxies, one recites them.</SectionHeadingLight>
             <p
               className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A team entering the eyewear industry uses an orthodoxies session to find an opening.
               Toggle between the traditional approach and a hypothetical AI-first approach to see what each reveals
-              about the industry &mdash; and what each misses.
+              about the industry, and what each misses.
             </p>
             <OrthodoxiesExampleToggle />
           </div>
@@ -505,7 +505,7 @@ export default function OrthodoxiesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Used in these frameworks   LIGHT
+          S11 - Used in these frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -547,7 +547,7 @@ export default function OrthodoxiesPage() {
             <p className="mt-6"
               style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)', fontStyle: 'italic' }}>
               Note: Orthodoxies is a breakthrough-oriented framing provocation. It is intentionally blank at delivery
-              and optimization phases &mdash; its value is in opening the possibility space before convergence, not in
+              and optimization phases; its value is in opening the possibility space before convergence, not in
               refining a direction already chosen.
             </p>
           </div>
@@ -555,7 +555,7 @@ export default function OrthodoxiesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -595,7 +595,7 @@ export default function OrthodoxiesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources   LIGHT
+          S13 - Sources   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -609,19 +609,19 @@ export default function OrthodoxiesPage() {
                   title:  'Blue Ocean Strategy',
                   author: 'W. Chan Kim and Renée Mauborgne',
                   year:   '2005',
-                  note:   'The landmark treatment of breaking industry conventions to create uncontested market space. Kim and Mauborgne\'s strategy canvas and four-actions framework are systematic ways of seeing and challenging the assumptions every competitor shares — making this the closest strategic companion to the orthodoxies method. Their cases show repeatedly that the breakthrough came not from a new technology but from a deliberate refusal to accept the industry\'s settled structure.',
+                  note:   'The landmark treatment of breaking industry conventions to create uncontested market space. Kim and Mauborgne\'s strategy canvas and four-actions framework are systematic ways of seeing and challenging the assumptions every competitor shares, making this the closest strategic companion to the orthodoxies method. Their cases show repeatedly that the breakthrough came not from a new technology but from a deliberate refusal to accept the industry\'s settled structure.',
                 },
                 {
                   title:  'The Innovator\'s Dilemma',
                   author: 'Clayton Christensen',
                   year:   '1997',
-                  note:   'On how incumbents\' entrenched assumptions leave them open to disruption. Christensen\'s core argument is that established companies fail not because they do not execute well, but because they execute the assumptions of their current business model so well that they cannot see past them. Disruptors succeed precisely by ignoring those assumptions — a perfect description of what orthodoxies-breaking looks like at the industry level.',
+                  note:   'On how incumbents\' entrenched assumptions leave them open to disruption. Christensen\'s core argument is that established companies fail not because they do not execute well, but because they execute the assumptions of their current business model so well that they cannot see past them. Disruptors succeed precisely by ignoring those assumptions: a perfect description of what orthodoxies-breaking looks like at the industry level.',
                 },
                 {
                   title:  'Seeing What Others Don\'t: The Remarkable Ways We Gain Insights',
                   author: 'Gary Klein',
                   year:   '2013',
-                  note:   'On the nature of insight and how people come to question what everyone else accepts. Klein\'s research shows that breakthrough insight is not primarily a divergent-thinking skill but a noticing skill: the ability to see something obvious that everyone else has stopped seeing. This makes it the best scientific foundation for the orthodoxies method\'s core move — the act of noticing the water.',
+                  note:   'On the nature of insight and how people come to question what everyone else accepts. Klein\'s research shows that breakthrough insight is not primarily a divergent-thinking skill but a noticing skill: the ability to see something obvious that everyone else has stopped seeing. This makes it the best scientific foundation for the orthodoxies method\'s core move: the act of noticing the water.',
                 },
               ].map(({ title, author, year, note }) => (
                 <div

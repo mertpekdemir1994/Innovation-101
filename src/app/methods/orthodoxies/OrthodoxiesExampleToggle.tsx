@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'A team wants to enter the eyewear industry, long dominated by a model everyone in it accepts: prescription glasses are expensive, sold through optical shops, and you cannot really buy them without an in-person fitting. They use an orthodoxies exercise to find an opening — the same terrain the direct-to-consumer eyewear disruptors famously exploited.'
+const SCENARIO = 'A team wants to enter the eyewear industry, long dominated by a model everyone in it accepts: prescription glasses are expensive, sold through optical shops, and you cannot really buy them without an in-person fitting. They use an orthodoxies exercise to find an opening: the same terrain the direct-to-consumer eyewear disruptors famously exploited.'
 
 export default function OrthodoxiesExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -60,7 +60,7 @@ export default function OrthodoxiesExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${SAGE}1)` }}>How the session worked</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
-                The team deliberately included people from outside the eyewear industry — outsiders who had not yet
+                The team deliberately included people from outside the eyewear industry, outsiders who had not yet
                 absorbed the category&rsquo;s unwritten rules. They kept asking a simple question: &ldquo;why does it have to be that way?&rdquo;
                 That question, which insiders could not hear because the rules felt like facts, was what surfaced the orthodoxies.
               </p>
@@ -73,7 +73,7 @@ export default function OrthodoxiesExampleToggle() {
             {/* The orthodoxies and their flips */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${SAGE}0.22)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${SAGE}1)` }}>The orthodoxies surfaced — and their flips</p>
+                style={{ color: `${SAGE}1)` }}>The orthodoxies surfaced, and their flips</p>
               <div className="space-y-4">
                 {[
                   {
@@ -84,7 +84,7 @@ export default function OrthodoxiesExampleToggle() {
                   {
                     ortho: 'You must be fitted in person by an optician',
                     flip: 'What if you could try them at home, or map a face digitally?',
-                    opp: 'Home try-on removes the single biggest barrier to buying glasses online — the fit question — and turns a two-week commitment into a five-day trial.',
+                    opp: 'Home try-on removes the single biggest barrier to buying glasses online, the fit question, and turns a two-week commitment into a five-day trial.',
                   },
                   {
                     ortho: 'Eyewear is sold through optical retail, not direct',
@@ -94,7 +94,7 @@ export default function OrthodoxiesExampleToggle() {
                   {
                     ortho: 'You buy one pair and keep it for years',
                     flip: 'What if glasses were a fashion category, like shoes, with new styles each season?',
-                    opp: 'A repeat-purchase category where style, not just prescription, drives buying — and where the brand, not the retailer, owns the customer relationship.',
+                    opp: 'A repeat-purchase category where style, not just prescription, drives buying, and where the brand, not the retailer, owns the customer relationship.',
                   },
                 ].map((item, i) => (
                   <div key={i} className="rounded p-4"
@@ -143,7 +143,7 @@ export default function OrthodoxiesExampleToggle() {
               <p className="text-xs text-neutral-600 leading-relaxed">
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The real disruption came from human insight, not AI. This tab imagines the same team had instead
-                started by asking an AI to describe the eyewear industry — to show what that approach reveals,
+                started by asking an AI to describe the eyewear industry, to show what that approach reveals,
                 and what it misses.
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function OrthodoxiesExampleToggle() {
                 </span>
               </div>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
-                The AI produced a fluent, accurate account of the eyewear industry — and that was the problem.
+                The AI produced a fluent, accurate account of the eyewear industry, and that was the problem.
                 Trained on everything written about eyewear, it described the industry&rsquo;s consensus with authority.
               </p>
               <div className="space-y-3">
@@ -167,17 +167,17 @@ export default function OrthodoxiesExampleToggle() {
                   {
                     tag: 'On pricing',
                     ai: '"Prescription eyewear is a considered, medical-adjacent purchase. Consumers prioritize quality and trust, which commands a premium price point. Value-based competition is limited."',
-                    note: 'The orthodoxy — expensive = credible — restated as market fact.',
+                    note: 'The orthodoxy (expensive = credible) restated as market fact.',
                   },
                   {
                     tag: 'On distribution',
                     ai: '"Optical retail provides the necessary professional consultation and fitting services. The channel is structurally important to the category and enables the trust consumers require."',
-                    note: 'The orthodoxy — must go through retail — confirmed as structural requirement.',
+                    note: 'The orthodoxy (must go through retail) confirmed as structural requirement.',
                   },
                   {
                     tag: 'On fitting',
                     ai: '"In-person fitting by a licensed optician is essential for ensuring correct prescription delivery and physical comfort. Remote alternatives present quality and liability risks."',
-                    note: 'The orthodoxy — must be in person — presented as safety imperative, not assumption.',
+                    note: 'The orthodoxy (must be in person) presented as safety imperative, not assumption.',
                   },
                 ].map((item, i) => (
                   <div key={i} className="rounded p-3"
@@ -205,7 +205,7 @@ export default function OrthodoxiesExampleToggle() {
                   The judgment stayed human
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
-                  Even re-aimed, the crucial act — deciding that &ldquo;you must be fitted in person&rdquo; was a breakable assumption rather than a fact — still had to come from a human willing to distrust the consensus the AI had just so convincingly recited.
+                  Even re-aimed, the crucial act, deciding that &ldquo;you must be fitted in person&rdquo; was a breakable assumption rather than a fact, still had to come from a human willing to distrust the consensus the AI had just so convincingly recited.
                 </p>
               </div>
             </div>
@@ -216,10 +216,10 @@ export default function OrthodoxiesExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
                 style={{ color: `${INDIGO}0.80)` }}>The honest readout</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                Used naively, AI entrenched the industry&rsquo;s orthodoxies — presenting every assumption as fact,
+                Used naively, AI entrenched the industry&rsquo;s orthodoxies, presenting every assumption as fact,
                 thickening the walls rather than naming them. Aimed deliberately at articulating assumptions and generating
-                inversions, it became a useful divergence accelerator. But the act of defying the obvious — of saying
-                &ldquo;this consensus belief is a choice we can reverse&rdquo; — was human. That is the method&rsquo;s engine,
+                inversions, it became a useful divergence accelerator. But the act of defying the obvious, of saying
+                &ldquo;this consensus belief is a choice we can reverse&rdquo;, was human. That is the method&rsquo;s engine,
                 and it runs directly against the grain of a model trained to reproduce the consensus fluently.
               </p>
             </div>

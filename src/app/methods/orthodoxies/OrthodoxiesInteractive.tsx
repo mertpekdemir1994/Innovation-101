@@ -40,9 +40,9 @@ const WALLS: Record<WallId, {
   top: {
     label: 'CUSTOMERS MUST OWN THE PRODUCT',
     belief: 'The customer relationship only works if they buy and own it.',
-    beliefBody: 'Pricing, margins, and business models all assume ownership as the fundamental mode. Customers invest once and the relationship is transactional. The entire industry is structured around this assumption — and no one has written it down because no one needs to.',
+    beliefBody: 'Pricing, margins, and business models all assume ownership as the fundamental mode. Customers invest once and the relationship is transactional. The entire industry is structured around this assumption, and no one has written it down because no one needs to.',
     flip: 'What if customers never owned it and only paid for access?',
-    opportunity: 'Subscription models, access-first structures, outcomes-based pricing. Entire categories have been remade by this single inversion — software, music, cars, eventually eyewear.',
+    opportunity: 'Subscription models, access-first structures, outcomes-based pricing. Entire categories have been remade by this single inversion: software, music, cars, eventually eyewear.',
     hmw: 'How might we design a relationship where customers pay for outcomes rather than ownership?',
   },
   right: {
@@ -50,23 +50,23 @@ const WALLS: Record<WallId, {
     belief: 'You need the established dealer or retail network to reach customers at all.',
     beliefBody: 'Distribution requires intermediaries: dealers, retailers, optical shops, wholesalers. Building a direct channel is treated as either impossible or wrong. The whole industry is structured around this assumption and can\'t see it from the inside.',
     flip: 'What if we sold directly and cut the intermediaries out entirely?',
-    opportunity: 'Direct-to-consumer removes the markup, enables a direct customer relationship, and makes the unit economics completely different. Warby Parker, Glossier, Tesla — each broke this orthodoxy in their category.',
+    opportunity: 'Direct-to-consumer removes the markup, enables a direct customer relationship, and makes the unit economics completely different. Warby Parker, Glossier, Tesla: each broke this orthodoxy in their category.',
     hmw: 'How might we reach our customers with no intermediary at any point in the chain?',
   },
   bottom: {
     label: 'IN-PERSON DELIVERY REQUIRED',
     belief: 'The service can only be delivered in person, by an expert, in the right location.',
-    beliefBody: 'A physical encounter is assumed to be necessary for fitting, expertise, and trust. The industry has built its entire service model around in-person presence — the shop floor, the consultation, the fitting room. Remote alternatives are treated as inferior or impossible.',
+    beliefBody: 'A physical encounter is assumed to be necessary for fitting, expertise, and trust. The industry has built its entire service model around in-person presence: the shop floor, the consultation, the fitting room. Remote alternatives are treated as inferior or impossible.',
     flip: 'What if the service were entirely remote, at home, or self-serve?',
-    opportunity: 'Home try-on, digital measurement, self-serve onboarding. Any time a category insisted you had to come in, someone eventually showed that home delivery, video, or digital tools could do the same job — often better and cheaper.',
+    opportunity: 'Home try-on, digital measurement, self-serve onboarding. Any time a category insisted you had to come in, someone eventually showed that home delivery, video, or digital tools could do the same job, often better and cheaper.',
     hmw: 'How might we deliver the expert service without requiring the customer to travel to us at all?',
   },
   left: {
     label: 'PREMIUM PRICING = CREDIBILITY',
     belief: 'Low prices signal low quality; the category requires high prices to be taken seriously.',
-    beliefBody: 'High price is treated as a proxy for quality and expertise. Low-cost alternatives are assumed to be inferior or untrustworthy. This assumption allows the whole industry to maintain high margins without question, because buyers use price as a quality signal — and always have.',
+    beliefBody: 'High price is treated as a proxy for quality and expertise. Low-cost alternatives are assumed to be inferior or untrustworthy. This assumption allows the whole industry to maintain high margins without question, because buyers use price as a quality signal, and always have.',
     flip: 'What if the product were cheap enough to own several, like a fashion accessory?',
-    opportunity: 'Accessible pricing expands the market enormously, makes repeat purchase viable, and turns a considered purchase into a casual one. The key move is detaching price from perceived quality through other credibility signals — design, brand, social proof.',
+    opportunity: 'Accessible pricing expands the market enormously, makes repeat purchase viable, and turns a considered purchase into a casual one. The key move is detaching price from perceived quality through other credibility signals: design, brand, social proof.',
     hmw: 'How might we make the product cheap enough to own multiple versions without signaling low quality?',
   },
 }
@@ -184,7 +184,7 @@ export default function OrthodoxiesInteractive() {
           filter={selected === 'left' ? 'url(#ortho-int-glow-sm)' : undefined}
           style={{ transition: 'stroke 0.25s, stroke-width 0.25s' }} />
 
-        {/* RIGHT — two segments with permanent break */}
+        {/* RIGHT: two segments with permanent break */}
         <line x1={RX} y1={LY1} x2={RX} y2={BRK_Y1}
           stroke={wallStroke('right')} strokeWidth={wallWidth('right')}
           filter={selected === 'right' ? 'url(#ortho-int-glow-sm)' : undefined}
@@ -350,7 +350,7 @@ export default function OrthodoxiesInteractive() {
                   color: `${SAGE}1)`,
                 }}
               >
-                Flip it — what if the opposite were true? →
+                Flip it, what if the opposite were true? →
               </button>
             </motion.div>
           ) : (
