@@ -22,53 +22,53 @@ const STAGE_DETAIL: Record<StageId, {
   example: { co: string; text: string }
 }> = {
   discovery: {
-    headline: 'Discovery Sprint — Go back to users before committing to the next delivery sprint',
+    headline: 'Discovery Sprint: go back to users before committing to the next delivery sprint',
     description:
-      'The Discovery Sprint is the innovation layer that standard Agile lacks. A focused period of user research, assumption testing, and insight generation that continuously refreshes the team\'s understanding of the problem space. It runs at the start of every initiative, at the start of each new phase, and when user research signals the team may be building the wrong thing. The test of a good Discovery Sprint: it produces evidence that actually changes the backlog — sometimes uncomfortably.',
+      'The Discovery Sprint is the innovation layer that standard Agile lacks. A focused period of user research, assumption testing, and insight generation that continuously refreshes the team\'s understanding of the problem space. It runs at the start of every initiative, at the start of each new phase, and when user research signals the team may be building the wrong thing. The test of a good Discovery Sprint: it produces evidence that actually changes the backlog, sometimes uncomfortably.',
     prompt: 'When did your team last talk directly to users? If it has been more than two weeks, what assumptions are you currently building on that have not been tested since then?',
     example: {
-      co: 'ING Bank — Customer Journey Sprints',
-      text: 'ING Bank\'s transformation to Agile Innovation included mandatory Discovery Sprints called "customer journey sprints" that ran alongside delivery sprints in every squad. ING credited this dual-sprint rhythm — discovery and delivery running in parallel — as a key factor in reducing time-to-market for new features from 14 months to 5 weeks.',
+      co: 'ING Bank: Customer Journey Sprints',
+      text: 'ING Bank\'s transformation to Agile Innovation included mandatory Discovery Sprints called "customer journey sprints" that ran alongside delivery sprints in every squad. ING credited this dual-sprint rhythm (discovery and delivery running in parallel) as a key factor in reducing time-to-market for new features from 14 months to 5 weeks.',
     },
   },
   backlog: {
-    headline: 'Backlog Management — The backlog is a prioritized hypothesis list, not a feature wish list',
+    headline: 'Backlog Management: the backlog is a prioritized hypothesis list, not a feature wish list',
     description:
       'In Agile Innovation, the backlog is a prioritized list of hypotheses to test and features to build, with the distinction clearly marked. Each item specifies what is being built or tested, the hypothesis it is testing or the user need it addresses, the success metric, and the risk level. A three-tier structure makes risk visible: validated items (strong evidence, build confidently), testing items (promising signals, small test first), and exploring items (hypotheses, discovery first).',
     prompt: 'Take the top three items on your current backlog. For each, write the specific hypothesis it is testing and the metric that will tell you if the hypothesis was validated. If you cannot write these for an item, the item may not be ready for a delivery sprint.',
     example: {
-      co: 'Amazon — Working Backwards Documents',
-      text: 'Amazon\'s "working backwards" document — a press release and FAQ written for each proposed feature before any development begins — is a version of this principle. The press release describes the feature as if it already exists and has been enthusiastically received. This document is the innovation backlog item; it specifies the hypothesis before any development investment is made. Items that cannot produce a compelling press release do not make the backlog.',
+      co: 'Amazon: Working Backwards Documents',
+      text: 'Amazon\'s "working backwards" document (a press release and FAQ written for each proposed feature before any development begins) is a version of this principle. The press release describes the feature as if it already exists and has been enthusiastically received. This document is the innovation backlog item; it specifies the hypothesis before any development investment is made. Items that cannot produce a compelling press release do not make the backlog.',
     },
   },
   sprint: {
-    headline: 'Sprint Execution — Build in two-week cycles. Ship something real at the end of every sprint',
+    headline: 'Sprint Execution: build in two-week cycles. Ship something real at the end of every sprint',
     description:
-      'The delivery sprint is the heartbeat of Agile Innovation — a focused, time-boxed cycle in which a cross-functional team builds and tests a prioritized set of backlog items. Every sprint ends with a working, demonstrable output: not a plan, not a design, but something that can be shown to users or stakeholders and generates real feedback. Cross-functional team composition is non-negotiable: a sprint team that must wait for a designer, engineer, or researcher from outside the team cannot deliver in two weeks.',
-    prompt: 'What is the single most important thing your team needs to deliver in the next two weeks? What does "done" look like? If you had to ship one thing — not plan or design, but actually ship — what would it be?',
+      'The delivery sprint is the heartbeat of Agile Innovation: a focused, time-boxed cycle in which a cross-functional team builds and tests a prioritized set of backlog items. Every sprint ends with a working, demonstrable output: not a plan, not a design, but something that can be shown to users or stakeholders and generates real feedback. Cross-functional team composition is non-negotiable: a sprint team that must wait for a designer, engineer, or researcher from outside the team cannot deliver in two weeks.',
+    prompt: 'What is the single most important thing your team needs to deliver in the next two weeks? What does "done" look like? If you had to ship one thing (not plan or design, but actually ship) what would it be?',
     example: {
-      co: 'Bosch — IoT Innovation Team',
+      co: 'Bosch: IoT Innovation Team',
       text: 'Bosch\'s IoT innovation team ran two-week delivery sprints with a standing rule that every sprint must end with something placed in the hands of at least one real user. This rule forced the team to decompose work into units genuinely completable in two weeks. After 18 months of this discipline, cycle time from idea to user feedback dropped from six months to three weeks.',
     },
   },
   review: {
-    headline: 'Sprint Review — Show real work to real stakeholders. Gather real feedback',
+    headline: 'Sprint Review: show real work to real stakeholders. Gather real feedback',
     description:
       'The Sprint Review demonstrates what the team built during the sprint, presented to stakeholders and, where possible, real users. It is not a status meeting or a slide deck. It is a live demonstration of working output designed to generate concrete feedback that informs the next sprint. A good review: the team demonstrates working output (not plans), stakeholders interact with or observe the output directly, feedback is specific and actionable, and the feedback directly informs backlog reprioritization.',
     prompt: 'Who should be in the room for your next Sprint Review that is not currently invited? What specific question do you most need answered by real users at the end of this sprint?',
     example: {
-      co: 'Google Area 120 — Internal Incubator',
-      text: 'Google\'s Area 120 internal incubator runs sprint reviews where teams demo their experiments directly to potential users, not just internal stakeholders. This practice ensures that the feedback shaping the next sprint comes from people who will actually use the product. Several Area 120 products that graduated to full Google products — including Jamboard — cite user-first sprint reviews as a key factor in finding product-market fit quickly.',
+      co: 'Google Area 120: Internal Incubator',
+      text: 'Google\'s Area 120 internal incubator runs sprint reviews where teams demo their experiments directly to potential users, not just internal stakeholders. This practice ensures that the feedback shaping the next sprint comes from people who will actually use the product. Several Area 120 products that graduated to full Google products (including Jamboard) cite user-first sprint reviews as a key factor in finding product-market fit quickly.',
     },
   },
   retro: {
-    headline: 'Retrospective — Improve the way you work, not just what you build',
+    headline: 'Retrospective: improve the way you work, not just what you build',
     description:
-      'The Retrospective is the sprint\'s learning session — focused not on the product but on the process. Every two weeks, the team asks: what worked well, what did not work, and what will we change in the next sprint? The critical discipline: the third question must produce at least one concrete, owned process change before the meeting closes. A retrospective that does not produce a change is a complaint session. Longitudinal tracking — checking whether changes from previous retrospectives actually stuck — turns a bi-weekly habit into a genuine improvement engine.',
+      'The Retrospective is the sprint\'s learning session, focused not on the product but on the process. Every two weeks, the team asks: what worked well, what did not work, and what will we change in the next sprint? The critical discipline: the third question must produce at least one concrete, owned process change before the meeting closes. A retrospective that does not produce a change is a complaint session. Longitudinal tracking (checking whether changes from previous retrospectives actually stuck) turns a bi-weekly habit into a genuine improvement engine.',
     prompt: 'On your most recent project, what is one thing that slowed the team down that a simple process change could have prevented? What specifically would that change look like, and who would own making it?',
     example: {
-      co: 'Atlassian — Health Monitor',
-      text: 'Atlassian\'s engineering teams run retrospectives using a structured format called the "Health Monitor" — a regular assessment of eight team health attributes (including clarity of mission, psychological safety, quality of output, speed, and fun) tracked over time. This longitudinal dimension prevents the common failure of identifying the same problems sprint after sprint without making progress on them.',
+      co: 'Atlassian: Health Monitor',
+      text: 'Atlassian\'s engineering teams run retrospectives using a structured format called the "Health Monitor" (a regular assessment of eight team health attributes) (including clarity of mission, psychological safety, quality of output, speed, and fun) tracked over time. This longitudinal dimension prevents the common failure of identifying the same problems sprint after sprint without making progress on them.',
     },
   },
 }
@@ -79,7 +79,7 @@ const READINESS_QUESTIONS = [
     hint: 'If every direction change requires senior approval, Agile Innovation will frustrate more than it delivers.',
   },
   {
-    q: 'Is your team cross-functional — can it deliver a complete sprint output without waiting on people outside the team?',
+    q: 'Is your team cross-functional: can it deliver a complete sprint output without waiting on people outside the team?',
     hint: 'Design, engineering, and research all need to sit inside the squad. External dependencies break the two-week cycle.',
   },
   {
@@ -103,7 +103,7 @@ function readinessResult(yesCount: number): { label: string; text: string } {
   }
   if (yesCount === 4) return {
     label: 'Nearly ready',
-    text: 'Address the one gap before committing to the full rhythm — the authority question and cross-functional composition are the hardest to fix mid-stride.',
+    text: 'Address the one gap before committing to the full rhythm: the authority question and cross-functional composition are the hardest to fix mid-stride.',
   }
   if (yesCount === 3) return {
     label: 'Conditionally ready',
@@ -111,7 +111,7 @@ function readinessResult(yesCount: number): { label: string; text: string } {
   }
   return {
     label: 'Not yet ready',
-    text: 'Running Agile Innovation ceremonies without the conditions will produce frustration, not learning. Fix the structural prerequisites first — especially team authority and composition.',
+    text: 'Running Agile Innovation ceremonies without the conditions will produce frustration, not learning. Fix the structural prerequisites first, especially team authority and composition.',
   }
 }
 
@@ -138,7 +138,7 @@ function ReadinessCheck() {
     <div>
       <p className="text-sm leading-relaxed mb-space-6" style={{ color: 'rgba(255,255,255,0.55)' }}>
         Answer five questions to check whether your team has the conditions for Agile Innovation to work.
-        The rhythm runs on structural prerequisites — the ceremonies alone are not enough.
+        The rhythm runs on structural prerequisites; the ceremonies alone are not enough.
       </p>
 
       <div className="space-y-space-4">
@@ -263,7 +263,7 @@ export default function AIInteractiveSection() {
                 Standard Agile mode
               </p>
               <p className="font-mono text-2xs" style={{ color: 'rgba(255,255,255,0.30)' }}>
-                {agileDevMode ? 'Discovery Sprint removed — delivery only' : 'Full cycle — discovery + delivery'}
+                {agileDevMode ? 'Discovery Sprint removed, delivery only' : 'Full cycle: discovery + delivery'}
               </p>
             </div>
           </button>
@@ -276,8 +276,8 @@ export default function AIInteractiveSection() {
               style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}
             >
               <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.40)' }}>
-                This is what standard Agile development looks like — an efficient delivery engine with no discovery layer.
-                The risk: building the wrong thing very efficiently.
+                This is what standard Agile development looks like: an efficient delivery engine with no discovery layer.
+                The risk: building the wrong thing efficiently.
               </p>
             </motion.div>
           )}

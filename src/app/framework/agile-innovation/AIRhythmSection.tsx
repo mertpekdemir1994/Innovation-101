@@ -31,7 +31,7 @@ const STAGES: Stage[] = [
       'The Discovery Sprint is the innovation layer that standard Agile lacks. It is a focused period of user research, assumption testing, and insight generation that continuously refreshes the team\'s understanding of the problem space. It is what keeps the delivery engine pointed at the right target.',
     description: [
       'A Discovery Sprint runs at the start of every initiative (mandatory), at the beginning of each new phase or major feature set, and when user research signals the team may be building the wrong thing. Quarterly as a standing practice in ongoing programs.',
-      'The test of a good Discovery Sprint: it produces evidence that actually changes the backlog — sometimes uncomfortably. If the backlog never reprioritizes after a discovery sprint, the sprint was ritual, not research.',
+      'The test of a good Discovery Sprint: it produces evidence that actually changes the backlog, sometimes uncomfortably. If the backlog never reprioritizes after a discovery sprint, the sprint was ritual, not research.',
     ],
     activities: [
       {
@@ -66,7 +66,7 @@ const STAGES: Stage[] = [
     activities: [
       {
         title: 'Rewrite items as hypotheses',
-        detail: 'Each backlog item should name what is being built, the hypothesis it tests, and the metric that will confirm or deny it. If you cannot write a hypothesis for an item, the item may not be ready for a delivery sprint — it may need a discovery sprint first.',
+        detail: 'Each backlog item should name what is being built, the hypothesis it tests, and the metric that will confirm or deny it. If you cannot write a hypothesis for an item, the item may not be ready for a delivery sprint; it may need a discovery sprint first.',
       },
       {
         title: 'Three-tier triage',
@@ -74,7 +74,7 @@ const STAGES: Stage[] = [
       },
       {
         title: 'Ruthless prioritization',
-        detail: 'A backlog that grows indefinitely is not a prioritized list — it is a wishlist with order. Regularly remove items that have not been prioritized in two or more planning cycles. If work is important enough, it will be repitched after the next discovery sprint.',
+        detail: 'A backlog that grows indefinitely is not a prioritized list; it is a wishlist with order. Regularly remove items that have not been prioritized in two or more planning cycles. If work is important enough, it will be repitched after the next discovery sprint.',
       },
     ],
     keyQuestion:
@@ -87,7 +87,7 @@ const STAGES: Stage[] = [
     mode: 'Build',
     tagline: 'Build in two-week cycles. Ship something real at the end of every sprint.',
     objective:
-      'The delivery sprint is the heartbeat of Agile Innovation — a focused, time-boxed cycle in which a cross-functional team builds and tests a prioritized set of backlog items. Every sprint ends with a working, demonstrable output: not a plan, not a design, but something that can be shown to users or stakeholders and generates real feedback.',
+      'The delivery sprint is the heartbeat of Agile Innovation: a focused, time-boxed cycle in which a cross-functional team builds and tests a prioritized set of backlog items. Every sprint ends with a working, demonstrable output: not a plan, not a design, but something that can be shown to users or stakeholders and generates real feedback.',
     description: [
       'Sprint planning sets the sprint commitment. The key discipline is not over-committing: consistently over-committing and under-delivering is more damaging than consistently choosing smaller scope and delivering it reliably. A team that ships what it commits to, every sprint, builds the trust that gives it latitude.',
       'Cross-functional team composition is non-negotiable for Agile Innovation. A sprint team that must wait for a designer, engineer, or researcher from outside the team cannot deliver in two weeks. The dependencies are the constraint, not the work.',
@@ -103,11 +103,11 @@ const STAGES: Stage[] = [
       },
       {
         title: 'Working output by the end',
-        detail: 'Every sprint ends with something demonstrable — not a plan, not a design deck, but something a user or stakeholder can interact with or observe. This constraint forces the team to decompose work into units that are genuinely completable in two weeks and meaningful enough to generate real reaction.',
+        detail: 'Every sprint ends with something demonstrable, not a plan, not a design deck, but something a user or stakeholder can interact with or observe. This constraint forces the team to decompose work into units that are genuinely completable in two weeks and meaningful enough to generate real reaction.',
       },
     ],
     keyQuestion:
-      'What is the single most important thing your team needs to deliver in the next two weeks? What does "done" look like? If you had to ship one thing — not plan or design, but actually ship — what would it be?',
+      'What is the single most important thing your team needs to deliver in the next two weeks? What does "done" look like? If you had to ship one thing (not plan or design, but actually ship) what would it be?',
   },
   {
     id: 'review',
@@ -119,7 +119,7 @@ const STAGES: Stage[] = [
       'The Sprint Review demonstrates what the team built during the sprint, presented to stakeholders and, where possible, real users. It is not a status meeting or a slide deck. It is a live demonstration of working output designed to generate concrete feedback that informs the next sprint.',
     description: [
       'What makes a great Sprint Review: the team demonstrates working output, not plans. Stakeholders interact with or observe the output directly. Feedback is specific and actionable. The feedback directly informs backlog reprioritization.',
-      'The most common Sprint Review failure is reviewing with slides rather than working software or output. Slides produce approval and comment. Working output produces real feedback — including negative feedback that the team needs but stakeholders might hesitate to give about a polished-looking deck.',
+      'The most common Sprint Review failure is reviewing with slides rather than working software or output. Slides produce approval and comment. Working output produces real feedback, including negative feedback that the team needs but stakeholders might hesitate to give about a polished-looking deck.',
     ],
     activities: [
       {
@@ -132,7 +132,7 @@ const STAGES: Stage[] = [
       },
       {
         title: 'Convert feedback to backlog changes',
-        detail: 'A review that produces feedback but does not change the backlog is a ceremony without a function. Every sprint review should end with at least one concrete backlog change, reprioritization, or new item — the direct result of what was heard.',
+        detail: 'A review that produces feedback but does not change the backlog is a ceremony without a function. Every sprint review should end with at least one concrete backlog change, reprioritization, or new item: the direct result of what was heard.',
       },
     ],
     keyQuestion:
@@ -145,15 +145,15 @@ const STAGES: Stage[] = [
     mode: 'Improve',
     tagline: 'Improve the way you work, not just what you build.',
     objective:
-      'The Retrospective is the sprint\'s learning session — focused not on the product but on the process. Every two weeks, the team asks: what worked well, what did not work, and what will we change in the next sprint? It is the stage that turns a team from one that repeats its mistakes into one that compounds its improvements.',
+      'The Retrospective is the sprint\'s learning session, focused not on the product but on the process. Every two weeks, the team asks: what worked well, what did not work, and what will we change in the next sprint? It is the stage that turns a team from one that repeats its mistakes into one that compounds its improvements.',
     description: [
-      'The three questions: What went well? What did not go well? What will we try differently next sprint? The critical discipline is the third question — it must produce at least one concrete, owned process change before the meeting closes. A retrospective that does not produce a change is a complaint session.',
+      'The three questions: What went well? What did not go well? What will we try differently next sprint? The critical discipline is the third question: it must produce at least one concrete, owned process change before the meeting closes. A retrospective that does not produce a change is a complaint session.',
       'The most common failure: identifying the same problems sprint after sprint without acting on them. Track whether process changes from previous retrospectives actually stuck. Longitudinal tracking turns a bi-weekly habit into a genuine improvement engine.',
     ],
     activities: [
       {
         title: 'Structured reflection (What went well / What did not / What changes)',
-        detail: 'Give each question its own time, in order. Do not skip to "what changes" without spending real time on "what went well" — acknowledging what works is what keeps teams from overcorrecting, and it surfaces practices worth protecting.',
+        detail: 'Give each question its own time, in order. Do not skip to "what changes" without spending real time on "what went well"; acknowledging what works is what keeps teams from overcorrecting, and it surfaces practices worth protecting.',
       },
       {
         title: 'Own the actions',
@@ -193,7 +193,7 @@ export default function AIRhythmSection() {
 
   return (
     <div className="grid md:grid-cols-[1fr_2fr] gap-space-10 relative">
-      {/* Left — sticky stage nav */}
+      {/* Left: sticky stage nav */}
       <div className="hidden md:block">
         <div className="sticky top-24 space-y-space-2">
           {STAGES.map((stage) => (
@@ -236,7 +236,7 @@ export default function AIRhythmSection() {
         </div>
       </div>
 
-      {/* Right — stage content */}
+      {/* Right: stage content */}
       <div className="space-y-space-12 md:space-y-space-13">
         {STAGES.map((stage, i) => (
           <div key={stage.id} ref={(el) => { sectionRefs.current[i] = el }}>

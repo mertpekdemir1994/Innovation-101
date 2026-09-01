@@ -11,7 +11,7 @@ const AIInteractiveSection = dynamic(() => import('./AIInteractiveSection'), {
   ssr: false,
   loading: () => (
     <div className="py-space-12 flex items-center justify-center" style={{ minHeight: 400, color: 'rgba(255,255,255,0.25)' }}>
-      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram…</span>
+      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram...</span>
     </div>
   ),
 })
@@ -47,7 +47,7 @@ export default function AgileInnovationPage() {
     <>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          HERO — dark, full viewport
+          HERO: dark, full viewport
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
         <div
@@ -69,12 +69,12 @@ export default function AgileInnovationPage() {
             style={{ color: 'rgba(255,255,255,0.52)', lineHeight: 1.6 }}
           >
             The discipline of iterating toward the right answer. Short cycles,
-            continuous user feedback, ruthless prioritization — and a discovery layer
+            continuous user feedback, ruthless prioritization, and a discovery layer
             that keeps the delivery engine pointed at the right target.
           </p>
         </Container>
 
-        {/* Orbit diagram — full width, outside Container */}
+        {/* Orbit diagram: full width, outside Container */}
         <div className="relative z-10 w-full px-space-6 md:px-space-10 pb-space-12 pt-space-2">
           <AIHero />
         </div>
@@ -93,7 +93,7 @@ export default function AgileInnovationPage() {
       </DarkSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          THE FIVE-STAGE RHYTHM — deep dive
+          THE FIVE-STAGE RHYTHM: deep dive
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-12">
@@ -126,7 +126,7 @@ export default function AgileInnovationPage() {
                 className="font-display font-semibold text-balance"
                 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.15, color: 'var(--color-neutral-900)', letterSpacing: '-0.02em' }}
               >
-                Agile development asks how to build efficiently. Agile Innovation asks what to build — then builds it efficiently.
+                Agile development asks how to build efficiently. Agile Innovation asks what to build, then builds it efficiently.
               </p>
             </div>
           </ScrollReveal>
@@ -141,7 +141,7 @@ export default function AgileInnovationPage() {
               </p>
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
                 It is not Agile development renamed. It is the application of Agile&rsquo;s core
-                disciplines to the messier, more ambiguous work of innovating in established organizations —
+                disciplines to the messier, more ambiguous work of innovating in established organizations,
                 and the addition of the{' '}
                 <strong className="text-neutral-900 font-semibold">
                   discovery layer that keeps teams from building the wrong thing efficiently.
@@ -160,8 +160,8 @@ export default function AgileInnovationPage() {
               </p>
               <ol className="space-y-space-4">
                 {[
-                  'Uncertainty is manageable — not by eliminating it through exhaustive planning, but by designing work in short cycles that surface uncertainty quickly and cheaply. A two-week sprint that discovers a critical assumption was wrong costs two weeks. The same discovery after six months of waterfall development costs six months.',
-                  'The discovery layer is what Agile development omits. Without it, teams risk being very efficient at building the wrong thing. The Discovery Sprint is not optional decoration on top of Agile — it is the mechanism that keeps the delivery engine pointed at the right target.',
+                  'Uncertainty is manageable, not by eliminating it through exhaustive planning, but by designing work in short cycles that surface uncertainty quickly and cheaply. A two-week sprint that discovers a critical assumption was wrong costs two weeks. The same discovery after six months of waterfall development costs six months.',
+                  'The discovery layer is what Agile development omits. Without it, teams risk being efficient at building the wrong thing. The Discovery Sprint is not optional decoration on top of Agile; it is the mechanism that keeps the delivery engine pointed at the right target.',
                   'The ability to stop is as valuable as the ability to ship. A rhythm that surfaces "this is the wrong thing" cheaply and early is worth as much as one that ships the right thing fast. Deliberate termination on evidence, after weeks rather than months, is a sign the framework is working, not failing.',
                 ].map((insight, i) => (
                   <li key={i} className="flex items-start gap-space-4">
@@ -213,7 +213,7 @@ export default function AgileInnovationPage() {
               {
                 heading: 'Do not use it when',
                 items: [
-                  'The problem itself is not yet defined — use the Double Diamond\'s Discover and Define phases first',
+                  'The problem itself is not yet defined, use the Double Diamond\'s Discover and Define phases first',
                   'The innovation challenge requires deep, uninterrupted discovery work',
                   'Regulatory requirements mandate a sequential, gated process that cannot accommodate direction changes mid-cycle',
                 ],
@@ -251,7 +251,7 @@ export default function AgileInnovationPage() {
       </WarmSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          EXPLORE — dark, interactive
+          EXPLORE: dark, interactive
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection>
         <Container className="pt-space-10 pb-space-4">
@@ -265,7 +265,7 @@ export default function AgileInnovationPage() {
             </h2>
             <p className="text-base mb-space-8 max-w-prose" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               Select a stage to explore its activities and a real-world company example. Use the
-              readiness check first — or toggle Standard Agile mode to see what the rhythm looks like
+              readiness check first, or toggle Standard Agile mode to see what the rhythm looks like
               without the Discovery Sprint, and what that costs.
             </p>
           </ScrollReveal>
@@ -322,7 +322,7 @@ export default function AgileInnovationPage() {
               Where this connects
             </h2>
             <p className="text-base mb-space-8 max-w-prose" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
-              Agile Innovation is the operational cadence of innovation — it answers &ldquo;how do we keep
+              Agile Innovation is the operational cadence of innovation: it answers &ldquo;how do we keep
               discovering and delivering, continuously, without losing the thread?&rdquo; These are the
               frameworks and methods that answer the adjacent questions.
             </p>
@@ -330,12 +330,12 @@ export default function AgileInnovationPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-space-3">
             {[
-              { name: 'Double Diamond', rel: 'The Discovery Sprint is the ongoing version of the Double Diamond\'s Discover and Define phases — running continuously rather than once', slug: '/framework/double-diamond' },
+              { name: 'Double Diamond', rel: 'The Discovery Sprint is the ongoing version of the Double Diamond\'s Discover and Define phases, running continuously rather than once', slug: '/framework/double-diamond' },
               { name: 'Lean Startup', rel: 'Lean Startup provides the strategic direction and hypothesis-testing logic; Agile Innovation provides the operational cadence that runs it continuously', slug: '/framework/lean-startup' },
               { name: 'Design Sprint', rel: 'A Design Sprint is a compressed five-day version of the Agile Innovation cycle, useful for resolving specific uncertainties the standing rhythm cannot address quickly enough', slug: '/framework/design-sprint' },
               { name: 'Design Thinking', rel: 'Design Thinking shapes the human understanding that feeds the Discovery Sprint; Agile Innovation operationalizes the delivery of what that understanding reveals', slug: '/framework/design-thinking' },
-              { name: 'Assumption Mapping', rel: 'The core method for maintaining a hypothesis-driven backlog — making the risk profile of each backlog item visible', slug: '/methods/assumption-mapping' },
-              { name: 'Depth Interviews', rel: 'The core research method of the Discovery Sprint — the mechanism that continuously refreshes the team\'s understanding of the problem space', slug: '/methods/depth-interviews' },
+              { name: 'Assumption Mapping', rel: 'The core method for maintaining a hypothesis-driven backlog, making the risk profile of each backlog item visible', slug: '/methods/assumption-mapping' },
+              { name: 'Depth Interviews', rel: 'The core research method of the Discovery Sprint, the mechanism that continuously refreshes the team\'s understanding of the problem space', slug: '/methods/depth-interviews' },
             ].map(({ name, rel, slug }, i) => (
               <ScrollReveal key={name} delay={i * 0.06}>
                 <a
@@ -366,11 +366,11 @@ export default function AgileInnovationPage() {
             </p>
             <div className="space-y-space-4">
               {[
-                { title: 'The Agile Manifesto', author: 'Beck, Beedle, van Bennekum et al., 2001 — agilemanifesto.org' },
+                { title: 'The Agile Manifesto', author: 'Beck, Beedle, van Bennekum et al., 2001, agilemanifesto.org' },
                 { title: 'The Innovator\'s Method', author: 'Nathan Furr and Jeff Dyer, 2014' },
                 { title: 'The Lean Startup', author: 'Eric Ries, 2011' },
                 { title: 'Team Topologies', author: 'Matthew Skelton and Manuel Pais, 2019' },
-                { title: 'Shape Up', author: 'Ryan Singer at Basecamp / 37signals, 2019 — basecamp.com/shapeup' },
+                { title: 'Shape Up', author: 'Ryan Singer at Basecamp / 37signals, 2019, basecamp.com/shapeup' },
               ].map(({ title, author }) => (
                 <div key={title} className="flex items-start gap-space-4 py-space-4 border-b border-neutral-100 last:border-0">
                   <div
