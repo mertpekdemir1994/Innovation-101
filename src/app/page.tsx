@@ -29,7 +29,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           SECTION 1: HERO
       ══════════════════════════════════════════════════════════════════════ */}
-      <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
+      <DarkSection className="relative min-h-screen flex flex-col overflow-hidden" ariaLabelledBy="hero-heading">
 
         {/* Drifting SVG motif field: decorative, aria-hidden */}
         <HeroField />
@@ -51,6 +51,7 @@ export default function HomePage() {
           <SectionLabel accent="rgba(255,255,255,0.50)">INNOVATION 101</SectionLabel>
 
           <h1
+            id="hero-heading"
             className="font-display text-balance"
             style={{
               fontSize: 'clamp(2.75rem, 6vw, 5rem)',
@@ -119,11 +120,11 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           SECTION 2: FRAMEWORKS
       ══════════════════════════════════════════════════════════════════════ */}
-      <WarmSection>
+      <WarmSection ariaLabelledBy="frameworks-heading">
         <Container>
           <div style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
             <SectionLabel accent="var(--color-framework)">THE LENSES</SectionLabel>
-            <SectionHeadingLight>Six frameworks for six ways of working.</SectionHeadingLight>
+            <SectionHeadingLight id="frameworks-heading">Six frameworks for six ways of working.</SectionHeadingLight>
             <Body className="mb-2">
               A framework is a named structure for running an innovation process from
               end to end: not a method (a single tool), not a metaphor. There are six
@@ -142,11 +143,11 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           SECTION 3: METHODS
       ══════════════════════════════════════════════════════════════════════ */}
-      <DarkSection>
+      <DarkSection ariaLabelledBy="methods-heading">
         <Container>
           <div style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
             <SectionLabel accent="rgba(255,255,255,0.50)" dark>THE WORK</SectionLabel>
-            <SectionHeadingDark>Forty methods, organized by the problem they solve.</SectionHeadingDark>
+            <SectionHeadingDark id="methods-heading">Forty methods, organized by the problem they solve.</SectionHeadingDark>
             <Body dark className="mb-10">
               Not a list to scroll, but a toolkit to deploy. Each group is for
               a different kind of stuck.
@@ -160,9 +161,10 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════
           SECTION 4: WHO MADE THIS
       ══════════════════════════════════════════════════════════════════════ */}
-      <LightSection>
+      <LightSection ariaLabelledBy="who-made-this-heading">
         <Container>
           <div style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+            <h2 id="who-made-this-heading" className="sr-only">Who made this</h2>
             <SectionLabel accent="var(--color-neutral-600)">WHO MADE THIS</SectionLabel>
             <p
               style={{
