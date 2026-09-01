@@ -20,6 +20,8 @@ export default function C8ExampleToggle() {
       <div className="flex gap-2 mb-6">
         {(['traditional', 'ai'] as Tab[]).map(t => (
           <button key={t}
+            type="button"
+            aria-pressed={tab === t}
             onClick={() => setTab(t)}
             className="px-4 py-2 rounded-full text-xs font-semibold transition-all"
             style={{
@@ -40,7 +42,7 @@ export default function C8ExampleToggle() {
 
       {/* Scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mr-2">Shared scenario</span>
+        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
       </div>
 
