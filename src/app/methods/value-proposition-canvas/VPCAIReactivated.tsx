@@ -61,7 +61,7 @@ export default function VPCAIReactivated() {
       </div>
 
       {/* SVG */}
-      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} className="w-full" style={{ maxHeight: 310 }}
+      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} className="w-full" style={{ maxWidth: 'var(--width-illustration)', maxHeight: 310 }}
         aria-hidden="true">
         <defs>
           <filter id="vpc-ai-glow" x="-30%" y="-30%" width="160%" height="160%">
