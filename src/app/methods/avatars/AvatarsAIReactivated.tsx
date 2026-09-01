@@ -4,7 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM  = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AI_C  = 'rgba(99,102,241,'
+const AI_C_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of AI_C
 const CX = 188, CY = 200
 
 const RINGS = [
@@ -46,9 +48,9 @@ function ringStroke(idx: number, ai: boolean): string {
 }
 function labelFill(idx: number, ai: boolean): string {
   if (ai) {
-    return idx === 0 ? `${AI_C}0.82)` : idx === 1 ? `${AI_C}0.65)` : 'rgba(255,255,255,0.18)'
+    return idx === 0 ? `${AI_C_TEXT}0.962)` : idx === 1 ? `${AI_C_TEXT}0.926)` : 'rgba(255,255,255,0.59)'
   }
-  return idx === 3 ? 'rgba(255,255,255,0.85)' : `${PLUM}0.72)`
+  return idx === 3 ? 'rgba(255,255,255,0.85)' : `${PLUM_TEXT}0.941)`
 }
 
 export default function AvatarsAIReactivated() {
@@ -161,7 +163,7 @@ export default function AvatarsAIReactivated() {
             textAnchor="middle" dominantBaseline="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             style={{ userSelect: 'none', pointerEvents: 'none' }}
-            animate={{ fill: aiMode ? 'rgba(255,255,255,0.20)' : 'rgba(255,255,255,0.92)' }}
+            animate={{ fill: aiMode ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.92)' }}
             transition={{ duration: 0.4 }}
           >AVATAR</motion.text>
 
@@ -173,7 +175,7 @@ export default function AvatarsAIReactivated() {
                 x={CX - 155} y={80}
                 textAnchor="middle" fontSize="6"
                 fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                fill={`${AI_C}0.65)`}
+                fill={`rgba(141,143,245,0.926)`}
                 style={{ userSelect: 'none' }}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 transition={{ duration: 0.35 }}
@@ -211,7 +213,7 @@ export default function AvatarsAIReactivated() {
               style={{ background: `${AI_C}0.06)`, border: `1px solid ${AI_C}0.20)` }}
             >
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${AI_C}0.70)` }}
+                style={{ fontSize: 'var(--text-2xs)', color: `${AI_C_TEXT}0.937)` }}
               >What AI does well</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
                 AI is excellent at market sizing and broad segment analysis. It can ingest industry reports, synthesize TAM/SAM estimates, and surface patterns across segment data faster than any research team. For the outer rings (identifying a broad segment, understanding its size, mapping who might conceivably be interested), AI is genuinely useful.
@@ -236,7 +238,7 @@ export default function AvatarsAIReactivated() {
         style={{ background: `${PLUM}0.08)`, border: `1px solid ${PLUM}0.20)` }}
       >
         <p className="font-mono uppercase tracking-widest mb-3"
-          style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.70)` }}
+          style={{ fontSize: 'var(--text-2xs)', color: `${PLUM_TEXT}0.937)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
           Use AI to understand the rings: segment size, competitive intensity, growth rates. Use human judgment to choose which ring to commit to. The Avatar discipline is fundamentally about the courage to pick one specific group and be wrong about it, not about finding the algorithmically optimal segment. AI narrows the search space; it cannot make the bet.

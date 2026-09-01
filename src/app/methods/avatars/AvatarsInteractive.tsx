@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
 type RingId = 'whole-market' | 'segment' | 'niche' | 'beachhead'
 
@@ -73,12 +74,12 @@ function ringStroke(id: RingId, st: string): string {
 
 function labelColor(id: RingId, st: string): string {
   if (id === 'beachhead') {
-    return st === 'dim' ? 'rgba(255,255,255,0.20)' : 'rgba(255,255,255,0.90)'
+    return st === 'dim' ? 'rgba(255,255,255,0.60)' : 'rgba(255,255,255,0.90)'
   }
-  return st === 'active'  ? `${PLUM}0.95)`
-       : st === 'hovered' ? `${PLUM}0.78)`
-       : st === 'dim'     ? `${PLUM}0.18)`
-       :                    `${PLUM}0.55)`
+  return st === 'active'  ? `${PLUM_TEXT}0.99)`
+       : st === 'hovered' ? `${PLUM_TEXT}0.958)`
+       : st === 'dim'     ? `${PLUM_TEXT}0.828)`
+       :                    `${PLUM_TEXT}0.906)`
 }
 
 export default function AvatarsInteractive() {
@@ -157,7 +158,7 @@ export default function AvatarsInteractive() {
           <p className="text-center mt-4"
             style={{
               fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)',
-              letterSpacing: '0.10em', textTransform: 'uppercase', color: `${PLUM}0.55)`,
+              letterSpacing: '0.10em', textTransform: 'uppercase', color: `${PLUM_TEXT}0.905)`,
             }}
           >Click a ring to explore</p>
         )}
@@ -175,13 +176,13 @@ export default function AvatarsInteractive() {
               transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
             >
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.65)` }}
+                style={{ fontSize: 'var(--text-2xs)', color: `${PLUM_TEXT}0.926)` }}
               >Market level</p>
               <h3 className="font-semibold mb-1"
                 style={{ fontSize: 'var(--text-2xl)', color: '#FAFAFA', lineHeight: 1.2 }}
               >{RING_DETAIL[activeRing].heading}</h3>
               <p className="font-mono mb-6"
-                style={{ fontSize: 'var(--text-xs)', color: `${PLUM}0.72)`, letterSpacing: '0.06em' }}
+                style={{ fontSize: 'var(--text-xs)', color: `${PLUM_TEXT}0.941)`, letterSpacing: '0.06em' }}
               >{RING_DETAIL[activeRing].focus}</p>
               <p style={{
                 fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)',
@@ -196,7 +197,7 @@ export default function AvatarsInteractive() {
               className="flex items-center justify-center h-full"
               style={{ minHeight: 200 }}
             >
-              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.25)', fontStyle: 'italic' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.625)', fontStyle: 'italic' }}>
                 Select a ring to read its description.
               </p>
             </motion.div>

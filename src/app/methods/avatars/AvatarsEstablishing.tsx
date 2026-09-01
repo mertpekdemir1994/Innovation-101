@@ -132,7 +132,7 @@ export default function AvatarsEstablishing() {
           textAnchor="middle"
           transform={`rotate(-90 ${CX - 170} ${CY})`}
           fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-          fill="rgba(255,255,255,0.12)"
+          fill="rgba(255,255,255,0.56)"
           style={{ userSelect: 'none' }}
           variants={fadeIn}
           transition={labelT}
