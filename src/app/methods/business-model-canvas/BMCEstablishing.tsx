@@ -4,6 +4,7 @@ import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const PLUM  = 'rgba(107,74,119,'
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 260
@@ -199,7 +200,7 @@ export default function BMCEstablishing() {
         <motion.g {...fade(1.55)}>
           <text x={395} y={206} textAnchor="middle"
             fontSize="3.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${AMBER}0.60)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}>
             UNDER TENSION
           </text>
         </motion.g>

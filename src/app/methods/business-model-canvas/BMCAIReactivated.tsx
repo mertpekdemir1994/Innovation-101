@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 const PLUM   = 'rgba(107,74,119,'
 const AMBER  = 'rgba(245,158,11,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 
@@ -191,7 +192,7 @@ export default function BMCAIReactivated() {
                 <text x={b.x + b.w / 2} y={b.y + b.h - 9}
                   textAnchor="middle"
                   fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${INDIGO}0.55)`} style={{ userSelect: 'none' }}>
+                  fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}>
                   UNVALIDATED
                 </text>
               )}
@@ -222,7 +223,7 @@ export default function BMCAIReactivated() {
                 style={{ filter: 'url(#bmc-ai-indigo-glow)' }} />
               <text x={SVG_W / 2} y={SVG_H - 19} textAnchor="middle"
                 fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-                fill={`${INDIGO}0.90)`} style={{ userSelect: 'none' }}>
+                fill={`${INDIGO_TEXT}0.979)`} style={{ userSelect: 'none' }}>
                 PLAUSIBLE · PROFESSIONAL · ENTIRELY UNVALIDATED
               </text>
             </motion.g>

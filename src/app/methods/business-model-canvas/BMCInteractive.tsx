@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM   = 'rgba(107,74,119,'
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 
@@ -291,7 +292,7 @@ export default function BMCInteractive() {
         {scenario === 'none' && !selected && (
           <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             CLICK ANY BLOCK, OR USE A SCENARIO ABOVE
           </text>
         )}
@@ -300,7 +301,7 @@ export default function BMCInteractive() {
         {scenario === 'segment' && (
           <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill={`${AMBER}0.65)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.891)`} style={{ userSelect: 'none' }}>
             Teams routinely change the segment and update nothing else, which is how a canvas becomes fiction.
           </text>
         )}
