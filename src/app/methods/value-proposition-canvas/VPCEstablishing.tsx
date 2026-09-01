@@ -2,7 +2,9 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const PLUM  = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 325
@@ -74,15 +76,15 @@ export default function VPCEstablishing() {
 
           {/* Section labels */}
           <text x={VM_DX} y={VM_Y + 19} textAnchor="middle"
-            fill="rgba(255,255,255,0.28)" fontSize={7} fontWeight={600}
+            fill="rgba(255,255,255,0.64)" fontSize={7} fontWeight={600}
             letterSpacing={1.4} fontFamily="monospace">PRODUCTS &amp; SERVICES</text>
 
           <text x={77} y={VM_DY + 17} textAnchor="middle"
-            fill="rgba(255,255,255,0.28)" fontSize={7} fontWeight={600}
+            fill="rgba(255,255,255,0.64)" fontSize={7} fontWeight={600}
             letterSpacing={1.2} fontFamily="monospace">GAIN CREATORS</text>
 
           <text x={203} y={VM_DY + 17} textAnchor="middle"
-            fill="rgba(255,255,255,0.28)" fontSize={7} fontWeight={600}
+            fill="rgba(255,255,255,0.64)" fontSize={7} fontWeight={600}
             letterSpacing={1.2} fontFamily="monospace">PAIN RELIEVERS</text>
 
           {/* P&S items */}
@@ -115,7 +117,7 @@ export default function VPCEstablishing() {
 
           {/* "VALUE MAP" corner label */}
           <text x={VM_X + VM_W - 6} y={VM_Y + VM_H - 8} textAnchor="end"
-            fill={`${PLUM}0.50)`} fontSize={7} fontWeight={600}
+            fill={`${PLUM_TEXT}0.895)`} fontSize={7} fontWeight={600}
             letterSpacing={1.6} fontFamily="monospace">VALUE MAP</text>
         </motion.g>
 
@@ -134,15 +136,15 @@ export default function VPCEstablishing() {
 
           {/* Section labels */}
           <text x={CP_CX} y={CP_CY - 68} textAnchor="middle"
-            fill="rgba(255,255,255,0.28)" fontSize={7} fontWeight={600}
+            fill="rgba(255,255,255,0.64)" fontSize={7} fontWeight={600}
             letterSpacing={1.2} fontFamily="monospace">CUSTOMER JOBS</text>
 
           <text x={CP_CX - 55} y={CP_CY + 60} textAnchor="middle"
-            fill="rgba(255,255,255,0.28)" fontSize={7} fontWeight={600}
+            fill="rgba(255,255,255,0.64)" fontSize={7} fontWeight={600}
             letterSpacing={1.2} fontFamily="monospace">GAINS</text>
 
           <text x={CP_CX + 55} y={CP_CY + 60} textAnchor="middle"
-            fill="rgba(255,255,255,0.28)" fontSize={7} fontWeight={600}
+            fill="rgba(255,255,255,0.64)" fontSize={7} fontWeight={600}
             letterSpacing={1.2} fontFamily="monospace">PAINS</text>
 
           {/* JOBS dots */}
@@ -163,7 +165,7 @@ export default function VPCEstablishing() {
 
           {/* "CUSTOMER PROFILE" corner label */}
           <text x={CP_CX} y={CP_CY + CP_R - 8} textAnchor="middle"
-            fill={`${PLUM}0.50)`} fontSize={7} fontWeight={600}
+            fill={`${PLUM_TEXT}0.895)`} fontSize={7} fontWeight={600}
             letterSpacing={1.3} fontFamily="monospace">CUSTOMER PROFILE</text>
         </motion.g>
 
@@ -180,21 +182,21 @@ export default function VPCEstablishing() {
 
           {/* FIT label in gap zone */}
           <text x={349} y={172} textAnchor="middle"
-            fill={`${PLUM}0.85)`} fontSize={7.5} fontWeight={600}
+            fill={`${PLUM_TEXT}0.969)`} fontSize={7.5} fontWeight={600}
             letterSpacing={1.0} fontFamily="monospace">FIT ✓</text>
 
           {/* WASTED FEATURE: PR item with no customer pain */}
           <line x1={VM_RE} y1={148} x2={328} y2={148}
             stroke={`${AMBER}0.55)`} strokeWidth={1.2} strokeDasharray="4 3" />
           <text x={330} y={145} textAnchor="start"
-            fill={`${AMBER}0.65)`} fontSize={6.5} fontWeight={600}
+            fill={`${AMBER_TEXT}0.891)`} fontSize={6.5} fontWeight={600}
             letterSpacing={1.1} fontFamily="monospace">WASTED ×</text>
 
           {/* UNMET NEED: PAINS[1] with no reliever */}
           <line x1={CP_LE} y1={220} x2={380} y2={220}
             stroke={`${AMBER}0.50)`} strokeWidth={1.2} strokeDasharray="4 3" />
           <text x={378} y={217} textAnchor="end"
-            fill={`${AMBER}0.60)`} fontSize={6.5} fontWeight={600}
+            fill={`${AMBER_TEXT}0.876)`} fontSize={6.5} fontWeight={600}
             letterSpacing={1.1} fontFamily="monospace">UNMET NEED !</text>
         </motion.g>
 

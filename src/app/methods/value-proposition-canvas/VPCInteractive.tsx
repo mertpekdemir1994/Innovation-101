@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM  = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 310
@@ -278,7 +280,7 @@ export default function VPCInteractive() {
                 markerEnd="url(#vpc-int-arrow-plum)" />
 
               <text x={349} y={174} textAnchor="middle"
-                fill={`${PLUM}0.90)`} fontSize={7.5} fontWeight={600}
+                fill={`${PLUM_TEXT}0.979)`} fontSize={7.5} fontWeight={600}
                 letterSpacing={1.0} fontFamily="monospace">FIT ✓</text>
 
               {/* WASTED: PR item with no pain */}
@@ -292,14 +294,14 @@ export default function VPCInteractive() {
               <line x1={VM_RE} y1={188} x2={328} y2={188}
                 stroke={`${AMBER}0.55)`} strokeWidth={1.2} strokeDasharray="4 3" />
               <text x={330} y={185} textAnchor="start"
-                fill={`${AMBER}0.65)`} fontSize={6.5} fontWeight={600}
+                fill={`${AMBER_TEXT}0.891)`} fontSize={6.5} fontWeight={600}
                 letterSpacing={1.1} fontFamily="monospace">WASTED ×</text>
 
               {/* UNMET NEED */}
               <line x1={CP_LE} y1={220} x2={380} y2={220}
                 stroke={`${AMBER}0.52)`} strokeWidth={1.2} strokeDasharray="4 3" />
               <text x={378} y={217} textAnchor="end"
-                fill={`${AMBER}0.62)`} fontSize={6.5} fontWeight={600}
+                fill={`${AMBER_TEXT}0.882)`} fontSize={6.5} fontWeight={600}
                 letterSpacing={1.1} fontFamily="monospace">UNMET NEED !</text>
             </motion.g>
           )}

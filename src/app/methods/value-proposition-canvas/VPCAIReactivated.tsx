@@ -3,8 +3,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM   = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 300
@@ -82,13 +85,13 @@ export default function VPCAIReactivated() {
 
         {/* VM labels */}
         <text x={VM_DX} y={VM_Y + 16} textAnchor="middle"
-          fill="rgba(255,255,255,0.25)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
           letterSpacing={1.2} fontFamily="monospace">PRODUCTS &amp; SERVICES</text>
         <text x={77} y={VM_DY + 14} textAnchor="middle"
-          fill="rgba(255,255,255,0.25)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
           letterSpacing={1.1} fontFamily="monospace">GAIN CREATORS</text>
         <text x={203} y={VM_DY + 14} textAnchor="middle"
-          fill="rgba(255,255,255,0.25)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
           letterSpacing={1.1} fontFamily="monospace">PAIN RELIEVERS</text>
 
         {/* VM items */}
@@ -122,13 +125,13 @@ export default function VPCAIReactivated() {
 
         {/* CP labels */}
         <text x={CP_CX} y={CP_CY - 62} textAnchor="middle"
-          fill="rgba(255,255,255,0.25)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
           letterSpacing={1.1} fontFamily="monospace">CUSTOMER JOBS</text>
         <text x={CP_CX - 50} y={CP_CY + 56} textAnchor="middle"
-          fill="rgba(255,255,255,0.25)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
           letterSpacing={1.1} fontFamily="monospace">GAINS</text>
         <text x={CP_CX + 50} y={CP_CY + 56} textAnchor="middle"
-          fill="rgba(255,255,255,0.25)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
           letterSpacing={1.1} fontFamily="monospace">PAINS</text>
 
         {/* CP dots */}
@@ -163,10 +166,10 @@ export default function VPCAIReactivated() {
                   markerEnd="url(#vpc-ai-arrow)" />
               ))}
               <text x={349} y={168} textAnchor="middle"
-                fill={`${INDIGO}0.88)`} fontSize={7.5} fontWeight={600}
+                fill={`${INDIGO_TEXT}0.975)`} fontSize={7.5} fontWeight={600}
                 letterSpacing={1.0} fontFamily="monospace">COMPLETE FIT ✓</text>
               <text x={349} y={180} textAnchor="middle"
-                fill={`${INDIGO}0.52)`} fontSize={6} fontFamily="monospace">AI sees no gaps</text>
+                fill={`${INDIGO_TEXT}0.899)`} fontSize={6} fontFamily="monospace">AI sees no gaps</text>
             </motion.g>
           ) : (
             /* Human mode: honest, 2 FIT, 2 WASTED, 1 UNMET */
@@ -181,7 +184,7 @@ export default function VPCAIReactivated() {
                 stroke={`${PLUM}0.55)`} strokeWidth={1.5}
                 markerEnd="url(#vpc-ai-arrow)" />
               <text x={349} y={165} textAnchor="middle"
-                fill={`${PLUM}0.88)`} fontSize={7.5} fontWeight={600}
+                fill={`${PLUM_TEXT}0.975)`} fontSize={7.5} fontWeight={600}
                 letterSpacing={1.0} fontFamily="monospace">FIT ✓</text>
               {/* Wasted */}
               <line x1={VM_RE} y1={140} x2={325} y2={140}
@@ -192,13 +195,13 @@ export default function VPCAIReactivated() {
               <line x1={VM_RE} y1={178} x2={325} y2={178}
                 stroke={`${AMBER}0.52)`} strokeWidth={1.2} strokeDasharray="4 3" />
               <text x={327} y={175} textAnchor="start"
-                fill={`${AMBER}0.62)`} fontSize={6.5} fontWeight={600}
+                fill={`${AMBER_TEXT}0.882)`} fontSize={6.5} fontWeight={600}
                 letterSpacing={1.1} fontFamily="monospace">WASTED ×</text>
               {/* Unmet */}
               <line x1={CP_LE} y1={212} x2={378} y2={212}
                 stroke={`${AMBER}0.50)`} strokeWidth={1.2} strokeDasharray="4 3" />
               <text x={376} y={209} textAnchor="end"
-                fill={`${AMBER}0.60)`} fontSize={6.5} fontWeight={600}
+                fill={`${AMBER_TEXT}0.876)`} fontSize={6.5} fontWeight={600}
                 letterSpacing={1.1} fontFamily="monospace">UNMET NEED !</text>
             </motion.g>
           )}
