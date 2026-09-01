@@ -75,7 +75,7 @@ export default function CCWEstablishing() {
         {/* DESIGN WITH header label */}
         <motion.text x={CCX} y={24} textAnchor="middle"
           fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.20em"
-          fill={`${CLAY}0.68)`} style={{ userSelect: 'none' }}
+          fill={`${CLAY_TEXT}0.933)`} style={{ userSelect: 'none' }}
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.40, delay: prefersReduced ? 0 : 0.08 }}>
@@ -180,7 +180,7 @@ export default function CCWEstablishing() {
         {/* Caption */}
         <motion.text x={CCX} y={SVG_H - 4} textAnchor="middle"
           fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-          fill="rgba(255,255,255,0.16)"
+          fill="rgba(255,255,255,0.58)"
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.30, delay: prefersReduced ? 0 : 1.10 }}
