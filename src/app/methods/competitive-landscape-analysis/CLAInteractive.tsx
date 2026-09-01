@@ -256,10 +256,10 @@ export default function CLAInteractive() {
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={fadeT}>
               <text x={FX + 6}         y={F_B + 15} fontSize="8"   fontFamily="var(--font-mono)"
-                letterSpacing="0.10em" fill="rgba(255,255,255,0.40)" style={{ userSelect: 'none' }}>
+                letterSpacing="0.10em" fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}>
                 {labels.xLeft}</text>
               <text x={F_R - 6}        y={F_B + 15} fontSize="8"   fontFamily="var(--font-mono)"
-                letterSpacing="0.10em" fill="rgba(255,255,255,0.40)" textAnchor="end"
+                letterSpacing="0.10em" fill="rgba(255,255,255,0.7)" textAnchor="end"
                 style={{ userSelect: 'none' }}>{labels.xRight}</text>
               <text x={(FX + F_R) / 2} y={F_B + 25} fontSize="8.5" fontFamily="var(--font-mono)"
                 letterSpacing="0.14em" fill="rgba(255,255,255,0.48)" textAnchor="middle"
@@ -286,10 +286,10 @@ export default function CLAInteractive() {
                 fill="rgba(255,255,255,0.48)"
                 style={{ userSelect: 'none' }}>{labels.yAxis}</text>
               <text x={FX - 10} y={F_B - 6} textAnchor="end" fontSize="8"
-                fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.34)"
+                fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.67)"
                 style={{ userSelect: 'none' }}>{labels.yBottom}</text>
               <text x={FX - 10} y={FY + 12} textAnchor="end" fontSize="8"
-                fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.34)"
+                fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.67)"
                 style={{ userSelect: 'none' }}>{labels.yTop}</text>
             </motion.g>
           </AnimatePresence>

@@ -4,7 +4,9 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import React from 'react'
 
 const SAGE   = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 720
 const SVG_H = 338
@@ -133,10 +135,10 @@ export default function CLAAIReactivated() {
 
           {/* Axis labels - always CONVENTIONAL in AI mode */}
           <text x={FX + 6} y={F_B + 15} fontSize="8" fontFamily="var(--font-mono)"
-            letterSpacing="0.10em" fill="rgba(255,255,255,0.38)"
+            letterSpacing="0.10em" fill="rgba(255,255,255,0.69)"
             style={{ userSelect: 'none' }}>LOW</text>
           <text x={F_R - 6} y={F_B + 15} fontSize="8" fontFamily="var(--font-mono)"
-            letterSpacing="0.10em" fill="rgba(255,255,255,0.38)" textAnchor="end"
+            letterSpacing="0.10em" fill="rgba(255,255,255,0.69)" textAnchor="end"
             style={{ userSelect: 'none' }}>HIGH</text>
           <text x={(FX + F_R) / 2} y={F_B + 25} fontSize="8.5" fontFamily="var(--font-mono)"
             letterSpacing="0.14em" fill={`rgba(255,255,255,${isAI ? '0.50' : '0.42'})`} textAnchor="middle"
@@ -162,7 +164,7 @@ export default function CLAAIReactivated() {
                   fill={`${INDIGO}0.10)`} stroke={`${INDIGO}0.30)`} strokeWidth={0.8} />
                 <text x={(FX + F_R) / 2} y={F_B + 42} textAnchor="middle"
                   fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                  fill={`${INDIGO}0.75)`} style={{ userSelect: 'none' }}>
+                  fill={`${INDIGO_TEXT}0.948)`} style={{ userSelect: 'none' }}>
                   AI: CONVENTIONAL AXES / DEFAULT FRAMING
                 </text>
               </motion.g>
@@ -178,7 +180,7 @@ export default function CLAAIReactivated() {
           />
           <text x={CROWD.cx} y={Math.max(FY + 14, CROWD.cy - CROWD.ry + 22)} textAnchor="middle"
             fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-            fill={isAI ? `${INDIGO}0.70)` : `${SAGE}0.65)`}
+            fill={isAI ? `${INDIGO_TEXT}0.937)` : `${SAGE_TEXT}0.926)`}
             style={{ userSelect: 'none' }}>
             {isAI ? 'AI: "MARKET IS CROWDED"' : 'CROWDED ZONE'}
           </text>
@@ -235,7 +237,7 @@ export default function CLAAIReactivated() {
                   y={WS_REFRAMED.y + WS_REFRAMED.h / 2 - 8}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                  fill={`${SAGE}0.62)`}
+                  fill={`${SAGE_TEXT}0.92)`}
                   style={{ userSelect: 'none' }}>
                   REFRAMED WHITE SPACE
                 </text>
@@ -243,7 +245,7 @@ export default function CLAAIReactivated() {
                   y={WS_REFRAMED.y + WS_REFRAMED.h / 2 + 10}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="7.5" fontFamily="var(--font-mono)"
-                  fill={`${SAGE}0.40)`}
+                  fill={`${SAGE_TEXT}0.874)`}
                   style={{ userSelect: 'none' }}>
                   visible on new axes
                 </text>
@@ -269,7 +271,7 @@ export default function CLAAIReactivated() {
                   y={WS_REFRAMED.y + WS_REFRAMED.h / 2 - 8}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                  fill="rgba(255,255,255,0.22)"
+                  fill="rgba(255,255,255,0.61)"
                   style={{ userSelect: 'none' }}>
                   HUMAN REFRAME REQUIRED
                 </text>
@@ -277,7 +279,7 @@ export default function CLAAIReactivated() {
                   y={WS_REFRAMED.y + WS_REFRAMED.h / 2 + 10}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="7.5" fontFamily="var(--font-mono)"
-                  fill="rgba(255,255,255,0.13)"
+                  fill="rgba(255,255,255,0.565)"
                   style={{ userSelect: 'none' }}>
                   axis not in training data
                 </text>
