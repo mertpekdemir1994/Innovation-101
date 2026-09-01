@@ -188,7 +188,7 @@ export default function AmbitionMatrixPage() {
               </div>
 
               <div>
-                <p className="font-mono uppercase tracking-widest mb-4" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                <p className="font-mono uppercase tracking-widest mb-4" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do not lean on it when
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -198,7 +198,7 @@ export default function AmbitionMatrixPage() {
                     'You treat the 70-20-10 ratio as a law rather than a starting reference; the right balance depends heavily on industry, maturity, and ambition.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item}
                       </span>
@@ -465,7 +465,7 @@ export default function AmbitionMatrixPage() {
               ))}
             </div>
 
-            <p className="mt-6" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)', fontStyle: 'italic' }}>
+            <p className="mt-6" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)', fontStyle: 'italic' }}>
               Note: the Ambition Matrix does not map to Design Thinking, Design Sprint, Lean Startup, or FDE: those are single-initiative or field frameworks without a portfolio-allocation step. These blanks are intentional.
             </p>
           </div>

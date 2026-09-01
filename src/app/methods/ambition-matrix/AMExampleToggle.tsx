@@ -80,14 +80,14 @@ export default function AMExampleToggle() {
       {SCENARIO_HEADER}
 
       {/* Tab bar */}
-      <div className="flex gap-2 mb-8" role="tablist" aria-label="Portfolio analysis approach">
+      <div className="flex gap-2 mb-8" role="group" aria-label="Portfolio analysis approach">
         {TABS.map(({ id, label }) => {
           const active = activeTab === id
           return (
             <button
               key={id}
-              role="tab"
-              aria-selected={active}
+              type="button"
+              aria-pressed={active}
               onClick={() => setActiveTab(id)}
               className="px-5 py-2 rounded-full text-sm font-semibold transition-colors"
               style={{
@@ -105,7 +105,6 @@ export default function AMExampleToggle() {
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
-          role="tabpanel"
           initial={prefersReduced ? { opacity: 1 } : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={prefersReduced ? { opacity: 0 } : { opacity: 0, y: -6 }}

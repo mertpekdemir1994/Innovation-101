@@ -139,9 +139,9 @@ export default function AMAIReactivated() {
               }}
             >
               <div className="flex items-center justify-between mb-4">
-                <h4 className="font-semibold" style={{ fontSize: 'var(--text-sm)', color: '#FAFAFA' }}>
+                <h3 className="font-semibold" style={{ fontSize: 'var(--text-sm)', color: '#FAFAFA' }}>
                   {label.charAt(0) + label.slice(1).toLowerCase()}
-                </h4>
+                </h3>
                 <div
                   className="flex rounded-full p-0.5"
                   style={{ background: 'rgba(255,255,255,0.08)' }}

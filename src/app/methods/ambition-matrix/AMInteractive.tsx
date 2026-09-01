@@ -95,7 +95,7 @@ export default function AMInteractive() {
             return (
               <g
                 key={id}
-                style={{ cursor: 'pointer', outline: 'none' }}
+                style={{ cursor: 'pointer' }}
                 onClick={() => setActiveZone(activeZone === id ? null : id)}
                 onMouseEnter={() => setHoveredZone(id)}
                 onMouseLeave={() => setHoveredZone(null)}
