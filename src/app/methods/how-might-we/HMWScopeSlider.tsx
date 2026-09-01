@@ -299,7 +299,7 @@ export default function HMWScopeSlider() {
               x={SVG_W / 2} y={BAR_Y + BAR_H + 16}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5" fontFamily="var(--font-inter,sans-serif)" fontStyle="italic"
-              fill={data.warn ? `${AMBER}0.55)` : 'rgba(255,255,255,0.38)'}
+              fill={data.warn ? `${AMBER_TEXT}0.861)` : 'rgba(255,255,255,0.69)'}
               style={{ userSelect: 'none' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
