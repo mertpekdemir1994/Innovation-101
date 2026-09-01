@@ -53,14 +53,14 @@ const FRAMEWORKS = [
 
 type Framework = (typeof FRAMEWORKS)[number]
 
-// ─── Mini SVG icons — one per framework, each referencing its page visual ──────
+// ─── Mini SVG icons: one per framework, each referencing its page visual ──────
 
 function DoubleDiamondIcon({ color }: { color: string }) {
   return (
     <svg viewBox="0 0 100 50" fill="none" aria-hidden="true" style={{ width: '100%', maxWidth: 120 }}>
-      {/* Left diamond — Discover phase */}
+      {/* Left diamond: Discover phase */}
       <path d="M 25,2 L 48,25 L 25,48 L 2,25 Z" stroke={color} strokeWidth="1.5" />
-      {/* Right diamond — Define/Develop/Deliver phase */}
+      {/* Right diamond: Define/Develop/Deliver phase */}
       <path d="M 75,2 L 98,25 L 75,48 L 52,25 Z" stroke={color} strokeWidth="1.5" />
       {/* Center convergence node */}
       <circle cx="50" cy="25" r="3" fill={color} />
@@ -99,7 +99,7 @@ function BMLLoopIcon({ color }: { color: string }) {
 }
 
 function FigureEightIcon({ color }: { color: string }) {
-  // Lemniscate approximated as two overlapping ellipses — mirrors DTStagesHero
+  // Lemniscate approximated as two overlapping ellipses: mirrors DTStagesHero
   return (
     <svg viewBox="0 0 120 60" fill="none" aria-hidden="true" style={{ width: '100%', maxWidth: 130 }}>
       <ellipse cx="36" cy="30" rx="32" ry="22" stroke={color} strokeWidth="1.5" />
@@ -120,7 +120,7 @@ function SprintDaysIcon({ color }: { color: string }) {
 
   return (
     <svg viewBox="0 0 100 70" fill="none" aria-hidden="true" style={{ width: '100%', maxWidth: 120 }}>
-      {/* Return arc — mirrors DSDaysHero */}
+      {/* Return arc: mirrors DSDaysHero */}
       <path
         d={`M ${ox + totalW} ${topY} C ${ox + totalW} ${topY - 26}, ${ox} ${topY - 26}, ${ox} ${topY}`}
         stroke={color} strokeWidth="1" strokeDasharray="4 3" opacity="0.5"
@@ -159,7 +159,7 @@ function AgileCycleIcon({ color }: { color: string }) {
 
   return (
     <svg viewBox="0 0 100 90" fill="none" aria-hidden="true" style={{ width: '100%', maxWidth: 110 }}>
-      {/* Pentagon — mirrors AIHero's polygon */}
+      {/* Pentagon: mirrors AIHero's polygon */}
       <polygon
         points={pts.map(p => `${p.x},${p.y}`).join(' ')}
         stroke={color} strokeWidth="1" fill={color} fillOpacity="0.06"
@@ -189,7 +189,7 @@ function FDEConnectionIcon({ color }: { color: string }) {
         stroke={color} strokeWidth="1.3" fill={color} fillOpacity="0.10" />
       <text x="89" y="28" textAnchor="middle" dominantBaseline="central"
         fill={color} fontSize="7" fontFamily="ui-monospace,monospace">FDE</text>
-      {/* Bold direct arrow — the signature of FDE */}
+      {/* Bold direct arrow: the signature of FDE */}
       <path d="M 42 27 L 68 27" stroke={color} strokeWidth="2" strokeLinecap="round" />
       <path d="M 62 22 L 69 27 L 62 32" stroke={color} strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       {/* Return dashed arrow */}

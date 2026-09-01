@@ -26,7 +26,7 @@ const STAGES: StageGroup[] = [
     count: 6,
     problem: "You don't yet know what you don't know.",
     description:
-      'The goal is to observe people in their actual context without an agenda — letting real behavior, hidden workarounds, and unspoken constraints surface before any solution is considered.',
+      'The goal is to observe people in their actual context without an agenda: letting real behavior, hidden workarounds, and unspoken constraints surface before any solution is considered.',
     methods: [
       { name: 'Contextual Observation',          slug: 'contextual-observation' },
       { name: 'In-Depth Interviews',             slug: 'in-depth-interviews' },
@@ -44,7 +44,7 @@ const STAGES: StageGroup[] = [
     count: 6,
     problem: 'You have observations. You need insight.',
     description:
-      'Raw observations only become actionable when forced into structure — synthesis methods make patterns visible and reveal what the data is actually saying beneath the surface.',
+      'Raw observations only become actionable when forced into structure: synthesis methods make patterns visible and reveal what the data is actually saying beneath the surface.',
     methods: [
       { name: 'Affinity Mapping',        slug: 'affinity-mapping' },
       { name: 'Empathy Mapping',         slug: 'empathy-mapping' },
@@ -62,7 +62,7 @@ const STAGES: StageGroup[] = [
     count: 6,
     problem: 'You need to see the system, not just the problem.',
     description:
-      'Most friction isn\'t a single broken touchpoint but the accumulated cost of how a system adds up over time — these methods map the full arc so you can intervene where it actually matters.',
+      'Most friction isn\'t a single broken touchpoint but the accumulated cost of how a system adds up over time: these methods map the full arc so you can intervene where it actually matters.',
     methods: [
       { name: "The 5 E's Framework",  slug: '5es-framework' },
       { name: 'Flow Mapping',         slug: 'flow-mapping' },
@@ -80,7 +80,7 @@ const STAGES: StageGroup[] = [
     count: 6,
     problem: "You know what's needed. Now generate what's possible.",
     description:
-      'A well-framed problem generates better options than open brainstorming — these methods suspend judgment long enough to reach possibilities you wouldn\'t find by reasoning from the obvious.',
+      'A well-framed problem generates better options than open brainstorming: these methods suspend judgment long enough to reach possibilities you wouldn\'t find by reasoning from the obvious.',
     methods: [
       { name: 'Crazy 8s',              slug: 'crazy-8s' },
       { name: 'Co-Creation Workshops', slug: 'co-creation-workshops' },
@@ -98,7 +98,7 @@ const STAGES: StageGroup[] = [
     count: 9,
     problem: 'You have options. You need to make choices.',
     description:
-      'Good options don\'t simplify decisions — they make them harder; strategy tools force explicit criteria about which bets to place, which directions to walk away from, and why.',
+      'Good options don\'t simplify decisions. They make them harder. Strategy tools force explicit criteria about which bets to place, which directions to walk away from, and why.',
     methods: [
       { name: 'Ambition Matrix',            slug: 'ambition-matrix' },
       { name: 'Avatars',                    slug: 'avatars' },
@@ -119,7 +119,7 @@ const STAGES: StageGroup[] = [
     count: 7,
     problem: 'You have a solution. Now test it against reality.',
     description:
-      'Every solution is a hypothesis about what the world will accept — these methods put it in front of real users, real conditions, and real constraints before committing the investment to build it at scale.',
+      'Every solution is a hypothesis about what the world will accept: these methods put it in front of real users, real conditions, and real constraints before committing the investment to build it at scale.',
     methods: [
       { name: 'MVP / MLP',                   slug: 'mvp-mlp' },
       { name: 'Usability Testing',           slug: 'usability-testing' },

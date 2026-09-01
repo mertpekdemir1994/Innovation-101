@@ -27,14 +27,14 @@ export default function HomePage() {
     <>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          SECTION 1 — HERO
+          SECTION 1: HERO
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
 
-        {/* Drifting SVG motif field — decorative, aria-hidden */}
+        {/* Drifting SVG motif field: decorative, aria-hidden */}
         <HeroField />
 
-        {/* Radial glow — draws eye toward the text */}
+        {/* Radial glow: draws eye toward the text */}
         <div
           aria-hidden="true"
           style={{
@@ -74,7 +74,7 @@ export default function HomePage() {
             }}
           >
             Six frameworks, forty methods, organized by the problem they
-            solve — not by how they look in a slide deck. Every framework
+            solve: not by how they look in a slide deck. Every framework
             is interactive; every method comes with enough context to know
             when not to use it.
           </p>
@@ -117,7 +117,7 @@ export default function HomePage() {
 
 
       {/* ═══════════════════════════════════════════════════════════════════
-          SECTION 2 — FRAMEWORKS
+          SECTION 2: FRAMEWORKS
       ══════════════════════════════════════════════════════════════════════ */}
       <WarmSection>
         <Container>
@@ -126,7 +126,7 @@ export default function HomePage() {
             <SectionHeadingLight>Six frameworks for six ways of working.</SectionHeadingLight>
             <Body className="mb-2">
               A framework is a named structure for running an innovation process from
-              end to end — not a method (a single tool), not a metaphor. There are six
+              end to end: not a method (a single tool), not a metaphor. There are six
               here because different problems call for fundamentally different approaches.
             </Body>
             <Body className="mb-10">
@@ -140,7 +140,7 @@ export default function HomePage() {
 
 
       {/* ═══════════════════════════════════════════════════════════════════
-          SECTION 3 — METHODS
+          SECTION 3: METHODS
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection>
         <Container>
@@ -158,7 +158,7 @@ export default function HomePage() {
 
 
       {/* ═══════════════════════════════════════════════════════════════════
-          SECTION 4 — WHO MADE THIS
+          SECTION 4: WHO MADE THIS
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container>
@@ -173,7 +173,7 @@ export default function HomePage() {
                 maxWidth: '60ch',
               }}
             >
-              Built by Mert Pekdemir, with Claude and Claude Code — a practitioner
+              Built by Mert Pekdemir, with Claude and Claude Code: a practitioner
               and an AI, on purpose.
             </p>
 
@@ -311,9 +311,9 @@ export default function HomePage() {
                 {/* Header: original AI mark + name */}
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1.25rem' }}>
                   {/*
-                    Original mark — three concentric rings with a center dot.
+                    Original mark: three concentric rings with a center dot.
                     Not Anthropic's logo. No brand assets used.
-                    Reads as "signal" or "focus" — an abstract AI presence.
+                    Reads as "signal" or "focus": an abstract AI presence.
                   */}
                   <svg
                     viewBox="0 0 52 52"
@@ -362,7 +362,7 @@ export default function HomePage() {
                     marginBottom: '0.75rem',
                   }}
                 >
-                  Claude helped draft, structure, and build the site — writing
+                  Claude helped draft, structure, and build the site: writing
                   content, reasoning through editorial decisions, and translating
                   design specs into working code via Claude Code.
                 </p>
@@ -375,7 +375,7 @@ export default function HomePage() {
                   }}
                 >
                   It is a demonstration of the same idea the site keeps returning
-                  to — that AI is genuinely useful for fluent production, and that
+                  to: that AI is genuinely useful for fluent production, and that
                   the judgment about what is true and what matters stays human.
                 </p>
               </div>

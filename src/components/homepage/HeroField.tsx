@@ -7,7 +7,7 @@ export default function HeroField() {
   return (
     <div aria-hidden="true" className={styles.field}>
 
-      {/* Motif A — Causal Loop — top-left */}
+      {/* Motif A: Causal Loop (top-left) */}
       <svg
         className={`${styles.motif} ${styles.driftA}`}
         style={{ left: '6%', top: '14%' }}
@@ -26,7 +26,7 @@ export default function HeroField() {
         <circle cx="45" cy="45" r="2.5" fill={STROKE} />
       </svg>
 
-      {/* Motif B — Branching Fork — top-right */}
+      {/* Motif B: Branching Fork (top-right) */}
       <svg
         className={`${styles.motif} ${styles.driftB}`}
         style={{ right: '9%', top: '18%' }}
@@ -40,20 +40,20 @@ export default function HeroField() {
         <circle cx="60" cy="6" r="3" fill={STROKE} />
       </svg>
 
-      {/* Motif C — Open Diamond — center-left */}
+      {/* Motif C: Open Diamond (center-left) */}
       <svg
         className={`${styles.motif} ${styles.driftC}`}
         style={{ left: '2%', top: '52%' }}
         width="85" height="85" viewBox="0 0 80 80" fill="none"
       >
-        {/* Four-sided open diamond — gap between last point and start */}
+        {/* Four-sided open diamond: gap between last point and start */}
         <path
           d="M 40,8 L 72,40 L 40,72 L 8,40"
           stroke={STROKE} strokeWidth={SW} strokeLinecap="round" strokeLinejoin="round"
         />
       </svg>
 
-      {/* Motif D — Frame Sequence — bottom-right */}
+      {/* Motif D: Frame Sequence (bottom-right) */}
       <svg
         className={`${styles.motif} ${styles.driftD}`}
         style={{ right: '6%', bottom: '20%' }}
@@ -73,7 +73,7 @@ export default function HeroField() {
           stroke={STROKE} strokeWidth={SW} />
       </svg>
 
-      {/* Motif E — Nine-block Grid — bottom-center */}
+      {/* Motif E: Nine-block Grid (bottom-center) */}
       <svg
         className={`${styles.motif} ${styles.driftE}`}
         style={{ left: '44%', bottom: '16%' }}
