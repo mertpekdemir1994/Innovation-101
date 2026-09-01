@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE   = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 // ── Shared geometry ────────────────────────────────────────────────────────────
 const SVG_W = 700, SVG_H = 258
@@ -91,7 +93,7 @@ export default function OrthodoxiesAIReactivated() {
         {/* Center label */}
         <text x={SCX} y={SCY + 3} textAnchor="middle" dominantBaseline="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.20em"
-          fill={isAI ? `${INDIGO}0.22)` : 'rgba(255,255,255,0.08)'}
+          fill={isAI ? `${INDIGO_TEXT}0.836)` : 'rgba(255,255,255,0.54)'}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'CONSENSUS AS FACT' : 'IDEA SPACE'}
         </text>
@@ -143,14 +145,14 @@ export default function OrthodoxiesAIReactivated() {
         {/* ── WALL LABELS ── */}
         <text x={SCX} y={TY - 14} textAnchor="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-          fill={isAI ? `${INDIGO}0.60)` : 'rgba(255,255,255,0.48)'}
+          fill={isAI ? `${INDIGO_TEXT}0.916)` : 'rgba(255,255,255,0.48)'}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'AI: "this is simply how it works"' : 'CUSTOMERS MUST OWN THE PRODUCT'}
         </text>
 
         <text x={SCX} y={BY + 16} textAnchor="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-          fill={isAI ? `${INDIGO}0.60)` : 'rgba(255,255,255,0.48)'}
+          fill={isAI ? `${INDIGO_TEXT}0.916)` : 'rgba(255,255,255,0.48)'}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'AI: "standard industry practice"' : 'IN-PERSON DELIVERY REQUIRED'}
         </text>
@@ -160,14 +162,14 @@ export default function OrthodoxiesAIReactivated() {
           x={LX - 28} y={SCY}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-          fill={isAI ? `${INDIGO}0.60)` : 'rgba(255,255,255,0.48)'}
+          fill={isAI ? `${INDIGO_TEXT}0.916)` : 'rgba(255,255,255,0.48)'}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'AI: "obvious market reality"' : 'PREMIUM PRICING = CREDIBILITY'}
         </text>
 
         <text x={RX} y={LY1 - 10} textAnchor="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-          fill={isAI ? `${INDIGO}0.60)` : `${SAGE}0.65)`}
+          fill={isAI ? `${INDIGO_TEXT}0.916)` : `${SAGE_TEXT}0.926)`}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'AI: "required distribution model"' : 'SOLD THROUGH DEALERS ONLY'}
         </text>
@@ -201,7 +203,7 @@ export default function OrthodoxiesAIReactivated() {
                 fill={`${INDIGO}0.18)`} stroke={`${INDIGO}0.45)`} strokeWidth={1} />
               <text x={RX + 30} y={SCY + 1} textAnchor="middle" dominantBaseline="middle"
                 fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                fill={`${INDIGO}0.85)`} style={{ userSelect: 'none' }}>CONFIRMED</text>
+                fill={`${INDIGO_TEXT}0.969)`} style={{ userSelect: 'none' }}>CONFIRMED</text>
             </motion.g>
           )}
         </AnimatePresence>
@@ -214,10 +216,10 @@ export default function OrthodoxiesAIReactivated() {
           filter="url(#ortho-ai-glow-sm)">
           <text x={OPP_CX} y={SCY - 9} textAnchor="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-            fill={`${SAGE}0.80)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
+            fill={`${SAGE_TEXT}0.958)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
           <text x={OPP_CX} y={SCY + 9} textAnchor="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-            fill={`${SAGE}0.80)`} style={{ userSelect: 'none' }}>SPACE</text>
+            fill={`${SAGE_TEXT}0.958)`} style={{ userSelect: 'none' }}>SPACE</text>
         </g>
       </svg>
 

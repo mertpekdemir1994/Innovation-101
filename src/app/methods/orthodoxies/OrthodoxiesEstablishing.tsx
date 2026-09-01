@@ -2,6 +2,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const SAGE = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 // ── Shared geometry (same across all three orthodoxies visual components) ─────
 const SVG_W = 700, SVG_H = 258
@@ -119,7 +120,7 @@ export default function OrthodoxiesEstablishing() {
         <motion.g variants={fade} transition={lblT}>
           <text x={SCX} y={SCY + 3} textAnchor="middle" dominantBaseline="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.20em"
-            fill="rgba(255,255,255,0.10)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.55)" style={{ userSelect: 'none' }}>
             IDEA SPACE
           </text>
         </motion.g>
@@ -193,7 +194,7 @@ export default function OrthodoxiesEstablishing() {
         <motion.g variants={fade} transition={lblT}>
           <text x={RX} y={LY1 - 10} textAnchor="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${SAGE}0.70)`} style={{ userSelect: 'none' }}>
+            fill={`${SAGE_TEXT}0.937)`} style={{ userSelect: 'none' }}>
             SOLD THROUGH DEALERS ONLY
           </text>
         </motion.g>
@@ -237,10 +238,10 @@ export default function OrthodoxiesEstablishing() {
         >
           <text x={OPP_CX} y={SCY - 9} textAnchor="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-            fill={`${SAGE}0.70)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
+            fill={`${SAGE_TEXT}0.937)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
           <text x={OPP_CX} y={SCY + 9} textAnchor="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-            fill={`${SAGE}0.70)`} style={{ userSelect: 'none' }}>SPACE</text>
+            fill={`${SAGE_TEXT}0.937)`} style={{ userSelect: 'none' }}>SPACE</text>
         </motion.g>
 
         {/* Caption */}
@@ -248,7 +249,7 @@ export default function OrthodoxiesEstablishing() {
           transition={{ ...lblT, delay: prefersReduced ? 0 : 0.60 }}>
           <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
             every industry is governed by rules nobody wrote · the breakthrough lives on the other side of one of them
           </text>
         </motion.g>

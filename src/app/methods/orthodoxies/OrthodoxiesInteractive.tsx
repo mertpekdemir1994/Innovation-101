@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 // ── Shared geometry ────────────────────────────────────────────────────────────
 const SVG_W = 700, SVG_H = 258
@@ -162,7 +163,7 @@ export default function OrthodoxiesInteractive() {
         {/* Center label */}
         <text x={SCX} y={SCY + 3} textAnchor="middle" dominantBaseline="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.20em"
-          fill="rgba(255,255,255,0.08)" style={{ userSelect: 'none' }}>IDEA SPACE</text>
+          fill="rgba(255,255,255,0.54)" style={{ userSelect: 'none' }}>IDEA SPACE</text>
 
         {/* ── WALLS ── */}
 
@@ -197,7 +198,7 @@ export default function OrthodoxiesInteractive() {
         {/* ── WALL LABELS ── */}
         <text x={SCX} y={TY - 14} textAnchor="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-          fill={selected === 'top' ? `${SAGE}0.85)` : 'rgba(255,255,255,0.42)'}
+          fill={selected === 'top' ? `${SAGE_TEXT}0.969)` : 'rgba(255,255,255,0.71)'}
           style={{ userSelect: 'none', transition: 'fill 0.25s', cursor: 'pointer' }}
           onClick={() => selectWall('top')}>
           CUSTOMERS MUST OWN THE PRODUCT
@@ -205,7 +206,7 @@ export default function OrthodoxiesInteractive() {
 
         <text x={SCX} y={BY + 16} textAnchor="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-          fill={selected === 'bottom' ? `${SAGE}0.85)` : 'rgba(255,255,255,0.42)'}
+          fill={selected === 'bottom' ? `${SAGE_TEXT}0.969)` : 'rgba(255,255,255,0.71)'}
           style={{ userSelect: 'none', transition: 'fill 0.25s', cursor: 'pointer' }}
           onClick={() => selectWall('bottom')}>
           IN-PERSON DELIVERY REQUIRED
@@ -216,7 +217,7 @@ export default function OrthodoxiesInteractive() {
           x={LX - 28} y={SCY}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-          fill={selected === 'left' ? `${SAGE}0.85)` : 'rgba(255,255,255,0.42)'}
+          fill={selected === 'left' ? `${SAGE_TEXT}0.969)` : 'rgba(255,255,255,0.71)'}
           style={{ userSelect: 'none', transition: 'fill 0.25s', cursor: 'pointer' }}
           onClick={() => selectWall('left')}>
           PREMIUM PRICING = CREDIBILITY
@@ -224,7 +225,7 @@ export default function OrthodoxiesInteractive() {
 
         <text x={RX} y={LY1 - 10} textAnchor="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-          fill={selected === 'right' ? `${SAGE}0.90)` : `${SAGE}0.58)`}
+          fill={selected === 'right' ? `${SAGE_TEXT}0.979)` : `${SAGE_TEXT}0.912)`}
           style={{ userSelect: 'none', transition: 'fill 0.25s', cursor: 'pointer' }}
           onClick={() => selectWall('right')}>
           SOLD THROUGH DEALERS ONLY
@@ -263,10 +264,10 @@ export default function OrthodoxiesInteractive() {
           filter="url(#ortho-int-glow-sm)">
           <text x={OPP_CX} y={SCY - 9} textAnchor="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-            fill={`${SAGE}0.80)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
+            fill={`${SAGE_TEXT}0.958)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
           <text x={OPP_CX} y={SCY + 9} textAnchor="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-            fill={`${SAGE}0.80)`} style={{ userSelect: 'none' }}>SPACE</text>
+            fill={`${SAGE_TEXT}0.958)`} style={{ userSelect: 'none' }}>SPACE</text>
         </g>
 
         {/* Directional opportunity glows for non-right walls */}
@@ -279,10 +280,10 @@ export default function OrthodoxiesInteractive() {
                 fill={`${SAGE}0.18)`} />
               <text x={g.cx} y={g.cy - 6} textAnchor="middle"
                 fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.16em"
-                fill={`${SAGE}0.72)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
+                fill={`${SAGE_TEXT}0.941)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
               <text x={g.cx} y={g.cy + 8} textAnchor="middle"
                 fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.16em"
-                fill={`${SAGE}0.72)`} style={{ userSelect: 'none' }}>BEYOND</text>
+                fill={`${SAGE_TEXT}0.941)`} style={{ userSelect: 'none' }}>BEYOND</text>
             </g>
           )
         })}
