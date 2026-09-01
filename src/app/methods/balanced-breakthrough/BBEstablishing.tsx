@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
 const SVG_W = 700
 const SVG_H = 340
@@ -109,7 +110,7 @@ export default function BBEstablishing() {
         x={D_CX} y={D_CY - 48}
         textAnchor="middle"
         fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-        fill={`${PLUM}1)`}
+        fill={`${PLUM_TEXT}1.0)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
@@ -120,7 +121,7 @@ export default function BBEstablishing() {
         x={D_CX} y={D_CY - 34}
         textAnchor="middle"
         fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM}0.68)`}
+        fill={`${PLUM_TEXT}0.933)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
@@ -133,7 +134,7 @@ export default function BBEstablishing() {
         x={F_CX - 56} y={F_CY + 6}
         textAnchor="end"
         fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-        fill={`${PLUM}1)`}
+        fill={`${PLUM_TEXT}1.0)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
@@ -144,7 +145,7 @@ export default function BBEstablishing() {
         x={F_CX - 56} y={F_CY + 20}
         textAnchor="end"
         fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM}0.68)`}
+        fill={`${PLUM_TEXT}0.933)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
@@ -157,7 +158,7 @@ export default function BBEstablishing() {
         x={V_CX + 56} y={V_CY + 6}
         textAnchor="start"
         fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-        fill={`${PLUM}1)`}
+        fill={`${PLUM_TEXT}1.0)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
@@ -168,7 +169,7 @@ export default function BBEstablishing() {
         x={V_CX + 56} y={V_CY + 20}
         textAnchor="start"
         fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM}0.68)`}
+        fill={`${PLUM_TEXT}0.933)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
@@ -182,7 +183,7 @@ export default function BBEstablishing() {
         textAnchor="middle"
         fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
         fill="rgba(255,255,255,0.95)"
-        style={{ userSelect: 'none', filter: `drop-shadow(0 0 10px ${PLUM}0.80))` }}
+        style={{ userSelect: 'none', filter: `drop-shadow(0 0 10px ${PLUM_TEXT}0.958))` }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.60)}>
@@ -193,7 +194,7 @@ export default function BBEstablishing() {
         textAnchor="middle"
         fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
         fill="rgba(255,255,255,0.95)"
-        style={{ userSelect: 'none', filter: `drop-shadow(0 0 10px ${PLUM}0.80))` }}
+        style={{ userSelect: 'none', filter: `drop-shadow(0 0 10px ${PLUM_TEXT}0.958))` }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.62)}>
@@ -210,7 +211,7 @@ export default function BBEstablishing() {
         transition={fade(0.71)} />
       <motion.text x={308} y={171} textAnchor="middle"
         fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM}0.88)`} style={{ userSelect: 'none' }}
+        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.72)}>
@@ -218,7 +219,7 @@ export default function BBEstablishing() {
       </motion.text>
       <motion.text x={308} y={182} textAnchor="middle"
         fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM}0.88)`} style={{ userSelect: 'none' }}
+        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.73)}>
@@ -233,7 +234,7 @@ export default function BBEstablishing() {
         transition={fade(0.71)} />
       <motion.text x={392} y={171} textAnchor="middle"
         fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM}0.88)`} style={{ userSelect: 'none' }}
+        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.72)}>
@@ -241,7 +242,7 @@ export default function BBEstablishing() {
       </motion.text>
       <motion.text x={392} y={182} textAnchor="middle"
         fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM}0.88)`} style={{ userSelect: 'none' }}
+        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.73)}>
@@ -256,7 +257,7 @@ export default function BBEstablishing() {
         transition={fade(0.71)} />
       <motion.text x={350} y={250} textAnchor="middle"
         fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM}0.88)`} style={{ userSelect: 'none' }}
+        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.72)}>
@@ -264,7 +265,7 @@ export default function BBEstablishing() {
       </motion.text>
       <motion.text x={350} y={261} textAnchor="middle"
         fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM}0.88)`} style={{ userSelect: 'none' }}
+        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.73)}>
@@ -276,7 +277,7 @@ export default function BBEstablishing() {
         x={SVG_W / 2} y={SVG_H - 6}
         textAnchor="middle"
         fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill="rgba(255,255,255,0.36)"
+        fill="rgba(255,255,255,0.68)"
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
