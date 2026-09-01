@@ -23,7 +23,7 @@ const FRAMEWORK_LINKS = [
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Build',
-    note: 'The MVP is the central artifact of the Lean Startup\'s Build-Measure-Learn loop — the smallest thing built that produces a real market signal. The BML loop is designed around the MVP: build the minimum that tests the riskiest assumption, measure what real users do, learn from that signal, and repeat. The Lean Startup\'s core insight — that validated learning is the progress metric, not features shipped — is what the MVP exists to serve.',
+    note: 'The MVP is the central artifact of the Lean Startup\'s Build-Measure-Learn loop: the smallest thing built that produces a real market signal. The BML loop is designed around the MVP: build the minimum that tests the riskiest assumption, measure what real users do, learn from that signal, and repeat. The Lean Startup\'s core insight, that validated learning is the progress metric, not features shipped, is what the MVP exists to serve.',
   },
   {
     slug: 'double-diamond',
@@ -35,13 +35,13 @@ const FRAMEWORK_LINKS = [
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Release / Increment',
-    note: 'In Agile Innovation, the MVP or MLP maps to the incremental release: the minimum increment that delivers real value to real users and generates real feedback. Agile\'s sprint-based rhythm is designed for exactly this — ship the smallest viable increment, learn from it, and incorporate the learning into the next sprint. The MVP/MLP disciplines (what is genuinely core? what does the signal tell you?) apply to every increment decision.',
+    note: 'In Agile Innovation, the MVP or MLP maps to the incremental release: the minimum increment that delivers real value to real users and generates real feedback. Agile\'s sprint-based rhythm is designed for exactly this: ship the smallest viable increment, learn from it, and incorporate the learning into the next sprint. The MVP/MLP disciplines (what is genuinely core? what does the signal tell you?) apply to every increment decision.',
   },
   {
     slug: 'front-end-of-innovation',
     name: 'Front-End of Innovation',
     phase: 'Launch',
-    note: 'In the Front-End of Innovation framework, the MVP or MLP is the first real market launch: the moment the concept transitions from internal development to the real market. The FEI process — idea generation, concept development, feasibility assessment — culminates here, when the validated concept is released to real users to test whether adoption follows. The MVP/MLP is the lightest possible version of that launch.',
+    note: 'In the Front-End of Innovation framework, the MVP or MLP is the first real market launch: the moment the concept transitions from internal development to the real market. The FEI process (idea generation, concept development, feasibility assessment) culminates here, when the validated concept is released to real users to test whether adoption follows. The MVP/MLP is the lightest possible version of that launch.',
   },
 ]
 
@@ -55,17 +55,17 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'proof-of-concept',
     name: 'Proof of Concept',
-    rel: 'Upstream — and a crucial distinction. A PoC is an INTERNAL experiment that proves the thing CAN work, never released to a market. An MVP or MLP is the smallest REAL product released to REAL users to learn whether they will actually adopt it. A PoC answers "can it work?"; an MVP or MLP answers "will people use it?" The PoC comes first, when technical feasibility is genuinely uncertain. The MVP/MLP comes after, when you need a market signal.',
+    rel: 'Upstream, and a crucial distinction. A PoC is an INTERNAL experiment that proves the thing CAN work, never released to a market. An MVP or MLP is the smallest REAL product released to REAL users to learn whether they will actually adopt it. A PoC answers "can it work?"; an MVP or MLP answers "will people use it?" The PoC comes first, when technical feasibility is genuinely uncertain. The MVP/MLP comes after, when you need a market signal.',
   },
   {
     slug: 'rapid-prototyping',
     name: 'Rapid Prototyping',
-    rel: 'Upstream — and a crucial distinction. A prototype is built to LEARN and then be DISCARDED: rough, often shown to a handful of users, never actually shipped. An MVP or MLP is a real product, really released. Same spirit of minimum, very different stakes and permanence. Prototypes cost less and carry no production responsibility; MVPs and MLPs ship to real users and carry whatever brand, support, and maintenance commitment a real product carries.',
+    rel: 'Upstream, and a crucial distinction. A prototype is built to LEARN and then be DISCARDED: rough, often shown to a handful of users, never actually shipped. An MVP or MLP is a real product, really released. Same spirit of minimum, different stakes and permanence. Prototypes cost less and carry no production responsibility; MVPs and MLPs ship to real users and carry whatever brand, support, and maintenance commitment a real product carries.',
   },
   {
     slug: null,
     name: 'Pilot Launches',
-    rel: 'The close neighbour at greater scale-realism. An MVP or MLP tests whether people adopt the smallest REAL product; a pilot tests whether the full thing works operationally in the real world at limited but real scale — real staff, real processes, real operational load. The MVP/MLP question is adoption; the pilot question is real-world operation. They sit in sequence when the operational model is complex.',
+    rel: 'The close neighbour at greater scale-realism. An MVP or MLP tests whether people adopt the smallest REAL product; a pilot tests whether the full thing works operationally in the real world at limited but real scale: real staff, real processes, real operational load. The MVP/MLP question is adoption; the pilot question is real-world operation. They sit in sequence when the operational model is complex.',
   },
   {
     slug: null,
@@ -85,7 +85,7 @@ export default function MVPMLPPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -120,7 +120,7 @@ export default function MVPMLPPage() {
               className="mb-3 max-w-[620px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.55)', lineHeight: 1.5 }}
             >
-              The smallest real product you put in front of real users &mdash; built either to learn as cheaply
+              The smallest real product you put in front of real users: built either to learn as cheaply
               as possible (viable) or to be genuinely loved rather than merely tolerated (lovable).
             </p>
 
@@ -128,7 +128,7 @@ export default function MVPMLPPage() {
               className="max-w-[520px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
             >
-              Both are minimum. Both ship only the core. The question is not how much you build &mdash;
+              Both are minimum. Both ship only the core. The question is not how much you build,
               it is what you build the core to do: teach you something, or make someone love it.
             </p>
           </div>
@@ -136,7 +136,7 @@ export default function MVPMLPPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -147,7 +147,7 @@ export default function MVPMLPPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -167,7 +167,7 @@ export default function MVPMLPPage() {
               <Body>
                 The Minimum Viable Product is the smallest version that works and delivers the core value,
                 released in order to learn. Its purpose is validated learning at the lowest possible cost:
-                it is a question posed to the market, and the answer &mdash; whether people adopt it &mdash; is the
+                it is a question posed to the market, and the answer, whether people adopt it, is the
                 deliverable. The MVP is one of the most misunderstood ideas in innovation. It is not a beta
                 and not a low-quality version of the eventual product. It is the minimum artifact needed to
                 test a specific assumption. Sometimes that is a landing page. Sometimes a video (Dropbox
@@ -189,27 +189,27 @@ export default function MVPMLPPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Viable vs Lovable: the same core, optimized differently   LIGHT   [ADDED]
+          S4 - Viable vs Lovable: the same core, optimized differently   LIGHT   [ADDED]
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={BRICK}>Viable vs Lovable: the same core, optimized differently</SectionLabel>
-            <SectionHeadingLight>An MLP is not an MVP plus features. The scope is identical &mdash; only the optimization differs.</SectionHeadingLight>
+            <SectionHeadingLight>An MLP is not an MVP plus features. The scope is identical; only the optimization differs.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5 mb-10">
               <Body>
-                The most common misunderstanding is that an MLP is an MVP with more stuff &mdash; a bigger build,
+                The most common misunderstanding is that an MLP is an MVP with more stuff: a bigger build,
                 extra features, a coat of polish on top. It is not, and getting this right is the whole
                 point of the distinction.
               </Body>
               <Body>
                 <span className="font-semibold">What they share (and it is most of it):</span> Both are
-                MINIMUM. Both ship only the CORE &mdash; the small set of features that actually deliver the
-                central value &mdash; and both ruthlessly cut everything else. The prioritization work is the
+                MINIMUM. Both ship only the CORE (the small set of features that actually deliver the
+                central value) and both ruthlessly cut everything else. The prioritization work is the
                 same; deciding what to cut is the hardest and most valuable part, and it is identical
                 for both. An MLP is not permission to build more. It holds the same hard line on scope.
-                If your &ldquo;MLP&rdquo; has more features than your MVP would have, you have not built an MLP &mdash;
+                If your &ldquo;MLP&rdquo; has more features than your MVP would have, you have not built an MLP;
                 you have built a bigger product and given it a nicer name.
               </Body>
               <Body>
@@ -241,7 +241,7 @@ export default function MVPMLPPage() {
                     {
                       row: 'Optimized for',
                       mvp: 'Validated learning at minimum cost',
-                      mlp: 'Genuine love — users become advocates',
+                      mlp: 'Genuine love, users become advocates',
                     },
                     {
                       row: 'The question it asks',
@@ -321,7 +321,7 @@ export default function MVPMLPPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — Interactive signature visual   DARK
+          S5 - Interactive signature visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -334,7 +334,7 @@ export default function MVPMLPPage() {
             >
               The scope stays identical when you toggle between MVP and MLP. The feature tiles in the
               core do not change. That is the entire point. What changes is only what that core is
-              optimized for &mdash; and what each optimization buys you, and what each risks.
+              optimized for, and what each optimization buys you, and what each risks.
             </p>
             <MVPInteractive />
           </div>
@@ -342,13 +342,13 @@ export default function MVPMLPPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — When to deploy   LIGHT
+          S6 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={BRICK}>When to deploy it</SectionLabel>
-            <SectionHeadingLight>When the real remaining uncertainty is market behavior &mdash; and you are ready to act on whatever the answer is.</SectionHeadingLight>
+            <SectionHeadingLight>When the real remaining uncertainty is market behavior, and you are ready to act on whatever the answer is.</SectionHeadingLight>
 
             <div className="grid md:grid-cols-2 gap-8 mt-8">
               <div>
@@ -358,10 +358,10 @@ export default function MVPMLPPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You have established that the thing can work (via a PoC if feasibility was uncertain) and the concept resonates (via prototyping or concept testing) — and now need to know whether people will actually ADOPT it.',
+                    'You have established that the thing can work (via a PoC if feasibility was uncertain) and the concept resonates (via prototyping or concept testing), and now need to know whether people will actually ADOPT it.',
                     'The real remaining uncertainty is market behavior: will people use it, pay for it, stick with it? Only a real release to real users can answer that.',
                     'You want validated learning from the market at the lowest cost that still produces a trustworthy signal.',
-                    'You are prepared to act on the answer — improve, pivot, or stop — rather than treat the release as theater.',
+                    'You are prepared to act on the answer (improve, pivot, or stop) rather than treat the release as theater.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
                       <span style={{ color: BRICK, flexShrink: 0, marginTop: 2 }}>→</span>
@@ -413,7 +413,7 @@ export default function MVPMLPPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — How it works   LIGHT
+          S7 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -431,7 +431,7 @@ export default function MVPMLPPage() {
                 {
                   n: '02',
                   title: 'Identify the true core, and cut everything else.',
-                  body: 'Determine the smallest set of features that actually delivers the central value. Everything outside that core is cut — for both MVP and MLP. This prioritization is shared and is the hardest, most valuable work. The ruthless cutting is not a later step; it is where most of the judgment lives.',
+                  body: 'Determine the smallest set of features that actually delivers the central value. Everything outside that core is cut, for both MVP and MLP. This prioritization is shared and is the hardest, most valuable work. The ruthless cutting is not a later step; it is where most of the judgment lives.',
                 },
                 {
                   n: '03',
@@ -441,17 +441,17 @@ export default function MVPMLPPage() {
                 {
                   n: '04',
                   title: 'Build the least that can carry that objective.',
-                  body: 'For an MVP: the cheapest artifact that produces a real market signal — a landing page, a video, a manual concierge service, a small real product. For an MLP: the same core, executed with the craft that makes it genuinely good to use, without expanding scope. The artifact is not the point; the signal it produces is.',
+                  body: 'For an MVP: the cheapest artifact that produces a real market signal: a landing page, a video, a manual concierge service, a small real product. For an MLP: the same core, executed with the craft that makes it genuinely good to use, without expanding scope. The artifact is not the point; the signal it produces is.',
                 },
                 {
                   n: '05',
                   title: 'Define the success threshold before you release.',
-                  body: 'Agree what adoption level would count as validation — and what would count as a negative signal — before you release. Without this, teams rationalise whatever result they get, and the release teaches nothing. Set the threshold. Commit to it.',
+                  body: 'Agree what adoption level would count as validation, and what would count as a negative signal, before you release. Without this, teams rationalise whatever result they get, and the release teaches nothing. Set the threshold. Commit to it.',
                 },
                 {
                   n: '06',
                   title: 'Release to real users and measure real behavior.',
-                  body: 'Put it in front of actual users in the actual market and measure what matters against the assumption you named. Real behavior — use, return, pay, recommend — is the point. Stated intent, survey results, and expressed enthusiasm are poor predictors of what people will actually do.',
+                  body: 'Put it in front of actual users in the actual market and measure what matters against the assumption you named. Real behavior (use, return, pay, recommend) is the point. Stated intent, survey results, and expressed enthusiasm are poor predictors of what people will actually do.',
                 },
                 {
                   n: '07',
@@ -479,13 +479,13 @@ export default function MVPMLPPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Best practices   LIGHT
+          S8 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={BRICK}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like &mdash; and the failure modes that quietly undermine either approach.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and the failure modes that quietly undermine either approach.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4"
               style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
@@ -497,7 +497,7 @@ export default function MVPMLPPage() {
                 'The core is genuinely minimal, and the same ruthless cutting applies whether the goal is viable or lovable.',
                 'The choice of viable vs lovable is made deliberately, based on the market\'s expectations, not by default or as an excuse to build more or less.',
                 'The success threshold is set before release, not rationalized after seeing the results.',
-                'The team interprets weak signals honestly — distinguishing rejection of the idea from rejection of the execution.',
+                'The team interprets weak signals honestly, distinguishing rejection of the idea from rejection of the execution.',
                 'The learning actually changes what happens next (improve, pivot, or stop).',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
@@ -525,11 +525,11 @@ export default function MVPMLPPage() {
                 },
                 {
                   mistake: 'The false negative: shipping something joyless in a crowded market.',
-                  fix: 'In a market with high expectations, an unlovable product can be rejected for its execution, and that rejection reads as a verdict on the idea. That is the false negative, and it is how good ideas get killed by bad tests. In such markets, lovable is not a luxury — it is what makes the test honest.',
+                  fix: 'In a market with high expectations, an unlovable product can be rejected for its execution, and that rejection reads as a verdict on the idea. That is the false negative, and it is how good ideas get killed by bad tests. In such markets, lovable is not a luxury; it is what makes the test honest.',
                 },
                 {
                   mistake: 'Using "lovable" as an excuse not to ship.',
-                  fix: 'Endless polishing in the name of love means never learning. Lovable still means MINIMUM. The MLP discipline is the same as the MVP discipline — ship the smallest thing — with a different optimization for the core. If you are using MLP to justify more features or a later release date, you have inverted the method.',
+                  fix: 'Endless polishing in the name of love means never learning. Lovable still means MINIMUM. The MLP discipline is the same as the MVP discipline (ship the smallest thing) with a different optimization for the core. If you are using MLP to justify more features or a later release date, you have inverted the method.',
                 },
                 {
                   mistake: 'Building a minimum feature set instead of a hypothesis test.',
@@ -556,7 +556,7 @@ export default function MVPMLPPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — Logistics   LIGHT
+          S9 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -602,19 +602,19 @@ export default function MVPMLPPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — How AI is evolving this method   DARK
+          S10 - How AI is evolving this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={BRICK}>How AI is evolving this method</SectionLabel>
-            <SectionHeadingDark>AI collapsed the cost of &ldquo;lovable.&rdquo; That weakens the old excuse for shipping something unloved &mdash; but it does not tell you what people will love.</SectionHeadingDark>
+            <SectionHeadingDark>AI collapsed the cost of &ldquo;lovable.&rdquo; That weakens the old excuse for shipping something unloved, but it does not tell you what people will love.</SectionHeadingDark>
             <p
               className="mb-10 max-w-[560px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Historically, choosing lovable meant paying a meaningful premium in time and money. AI
-              substantially changed that. Toggle to see how it shifts the viable/lovable tradeoff &mdash;
+              substantially changed that. Toggle to see how it shifts the viable/lovable tradeoff,
               and what human judgment remains load-bearing.
             </p>
             <MVPAIReactivated />
@@ -623,18 +623,18 @@ export default function MVPMLPPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — In-depth example (toggle)   LIGHT
+          S11 - In-depth example (toggle)   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={BRICK}>In practice</SectionLabel>
-            <SectionHeadingLight>A team launches a personal finance tool in a crowded market. Why they chose the MLP &mdash; and what changes with AI.</SectionHeadingLight>
+            <SectionHeadingLight>A team launches a personal finance tool in a crowded market. Why they chose the MLP, and what changes with AI.</SectionHeadingLight>
             <p className="mb-8"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
               The judgment that drives the choice between MVP and MLP is about the market and its
               expectations, not about the size of the budget. See it in practice, then compare what
-              AI changes &mdash; and what it does not.
+              AI changes, and what it does not.
             </p>
             <MVPExampleToggle />
           </div>
@@ -642,7 +642,7 @@ export default function MVPMLPPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Framework connections   LIGHT
+          S12 - Framework connections   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container>
@@ -656,13 +656,13 @@ export default function MVPMLPPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Related methods   LIGHT
+          S13 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={BRICK}>Related methods</SectionLabel>
-            <SectionHeadingLight>The MVP and MLP in context &mdash; and the staircase they belong to.</SectionHeadingLight>
+            <SectionHeadingLight>The MVP and MLP in context, and the staircase they belong to.</SectionHeadingLight>
 
             {/* Staircase note */}
             <div className="rounded-xl p-6 mb-8"
@@ -748,7 +748,7 @@ export default function MVPMLPPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S14 — Sources   LIGHT
+          S14 - Sources   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -760,13 +760,13 @@ export default function MVPMLPPage() {
                   title: 'The Lean Startup',
                   author: 'Eric Ries',
                   year: '2011',
-                  note: 'The definitive source for the MVP and validated learning. Ries\'s core argument — that building the smallest thing that tests the riskiest assumption is the only honest way to learn — is the foundation the entire method rests on.',
+                  note: 'The definitive source for the MVP and validated learning. Ries\'s core argument, that building the smallest thing that tests the riskiest assumption is the only honest way to learn, is the foundation the entire method rests on.',
                 },
                 {
                   title: 'Escaping the Build Trap',
                   author: 'Melissa Perri',
                   year: '2018',
-                  note: 'A precise diagnosis of what goes wrong when organisations build without adequately validating first — and the structural conditions that produce it. Essential context for understanding why MVPs and MLPs fail in large organisations.',
+                  note: 'A precise diagnosis of what goes wrong when organisations build without adequately validating first, and the structural conditions that produce it. Essential context for understanding why MVPs and MLPs fail in large organisations.',
                 },
                 {
                   title: 'Inspired',
@@ -780,7 +780,7 @@ export default function MVPMLPPage() {
                   style={{ background: 'var(--color-neutral-50)', border: '1px solid var(--color-neutral-100)' }}>
                   <p className="font-semibold mb-1"
                     style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}>
-                    {s.title} &mdash; {s.author}{' '}
+                    {s.title}: {s.author}{' '}
                     <span style={{ fontWeight: 400, color: 'var(--color-neutral-400)' }}>({s.year})</span>
                   </p>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>

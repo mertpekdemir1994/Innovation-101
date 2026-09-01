@@ -20,7 +20,7 @@ const MVP_CX = MVP_X + MVP_W / 2  // 101
 const MLP_X = 520, MLP_Y = 36, MLP_W = 158, MLP_H = 80
 const MLP_CX = MLP_X + MLP_W / 2  // 599
 
-// Feature tiles inside core (identical — reused verbatim in Interactive and AIReactivated)
+// Feature tiles inside core (identical, reused verbatim in Interactive and AIReactivated)
 const FTILES = [
   { x: 218, y: 38, w: 82,  h: 26, label: 'CORE VALUE'   },
   { x: 308, y: 38, w: 80,  h: 26, label: 'CORE ACTION'  },
@@ -29,7 +29,7 @@ const FTILES = [
   { x: 350, y: 74, w: 86,  h: 26, label: 'CORE FLOW'    },
 ]
 
-// Shared cut pile (below core — same for both products)
+// Shared cut pile (below core, same for both products)
 const CUT_X = 206, CUT_Y = 164, CUT_W = 288, CUT_H = 72
 const CUT_CX = CORE_CX  // 350
 
@@ -54,7 +54,7 @@ export default function MVPEstablishing() {
 
   return (
     <div className="w-full"
-      aria-label="Two products, one shared core, one shared cut pile. Center: SHARED CORE with five feature tiles — Core Value, Core Action, Core Data, Core Feature, Core Flow — identical in both products. Left: MVP optimization badge — Tuned for Learning: fast, cheap, honest signal from the market. Right: MLP optimization badge — Tuned for Love: craft, resonance, users become advocates. Below: SHARED CUT PILE — five non-core features both products ruthlessly discarded. The scope is identical; only the optimization of the core differs. An MLP is not bigger than an MVP.">
+      aria-label="Two products, one shared core, one shared cut pile. Center: SHARED CORE with five feature tiles (Core Value, Core Action, Core Data, Core Feature, Core Flow) identical in both products. Left: MVP optimization badge, Tuned for Learning: fast, cheap, honest signal from the market. Right: MLP optimization badge, Tuned for Love: craft, resonance, users become advocates. Below: SHARED CUT PILE, five non-core features both products ruthlessly discarded. The scope is identical; only the optimization of the core differs. An MLP is not bigger than an MVP.">
       <svg ref={ref} viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
         preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}>
         <defs>
@@ -90,7 +90,7 @@ export default function MVPEstablishing() {
           </text>
         </motion.g>
 
-        {/* Feature tiles — same count and labels in both toggle states */}
+        {/* Feature tiles: same count and labels in both toggle states */}
         {FTILES.map((t, i) => (
           <motion.g key={i}
             initial={{ opacity: 0, y: 4 }}

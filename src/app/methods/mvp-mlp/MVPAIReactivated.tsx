@@ -46,7 +46,7 @@ const INFO_CARDS = {
   human: [
     {
       tag: 'TRADITIONAL ECONOMICS',
-      headline: 'Craft was expensive — which made the bare MVP the affordable default.',
+      headline: 'Craft was expensive, which made the bare MVP the affordable default.',
       body: 'Historically, the argument for a bare MVP was largely economic. Polished interfaces, well-crafted copy, and well-built implementation took real time and money, so shipping something merely functional was often the only way to learn quickly. The cost gap between "functional" and "lovable" was wide, and many teams defaulted to the MVP end not by choice but by budget.',
     },
   ],
@@ -54,17 +54,17 @@ const INFO_CARDS = {
     {
       tag: 'GENUINE AI UPLIFT',
       headline: 'AI collapsed the cost of lovable. The old excuse for shipping something unloved is much weaker now.',
-      body: 'Polished interfaces, competent copy, well-crafted visual design, and clean implementation can now be produced quickly and cheaply with AI assistance. The cost gap between "functional" and "well-executed" has narrowed sharply. The old defense — "we cannot afford lovable, so we shipped the bare minimum" — is much harder to sustain. In practice this pushes the sensible default toward the MLP end: if craft is cheap, shipping something joyless mostly risks false negatives you did not need to incur. This is a real, material change to how this method should be practiced.',
+      body: 'Polished interfaces, competent copy, well-crafted visual design, and clean implementation can now be produced quickly and cheaply with AI assistance. The cost gap between "functional" and "well-executed" has narrowed sharply. The old defense, "we cannot afford lovable, so we shipped the bare minimum", is much harder to sustain. In practice this pushes the sensible default toward the MLP end: if craft is cheap, shipping something joyless mostly risks false negatives you did not need to incur. This is a real, material change to how this method should be practiced.',
     },
     {
       tag: 'TASTE: LOVED ≠ POLISHED',
       headline: 'AI makes things tidy. Tidy is not the same as loved.',
-      body: 'AI is genuinely good at competent craft and genuinely limited at taste. It can make something look and feel professionally executed; it is much weaker at the specific emotional judgment that makes a product delightful rather than merely tidy — knowing which small moment matters, which detail earns affection, what would make THIS user tell a friend. Love is not an average of what has been well-received before. It is specific, and it comes from human judgment about people. A product can be immaculately produced and entirely unloved. AI can produce exactly that, at speed.',
+      body: 'AI is genuinely good at competent craft and genuinely limited at taste. It can make something look and feel professionally executed; it is much weaker at the specific emotional judgment that makes a product delightful rather than merely tidy: knowing which small moment matters, which detail earns affection, what would make THIS user tell a friend. Love is not an average of what has been well-received before. It is specific, and it comes from human judgment about people. A product can be immaculately produced and entirely unloved. AI can produce exactly that, at speed.',
     },
     {
       tag: 'INTERPRETATION: FLUENT ≠ EVIDENCE',
       headline: 'AI cannot make the call that the whole method turns on.',
-      body: 'The hardest, most consequential moment in this method is reading a weak signal: did the market reject the IDEA, or reject THIS EXECUTION? Those two diagnoses demand opposite responses — pivot vs improve — and getting it wrong kills good ideas or props up bad ones. AI will produce a fluent, confident narrative explaining the churn. That narrative is not evidence about its cause. The interpretive judgment depends on understanding your users, your market, and what your release actually felt like to use. No metric and no summary hands you that.',
+      body: 'The hardest, most consequential moment in this method is reading a weak signal: did the market reject the IDEA, or reject THIS EXECUTION? Those two diagnoses demand opposite responses (pivot vs improve) and getting it wrong kills good ideas or props up bad ones. AI will produce a fluent, confident narrative explaining the churn. That narrative is not evidence about its cause. The interpretive judgment depends on understanding your users, your market, and what your release actually felt like to use. No metric and no summary hands you that.',
     },
   ],
 }
@@ -103,7 +103,7 @@ export default function MVPAIReactivated() {
       {/* SVG */}
       <div aria-label={isAI
         ? 'AI-reactivated view. MLP optimization badge highlighted with AI cost-collapse badge (indigo). Core and cut pile unchanged. Human-judgment annotations: TASTE (loved vs polished) and INTERPRETATION (idea vs execution) remain human.'
-        : 'Traditional view — two products, same core, different optimization.'}>
+        : 'Traditional view: two products, same core, different optimization.'}>
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
           preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}>
           <defs>
@@ -121,7 +121,7 @@ export default function MVPAIReactivated() {
             </filter>
           </defs>
 
-          {/* Shared core — unchanged by mode */}
+          {/* Shared core: unchanged by mode */}
           <rect x={CORE_X - 4} y={CORE_Y - 4} width={CORE_W + 8} height={CORE_H + 8} rx={12}
             fill="none" stroke={`${BRICK}0.08)`} strokeWidth={8}
             style={{ filter: 'url(#mvpai-glow-sm)' }} />
@@ -134,7 +134,7 @@ export default function MVPAIReactivated() {
             SHARED CORE · IDENTICAL IN BOTH PRODUCTS
           </text>
 
-          {/* Feature tiles — unchanged */}
+          {/* Feature tiles: unchanged */}
           {FTILES.map((t, i) => (
             <g key={i}>
               <rect x={t.x} y={t.y} width={t.w} height={t.h} rx={3}
@@ -161,7 +161,7 @@ export default function MVPAIReactivated() {
           <line x1={CORE_CX} y1={CORE_Y + CORE_H} x2={CUT_CX} y2={CUT_Y - 2}
             stroke={`${BRICK}0.16)`} strokeWidth={0.9} strokeDasharray="3 3" />
 
-          {/* MVP badge — dims in AI mode (MLP is the new default) */}
+          {/* MVP badge: dims in AI mode (MLP is the new default) */}
           <rect x={MVP_X} y={MVP_Y} width={MVP_W} height={MVP_H} rx={6}
             fill={`${BRICK}0.06)`}
             stroke={`${BRICK}${isAI ? '0.16)' : '0.32)'}`}
@@ -184,7 +184,7 @@ export default function MVPAIReactivated() {
             fill={`${BRICK}0.45)`}
             style={{ userSelect: 'none', opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s' }}>FAST · CHEAP · HONEST SIGNAL</text>
 
-          {/* MLP badge — highlighted in AI mode */}
+          {/* MLP badge: highlighted in AI mode */}
           <rect x={MLP_X - 3} y={MLP_Y - 3} width={MLP_W + 6} height={MLP_H + 6} rx={9}
             fill="none" stroke={isAI ? `${INDIGO}0.06)` : 'none'} strokeWidth={6}
             style={{ filter: 'url(#mvpai-glow)', transition: 'stroke 0.35s' }} />
@@ -266,7 +266,7 @@ export default function MVPAIReactivated() {
             )}
           </AnimatePresence>
 
-          {/* Cut pile — unchanged */}
+          {/* Cut pile: unchanged */}
           <text x={CUT_CX} y={CUT_Y - 8}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"

@@ -51,7 +51,7 @@ const CARDS: Record<ActiveItem, InfoCard> = {
   core: {
     tag: 'SAME SCOPE',
     headline: 'The scope is identical. An MLP is not bigger than an MVP.',
-    body: 'Both products build only this core — the small set of features that actually delivers the central value. Toggling between MVP and MLP does not change what you build; it changes what you optimize the build for. If your MLP has more features than your MVP would have, you have not built an MLP — you have built a bigger product and given it a nicer name. The prioritization work is the same. The ruthless cutting is the same. Only the optimization differs.',
+    body: 'Both products build only this core: the small set of features that actually delivers the central value. Toggling between MVP and MLP does not change what you build; it changes what you optimize the build for. If your MLP has more features than your MVP would have, you have not built an MLP; you have built a bigger product and given it a nicer name. The prioritization work is the same. The ruthless cutting is the same. Only the optimization differs.',
   },
   cuts: {
     tag: 'BOTH CUT THESE',
@@ -61,14 +61,14 @@ const CARDS: Record<ActiveItem, InfoCard> = {
   mvp: {
     tag: 'MVP OPTIMIZATION',
     headline: 'Tuned for validated learning at minimum cost.',
-    body: 'The core is executed to generate the cheapest honest signal from the market. Fast, low-cost, built to answer whether people will adopt this at all. Speed and cost are the virtues here: get a real signal from real users before investing further. In a novel category with low expectations, a bare MVP can teach you a great deal — people will tolerate rough edges for something that solves a real problem no one else solves.',
+    body: 'The core is executed to generate the cheapest honest signal from the market. Fast, low-cost, built to answer whether people will adopt this at all. Speed and cost are the virtues here: get a real signal from real users before investing further. In a novel category with low expectations, a bare MVP can teach you a great deal: people will tolerate rough edges for something that solves a real problem no one else solves.',
     riskLabel: 'RISK: THE FALSE NEGATIVE',
     risk: 'A joyless product in a market with any expectations can be rejected for its execution rather than its idea. The team reads that rejection as a verdict on the concept and kills something that could have worked. That is the false negative, and it is how good ideas get killed by bad tests.',
   },
   mlp: {
     tag: 'MLP OPTIMIZATION',
-    headline: 'Tuned for genuine love — same scope, different execution quality.',
-    body: 'The core is executed with enough craft, care, and emotional resonance that early users become advocates rather than reluctant testers. Same ruthless scope, but the build effort goes into the quality of the core rather than the quantity of features. The signal this produces is about the IDEA as people would actually experience it — not about your indifference. In a crowded, high-expectation market, lovable is often part of viable at all.',
+    headline: 'Tuned for genuine love, same scope, different execution quality.',
+    body: 'The core is executed with enough craft, care, and emotional resonance that early users become advocates rather than reluctant testers. Same ruthless scope, but the build effort goes into the quality of the core rather than the quantity of features. The signal this produces is about the IDEA as people would actually experience it, not about your indifference. In a crowded, high-expectation market, lovable is often part of viable at all.',
     riskLabel: 'RISK: OVER-BUILDING',
     risk: '"We need it to be lovable" is an infinitely elastic excuse for not shipping. Endless polishing in the name of love means never learning. Lovable still means MINIMUM. If you are using "MLP" to justify keeping features or delaying the release, you have inverted the method.',
   },
@@ -126,7 +126,7 @@ export default function MVPInteractive() {
             SHARED CORE · IDENTICAL IN BOTH PRODUCTS
           </text>
 
-          {/* Feature tiles — IDENTICAL count and labels regardless of mvp/mlp toggle */}
+          {/* Feature tiles: IDENTICAL count and labels regardless of mvp/mlp toggle */}
           {FTILES.map((t, i) => (
             <g key={i}>
               <rect x={t.x} y={t.y} width={t.w} height={t.h} rx={3}
@@ -285,7 +285,7 @@ export default function MVPInteractive() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Market condition note — visible when toggling between optimizations */}
+      {/* Market condition note: visible when toggling between optimizations */}
       {(mvpIsActive || mlpIsActive) && (
         <div className="mt-4 rounded-lg p-4"
           style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.10)' }}>
@@ -294,7 +294,7 @@ export default function MVPInteractive() {
             THE MARKET CONDITION THAT TIPS THE CHOICE
           </p>
           <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.45)', lineHeight: 'var(--leading-relaxed)' }}>
-            Novel category, low expectations → a bare MVP can teach a lot. Crowded, high-expectation market → an unlovable MVP teaches almost nothing, because users simply leave for alternatives. The more competitive and expectation-laden the market, the more &ldquo;lovable&rdquo; is part of &ldquo;viable&rdquo; at all.
+            Novel category, low expectations → a bare MVP can teach a lot. Crowded, high-expectation market → an unlovable MVP teaches almost nothing, because users leave for alternatives. The more competitive and expectation-laden the market, the more &ldquo;lovable&rdquo; is part of &ldquo;viable&rdquo; at all.
           </p>
         </div>
       )}
