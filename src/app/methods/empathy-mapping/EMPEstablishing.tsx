@@ -172,7 +172,7 @@ export default function EMPEstablishing() {
                     x={cx} y={r.y + 170}
                     textAnchor="middle" dominantBaseline="middle"
                     fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                    fill="rgba(255,255,255,0.30)"
+                    fill="rgba(255,255,255,0.65)"
                     style={{ userSelect: 'none' }}
                   >♥ INTERPRETIVE HEART</text>
                 </>
@@ -191,7 +191,7 @@ export default function EMPEstablishing() {
             x={172} y={222}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)"
-            fill="rgba(255,255,255,0.16)"
+            fill="rgba(255,255,255,0.58)"
             style={{ userSelect: 'none' }}
           >≠</text>
         </motion.g>

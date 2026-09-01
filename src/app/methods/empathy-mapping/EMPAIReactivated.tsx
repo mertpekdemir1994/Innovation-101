@@ -5,7 +5,9 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY   = 'rgba(31,58,95,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 440
@@ -169,7 +171,7 @@ export default function EMPAIReactivated() {
                       x={cx} y={q.rect.y + q.rect.h - 17}
                       textAnchor="middle" dominantBaseline="middle"
                       fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                      fill={`${INDIGO}0.70)`}
+                      fill={`${INDIGO_TEXT}0.937)`}
                       style={{ userSelect: 'none' }}
                     >AI RELIABLE ✓</text>
                   </g>
@@ -189,7 +191,7 @@ export default function EMPAIReactivated() {
                       x={cx} y={q.rect.y + q.rect.h - 17}
                       textAnchor="middle" dominantBaseline="middle"
                       fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                      fill={`${AMBER}0.60)`}
+                      fill={`${AMBER_TEXT}0.876)`}
                       style={{ userSelect: 'none' }}
                     >{isFeeels ? 'SURFACE WORDS ONLY ⚠' : 'AI INFERS FROM SURFACE ⚠'}</text>
                   </g>
@@ -240,7 +242,7 @@ export default function EMPAIReactivated() {
                           fontSize="5" fontFamily="var(--font-inter,sans-serif)"
                           fill={
                             isAI && q.isObservable
-                              ? `${INDIGO}0.70)`
+                              ? `${INDIGO_TEXT}0.937)`
                               : (isFeeels ? 'rgba(255,255,255,0.72)' : 'rgba(255,255,255,0.60)')
                           }
                           style={{ userSelect: 'none', transition: 'fill 0.35s' }}
@@ -262,7 +264,7 @@ export default function EMPAIReactivated() {
                       x={cx} y={q.rect.y + 154}
                       textAnchor="middle" dominantBaseline="middle"
                       fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                      fill="rgba(255,255,255,0.30)"
+                      fill="rgba(255,255,255,0.65)"
                       style={{ userSelect: 'none' }}
                     >♥ INTERPRETIVE HEART</text>
                   </>
@@ -294,14 +296,14 @@ export default function EMPAIReactivated() {
                   x={172} y={218}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${INDIGO}0.65)`}
+                  fill={`${INDIGO_TEXT}0.926)`}
                   style={{ userSelect: 'none' }}
                 >CONTRADICTION IN DATA</text>
                 <text
                   x={172} y={228}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="3.5" fontFamily="var(--font-mono)"
-                  fill={`${INDIGO}0.45)`}
+                  fill={`${INDIGO_TEXT}0.885)`}
                   style={{ userSelect: 'none' }}
                 >meaning: left to humans</text>
               </motion.g>

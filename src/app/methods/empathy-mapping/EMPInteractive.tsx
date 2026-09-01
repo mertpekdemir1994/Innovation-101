@@ -159,7 +159,7 @@ export default function EMPInteractive() {
               x={SVG_W / 2} y={SVG_H - 8}
               textAnchor="middle" dominantBaseline="auto"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill="rgba(255,255,255,0.18)"
+              fill="rgba(255,255,255,0.59)"
               style={{ userSelect: 'none' }}
             >tap a quadrant or use the buttons above to reveal what goes there</text>
           )}
@@ -263,7 +263,7 @@ export default function EMPInteractive() {
                       x={cx} y={q.rect.y + 170}
                       textAnchor="middle" dominantBaseline="middle"
                       fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                      fill={isActive ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.28)'}
+                      fill={isActive ? 'rgba(255,255,255,0.725)' : 'rgba(255,255,255,0.64)'}
                       style={{ userSelect: 'none', transition: 'fill 0.20s' }}
                     >♥ INTERPRETIVE HEART</text>
                   </>
