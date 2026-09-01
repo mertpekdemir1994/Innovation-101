@@ -3,6 +3,12 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY = 'rgba(181,97,62,'
+// Darkened, text-safe variant of CLAY — plain CLAY tops out at ~4.4:1 on white,
+// just under the 4.5:1 AA threshold. Used only for text/labels, not shapes.
+const CLAY_TEXT = 'rgba(135,72,46,'
+// This component renders on a light section; precursor-side text used raw white
+// (invisible on white) — INK is its light-background-appropriate replacement.
+const INK = 'rgba(17,24,39,'
 
 // Mini SVG geometry: showing just the two axes
 const M_W = 280
@@ -21,8 +27,8 @@ export default function APDistinction() {
 
   const transIn  = prefersReduced ? { duration: 0 } : { duration: 0.20 }
 
-  const analogAxisO  = isAnalogs ? '0.90' : '0.18'
-  const precurAxisO  = isAnalogs ? '0.18' : '0.68'
+  const analogAxisO  = isAnalogs ? '0.90' : '0.75'
+  const precurAxisO  = isAnalogs ? '0.62' : '0.85'
 
   return (
     <div className="w-full space-y-5">
@@ -36,7 +42,7 @@ export default function APDistinction() {
             style={{
               background: side === s ? `${CLAY}0.10)` : 'transparent',
               border: `1px solid ${side === s ? `${CLAY}0.35)` : 'var(--color-neutral-100)'}`,
-              color: side === s ? `${CLAY}1)` : 'var(--color-neutral-600)',
+              color: side === s ? `${CLAY_TEXT}1)` : 'var(--color-neutral-600)',
             }}
           >
             {s === 'analogs' ? 'Analogs (→)' : 'Precursors (↑)'}
@@ -56,42 +62,42 @@ export default function APDistinction() {
             {/* Analogs axis */}
             <motion.line
               x1={M_OX} y1={M_OY} x2={M_AX_END} y2={M_OY}
-              stroke={`${CLAY}${analogAxisO})`}
+              stroke={`${CLAY_TEXT}${analogAxisO})`}
               strokeWidth={isAnalogs ? 2.5 : 1.5}
               animate={{ opacity: 1 }}
               transition={transIn}
             />
             <path
               d={`M ${M_AX_END - 6} ${M_OY - 4} L ${M_AX_END + 1} ${M_OY} L ${M_AX_END - 6} ${M_OY + 4}`}
-              stroke={`${CLAY}${analogAxisO})`} strokeWidth={isAnalogs ? 2 : 1.5} fill="none"
+              stroke={`${CLAY_TEXT}${analogAxisO})`} strokeWidth={isAnalogs ? 2 : 1.5} fill="none"
               strokeLinecap="round" strokeLinejoin="round"
             />
             <text
               x={M_AX_END + 5} y={M_OY}
               dominantBaseline="middle"
               fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${CLAY}${isAnalogs ? '0.85' : '0.20'})`}
+              fill={`${CLAY_TEXT}${isAnalogs ? '1' : '0.85'})`}
               style={{ userSelect: 'none' }}
             >→</text>
 
             {/* Precursors axis */}
             <motion.line
               x1={M_OX} y1={M_OY} x2={M_OX} y2={M_PR_END}
-              stroke={`rgba(255,255,255,${precurAxisO})`}
+              stroke={`${INK}${precurAxisO})`}
               strokeWidth={!isAnalogs ? 2.5 : 1.5}
               animate={{ opacity: 1 }}
               transition={transIn}
             />
             <path
               d={`M ${M_OX - 4} ${M_PR_END + 8} L ${M_OX} ${M_PR_END + 1} L ${M_OX + 4} ${M_PR_END + 8}`}
-              stroke={`rgba(255,255,255,${precurAxisO})`} strokeWidth={!isAnalogs ? 2 : 1.5} fill="none"
+              stroke={`${INK}${precurAxisO})`} strokeWidth={!isAnalogs ? 2 : 1.5} fill="none"
               strokeLinecap="round" strokeLinejoin="round"
             />
             <text
               x={M_OX} y={M_PR_END - 4}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="7" fontFamily="var(--font-mono)"
-              fill={`rgba(255,255,255,${!isAnalogs ? '0.80' : '0.18'})`}
+              fill={`${INK}${precurAxisO})`}
               style={{ userSelect: 'none' }}
             >↑</text>
 
@@ -100,14 +106,14 @@ export default function APDistinction() {
               x={(M_OX + M_AX_END) / 2} y={M_OY + 14}
               textAnchor="middle"
               fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${CLAY}${isAnalogs ? '0.75' : '0.16'})`}
+              fill={`${CLAY_TEXT}${isAnalogs ? '1' : '0.85'})`}
               style={{ userSelect: 'none' }}
             >ANALOGS / ACROSS INDUSTRIES</text>
             <text
               x={M_OX - 10} y={(M_OY + M_PR_END) / 2}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="6" fontFamily="var(--font-mono)"
-              fill={`rgba(255,255,255,${!isAnalogs ? '0.58' : '0.14'})`}
+              fill={`${INK}${precurAxisO})`}
               style={{ userSelect: 'none' }}
               transform={`rotate(-90, ${M_OX - 10}, ${(M_OY + M_PR_END) / 2})`}
             >PRECURSORS / BACK IN TIME</text>
