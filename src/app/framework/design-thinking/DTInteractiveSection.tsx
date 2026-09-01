@@ -17,7 +17,7 @@ const STAGE_DETAIL: Record<StageKey, {
   empathize: {
     headline: 'Empathize: start with the human, not the assumption',
     description:
-      'Set aside your assumptions and develop genuine, firsthand understanding of the people you are designing for. This means getting close enough to their real lives that you notice the things they would never think to tell you. The test: did you learn something that genuinely surprised you?',
+      'Set aside your assumptions and develop genuine, firsthand understanding of the people you are designing for. This means getting close enough to their real lives that you notice the things they would never think to tell you. The test: did you learn something that surprised you?',
     prompt: 'What do you know about the experience of the people you are designing for that did NOT come from a survey, a report, or your own assumptions? If the honest answer is thin, your first job is to get closer to them.',
     example: {
       co: 'IDEO: Shopping Cart (1999)',
@@ -51,7 +51,7 @@ const STAGE_DETAIL: Record<StageKey, {
     prompt: 'Take your strongest idea. What is the cheapest, roughest thing you could build this week that would let a real person react to it? What specific question would that prototype answer?',
     example: {
       co: 'Children\'s MRI: Adventure Series',
-      text: 'The adventure-room solution was prototyped long before any machine was painted. The team mocked up the experience, the story script, the decoration, and the way a technician would frame the scan as an adventure, in rough, cheap form, with real children and staff. These low-fidelity prototypes answered "does turning the scan into a story actually calm the child?" cheaply, before any full production investment.',
+      text: 'The adventure-room solution was prototyped long before any machine was painted. The team mocked up the experience, the story script, the decoration, and the way a technician would frame the scan as an adventure, in rough, cheap form, with real children and staff. These low-fidelity prototypes answered "does turning the scan into a story calm the child?" cheaply, before any full production investment.',
     },
   },
   test: {
@@ -69,13 +69,13 @@ const STAGE_DETAIL: Record<StageKey, {
 const THREE_LENSES: Record<NonNullable<LensKey>, { title: string; question: string; detail: string; color: string }> = {
   desirability: {
     title: 'Desirability',
-    question: 'Do people actually want this?',
+    question: 'Do people want this?',
     detail: 'The human lens: the heart of Design Thinking. Start here. A solution nobody wants does not deserve to be built, no matter how clever or technically impressive it is. Desirability is what the Empathize and Define stages exist to ensure.',
     color: `${TEAL}`,
   },
   feasibility: {
     title: 'Feasibility',
-    question: 'Can it actually be built?',
+    question: 'Can it be built?',
     detail: 'The technical lens. A deeply desirable idea that cannot be built with available capability and technology is not a solution. Asking the feasibility question early, while still leading with human need, avoids falling in love with ideas that will not survive contact with technical reality.',
     color: `rgba(5,150,105,`,
   },

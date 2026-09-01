@@ -48,7 +48,7 @@ const STAGE_DETAIL: Record<StageId, {
     prompt: 'What is the single most important thing your team needs to deliver in the next two weeks? What does "done" look like? If you had to ship one thing (not plan or design, but actually ship) what would it be?',
     example: {
       co: 'Bosch: IoT Innovation Team',
-      text: 'Bosch\'s IoT innovation team ran two-week delivery sprints with a standing rule that every sprint must end with something placed in the hands of at least one real user. This rule forced the team to decompose work into units genuinely completable in two weeks. After 18 months of this discipline, cycle time from idea to user feedback dropped from six months to three weeks.',
+      text: 'Bosch\'s IoT innovation team ran two-week delivery sprints with a standing rule that every sprint must end with something placed in the hands of at least one real user. This rule forced the team to decompose work into units completable in two weeks. After 18 months of this discipline, cycle time from idea to user feedback dropped from six months to three weeks.',
     },
   },
   review: {

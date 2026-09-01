@@ -57,14 +57,14 @@ const VERSIONS = [
     org: 'Dean Leffingwell',
     badge: 'Enterprise Scale',
     summary:
-      'SAFe is the most prescriptive framework for scaling Agile across large enterprises. It defines roles, responsibilities, ceremonies, and processes at team, program, portfolio, and enterprise levels. It combines Agile, Lean, and DevOps practices into a comprehensive system designed for organizations with hundreds of teams. The SAFe tradeoff: strong top-down alignment and governance structures that satisfy enterprise compliance and planning requirements, at the cost of the speed and team autonomy that the original Agile Manifesto prioritized. Best for large regulated enterprises with many interdependent teams. Can slow innovation through governance overhead in organizations that do not genuinely need that level of coordination.',
+      'SAFe is the most prescriptive framework for scaling Agile across large enterprises. It defines roles, responsibilities, ceremonies, and processes at team, program, portfolio, and enterprise levels. It combines Agile, Lean, and DevOps practices into a comprehensive system designed for organizations with hundreds of teams. The SAFe tradeoff: strong top-down alignment and governance structures that satisfy enterprise compliance and planning requirements, at the cost of the speed and team autonomy that the original Agile Manifesto prioritized. Best for large regulated enterprises with many interdependent teams. Can slow innovation through governance overhead in organizations that do not need that level of coordination.',
     changes: [
       { tag: 'Introduced', text: 'Program Increment (PI) Planning: large-scale coordinated planning session aligning multiple teams to a shared quarterly roadmap' },
       { tag: 'Introduced', text: 'Four-level hierarchy: Team, Program, Portfolio, Enterprise, each with defined roles, ceremonies, and governance gates' },
       { tag: 'Tradeoff', text: 'Strong alignment across many teams; can reduce the speed and team autonomy that Agile Innovation requires; best evaluated against the organization\'s actual coordination needs' },
     ],
     limitation:
-      'SAFe\'s comprehensive prescriptiveness can introduce exactly the governance overhead that Agile was designed to escape. Organizations that adopt SAFe without genuinely needing enterprise-level coordination often find themselves with more process and less innovation speed than before.',
+      'SAFe\'s comprehensive prescriptiveness can introduce exactly the governance overhead that Agile was designed to escape. Organizations that adopt SAFe without needing enterprise-level coordination often find themselves with more process and less innovation speed than before.',
   },
   {
     year: '2019',

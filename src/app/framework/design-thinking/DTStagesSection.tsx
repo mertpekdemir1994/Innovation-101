@@ -30,12 +30,12 @@ const STAGES: Stage[] = [
       'Empathize is the foundation the whole process stands on. The goal is to set aside your assumptions and develop genuine, firsthand understanding of the people you are designing for: what they do, what they say, what they think, and crucially what they feel.',
     description: [
       'This is not market research at a distance. It is getting close enough to people\'s real lives that you notice the things they would never think to tell you, and the gap between what they say and what they actually do.',
-      'The test of genuine empathy work is whether the team learned something that genuinely surprised it. If nothing surprised you, you probably confirmed your assumptions rather than challenging them.',
+      'The test of genuine empathy work is whether the team learned something that surprised it. If nothing surprised you, you probably confirmed your assumptions rather than challenging them.',
     ],
     activities: [
       {
         title: 'Observe',
-        detail: 'Watch people in the context where the problem actually happens, paying attention to workarounds, frustrations, and moments of friction. Do not start with a structured interview; start with unstructured watching.',
+        detail: 'Watch people in the context where the problem happens, paying attention to workarounds, frustrations, and moments of friction. Do not start with a structured interview; start with unstructured watching.',
       },
       {
         title: 'Engage',
@@ -58,7 +58,7 @@ const STAGES: Stage[] = [
     objective:
       'Define is where the raw, messy understanding gathered in Empathize is synthesised into a single, sharp problem statement: a point of view. This is the hinge of the whole process. A well-framed problem makes the solution space productive; a badly framed one sends the team off solving the wrong thing beautifully.',
     description: [
-      'The Define stage resists the pull toward solutions and insists on naming, precisely and in human terms, what is actually worth solving. A good problem statement names the need, not the answer.',
+      'The Define stage resists the pull toward solutions and insists on naming, precisely and in human terms, what is worth solving. A good problem statement names the need, not the answer.',
       'The classic Define output is a point-of-view statement: a specific user, their deep need (stated as a verb), and a non-obvious insight drawn from the empathy work that reframes the problem. The quality of everything downstream depends on the quality of this statement.',
     ],
     activities: [
@@ -146,7 +146,7 @@ const STAGES: Stage[] = [
       'Test puts the prototype in front of the real people you are designing for and learns from their genuine response. The goal is not to prove the idea right; it is to learn, including, and especially, learning that the idea is wrong.',
     description: [
       'Test is where the loop-back lives: what you learn here sends you forward to refine, or back to ideate, define, or even empathize. A good test is run with curiosity about what will be discovered, not anxiety about being validated.',
-      'The most common failure in the Test stage is treating it as a box-ticking validation: looking for confirmation rather than genuinely trying to discover what is wrong. Ask people to do tasks rather than to give opinions, since behavior is honest where politeness is not.',
+      'The most common failure in the Test stage is treating it as a box-ticking validation: looking for confirmation rather than trying to discover what is wrong. Ask people to do tasks rather than to give opinions, since behavior is honest where politeness is not.',
     ],
     activities: [
       {

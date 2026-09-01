@@ -39,7 +39,7 @@ const DAYS: Day[] = [
       },
       {
         title: 'Map the challenge',
-        detail: 'Draw a simple map of the actors (customers, employees, systems, partners) and the key steps in their journey. The map surfaces disagreements about what the problem actually is and forces the team to agree on scope before solving anything.',
+        detail: 'Draw a simple map of the actors (customers, employees, systems, partners) and the key steps in their journey. The map surfaces disagreements about what the problem is and forces the team to agree on scope before solving anything.',
       },
       {
         title: 'Choose a target',
@@ -97,7 +97,7 @@ const DAYS: Day[] = [
       },
       {
         title: 'Supervote',
-        detail: 'The Decider gets three large dot stickers and places them wherever they choose. The Supervote decides. The group\'s dots inform but do not constrain. When two strong concepts have genuinely different strengths, the team can run a Battle Royale: prototyping both on Thursday and testing head-to-head on Friday.',
+        detail: 'The Decider gets three large dot stickers and places them wherever they choose. The Supervote decides. The group\'s dots inform but do not constrain. When two strong concepts have different strengths, the team can run a Battle Royale: prototyping both on Thursday and testing head-to-head on Friday.',
       },
       {
         title: 'Storyboard',

@@ -29,7 +29,7 @@ const STAGES: Record<StageKey, StageData> = {
   empathize: {
     intro:
       'The team resisted the urge to survey teenagers about library features and instead got close to their actual lives.',
-    work: '"Shadowing" sessions with 18 teenagers across different neighbourhoods, spending unstructured time with them after school. Open-ended conversations, not about the library, but about their days, their pressures, and where they actually went. Observation in the branches at the hours teens were present.',
+    work: '"Shadowing" sessions with 18 teenagers across different neighbourhoods, spending unstructured time with them after school. Open-ended conversations, not about the library, but about their days, their pressures, and where they went. Observation in the branches at the hours teens were present.',
     artifact: {
       type: 'quote',
       label: 'Raw observation: Teen T-09, age 15',
@@ -250,7 +250,7 @@ export default function DTCaseStudy() {
         <p className="text-sm text-neutral-600 leading-relaxed">
           Meridian Library System is an invented organisation and this engagement is illustrative. It
           is written to show, concretely, what the work and outputs of each Design Thinking stage
-          actually look like in practice. The methods, artifacts, and decision logic are realistic;
+          look like in practice. The methods, artifacts, and decision logic are realistic;
           the organisation and its results are fictional.
         </p>
       </div>

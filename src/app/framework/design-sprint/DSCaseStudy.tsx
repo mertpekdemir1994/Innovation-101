@@ -247,7 +247,7 @@ export default function DSCaseStudy() {
         </span>
         <p className="text-sm text-neutral-600 leading-relaxed">
           Cohort is an invented company and this sprint is illustrative. It is written to show,
-          concretely, what the work and outputs of each day of a Design Sprint actually look like
+          concretely, what the work and outputs of each day of a Design Sprint look like
           in practice. The methods, artifacts, and decision logic are realistic; the company and
           its results are fictional.
         </p>

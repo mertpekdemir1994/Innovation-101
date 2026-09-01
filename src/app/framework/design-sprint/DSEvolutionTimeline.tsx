@@ -61,7 +61,7 @@ const VERSIONS = [
     changes: [
       { tag: 'Changed', text: 'Physical materials replaced by digital facilitation tools: Miro or Mural for the board, FigJam for ideation, Lookback or Zoom for user testing' },
       { tag: 'Added', text: 'Asynchronous phases between synchronous sessions: some activities run as homework between video calls to reduce screen-time fatigue' },
-      { tag: 'Lost', text: 'The energy and spontaneous momentum of a co-located sprint room, between-session conversation, and the collective focus that physical presence creates; genuinely harder to replicate remotely' },
+      { tag: 'Lost', text: 'The energy and spontaneous momentum of a co-located sprint room, between-session conversation, and the collective focus that physical presence creates; harder to replicate remotely' },
     ],
     limitation:
       'Remote sprints introduce significant facilitation overhead: maintaining attention, preventing multitasking, and replicating the social energy that drives a co-located sprint\'s intensity all require deliberate intervention. The results are comparable; the experience is harder.',
@@ -79,7 +79,7 @@ const VERSIONS = [
       { tag: 'Duration', text: 'Six to seven days total, longer than the original but more self-contained for teams that cannot point to existing user research' },
     ],
     limitation:
-      'Adding discovery at the sprint\'s front creates a longer commitment. For teams with existing user research, the IDEO variant front-loads work that is already done. The original format is more efficient when the team genuinely already knows the user well.',
+      'Adding discovery at the sprint\'s front creates a longer commitment. For teams with existing user research, the IDEO variant front-loads work that is already done. The original format is more efficient when the team already knows the user well.',
   },
 ]
 

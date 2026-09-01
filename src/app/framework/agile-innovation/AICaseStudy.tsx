@@ -23,7 +23,7 @@ const STAGES: Record<StageKey, StageData> = {
   discovery: {
     intro:
       'Instead of a planning phase, the squad began with discovery. The first two weeks were entirely research: no backlog refinement, no sprint planning, no development.',
-    work: 'Fifteen interviews with small-business owners about how they actually buy and manage insurance, plus assumption mapping of the original initiative concept. The squad entered the research with confidence in their central idea: a self-service portal for policy management.',
+    work: 'Fifteen interviews with small-business owners about how they buy and manage insurance, plus assumption mapping of the original initiative concept. The squad entered the research with confidence in their central idea: a self-service portal for policy management.',
     artifact: {
       type: 'quote',
       label: 'The assumption that broke: small-business owner, interview week one',
@@ -242,7 +242,7 @@ export default function AICaseStudy() {
         </span>
         <p className="text-sm text-neutral-600 leading-relaxed">
           Brightwater Mutual is an invented company and this transformation is illustrative. It is written to show,
-          concretely, what the work and outputs of the Agile Innovation rhythm actually look like over several cycles.
+          concretely, what the work and outputs of the Agile Innovation rhythm look like over several cycles.
           The methods, artifacts, and decision logic are realistic; the company and its results are fictional.
         </p>
       </div>

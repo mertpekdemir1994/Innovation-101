@@ -57,7 +57,7 @@ const VERSIONS = [
     org: 'IBM',
     badge: 'Enterprise',
     summary:
-      'As design thinking moved into very large organisations, the original models proved hard to scale across thousands of people and hundreds of teams. IBM developed Enterprise Design Thinking with three specific additions built for scale: Hills, Playbacks, and Sponsor Users.',
+      'As design thinking moved into large organisations, the original models proved hard to scale across thousands of people and hundreds of teams. IBM developed Enterprise Design Thinking with three specific additions built for scale: Hills, Playbacks, and Sponsor Users.',
     changes: [
       { tag: 'Added', text: 'Hills: concise, outcome-focused statements of where the team is going, used to align large groups across functions and geographies' },
       { tag: 'Added', text: 'Playbacks: regular, structured moments where teams share progress and realign with stakeholders and users' },
@@ -79,7 +79,7 @@ const VERSIONS = [
       { tag: 'Critique', text: 'Underplays the hard work of implementation: the front-end ideation is not the whole job; some problems need deep domain expertise, not a cross-functional team with markers' },
     ],
     limitation:
-      'A mature practitioner holds both the value and the limits. Design thinking is powerful for keeping human needs at the center of problem-solving. It is not a magic process that replaces expertise, rigor, or the unglamorous work of building and shipping.',
+      'A mature practitioner holds both the value and the limits. Design thinking keeps human needs at the center of problem-solving. It is not a magic process that replaces expertise, rigor, or the unglamorous work of building and shipping.',
   },
 ]
 

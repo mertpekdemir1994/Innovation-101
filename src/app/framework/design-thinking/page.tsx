@@ -214,7 +214,7 @@ export default function DesignThinkingPage() {
                 items: [
                   'The problem is human-centered and not yet well understood',
                   'You are designing a product, service, or experience people will use',
-                  'The team is attached to a solution and has not genuinely examined the problem',
+                  'The team is attached to a solution and has not examined the problem',
                   'Past attempts have failed because they solved the wrong thing',
                 ],
                 positive: true,

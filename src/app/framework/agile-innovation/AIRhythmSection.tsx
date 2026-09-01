@@ -103,7 +103,7 @@ const STAGES: Stage[] = [
       },
       {
         title: 'Working output by the end',
-        detail: 'Every sprint ends with something demonstrable, not a plan, not a design deck, but something a user or stakeholder can interact with or observe. This constraint forces the team to decompose work into units that are genuinely completable in two weeks and meaningful enough to generate real reaction.',
+        detail: 'Every sprint ends with something demonstrable, not a plan, not a design deck, but something a user or stakeholder can interact with or observe. This constraint forces the team to decompose work into units that are completable in two weeks and meaningful enough to generate real reaction.',
       },
     ],
     keyQuestion:
