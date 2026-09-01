@@ -60,7 +60,7 @@ export default function SCCAIReactivated() {
       {/* SVG */}
       <div className="w-full">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-          preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}
+          preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
           aria-label={isAI
             ? 'AI mode: AI can enumerate options and check coherence, but Where to Play and How to Win remain human choices; AI\'s inclusive default produces plausible non-strategies that refuse to exclude.'
             : 'Human mode: five linked choices flowing top to bottom, Where to Play and How to Win highlighted as the heart that must fit together.'}>

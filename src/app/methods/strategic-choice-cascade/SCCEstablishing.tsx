@@ -42,7 +42,7 @@ export default function SCCEstablishing() {
       viewBox={`0 0 ${SVG_W} ${SVG_H}`}
       width="100%"
       preserveAspectRatio="xMidYMid meet"
-      style={{ display: 'block' }}
+      style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
       aria-label="Strategic Choice Cascade: five choices flowing top to bottom: Winning Aspiration, Where to Play (the heart), How to Win (the heart), Capabilities, Management Systems, with reinforcing feedback links showing all choices must cohere as a mutually-reinforcing whole."
     >
       <defs>
