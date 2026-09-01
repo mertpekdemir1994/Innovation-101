@@ -11,7 +11,7 @@ const LSInteractiveSection = dynamic(() => import('./LSInteractiveSection'), {
   ssr: false,
   loading: () => (
     <div className="py-space-12 flex items-center justify-center" style={{ minHeight: 400, color: 'rgba(255,255,255,0.25)' }}>
-      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram…</span>
+      <span className="font-mono text-2xs uppercase tracking-widest">Loading interactive diagram...</span>
     </div>
   ),
 })
@@ -20,7 +20,7 @@ const LSCaseStudy = dynamic(() => import('./LSCaseStudy'), { ssr: false })
 
 export const metadata: Metadata = {
   title: 'Lean Startup — Innovation 101',
-  description: 'The Lean Startup replaces elaborate planning with validated learning — a continuous Build-Measure-Learn loop that treats every launch as a test of a hypothesis.',
+  description: 'The Lean Startup replaces elaborate planning with validated learning: a continuous Build-Measure-Learn loop that treats every launch as a test of a hypothesis.',
 }
 
 
@@ -53,7 +53,7 @@ export default function LeanStartupPage() {
     <>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          HERO — dark, full viewport
+          HERO: dark, full viewport
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
         {/* Radial purple glow */}
@@ -84,11 +84,11 @@ export default function LeanStartupPage() {
             style={{ color: 'rgba(255,255,255,0.52)', lineHeight: 1.6 }}
           >
             Build less, learn more, waste nothing. Replace elaborate planning
-            with validated learning — and treat every launch as a test of a hypothesis.
+            with validated learning, and treat every launch as a test of a hypothesis.
           </p>
         </Container>
 
-        {/* Loop SVG — full width, outside Container */}
+        {/* Loop SVG: full width, outside Container */}
         <div className="relative z-10 w-full px-space-6 md:px-space-10 pb-space-12 pt-space-6">
           <LSLoopHero />
         </div>
@@ -189,10 +189,10 @@ export default function LeanStartupPage() {
               </p>
               <ol className="space-y-space-3">
                 {[
-                  'Write a falsifiable hypothesis — the single assumption that, if wrong, would cause your concept to fail.',
-                  'Build the minimum artifact to test that assumption. Not a product — a test.',
+                  'Write a falsifiable hypothesis: the single assumption that, if wrong, would cause your concept to fail.',
+                  'Build the minimum artifact to test that assumption. Not a product, a test.',
                   'Measure what actually happened against the hypothesis. Use cohort analysis, not aggregate totals.',
-                  'Learn: was the hypothesis true or false? Pivot or persevere — then write the next hypothesis.',
+                  'Learn: was the hypothesis true or false? Pivot or persevere, then write the next hypothesis.',
                 ].map((step, i) => (
                   <li key={i} className="flex items-start gap-space-4">
                     <span
@@ -215,7 +215,7 @@ export default function LeanStartupPage() {
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   Dropbox did not build a product to validate their concept. Drew Houston made a
                   three-minute video explaining how Dropbox would work. Overnight, the waitlist grew
-                  from 5,000 to 75,000. That video was an MVP — the minimum artifact needed to test
+                  from 5,000 to 75,000. That video was an MVP: the minimum artifact needed to test
                   the assumption that people wanted this product. The experiment cost almost nothing.
                   The learning was worth millions.
                 </p>
@@ -286,7 +286,7 @@ export default function LeanStartupPage() {
       </WarmSection>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          EXPLORE — dark, interactive loop diagram
+          EXPLORE: dark, interactive loop diagram
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection>
         <Container className="pt-space-10 pb-space-4">
@@ -368,12 +368,12 @@ export default function LeanStartupPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-space-3">
             {[
-              { name: 'Double Diamond', rel: 'Build-Measure-Learn maps onto the Deliver phase — launch is the beginning of a learning cycle, not the end of the project', slug: '/framework/double-diamond' },
+              { name: 'Double Diamond', rel: 'Build-Measure-Learn maps onto the Deliver phase: launch is the beginning of a learning cycle, not the end of the project', slug: '/framework/double-diamond' },
               { name: 'Design Sprint', rel: 'A Design Sprint compresses a single turn of the Build-Measure-Learn loop into five days', slug: '/framework/design-sprint' },
               { name: 'Assumption Mapping', rel: 'The core method for identifying which leap-of-faith assumption to test first in the Build phase', slug: '/methods/assumption-mapping' },
               { name: 'Jobs To Be Done', rel: 'A lens for framing which hypotheses are worth testing: what job is the customer actually trying to get done?', slug: '/methods/jobs-to-be-done' },
               { name: 'Value Proposition Canvas', rel: 'Used to map and iterate the value-and-customer fit hypothesis across loops', slug: '/methods/value-proposition-canvas' },
-              { name: 'Rapid Prototyping', rel: 'The core building method of the Build phase — rapid, cheap artifacts that test specific assumptions', slug: '/methods/rapid-prototyping' },
+              { name: 'Rapid Prototyping', rel: 'The core building method of the Build phase: rapid, cheap artifacts that test specific assumptions', slug: '/methods/rapid-prototyping' },
             ].map(({ name, rel, slug }, i) => (
               <ScrollReveal key={name} delay={i * 0.06}>
                 <a

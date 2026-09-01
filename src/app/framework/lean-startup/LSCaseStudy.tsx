@@ -37,7 +37,7 @@ const LOOPS: Record<LoopKey, LoopData> = {
       'They compared activation (completed setup plus first report) between the concierge cohort and the prior self-serve cohort, and tracked thirty-day retention for both.',
     artifact: {
       type: 'cohort',
-      label: 'Cohort readout — Loop 1',
+      label: 'Cohort readout: Loop 1',
       lines: [
         'Activation (self-serve cohort): 12%',
         'Activation (concierge cohort): 71%',
@@ -48,34 +48,34 @@ const LOOPS: Record<LoopKey, LoopData> = {
     learnDesc:
       'The evidence was clear and uncomfortable. Activation was not the real problem. They could lift activation dramatically and it changed nothing about retention. Users who activated with hands-on help left at the same rate as everyone else. Something deeper than setup was wrong.',
     decision:
-      'Persevere on the product thesis but pivot the focus — from activation to retention. The next loop must test why activated users do not come back.',
+      'Persevere on the product thesis but pivot the focus: from activation to retention. The next loop must test why activated users do not come back.',
   },
   loop2: {
     hypothesis:
       'We believe activated users do not return because they do not know what to do after their first report. We will know we are right if a guided, personalized prompt to run a second analysis lifts thirty-day retention.',
     mvpType: 'Email Sequence',
     buildDesc:
-      'A lightweight email sequence — not a product change. After a user\'s first report, they received specific, personalized suggestions for a next analysis to run. Cheap to build, fast to test.',
+      'A lightweight email sequence: not a product change. After a user\'s first report, they received specific, personalized suggestions for a next analysis to run. Cheap to build, fast to test.',
     measureDesc:
       'Seven-day and thirty-day retention tracked across the nudge cohort versus the prior baseline.',
     artifact: {
       type: 'cohort',
-      label: 'Cohort readout — Loop 2',
+      label: 'Cohort readout: Loop 2',
       lines: [
         '7-day retention (baseline): 23%',
         '7-day retention (nudge cohort): 31%',
         '30-day retention (baseline): ~22%',
-        '30-day retention (nudge cohort): ~23% — no meaningful change',
+        '30-day retention (nudge cohort): ~23%, no meaningful change',
       ],
     },
     learnDesc:
-      'Another clear, uncomfortable answer. The problem was not a missing nudge. Follow-up interviews with churned users surfaced the real issue — the reports the product produced did not connect to the decisions users actually had to make. The data was interesting but not actionable. People looked once, found it neat, and had no reason to build it into their week.',
+      'Another clear, uncomfortable answer. The problem was not a missing nudge. Follow-up interviews with churned users surfaced the real issue: the reports the product produced did not connect to the decisions users had to make. The data was interesting but not actionable. People looked once, found it neat, and had no reason to build it into their week.',
     decision:
       'Customer-need pivot. The problem was never complexity or engagement mechanics. The product was answering questions users were not asking.',
   },
   loop3: {
     hypothesis:
-      'We believe users will retain at a much higher rate if the product is organized around the specific marketing decisions they make — budget allocation, channel performance, campaign optimization — rather than open-ended data exploration. We will know we are right if thirty- and ninety-day retention rise sharply and a meaningful share of users call the product essential to their weekly work.',
+      'We believe users will retain at a much higher rate if the product is organized around the specific marketing decisions they make (budget allocation, channel performance, campaign optimization) rather than open-ended data exploration. We will know we are right if thirty- and ninety-day retention rise sharply and a meaningful share of users call the product essential to their weekly work.',
     mvpType: 'Targeted Rebuild',
     buildDesc:
       'A genuine but minimal rebuild. The open-ended data-exploration interface was replaced with three decision-specific views, each organized around a recurring marketing decision. Roughly four weeks of work, scoped tightly to test the new thesis and nothing more.',
@@ -83,7 +83,7 @@ const LOOPS: Record<LoopKey, LoopData> = {
       'Thirty- and ninety-day retention, plus a single qualitative question: what share of users describe the product as "essential to their weekly workflow"?',
     artifact: {
       type: 'cohort',
-      label: 'Cohort readout — Loop 3',
+      label: 'Cohort readout: Loop 3',
       lines: [
         '30-day retention (pre-rebuild): 23%',
         '30-day retention (post-rebuild): 58%',
@@ -93,9 +93,9 @@ const LOOPS: Record<LoopKey, LoopData> = {
       ],
     },
     learnDesc:
-      'The hypothesis was validated, decisively. Organizing the product around decisions rather than data was the unlock. The original thesis — non-technical marketers are underserved — had been right all along, but the original product expressed it wrongly. The pivot was not away from the vision; it was the vision finally executed correctly.',
+      'The hypothesis was validated, decisively. Organizing the product around decisions rather than data was the breakthrough. The original thesis (non-technical marketers are underserved) had been right all along, but the original product expressed it wrongly. The pivot was not away from the vision; it was the vision finally executed correctly.',
     decision:
-      'Persevere, and scale. Tempo raised a Series A six months later on the strength of cohort data showing clear, durable retention — the signature of real product-market fit.',
+      'Persevere, and scale. Tempo raised a Series A six months later on the strength of cohort data showing clear, durable retention: the signature of real product-market fit.',
   },
 }
 
@@ -104,7 +104,7 @@ const LESSONS = [
     n: '01',
     title: 'The cheapest MVP often produces the most important learning.',
     detail:
-      'The concierge MVP in Loop 1 — founders manually onboarding users — cost nothing to build and definitively separated the activation question from the retention question. Engineering a better onboarding flow would have improved the wrong thing.',
+      'The concierge MVP in Loop 1 (founders manually onboarding users) cost nothing to build and definitively separated the activation question from the retention question. Engineering a better onboarding flow would have improved the wrong thing.',
   },
   {
     n: '02',
@@ -241,7 +241,7 @@ export default function LSCaseStudy() {
         </span>
         <p className="text-sm text-neutral-600 leading-relaxed">
           Tempo is an invented company and this engagement is illustrative. It is written to show,
-          concretely, what the work and outputs of each Build-Measure-Learn loop actually look like in
+          concretely, what the work and outputs of each Build-Measure-Learn loop look like in
           practice. The methods, artifacts, and decision logic are realistic; the company and its
           results are fictional.
         </p>

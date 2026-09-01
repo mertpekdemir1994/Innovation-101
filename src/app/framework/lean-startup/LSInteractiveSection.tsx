@@ -8,12 +8,12 @@ const PURPLE = 'rgba(124,58,237,'
 type NodeKey = 'build' | 'measure' | 'learn' | 'pivot'
 
 const MVP_TYPES = [
-  { label: 'Video MVP', example: 'Dropbox — a 3-min demo video grew the waitlist from 5,000 to 75,000 overnight.' },
-  { label: 'Landing Page', example: 'Buffer — a landing page with pricing described a product that did not exist. Sign-ups validated willingness to pay before a line of code was written.' },
-  { label: 'Concierge MVP', example: 'Food on the Table — a founder personally shopped for one family, then expanded only after validating the model manually.' },
-  { label: 'Wizard of Oz', example: 'Zappos — Nick Swinmurn photographed shoes in local stores and manually fulfilled orders to test whether people would buy shoes online.' },
-  { label: 'Piecemeal MVP', example: 'Groupon — used WordPress, Apple Mail, and a PDF coupon generator to deliver deals before building any custom software.' },
-  { label: 'Single-Feature MVP', example: 'Instagram — launched with photo sharing only, cutting the location check-ins and gaming elements of the original Burbn app.' },
+  { label: 'Video MVP', example: 'Dropbox: a 3-min demo video grew the waitlist from 5,000 to 75,000 overnight.' },
+  { label: 'Landing Page', example: 'Buffer: a landing page with pricing described a product that did not exist. Sign-ups validated willingness to pay before a line of code was written.' },
+  { label: 'Concierge MVP', example: 'Food on the Table: a founder personally shopped for one family, then expanded only after validating the model manually.' },
+  { label: 'Wizard of Oz', example: 'Zappos: Nick Swinmurn photographed shoes in local stores and manually fulfilled orders to test whether people would buy shoes online.' },
+  { label: 'Piecemeal MVP', example: 'Groupon: used WordPress, Apple Mail, and a PDF coupon generator to deliver deals before building any custom software.' },
+  { label: 'Single-Feature MVP', example: 'Instagram: launched with photo sharing only, cutting the location check-ins and gaming elements of the original Burbn app.' },
 ]
 
 const PIVOT_TYPES = [
@@ -34,33 +34,33 @@ const PHASE_DETAIL: Record<'build' | 'measure' | 'learn', {
   example: { co: string; text: string }
 }> = {
   build: {
-    headline: 'Build — Minimize the test, maximize the learning',
+    headline: 'Build: Minimize the test, maximize the learning',
     description:
-      'Before building anything, write a falsifiable hypothesis. The MVP is the minimum artifact that tests that hypothesis — not a smaller version of the product. The form follows from the question: what is the cheapest and fastest way to answer whether this specific assumption is true?',
-    prompt: 'What is the one assumption your first experiment must test? What is the cheapest, fastest way to test it — not by building the product, but by creating evidence about whether the assumption is true?',
+      'Before building anything, write a falsifiable hypothesis. The MVP is the minimum artifact that tests that hypothesis: not a smaller version of the product. The form follows from the question: what is the cheapest and fastest way to answer whether this specific assumption is true?',
+    prompt: 'What is the one assumption your first experiment must test? What is the cheapest, fastest way to test it: not by building the product, but by creating evidence about whether the assumption is true?',
     example: {
       co: 'Zappos',
-      text: 'Nick Swinmurn\'s first MVP tested one assumption: will people buy shoes online without trying them on? He photographed shoes in local stores, posted them on a simple site, and manually fulfilled orders. He lost money on every sale — but he validated the riskiest assumption in days, not months.',
+      text: 'Nick Swinmurn\'s first MVP tested one assumption: will people buy shoes online without trying them on? He photographed shoes in local stores, posted them on a simple site, and manually fulfilled orders. He lost money on every sale, but he validated the riskiest assumption in days, not months.',
     },
   },
   measure: {
-    headline: 'Measure — Actionable, not vanity',
+    headline: 'Measure: Actionable, not vanity',
     description:
-      'Define the success metric and the threshold before the experiment runs. Use cohort analysis — groups of users who experienced the product at the same time — rather than aggregate totals. Aggregates hide the signal. Cohort retention surfaces it.',
+      'Define the success metric and the threshold before the experiment runs. Use cohort analysis (groups of users who experienced the product at the same time) rather than aggregate totals. Aggregates hide the signal. Cohort retention surfaces it.',
     prompt: 'For your current experiment, what is the one number that will tell you definitively whether your hypothesis was true or false? Set it before running the experiment, not after.',
     example: {
       co: 'Groove',
-      text: 'Groove\'s dashboard showed healthy user numbers and feature engagement. But when they switched to cohort-based retention analysis, they found 95% of users churned within ninety days. Every metric they had been celebrating measured acquisition and early engagement — not the retention that actually determined viability.',
+      text: 'Groove\'s dashboard showed healthy user numbers and feature engagement. But when they switched to cohort-based retention analysis, they found 95% of users churned within ninety days. Every metric they had been celebrating measured acquisition and early engagement: not the retention that actually determined viability.',
     },
   },
   learn: {
-    headline: 'Learn — Genuine, not false',
+    headline: 'Learn: Genuine, not false',
     description:
-      'Learning is genuine only when it changes what the team does next. If the evidence is reviewed and the team proceeds exactly as planned, the learning was post-hoc rationalization. Pre-commit the pivot-or-persevere criteria before the experiment starts — this is what prevents rationalization from killing the loop.',
+      'Learning is genuine only when it changes what the team does next. If the evidence is reviewed and the team proceeds exactly as planned, the learning was post-hoc rationalization. Pre-commit the pivot-or-persevere criteria before the experiment starts: this is what prevents rationalization from killing the loop.',
     prompt: 'Look at your most recent experiment. What did the evidence actually show, separate from what you hoped it would show? What would you do differently if you fully trusted what the evidence told you?',
     example: {
       co: 'Instagram',
-      text: 'Instagram began as Burbn, a location-based check-in app. Founders Kevin Systrom and Mike Krieger measured carefully and learned that users were ignoring check-ins while using photo sharing obsessively. The data pointed to a zoom-in pivot — cut everything except photos. That honest analysis produced one of the most successful consumer products in history.',
+      text: 'Instagram began as Burbn, a location-based check-in app. Founders Kevin Systrom and Mike Krieger measured carefully and learned that users were ignoring check-ins while using photo sharing obsessively. The data pointed to a zoom-in pivot: cut everything except photos. That honest analysis produced one of the most successful consumer products in history.',
     },
   },
 }
@@ -202,7 +202,7 @@ export default function LSInteractiveSection() {
         {/* MVP Type Switcher (always visible below diagram) */}
         <div className="w-full mt-space-4">
           <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-3 text-center">
-            MVP types — click to explore
+            MVP types: click to explore
           </p>
           <div className="flex flex-wrap gap-space-2 justify-center">
             {MVP_TYPES.map((mvp, i) => (
@@ -303,7 +303,7 @@ export default function LSInteractiveSection() {
                 The eight types of pivot
               </h3>
               <p className="text-sm mb-space-5" style={{ color: 'rgba(255,255,255,0.50)' }}>
-                Naming the pivot type matters — it forces honesty about what exactly is changing and why. A vague &ldquo;let&rsquo;s try something different&rdquo; is not a pivot.
+                Naming the pivot type matters: it forces honesty about what exactly is changing and why. A vague &ldquo;let&rsquo;s try something different&rdquo; is not a pivot.
               </p>
               <div className="space-y-space-2">
                 {PIVOT_TYPES.map((pt, i) => (

@@ -29,19 +29,19 @@ const PHASES: Phase[] = [
     objective:
       'The Build phase begins not with engineering but with a question: what is the specific assumption we are testing, and what is the minimum artifact to test it? Only after answering that do you decide what to build.',
     description: [
-      'The temptation in every Build phase is to add scope — one more feature, one more element that would make the MVP "more complete." Resisting that temptation is the core discipline of this phase. The right MVP is the cheapest and fastest way to answer one specific question, not a smaller version of the finished product.',
+      'The temptation in every Build phase is to add scope: one more feature, one more element that would make the MVP "more complete." Resisting that temptation is the core discipline of this phase. The right MVP is the cheapest and fastest way to answer one specific question, not a smaller version of the finished product.',
       'Before building anything, write a falsifiable hypothesis: "We believe that [user type] will [behavior] because [reason]. We will know this is true when [measurement]." The hypothesis must be specific enough to be clearly confirmed or denied by the experiment.',
     ],
     activities: [
       {
         title: 'Define the leap-of-faith assumption',
         detail:
-          'Identify the single assumption the entire concept rests on. This is what the MVP must test — not the most technically interesting assumption, but the most business-critical one.',
+          'Identify the single assumption the entire concept rests on. This is what the MVP must test: not the most technically interesting assumption, but the most business-critical one.',
       },
       {
         title: 'Choose the right MVP type',
         detail:
-          'Video MVP, landing page, concierge, Wizard of Oz, piecemeal, or single-feature — the form follows from the question being tested, not from a smaller version of the final product.',
+          'Video MVP, landing page, concierge, Wizard of Oz, piecemeal, or single-feature: the form follows from the question being tested, not from a smaller version of the final product.',
       },
       {
         title: 'Resist scope',
@@ -61,8 +61,8 @@ const PHASES: Phase[] = [
     objective:
       'The Measure phase is where most Lean Startup efforts fail silently. Teams run experiments, collect data, and then measure the wrong things. The Measure phase demands ruthless specificity about what success looks like before the experiment runs.',
     description: [
-      'Ries distinguishes actionable metrics — measurements directly connected to the hypothesis that will change what the team does — from vanity metrics, numbers that feel good but do not guide decisions. Total users, total page views, and total downloads are almost always vanity metrics. Activation rate, thirty-day retention, and referral rate are actionable.',
-      'The most powerful measurement tool in the Lean Startup is cohort analysis: tracking the behavior of groups of users who experienced the product at the same time, rather than looking at aggregate numbers. Aggregate numbers hide the most important signals. Cohort analysis surfaces the signal the aggregate conceals.',
+      'Ries distinguishes actionable metrics (measurements directly connected to the hypothesis that will change what the team does) from vanity metrics, numbers that feel good but do not guide decisions. Total users, total page views, and total downloads are almost always vanity metrics. Activation rate, thirty-day retention, and referral rate are actionable.',
+      'The most important measurement tool in the Lean Startup is cohort analysis: tracking the behavior of groups of users who experienced the product at the same time, rather than looking at aggregate numbers. Aggregate numbers hide the most important signals. Cohort analysis surfaces the signal the aggregate conceals.',
     ],
     activities: [
       {
@@ -73,7 +73,7 @@ const PHASES: Phase[] = [
       {
         title: 'Use cohort analysis',
         detail:
-          'Track behavior by cohort — groups of users who joined at the same time — rather than aggregate totals. Aggregates rise and fall; cohort retention reveals whether the product actually works.',
+          'Track behavior by cohort (groups of users who joined at the same time) rather than aggregate totals. Aggregates rise and fall; cohort retention reveals whether the product actually works.',
       },
       {
         title: 'Innovation accounting',
@@ -93,14 +93,14 @@ const PHASES: Phase[] = [
     objective:
       'The Learn phase is where teams do the hardest work: confronting what the evidence actually shows rather than what they hoped it would show. The cognitive biases that affect everyone are at their most dangerous here.',
     description: [
-      'Learning is genuine only when it changes what the team does next. If the results are reviewed, discussed, and then the team proceeds exactly as planned, the learning was not genuine — it was post-hoc rationalization. Genuine learning produces a new hypothesis, a refinement to the MVP, or a pivot decision.',
+      'Learning is genuine only when it changes what the team does next. If the results are reviewed, discussed, and then the team proceeds exactly as planned, the learning was not genuine; it was post-hoc rationalization. Genuine learning produces a new hypothesis, a refinement to the MVP, or a pivot decision.',
       'The pivot decision is the most consequential moment in the process and the one most often made too late. Teams that persevere past the point the evidence supports waste resources and miss the window to make a structural change. The right time is at a predetermined review point, not when things happen to feel bad.',
     ],
     activities: [
       {
         title: 'Make the pivot-or-persevere decision',
         detail:
-          'Set the review point before the experiment runs. Define the criteria for pivot versus persevere in advance and hold to them — this is what prevents the rationalization that quietly kills learning cultures.',
+          'Set the review point before the experiment runs. Define the criteria for pivot versus persevere in advance and hold to them: this is what prevents the rationalization that quietly kills learning cultures.',
       },
       {
         title: 'Name the pivot type',
@@ -145,7 +145,7 @@ export default function LSPhasesSection() {
 
   return (
     <div className="grid md:grid-cols-[1fr_2fr] gap-space-10 relative">
-      {/* Left — sticky phase nav */}
+      {/* Left: sticky phase nav */}
       <div className="hidden md:block">
         <div className="sticky top-24 space-y-space-2">
           {PHASES.map((phase) => (
@@ -192,7 +192,7 @@ export default function LSPhasesSection() {
         </div>
       </div>
 
-      {/* Right — phase content */}
+      {/* Right: phase content */}
       <div className="space-y-space-12 md:space-y-space-13">
         {PHASES.map((phase, i) => (
           <div
