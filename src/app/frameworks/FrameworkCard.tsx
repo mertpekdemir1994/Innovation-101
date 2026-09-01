@@ -96,7 +96,7 @@ export default function FrameworkCard({
               <div>
                 <p
                   className="font-mono uppercase tracking-widest mb-1"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
                 >
                   Best for
                 </p>
@@ -114,7 +114,7 @@ export default function FrameworkCard({
               <div>
                 <p
                   className="font-mono uppercase tracking-widest mb-1"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
                 >
                   Time horizon
                 </p>
@@ -134,7 +134,7 @@ export default function FrameworkCard({
               <div>
                 <p
                   className="font-mono uppercase tracking-widest mb-1"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
                 >
                   Signature move
                 </p>
