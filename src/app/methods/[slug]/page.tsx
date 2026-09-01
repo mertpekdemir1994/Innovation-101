@@ -94,7 +94,7 @@ export default function MethodPage({ params }: { params: { slug: string } }) {
       {frontmatter.frameworks.length > 0 && (
         <div className="border-b border-neutral-100 py-8 px-6 md:px-8">
           <div className="max-w-content mx-auto">
-            <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-4">
+            <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-4">
               Used in
             </p>
             <div className="flex flex-wrap gap-3">
@@ -107,7 +107,7 @@ export default function MethodPage({ params }: { params: { slug: string } }) {
                   <span className="font-semibold text-neutral-900">
                     {slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}
                   </span>
-                  <span className="text-neutral-400">·</span>
+                  <span className="text-neutral-500">·</span>
                   <span className="text-neutral-600">{phase}</span>
                 </a>
               ))}
