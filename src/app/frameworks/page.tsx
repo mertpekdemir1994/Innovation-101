@@ -85,7 +85,7 @@ export default function FrameworksPage() {
   return (
     <>
       {/* ── Dark section: page header + framework cards ── */}
-      <section style={{ background: 'var(--color-dark)', position: 'relative' }}>
+      <section className="dark-section" style={{ background: 'var(--color-dark)', position: 'relative' }} aria-labelledby="frameworks-page-heading">
         {/* Subtle purple radial glow */}
         <div
           aria-hidden="true"
@@ -108,6 +108,7 @@ export default function FrameworksPage() {
               Innovation Frameworks
             </p>
             <h1
+              id="frameworks-page-heading"
               className="font-display font-bold text-balance mb-4"
               style={{
                 fontSize: 'clamp(2.5rem, 6vw, 4rem)',

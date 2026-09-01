@@ -69,12 +69,12 @@ export default function FrameworkCard({
             </div>
 
             {/* 2 ── Framework name */}
-            <h3
+            <h2
               className="font-semibold text-base leading-snug shrink-0 mb-2"
               style={{ color: `${color}0.90)` }}
             >
               {title}
-            </h3>
+            </h2>
 
             {/* 3 ── One-line description */}
             <p
