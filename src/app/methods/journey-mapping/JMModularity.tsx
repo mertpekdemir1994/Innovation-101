@@ -239,7 +239,7 @@ export default function JMModularity() {
           },
           {
             name:  'Experience map',
-            body:  'Broader and product-agnostic. Maps a person\'s whole experience around a goal or situation — useful before you have a product, to understand the human context you are designing into.',
+            body:  'Broader and product-agnostic. Maps a person\'s whole experience around a goal or situation, useful before you have a product, to understand the human context you are designing into.',
           },
           {
             name:  'Emotion map',

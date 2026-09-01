@@ -30,7 +30,7 @@ const EMOTION_PATH =
   `C 390,${EY.start - 12} 440,${EY.use + 3} 490,${EY.use} ` +
   `C 534,${EY.use + 2} 582,${EY.reflect - 4} 630,${EY.reflect}`
 
-// AI version: flattened emotion line (AI reads expressed text — doesn't catch the true gap dip)
+// AI version: flattened emotion line (AI reads expressed text, doesn't catch the true gap dip)
 // The gap dip barely registers; the line is smoother and misses the lowest point
 const AI_EMOTION_PATH =
   `M 70,${EY.discover} ` +
@@ -152,7 +152,7 @@ export default function JMAIReactivated() {
             transition={{ duration: 0.4 }}
           />
 
-          {/* Emotion line — morphs between human and AI versions */}
+          {/* Emotion line: morphs between human and AI versions */}
           <motion.path
             key={aiMode ? 'ai-line' : 'human-line'}
             d={aiMode ? AI_EMOTION_PATH : EMOTION_PATH}
@@ -241,7 +241,7 @@ export default function JMAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: `${AI_C}0.70)` }}
               >What AI does well</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI can synthesize a draft journey map from large volumes of existing data — support transcripts, reviews, survey responses, analytics — in minutes rather than days. It is also genuinely useful for keeping maps continuously current from live data, rather than letting them go stale after a single project.
+                AI can synthesize a draft journey map from large volumes of existing data (support transcripts, reviews, survey responses, analytics) in minutes rather than days. It is also genuinely useful for keeping maps continuously current from live data, rather than letting them go stale after a single project.
               </p>
             </div>
             <div className="rounded-xl p-5"
@@ -251,14 +251,14 @@ export default function JMAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(251,146,60,0.75)' }}
               >What it misses</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI sentiment analysis reads emotion that was expressed in text — not the emotion felt and never written. The gap between stages, where the deepest lows often live, leaves almost no data trail. The real low is found by following a human into the silence, not by reading what they typed.
+                AI sentiment analysis reads emotion that was expressed in text, not the emotion felt and never written. The gap between stages, where the deepest lows often live, leaves almost no data trail. The real low is found by following a human into the silence, not by reading what they typed.
               </p>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* ── Honest synthesis — always visible ── */}
+      {/* Honest synthesis: always visible */}
       <div className="rounded-xl p-6"
         style={{ background: `${TEAL}0.08)`, border: `1px solid ${TEAL}0.20)` }}
       >
@@ -266,7 +266,7 @@ export default function JMAIReactivated() {
           style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
-          AI makes journey mapping faster, broader, and continuously current — real gains. But the deepest insight a journey map produces, the surprising emotional low, usually in a gap, that reframes the whole problem, tends to come from a human following a real person through the experience and noticing what the data never recorded. AI assembles the map; human research finds the silence. The strongest practice uses AI for scale and currency, and human research to catch the un-expressed truth that does not appear in any dataset.
+          AI makes journey mapping faster, broader, and continuously current: real gains. But the deepest insight a journey map produces, the surprising emotional low, usually in a gap, that reframes the whole problem, tends to come from a human following a real person through the experience and noticing what the data never recorded. AI assembles the map; human research finds the silence. The strongest practice uses AI for scale and currency, and human research to catch the un-expressed truth that does not appear in any dataset.
         </p>
       </div>
     </div>

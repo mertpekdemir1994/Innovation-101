@@ -20,7 +20,7 @@ const TEAL = '#2A6F7A'
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const FRAMEWORK_LINKS = [
-  { slug: 'double-diamond',   name: 'Double Diamond',   phase: 'Define',           note: 'Journey Mapping synthesizes research into the experience to be improved — the primary Define artifact.' },
+  { slug: 'double-diamond',   name: 'Double Diamond',   phase: 'Define',           note: 'Journey Mapping synthesizes research into the experience to be improved: the primary Define artifact.' },
   { slug: 'lean-startup',     name: 'Lean Startup',     phase: 'Learn',            note: 'Journey maps surface the experience behind the metrics, giving texture to quantitative signals.' },
   { slug: 'agile-innovation', name: 'Agile Innovation', phase: 'Discovery Sprint', note: 'Grounds the backlog in the real experience arc, not just individual feature requests.' },
   { slug: 'fde',              name: 'FDE',               phase: 'Extract',          note: 'Maps the customer\'s end-to-end experience to identify which problems generalize to a product.' },
@@ -31,7 +31,7 @@ const RELATED_METHODS = [
   { slug: 'the-5es',              name: 'The 5Es Framework',     rel: 'The fixed-phase evaluation counterpart. Journey Mapping uses flexible stages; the 5Es applies a standard five-phase lens. See "Where it ends" above.' },
   { slug: 'service-blueprinting', name: 'Service Blueprinting',  rel: 'Extends the journey into backstage operations below the line of visibility. Start with the journey map; add a blueprint when you need to redesign the operations behind it.' },
   { slug: 'in-depth-interviews',  name: 'In-Depth Interviews',   rel: 'The primary research source a journey map is built from. The map is the synthesis; interviews are the evidence.' },
-  { slug: 'contextual-observation', name: 'Contextual Observation', rel: 'Following real people through the actual experience is how the truest journey maps — and their hidden gaps — are found.' },
+  { slug: 'contextual-observation', name: 'Contextual Observation', rel: 'Following real people through the actual experience is how the truest journey maps, and their hidden gaps, are found.' },
   { slug: 'empathy-mapping',      name: 'Empathy Mapping',        rel: 'A companion synthesis tool. Empathy maps deepen the understanding of the person at a single moment; journey maps show the arc over time.' },
 ]
 
@@ -41,7 +41,7 @@ export default function JourneyMappingPage() {
   return (
     <>
       {/* ────────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -83,7 +83,7 @@ export default function JourneyMappingPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK (emotion line draws itself in)
+          S2 - Establishing visual   DARK (emotion line draws itself in)
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -94,20 +94,20 @@ export default function JourneyMappingPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={TEAL}>What it is</SectionLabel>
-            <SectionHeadingLight>The whole experience on one picture — including the silent gaps.</SectionHeadingLight>
+            <SectionHeadingLight>The whole experience on one picture, including the silent gaps.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5">
               <Body>
                 A journey map visualizes the complete experience a person has with a product, service, or organization, laid out as a sequence of stages over time, with what they do, think, and feel at each stage. Its power is that it makes the whole experience visible at once. Individual teams each own their slice of an experience and each can make their slice look fine; the journey map is what reveals the friction, the emotional lows, and above all the gaps between touchpoints that no single-moment analysis would ever catch. It turns a fragmented set of interactions into a single, shared, navigable picture an entire organization can stand around and point at.
               </Body>
               <Body>
-                The signature of a journey map is the emotional line, the rising and falling curve of how the person feels as they move through the experience. More than any other element, that curve is where the insight lives, because the lowest point on it is almost never where a team expects, and it is usually somewhere the team does not own — in the gaps, the handoffs, the silence between one department&rsquo;s touchpoint and the next.
+                The signature of a journey map is the emotional line, the rising and falling curve of how the person feels as they move through the experience. More than any other element, that curve is where the insight lives, because the lowest point on it is almost never where a team expects, and it is usually somewhere the team does not own: in the gaps, the handoffs, the silence between one department&rsquo;s touchpoint and the next.
               </Body>
               <Body>
                 Crucially, Journey Mapping is not one rigid artifact. It is a modular, flexible method that flexes to the question you are asking. The next sections make that concrete.
@@ -118,7 +118,7 @@ export default function JourneyMappingPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -129,7 +129,7 @@ export default function JourneyMappingPage() {
               className="mb-12 max-w-[520px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              As you click across the stages, the emotion line tells its story. Pay attention to where it dips — and look for the orange gap marker, which sits between stages, not at one.
+              As you click across the stages, the emotion line tells its story. Pay attention to where it dips, and look for the orange gap marker, which sits between stages, not at one.
             </p>
             <JMInteractive />
           </div>
@@ -137,7 +137,7 @@ export default function JourneyMappingPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -154,7 +154,7 @@ export default function JourneyMappingPage() {
                   {[
                     'An experience spans multiple steps, channels, or touchpoints and you need to see the whole arc, not just a single interaction.',
                     'You suspect the problem lives in the handoffs and gaps between touchpoints rather than in any one of them.',
-                    'You need a shared picture an entire cross-functional team can align around — especially when each team currently only sees their own slice.',
+                    'You need a shared picture an entire cross-functional team can align around, especially when each team currently only sees their own slice.',
                     'You are designing a future-state experience and need to see the current-state lows you must fix before you can build the ideal.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
@@ -173,10 +173,10 @@ export default function JourneyMappingPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'The experience is a single screen or one-moment interaction — there is no journey to map.',
+                    'The experience is a single screen or one-moment interaction: there is no journey to map.',
                     'You need the operational, behind-the-scenes view of how a service is delivered. That is Service Blueprinting (see "Where it ends" below).',
                     'You need a fixed phase-by-phase evaluation lens applied consistently across experiences. That is the 5Es Framework (see "Where it ends" below).',
-                    'You have not done research. A journey map built from assumption is a confident diagram of the team\'s wishful thinking — worse than no map, because it looks authoritative.',
+                    'You have not done research. A journey map built from assumption is a confident diagram of the team\'s wishful thinking, worse than no map, because it looks authoritative.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
                       <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
@@ -202,7 +202,7 @@ export default function JourneyMappingPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -215,7 +215,7 @@ export default function JourneyMappingPage() {
                 {
                   n: '01',
                   title: 'Set the scope and the subject.',
-                  body: 'Decide whose journey, over what span, in what state. These choices are the method\'s modularity — covered in the next section. The decision matters before you draw a single lane: a customer journey map, an experience map, and an emotion map each answer a different question even though they look similar on the surface.',
+                  body: 'Decide whose journey, over what span, in what state. These choices are the method\'s modularity, covered in the next section. The decision matters before you draw a single lane: a customer journey map, an experience map, and an emotion map each answer a different question even though they look similar on the surface.',
                 },
                 {
                   n: '02',
@@ -225,7 +225,7 @@ export default function JourneyMappingPage() {
                 {
                   n: '03',
                   title: 'Populate the lanes.',
-                  body: 'For each stage, capture what the person does, thinks, and feels — grounded in real research. Add only the lanes the question needs. More lanes is not more insight; an overloaded map is unreadable and gets ignored.',
+                  body: 'For each stage, capture what the person does, thinks, and feels, grounded in real research. Add only the lanes the question needs. More lanes is not more insight; an overloaded map is unreadable and gets ignored.',
                 },
                 {
                   n: '04',
@@ -235,7 +235,7 @@ export default function JourneyMappingPage() {
                 {
                   n: '05',
                   title: 'Find the lows and the gaps.',
-                  body: 'Identify the deepest emotional dip and — critically — the gaps between stages. The lowest point is often not at a stage at all, but in the silence between departments, between touchpoints, between one team handing off and the next picking up. These gaps are where the highest-value design opportunities hide.',
+                  body: 'Identify the deepest emotional dip and, critically, the gaps between stages. The lowest point is often not at a stage at all, but in the silence between departments, between touchpoints, between one team handing off and the next picking up. These gaps are where the highest-value design opportunities hide.',
                 },
                 {
                   n: '06',
@@ -264,7 +264,7 @@ export default function JourneyMappingPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S7 — Versions & Modularity   DARK   [ADDED]
+          S7 - Versions & Modularity   DARK   [ADDED]
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -283,22 +283,22 @@ export default function JourneyMappingPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S8 — Best practices   LIGHT
+          S8 - Best practices   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={TEAL}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like — and what prevents it.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and what prevents it.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
               When it goes well
             </h3>
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                'The emotion line reveals a low the team had genuinely underestimated — often somewhere they were not looking, and usually in a gap rather than at a stage.',
+                'The emotion line reveals a low the team had genuinely underestimated, often somewhere they were not looking, and usually in a gap rather than at a stage.',
                 'The map exposes handoffs and silences that the individual teams owning each touchpoint could not see on their own.',
-                'It is built from real research: interviews, observation, and real users followed through the actual system — not from the team\'s assumptions about what happens.',
+                'It is built from real research: interviews, observation, and real users followed through the actual system, not from the team\'s assumptions about what happens.',
                 'The before and after stages are included, because the experience does not begin at first contact or end at the transaction.',
                 'The map becomes a shared reference the whole organization points at, not a document one team files away after the project ends.',
               ].map((item, i) => (
@@ -330,7 +330,7 @@ export default function JourneyMappingPage() {
                 },
                 {
                   mistake: 'Building from assumption.',
-                  fix: 'An unresearched map is a confident diagram of the team\'s wishful thinking. Ground every lane in evidence — interviews, observation, real users followed through the system.',
+                  fix: 'An unresearched map is a confident diagram of the team\'s wishful thinking. Ground every lane in evidence: interviews, observation, real users followed through the system.',
                 },
                 {
                   mistake: 'Adding every lane by default.',
@@ -356,7 +356,7 @@ export default function JourneyMappingPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S9 — Logistics   LIGHT
+          S9 - Logistics   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -371,11 +371,11 @@ export default function JourneyMappingPage() {
               {[
                 {
                   label: 'Getting the inputs',
-                  body: 'In-depth interviews and contextual observation are the usual primary sources. Aim to follow real people through the complete experience end to end, not just interview them about it afterward — memory flattens the gaps and the silences that matter most.',
+                  body: 'In-depth interviews and contextual observation are the usual primary sources. Aim to follow real people through the complete experience end to end, not just interview them about it afterward, memory flattens the gaps and the silences that matter most.',
                 },
                 {
                   label: 'Running the mapping session',
-                  body: 'Journey mapping is usually a collaborative workshop. Get the cross-functional team in one room — or one shared digital canvas — so the people who each own a slice of the experience see the whole thing together, often for the first time. The shared "oh, that is what happens after we hand them off" moment is half the value.',
+                  body: 'Journey mapping is usually a collaborative workshop. Get the cross-functional team in one room, or one shared digital canvas, so the people who each own a slice of the experience see the whole thing together, often for the first time. The shared "oh, that is what happens after we hand them off" moment is half the value.',
                 },
                 {
                   label: 'Current then future',
@@ -408,7 +408,7 @@ export default function JourneyMappingPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S10 — How AI is evolving this method   DARK
+          S10 - How AI is evolving this method   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -419,7 +419,7 @@ export default function JourneyMappingPage() {
               className="mb-12 max-w-[580px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Toggle between modes to see where AI contributes across the journey map — what it accelerates, and what it flattens. Notice what happens to the emotion line.
+              Toggle between modes to see where AI contributes across the journey map: what it accelerates, and what it flattens. Notice what happens to the emotion line.
             </p>
             <JMAIReactivated />
           </div>
@@ -427,7 +427,7 @@ export default function JourneyMappingPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S11 — In-depth example   LIGHT
+          S11 - In-depth example   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -435,7 +435,7 @@ export default function JourneyMappingPage() {
             <SectionLabel accent={TEAL}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same scenario, mapped two ways.</SectionHeadingLight>
             <p className="mb-10" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}>
-              A hospital redesigns its cancer care pathway. The same team, the same experience — once with traditional journey mapping grounded in human research, once using AI to synthesize the map from existing data. The contrast reveals what the two approaches catch and what they miss.
+              A hospital redesigns its cancer care pathway. The same team, the same experience: once with traditional journey mapping grounded in human research, once using AI to synthesize the map from existing data. The contrast reveals what the two approaches catch and what they miss.
             </p>
             <JMExampleToggle />
           </div>
@@ -443,13 +443,13 @@ export default function JourneyMappingPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S12 — Where it ends: neighboring methods   DARK   [ADDED]
+          S12 - Where it ends: neighboring methods   DARK   [ADDED]
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={TEAL}>Where it ends</SectionLabel>
-            <SectionHeadingDark>Journey Mapping stops here — and what to use instead.</SectionHeadingDark>
+            <SectionHeadingDark>Journey Mapping stops here, and what to use instead.</SectionHeadingDark>
             <p
               className="mb-12 max-w-[560px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
@@ -462,7 +462,7 @@ export default function JourneyMappingPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S13 — Used in these frameworks   LIGHT
+          S13 - Used in these frameworks   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -470,7 +470,7 @@ export default function JourneyMappingPage() {
             <SectionLabel accent={TEAL}>Frameworks</SectionLabel>
             <SectionHeadingLight>Where Journey Mapping shows up.</SectionHeadingLight>
             <p className="mb-8" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}>
-              Journey Mapping is one of the most widely used synthesis methods — it appears wherever a framework turns raw research into a picture of the full experience arc.
+              Journey Mapping is one of the most widely used synthesis methods; it appears wherever a framework turns raw research into a picture of the full experience arc.
             </p>
 
             <div className="flex flex-col gap-3">
@@ -502,7 +502,7 @@ export default function JourneyMappingPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S14 — Related methods   LIGHT
+          S14 - Related methods   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -532,7 +532,7 @@ export default function JourneyMappingPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S15 — Sources & further reading   LIGHT
+          S15 - Sources & further reading   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -552,7 +552,7 @@ export default function JourneyMappingPage() {
                   title:  'This Is Service Design Doing',
                   author: 'Marc Stickdorn, Markus Hormess, Adam Lawrence, and Jakob Schneider',
                   year:   '2018',
-                  note:   'Journey mapping within service design practice — including the relationship between journey maps and service blueprints, and the role of both in designing service experiences.',
+                  note:   'Journey mapping within service design practice, including the relationship between journey maps and service blueprints, and the role of both in designing service experiences.',
                 },
                 {
                   title:  'This Is Service Design Thinking',

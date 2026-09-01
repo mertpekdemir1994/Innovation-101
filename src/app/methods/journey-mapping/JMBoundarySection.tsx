@@ -35,18 +35,18 @@ const DETAIL: Record<Reveal, {
   link?: string
 }> = {
   journey: {
-    heading:     'Journey Mapping — the experiencer\'s side',
-    description: 'Journey mapping uses whatever stages fit the real experience: however many, named however the person actually experiences them. It stays strictly on the experiencer\'s side — their actions, thoughts, and emotions — which keeps it legible, empathetic, and focused on the felt experience rather than the operational machinery behind it.',
+    heading:     'Journey Mapping: the experiencer\'s side',
+    description: 'Journey mapping uses whatever stages fit the real experience: however many, named however the person actually experiences them. It stays strictly on the experiencer\'s side (their actions, thoughts, and emotions) which keeps it legible, empathetic, and focused on the felt experience rather than the operational machinery behind it.',
     distinction: 'Use Journey Mapping to see and understand the whole felt experience. Reach for 5Es when you want a standard evaluation lens; reach for Service Blueprinting when you need to understand or redesign the backstage operations that produce the experience.',
   },
   '5es': {
-    heading:     'The 5Es — five fixed phases',
-    description: 'The 5Es Framework (Entice, Enter, Engage, Exit, Extend) applies a fixed, standard five-phase lens to any experience, regardless of how the specific experience actually unfolds. Its power is the evaluation it enables: once you commit to the five phases as a universal structure, you can systematically ask whether each is doing its job — especially the often-neglected bookends, Entice (before first contact) and Extend (long after the core experience).',
-    distinction: 'Journey Mapping uses flexible stages fitted to the real experience. The 5Es uses fixed phases to evaluate any experience against a standard. The 5Es is not more or less advanced — it answers a different question.',
+    heading:     'The 5Es: five fixed phases',
+    description: 'The 5Es Framework (Entice, Enter, Engage, Exit, Extend) applies a fixed, standard five-phase lens to any experience, regardless of how the specific experience actually unfolds. Its power is the evaluation it enables: once you commit to the five phases as a universal structure, you can systematically ask whether each is doing its job, especially the often-neglected bookends, Entice (before first contact) and Extend (long after the core experience).',
+    distinction: 'Journey Mapping uses flexible stages fitted to the real experience. The 5Es uses fixed phases to evaluate any experience against a standard. The 5Es is not more or less advanced; it answers a different question.',
     link: '/methods/5es',
   },
   blueprint: {
-    heading:     'Service Blueprinting — adding backstage',
+    heading:     'Service Blueprinting: adding backstage',
     description: 'A service blueprint takes a journey map and adds everything below the line of visibility: the frontstage staff actions, the backstage staff actions, and the support processes (systems, tools, databases) that produce the experience. The line of visibility separates what the person can see from what happens behind the scenes. Journey Mapping stays above it, deliberately. A service blueprint crosses it.',
     distinction: 'Use Journey Mapping to understand the felt experience. Use Service Blueprinting when you need to understand, coordinate, or redesign the operational machinery that delivers it. Both are needed; they answer different questions.',
     link: '/methods/service-blueprinting',
@@ -102,7 +102,7 @@ function JourneyMiniSVG() {
       ))}
       <text x={MINI_W / 2} y={126} textAnchor="middle" fontSize="4" fontFamily="var(--font-mono)"
         fill="rgba(255,255,255,0.25)" style={{ userSelect: 'none' }}
-      >FLEXIBLE STAGES &mdash; EXPERIENCER&apos;S SIDE ONLY</text>
+      >FLEXIBLE STAGES, EXPERIENCER&apos;S SIDE ONLY</text>
     </svg>
   )
 }
@@ -134,7 +134,7 @@ function FiveEsSVG() {
       ))}
       <text x={MINI_W / 2} y={126} textAnchor="middle" fontSize="4" fontFamily="var(--font-mono)"
         fill={`${INDIGO}0.40)`} style={{ userSelect: 'none' }}
-      >FIXED PHASES — CONSISTENT EVALUATION LENS</text>
+      >FIXED PHASES, CONSISTENT EVALUATION LENS</text>
     </svg>
   )
 }
@@ -178,7 +178,7 @@ function BlueprintSVG() {
       ))}
       <text x={MINI_W / 2} y={196} textAnchor="middle" fontSize="4" fontFamily="var(--font-mono)"
         fill={`${SLATE}0.45)`} style={{ userSelect: 'none' }}
-      >BACKSTAGE ADDED — OPERATIONAL MACHINERY</text>
+      >BACKSTAGE ADDED, OPERATIONAL MACHINERY</text>
     </svg>
   )
 }

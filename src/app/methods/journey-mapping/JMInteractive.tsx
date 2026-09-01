@@ -47,7 +47,7 @@ const STAGES: {
     label: 'DISCOVER',
     emotionY: EY.discover,
     emotionLabel: 'Curious',
-    actions: 'Becomes aware of a need or problem. Searches broadly — reviews, word of mouth, search results.',
+    actions: 'Becomes aware of a need or problem. Searches broadly: reviews, word of mouth, search results.',
     thoughts: '"There must be something better than what I\'m doing now."',
     emotion: 'Cautious optimism. Open to possibilities, but not yet hopeful. The cost of searching feels low.',
     painPoints: 'Too many options with no clear signal of quality. Unclear how to compare meaningfully across sources.',
@@ -61,7 +61,7 @@ const STAGES: {
     thoughts: '"This one seems like it could actually work."',
     emotion: 'Optimism rising. A genuine sense that a solution exists. Energy is highest here.',
     painPoints: 'Information is scattered and inconsistent across sources. Hard to find honest comparisons.',
-    gapNote: 'The emotion line\'s true low happens AFTER this stage — in the silent gap before contact begins. Not at START itself, but in the wait between.',
+    gapNote: 'The emotion line\'s true low happens AFTER this stage, in the silent gap before contact begins. Not at START itself, but in the wait between.',
   },
   {
     id: 'start',
@@ -89,7 +89,7 @@ const STAGES: {
     emotionY: EY.reflect,
     emotionLabel: 'Content',
     actions: 'Reviews overall experience. Considers renewal, upgrade, or recommendation to others.',
-    thoughts: '"Worth it overall — though that start was genuinely rough."',
+    thoughts: '"Worth it overall, though that start was genuinely rough."',
     emotion: 'Overall positive. Would recommend, with caveats about the early friction.',
     painPoints: 'No proactive check-in from the service. Renewal process adds friction. Hard to get help for edge cases.',
   },
@@ -145,7 +145,7 @@ export default function JMInteractive() {
           width="100%"
           style={{ display: 'block', overflow: 'visible' }}
           role="group"
-          aria-label="Journey map — click a stage to explore it"
+          aria-label="Journey map, click a stage to explore it"
         >
           <defs>
             <filter id="jm-int-glow" x="-30%" y="-60%" width="160%" height="220%">
@@ -200,7 +200,7 @@ export default function JMInteractive() {
             style={{ transition: 'stroke 0.22s' }}
           />
 
-          {/* Gap annotation — most visible when nothing selected */}
+          {/* Gap annotation: most visible when nothing selected */}
           <g style={{ opacity: activeStage ? 0.25 : 0.80, transition: 'opacity 0.22s' }}>
             <circle cx={280} cy={EY.gap} r={3} fill="rgba(251,146,60,0.80)" />
             <text x={285} y={EY.gap - 7} textAnchor="start" dominantBaseline="middle"

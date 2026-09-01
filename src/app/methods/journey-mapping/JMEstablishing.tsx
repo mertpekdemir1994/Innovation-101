@@ -165,7 +165,7 @@ export default function JMEstablishing() {
           >THE GAP</text>
         </motion.g>
 
-        {/* ── Emotion line — draws itself in on scroll ── */}
+        {/* Emotion line: draws itself in on scroll */}
         <motion.path
           d={EMOTION_PATH}
           stroke={`${TEAL}0.88)`}
