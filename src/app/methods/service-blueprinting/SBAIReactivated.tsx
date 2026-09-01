@@ -181,7 +181,7 @@ export default function SBAIReactivated() {
                   x={350} y={CA_Y + CA_H / 2 + 5}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                  fill={`${INDIGO}0.62)`} style={{ userSelect: 'none' }}
+                  fill={`${INDIGO_TEXT}0.92)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30 }}
                 >AI ASSEMBLES FROM DATA</motion.text>
@@ -190,7 +190,7 @@ export default function SBAIReactivated() {
                   x={350} y={FS_Y + FS_H / 2 + 5}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                  fill={`${INDIGO}0.55)`} style={{ userSelect: 'none' }}
+                  fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30 }}
                 >AI MAPS DOCUMENTED PROCESS</motion.text>
@@ -199,7 +199,7 @@ export default function SBAIReactivated() {
                   x={WORKAROUND_X + 7} y={WORKAROUND_Y - 14}
                   textAnchor="start" dominantBaseline="middle"
                   fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                  fill="rgba(251,146,60,0.55)" style={{ userSelect: 'none' }}
+                  fill="rgba(251,146,60,0.874)" style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30 }}
                 >AI MISSES THIS</motion.text>
