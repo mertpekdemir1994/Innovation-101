@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 const BRICK  = 'rgba(138,75,60,'
 const AMBER  = 'rgba(245,158,11,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700, SVG_H = 268
 const S_W = 88, S_H = 28, CY = 113
@@ -172,7 +173,7 @@ export default function PFLAIReactivated() {
               <text x={136} y={96}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
-                fill={`${INDIGO}0.80)`} style={{ userSelect: 'none' }}>
+                fill={`${INDIGO_TEXT}0.958)`} style={{ userSelect: 'none' }}>
                 AI SYNTHESIZES AT SCALE
               </text>
             </motion.g>

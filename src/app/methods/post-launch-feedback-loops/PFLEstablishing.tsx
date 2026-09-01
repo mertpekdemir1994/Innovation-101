@@ -4,6 +4,7 @@ import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700, SVG_H = 268
 
@@ -115,7 +116,7 @@ export default function PFLEstablishing() {
             <text x={s.x + S_W / 2} y={CY}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.11em" fontWeight="600"
-              fill={`${BRICK}0.92)`} style={{ userSelect: 'none' }}>
+              fill={`rgba(183,145,135,0.983)`} style={{ userSelect: 'none' }}>
               {s.label}
             </text>
           </motion.g>
@@ -172,7 +173,7 @@ export default function PFLEstablishing() {
             <text x={b.cx} y={b.tagY}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-              fill={`${AMBER}0.48)`} style={{ userSelect: 'none' }}>
+              fill={`${AMBER_TEXT}0.839)`} style={{ userSelect: 'none' }}>
               {b.tag}
             </text>
           </motion.g>
