@@ -83,7 +83,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <section className="border-b border-neutral-200 py-16">
       <div className="max-w-content mx-auto px-6 md:px-8">
-        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-2">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2">
           Design Token
         </p>
         <h2 className="text-2xl font-semibold text-neutral-900 mb-10">{title}</h2>
@@ -102,7 +102,7 @@ export default function StyleguidePage() {
       {/* Header */}
       <div className="border-b border-neutral-200 py-16" style={{ background: 'var(--color-warm-50)' }}>
         <div className="max-w-content mx-auto px-6 md:px-8">
-          <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-3">
+          <p className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-3">
             Innovation 101
           </p>
           <h1 className="font-display text-5xl font-bold text-neutral-900 mb-4">
@@ -131,7 +131,7 @@ export default function StyleguidePage() {
                     style={{ background: c.value }}
                   />
                   <p className="text-sm font-semibold text-neutral-900">{c.name}</p>
-                  <p className="font-mono text-2xs text-neutral-400">{c.value}</p>
+                  <p className="font-mono text-2xs text-neutral-500">{c.value}</p>
                 </div>
               ))}
             </div>
@@ -146,7 +146,7 @@ export default function StyleguidePage() {
                     style={{ background: c.value }}
                   />
                   <p className="text-xs font-semibold text-neutral-900">{c.name}</p>
-                  <p className="font-mono text-2xs text-neutral-400">{c.value}</p>
+                  <p className="font-mono text-2xs text-neutral-500">{c.value}</p>
                 </div>
               ))}
             </div>
@@ -161,7 +161,7 @@ export default function StyleguidePage() {
                     style={{ background: c.value }}
                   />
                   <p className="text-sm font-semibold text-neutral-900">{c.name}</p>
-                  <p className="font-mono text-2xs text-neutral-400">{c.value}</p>
+                  <p className="font-mono text-2xs text-neutral-500">{c.value}</p>
                 </div>
               ))}
             </div>
@@ -173,7 +173,7 @@ export default function StyleguidePage() {
       <Section title="Font Roles">
         <div className="space-y-10">
           <div className="border border-neutral-200 rounded-md p-8">
-            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-3">
+            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-3">
               Fraunces (display) — hero headings, text-5xl and above only
             </p>
             <p className="font-display text-6xl font-bold text-neutral-900 leading-tight">
@@ -181,7 +181,7 @@ export default function StyleguidePage() {
             </p>
           </div>
           <div className="border border-neutral-200 rounded-md p-8">
-            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-3">
+            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-3">
               Inter (sans) — all body, UI, h2-h6
             </p>
             <p className="text-4xl font-semibold text-neutral-900 mb-3">
@@ -194,7 +194,7 @@ export default function StyleguidePage() {
             </p>
           </div>
           <div className="border border-neutral-200 rounded-md p-8">
-            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-3">
+            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-3">
               JetBrains Mono — badges, overlines, labels, code
             </p>
             <div className="flex flex-wrap gap-3 mb-4">
@@ -221,10 +221,10 @@ export default function StyleguidePage() {
           {typeScale.map((t) => (
             <div key={t.step} className="flex items-baseline gap-6 border-b border-neutral-100 pb-4">
               <div className="w-24 shrink-0">
-                <p className="font-mono text-2xs text-neutral-400 uppercase tracking-widest">
+                <p className="font-mono text-2xs text-neutral-500 uppercase tracking-widest">
                   text-{t.step}
                 </p>
-                <p className="text-xs text-neutral-400">{t.size}</p>
+                <p className="text-xs text-neutral-500">{t.size}</p>
               </div>
               <div className="min-w-0">
                 <p
@@ -237,7 +237,7 @@ export default function StyleguidePage() {
                     ? 'Discovery · Method · Framework'
                     : 'The quick fox jumps over the lazy dog.'}
                 </p>
-                <p className="text-xs text-neutral-400 mt-1">{t.role}</p>
+                <p className="text-xs text-neutral-500 mt-1">{t.role}</p>
               </div>
             </div>
           ))}
@@ -250,10 +250,10 @@ export default function StyleguidePage() {
           {spacingScale.map((s) => (
             <div key={s.token} className="flex items-center gap-4">
               <div className="w-28 shrink-0">
-                <p className="font-mono text-2xs text-neutral-400 uppercase tracking-widest">
+                <p className="font-mono text-2xs text-neutral-500 uppercase tracking-widest">
                   {s.token}
                 </p>
-                <p className="text-xs text-neutral-400">{s.value}</p>
+                <p className="text-xs text-neutral-500">{s.value}</p>
               </div>
               <div
                 className="h-5 rounded-sm bg-neutral-900"
@@ -273,7 +273,7 @@ export default function StyleguidePage() {
                 className={`w-16 h-16 bg-neutral-900 ${r.className} mb-2`}
               />
               <p className="text-xs font-semibold text-neutral-900">radius-{r.name}</p>
-              <p className="font-mono text-2xs text-neutral-400">{r.value}</p>
+              <p className="font-mono text-2xs text-neutral-500">{r.value}</p>
             </div>
           ))}
         </div>
@@ -394,7 +394,7 @@ export default function StyleguidePage() {
           ].map((w) => (
             <div key={w.name}>
               <div className="flex items-center gap-4 mb-1">
-                <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 w-24 shrink-0">
+                <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 w-24 shrink-0">
                   {w.name}
                 </p>
                 <p className="text-xs text-neutral-600">{w.value} · {w.tw}</p>
@@ -410,7 +410,7 @@ export default function StyleguidePage() {
 
       {/* Footer note */}
       <div className="py-12 text-center">
-        <p className="text-sm text-neutral-400">
+        <p className="text-sm text-neutral-500">
           This page is a development tool only — not part of the public site.
         </p>
       </div>

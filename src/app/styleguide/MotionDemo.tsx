@@ -20,7 +20,7 @@ function SpringCard({ name, label, desc }: { name: SpringName; label: string; de
   return (
     <div className="border border-neutral-200 rounded-md p-6 space-y-4">
       <div>
-        <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-1">
+        <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-1">
           spring.{name}
         </p>
         <p className="text-base font-semibold text-neutral-900">{label}</p>

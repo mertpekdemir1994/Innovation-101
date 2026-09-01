@@ -36,7 +36,7 @@ export default function ComponentDemo() {
       {/* Eyebrow */}
       <div>
         <p className="text-sm font-semibold text-neutral-600 mb-space-4">Eyebrow</p>
-        <p className="text-xs text-neutral-400 mb-space-4">
+        <p className="text-xs text-neutral-500 mb-space-4">
           JetBrains Mono · text-xs · uppercase · tracking-widest · text-section
         </p>
         <div className="flex flex-col gap-space-3">
@@ -55,7 +55,7 @@ export default function ComponentDemo() {
       {/* Card */}
       <div>
         <p className="text-sm font-semibold text-neutral-600 mb-space-4">Card</p>
-        <p className="text-xs text-neutral-400 mb-space-4">
+        <p className="text-xs text-neutral-500 mb-space-4">
           shadow-card at rest · shadow-float + y:-2 on hover (spring.gentle)
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-space-4">
@@ -65,11 +65,11 @@ export default function ComponentDemo() {
             <p className="text-sm text-neutral-600">Separate the problem from the solution.</p>
           </Card>
           <Card padding="sm">
-            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-1">Small padding</p>
+            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-1">Small padding</p>
             <p className="text-sm font-semibold text-neutral-900">Compact card</p>
           </Card>
           <Card href="#" padding="lg">
-            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-2">Link card</p>
+            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-2">Link card</p>
             <p className="text-base font-semibold text-neutral-900">Hover me →</p>
           </Card>
         </div>
@@ -78,7 +78,7 @@ export default function ComponentDemo() {
       {/* CTA */}
       <div>
         <p className="text-sm font-semibold text-neutral-600 mb-space-4">CTA — live components</p>
-        <p className="text-xs text-neutral-400 mb-space-4">
+        <p className="text-xs text-neutral-500 mb-space-4">
           Framer Motion whileHover (scale 1.02) + whileTap (scale 0.97) via spring.snappy
         </p>
         <div
@@ -95,7 +95,7 @@ export default function ComponentDemo() {
       {/* Accordion */}
       <div>
         <p className="text-sm font-semibold text-neutral-600 mb-space-4">Accordion</p>
-        <p className="text-xs text-neutral-400 mb-space-4">
+        <p className="text-xs text-neutral-500 mb-space-4">
           AnimatePresence · height: 0 → auto · spring.snappy · chevron rotate
         </p>
         <div className="max-w-prose">
@@ -110,7 +110,7 @@ export default function ComponentDemo() {
       {/* Expandable */}
       <div>
         <p className="text-sm font-semibold text-neutral-600 mb-space-4">Expandable (accordion group)</p>
-        <p className="text-xs text-neutral-400 mb-space-4">
+        <p className="text-xs text-neutral-500 mb-space-4">
           Controlled multi-item group. Default: single open at a time.
         </p>
         <div className="max-w-prose">
