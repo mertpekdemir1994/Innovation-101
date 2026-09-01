@@ -22,6 +22,11 @@
     color: var(--color-neutral-900);
   }
 
+  :focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -70,6 +75,9 @@
   }
   .dark-section .border-subtle {
     border-color: var(--color-dark-border);
+  }
+  .dark-section {
+    --color-focus-ring: var(--color-dark-text);
   }
 
   /* Section accent on dark: keep the raw section color, not neutral fallback */

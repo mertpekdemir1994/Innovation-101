@@ -48,6 +48,12 @@ export default function RootLayout({
       className={[inter.variable, fraunces.variable, jetbrainsMono.variable].join(' ')}
     >
       <body className="antialiased bg-background text-foreground">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only fixed top-2 left-2 z-[100] rounded bg-neutral-900 px-4 py-2 text-sm font-semibold text-white"
+        >
+          Skip to content
+        </a>
         {/* Replace YOUR_DOMAIN with your actual domain, e.g. innovation101.com */}
         <Script
           defer
@@ -57,7 +63,7 @@ export default function RootLayout({
         />
         <SectionProvider>
           <Nav />
-          <main className="pt-16 min-h-screen">{children}</main>
+          <main id="main-content" className="pt-16 min-h-screen">{children}</main>
           <Footer />
         </SectionProvider>
         {process.env.NEXT_PUBLIC_GA_ID && (
