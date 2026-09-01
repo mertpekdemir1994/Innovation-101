@@ -23,7 +23,7 @@ const LABEL_Y = FY + FH + 11
 
 type Mode = 'author' | 'adversary'
 
-// In AUTHOR mode, AI draws a beautiful complete 5-frame storyboard — including frame 3
+// In AUTHOR mode, AI draws a complete 5-frame storyboard, including frame 3
 // In ADVERSARY mode, frames 0-2 and 4 normal; frame 3 amber (gap still there)
 
 const AUTHOR_CARDS = [
@@ -102,8 +102,8 @@ export default function SBAIReactivated() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label={isAuthor
-          ? 'Five storyboard frames, all rendered by AI with clean indigo borders. Frame four contains the words "intelligently surfaces the right answer" — a label, not a drawing. The gap is invisible but present.'
-          : 'Five storyboard frames. Frames one through three and frame five have clay borders. Frame four — THE GAP — has an amber border and is still empty. The gap cannot be closed by AI any more than it can be closed by hand.'
+          ? 'Five storyboard frames, all rendered by AI with clean indigo borders. Frame four contains the words "intelligently surfaces the right answer": a label, not a drawing. The gap is invisible but present.'
+          : 'Five storyboard frames. Frames one through three and frame five have clay borders. Frame four, THE GAP, has an amber border and is still empty. The gap cannot be closed by AI any more than it can be closed by hand.'
         }
         style={{ width: '100%', maxWidth: SVG_W, display: 'block', marginBottom: '24px' }}
       >
@@ -157,7 +157,7 @@ export default function SBAIReactivated() {
               {/* Author mode: frame 3 shows a label instead of mechanism */}
               {isAuthor && isGap && (
                 <>
-                  {/* "Intelligently surfaces" text — the label masquerading as a frame */}
+                  {/* "Intelligently surfaces" text: the label masquerading as a frame */}
                   <text x={fx + FW / 2} y={FY + 30}
                     textAnchor="middle" fontSize="5.5"
                     fontFamily="var(--font-mono)"
@@ -232,7 +232,7 @@ export default function SBAIReactivated() {
             textAnchor="middle" fontSize="3.6"
             fontFamily="var(--font-mono)" letterSpacing="0.07em"
             fill={`${AMBER}0.40)`} style={{ userSelect: 'none' }}>
-            AI CANNOT CROSS THE GAP EITHER — IT CAN ONLY FIND IT FASTER
+            AI CANNOT CROSS THE GAP EITHER, IT CAN ONLY FIND IT FASTER
           </text>
         )}
       </svg>
@@ -284,7 +284,7 @@ export default function SBAIReactivated() {
           HOW TO USE AI WITH A STORYBOARD
         </p>
         <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
-          Use AI to find the gap, not fill it. A storyboard where AI has filled the gap with a beautifully rendered arrow is not a validated concept — it is a confident hypothesis with the most important question hidden inside a label. The gap closes when the team can describe the mechanism in a frame that shows a real behaviour. Not before.
+          Use AI to find the gap, not fill it. A storyboard where AI has filled the gap with a beautifully rendered arrow is not a validated concept; it is a confident hypothesis with the most important question hidden inside a label. The gap closes when the team can describe the mechanism in a frame that shows a real behaviour. Not before.
         </p>
       </div>
     </div>

@@ -23,11 +23,11 @@ const FRAME_X: number[] = (() => {
 const LABEL_Y = FY + FH + 11
 
 const FRAME_TITLES = [
-  '1 — BEFORE',
-  '2 — OPENS APP',
-  '3 — SEES SUGGESTION',
-  '? — THE GAP',
-  '5 — OUTCOME',
+  '1: BEFORE',
+  '2: OPENS APP',
+  '3: SEES SUGGESTION',
+  '?: THE GAP',
+  '5: OUTCOME',
 ]
 
 type FrameDetail = {
@@ -39,16 +39,16 @@ type FrameDetail = {
 const FRAME_DETAILS: Record<FrameId, FrameDetail> = {
   0: {
     shows: 'A parent opens the fridge. There is food but no obvious meal.',
-    assumes: 'The user has a problem worth solving — decision fatigue or wasted food. This is a safe assumption. Everyone has opened a fridge and not known what to make.',
+    assumes: 'The user has a problem worth solving: decision fatigue or wasted food. This is a safe assumption. Everyone has opened a fridge and not known what to make.',
     assumptionRisk: 'safe',
   },
   1: {
     shows: 'Parent unlocks their phone and opens the meal-planning app.',
-    assumes: 'They think of this specific app when they open the fridge — not Google, not a recipe site, not texting a partner. That habit is the product. It does not exist yet.',
+    assumes: 'They think of this specific app when they open the fridge, not Google, not a recipe site, not texting a partner. That habit is the product. It does not exist yet.',
     assumptionRisk: 'warn',
   },
   2: {
-    shows: 'The app displays "Tacos — 4 ingredients, 20 min." The parent reads it.',
+    shows: 'The app displays "Tacos: 4 ingredients, 20 min." The parent reads it.',
     assumes: 'The app knows what ingredients they actually have. It does not. You have not drawn how. The suggestion is plausible. The mechanism is missing.',
     assumptionRisk: 'warn',
   },
@@ -59,7 +59,7 @@ const FRAME_DETAILS: Record<FrameId, FrameDetail> = {
   },
   4: {
     shows: 'Parent cooks the suggested meal. Family eats. Frame is satisfied.',
-    assumes: 'Everything in frames 1–3 worked — including the gap. This outcome is only reachable once you have crossed it.',
+    assumes: 'Everything in frames 1–3 worked, including the gap. This outcome is only reachable once you have crossed it.',
     assumptionRisk: 'warn',
   },
 }
@@ -232,7 +232,7 @@ export default function SBInteractive() {
           )
         })}
 
-        {/* Frame 3 — THE GAP */}
+        {/* Frame 3: THE GAP */}
         {(() => {
           const fx  = FRAME_X[3]
           const sel = selected === 3
@@ -288,7 +288,7 @@ export default function SBInteractive() {
           >
             <p className="text-xs font-mono tracking-widest mb-3"
               style={{ color: `${CLAY}0.55)` }}>
-              FRAME {(selected as number) + 1} — WHAT IT SHOWS
+              FRAME {(selected as number) + 1}: WHAT IT SHOWS
             </p>
             <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.78)' }}>
               {detail.shows}
@@ -306,7 +306,7 @@ export default function SBInteractive() {
                   ? 'rgba(22,163,74,0.70)'
                   : `${AMBER}0.72)`,
               }}>
-                {detail.assumptionRisk === 'safe' ? 'ASSUMPTION — PROBABLY SAFE' : 'ASSUMPTION — UNTESTED'}
+                {detail.assumptionRisk === 'safe' ? 'ASSUMPTION: PROBABLY SAFE' : 'ASSUMPTION: UNTESTED'}
               </p>
               <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.70)' }}>
                 {detail.assumes}
@@ -332,7 +332,7 @@ export default function SBInteractive() {
           >
             <p className="text-xs font-mono tracking-widest mb-3"
               style={{ color: `${AMBER}0.72)` }}>
-              THE GAP — TRY TO FILL THIS FRAME
+              THE GAP: TRY TO FILL THIS FRAME
             </p>
             <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.72)' }}>
               How does the app know what ingredients the user has? Choose one attempt:
@@ -369,13 +369,13 @@ export default function SBInteractive() {
                   }}>
                     <p className="text-xs font-mono tracking-widest mb-2"
                       style={{ color: `${AMBER}0.75)` }}>
-                      THAT IS NOT A FILLED FRAME — THAT IS A NEW ASSUMPTION
+                      THAT IS NOT A FILLED FRAME, THAT IS A NEW ASSUMPTION
                     </p>
                     <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.72)' }}>
                       {gapAttemptIdx === 0 && 'Every session. So the first question becomes: do they actually do that? And do they do it accurately? Now you have two more untested frames before the suggestion can appear.'}
                       {gapAttemptIdx === 1 && 'Which costs several hundred pounds, requires installation, and is owned by about 2% of households. Your user has just become a much smaller, wealthier, more technical person. Is that still your user?'}
                       {gapAttemptIdx === 2 && 'Computer vision on fridge contents is a technically hard, unproven interaction at consumer scale. Draw the frame. Show the person standing with the fridge open, pointing their phone at each shelf. Is that a behaviour you believe in?'}
-                      {gapAttemptIdx === 3 && 'Who set it up? When? How accurate is it after two weeks of cooking? A stale pantry list generates confidently wrong suggestions. You now need a frame showing maintenance — and that is harder than the app.'}
+                      {gapAttemptIdx === 3 && 'Who set it up? When? How accurate is it after two weeks of cooking? A stale pantry list generates confidently wrong suggestions. You now need a frame showing maintenance, and that is harder than the app.'}
                     </p>
                     <p className="text-sm leading-relaxed mt-3 font-semibold"
                       style={{ color: `${AMBER}0.85)` }}>

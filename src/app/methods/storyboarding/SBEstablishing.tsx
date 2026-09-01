@@ -21,18 +21,18 @@ const FRAME_X = [
 }, [])
 
 const FRAME_LABELS = [
-  '1 — BEFORE',
-  '2 — OPENS APP',
-  '3 — SEES SUGGESTION',
-  '? — THE GAP',
-  '5 — OUTCOME',
+  '1: BEFORE',
+  '2: OPENS APP',
+  '3: SEES SUGGESTION',
+  '?: THE GAP',
+  '5: OUTCOME',
 ]
 
 // ── Rough sketch content per frame ─────────────────────────────────────────
 // Coordinates relative to each frame's top-left corner
 
 function SketchFrame0({ x, y }: { x: number; y: number }) {
-  // Person (left) + fridge outline (right) — no product
+  // Person (left) + fridge outline (right): no product
   const px = x + 28, py = y + 26  // person center
   const fx = x + 68, fy = y + 18  // fridge top-left
   return (
@@ -87,7 +87,7 @@ function SketchFrame2({ x, y }: { x: number; y: number }) {
         <rect x={phX} y={phY} width={24} height={38} rx={2} />
         <line x1={phX + 3} y1={phY + 3} x2={phX + 21} y2={phY + 3} />
       </g>
-      {/* Content lines on phone — the suggestion */}
+      {/* Content lines on phone: the suggestion */}
       <g stroke={`${CLAY}0.55)`} strokeWidth="1.1">
         <line x1={phX + 3} y1={phY + 12} x2={phX + 21} y2={phY + 12} />
         <line x1={phX + 3} y1={phY + 18} x2={phX + 17} y2={phY + 18} />
@@ -137,7 +137,7 @@ export default function SBEstablishing() {
       <svg
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-        aria-label="Five-panel storyboard sequence. Frame 1: A parent in front of an open fridge with no product present — the real situation before the concept appears. Frame 2: The parent opens the app on their phone. Frame 3: They see a suggestion on the screen. Frame 4: THE GAP — an empty fractured panel, the frame nobody could draw. The sequence halts here because nobody can say what the person sees, or why the app knows what is in their fridge. Frame 5: A positive outcome — but it cannot be reached without crossing the gap. The gap is the finding."
+        aria-label="Five-panel storyboard sequence. Frame 1: A parent in front of an open fridge with no product present, the real situation before the concept appears. Frame 2: The parent opens the app on their phone. Frame 3: They see a suggestion on the screen. Frame 4: THE GAP, an empty fractured panel, the frame nobody could draw. The sequence halts here because nobody can say what the person sees, or why the app knows what is in their fridge. Frame 5: A positive outcome, but it cannot be reached without crossing the gap. The gap is the finding."
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
         <defs>
@@ -177,17 +177,17 @@ export default function SBEstablishing() {
           )
         })}
 
-        {/* ── FRAME 3 — THE GAP (sequence halts here) ── */}
+        {/* FRAME 3: THE GAP (sequence halts here) */}
         <motion.g {...fade(0.90)}>
           {/* Glow halo */}
           <rect x={FRAME_X[3] - 2} y={FRAME_Y - 2} width={FRAME_W + 4} height={FRAME_H + 4} rx={4}
             fill="none" stroke={`${AMBER}0.18)`} strokeWidth={5}
             style={{ filter: 'url(#sb-est-amber-glow)' }} />
-          {/* Frame border — dashed, amber */}
+          {/* Frame border: dashed, amber */}
           <rect x={FRAME_X[3]} y={FRAME_Y} width={FRAME_W} height={FRAME_H} rx={3}
             fill={`${AMBER}0.04)`} stroke={`${AMBER}0.62)`} strokeWidth={1.4}
             strokeDasharray="6 4" />
-          {/* Fracture lines — visual "broken panel" */}
+          {/* Fracture lines: visual "broken panel" */}
           <line x1={FRAME_X[3] + 30} y1={FRAME_Y} x2={FRAME_X[3] + 45} y2={FRAME_Y + 40}
             stroke={`${AMBER}0.20)`} strokeWidth={0.6} />
           <line x1={FRAME_X[3] + 45} y1={FRAME_Y + 40} x2={FRAME_X[3] + 20} y2={FRAME_Y + FRAME_H}
@@ -222,7 +222,7 @@ export default function SBEstablishing() {
           </text>
         </motion.g>
 
-        {/* ── FRAME 4 — OUTCOME (dimmed, unreachable across the gap) ── */}
+        {/* FRAME 4: OUTCOME (dimmed, unreachable across the gap) */}
         <motion.g {...fade(1.22)} style={{ opacity: 0.38 }}>
           <rect x={FRAME_X[4]} y={FRAME_Y} width={FRAME_W} height={FRAME_H} rx={3}
             fill={`${CLAY}0.04)`} stroke={`${CLAY}0.22)`} strokeWidth={0.7} />

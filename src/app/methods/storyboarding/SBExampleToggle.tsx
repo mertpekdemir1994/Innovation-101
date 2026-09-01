@@ -150,7 +150,7 @@ export default function SBExampleToggle() {
         <p className="text-sm leading-relaxed" style={{ color: 'var(--color-neutral-700)' }}>
           {tab === 'traditional'
             ? 'The storyboard worked because the team could not draw frame four. In two hours they discovered a product decision that would have cost months to find in a build. The gap was the method doing its job.'
-            : 'The AI storyboard looked finished because the gap was written, not drawn. "Intelligently surfaces" is not a frame — it is a wish. The method only works if you cannot pass a gap by labelling it.'}
+            : 'The AI storyboard looked finished because the gap was written, not drawn. "Intelligently surfaces" is not a frame; it is a wish. The method only works if you cannot pass a gap by labelling it.'}
         </p>
       </div>
     </div>
