@@ -138,7 +138,7 @@ export default function EMPInteractive() {
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}
           width="100%"
-          style={{ display: 'block', overflow: 'visible' }}
+          style={{ maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}
         >
           <defs>
             <filter id="emp-int-glow" x="-20%" y="-20%" width="140%" height="140%">
