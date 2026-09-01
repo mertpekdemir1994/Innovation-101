@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY   = 'rgba(31,58,95,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const SVG_H = 350
@@ -142,7 +143,7 @@ export default function AMAIReactivated() {
                   x={SVG_W / 2} y={SVG_H - 19}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${INDIGO}0.70)`}
+                  fill={`${INDIGO_TEXT}0.937)`}
                   style={{ userSelect: 'none' }}
                 >AI GROUPS BY SURFACE SIMILARITY: LABELS AS CATEGORIES</text>
               </motion.g>
@@ -198,7 +199,7 @@ export default function AMAIReactivated() {
                     x={cl.tlx + CL_W / 2} y={cl.tly + 11}
                     textAnchor="middle" dominantBaseline="middle"
                     fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-                    fill={isAI ? `${INDIGO}0.55)` : 'rgba(255,255,255,0.40)'}
+                    fill={isAI ? `${INDIGO_TEXT}0.905)` : 'rgba(255,255,255,0.7)'}
                     style={{ userSelect: 'none' }}
                   >{isAI ? 'CATEGORY' : 'INSIGHT'}</text>
 
@@ -208,7 +209,7 @@ export default function AMAIReactivated() {
                       x={cl.tlx + CL_W / 2} y={cl.tly + 29}
                       textAnchor="middle" dominantBaseline="middle"
                       fontSize="6" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
-                      fill={`${INDIGO}0.90)`}
+                      fill={`${INDIGO_TEXT}0.979)`}
                       style={{ userSelect: 'none' }}
                     >{cl.aiCategory}</text>
                   ) : (
@@ -244,7 +245,7 @@ export default function AMAIReactivated() {
                       x={cl.tlx + off.dx + 5} y={cl.tly + off.dy + 9}
                       textAnchor="start" dominantBaseline="middle"
                       fontSize="4.5" fontFamily="var(--font-inter,sans-serif)"
-                      fill={isAI ? `${INDIGO}0.62)` : 'rgba(255,255,255,0.58)'}
+                      fill={isAI ? `${INDIGO_TEXT}0.92)` : 'rgba(255,255,255,0.58)'}
                       style={{ userSelect: 'none', transition: 'fill 0.35s' }}
                     >{cardText}</text>
                   </g>

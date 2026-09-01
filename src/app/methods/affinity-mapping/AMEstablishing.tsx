@@ -153,7 +153,7 @@ export default function AMEstablishing() {
               x={cl.tlx + CL_W / 2} y={cl.tly + 11}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-              fill="rgba(255,255,255,0.40)"
+              fill="rgba(255,255,255,0.7)"
               style={{ userSelect: 'none' }}
             >INSIGHT</text>
 

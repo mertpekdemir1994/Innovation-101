@@ -149,7 +149,7 @@ export default function AMInteractive() {
               x={SVG_W / 2} y={SVG_H - 10}
               textAnchor="middle" dominantBaseline="auto"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill="rgba(255,255,255,0.18)"
+              fill="rgba(255,255,255,0.59)"
               style={{ userSelect: 'none' }}
             >tap a cluster to reveal its observations and insight</text>
           )}
@@ -225,7 +225,7 @@ export default function AMInteractive() {
                   x={cl.tlx + CL_W / 2} y={cl.tly + 11}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-                  fill="rgba(255,255,255,0.40)"
+                  fill="rgba(255,255,255,0.7)"
                   style={{ userSelect: 'none' }}
                 >INSIGHT</text>
 
