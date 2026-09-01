@@ -82,7 +82,7 @@ export default function APExampleToggle() {
               <div className="space-y-3">
                 <div className="rounded p-4"
                   style={{ background: `${CLAY}0.06)`, borderLeft: `2px solid ${CLAY}0.40)` }}>
-                  <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
+                  <p className="text-[10px] font-semibold uppercase tracking-wider mb-1"
                     style={{ color: `${CLAY}0.65)` }}>What they noticed in hotels</p>
                   <p className="text-xs text-neutral-700 mb-2">
                     Every person in the building (not just the concierge, not just the room service team)
@@ -93,7 +93,7 @@ export default function APExampleToggle() {
                 </div>
                 <div className="rounded p-4"
                   style={{ background: `${CLAY}0.04)`, borderLeft: `2px solid ${CLAY}0.25)` }}>
-                  <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
+                  <p className="text-[10px] font-semibold uppercase tracking-wider mb-1"
                     style={{ color: `${CLAY}0.55)` }}>The abstracted principle</p>
                   <p className="text-xs text-neutral-800 font-semibold mb-2">
                     Patient experience is the sum of every handoff (from orderly to nurse, from receptionist to physician)
@@ -102,7 +102,7 @@ export default function APExampleToggle() {
                   </p>
                 </div>
                 <div className="rounded p-4 bg-amber-50 border border-amber-200">
-                  <p className="text-[9px] font-semibold uppercase tracking-wider text-amber-700 mb-1">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-amber-700 mb-1">
                     What they refused to borrow
                   </p>
                   <p className="text-xs text-neutral-700">
@@ -171,7 +171,7 @@ export default function APExampleToggle() {
               <div className="flex items-center justify-between mb-4">
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
                   style={{ color: `${INDIGO}0.90)` }}>AI on the analogs axis</p>
-                <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full"
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                   style={{ background: `${INDIGO}0.10)`, color: `${INDIGO}0.80)`, border: `1px solid ${INDIGO}0.25)` }}>
                   near-biased
                 </span>
@@ -193,7 +193,7 @@ export default function APExampleToggle() {
                       background: item.near ? `${INDIGO}0.06)` : 'var(--color-neutral-50)',
                       borderLeft: `2px solid ${item.near ? `${INDIGO}0.30)` : 'var(--color-neutral-200)'}`,
                     }}>
-                    <span className="text-[9px] font-semibold mt-0.5 shrink-0"
+                    <span className="text-[10px] font-semibold mt-0.5 shrink-0"
                       style={{ color: item.near ? `${INDIGO}0.65)` : 'var(--color-neutral-500)' }}>
                       {item.near ? 'NEAR' : 'MISSED'}
                     </span>

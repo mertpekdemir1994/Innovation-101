@@ -140,22 +140,22 @@ export default function APDistinction() {
               className="space-y-4"
             >
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-500">Direction</p>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500">Direction</p>
                 <p className="text-sm font-semibold text-neutral-800">Lateral: across other industries, in the present</p>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-500">The question</p>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500">The question</p>
                 <p className="text-sm text-neutral-700">&ldquo;Who else has already solved a version of this?&rdquo;</p>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-500">The core skill</p>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500">The core skill</p>
                 <p className="text-sm text-neutral-700">
                   <strong>Abstraction.</strong> Moving from a surface similarity to a structural one:
                   recognising that two contexts are solving the same underlying problem even when they look nothing alike.
                 </p>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-500">The payoff</p>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500">The payoff</p>
                 <p className="text-sm text-neutral-700">
                   <strong>Freshness from distance.</strong> The further the analog from your industry,
                   the less obvious the connection, and the more genuinely novel the borrowed principle feels when applied.
@@ -177,22 +177,22 @@ export default function APDistinction() {
               className="space-y-4"
             >
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-500">Direction</p>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500">Direction</p>
                 <p className="text-sm font-semibold text-neutral-800">Backward: through your own industry&rsquo;s history</p>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-500">The question</p>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500">The question</p>
                 <p className="text-sm text-neutral-700">&ldquo;Who tried this before, and what happened to them?&rdquo;</p>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-500">The core skill</p>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500">The core skill</p>
                 <p className="text-sm text-neutral-700">
                   <strong>Timing diagnosis.</strong> Distinguishing ideas that failed because they were structurally flawed
                   from ideas that failed because the infrastructure, cost curve, or behavioural readiness was not yet in place.
                 </p>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-widest text-neutral-500">The payoff</p>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500">The payoff</p>
                 <p className="text-sm text-neutral-700">
                   <strong>Hindsight as advantage.</strong> If a good idea ran ahead of its time,
                   the world may now have provided what it lacked. A ripe idea may be hiding in your industry&rsquo;s history,

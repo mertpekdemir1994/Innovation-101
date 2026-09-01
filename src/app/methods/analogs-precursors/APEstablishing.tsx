@@ -6,7 +6,7 @@ const CLAY = 'rgba(181,97,62,'
 const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
 const SVG_W = 700
-const SVG_H = 258
+const SVG_H = 280
 
 // Origin: where the two axes meet (lower-left area)
 const ORG_X = 190
@@ -15,8 +15,10 @@ const ORG_Y = 200
 // ANALOGS axis: horizontal, extending RIGHT (across industries)
 const AX_END = 672
 
-// PRECURSORS axis: vertical, extending UPWARD (back through time)
-const PR_END_Y = 28
+// PRECURSORS axis: vertical, extending UPWARD (back through time).
+// Pushed down from the very top of the canvas to leave room for its
+// two-line label above the arrow tip.
+const PR_END_Y = 48
 
 const ANALOG_PTS = [
   { x: 318, label: 'HOTEL',    sub: 'hospitality' },
@@ -25,9 +27,9 @@ const ANALOG_PTS = [
 ] as const
 
 const PRECUR_PTS = [
-  { y: 156, label: 'EARLY VERSION', sub: '~10 YRS AGO' },
-  { y: 106, label: 'PRIOR ART',     sub: '~20 YRS AGO' },
-  { y: 56,  label: 'ANTECEDENT',    sub: '~35 YRS AGO' },
+  { y: 168, label: 'EARLY VERSION', sub: '~10 YRS AGO' },
+  { y: 128, label: 'PRIOR ART',     sub: '~20 YRS AGO' },
+  { y: 88,  label: 'ANTECEDENT',    sub: '~35 YRS AGO' },
 ] as const
 
 export default function APEstablishing() {
@@ -92,19 +94,20 @@ export default function APEstablishing() {
           />
         </motion.g>
 
-        {/* Analogs axis label */}
+        {/* Analogs axis label — below the line, right-aligned to the arrow tip
+            so it never overlaps the rightmost point's label above the line */}
         <motion.g variants={fade} transition={lblT}>
           <text
-            x={AX_END + 8} y={ORG_Y - 5}
-            textAnchor="start" dominantBaseline="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
+            x={AX_END} y={ORG_Y + 20}
+            textAnchor="end" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${CLAY_TEXT}0.948)`}
             style={{ userSelect: 'none' }}
           >ANALOGS →</text>
           <text
-            x={AX_END + 8} y={ORG_Y + 8}
-            textAnchor="start" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            x={AX_END} y={ORG_Y + 36}
+            textAnchor="end" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={`${CLAY_TEXT}0.878)`}
             style={{ userSelect: 'none' }}
           >across industries</text>
@@ -125,22 +128,22 @@ export default function APEstablishing() {
           />
         </motion.g>
 
-        {/* Precursors axis label (horizontal text at top) */}
+        {/* Precursors axis label (horizontal text above the arrow tip) */}
         <motion.g variants={fade} transition={lblT}>
           <text
-            x={ORG_X} y={PR_END_Y - 5}
+            x={ORG_X} y={PR_END_Y - 26}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill="rgba(255,255,255,0.71)"
             style={{ userSelect: 'none' }}
-          >↑ BACK THROUGH TIME</text>
+          >PRECURSORS</text>
           <text
-            x={ORG_X} y={PR_END_Y - 14}
+            x={ORG_X} y={PR_END_Y - 9}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill="rgba(255,255,255,0.62)"
             style={{ userSelect: 'none' }}
-          >PRECURSORS</text>
+          >↑ BACK THROUGH TIME</text>
         </motion.g>
 
         {/* ── ORIGIN ── */}
@@ -157,19 +160,19 @@ export default function APEstablishing() {
             filter="url(#ap-est-glow)"
           />
           <text
-            x={ORG_X + 13} y={ORG_Y - 3}
-            dominantBaseline="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            x={ORG_X} y={ORG_Y + 20}
+            textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${CLAY_TEXT}0.979)`}
             style={{ userSelect: 'none' }}
           >CURRENT PROBLEM</text>
           <text
-            x={ORG_X + 13} y={ORG_Y + 9}
-            dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            x={ORG_X} y={ORG_Y + 36}
+            textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)"
             fill={`${CLAY_TEXT}0.891)`}
             style={{ userSelect: 'none' }}
-          >here & now</text>
+          >here &amp; now</text>
         </motion.g>
 
         {/* ── ANALOG POINTS ── */}
@@ -188,16 +191,16 @@ export default function APEstablishing() {
               filter="url(#ap-est-glow-sm)"
             />
             <text
-              x={pt.x} y={ORG_Y - 13}
+              x={pt.x} y={ORG_Y - 12}
               textAnchor="middle"
-              fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
               fill={`${CLAY_TEXT}0.962)`}
               style={{ userSelect: 'none' }}
             >{pt.label}</text>
             <text
-              x={pt.x} y={ORG_Y - 22}
+              x={pt.x} y={ORG_Y - 28}
               textAnchor="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)"
+              fontSize="11" fontFamily="var(--font-mono)"
               fill={`${CLAY_TEXT}0.882)`}
               style={{ userSelect: 'none' }}
             >{pt.sub}</text>
@@ -221,16 +224,16 @@ export default function APEstablishing() {
             />
             {/* Labels to the left of the circle */}
             <text
-              x={ORG_X - 13} y={pt.y - 4}
+              x={ORG_X - 16} y={pt.y - 8}
               textAnchor="end" dominantBaseline="middle"
-              fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
               fill="rgba(255,255,255,0.58)"
               style={{ userSelect: 'none' }}
             >{pt.label}</text>
             <text
-              x={ORG_X - 13} y={pt.y + 7}
+              x={ORG_X - 16} y={pt.y + 8}
               textAnchor="end" dominantBaseline="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)"
+              fontSize="11" fontFamily="var(--font-mono)"
               fill="rgba(255,255,255,0.64)"
               style={{ userSelect: 'none' }}
             >{pt.sub}</text>
@@ -243,9 +246,9 @@ export default function APEstablishing() {
           transition={{ ...lblT, delay: prefersReduced ? 0 : 0.65 }}
         >
           <text
-            x={SVG_W / 2} y={SVG_H - 5}
+            x={SVG_W / 2} y={SVG_H - 8}
             textAnchor="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
             fill="rgba(255,255,255,0.58)"
             style={{ userSelect: 'none' }}
           >two perpendicular search directions · right for analogs · up for precursors</text>

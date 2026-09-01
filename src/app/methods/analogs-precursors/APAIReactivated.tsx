@@ -9,12 +9,12 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
-const SVG_H = 258
+const SVG_H = 280
 
 const ORG_X = 190
 const ORG_Y = 200
 const AX_END   = 672
-const PR_END_Y = 28
+const PR_END_Y = 48
 
 type Mode = 'human' | 'ai'
 
@@ -36,9 +36,9 @@ const ANALOG_PTS = [
 ]
 
 const PRECUR_PTS = [
-  { y: 156, label: 'EARLY VERSION', sub: '~10 YRS AGO' },
-  { y: 106, label: 'PRIOR ART',     sub: '~20 YRS AGO' },
-  { y: 56,  label: 'ANTECEDENT',    sub: '~35 YRS AGO' },
+  { y: 168, label: 'EARLY VERSION', sub: '~10 YRS AGO' },
+  { y: 128, label: 'PRIOR ART',     sub: '~20 YRS AGO' },
+  { y: 88,  label: 'ANTECEDENT',    sub: '~35 YRS AGO' },
 ]
 
 export default function APAIReactivated() {
@@ -69,8 +69,8 @@ export default function APAIReactivated() {
                 ? (m === 'ai' ? `${INDIGO}0.35)` : `${CLAY}0.35)`)
                 : 'var(--color-neutral-100)'}`,
               color: mode === m
-                ? m === 'ai' ? `${INDIGO}1)` : `${CLAY}1)`
-                : 'var(--color-neutral-600)',
+                ? m === 'ai' ? `${INDIGO_TEXT}1)` : `${CLAY_TEXT}1)`
+                : 'rgba(255,255,255,0.55)',
             }}
           >
             {m === 'human' ? 'Human-led search' : 'With AI (hypothetical)'}
@@ -117,10 +117,10 @@ export default function APAIReactivated() {
             strokeLinecap="round" strokeLinejoin="round"
           />
           <text
-            x={AX_END + 8} y={ORG_Y - 5}
-            textAnchor="start" dominantBaseline="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-            fill={`${CLAY}${isAI ? '0.30' : '0.72'})`}
+            x={AX_END} y={ORG_Y + 20}
+            textAnchor="end" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fill={`${CLAY_TEXT}${isAI ? '0.55' : '0.90'})`}
             style={{ userSelect: 'none' }}
           >ANALOGS →</text>
 
@@ -154,35 +154,35 @@ export default function APAIReactivated() {
                     filter="url(#ap-ai-glow-indigo)"
                   />
                 ))}
-                {/* Near zone label */}
+                {/* Near zone label — below the axis, clear of the point labels above it */}
                 <text
-                  x={(ORG_X + 8 + NEAR_ZONE_X2) / 2} y={ORG_Y - 20}
+                  x={(ORG_X + 8 + NEAR_ZONE_X2) / 2} y={ORG_Y + 20}
                   textAnchor="middle"
-                  fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                   fill={`${INDIGO_TEXT}0.926)`}
                   style={{ userSelect: 'none' }}
                 >AI RETRIEVES NEAR FIRST</text>
                 <text
-                  x={(ORG_X + 8 + NEAR_ZONE_X2) / 2} y={ORG_Y + 22}
+                  x={(ORG_X + 8 + NEAR_ZONE_X2) / 2} y={ORG_Y + 36}
                   textAnchor="middle"
-                  fontSize="5" fontFamily="var(--font-mono)"
+                  fontSize="11" fontFamily="var(--font-mono)"
                   fill={`${INDIGO_TEXT}0.878)`}
                   style={{ userSelect: 'none' }}
                 >surface-similar / obvious</text>
 
                 {/* Far zone label */}
                 <text
-                  x={(NEAR_ZONE_X2 + AX_END) / 2} y={ORG_Y - 22}
+                  x={(NEAR_ZONE_X2 + AX_END) / 2} y={ORG_Y + 20}
                   textAnchor="middle"
-                  fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill="rgba(255,255,255,0.65)"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
+                  fill="rgba(255,255,255,0.75)"
                   style={{ userSelect: 'none' }}
                 >← FAR STRUCTURAL MATCH</text>
                 <text
-                  x={(NEAR_ZONE_X2 + AX_END) / 2} y={ORG_Y - 13}
+                  x={(NEAR_ZONE_X2 + AX_END) / 2} y={ORG_Y + 36}
                   textAnchor="middle"
-                  fontSize="5" fontFamily="var(--font-mono)"
-                  fill="rgba(255,255,255,0.59)"
+                  fontSize="11" fontFamily="var(--font-mono)"
+                  fill="rgba(255,255,255,0.65)"
                   style={{ userSelect: 'none' }}
                 >harder for AI to surface</text>
               </motion.g>
@@ -193,7 +193,7 @@ export default function APAIReactivated() {
           {ANALOG_PTS.map((pt) => {
             const o = isAI ? '0.22' : '0.68'
             const fo = isAI ? '0.05' : '0.10'
-            const to = isAI ? '0.20' : '0.80'
+            const to = isAI ? '0.55' : '0.95'
             return (
               <motion.g key={pt.label} animate={{ opacity: 1 }} transition={fade}>
                 <circle
@@ -203,17 +203,17 @@ export default function APAIReactivated() {
                   strokeWidth={1.5}
                 />
                 <text
-                  x={pt.x} y={ORG_Y - 13}
+                  x={pt.x} y={ORG_Y - 12}
                   textAnchor="middle"
-                  fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                  fill={`${CLAY}${to})`}
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fill={`${CLAY_TEXT}${to})`}
                   style={{ userSelect: 'none' }}
                 >{pt.label}</text>
                 <text
-                  x={pt.x} y={ORG_Y - 22}
+                  x={pt.x} y={ORG_Y - 28}
                   textAnchor="middle"
-                  fontSize="5.5" fontFamily="var(--font-mono)"
-                  fill={`${CLAY}${isAI ? '0.14' : '0.44'})`}
+                  fontSize="11" fontFamily="var(--font-mono)"
+                  fill={`${CLAY_TEXT}${isAI ? '0.55' : '0.85'})`}
                   style={{ userSelect: 'none' }}
                 >{pt.sub}</text>
               </motion.g>
@@ -234,10 +234,10 @@ export default function APAIReactivated() {
             strokeLinecap="round" strokeLinejoin="round"
           />
           <text
-            x={ORG_X} y={PR_END_Y - 5}
+            x={ORG_X} y={PR_END_Y - 9}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-            fill={`rgba(255,255,255,${isAI ? '0.22' : '0.42'})`}
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+            fill={`rgba(255,255,255,${isAI ? '0.55' : '0.75'})`}
             style={{ userSelect: 'none' }}
           >↑ BACK THROUGH TIME</text>
 
@@ -245,7 +245,7 @@ export default function APAIReactivated() {
           {PRECUR_PTS.map((pt) => {
             const o  = isAI ? '0.22' : '0.50'
             const fo = isAI ? '0.04' : '0.07'
-            const to = isAI ? '0.20' : '0.58'
+            const to = isAI ? '0.55' : '0.85'
             return (
               <motion.g key={pt.label} animate={{ opacity: 1 }} transition={fade}>
                 <circle
@@ -255,18 +255,18 @@ export default function APAIReactivated() {
                   strokeWidth={1.5}
                 />
                 <text
-                  x={ORG_X - 13} y={pt.y - 4}
+                  x={ORG_X - 16} y={pt.y - 8}
                   textAnchor="end" dominantBaseline="middle"
-                  fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                   fill={`rgba(255,255,255,${to})`}
                   style={{ userSelect: 'none' }}
                 >{pt.label}</text>
                 {isAI && (
                   <text
-                    x={ORG_X + 13} y={pt.y}
+                    x={ORG_X + 16} y={pt.y - 8}
                     dominantBaseline="middle"
-                    fontSize="5.5" fontFamily="var(--font-mono)"
-                    fill={`${INDIGO_TEXT}0.885)`}
+                    fontSize="11" fontFamily="var(--font-mono)"
+                    fill={`${INDIGO_TEXT}0.926)`}
                     style={{ userSelect: 'none' }}
                   >timing: human</text>
                 )}
@@ -283,9 +283,9 @@ export default function APAIReactivated() {
             filter="url(#ap-ai-glow)"
           />
           <text
-            x={ORG_X + 13} y={ORG_Y - 3}
-            dominantBaseline="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            x={ORG_X} y={ORG_Y + 52}
+            textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${CLAY_TEXT}0.979)`}
             style={{ userSelect: 'none' }}
           >CURRENT PROBLEM</text>
@@ -305,10 +305,10 @@ export default function APAIReactivated() {
           >
             <div className="rounded-lg border p-5 space-y-2"
               style={{ borderColor: `${CLAY}0.22)`, background: `${CLAY}0.04)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${CLAY}0.85)` }}>
+              <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${CLAY_TEXT}1)` }}>
                 Analogs: the human advantage
               </p>
-              <p className="text-sm text-neutral-700 leading-relaxed">
+              <p className="text-sm text-white text-opacity-70 leading-relaxed">
                 Humans search far: they jump from a hospital to a luxury hotel not because the surface is similar
                 but because they can feel a structural match across a conceptual gap. That leap, from medical
                 to hospitality, from clinical to dignity-centered, is a distinctly human move.
@@ -316,10 +316,10 @@ export default function APAIReactivated() {
             </div>
             <div className="rounded-lg border p-5 space-y-2"
               style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.02)' }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500">
+              <p className="text-[10px] font-semibold uppercase tracking-widest text-white text-opacity-55">
                 Precursors: the human advantage
               </p>
-              <p className="text-sm text-neutral-700 leading-relaxed">
+              <p className="text-sm text-white text-opacity-70 leading-relaxed">
                 Humans diagnose timing: they look at something that failed fifteen years ago and ask
                 &ldquo;was this premature or fundamentally broken?&rdquo; The distinction is a judgment call:
                 it requires interpreting why the world changed, not just recording that it did.
@@ -338,10 +338,10 @@ export default function APAIReactivated() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="rounded-lg border p-5 space-y-2"
                 style={{ borderColor: `${INDIGO}0.22)`, background: `${INDIGO}0.04)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${INDIGO}0.80)` }}>
+                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${INDIGO_TEXT}1)` }}>
                   AI on the analogs axis: near-bias
                 </p>
-                <p className="text-sm text-neutral-700 leading-relaxed">
+                <p className="text-sm text-white text-opacity-70 leading-relaxed">
                   AI retrieves by similarity in its training data. Asked for analogs to hospital patient experience,
                   it surfaces other hospitals, then clinics, then hotel chains mentioned alongside healthcare.
                   The far structural match (&ldquo;what does a racing pit crew have in common with a trauma unit?&rdquo;)
@@ -350,10 +350,10 @@ export default function APAIReactivated() {
               </div>
               <div className="rounded-lg border p-5 space-y-2"
                 style={{ borderColor: `${INDIGO}0.18)`, background: `${INDIGO}0.03)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${INDIGO}0.70)` }}>
+                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${INDIGO_TEXT}0.90)` }}>
                   AI on the precursors axis: lists, not diagnoses
                 </p>
-                <p className="text-sm text-neutral-700 leading-relaxed">
+                <p className="text-sm text-white text-opacity-70 leading-relaxed">
                   AI can retrieve a rich list of past attempts in your category. What it cannot reliably do is
                   diagnose whether each failure was premature or structurally flawed. That judgment requires
                   contextual interpretation of why the world is different now. Without that, a list of precursors
@@ -363,10 +363,10 @@ export default function APAIReactivated() {
             </div>
             <div className="rounded-lg border p-5"
               style={{ borderColor: `${INDIGO}0.20)`, background: `${INDIGO}0.04)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-2" style={{ color: `${INDIGO}0.80)` }}>
+              <p className="text-[10px] font-semibold uppercase tracking-widest mb-2" style={{ color: `${INDIGO_TEXT}1)` }}>
                 Where AI helps most
               </p>
-              <p className="text-sm text-neutral-700 leading-relaxed">
+              <p className="text-sm text-white text-opacity-70 leading-relaxed">
                 AI accelerates research on both axes when aimed with precision. Ask it explicitly for &ldquo;industries
                 that have solved X, ranked from most obvious to least obvious,&rdquo; and it can push further than it
                 defaults to. For precursors, ask it to list failures and for each, speculate on whether the timing

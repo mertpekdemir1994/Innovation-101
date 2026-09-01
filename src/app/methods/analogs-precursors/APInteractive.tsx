@@ -5,16 +5,16 @@ import React from 'react'
 
 const CLAY   = 'rgba(181,97,62,'
 const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
-const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
-const SVG_H = 258
+const SVG_H = 280
 
 const ORG_X = 190
 const ORG_Y = 200
 
 const AX_END   = 672
-const PR_END_Y = 28
+const PR_END_Y = 48
 
 type AnalogId   = 'hotel' | 'airport' | 'pit-crew'
 type PrecurId   = 'early' | 'prior-art' | 'antecedent'
@@ -27,9 +27,9 @@ const ANALOG_PTS: { id: AnalogId; x: number; label: string; sub: string }[] = [
 ]
 
 const PRECUR_PTS: { id: PrecurId; y: number; label: string; sub: string }[] = [
-  { id: 'early',      y: 156, label: 'EARLY VERSION', sub: '~10 YRS AGO' },
-  { id: 'prior-art',  y: 106, label: 'PRIOR ART',     sub: '~20 YRS AGO' },
-  { id: 'antecedent', y: 56,  label: 'ANTECEDENT',    sub: '~35 YRS AGO' },
+  { id: 'early',      y: 168, label: 'EARLY VERSION', sub: '~10 YRS AGO' },
+  { id: 'prior-art',  y: 128, label: 'PRIOR ART',     sub: '~20 YRS AGO' },
+  { id: 'antecedent', y: 88,  label: 'ANTECEDENT',    sub: '~35 YRS AGO' },
 ]
 
 const ANALOG_DATA: Record<AnalogId, { domain: string; solved: string; principle: string }> = {
@@ -158,20 +158,20 @@ export default function APInteractive() {
             aria-label="Select Analogs axis"
             aria-pressed={activeAxis === 'analogs' && activePoint === null}
           >
-            <rect x={ORG_X} y={ORG_Y - 20} width={AX_END - ORG_X} height={26}
+            <rect x={ORG_X} y={ORG_Y} width={AX_END - ORG_X} height={44}
               fill="transparent" />
             <text
-              x={AX_END + 8} y={ORG_Y - 5}
-              textAnchor="start" dominantBaseline="middle"
-              fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-              fill={`${CLAY}${analogDimmed ? '0.25' : activeAxis === 'analogs' && !activePoint ? '0.92' : '0.72'})`}
+              x={AX_END} y={ORG_Y + 20}
+              textAnchor="end" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+              fill={`${CLAY_TEXT}${analogDimmed ? '0.82' : activeAxis === 'analogs' && !activePoint ? '1' : '0.82'})`}
               style={{ userSelect: 'none' }}
             >ANALOGS →</text>
             <text
-              x={AX_END + 8} y={ORG_Y + 8}
-              textAnchor="start" dominantBaseline="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-              fill={`${CLAY}${analogDimmed ? '0.14' : '0.40'})`}
+              x={AX_END} y={ORG_Y + 36}
+              textAnchor="end" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
+              fill={`${CLAY_TEXT}${analogDimmed ? '0.82' : '0.82'})`}
               style={{ userSelect: 'none' }}
             >across industries</text>
           </g>
@@ -199,20 +199,20 @@ export default function APInteractive() {
             aria-label="Select Precursors axis"
             aria-pressed={activeAxis === 'precursors' && activePoint === null}
           >
-            <rect x={ORG_X - 10} y={PR_END_Y} width={20} height={ORG_Y - PR_END_Y}
+            <rect x={ORG_X - 60} y={0} width={120} height={PR_END_Y}
               fill="transparent" />
             <text
-              x={ORG_X} y={PR_END_Y - 5}
+              x={ORG_X} y={PR_END_Y - 9}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-              fill={`rgba(255,255,255,${precurDimmed ? '0.18' : activeAxis === 'precursors' && !activePoint ? '0.70' : '0.42'})`}
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+              fill={`rgba(255,255,255,${precurDimmed ? '0.55' : activeAxis === 'precursors' && !activePoint ? '0.90' : '0.65'})`}
               style={{ userSelect: 'none' }}
             >↑ BACK THROUGH TIME</text>
             <text
-              x={ORG_X} y={PR_END_Y - 15}
+              x={ORG_X} y={PR_END_Y - 26}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-              fill={`rgba(255,255,255,${precurDimmed ? '0.10' : '0.24'})`}
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+              fill={`rgba(255,255,255,${precurDimmed ? '0.55' : '0.55'})`}
               style={{ userSelect: 'none' }}
             >PRECURSORS</text>
           </g>
@@ -226,16 +226,16 @@ export default function APInteractive() {
             filter="url(#ap-int-glow)"
           />
           <text
-            x={ORG_X + 13} y={ORG_Y - 3}
-            dominantBaseline="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            x={ORG_X} y={ORG_Y + 20}
+            textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${CLAY_TEXT}0.979)`}
             style={{ userSelect: 'none' }}
           >CURRENT PROBLEM</text>
           <text
-            x={ORG_X + 13} y={ORG_Y + 9}
-            dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            x={ORG_X} y={ORG_Y + 36}
+            textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)"
             fill={`${CLAY_TEXT}0.891)`}
             style={{ userSelect: 'none' }}
           >here & now</text>
@@ -246,8 +246,8 @@ export default function APInteractive() {
             const isDimmed = analogDimmed || (activeAxis === 'analogs' && activePoint !== null && activePoint !== pt.id)
             const strokeO = isActive ? '1.0' : isDimmed ? '0.18' : '0.68'
             const fillO   = isActive ? '0.22' : isDimmed ? '0.04' : '0.10'
-            const textO   = isActive ? '0.92' : isDimmed ? '0.18' : '0.78'
-            const subO    = isActive ? '0.55' : isDimmed ? '0.10' : '0.40'
+            const textO   = isActive ? '1' : isDimmed ? '0.82' : '0.88'
+            const subO    = isActive ? '0.92' : isDimmed ? '0.82' : '0.85'
             return (
               <g
                 key={pt.id}
@@ -267,17 +267,17 @@ export default function APInteractive() {
                 {/* Expanded hit area */}
                 <circle cx={pt.x} cy={ORG_Y} r={18} fill="transparent" />
                 <text
-                  x={pt.x} y={ORG_Y - 13}
+                  x={pt.x} y={ORG_Y - 12}
                   textAnchor="middle"
-                  fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                  fill={`${CLAY}${textO})`}
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fill={`${CLAY_TEXT}${textO})`}
                   style={{ userSelect: 'none' }}
                 >{pt.label}</text>
                 <text
-                  x={pt.x} y={ORG_Y - 22}
+                  x={pt.x} y={ORG_Y - 28}
                   textAnchor="middle"
-                  fontSize="5.5" fontFamily="var(--font-mono)"
-                  fill={`${CLAY}${subO})`}
+                  fontSize="11" fontFamily="var(--font-mono)"
+                  fill={`${CLAY_TEXT}${subO})`}
                   style={{ userSelect: 'none' }}
                 >{pt.sub}</text>
               </g>
@@ -290,8 +290,8 @@ export default function APInteractive() {
             const isDimmed = precurDimmed || (activeAxis === 'precursors' && activePoint !== null && activePoint !== pt.id)
             const strokeO = isActive ? '0.85' : isDimmed ? '0.12' : '0.52'
             const fillO   = isActive ? '0.16' : isDimmed ? '0.03' : '0.07'
-            const textO   = isActive ? '0.88' : isDimmed ? '0.14' : '0.58'
-            const subO    = isActive ? '0.50' : isDimmed ? '0.08' : '0.28'
+            const textO   = isActive ? '0.90' : isDimmed ? '0.55' : '0.68'
+            const subO    = isActive ? '0.75' : isDimmed ? '0.55' : '0.60'
             return (
               <g
                 key={pt.id}
@@ -310,16 +310,16 @@ export default function APInteractive() {
                 />
                 <circle cx={ORG_X} cy={pt.y} r={18} fill="transparent" />
                 <text
-                  x={ORG_X - 13} y={pt.y - 4}
+                  x={ORG_X - 16} y={pt.y - 8}
                   textAnchor="end" dominantBaseline="middle"
-                  fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                   fill={`rgba(255,255,255,${textO})`}
                   style={{ userSelect: 'none' }}
                 >{pt.label}</text>
                 <text
-                  x={ORG_X - 13} y={pt.y + 7}
+                  x={ORG_X - 16} y={pt.y + 8}
                   textAnchor="end" dominantBaseline="middle"
-                  fontSize="5.5" fontFamily="var(--font-mono)"
+                  fontSize="11" fontFamily="var(--font-mono)"
                   fill={`rgba(255,255,255,${subO})`}
                   style={{ userSelect: 'none' }}
                 >{pt.sub}</text>
@@ -338,7 +338,7 @@ export default function APInteractive() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.18 }}
-            className="rounded-lg border p-5 text-sm text-neutral-500"
+            className="rounded-lg border p-5 text-sm text-white text-opacity-60"
             style={{ borderColor: 'var(--color-neutral-100)' }}
           >
             Click an axis label or a point to explore each search direction.
@@ -355,20 +355,20 @@ export default function APInteractive() {
             className="rounded-lg border p-5 space-y-3"
             style={{ borderColor: `${CLAY}0.22)`, background: `${CLAY}0.04)` }}
           >
-            <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${CLAY}0.90)` }}>
+            <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${CLAY_TEXT}1)` }}>
               Analogs: searching across space
             </p>
-            <p className="text-sm text-neutral-700 leading-relaxed">
+            <p className="text-sm text-white text-opacity-70 leading-relaxed">
               Analogs are industries, domains, or contexts that have already solved a problem structurally similar to yours,
               even when they look nothing like you. The search is lateral: away from your own category, across other industries, in the present.
             </p>
-            <p className="text-sm text-neutral-700 leading-relaxed">
+            <p className="text-sm text-white text-opacity-70 leading-relaxed">
               The core skill is <strong>abstraction</strong>: moving from a surface similarity
               (both use waiting rooms) to a structural one (both must manage dignified waiting under uncertainty).
               The payoff is <strong>freshness from distance</strong>: the further the analog, the less obvious
               the connection, and the more genuinely new the borrowed principle feels in your space.
             </p>
-            <p className="text-sm text-neutral-600 italic">
+            <p className="text-sm text-white text-opacity-55 italic">
               Click a point to explore a specific analog.
             </p>
           </motion.div>
@@ -387,23 +387,23 @@ export default function APInteractive() {
               style={{ borderColor: `${CLAY}0.28)`, background: `${CLAY}0.04)` }}
             >
               <div className="flex items-center gap-3">
-                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${CLAY}0.90)` }}>
+                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${CLAY_TEXT}1)` }}>
                   {d.domain}
                 </p>
-                <span className="text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
-                  style={{ background: `${CLAY}0.10)`, color: `${CLAY}0.75)`, border: `1px solid ${CLAY}0.22)` }}>
+                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                  style={{ background: `${CLAY}0.10)`, color: `${CLAY_TEXT}0.90)`, border: `1px solid ${CLAY}0.22)` }}>
                   analog
                 </span>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-wider text-neutral-500">What they solved</p>
-                <p className="text-sm text-neutral-700 leading-relaxed">{d.solved}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white text-opacity-60">What they solved</p>
+                <p className="text-sm text-white text-opacity-70 leading-relaxed">{d.solved}</p>
               </div>
               <div className="space-y-1 border-t pt-4" style={{ borderColor: `${CLAY}0.15)` }}>
-                <p className="text-[9px] font-semibold uppercase tracking-wider" style={{ color: `${CLAY}0.65)` }}>
+                <p className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: `${CLAY_TEXT}0.90)` }}>
                   Abstracted principle
                 </p>
-                <p className="text-sm font-semibold text-neutral-800 leading-relaxed">{d.principle}</p>
+                <p className="text-sm font-semibold text-white text-opacity-90 leading-relaxed">{d.principle}</p>
               </div>
             </motion.div>
           )
@@ -422,18 +422,18 @@ export default function APInteractive() {
             <p className="text-[10px] font-semibold uppercase tracking-widest text-white text-opacity-75">
               Precursors: searching back through time
             </p>
-            <p className="text-sm text-neutral-700 leading-relaxed">
+            <p className="text-sm text-white text-opacity-70 leading-relaxed">
               Precursors are earlier attempts at solving the same problem within your own industry or an adjacent one.
               The search is backward: behind you, through your category&rsquo;s history. Something tried and failed,
               something patented but never shipped, something that existed in an earlier era but was ahead of its time.
             </p>
-            <p className="text-sm text-neutral-700 leading-relaxed">
+            <p className="text-sm text-white text-opacity-70 leading-relaxed">
               The core skill is <strong>timing diagnosis</strong>: distinguishing between ideas that failed because they were
               structurally flawed versus ideas that failed because they were premature. The payoff is <strong>hindsight as
               advantage</strong>: if the world has now provided what the original attempt lacked, an idea hiding in history
               may be ripe.
             </p>
-            <p className="text-sm text-neutral-600 italic">
+            <p className="text-sm text-white text-opacity-55 italic">
               Click a point to explore a specific precursor type.
             </p>
           </motion.div>
@@ -455,24 +455,24 @@ export default function APInteractive() {
                 <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-200">
                   {d.era}
                 </p>
-                <span className="text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
                   style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.55)', border: '1px solid rgba(255,255,255,0.16)' }}>
                   precursor
                 </span>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-wider text-neutral-500">What it was</p>
-                <p className="text-sm text-neutral-700 leading-relaxed">{d.what}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white text-opacity-60">What it was</p>
+                <p className="text-sm text-white text-opacity-70 leading-relaxed">{d.what}</p>
               </div>
               <div className="space-y-1">
-                <p className="text-[9px] font-semibold uppercase tracking-wider text-neutral-500">What happened</p>
-                <p className="text-sm text-neutral-700 leading-relaxed">{d.whatHappened}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white text-opacity-60">What happened</p>
+                <p className="text-sm text-white text-opacity-70 leading-relaxed">{d.whatHappened}</p>
               </div>
               <div className="space-y-1 border-t pt-4" style={{ borderColor: 'rgba(255,255,255,0.10)' }}>
-                <p className="text-[9px] font-semibold uppercase tracking-wider" style={{ color: `${INDIGO}0.70)` }}>
+                <p className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: `${INDIGO_TEXT}0.90)` }}>
                   Timing diagnosis
                 </p>
-                <p className="text-sm font-semibold text-neutral-800 leading-relaxed">{d.diagnosis}</p>
+                <p className="text-sm font-semibold text-white text-opacity-90 leading-relaxed">{d.diagnosis}</p>
               </div>
             </motion.div>
           )
