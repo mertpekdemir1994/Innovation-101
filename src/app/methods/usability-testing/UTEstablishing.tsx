@@ -134,7 +134,7 @@ export default function UTEstablishing() {
         <motion.text x={521} y={103}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-          fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
           {...fade(0.30)}>
           NOT REACHED
         </motion.text>
@@ -220,7 +220,7 @@ export default function UTEstablishing() {
         <motion.text x={SVG_W / 2} y={CAP_Y}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.28)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           {...fade(3.6)}>
           The intended path is what you assumed. The actual path is what a stranger did. The gap is the finding.
         </motion.text>

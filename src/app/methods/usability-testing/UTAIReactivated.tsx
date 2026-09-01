@@ -245,7 +245,7 @@ export default function UTAIReactivated() {
             <motion.text x={230} y={168}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-              fill={`${BRICK}0.35)`} style={{ userSelect: 'none' }}
+              fill={`rgba(183,145,135,0.864)`} style={{ userSelect: 'none' }}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.30, delay: prefersReduced ? 0 : 0.25 }}>
               ← ACTUAL PATH NOT ACCESSIBLE TO AI →
