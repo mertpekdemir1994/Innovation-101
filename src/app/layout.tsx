@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: '%s | Innovation 101',
   },
   description:
-    'An interactive learning platform for the innovation mindset — Processes, Frameworks, and Methods.',
+    'An interactive learning platform for the innovation mindset: Processes, Frameworks, and Methods.',
 }
 
 export default function RootLayout({

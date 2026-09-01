@@ -93,7 +93,7 @@ function DiamondSVG({ activePhase, hoveredPhase, theme, onPhaseClick, onPhaseHov
       className="w-full"
       style={{ maxHeight: 340, overflow: 'visible' }}
       role="img"
-      aria-label="Double Diamond framework: four phases — Discover, Define, Develop, Deliver"
+      aria-label="Double Diamond framework, four phases: Discover, Define, Develop, Deliver"
     >
       <defs>
         <filter id="viz-glow" x="-10%" y="-10%" width="120%" height="120%">

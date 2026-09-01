@@ -46,7 +46,7 @@ export default function FrameworkPage({ params }: { params: { slug: string } }) 
         className="w-full py-24 flex items-center justify-center border-b border-neutral-100 text-neutral-600 text-sm"
         style={{ background: 'var(--color-neutral-100)' }}
       >
-        Interactive {frontmatter.interactiveType} visualization — coming soon
+        Interactive {frontmatter.interactiveType} visualization: coming soon
       </div>
 
       {/* Content */}
