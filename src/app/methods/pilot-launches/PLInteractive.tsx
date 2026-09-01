@@ -161,7 +161,7 @@ export default function PLInteractive() {
         <motion.text x={ZN_CX} y={ZN_Y - 12}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-          fill={zoneColor('segment', `${BRICK}0.90)`, `${BRICK}0.18)`)}
+          fill={zoneColor('segment', `rgba(183,145,135,0.979)`, `rgba(183,145,135,0.828)`)}
           style={{ userSelect: 'none', cursor: 'pointer' }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.18 }}
@@ -173,7 +173,7 @@ export default function PLInteractive() {
         <motion.text
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-          fill={zoneColor('geography', `${BRICK}0.90)`, `${BRICK}0.18)`)}
+          fill={zoneColor('geography', `rgba(183,145,135,0.979)`, `rgba(183,145,135,0.828)`)}
           style={{ userSelect: 'none', cursor: 'pointer' }}
           transform={`rotate(-90 ${ZN_X - 10} ${ZN_CY})`}
           animate={{ opacity: 1 }}
@@ -186,7 +186,7 @@ export default function PLInteractive() {
         <motion.text x={ZN_CX} y={ZN_Y + ZN_H + 14}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-          fill={zoneColor('timeframe', `${BRICK}0.90)`, `${BRICK}0.18)`)}
+          fill={zoneColor('timeframe', `rgba(183,145,135,0.979)`, `rgba(183,145,135,0.828)`)}
           style={{ userSelect: 'none', cursor: 'pointer' }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.18 }}

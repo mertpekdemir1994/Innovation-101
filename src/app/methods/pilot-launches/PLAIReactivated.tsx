@@ -169,7 +169,7 @@ export default function PLAIReactivated() {
             <motion.text x={ZN_CX} y={63}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-              fill={`${INDIGO}0.80)`} style={{ userSelect: 'none' }}
+              fill={`${INDIGO_TEXT}0.958)`} style={{ userSelect: 'none' }}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.30 }}>
               AI HELPS DESIGN THIS
@@ -183,7 +183,7 @@ export default function PLAIReactivated() {
             <motion.text x={ZN_CX} y={63}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-              fill={`${BRICK}0.80)`} style={{ userSelect: 'none' }}
+              fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.30 }}>
               REAL · FULL SOLUTION

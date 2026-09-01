@@ -88,7 +88,7 @@ export default function PLEstablishing() {
         ].map(({ x, y, text }) => (
           <motion.text key={text + x} x={x} y={y}
             fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill="rgba(255,255,255,0.10)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.55)" style={{ userSelect: 'none' }}
             {...fade(0.04)}>
             {text}
           </motion.text>
@@ -110,7 +110,7 @@ export default function PLEstablishing() {
         <motion.text x={ZN_CX} y={ZN_Y - 12}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-          fill={`${BRICK}0.65)`} style={{ userSelect: 'none' }}
+          fill={`rgba(183,145,135,0.926)`} style={{ userSelect: 'none' }}
           {...fade(0.20)}>
           ⊞ SEGMENT · WHO IS EXPOSED
         </motion.text>
@@ -119,7 +119,7 @@ export default function PLEstablishing() {
         <motion.text
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-          fill={`${BRICK}0.65)`} style={{ userSelect: 'none' }}
+          fill={`rgba(183,145,135,0.926)`} style={{ userSelect: 'none' }}
           transform={`rotate(-90 ${ZN_X - 10} ${ZN_CY})`}
           {...fade(0.24)}>
           ◈ GEOGRAPHY · WHERE
@@ -129,7 +129,7 @@ export default function PLEstablishing() {
         <motion.text x={ZN_CX} y={ZN_Y + ZN_H + 14}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-          fill={`${BRICK}0.65)`} style={{ userSelect: 'none' }}
+          fill={`rgba(183,145,135,0.926)`} style={{ userSelect: 'none' }}
           {...fade(0.28)}>
           ⊟ TIMEFRAME · END DATE FIXED
         </motion.text>
@@ -138,7 +138,7 @@ export default function PLEstablishing() {
         <motion.text x={ZN_CX} y={64}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-          fill={`${BRICK}0.80)`} style={{ userSelect: 'none' }}
+          fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}
           {...fade(0.34)}>
           REAL · FULL SOLUTION
         </motion.text>
@@ -162,7 +162,7 @@ export default function PLEstablishing() {
         <motion.text x={ZN_CX} y={148}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-          fill={`${BRICK}0.40)`} style={{ userSelect: 'none' }}
+          fill={`rgba(183,145,135,0.874)`} style={{ userSelect: 'none' }}
           {...fade(0.72)}>
           REAL OPERATIONS · REAL CUSTOMERS · REAL MONEY
         </motion.text>
@@ -192,21 +192,21 @@ export default function PLEstablishing() {
         <motion.text x={GATE_CX} y={GATE_CY - 14}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-          fill={`${BRICK}0.90)`} style={{ userSelect: 'none' }}
+          fill={`rgba(183,145,135,0.979)`} style={{ userSelect: 'none' }}
           {...fade(0.88)}>
           GO / NO-GO
         </motion.text>
         <motion.text x={GATE_CX} y={GATE_CY + 2}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-          fill={`${BRICK}0.55)`} style={{ userSelect: 'none' }}
+          fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}
           {...fade(0.90)}>
           PRE-COMMITTED
         </motion.text>
         <motion.text x={GATE_CX} y={GATE_CY + 13}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-          fill={`${BRICK}0.55)`} style={{ userSelect: 'none' }}
+          fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}
           {...fade(0.92)}>
           CRITERIA
         </motion.text>
@@ -215,7 +215,7 @@ export default function PLEstablishing() {
         <motion.text x={ZN_CX} y={CAP_Y}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.28)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           {...fade(1.00)}>
           The solution inside is full and real. The boundary defines who sees it, where, and for how long.
         </motion.text>
