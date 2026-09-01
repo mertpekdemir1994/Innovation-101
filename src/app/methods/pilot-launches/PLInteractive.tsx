@@ -203,7 +203,7 @@ export default function PLInteractive() {
           <text x={ZN_CX} y={64}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-            fill={`${BRICK}0.80)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}>
             REAL · FULL SOLUTION
           </text>
 
@@ -217,7 +217,7 @@ export default function PLInteractive() {
               <text x={t.x + t.w / 2} y={t.y + t.h / 2}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                fill={`${BRICK}0.90)`} style={{ userSelect: 'none' }}>
+                fill={`rgba(183,145,135,0.979)`} style={{ userSelect: 'none' }}>
                 {t.label}
               </text>
             </g>
@@ -227,7 +227,7 @@ export default function PLInteractive() {
           <text x={ZN_CX} y={148}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${BRICK}0.40)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.874)`} style={{ userSelect: 'none' }}>
             REAL OPERATIONS · REAL CUSTOMERS · REAL MONEY
           </text>
         </motion.g>
@@ -251,7 +251,7 @@ export default function PLInteractive() {
               <text x={M_X1 + (M_X2 - M_X1) / 2} y={m.y - 5}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={isActive('metrics') ? `${BRICK}0.75)` : `${BRICK}0.50)`}
+                fill={isActive('metrics') ? `rgba(183,145,135,0.948)` : `rgba(183,145,135,0.895)`}
                 style={{ userSelect: 'none' }}>
                 {m.label}
               </text>
@@ -277,19 +277,19 @@ export default function PLInteractive() {
           <text x={GATE_CX} y={GATE_CY - 14}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-            fill={`${BRICK}0.90)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.979)`} style={{ userSelect: 'none' }}>
             GO / NO-GO
           </text>
           <text x={GATE_CX} y={GATE_CY + 2}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={`${BRICK}0.55)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}>
             PRE-COMMITTED
           </text>
           <text x={GATE_CX} y={GATE_CY + 13}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={`${BRICK}0.55)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}>
             CRITERIA
           </text>
         </motion.g>

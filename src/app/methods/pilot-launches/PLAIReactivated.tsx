@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 const AMBER  = 'rgba(245,158,11,'
 
 const SVG_W = 700, SVG_H = 268
@@ -115,7 +116,7 @@ export default function PLAIReactivated() {
         ].map(({ x, y, text }) => (
           <text key={text + x} x={x} y={y}
             fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill="rgba(255,255,255,0.10)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.55)" style={{ userSelect: 'none' }}>
             {text}
           </text>
         ))}
@@ -225,7 +226,7 @@ export default function PLAIReactivated() {
             <text x={M_X1 + (M_X2 - M_X1) / 2} y={m.y - 5}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-              fill={isAI ? `${INDIGO}0.45)` : `${BRICK}0.55)`}
+              fill={isAI ? `${INDIGO_TEXT}0.885)` : `rgba(183,145,135,0.905)`}
               style={{ userSelect: 'none' }}>
               {m.label}
             </text>

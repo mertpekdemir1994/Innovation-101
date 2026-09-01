@@ -152,7 +152,7 @@ export default function PLEstablishing() {
             <text x={t.x + t.w / 2} y={t.y + t.h / 2}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill={`${BRICK}0.90)`} style={{ userSelect: 'none' }}>
+              fill={`rgba(183,145,135,0.979)`} style={{ userSelect: 'none' }}>
               {t.label}
             </text>
           </motion.g>
@@ -176,7 +176,7 @@ export default function PLEstablishing() {
             <text x={M_X1 + (M_X2 - M_X1) / 2} y={m.y - 5}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-              fill={`${BRICK}0.55)`} style={{ userSelect: 'none' }}>
+              fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}>
               {m.label}
             </text>
           </motion.g>
