@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'A team has built a subscription management screen. Internally, everyone agrees it is clear and simple. But support tickets keep arriving from customers who cannot work out how to cancel, and some are churning in frustration rather than downgrading. The team needs to know why. Both versions investigate the same screen — only the method differs.'
+const SCENARIO = 'A team has built a subscription management screen. Internally, everyone agrees it is clear and simple. But support tickets keep arriving from customers who cannot work out how to cancel, and some are churning in frustration rather than downgrading. The team needs to know why. Both versions investigate the same screen, only the method differs.'
 
 export default function UTExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -88,7 +88,7 @@ export default function UTExampleToggle() {
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 Watching was uncomfortable and enormously productive. The first participant paused for a long
-                moment on the account screen, scanning, then clicked &ldquo;Plan details&rdquo; — the wrong place —
+                moment on the account screen, scanning, then clicked &ldquo;Plan details&rdquo; (the wrong place)
                 confidently, because the word &ldquo;Plan&rdquo; was the closest thing to what she was looking for. She
                 backtracked. Tried &ldquo;Billing.&rdquo; Backtracked again. Eventually she stopped, and said she supposed
                 she would email support. The team, watching, could see the cancel option the entire time: it
@@ -105,7 +105,7 @@ export default function UTExampleToggle() {
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 The pattern repeated across four of five participants. That was the finding, and it was undeniable.
                 Nobody could argue that the label was clear when five strangers in a row failed to find it.
-                And — crucially — nobody on the team could have predicted the specific wrong turn, because they
+                And, crucially, nobody on the team could have predicted the specific wrong turn, because they
                 all knew where the button was. Their knowledge of the product was precisely what made them blind
                 to the confusion. The confident wrong turn was the most instructive part: participants were not
                 hesitantly guessing; they were certain, which meant the interface was actively telling them
@@ -137,9 +137,9 @@ export default function UTExampleToggle() {
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
                 The team had assumed the design was clear. That assumption was the problem, and it was shared
-                by every person who had worked on the product — including the most experienced designer on the
+                by every person who had worked on the product, including the most experienced designer on the
                 team, who had missed the confusion entirely. The test did not require that anyone be blamed.
-                It simply showed, with five people and four hours, that the assumption was wrong.
+                It showed, with five people and four hours, that the assumption was wrong.
               </p>
               <p className="font-semibold"
                 style={{ fontSize: 'var(--text-sm)', color: `${BRICK}0.80)` }}>
@@ -163,7 +163,7 @@ export default function UTExampleToggle() {
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The traditional approach above was run by the team directly. This tab imagines the same team
-                had asked an AI to review the screen instead — to show where AI genuinely helps, and what it
+                had asked an AI to review the screen instead, to show where AI genuinely helps, and what it
                 structurally cannot do.
               </p>
             </div>
@@ -186,7 +186,7 @@ export default function UTExampleToggle() {
                 principles, it flagged several real issues in seconds: an ambiguous navigation label, a lack
                 of clear system feedback after an action, an inconsistency with the pattern used elsewhere in
                 the product. These were legitimate findings, and fixing them would have improved the screen.
-                As an early, cheap heuristic pass — run before spending any participant time — this was real
+                As an early, cheap heuristic pass (run before spending any participant time) this was real
                 value that raises the floor. The team should absolutely have used it.
               </p>
             </div>
@@ -196,7 +196,7 @@ export default function UTExampleToggle() {
               style={{ border: `1px solid rgba(245,158,11,0.22)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(245,158,11,0.80)' }}>
-                What it could not produce — the actual finding
+                What it could not produce: the actual finding
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
                 The AI could not tell the team that five real people in a row would confidently click &ldquo;Plan
@@ -207,7 +207,7 @@ export default function UTExampleToggle() {
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
                 This is not a limitation of the particular AI tool or version. It is structural. Usability
-                testing exists to surface the particular, unpredictable ways real people fail — the specific
+                testing exists to surface the particular, unpredictable ways real people fail: the specific
                 misreading of a label that no principle predicts, the confident wrong turn nobody anticipated,
                 the pause at a moment the team was certain was obvious. A system reasoning from documented
                 principles cannot generate findings that only exist when a human enacts them.
@@ -230,9 +230,9 @@ export default function UTExampleToggle() {
               <p className="font-mono uppercase tracking-widest mb-2"
                 style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.65)` }}>The honest readout</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                Use AI for the heuristic review — it catches the obvious violations fast, saves participant
+                Use AI for the heuristic review; it catches the obvious violations fast, saves participant
                 time, and raises the floor. Then run the five-person test anyway. The finding that mattered
-                in this case — the specific, confident, unpredictable wrong turn that five strangers made —
+                (the specific, confident, unpredictable wrong turn that five strangers made)
                 required watching real humans struggle. Let AI clear the obvious. Spend your participants
                 on what only reality can reveal.
               </p>

@@ -50,30 +50,30 @@ interface ZoneInfo {
 
 const ZONES: Record<ZoneId, ZoneInfo> = {
   intended: {
-    tag: 'THE INTENDED PATH — THE DESIGNER\'S ASSUMPTION',
+    tag: 'THE INTENDED PATH: THE DESIGNER\'S ASSUMPTION',
     headline: 'The clean line is what you assumed. It is the route only someone who built the thing can see.',
-    body: 'The intended path is the team\'s mental model of the product: what you assumed a user would do, in what sequence, to reach their goal. It is clean, direct, and obvious — to everyone who designed it. The problem is that this knowledge is invisible to a stranger. They arrive with their own mental model, their own vocabulary, their own sense of what a word like "Plan" means in this context. The intended path exists in your head. The actual path is what happens when another mind meets your interface.',
+    body: 'The intended path is the team\'s mental model of the product: what you assumed a user would do, in what sequence, to reach their goal. It is clean, direct, and obvious, to everyone who designed it. The problem is that this knowledge is invisible to a stranger. They arrive with their own mental model, their own vocabulary, their own sense of what a word like "Plan" means in this context. The intended path exists in your head. The actual path is what happens when another mind meets your interface.',
   },
   hesitation: {
-    tag: 'FRICTION POINT — HESITATION',
+    tag: 'FRICTION POINT: HESITATION',
     headline: 'They paused here. They did not know what to do next.',
     body: 'Hesitation is quiet and easy to miss live, but it is one of the most reliable signals the method produces. When a person pauses, the interface has not communicated what the designer assumed it communicated. The path that seemed obvious has, for this person, become ambiguous. Hesitation often precedes a wrong turn: the person scans for the nearest word that connects to their goal, and the result depends on their vocabulary, not yours.',
   },
   wrongTurn: {
-    tag: 'FRICTION POINT — WRONG TURN (THE MOST INSTRUCTIVE FAILURE)',
-    headline: 'They clicked "Plan details" — not tentatively but CONFIDENTLY. They were certain they were right.',
-    body: 'The confident wrong turn is the most instructive finding a usability test produces. The person was not guessing; they were sure. This means the interface told them something the team never intended to say: that "Plan" was the word connecting to their goal, and this path was the right one. They were wrong, but the interface was responsible. This fact did not exist as a piece of knowledge until a human enacted it. No heuristic principle predicts which specific word a specific person will latch onto — that emerges from their particular mental model meeting your particular label.',
+    tag: 'FRICTION POINT: WRONG TURN (THE MOST INSTRUCTIVE FAILURE)',
+    headline: 'They clicked "Plan details", not tentatively but CONFIDENTLY. They were certain they were right.',
+    body: 'The confident wrong turn is the most instructive finding a usability test produces. The person was not guessing; they were sure. This means the interface told them something the team never intended to say: that "Plan" was the word connecting to their goal, and this path was the right one. They were wrong, but the interface was responsible. This fact did not exist as a piece of knowledge until a human enacted it. No heuristic principle predicts which specific word a specific person will latch onto; that emerges from their particular mental model meeting your particular label.',
     isWrong: true,
   },
   backtrack: {
-    tag: 'FRICTION POINT — BACKTRACK',
+    tag: 'FRICTION POINT: BACKTRACK',
     headline: 'They realised "Plan details" was not the right place and came back.',
-    body: 'A backtrack costs more than the visible time. Each wrong turn and return erodes the person\'s confidence in the product. By the time they have backtracked twice, they are no longer simply looking for a button — they are beginning to believe the product is confusing. That belief makes every subsequent action more hesitant. The person starts doubting themselves. They will often say, in post-test questioning, that they probably just missed something obvious — taking the blame that belongs to the design.',
+    body: 'A backtrack costs more than the visible time. Each wrong turn and return erodes the person\'s confidence in the product. By the time they have backtracked twice, they are no longer simply looking for a button; they are beginning to believe the product is confusing. That belief makes every subsequent action more hesitant. The person starts doubting themselves. They will often say, in post-test questioning, that they probably just missed something obvious, taking the blame that belongs to the design.',
   },
   stuck: {
-    tag: 'FRICTION POINT — STUCK (HARD STOP)',
+    tag: 'FRICTION POINT: STUCK (HARD STOP)',
     headline: 'They could not proceed. In a live product, this is where they close the tab.',
-    body: 'The hard stop is the terminal failure. The person has exhausted their strategies without finding the path forward, and they have not arrived at their goal. In a live product with real stakes — trying to cancel a subscription they are being charged for — this is where they abandon, or call support in frustration. They will not tell you the interface was confusing; most people blame themselves. They will simply leave. The usability test shows you the exact sequence of events that led to this moment, so you can close the path to it.',
+    body: 'The hard stop is the terminal failure. The person has exhausted their strategies without finding the path forward, and they have not arrived at their goal. In a live product with real stakes, trying to cancel a subscription they are being charged for, this is where they abandon, or call support in frustration. They will not tell you the interface was confusing; most people blame themselves. They will leave. The usability test shows you the exact sequence of events that led to this moment, so you can close the path to it.',
   },
 }
 

@@ -94,7 +94,7 @@ export default function UTAIReactivated() {
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label={isAI
           ? 'AI mode: the intended path turns indigo and three heuristic flags appear showing what AI can review. The actual path (the real person\'s wandering route and friction points) fades to nearly invisible, with a label stating it is not accessible to AI.'
-          : 'Human mode: both paths visible — the intended straight white path and the actual brick-colored wandering path with four friction points marked.'}
+          : 'Human mode: both paths visible, the intended straight white path and the actual brick-colored wandering path with four friction points marked.'}
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
         <defs>
@@ -177,7 +177,7 @@ export default function UTAIReactivated() {
           </text>
         </motion.g>
 
-        {/* Intended path arrows — turn INDIGO in AI mode */}
+        {/* Intended path arrows: turn INDIGO in AI mode */}
         <motion.g
           animate={{ opacity: 1 }}
           transition={{ duration: 0.35 }}>
@@ -191,7 +191,7 @@ export default function UTAIReactivated() {
           ))}
         </motion.g>
 
-        {/* Actual path — fades to near-invisible in AI mode */}
+        {/* Actual path: fades to near-invisible in AI mode */}
         <motion.path
           d={ACTUAL_PATH}
           fill="none"
@@ -201,7 +201,7 @@ export default function UTAIReactivated() {
           animate={{ stroke: isAI ? `${BRICK}0.10)` : `${BRICK}0.88)` }}
           transition={{ duration: 0.40 }} />
 
-        {/* Friction point markers — fade in AI mode */}
+        {/* Friction point markers: fade in AI mode */}
         <motion.g animate={{ opacity: isAI ? 0.07 : 1 }} transition={{ duration: 0.35 }}>
           {FRICTION_POS.map((f) => (
             <g key={f.label}>
@@ -285,7 +285,7 @@ export default function UTAIReactivated() {
                 <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
                   <p className="font-mono uppercase tracking-widest"
                     style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.80)` }}>
-                    Where AI genuinely helps — heuristic review
+                    Where AI genuinely helps: heuristic review
                   </p>
                   <span className="font-mono text-xs px-2 py-0.5 rounded-full"
                     style={{ background: `${INDIGO}0.12)`, color: `${INDIGO}0.75)`, border: `1px solid ${INDIGO}0.25)` }}>
@@ -293,8 +293,8 @@ export default function UTAIReactivated() {
                   </span>
                 </div>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                  AI knows the established usability principles — clarity of labels, visibility of system status,
-                  consistency, error prevention, recognition over recall — and can review an interface against them
+                  AI knows the established usability principles (clarity of labels, visibility of system status,
+                  consistency, error prevention, recognition over recall) and can review an interface against them
                   quickly, flagging obvious violations: ambiguous labels, missing feedback, inconsistent patterns,
                   unclear affordances. This is a real, low-cost contribution. An expert-review pass that used to
                   require a specialist&rsquo;s time can now be run early and often. Use it: it makes the cheap fixes
@@ -307,15 +307,15 @@ export default function UTAIReactivated() {
                 style={{ border: `1px solid ${AMBER}0.22)` }}>
                 <p className="font-mono uppercase tracking-widest mb-2"
                   style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.80)` }}>
-                  What AI cannot do — watch a real person get confused
+                  What AI cannot do: watch a real person get confused
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
-                  The actual path — the wandering, hesitant, wrong-turn-taking route a real person takes — is
+                  The actual path, the wandering, hesitant, wrong-turn-taking route a real person takes, is
                   invisible to AI. AI reasons from documented principles and patterns. The entire value of a
                   usability test is that real human confusion is not derivable from principles: it is specific,
                   surprising, and grounded in a person&rsquo;s own mental model. A model can tell you that a label is
                   ambiguous in the abstract; it cannot tell you that THIS particular person will read &ldquo;Continue&rdquo;
-                  as &ldquo;cancel and start over&rdquo; — because that fact did not exist until a human did it.
+                  as &ldquo;cancel and start over&rdquo;, because that fact did not exist until a human did it.
                 </p>
                 <div className="rounded p-3"
                   style={{ background: `${AMBER}0.06)`, borderLeft: `2px solid ${AMBER}0.35)` }}>
@@ -334,12 +334,12 @@ export default function UTAIReactivated() {
               style={{ border: `1px solid ${BRICK}0.22)`, background: `${BRICK}0.04)` }}>
               <p className="font-mono uppercase tracking-widest mb-2"
                 style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.70)` }}>
-                The traditional method — watch the person, not the screen
+                The traditional method: watch the person, not the screen
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 A usability test is five people, five tasks, one facilitator who says nothing. The intended path
                 is what you assumed would happen. The actual path is what a stranger does. The gap between them
-                — the hesitations, the wrong turns, the backtracks, the places where the person simply stops —
+                (the hesitations, the wrong turns, the backtracks, the places where the person simply stops)
                 is the finding. You cannot reason your way to it in advance, and you cannot simulate it. It
                 requires a real mind meeting your specific interface.
               </p>
@@ -354,7 +354,7 @@ export default function UTAIReactivated() {
               The honest synthesis
             </p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-              Use AI for heuristic review — it genuinely catches obvious violations fast, and that raises the
+              Use AI for heuristic review; it genuinely catches obvious violations fast, and that raises the
               floor. But the method&rsquo;s core act is watching a real, specific human struggle in ways nobody
               predicted. That is not reviewable, derivable, or simulatable. Let AI clear the obvious problems.
               Spend your five participants on the ones only reality can reveal.

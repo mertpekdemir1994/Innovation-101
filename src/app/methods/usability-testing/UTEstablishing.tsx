@@ -20,7 +20,7 @@ const NODES = [
 const NODE_CX = NODES.map(n => n.x + N_W / 2)
 // [59, 187, 321, 455, 587]
 
-// Wrong-turn node (Plan Details — above the line)
+// Wrong-turn node (Plan Details: above the line)
 const WN_X = 234, WN_Y = 48, WN_W = 78, WN_H = 28
 const WN_CX = WN_X + WN_W / 2  // 273
 const WN_CY = WN_Y + WN_H / 2  // 62
@@ -33,16 +33,16 @@ const INT_ARROWS = [
   { x1: 494+4, x2: 548-4  },   // N4→N5: 498→544
 ]
 
-// Actual path — wandering, hesitating, detouring, stopping before the goal
+// Actual path: wandering, hesitating, detouring, stopping before the goal
 const ACTUAL_PATH = [
   'M 59 124',
   'C 95 124 150 128 167 128',     // wobble toward ACCOUNT
-  'L 187 124',                     // arrive at ACCOUNT — HESITATION
-  'C 212 108 248 82 273 62',      // curve UP to Plan Details — WRONG TURN
+  'L 187 124',                     // arrive at ACCOUNT: HESITATION
+  'C 212 108 248 82 273 62',      // curve UP to Plan Details: WRONG TURN
   'L 273 62',                      // at Plan Details (pause)
-  'C 255 84 218 108 187 124',     // curve back DOWN — BACKTRACK
+  'C 255 84 218 108 187 124',     // curve back DOWN: BACKTRACK
   'C 222 128 280 130 321 124',    // move right to BILLING
-  'C 360 120 385 118 400 119',    // start toward CANCEL — stops here
+  'C 360 120 385 118 400 119',    // start toward CANCEL, stops here
 ].join(' ')
 
 // Friction point positions and metadata
@@ -73,7 +73,7 @@ export default function UTEstablishing() {
       <svg
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-        aria-label="Expectation versus behavior gap. Two paths through an interface. The INTENDED PATH is a clean straight line from START through ACCOUNT, BILLING, and CANCEL to DONE. The ACTUAL PATH wanders: it hesitates at ACCOUNT, takes a wrong turn up to Plan Details, backtracks to ACCOUNT, reaches BILLING, then gets stuck before CANCEL — never reaching DONE. Four friction points are marked: HESITATION at ACCOUNT, WRONG TURN at Plan Details, BACKTRACK on the return, STUCK before CANCEL. The gap between the two paths is the finding."
+        aria-label="Expectation versus behavior gap. Two paths through an interface. The INTENDED PATH is a clean straight line from START through ACCOUNT, BILLING, and CANCEL to DONE. The ACTUAL PATH wanders: it hesitates at ACCOUNT, takes a wrong turn up to Plan Details, backtracks to ACCOUNT, reaches BILLING, then gets stuck before CANCEL, never reaching DONE. Four friction points are marked: HESITATION at ACCOUNT, WRONG TURN at Plan Details, BACKTRACK on the return, STUCK before CANCEL. The gap between the two paths is the finding."
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
         <defs>
@@ -160,7 +160,7 @@ export default function UTEstablishing() {
             {...fade(0.26 + i * 0.06)} />
         ))}
 
-        {/* Actual path — draws SLOWLY with pauses (the halting animation is the point) */}
+        {/* Actual path: draws SLOWLY with pauses (the halting animation is the point) */}
         <motion.path
           d={ACTUAL_PATH}
           fill="none"

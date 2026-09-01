@@ -21,20 +21,20 @@ const FRAMEWORK_LINKS = [
   {
     slug: 'design-sprint',
     name: 'Design Sprint',
-    phase: 'Friday — Five-User Test',
-    note: 'The entire validation step of a Design Sprint is a usability test: five participants, one prototype, one Friday. The five-user insight — that five participants surface the large majority of usability issues — is the direct rationale for the Design Sprint\'s test format. Usability testing and the Design Sprint are structurally intertwined: the sprint exists to produce a prototype fast enough that a usability test can be run before any real build investment is made.',
+    phase: 'Friday: Five-User Test',
+    note: 'The entire validation step of a Design Sprint is a usability test: five participants, one prototype, one Friday. The five-user insight, that five participants surface the large majority of usability issues, is the direct rationale for the Design Sprint\'s test format. Usability testing and the Design Sprint are structurally intertwined: the sprint exists to produce a prototype fast enough that a usability test can be run before any real build investment is made.',
   },
   {
     slug: 'design-thinking',
     name: 'Design Thinking',
     phase: 'Test',
-    note: 'The Test phase of Design Thinking is usability testing: putting the prototype or built solution in front of real users and watching what they do, without helping them. Design Thinking\'s iterative structure means Test feeds back into Define and Ideate — the behavioral evidence from watching users struggle recalibrates the problem understanding as well as the solution.',
+    note: 'The Test phase of Design Thinking is usability testing: putting the prototype or built solution in front of real users and watching what they do, without helping them. Design Thinking\'s iterative structure means Test feeds back into Define and Ideate: the behavioral evidence from watching users struggle recalibrates the problem understanding as well as the solution.',
   },
   {
     slug: 'double-diamond',
     name: 'Double Diamond',
     phase: 'Deliver',
-    note: 'Usability testing belongs in the Deliver phase — evaluating the built solution before and after release. In the Double Diamond, the Deliver phase is where prototypes become real products, and usability testing is the discipline that keeps execution honest: a concept can survive the whole Develop phase and still fail in Deliver because the thing is baffling to operate.',
+    note: 'Usability testing belongs in the Deliver phase, evaluating the built solution before and after release. In the Double Diamond, the Deliver phase is where prototypes become real products, and usability testing is the discipline that keeps execution honest: a concept can survive the whole Develop phase and still fail in Deliver because the thing is baffling to operate.',
   },
   {
     slug: 'agile-innovation',
@@ -46,7 +46,7 @@ const FRAMEWORK_LINKS = [
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Measure',
-    note: 'In the Lean Startup loop, usability testing is a Measure activity: after you Build, you need to understand whether people can actually use what you shipped. Build-Measure-Learn fails if the Measure step only captures business metrics — retention, conversion — without understanding the behavioral causes. Usability testing surfaces the specific interactions that are driving the numbers.',
+    note: 'In the Lean Startup loop, usability testing is a Measure activity: after you Build, you need to understand whether people can actually use what you shipped. Build-Measure-Learn fails if the Measure step only captures business metrics (retention, conversion) without understanding the behavioral causes. Usability testing surfaces the specific interactions that are driving the numbers.',
   },
 ]
 
@@ -54,7 +54,7 @@ const RELATED_METHODS = [
   {
     slug: 'concept-testing',
     name: 'Concept Testing',
-    rel: 'The reciprocal pair — and the key distinction on this page. Concept Testing asks "do people WANT this?" — it tests the IDEA and its desirability, usually before you build. Usability Testing asks "can people USE this?" — it tests the EXECUTION, the built artifact. Different failure modes: a concept can test brilliantly and still fail because the thing is baffling to operate; a flawlessly usable product can fail because nobody wanted it. You need both answers, and neither method gives you the other\'s.',
+    rel: 'The reciprocal pair, and the key distinction on this page. Concept Testing asks "do people WANT this?": it tests the IDEA and its desirability, usually before you build. Usability Testing asks "can people USE this?": it tests the EXECUTION, the built artifact. Different failure modes: a concept can test brilliantly and still fail because the thing is baffling to operate; a flawlessly usable product can fail because nobody wanted it. You need both answers, and neither method gives you the other\'s.',
   },
   {
     slug: 'rapid-prototyping',
@@ -64,22 +64,22 @@ const RELATED_METHODS = [
   {
     slug: 'contextual-observation',
     name: 'Contextual Observation',
-    rel: 'A shared core discipline — watching what people actually DO, not what they say — at a different altitude. Contextual observation watches people in their real environment to understand their world: their tasks, tools, workarounds, and context. Usability testing watches one person attempt a specific task with your specific artifact. The discipline (say nothing; watch behavior) is identical; the focus is different.',
+    rel: 'A shared core discipline (watching what people actually DO, not what they say) at a different altitude. Contextual observation watches people in their real environment to understand their world: their tasks, tools, workarounds, and context. Usability testing watches one person attempt a specific task with your specific artifact. The discipline (say nothing; watch behavior) is identical; the focus is different.',
   },
   {
     slug: 'flow-mapping',
     name: 'Flow Mapping',
-    rel: 'Complementary, and worth distinguishing, since both involve paths. Flow mapping maps the SYSTEM\'s branching structure — every path through the product or process, all the forks, dead ends, and loops that have accreted over time. Usability testing traces ONE PERSON\'S actual struggle against it: the specific route a specific person takes in a specific session, with the hesitations and wrong turns that only appear when a real mind meets the interface. Flow mapping shows you the topology. Usability testing shows you where a human falls over inside it.',
+    rel: 'Complementary, and worth distinguishing, since both involve paths. Flow mapping maps the SYSTEM\'s branching structure: every path through the product or process, all the forks, dead ends, and loops that have accreted over time. Usability testing traces ONE PERSON\'S actual struggle against it: the specific route a specific person takes in a specific session, with the hesitations and wrong turns that only appear when a real mind meets the interface. Flow mapping shows you the topology. Usability testing shows you where a human falls over inside it.',
   },
   {
     slug: 'mvp-mlp',
     name: 'MVP & MLP',
-    rel: 'Directly relevant to the core warning on the MVP & MLP page. A product people cannot figure out how to use produces a FALSE NEGATIVE: the team concludes the idea failed when in fact the execution did. Usability testing is how you tell those apart. If you skip usability testing and launch an MVP that is confusing to operate, the behavioral signal — low engagement, high abandonment — looks like the concept failed. It may not have.',
+    rel: 'Directly relevant to the core warning on the MVP & MLP page. A product people cannot figure out how to use produces a FALSE NEGATIVE: the team concludes the idea failed when in fact the execution did. Usability testing is how you tell those apart. If you skip usability testing and launch an MVP that is confusing to operate, the behavioral signal (low engagement, high abandonment) looks like the concept failed. It may not have.',
   },
   {
     slug: null,
     name: 'Post-Launch Feedback Loops',
-    rel: 'Downstream: usability problems do not stop surfacing at launch. Support tickets, drop-off data, abandonment rates, and session recordings are all pointing at usability failures that continued to occur in the live product. Post-launch feedback loops are how you keep catching them after the test sessions have ended. The discipline is the same — watch behavior, not stated opinions — at a different cadence and scale.',
+    rel: 'Downstream: usability problems do not stop surfacing at launch. Support tickets, drop-off data, abandonment rates, and session recordings are all pointing at usability failures that continued to occur in the live product. Post-launch feedback loops are how you keep catching them after the test sessions have ended. The discipline is the same (watch behavior, not stated opinions) at a different cadence and scale.',
   },
 ]
 
@@ -89,7 +89,7 @@ export default function UsabilityTestingPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -131,7 +131,7 @@ export default function UsabilityTestingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -142,18 +142,18 @@ export default function UsabilityTestingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={BRICK}>What it is</SectionLabel>
-            <SectionHeadingLight>Watching behavior, not collecting opinions. The question is whether they can use it &mdash; not whether they like it.</SectionHeadingLight>
+            <SectionHeadingLight>Watching behavior, not collecting opinions. The question is whether they can use it, not whether they like it.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5">
               <Body>
                 Usability testing puts a real person in front of the thing you built, gives them a real task,
-                and watches what they actually do &mdash; without helping them. The output is not their opinion of
+                and watches what they actually do, without helping them. The output is not their opinion of
                 the product; it is their BEHAVIOR: where they hesitated, where they clicked the wrong thing,
                 where they backtracked, where they gave up. You are not asking whether they like it. You are
                 finding out whether they can use it.
@@ -161,8 +161,8 @@ export default function UsabilityTestingPage() {
               <Body>
                 The distinction from concept testing is worth stating plainly, because the two answer completely
                 different questions and catch completely different failures. Concept testing asks &ldquo;do people
-                WANT this?&rdquo; &mdash; it tests the IDEA, the value proposition, usually before you have built anything.
-                Usability testing asks &ldquo;can people USE this?&rdquo; &mdash; it tests the EXECUTION, the actual built
+                WANT this?&rdquo;, it tests the IDEA, the value proposition, usually before you have built anything.
+                Usability testing asks &ldquo;can people USE this?&rdquo;, it tests the EXECUTION, the actual built
                 artifact. A concept can test brilliantly and the product still fail, because the thing turned
                 out to be baffling to operate. A product can be flawlessly usable and still fail, because
                 nobody wanted it in the first place. You need both answers, and neither method gives you the
@@ -174,7 +174,7 @@ export default function UsabilityTestingPage() {
                 next, because you designed it. That knowledge is precisely what makes you unable to see the
                 interface as a stranger sees it. The gap between &ldquo;obvious to me&rdquo; and &ldquo;obvious to someone
                 who has never seen this&rdquo; is invisible from the inside, and no amount of careful reasoning
-                closes it. It only becomes visible when you watch a real person fall into it &mdash; which is
+                closes it. It only becomes visible when you watch a real person fall into it, which is
                 why the hardest and most important discipline of the method is watching someone struggle and
                 saying nothing.
               </Body>
@@ -184,7 +184,7 @@ export default function UsabilityTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -196,7 +196,7 @@ export default function UsabilityTestingPage() {
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Click the intended path to understand what it represents, or click any friction point along
-              the actual path to see what happened there &mdash; and why the confident wrong turn is the most
+              the actual path to see what happened there, and why the confident wrong turn is the most
               instructive failure the method produces.
             </p>
             <UTInteractive />
@@ -205,7 +205,7 @@ export default function UsabilityTestingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -221,7 +221,7 @@ export default function UsabilityTestingPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You have something a person can operate — a prototype, a working build, a live product — and need to know whether they can navigate it without help.',
+                    'You have something a person can operate (a prototype, a working build, a live product) and need to know whether they can navigate it without help.',
                     'The team believes the design is obvious, which is exactly the condition under which it usually is not.',
                     'You are seeing unexplained drop-off, abandonment, or support load, and suspect the cause is structural confusion rather than lack of desire.',
                     'You are about to ship, and want to catch the failures that only appear when a stranger meets the thing cold.',
@@ -245,9 +245,9 @@ export default function UsabilityTestingPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You do not yet know whether anyone wants the idea — that is concept testing. A perfectly usable product nobody wants is a very well-executed failure.',
+                    'You do not yet know whether anyone wants the idea; that is concept testing. A perfectly usable product nobody wants is a very well-executed failure.',
                     'There is nothing to operate yet; usability testing needs an artifact. You can test rough prototypes and should, but you need something a person can act on.',
-                    'You intend to explain the interface to participants while they use it — a test in which you help is not a test, and it is the single most common way teams destroy the method\'s value.',
+                    'You intend to explain the interface to participants while they use it; a test in which you help is not a test, and it is the single most common way teams destroy the method\'s value.',
                     'You will only run it to confirm the design is good; a usability test run to validate rather than to discover will find nothing, because the facilitator will unconsciously smooth the path.',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -277,7 +277,7 @@ export default function UsabilityTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -290,12 +290,12 @@ export default function UsabilityTestingPage() {
                 {
                   n: '01',
                   title: 'Choose the real tasks, not the tour',
-                  body: 'Decide the specific tasks a participant will attempt — the things people genuinely need to do with the product. Frame them as goals, not instructions ("find and cancel your subscription," not "click the account menu, then billing"). Naming the path gives away the very thing you are testing. The task must state a destination, never a route.',
+                  body: 'Decide the specific tasks a participant will attempt, the things people genuinely need to do with the product. Frame them as goals, not instructions ("find and cancel your subscription," not "click the account menu, then billing"). Naming the path gives away the very thing you are testing. The task must state a destination, never a route.',
                 },
                 {
                   n: '02',
                   title: 'Recruit five people who resemble your actual users',
-                  body: 'Five participants surface about 85 percent of usability issues — the Nielsen Norman Group finding that makes the method cheap and repeatable, and removes any excuse not to run it. Recruit people who resemble real users and have never seen the product. Colleagues, or anyone who has already used it, cannot show you the stranger\'s experience, which is the only experience that matters here.',
+                  body: 'Five participants surface about 85 percent of usability issues, the Nielsen Norman Group finding that makes the method cheap and repeatable, and removes any excuse not to run it. Recruit people who resemble real users and have never seen the product. Colleagues, or anyone who has already used it, cannot show you the stranger\'s experience, which is the only experience that matters here.',
                 },
                 {
                   n: '03',
@@ -338,7 +338,7 @@ export default function UsabilityTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -354,7 +354,7 @@ export default function UsabilityTestingPage() {
                   isMistake: false,
                 },
                 {
-                  title: 'Never help — not even a little',
+                  title: 'Never help, not even a little',
                   body: 'The cardinal discipline, and the most commonly broken. Every hint, clarification, or rescue replaces the data with a demonstration of your product knowledge. Silence is uncomfortable. The discomfort is the point: what you are watching is the experience of every user who will encounter this without you there to help.',
                   isMistake: true,
                 },
@@ -400,7 +400,7 @@ export default function UsabilityTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -440,7 +440,7 @@ export default function UsabilityTestingPage() {
                 {
                   label: 'Practical notes',
                   items: [
-                    'Remote testing tools (screen recording, session replay) are widely available — use whatever your team already has',
+                    'Remote testing tools (screen recording, session replay) are widely available, use whatever your team already has',
                     'Get the team to watch live where possible; no report conveys a struggling user as effectively as watching one',
                     'Paper and rough prototypes are valid test artifacts; earlier is cheaper',
                     'Recruiting: ask colleagues to forward an invitation to people outside the organisation, or use a panel service',
@@ -471,13 +471,13 @@ export default function UsabilityTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — How AI is evolving   DARK
+          S9 - How AI is evolving   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
           <div className="py-20">
             <SectionLabel accent={BRICK}>AI &amp; this method</SectionLabel>
-            <SectionHeadingDark>AI can tell you what the usability principles say. It cannot watch a real person get confused &mdash; and that is the entire method.</SectionHeadingDark>
+            <SectionHeadingDark>AI can tell you what the usability principles say. It cannot watch a real person get confused, and that is the entire method.</SectionHeadingDark>
             <p
               className="mb-10 max-w-[560px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
@@ -492,7 +492,7 @@ export default function UsabilityTestingPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -502,7 +502,7 @@ export default function UsabilityTestingPage() {
             <p className="mb-8"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
               Two approaches to the same problem. The traditional test runs five participants. The hypothetical
-              AI version runs a heuristic review. Compare what each produces — and what each cannot.
+              AI version runs a heuristic review. Compare what each produces, and what each cannot.
             </p>
             <UTExampleToggle />
           </div>
@@ -510,7 +510,7 @@ export default function UsabilityTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Frameworks   LIGHT
+          S11 - Frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -549,7 +549,7 @@ export default function UsabilityTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -586,7 +586,7 @@ export default function UsabilityTestingPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources   LIGHT
+          S13 - Sources   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -596,9 +596,9 @@ export default function UsabilityTestingPage() {
 
             <div className="flex flex-col gap-3">
               {[
-                'Krug, S. (2000). Don\'t Make Me Think. New Riders. — The classic, and still the best short argument for cheap, frequent usability testing. The five-users insight, the sit-down-and-shut-up principle, and the practical rhythm of the method in one readable book.',
-                'Krug, S. (2009). Rocket Surgery Made Easy. New Riders. — The practical sequel: how to run a do-it-yourself usability test, from recruiting to facilitation to note-taking to making the fixes that matter. Directly actionable.',
-                'Norman, D. (1988). The Design of Everyday Things. Basic Books. — The foundational text on why things are hard to use and why the fault lies with the design rather than the person. The conceptual underpinning for why usability testing is the designer\'s responsibility, not a test of the participant.',
+                'Krug, S. (2000). Don\'t Make Me Think. New Riders. The classic, and still the best short argument for cheap, frequent usability testing. The five-users insight, the sit-down-and-shut-up principle, and the practical rhythm of the method in one readable book.',
+                'Krug, S. (2009). Rocket Surgery Made Easy. New Riders. The practical sequel: how to run a do-it-yourself usability test, from recruiting to facilitation to note-taking to making the fixes that matter. Directly actionable.',
+                'Norman, D. (1988). The Design of Everyday Things. Basic Books. The foundational text on why things are hard to use and why the fault lies with the design rather than the person. The conceptual underpinning for why usability testing is the designer\'s responsibility, not a test of the participant.',
               ].map((src, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="font-mono font-semibold shrink-0 mt-0.5"
