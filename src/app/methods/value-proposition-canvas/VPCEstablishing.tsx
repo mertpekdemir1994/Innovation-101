@@ -203,7 +203,7 @@ export default function VPCEstablishing() {
         {/* Caption */}
         <motion.text variants={fadeIn}
           x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
-          fill="rgba(255,255,255,0.22)" fontSize={7} fontFamily="monospace"
+          fill="rgba(255,255,255,0.61)" fontSize={7} fontFamily="monospace"
           letterSpacing={0.8}
         >
           solid lines = fit matches · dashed = honest gaps · the gaps are the work

@@ -213,7 +213,7 @@ export default function VPCAIReactivated() {
             <motion.text
               key="ai-label"
               x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
-              fill={`${INDIGO}0.45)`} fontSize={6.5} fontFamily="monospace" letterSpacing={0.8}
+              fill={`${INDIGO_TEXT}0.885)`} fontSize={6.5} fontFamily="monospace" letterSpacing={0.8}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
             >AI filled every gap, inspect each connection against your research before acting
