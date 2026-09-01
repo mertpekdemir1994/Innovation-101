@@ -9,7 +9,7 @@ export default function MethodsPage() {
   return (
     <>
       {/* ── Dark section: page header + method cards ── */}
-      <section style={{ background: 'var(--color-dark)', position: 'relative' }}>
+      <section className="dark-section" style={{ background: 'var(--color-dark)', position: 'relative' }} aria-labelledby="methods-page-heading">
 
         {/* Subtle emerald radial glow */}
         <div
@@ -33,6 +33,7 @@ export default function MethodsPage() {
               Methods
             </p>
             <h1
+              id="methods-page-heading"
               className="font-display font-semibold text-balance mb-4"
               style={{
                 fontSize:      'clamp(2.5rem, 6vw, 4rem)',

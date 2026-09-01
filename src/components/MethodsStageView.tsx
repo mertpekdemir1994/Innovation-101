@@ -65,12 +65,12 @@ function MethodCard({ frontmatter }: { frontmatter: MethodFrontmatter }) {
             </span>
 
             {/* Method name */}
-            <h3
+            <h2
               className="font-semibold text-base leading-snug shrink-0 mb-2"
               style={{ color: `${color}0.90)` }}
             >
               {frontmatter.title}
-            </h3>
+            </h2>
 
             {/* Tagline */}
             <p
@@ -180,7 +180,7 @@ export default function MethodsStageView({ methods }: Props) {
       <div
         className="flex flex-wrap gap-2 mb-10 pb-6"
         style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
-        role="tablist"
+        role="group"
         aria-label="Filter methods by stage"
       >
         {STAGES.map(({ key, label, color }) => {
@@ -188,8 +188,8 @@ export default function MethodsStageView({ methods }: Props) {
           return (
             <button
               key={key}
-              role="tab"
-              aria-selected={active}
+              type="button"
+              aria-pressed={active}
               onClick={() => setActiveStage(key)}
               className="px-4 py-2 rounded-full text-sm transition-colors"
               style={{
@@ -205,8 +205,8 @@ export default function MethodsStageView({ methods }: Props) {
         })}
 
         <button
-          role="tab"
-          aria-selected={activeStage === 'az'}
+          type="button"
+          aria-pressed={activeStage === 'az'}
           onClick={() => setActiveStage('az')}
           className="px-4 py-2 rounded-full text-sm ml-auto transition-colors"
           style={{
@@ -224,7 +224,7 @@ export default function MethodsStageView({ methods }: Props) {
       {displayMethods.length === 0 ? (
         <p
           className="py-12 text-center"
-          style={{ color: 'rgba(255,255,255,0.35)', fontStyle: 'italic', fontSize: 'var(--text-sm)' }}
+          style={{ color: 'var(--color-dark-muted)', fontStyle: 'italic', fontSize: 'var(--text-sm)' }}
         >
           No methods in this stage yet: content coming soon.
         </p>
