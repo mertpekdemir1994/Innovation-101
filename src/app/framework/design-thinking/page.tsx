@@ -184,7 +184,7 @@ export default function DesignThinkingPage() {
                 ))}
               </ol>
               <div className="pt-space-4 border-t" style={{ borderColor: 'var(--color-neutral-200)' }}>
-                <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-2">Real-world example</p>
+                <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-2">Real-world example</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   A designer asked to improve an MRI scanner spent time in the hospital watching
                   children being scanned. Many were so terrified they had to be sedated. The real
@@ -370,7 +370,7 @@ export default function DesignThinkingPage() {
       <LightSection>
         <Container className="py-space-10">
           <div className="max-w-prose">
-            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-6">
+            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-6">
               Sources &amp; Further Reading
             </p>
             <div className="space-y-space-4">
