@@ -235,7 +235,7 @@ export default function DSPage() {
 
               <div>
                 <p className="font-mono uppercase tracking-widest mb-4"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do not lean on it when
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -245,7 +245,7 @@ export default function DSPage() {
                     'Participant burden is prohibitively high. Diary studies require ongoing effort from participants across multiple days. If participants cannot sustain that commitment (due to the nature of the task, the population, or the incentive structure) participation will collapse and the accumulation will be incomplete.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item}
                       </span>
