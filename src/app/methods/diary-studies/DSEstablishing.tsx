@@ -69,14 +69,14 @@ export default function DSEstablishing() {
         {/* Axis labels */}
         <motion.text x={AXIS_X0} y={AXIS_Y - 6}
           fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
-          fill="rgba(255,255,255,0.28)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.3, delay: prefersReduced ? 0 : 0.08 }}
         >TIME →</motion.text>
 
         <motion.text x={AXIS_X1 + 6} y={AXIS_Y + 4}
           fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.3, delay: prefersReduced ? 0 : 0.50 }}
         >14 DAYS</motion.text>
@@ -168,7 +168,7 @@ export default function DSEstablishing() {
         {/* Caption */}
         <motion.text x={SVG_W / 2} y={SVG_H - 3} textAnchor="middle"
           fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
-          fill="rgba(255,255,255,0.18)"
+          fill="rgba(255,255,255,0.59)"
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.3, delay: prefersReduced ? 0 : 0.68 }}
           style={{ userSelect: 'none' }}>
