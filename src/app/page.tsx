@@ -220,7 +220,7 @@ export default function HomePage() {
                         fontSize: 'var(--text-2xs)',
                         letterSpacing: '0.10em',
                         textTransform: 'uppercase',
-                        color: 'var(--color-neutral-400)',
+                        color: 'var(--color-neutral-500)',
                         marginBottom: '0.2rem',
                       }}
                     >
@@ -337,7 +337,7 @@ export default function HomePage() {
                         fontSize: 'var(--text-2xs)',
                         letterSpacing: '0.10em',
                         textTransform: 'uppercase',
-                        color: 'var(--color-neutral-400)',
+                        color: 'var(--color-neutral-500)',
                         marginBottom: '0.2rem',
                       }}
                     >
