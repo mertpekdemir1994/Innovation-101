@@ -240,7 +240,7 @@ export default function UsabilityTestingPage() {
 
               <div>
                 <p className="font-mono uppercase tracking-widest mb-4"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do NOT lean on it when
                 </p>
                 <ul className="flex flex-col gap-3">
