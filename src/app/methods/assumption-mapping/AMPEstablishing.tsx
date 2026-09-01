@@ -136,7 +136,7 @@ export default function AMPEstablishing() {
           x={16} y={(GY + GB) / 2}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-          fill="rgba(255,255,255,0.26)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.63)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={gridT}
         >IMPORTANCE</motion.text>
 
@@ -144,20 +144,20 @@ export default function AMPEstablishing() {
           x={(GX + GR) / 2} y={GB + 26}
           textAnchor="middle"
           fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-          fill="rgba(255,255,255,0.26)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.63)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={gridT}
         >UNCERTAINTY</motion.text>
 
         {/* Axis end labels */}
-        <motion.text x={GX - 20} y={GY + 4} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>HIGH</motion.text>
-        <motion.text x={GX - 20} y={GB - 2} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>LOW</motion.text>
-        <motion.text x={GX + 2}  y={GB + 20} textAnchor="start"  fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>KNOWN</motion.text>
-        <motion.text x={GR - 2}  y={GB + 20} textAnchor="end"    fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>UNKNOWN</motion.text>
+        <motion.text x={GX - 20} y={GY + 4} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>HIGH</motion.text>
+        <motion.text x={GX - 20} y={GB - 2} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>LOW</motion.text>
+        <motion.text x={GX + 2}  y={GB + 20} textAnchor="start"  fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>KNOWN</motion.text>
+        <motion.text x={GR - 2}  y={GB + 20} textAnchor="end"    fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>UNKNOWN</motion.text>
 
         {/* Quadrant corner labels */}
         <motion.text x={GX + 8} y={GY + 14} textAnchor="start"
           fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-          fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={{ ...gridT, delay: prefersReduced ? 0 : 0.28 }}>
           MONITOR
         </motion.text>
@@ -181,14 +181,14 @@ export default function AMPEstablishing() {
 
         <motion.text x={GX + 8} y={GB - 8} textAnchor="start"
           fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-          fill="rgba(255,255,255,0.12)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.56)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={{ ...gridT, delay: prefersReduced ? 0 : 0.22 }}>
           IGNORE
         </motion.text>
 
         <motion.text x={GR - 8} y={GB - 8} textAnchor="end"
           fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-          fill="rgba(255,255,255,0.16)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={{ ...gridT, delay: prefersReduced ? 0 : 0.26 }}>
           NICE TO KNOW
         </motion.text>
@@ -222,7 +222,7 @@ export default function AMPEstablishing() {
           x={SVG_W / 2} y={SVG_H - 6}
           textAnchor="middle"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-          fill="rgba(255,255,255,0.14)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.57)" style={{ userSelect: 'none' }}
           variants={fadeIn}
           transition={{ ...gridT, delay: prefersReduced ? 0 : 0.72 }}
         >
