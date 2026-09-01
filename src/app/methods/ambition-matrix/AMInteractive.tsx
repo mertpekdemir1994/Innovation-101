@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
 type Zone = 'core' | 'adjacent' | 'transformational'
 
@@ -44,7 +45,7 @@ function zoneState(id: Zone, active: Zone | null, hovered: Zone | null) {
 
 function zoneFill(st: string)        { return st === 'active' ? `${PLUM}0.28)` : st === 'hovered' ? `${PLUM}0.18)` : st === 'dim' ? `${PLUM}0.04)` : `${PLUM}0.12)` }
 function zoneStroke(st: string)      { return st === 'active' ? `${PLUM}0.90)` : st === 'hovered' ? `${PLUM}0.65)` : st === 'dim' ? `${PLUM}0.16)` : `${PLUM}0.55)` }
-function zoneLabelFill(st: string)   { return st === 'active' ? `${PLUM}0.95)` : st === 'hovered' ? `${PLUM}0.75)` : st === 'dim' ? `${PLUM}0.18)` : `${PLUM}0.80)` }
+function zoneLabelFill(st: string)   { return st === 'active' ? `${PLUM_TEXT}0.99)` : st === 'hovered' ? `${PLUM_TEXT}0.948)` : st === 'dim' ? `${PLUM_TEXT}0.828)` : `${PLUM_TEXT}0.958)` }
 
 export default function AMInteractive() {
   const [activeZone,  setActiveZone]  = useState<Zone | null>(null)

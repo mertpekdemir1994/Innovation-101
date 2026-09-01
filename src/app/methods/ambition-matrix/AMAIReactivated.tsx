@@ -112,7 +112,7 @@ export default function AMAIReactivated() {
                       x={cx} y={cy + 18}
                       textAnchor="middle"
                       fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                      fill={`${AI_C}0.70)`}
+                      fill={`rgba(141,143,245,0.937)`}
                       style={{ userSelect: 'none' }}
                       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
