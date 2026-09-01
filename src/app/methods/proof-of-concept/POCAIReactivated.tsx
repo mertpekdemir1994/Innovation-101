@@ -306,10 +306,10 @@ export default function POCAIReactivated() {
                   style={{ color: isAI ? `${INDIGO}0.80)` : `${BRICK}0.80)` }}>
                   {card.tag}
                 </p>
-                <h4 className="font-semibold mb-2"
+                <h3 className="font-semibold mb-2"
                   style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}>
                   {card.headline}
-                </h4>
+                </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                   {card.body}
                 </p>

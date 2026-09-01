@@ -290,7 +290,7 @@ export default function POCInteractive() {
                 {activeZone.tag}
               </span>
               <button onClick={() => setActive(null)}
-                className="text-xs text-neutral-400 hover:text-neutral-600"
+                className="text-xs text-neutral-500 hover:text-neutral-600"
                 aria-label="Close detail">×</button>
             </div>
             <h3 className="font-semibold mb-3"

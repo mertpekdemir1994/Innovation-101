@@ -233,7 +233,7 @@ export default function ProofOfConceptPage() {
 
               <div>
                 <p className="font-mono uppercase tracking-widest mb-4"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do not lean on it when
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -244,7 +244,7 @@ export default function ProofOfConceptPage() {
                     'There is no clear pass/fail threshold. If you cannot define what "it works" means before you start, you will rationalise whatever result you get.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item}
                       </span>
@@ -588,7 +588,7 @@ export default function ProofOfConceptPage() {
                   <p className="font-semibold mb-1"
                     style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}>
                     <span dangerouslySetInnerHTML={{ __html: s.title }} />: <span dangerouslySetInnerHTML={{ __html: s.author }} />{' '}
-                    <span style={{ fontWeight: 400, color: 'var(--color-neutral-400)' }}>({s.year})</span>
+                    <span style={{ fontWeight: 400, color: 'var(--color-neutral-500)' }}>({s.year})</span>
                   </p>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                     {s.note}

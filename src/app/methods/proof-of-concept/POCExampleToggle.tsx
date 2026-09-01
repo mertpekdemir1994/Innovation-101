@@ -42,7 +42,7 @@ export default function POCExampleToggle() {
 
       {/* Shared scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mr-2">
+        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">
           Shared scenario
         </span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
@@ -94,7 +94,7 @@ export default function POCExampleToggle() {
                 </ul>
               </div>
               <div className="border rounded-lg p-5 border-neutral-100 bg-neutral-50">
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-3">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mb-3">
                   What it excluded (deliberately)
                 </p>
                 <ul className="flex flex-col gap-2">
