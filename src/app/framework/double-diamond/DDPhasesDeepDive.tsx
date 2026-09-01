@@ -152,7 +152,7 @@ function PhaseDiamond({
         return (
           <g
             key={phase.id}
-            style={{ cursor: 'pointer', outline: 'none' }}
+            style={{ cursor: 'pointer' }}
             onClick={() => onPhaseClick(phase.id)}
             onMouseEnter={() => setHoveredId(phase.id)}
             onMouseLeave={() => setHoveredId(null)}

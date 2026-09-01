@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { spring } from '@/lib/motion'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -118,6 +118,7 @@ function DiamondSVG({ activePhase, hoveredPhase, theme, onPhaseClick, onPhaseHov
         return (
           <g key={phase.id}>
             <motion.path
+              id={`dd-phase-${phase.id}`}
               d={PHASE_PATHS[phase.id]}
               fill={fill}
               stroke={stroke}
@@ -205,7 +206,7 @@ interface PhasePanelProps {
   phase: Phase
   content: PhaseContent
   onClose: () => void
-  onOpenMethod: (slug: string) => void
+  onOpenMethod: (slug: string, trigger: HTMLElement) => void
 }
 
 function PhasePanel({ phase, content, onClose, onOpenMethod }: PhasePanelProps) {
@@ -318,7 +319,7 @@ function PhasePanel({ phase, content, onClose, onOpenMethod }: PhasePanelProps) 
                       {activity.methodSlug && (
                         <button
                           type="button"
-                          onClick={() => onOpenMethod(activity.methodSlug!)}
+                          onClick={(e) => onOpenMethod(activity.methodSlug!, e.currentTarget)}
                           className="font-mono text-xs uppercase tracking-widest underline"
                           style={{ color: 'rgba(124,58,237,0.85)' }}
                         >
@@ -342,6 +343,35 @@ function PhasePanel({ phase, content, onClose, onOpenMethod }: PhasePanelProps) 
 function MethodDrawer({ slug, onClose }: { slug: string; onClose: () => void }) {
   const prefersReduced = useReducedMotion()
   const label = slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+  const drawerRef = useRef<HTMLElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+
+  // Move focus into the drawer on open, and trap Tab within it while open.
+  useEffect(() => {
+    closeButtonRef.current?.focus()
+
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== 'Tab') return
+      const drawer = drawerRef.current
+      if (!drawer) return
+      const focusable = Array.from(
+        drawer.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')
+      )
+      if (focusable.length === 0) return
+      const first = focusable[0]
+      const last  = focusable[focusable.length - 1]
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [])
 
   return (
     <AnimatePresence>
@@ -357,6 +387,7 @@ function MethodDrawer({ slug, onClose }: { slug: string; onClose: () => void }) 
           />
           <motion.aside
             key="drawer"
+            ref={drawerRef}
             role="dialog"
             aria-modal="true"
             aria-label={`Method: ${label}`}
@@ -374,6 +405,7 @@ function MethodDrawer({ slug, onClose }: { slug: string; onClose: () => void }) 
                 <h2 className="text-2xl font-semibold text-neutral-900">{label}</h2>
               </div>
               <button
+                ref={closeButtonRef}
                 type="button"
                 onClick={onClose}
                 aria-label="Close method drawer"
@@ -413,12 +445,43 @@ export default function DoubleDiamondViz({ phaseContent, theme = 'light' }: Doub
   const [activePhase, setActivePhase]   = useState<Phase | null>(null)
   const [hoveredPhase, setHoveredPhase] = useState<Phase | null>(null)
   const [openMethod, setOpenMethod]     = useState<string | null>(null)
+  const drawerTriggerRef = useRef<HTMLElement | null>(null)
 
   const handlePhaseClick = useCallback((phase: Phase) => {
     setActivePhase((prev) => (prev === phase ? null : phase))
   }, [])
 
-  const handleClose = useCallback(() => setActivePhase(null), [])
+  const handleClose = useCallback(() => {
+    setActivePhase((prev) => {
+      if (prev) document.getElementById(`dd-phase-${prev}`)?.focus()
+      return null
+    })
+  }, [])
+
+  const handleOpenMethod = useCallback((slug: string, trigger: HTMLElement) => {
+    drawerTriggerRef.current = trigger
+    setOpenMethod(slug)
+  }, [])
+
+  const handleCloseDrawer = useCallback(() => {
+    setOpenMethod(null)
+    drawerTriggerRef.current?.focus()
+  }, [])
+
+  // Escape closes whichever is open: the method drawer takes priority since
+  // it renders on top of the phase panel.
+  useEffect(() => {
+    if (!openMethod && !activePhase) return
+
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== 'Escape') return
+      if (openMethod) handleCloseDrawer()
+      else if (activePhase) handleClose()
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [openMethod, activePhase, handleClose, handleCloseDrawer])
 
   return (
     <div>
@@ -466,14 +529,14 @@ export default function DoubleDiamondViz({ phaseContent, theme = 'light' }: Doub
               phase={activePhase}
               content={phaseContent[activePhase]}
               onClose={handleClose}
-              onOpenMethod={setOpenMethod}
+              onOpenMethod={handleOpenMethod}
             />
           )}
         </AnimatePresence>
       </div>
 
       {openMethod && (
-        <MethodDrawer slug={openMethod} onClose={() => setOpenMethod(null)} />
+        <MethodDrawer slug={openMethod} onClose={handleCloseDrawer} />
       )}
     </div>
   )

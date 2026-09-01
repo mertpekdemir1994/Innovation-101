@@ -159,7 +159,7 @@ function SignalBadge({ value }: { value: Signal }) {
     return (
       <span
         className="inline-block font-mono text-2xs uppercase tracking-widest px-space-2 py-0.5 rounded"
-        style={{ background: 'rgba(17,24,39,0.06)', color: 'rgba(17,24,39,0.30)' }}
+        style={{ background: 'rgba(17,24,39,0.06)', color: 'var(--color-neutral-600)' }}
       >
         Weak
       </span>
@@ -674,7 +674,7 @@ export default function DDCaseStudy() {
       >
         <span
           className="font-mono text-2xs uppercase tracking-widest px-space-2 py-space-1 rounded shrink-0 mt-0.5"
-          style={{ background: 'rgba(17,24,39,0.08)', color: 'rgba(17,24,39,0.45)' }}
+          style={{ background: 'rgba(17,24,39,0.08)', color: 'var(--color-neutral-600)' }}
         >
           Mock scenario
         </span>
@@ -747,7 +747,7 @@ export default function DDCaseStudy() {
             <span
               className="font-mono text-2xs uppercase tracking-widest mb-space-1"
               style={{
-                color: activePhase === key ? `${PURPLE}0.65)` : 'var(--color-neutral-400)',
+                color: activePhase === key ? `${PURPLE}0.65)` : 'var(--color-neutral-500)',
               }}
             >
               {mode}
@@ -763,7 +763,7 @@ export default function DDCaseStudy() {
             <span
               className="text-xs"
               style={{
-                color: activePhase === key ? `${PURPLE}0.55)` : 'var(--color-neutral-400)',
+                color: activePhase === key ? `${PURPLE}0.55)` : 'var(--color-neutral-500)',
               }}
             >
               {sub}

@@ -267,7 +267,7 @@ export default function DoubleDiamondPage() {
                       <li key={item} className="flex items-start gap-space-2 text-sm text-neutral-600">
                         <span
                           className="mt-0.5 shrink-0"
-                          style={{ color: positive ? 'var(--color-framework)' : 'var(--color-neutral-400)' }}
+                          style={{ color: positive ? 'var(--color-framework)' : 'var(--color-neutral-500)' }}
                         >
                           {positive ? '→' : '×'}
                         </span>
