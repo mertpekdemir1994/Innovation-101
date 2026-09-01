@@ -135,7 +135,7 @@ export default function PAEstablishing() {
                 x={cx} y={244}
                 textAnchor="middle" fontSize="10"
                 fontFamily="var(--font-mono)" letterSpacing="0.04em"
-                fill="rgba(255,255,255,0.35)"
+                fill="rgba(255,255,255,0.675)"
                 style={{ userSelect: 'none' }}
               >{sub}</text>
 

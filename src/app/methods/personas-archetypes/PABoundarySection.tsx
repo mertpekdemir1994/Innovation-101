@@ -74,7 +74,7 @@ function PersonasSVG() {
       })}
       <text x={200} y={172} textAnchor="middle" fontSize="8"
         fontFamily="var(--font-mono)" letterSpacing="0.12em"
-        fill="rgba(255,255,255,0.35)" style={{ userSelect: 'none' }}
+        fill="rgba(255,255,255,0.675)" style={{ userSelect: 'none' }}
       >THE RANGE, THREE PORTRAITS</text>
     </svg>
   )
@@ -107,7 +107,7 @@ function AvatarsSVG() {
       >AVATAR</text>
       <text x={200} y={172} textAnchor="middle" fontSize="8"
         fontFamily="var(--font-mono)" letterSpacing="0.12em"
-        fill="rgba(255,255,255,0.35)" style={{ userSelect: 'none' }}
+        fill="rgba(255,255,255,0.675)" style={{ userSelect: 'none' }}
       >THE BEACHHEAD, ONE MARKET</text>
     </svg>
   )
@@ -138,13 +138,13 @@ function SegmentsSVG() {
           />
           <text x={x} y={baseY + 14} textAnchor="middle" fontSize="5.5"
             fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill="rgba(255,255,255,0.35)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.675)" style={{ userSelect: 'none' }}
           >{label}</text>
         </g>
       ))}
       <text x={200} y={172} textAnchor="middle" fontSize="8"
         fontFamily="var(--font-mono)" letterSpacing="0.12em"
-        fill="rgba(255,255,255,0.35)" style={{ userSelect: 'none' }}
+        fill="rgba(255,255,255,0.675)" style={{ userSelect: 'none' }}
       >THE BUCKETS, DEMOGRAPHIC GROUPS</text>
     </svg>
   )
