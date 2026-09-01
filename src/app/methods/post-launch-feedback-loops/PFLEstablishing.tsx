@@ -178,7 +178,7 @@ export default function PFLEstablishing() {
           </motion.g>
         ))}
 
-        {/* "LOOP CLOSES" annotation — top right corner area */}
+        {/* "LOOP CLOSES" annotation: top right corner area */}
         <motion.text x={648} y={138}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.07em"

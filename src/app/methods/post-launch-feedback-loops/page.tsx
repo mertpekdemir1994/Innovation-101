@@ -22,7 +22,7 @@ const FRAMEWORK_LINKS = [
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Measure / Learn',
-    note: 'The Build-Measure-Learn loop is the foundational expression of the feedback loop idea. Post-launch feedback loops are the operationalisation of the Measure and Learn stages for a live product with real traffic — not a pilot or an MVP, but a product in production that is continuously generating signal and continuously being improved based on it.',
+    note: 'The Build-Measure-Learn loop is the foundational expression of the feedback loop idea. Post-launch feedback loops are the operationalisation of the Measure and Learn stages for a live product with real traffic, not a pilot or an MVP, but a product in production that is continuously generating signal and continuously being improved based on it.',
   },
   {
     slug: 'agile-innovation',
@@ -33,13 +33,13 @@ const FRAMEWORK_LINKS = [
   {
     slug: 'double-diamond',
     name: 'Double Diamond',
-    phase: 'Deliver — and the iteration arrows back',
-    note: 'The 2019 revision of the Double Diamond added explicit iteration loops after Deliver — the recognition that delivery is not the end of the work. Post-launch feedback loops are what those iteration arrows represent in practice: the mechanism by which a delivered product continues to improve rather than drifting once the project team has moved on.',
+    phase: 'Deliver: and the iteration arrows back',
+    note: 'The 2019 revision of the Double Diamond added explicit iteration loops after Deliver: the recognition that delivery is not the end of the work. Post-launch feedback loops are what those iteration arrows represent in practice: the mechanism by which a delivered product continues to improve rather than drifting once the project team has moved on.',
   },
   {
     slug: 'design-thinking',
     name: 'Design Thinking',
-    phase: 'Test — continuing after launch',
+    phase: 'Test: continuing after launch',
     note: 'The Test stage in Design Thinking is typically described pre-launch. Post-launch feedback loops extend that testing discipline into the live product: the same commitment to learning from real interaction with real people, but now at continuous scale with real customers, not prototypes with sample participants.',
   },
 ]
@@ -48,7 +48,7 @@ const RELATED_METHODS = [
   {
     slug: 'pilot-launches',
     name: 'Pilot Launches',
-    rel: 'The upstream handoff, and a clean distinction. A pilot is TIME-BOUNDED and GATED: a contained launch with an end date and a go/no-go decision. Post-launch feedback loops are CONTINUOUS: once you have rolled out, learning never stops and there is no gate, only the loop. The pilot asks "should we go wide?"; the loop asks "what is it telling us now?" — forever. The pilot ends on a date. The loop begins when scale starts.',
+    rel: 'The upstream handoff, and a clean distinction. A pilot is TIME-BOUNDED and GATED: a contained launch with an end date and a go/no-go decision. Post-launch feedback loops are CONTINUOUS: once you have rolled out, learning never stops and there is no gate, only the loop. The pilot asks "should we go wide?"; the loop asks "what is it telling us now?", forever. The pilot ends on a date. The loop begins when scale starts.',
   },
   {
     slug: 'mvp-mlp',
@@ -78,7 +78,7 @@ export default function PostLaunchFeedbackLoopsPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -106,7 +106,7 @@ export default function PostLaunchFeedbackLoopsPage() {
               className="mb-3 max-w-[600px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              Building a system that listens to a live product and actually acts on what it hears &mdash; closing
+              Building a system that listens to a live product and actually acts on what it hears, closing
               the loop from signal to sense to decision to shipped change, and back again.
             </p>
 
@@ -121,7 +121,7 @@ export default function PostLaunchFeedbackLoopsPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -132,7 +132,7 @@ export default function PostLaunchFeedbackLoopsPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -160,7 +160,7 @@ export default function PostLaunchFeedbackLoopsPage() {
               <Body>
                 This is why the characteristic failure of this method is not a lack of data. Most organisations
                 are drowning in data: dashboards nobody looks at, survey results nobody reads, support tickets
-                nobody aggregates, session recordings nobody watches. The failure is loops that do not close &mdash;
+                nobody aggregates, session recordings nobody watches. The failure is loops that do not close:
                 signal collected and never sensed, insight produced and never decided upon, decisions made
                 and never shipped, changes shipped and never measured. Each of those is a break at a specific
                 junction, and naming which junction is broken is the most useful diagnostic this method offers.
@@ -171,12 +171,12 @@ export default function PostLaunchFeedbackLoopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
           <div className="py-20">
-            <SectionLabel accent={BRICK}>The closed loop — interactive</SectionLabel>
+            <SectionLabel accent={BRICK}>The closed loop: interactive</SectionLabel>
             <SectionHeadingDark>Walk the loop. Then break it, and see what a broken loop produces.</SectionHeadingDark>
             <p
               className="mb-10 max-w-[560px]"
@@ -192,7 +192,7 @@ export default function PostLaunchFeedbackLoopsPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -209,9 +209,9 @@ export default function PostLaunchFeedbackLoopsPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'The product is live and you want it to keep getting better rather than drifting.',
-                    'You have signal arriving — tickets, analytics, reviews, drop-off — and suspect nobody is closing the loop on it.',
+                    'You have signal arriving (tickets, analytics, reviews, drop-off) and suspect nobody is closing the loop on it.',
                     'You are past the pilot: the time-bounded, gated learning of a pilot is over, and you need continuous learning in its place.',
-                    'You want to catch the problems that only appear at scale, over time, with real users — the ones no pre-launch test could have surfaced.',
+                    'You want to catch the problems that only appear at scale, over time, with real users: the ones no pre-launch test could have surfaced.',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className="mt-1 shrink-0 rounded-full w-1.5 h-1.5"
@@ -265,7 +265,7 @@ export default function PostLaunchFeedbackLoopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -288,7 +288,7 @@ export default function PostLaunchFeedbackLoopsPage() {
                 {
                   n: '03',
                   title: 'Make DECISION a real forum with real authority',
-                  body: 'Insight must meet a decision. Establish who decides, how often, and with what authority to change the roadmap. The output of each forum must be explicit: fix, defer, or accept. Without this, sense-making produces decks and nothing else — the most common and most demoralising break in the loop.',
+                  body: 'Insight must meet a decision. Establish who decides, how often, and with what authority to change the roadmap. The output of each forum must be explicit: fix, defer, or accept. Without this, sense-making produces decks and nothing else: the most common and most demoralising break in the loop.',
                 },
                 {
                   n: '04',
@@ -297,13 +297,13 @@ export default function PostLaunchFeedbackLoopsPage() {
                 },
                 {
                   n: '05',
-                  title: 'Return to signal — measure whether it worked',
+                  title: 'Return to signal: measure whether it worked',
                   body: 'Close the circle. Check whether the change produced the effect you expected. This is the step teams skip most, and skipping it means you never learn whether your decisions are any good, only that you made them. Without this return, the loop is an arc, not a circle.',
                 },
                 {
                   n: '06',
                   title: 'Diagnose where YOUR loop breaks',
-                  body: 'Rather than adding more signal (the default reflex), find which junction is weakest in your organisation and fix that. More data will not repair a loop that breaks at decision. More research will not repair a loop that breaks at ship. The diagnostic question — which junction? — is more valuable than any instrument.',
+                  body: 'Rather than adding more signal (the default reflex), find which junction is weakest in your organisation and fix that. More data will not repair a loop that breaks at decision. More research will not repair a loop that breaks at ship. The diagnostic question, which junction?, is more valuable than any instrument.',
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -326,7 +326,7 @@ export default function PostLaunchFeedbackLoopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -401,7 +401,7 @@ export default function PostLaunchFeedbackLoopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -414,9 +414,9 @@ export default function PostLaunchFeedbackLoopsPage() {
                 {
                   label: 'Give the loop a rhythm and an owner',
                   items: [
-                    'Sense-making cadence: weekly or fortnightly — name the person responsible',
-                    'Decision forum: monthly — the standing meeting with authority to change the roadmap',
-                    'Measurement check: tied to each shipped change — who checks whether it worked?',
+                    'Sense-making cadence: weekly or fortnightly, name the person responsible',
+                    'Decision forum: monthly, the standing meeting with authority to change the roadmap',
+                    'Measurement check: tied to each shipped change, who checks whether it worked?',
                     'A feedback loop that runs "when someone gets around to it" does not run',
                   ],
                 },
@@ -425,21 +425,21 @@ export default function PostLaunchFeedbackLoopsPage() {
                   items: [
                     'Behavioral data (drop-off, usage, abandonment) shows WHAT is happening at scale but not why',
                     'Direct feedback (tickets, reviews, interviews) shows WHY but from a self-selected few',
-                    'Each is weak where the other is strong — use both',
+                    'Each is weak where the other is strong, use both',
                     'When signal points at a problem, watch real people hit it (see Usability Testing)',
                   ],
                 },
                 {
                   label: 'Remember the people who left',
                   items: [
-                    'Signal comes from users who stayed — churners are silent',
+                    'Signal comes from users who stayed, churners are silent',
                     'Deliberately seek the departed: exit surveys, churn interviews',
                     'Otherwise the loop optimises happily for the survivors',
                     'Aggregate analytics will not tell you what drove people away',
                   ],
                 },
                 {
-                  label: 'Instruments named in passing — not the method',
+                  label: 'Instruments named in passing, not the method',
                   items: [
                     'A/B tests: experiments on live traffic belong HERE, not in Concept Testing (pre-build)',
                     'Analytics, cohort analysis, session recordings, NPS: techniques inside the loop',
@@ -472,7 +472,7 @@ export default function PostLaunchFeedbackLoopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — AI evolving   DARK
+          S9 - AI evolving   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -495,7 +495,7 @@ export default function PostLaunchFeedbackLoopsPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -516,7 +516,7 @@ export default function PostLaunchFeedbackLoopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Frameworks   LIGHT
+          S11 - Frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -555,7 +555,7 @@ export default function PostLaunchFeedbackLoopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -596,8 +596,8 @@ export default function PostLaunchFeedbackLoopsPage() {
                 Note on scope: the method is the loop, not the instruments
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                The techniques used to gather signal &mdash; analytics, A/B tests on live traffic, cohort analysis,
-                session recordings, surveys, support-ticket mining &mdash; are named in passing as instruments INSIDE
+                The techniques used to gather signal (analytics, A/B tests on live traffic, cohort analysis,
+                session recordings, surveys, support-ticket mining) are named in passing as instruments INSIDE
                 this method, not methods in themselves. A/B testing in particular belongs here, on a live product
                 with real traffic, and explicitly NOT in Concept Testing, which happens before anything is built.
                 The method is the LOOP DISCIPLINE; the instruments are merely how you feed it.
@@ -608,7 +608,7 @@ export default function PostLaunchFeedbackLoopsPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources   LIGHT
+          S13 - Sources   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -618,9 +618,9 @@ export default function PostLaunchFeedbackLoopsPage() {
 
             <div className="flex flex-col gap-3">
               {[
-                'Ries, E. (2011). The Lean Startup. Crown Business. — The foundational text on the Build-Measure-Learn loop and the discipline of learning from a live product.',
-                'Perri, M. (2018). Escaping the Build Trap. O\'Reilly. — On why shipping features is not the same as learning, and on organisations that measure output rather than outcome.',
-                'Cagan, M. (2017). Inspired. Wiley. — On continuous discovery and building the organisational habits that turn signal into shipped change.',
+                'Ries, E. (2011). The Lean Startup. Crown Business. The foundational text on the Build-Measure-Learn loop and the discipline of learning from a live product.',
+                'Perri, M. (2018). Escaping the Build Trap. O\'Reilly. On why shipping features is not the same as learning, and on organisations that measure output rather than outcome.',
+                'Cagan, M. (2017). Inspired. Wiley. On continuous discovery and building the organisational habits that turn signal into shipped change.',
               ].map((src, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="font-mono font-semibold shrink-0 mt-0.5"

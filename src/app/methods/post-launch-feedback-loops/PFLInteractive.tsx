@@ -34,54 +34,54 @@ type ZoneInfo = StageInfo | BreakInfo
 const ZONE_INFO: Record<Exclude<ActiveId, null>, ZoneInfo> = {
   signal: {
     type: 'stage',
-    tag: 'STAGE 1 — SIGNAL',
+    tag: 'STAGE 1: SIGNAL',
     headline: 'What the live product and its users are telling you.',
     body: 'Behavioral data (what people do, where they abandon), direct feedback (support tickets, reviews, in-product feedback), and deliberate experiments on live traffic (A/B tests, which belong here, on a real product with real traffic, not before you have built anything). Signal is abundant; abundance is not the problem. The discipline is choosing what to attend to.',
   },
   sense: {
     type: 'stage',
-    tag: 'STAGE 2 — SENSE',
+    tag: 'STAGE 2: SENSE',
     headline: 'Making meaning of the signal.',
-    body: 'Aggregating, finding patterns, separating noise from the real thing, and — hardest of all — noticing the specific complaint that reveals a genuine defect rather than averaging it away. Someone must own this step, on a rhythm, and be responsible for surfacing the particular and surprising rather than only the average. This is the stage AI is most transformative at, and the stage volume most often breaks.',
+    body: 'Aggregating, finding patterns, separating noise from the real thing, and, hardest of all, noticing the specific complaint that reveals a genuine defect rather than averaging it away. Someone must own this step, on a rhythm, and be responsible for surfacing the particular and surprising rather than only the average. This is the stage AI is most transformative at, and the stage volume most often breaks.',
   },
   decide: {
     type: 'stage',
-    tag: 'STAGE 3 — DECIDE',
+    tag: 'STAGE 3: DECIDE',
     headline: 'Choosing what actually matters and what to do about it.',
-    body: 'A judgment with consequences: which problems to fix, what to trade off, what to leave alone. Signal does not decide; people do. This requires a real decision forum with real authority to change the roadmap — and the discipline to produce an explicit outcome (fix, defer, or accept) rather than an agreement-in-the-room that dissolves by Monday. Without this, sense-making produces decks and nothing else.',
+    body: 'A judgment with consequences: which problems to fix, what to trade off, what to leave alone. Signal does not decide; people do. This requires a real decision forum with real authority to change the roadmap, and the discipline to produce an explicit outcome (fix, defer, or accept) rather than an agreement-in-the-room that dissolves by Monday. Without this, sense-making produces decks and nothing else.',
   },
   ship: {
     type: 'stage',
-    tag: 'STAGE 4 — SHIP',
+    tag: 'STAGE 4: SHIP',
     headline: 'Actually changing the product.',
-    body: 'A decision that does not result in a shipped change has closed nothing. This is where most loops quietly die — in a backlog full of agreed-but-unbuilt improvements. Ensuring that decisions land in the actual product is a mundane-sounding discipline that is, in practice, the most common failure after decision. If your loop dies here, more research will not fix it.',
+    body: 'A decision that does not result in a shipped change has closed nothing. This is where most loops quietly die: in a backlog full of agreed-but-unbuilt improvements. Ensuring that decisions land in the actual product is a mundane-sounding discipline that is, in practice, the most common failure after decision. If your loop dies here, more research will not fix it.',
   },
   b1: {
     type: 'break',
-    tag: 'BREAK POINT — SIGNAL BUT NO SENSE',
+    tag: 'BREAK POINT: SIGNAL BUT NO SENSE',
     headline: 'The data lake nobody reads. Listening theater.',
-    body: 'The organisation gathers signal nobody senses. Dashboards proliferate, tickets accumulate, and no one aggregates them into meaning. The organisation is listening and hearing nothing. This is the most common break — not from lack of caring but from lack of ownership. Nobody was made responsible for the sense-making step on a rhythm, so it happens in irregular bursts, partially, or not at all. Adding more instruments makes this worse, not better.',
+    body: 'The organisation gathers signal nobody senses. Dashboards proliferate, tickets accumulate, and no one aggregates them into meaning. The organisation is listening and hearing nothing. This is the most common break, not from lack of caring but from lack of ownership. Nobody was made responsible for the sense-making step on a rhythm, so it happens in irregular bursts, partially, or not at all. Adding more instruments makes this worse, not better.',
     severs: 0,
   },
   b2: {
     type: 'break',
-    tag: 'BREAK POINT — SENSE BUT NO DECISION',
+    tag: 'BREAK POINT: SENSE BUT NO DECISION',
     headline: 'The insight deck that changes nothing.',
-    body: 'Beautiful research, well-received, filed. Everyone agrees, nothing happens. The sense-making step worked — the researcher produced real findings — but there was no decision forum with the authority to turn insight into a roadmap change. This is the most demoralizing break, because the organization can see the problem clearly and change nothing about it. Insight must meet a decision forum with authority, or it is entertainment.',
+    body: 'Beautiful research, well-received, filed. Everyone agrees, nothing happens. The sense-making step worked (the researcher produced real findings) but there was no decision forum with the authority to turn insight into a roadmap change. This is the most demoralizing break, because the organization can see the problem clearly and change nothing about it. Insight must meet a decision forum with authority, or it is entertainment.',
     severs: 1,
   },
   b3: {
     type: 'break',
-    tag: 'BREAK POINT — DECIDE BUT NO SHIP',
+    tag: 'BREAK POINT: DECIDE BUT NO SHIP',
     headline: 'The roadmap item that never lands. Agreed and unbuilt.',
-    body: 'The decision was made, the priority agreed, the finding acknowledged — and the change was never built. The loop dies in a backlog. This is a roadmap and capacity problem, not a research problem. More or better sense-making will not fix it. The correct intervention is at the DECIDE-to-SHIP junction: ensuring that decisions have owners, timelines, and the operational capacity to land.',
+    body: 'The decision was made, the priority agreed, the finding acknowledged, and the change was never built. The loop dies in a backlog. This is a roadmap and capacity problem, not a research problem. More or better sense-making will not fix it. The correct intervention is at the DECIDE-to-SHIP junction: ensuring that decisions have owners, timelines, and the operational capacity to land.',
     severs: 2,
   },
   b4: {
     type: 'break',
-    tag: 'BREAK POINT — SHIP BUT NOT MEASURED',
+    tag: 'BREAK POINT: SHIP BUT NOT MEASURED',
     headline: 'The change nobody checked. Acting without learning.',
-    body: 'The change shipped and nobody returned to signal to measure whether it worked. The team acted, and did not learn. Next time they will guess again — and will guess based on assumptions that have not been tested. Without this return, the loop is an arc, not a circle. This is the step teams skip most often, and skipping it means the organisation can never learn whether its decisions are any good, only that it made them.',
+    body: 'The change shipped and nobody returned to signal to measure whether it worked. The team acted, and did not learn. Next time they will guess again, and will guess based on assumptions that have not been tested. Without this return, the loop is an arc, not a circle. This is the step teams skip most often, and skipping it means the organisation can never learn whether its decisions are any good, only that it made them.',
     severs: 3,
   },
 }
@@ -269,7 +269,7 @@ export default function PFLInteractive() {
           style={{ cursor: 'pointer' }}
           onClick={() => toggle('b1')}
           role="button" aria-pressed={active === 'b1'}
-          aria-label="Break point: signal but no sense — the data lake nobody reads" />
+          aria-label="Break point: signal but no sense, the data lake nobody reads" />
 
         {/* B2: SENSE→DECIDE at (293, 113) */}
         <motion.g animate={{ opacity: brMarkerAmbient('b2') }} transition={{ duration: 0.22 }}>
@@ -293,7 +293,7 @@ export default function PFLInteractive() {
           style={{ cursor: 'pointer' }}
           onClick={() => toggle('b2')}
           role="button" aria-pressed={active === 'b2'}
-          aria-label="Break point: sense but no decision — the insight deck that changes nothing" />
+          aria-label="Break point: sense but no decision, the insight deck that changes nothing" />
 
         {/* B3: DECIDE→SHIP at (447, 113) */}
         <motion.g animate={{ opacity: brMarkerAmbient('b3') }} transition={{ duration: 0.22 }}>
@@ -317,7 +317,7 @@ export default function PFLInteractive() {
           style={{ cursor: 'pointer' }}
           onClick={() => toggle('b3')}
           role="button" aria-pressed={active === 'b3'}
-          aria-label="Break point: decide but no ship — the roadmap item that never lands" />
+          aria-label="Break point: decide but no ship, the roadmap item that never lands" />
 
         {/* B4: return path at (350, 196) */}
         <motion.g animate={{ opacity: brMarkerAmbient('b4') }} transition={{ duration: 0.22 }}>
@@ -341,7 +341,7 @@ export default function PFLInteractive() {
           style={{ cursor: 'pointer' }}
           onClick={() => toggle('b4')}
           role="button" aria-pressed={active === 'b4'}
-          aria-label="Break point: ship but not measured — the change nobody checks" />
+          aria-label="Break point: ship but not measured, the change nobody checks" />
 
         {/* Break point ambient labels (show when not active, hide when something else is active) */}
         {[
@@ -450,7 +450,7 @@ export default function PFLInteractive() {
               <div className="mt-3 rounded px-3 py-2"
                 style={{ background: `${AMBER}0.07)`, borderLeft: `2px solid ${AMBER}0.35)` }}>
                 <p className="font-mono" style={{ fontSize: 'var(--text-xs)', color: `${AMBER}0.65)` }}>
-                  Diagnosing WHERE your loop breaks is more useful than adding more signal — which is what most organisations do instead.
+                  Diagnosing WHERE your loop breaks is more useful than adding more signal, which is what most organisations do instead.
                 </p>
               </div>
             )}
@@ -461,7 +461,7 @@ export default function PFLInteractive() {
       {!active && (
         <p className="font-mono text-center"
           style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.09em' }}>
-          CLICK A STAGE OR A BREAK POINT TO EXPLORE — BREAK POINTS SEVER THE LOOP
+          CLICK A STAGE OR A BREAK POINT TO EXPLORE, BREAK POINTS SEVER THE LOOP
         </p>
       )}
     </div>

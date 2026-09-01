@@ -63,7 +63,7 @@ export default function PFLAIReactivated() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label={isAI
-          ? 'AI mode: the SIGNAL-to-SENSE connector is dramatically strengthened in indigo — AI synthesizes signal at scale, repairing the volume-broken junction. DECIDE, SHIP, and the return measurement remain in brick (human), with amber markers. Three amber labels show what AI cannot do: decide, ship, or measure.'
+          ? 'AI mode: the SIGNAL-to-SENSE connector is dramatically strengthened in indigo: AI synthesizes signal at scale, repairing the volume-broken junction. DECIDE, SHIP, and the return measurement remain in brick (human), with amber markers. Three amber labels show what AI cannot do: decide, ship, or measure.'
           : 'Human mode: standard feedback loop in brick. All four stages and the return path at full visibility.'}
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
@@ -105,7 +105,7 @@ export default function PFLAIReactivated() {
           strokeWidth={1.2}
         />
 
-        {/* Stage boxes — SIGNAL always BRICK, SENSE turns INDIGO in AI mode, others stay BRICK */}
+        {/* Stage boxes: SIGNAL always BRICK, SENSE turns INDIGO in AI mode, others stay BRICK */}
         {STAGES.map((s) => {
           const isSense = s.id === 'sense'
           const useIndigo = isAI && isSense
@@ -147,7 +147,7 @@ export default function PFLAIReactivated() {
           animate={{ opacity: isAI ? 0.75 : 1 }}
           transition={{ duration: 0.40 }} />
 
-        {/* DECIDE→SHIP connector: BRICK (slightly dim in AI mode — same fragility) */}
+        {/* DECIDE→SHIP connector: BRICK (slightly dim in AI mode, same fragility) */}
         <motion.line
           x1={414} y1={CY} x2={473} y2={CY}
           stroke={`${BRICK}0.45)`} strokeWidth={1.2}
@@ -236,13 +236,13 @@ export default function PFLAIReactivated() {
         >
           {isAI ? (
             <>
-              {/* Genuine uplift — SENSE */}
+              {/* Genuine uplift: SENSE */}
               <div className="rounded-lg p-4"
                 style={{ border: `1px solid ${INDIGO}0.22)`, background: `${INDIGO}0.05)` }}>
                 <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
                   <p className="font-mono uppercase tracking-widest"
                     style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.80)` }}>
-                    Where AI genuinely transforms this method — SENSE
+                    Where AI genuinely transforms this method: SENSE
                   </p>
                   <span className="font-mono text-xs px-2 py-0.5 rounded-full"
                     style={{ background: `${INDIGO}0.12)`, color: `${INDIGO}0.75)`, border: `1px solid ${INDIGO}0.25)` }}>
@@ -251,7 +251,7 @@ export default function PFLAIReactivated() {
                 </div>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                   Post-launch signal has always had one defining problem: volume. Thousands of support tickets,
-                  tens of thousands of reviews, endless session records and survey responses — far more than any
+                  tens of thousands of reviews, endless session records and survey responses, far more than any
                   team can read, let alone synthesise. This is precisely why the signal-to-sense junction broke
                   most often: not because nobody cared, but because the work was genuinely impossible at scale.
                   AI changes this materially. It reads and synthesises enormous volumes of unstructured feedback,
@@ -269,7 +269,7 @@ export default function PFLAIReactivated() {
                   Human judgment: AI cannot DECIDE
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                  Deciding which problems matter, what to trade off, what to fix and what to live with — this is a
+                  Deciding which problems matter, what to trade off, what to fix and what to live with; this is a
                   judgment with consequences, made by people accountable for the product. AI will produce a
                   confident, well-organised recommendation. A recommendation from a system bearing no consequence
                   is not a decision. The DECIDE stage remains exactly as human and exactly as fragile as before.
@@ -287,8 +287,8 @@ export default function PFLAIReactivated() {
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                   The danger of synthesis at scale is that it optimises for the average. The one strange, articulate
-                  complaint that reveals a genuine, serious design failure — the outlier that a sharp human would
-                  have stopped on — gets clustered into a theme and averaged into noise. AI is excellent at telling
+                  complaint that reveals a genuine, serious design failure (the outlier that a sharp human would
+                  have stopped on) gets clustered into a theme and averaged into noise. AI is excellent at telling
                   you what most people said, and structurally poor at telling you which single thing said by one
                   person actually matters. Post-launch signal is full of such needles, and a synthesis that returns
                   only the haystack&rsquo;s shape has lost them. Read the outliers yourself.
@@ -306,7 +306,7 @@ export default function PFLAIReactivated() {
                 A feedback loop is run end-to-end by people. Someone owns the sense-making step, on a rhythm,
                 and reads raw signal. A decision forum meets with authority to act on findings. Decisions land
                 in the actual product. Someone checks whether the change worked, and that check becomes the
-                next turn of signal. What makes this work is ownership and rhythm at every junction — not
+                next turn of signal. What makes this work is ownership and rhythm at every junction, not
                 more instruments, but a human at each step who is responsible for completing it.
               </p>
             </div>
