@@ -26,7 +26,7 @@ const D150_Y = D30_Y
 type Mode = 'human' | 'ai'
 
 const AI_CARDS = [
-  { heading: 'Pattern matching, not your customer', body: 'AI infers connections from language similarity and datasets of analogous products — not from the people you are actually trying to serve.' },
+  { heading: 'Pattern matching, not your customer', body: 'AI infers connections from language similarity and datasets of analogous products, not from the people you are actually trying to serve.' },
   { heading: 'Gaps disappear, not by design', body: 'Because AI optimises for completeness, it fills unmet needs with plausible relievers and wasted features with invented gains. The canvas looks tidy; the evidence does not exist.' },
   { heading: 'Use AI to stress-test, not to conclude', body: 'Ask AI to argue against each connection you drew from research. That adversarial role surfaces weak evidence without generating false positives.' },
 ]
@@ -169,7 +169,7 @@ export default function VPCAIReactivated() {
                 fill={`${INDIGO}0.52)`} fontSize={6} fontFamily="monospace">AI sees no gaps</text>
             </motion.g>
           ) : (
-            /* Human mode: honest — 2 FIT, 2 WASTED, 1 UNMET */
+            /* Human mode: honest, 2 FIT, 2 WASTED, 1 UNMET */
             <motion.g key="human-connections"
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
               animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -213,7 +213,7 @@ export default function VPCAIReactivated() {
               fill={`${INDIGO}0.45)`} fontSize={6.5} fontFamily="monospace" letterSpacing={0.8}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-            >AI filled every gap — inspect each connection against your research before acting
+            >AI filled every gap, inspect each connection against your research before acting
             </motion.text>
           )}
         </AnimatePresence>
@@ -243,7 +243,7 @@ export default function VPCAIReactivated() {
             transition={{ duration: 0.25 }}
             className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
             {[
-              { h: 'Gaps are the most valuable output', b: 'A wasted feature or unmet need is not a failure — it is a strategic signal telling you where to redirect effort or what to stop building.' },
+              { h: 'Gaps are the most valuable output', b: 'A wasted feature or unmet need is not a failure; it is a strategic signal telling you where to redirect effort or what to stop building.' },
               { h: 'FIT requires customer evidence', b: 'Every connection line should point to a specific research finding. If you cannot cite the evidence, the connection is a hypothesis, not a fit.' },
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border"

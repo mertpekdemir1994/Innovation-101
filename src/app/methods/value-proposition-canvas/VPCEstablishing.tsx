@@ -17,7 +17,7 @@ const VM_DX = VM_X + 126       // 140  vertical divider
 const CP_CX = 540, CP_CY = 165, CP_R = 108
 const CP_LE = CP_CX - CP_R     // 432  left edge
 
-// Circle dividers — θ in SVG convention (0=right, clockwise)
+// Circle dividers: θ in SVG convention (0=right, clockwise)
 const D30_X  = Math.round(CP_CX + CP_R * Math.cos(30  * Math.PI / 180))  // 634
 const D30_Y  = Math.round(CP_CY + CP_R * Math.sin(30  * Math.PI / 180))  // 219
 const D150_X = Math.round(CP_CX + CP_R * Math.cos(150 * Math.PI / 180))  // 447
@@ -169,11 +169,11 @@ export default function VPCEstablishing() {
 
         {/* ── FIT CONNECTIONS & GAP INDICATORS ──────────────────────── */}
         <motion.g variants={fadeIn} transition={{ duration: 0.45 }}>
-          {/* FIT — PR → PAINS[0] */}
+          {/* FIT: PR → PAINS[0] */}
           <line x1={VM_RE} y1={160} x2={CP_LE} y2={197}
             stroke={`${PLUM}0.70)`} strokeWidth={1.5}
             markerEnd="url(#vpc-est-arrow)" />
-          {/* FIT — GC → GAINS[0] */}
+          {/* FIT: GC → GAINS[0] */}
           <line x1={VM_RE} y1={174} x2={CP_LE} y2={200}
             stroke={`${PLUM}0.55)`} strokeWidth={1.5}
             markerEnd="url(#vpc-est-arrow)" />
@@ -183,14 +183,14 @@ export default function VPCEstablishing() {
             fill={`${PLUM}0.85)`} fontSize={7.5} fontWeight={600}
             letterSpacing={1.0} fontFamily="monospace">FIT ✓</text>
 
-          {/* WASTED FEATURE — PR item with no customer pain */}
+          {/* WASTED FEATURE: PR item with no customer pain */}
           <line x1={VM_RE} y1={148} x2={328} y2={148}
             stroke={`${AMBER}0.55)`} strokeWidth={1.2} strokeDasharray="4 3" />
           <text x={330} y={145} textAnchor="start"
             fill={`${AMBER}0.65)`} fontSize={6.5} fontWeight={600}
             letterSpacing={1.1} fontFamily="monospace">WASTED ×</text>
 
-          {/* UNMET NEED — PAINS[1] with no reliever */}
+          {/* UNMET NEED: PAINS[1] with no reliever */}
           <line x1={CP_LE} y1={220} x2={380} y2={220}
             stroke={`${AMBER}0.50)`} strokeWidth={1.2} strokeDasharray="4 3" />
           <text x={378} y={217} textAnchor="end"

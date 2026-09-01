@@ -69,7 +69,7 @@ export default function VPCExampleToggle() {
               </div>
             </div>
 
-            {/* Canvas results — what fit, what didn't */}
+            {/* Canvas results: what fit, what didn't */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Fit connections */}
               <div className="border rounded-lg p-5" style={{ borderColor: `${PLUM}0.20)` }}>
@@ -81,7 +81,7 @@ export default function VPCExampleToggle() {
                       style={{ color: `${PLUM}0.80)` }}>✓</span>
                     <div>
                       <p className="text-xs font-semibold text-neutral-800">Custom report builder → client visibility</p>
-                      <p className="text-xs text-neutral-500 mt-0.5">Agencies could share live status links — the only connection that held up to research.</p>
+                      <p className="text-xs text-neutral-500 mt-0.5">Agencies could share live status links, the only connection that held up to research.</p>
                     </div>
                   </div>
                 </div>
@@ -93,12 +93,12 @@ export default function VPCExampleToggle() {
                 <div className="space-y-3">
                   <div>
                     <p className="text-[9px] font-semibold uppercase tracking-wider text-amber-600 mb-1">Wasted features</p>
-                    <p className="text-xs text-neutral-600">&bull; Multi-level permissions — no agency pain about permissions</p>
-                    <p className="text-xs text-neutral-600">&bull; Granular audit logs — agencies do not care about audit trails</p>
+                    <p className="text-xs text-neutral-600">&bull; Multi-level permissions, no agency pain about permissions</p>
+                    <p className="text-xs text-neutral-600">&bull; Granular audit logs, agencies do not care about audit trails</p>
                   </div>
                   <div>
                     <p className="text-[9px] font-semibold uppercase tracking-wider text-amber-600 mb-1">Unmet extreme pain</p>
-                    <p className="text-xs text-neutral-600">&bull; Email approval chains — nothing in the product addressed this at all</p>
+                    <p className="text-xs text-neutral-600">&bull; Email approval chains, nothing in the product addressed this at all</p>
                   </div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function VPCExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
                 style={{ color: `${PLUM}1)` }}>What Changed</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                The team built a one-click client approval portal — the single feature that addressed the extreme pain. They dropped audit-log messaging from the agency pitch entirely. Within two quarters, agency conversion rate doubled. The gaps, not the fits, drove the strategy.
+                The team built a one-click client approval portal, the single feature that addressed the extreme pain. They dropped audit-log messaging from the agency pitch entirely. Within two quarters, agency conversion rate doubled. The gaps, not the fits, drove the strategy.
               </p>
             </div>
           </motion.div>
@@ -172,7 +172,7 @@ export default function VPCExampleToggle() {
               <div className="border rounded-lg p-5 border-amber-200 bg-amber-50">
                 <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-700 mb-3">What AI Missed</p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
-                  The extreme pain — email approval chains consuming billable hours — never appeared. AI drew on generic SaaS vocabulary (&ldquo;software complexity&rdquo;, &ldquo;collaboration challenges&rdquo;) instead of the specific, researchable pain that agencies actually articulate.
+                  The extreme pain (email approval chains consuming billable hours) never appeared. AI drew on generic SaaS vocabulary (&ldquo;software complexity&rdquo;, &ldquo;collaboration challenges&rdquo;) instead of the specific, researchable pain that agencies actually articulate.
                 </p>
               </div>
             </div>
@@ -182,7 +182,7 @@ export default function VPCExampleToggle() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
                 style={{ color: `${INDIGO}0.80)` }}>Why This Matters</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                The AI canvas looked cleaner and more complete. The research canvas looked messier and had obvious gaps. The messy one was the useful one. The gap — email approvals — became the product&rsquo;s most successful feature. AI had no way to surface it because it was not in pattern-matched SaaS training data.
+                The AI canvas looked cleaner and more complete. The research canvas looked messier and had obvious gaps. The messy one was the useful one. The gap (email approvals) became the product&rsquo;s most successful feature. AI had no way to surface it because it was not in pattern-matched SaaS training data.
               </p>
             </div>
           </motion.div>

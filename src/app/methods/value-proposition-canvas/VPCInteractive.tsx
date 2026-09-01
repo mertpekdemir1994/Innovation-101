@@ -28,7 +28,7 @@ type Region = 'ps' | 'gc' | 'pr' | 'jobs' | 'pains' | 'gains'
 const REGION_DETAILS: Record<Region, { heading: string; body: string; tip: string }> = {
   ps: {
     heading: 'Products & Services',
-    body: 'List every product, feature, and service you offer — the full inventory of your value proposition. Be exhaustive and concrete, not aspirational.',
+    body: 'List every product, feature, and service you offer: the full inventory of your value proposition. Be exhaustive and concrete, not aspirational.',
     tip: 'List offerings, not benefits. Benefits belong in Gain Creators and Pain Relievers.',
   },
   gc: {
@@ -49,7 +49,7 @@ const REGION_DETAILS: Record<Region, { heading: string; body: string; tip: strin
   pains: {
     heading: 'Pains',
     body: 'What frustrates, blocks, worries, or creates risk for your customer before, during, or after getting the job done? Rank by severity and frequency.',
-    tip: 'Extreme pains — the ones your customer mentions unprompted — create the strongest pull for pain relievers.',
+    tip: 'Extreme pains, the ones your customer mentions unprompted, create the strongest pull for pain relievers.',
   },
   gains: {
     heading: 'Gains',
@@ -202,7 +202,7 @@ export default function VPCInteractive() {
         ))}
 
         {/* ── CUSTOMER PROFILE ──────────────────────────────────────── */}
-        {/* Sector highlight paths — behind circle border */}
+        {/* Sector highlight paths: behind circle border */}
         {/* JOBS sector (upper) */}
         <path d={`M ${CP_CX},${CP_CY} L ${D150_X},${D150_Y} A ${CP_R},${CP_R} 0 1 0 ${D30_X},${D30_Y} Z`}
           fill={`${PLUM}${active === 'jobs' ? '0.28)' : '0.00)'}`}

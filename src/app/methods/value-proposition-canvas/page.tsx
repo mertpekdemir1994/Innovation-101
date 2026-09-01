@@ -28,7 +28,7 @@ const FRAMEWORK_LINKS = [
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Build',
-    note: "Before the team builds, the VPC narrows the Minimum Viable Product to the connections with the strongest fit evidence. Wasted features — those with no corresponding pain or gain in the Customer Profile — are the first candidates to cut. The canvas makes the scope decision a research decision, not a preference one.",
+    note: "Before the team builds, the VPC narrows the Minimum Viable Product to the connections with the strongest fit evidence. Wasted features (those with no corresponding pain or gain in the Customer Profile) are the first candidates to cut. The canvas makes the scope decision a research decision, not a preference one.",
   },
   {
     slug: 'design-thinking',
@@ -54,27 +54,27 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'jobs-to-be-done',
     name: 'Jobs To Be Done',
-    rel: "Upstream: JTBD discovers the job the customer is trying to do — the primary Customer Job that anchors the Customer Profile. Without the JTBD lens, the jobs section fills with vague activity descriptions rather than the specific progress the customer is trying to make. A well-formed job statement gives the canvas its most important input.",
+    rel: "Upstream: JTBD discovers the job the customer is trying to do: the primary Customer Job that anchors the Customer Profile. Without the JTBD lens, the jobs section fills with vague activity descriptions rather than the specific progress the customer is trying to make. A well-formed job statement gives the canvas its most important input.",
   },
   {
     slug: null,
     name: 'Concept Testing',
-    rel: "Downstream: the VPC claims FIT based on research inference; Concept Testing validates those claims against real customer reactions before the team commits to building. The canvas identifies which connections to test first — the ones with the weakest evidence or the highest strategic weight.",
+    rel: "Downstream: the VPC claims FIT based on research inference; Concept Testing validates those claims against real customer reactions before the team commits to building. The canvas identifies which connections to test first: the ones with the weakest evidence or the highest strategic weight.",
   },
   {
     slug: 'in-depth-interviews',
     name: 'In-Depth Interviews',
-    rel: 'The primary source of evidence for the Customer Profile. The extreme pains — the ones worth building pain relievers for — are almost never volunteered; they emerge from the probing and silence that only good interview technique surfaces. A Customer Profile built without real interviews is a speculation map.',
+    rel: 'The primary source of evidence for the Customer Profile. The extreme pains (the ones worth building pain relievers for) are almost never volunteered; they emerge from the probing and silence that only good interview technique surfaces. A Customer Profile built without real interviews is a speculation map.',
   },
   {
     slug: 'empathy-mapping',
     name: 'Empathy Mapping',
-    rel: "A complementary synthesis tool for the same research. The empathy map captures the emotional register — the Feels quadrant and the Says-vs-Does gap. The emotional truth in Feels often reveals the pains and gains the VPC's Customer Profile needs to record but that the research on its surface did not name.",
+    rel: "A complementary synthesis tool for the same research. The empathy map captures the emotional register: the Feels quadrant and the Says-vs-Does gap. The emotional truth in Feels often reveals the pains and gains the VPC's Customer Profile needs to record but that the research on its surface did not name.",
   },
   {
     slug: 'ambition-matrix',
     name: 'Ambition Matrix',
-    rel: 'Downstream prioritisation: once the VPC exposes gaps — wasted features and unmet needs — the Ambition Matrix frames the strategic choices about which gaps to address, at what horizon, and with what level of commitment. The canvas identifies what the gaps are; the matrix frames the strategic response.',
+    rel: 'Downstream prioritisation: once the VPC exposes gaps (wasted features and unmet needs) the Ambition Matrix frames the strategic choices about which gaps to address, at what horizon, and with what level of commitment. The canvas identifies what the gaps are; the matrix frames the strategic response.',
   },
 ]
 
@@ -84,7 +84,7 @@ export default function ValuePropositionCanvasPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -112,7 +112,7 @@ export default function ValuePropositionCanvasPage() {
               className="mb-3 max-w-[600px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              A two-part canvas &mdash; a Customer Profile and a Value Map &mdash; that forces an honest match between what customers actually need and what a product actually offers, and exposes every gap between them.
+              A two-part canvas, a Customer Profile and a Value Map, that forces an honest match between what customers actually need and what a product actually offers, and exposes every gap between them.
             </p>
 
             <p
@@ -126,7 +126,7 @@ export default function ValuePropositionCanvasPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -137,7 +137,7 @@ export default function ValuePropositionCanvasPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -156,12 +156,12 @@ export default function ValuePropositionCanvasPage() {
               <Body>
                 The tool&rsquo;s core insight is in the gap analysis. <em>Fit</em> occurs when a pain reliever connects to a
                 real customer pain, or a gain creator connects to a real customer gain. The canvas makes every connection
-                &mdash; and every missing connection &mdash; visible. Features that relieve pains nobody has are wasted.
+                , and every missing connection, visible. Features that relieve pains nobody has are wasted.
                 Pains with no reliever in the product are unmet needs. Both are strategic findings, not failures.
               </Body>
               <Body>
                 Its one dangerous failure mode is the same as every synthesis canvas: filled from assumption rather than
-                evidence, it produces a picture of perfect fit &mdash; every feature connected to a need, no gaps. A
+                evidence, it produces a picture of perfect fit: every feature connected to a need, no gaps. A
                 canvas with no gaps is almost always a canvas built without research. The method has no value without an
                 honest Customer Profile filled from actual customer evidence.
               </Body>
@@ -171,7 +171,7 @@ export default function ValuePropositionCanvasPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive canvas   DARK
+          S4 - Interactive canvas   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -183,7 +183,7 @@ export default function ValuePropositionCanvasPage() {
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Each of the six regions has a distinct discipline. Toggle Show&nbsp;Fit to overlay the connections
-              and gaps on the same canvas &mdash; the wasted features and unmet needs are the most important
+              and gaps on the same canvas: the wasted features and unmet needs are the most important
               output of the exercise.
             </p>
             <VPCInteractive />
@@ -192,13 +192,13 @@ export default function ValuePropositionCanvasPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>When to deploy it</SectionLabel>
-            <SectionHeadingLight>A strategic audit tool &mdash; not a substitute for research or for prioritisation.</SectionHeadingLight>
+            <SectionHeadingLight>A strategic audit tool, not a substitute for research or for prioritisation.</SectionHeadingLight>
 
             <div className="grid md:grid-cols-2 gap-8 mt-8">
               <div>
@@ -208,10 +208,10 @@ export default function ValuePropositionCanvasPage() {
                 >Use it when</p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You have enough customer research to populate the Customer Profile honestly — jobs, pains, and gains should trace to real evidence, not guesses.',
+                    'You have enough customer research to populate the Customer Profile honestly: jobs, pains, and gains should trace to real evidence, not guesses.',
                     'You want to systematically audit whether your product creates value for your target customer, or whether the team has been building based on internal assumptions.',
                     'You are heading into a prioritisation conversation and need a common frame for deciding which features deserve investment and which should be cut.',
-                    "You are early in ideation and want to scope solutions around what the research actually requires — not the solution the team is most attached to.",
+                    "You are early in ideation and want to scope solutions around what the research actually requires, not the solution the team is most attached to.",
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
                       <span style={{ color: PLUM, flexShrink: 0, marginTop: 2 }}>→</span>
@@ -252,7 +252,7 @@ export default function ValuePropositionCanvasPage() {
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: the canvas is only as good as the Customer Profile, and the Customer Profile
                 is only as good as the research beneath it. A team that fills the Customer Profile in a
-                workshop from collective memory is not doing customer research &mdash; they are synthesising their
+                workshop from collective memory is not doing customer research; they are synthesising their
                 assumptions, which is a different and far less reliable activity.
               </p>
             </div>
@@ -261,7 +261,7 @@ export default function ValuePropositionCanvasPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -274,27 +274,27 @@ export default function ValuePropositionCanvasPage() {
                 {
                   n: '01',
                   title: 'Build the Customer Profile from research.',
-                  body: 'Start on the right side. Populate Customer Jobs, Pains, and Gains from actual research: job statement interviews, in-depth interviews, ethnographic observation. Do not start with the Value Map — the product focus will bias what you listen for in the customer research. The Customer Profile is an output of research, not a product-team brainstorm.',
+                  body: 'Start on the right side. Populate Customer Jobs, Pains, and Gains from actual research: job statement interviews, in-depth interviews, ethnographic observation. Do not start with the Value Map; the product focus will bias what you listen for in the customer research. The Customer Profile is an output of research, not a product-team brainstorm.',
                 },
                 {
                   n: '02',
                   title: 'Rank what matters most.',
-                  body: 'Not all jobs, pains, and gains are equal. Identify the most important jobs — the ones the customer most needs to accomplish. Identify the extreme pains — the ones that are most severe, most frequent, and most likely to block the job from being done. Identify the essential gains — those the customer expects and cannot go without. The ranking is a guide for the connection exercise that follows.',
+                  body: 'Not all jobs, pains, and gains are equal. Identify the most important jobs: the ones the customer most needs to accomplish. Identify the extreme pains: the ones that are most severe, most frequent, and most likely to block the job from being done. Identify the essential gains: those the customer expects and cannot go without. The ranking is a guide for the connection exercise that follows.',
                 },
                 {
                   n: '03',
                   title: 'Map the Value Proposition honestly.',
-                  body: 'Complete the left side: list every product and service you offer (Products & Services), then describe specifically how each one relieves a customer pain (Pain Relievers) or creates a customer gain (Gain Creators). Be concrete. A pain reliever that says "improves efficiency" is not doing the work — it must name the specific pain it relieves and the specific mechanism by which it does so.',
+                  body: 'Complete the left side: list every product and service you offer (Products & Services), then describe specifically how each one relieves a customer pain (Pain Relievers) or creates a customer gain (Gain Creators). Be concrete. A pain reliever that says "improves efficiency" is not doing the work; it must name the specific pain it relieves and the specific mechanism by which it does so.',
                 },
                 {
                   n: '04',
                   title: 'Draw the connections and expose the gaps.',
-                  body: 'Connect each pain reliever to the specific customer pain it addresses, and each gain creator to the specific gain it creates. Then audit ruthlessly. Pain relievers with no corresponding customer pain are wasted features. Extreme customer pains with no corresponding pain reliever are unmet needs. Label both explicitly. The gaps are not problems to hide — they are the most valuable output of the exercise.',
+                  body: 'Connect each pain reliever to the specific customer pain it addresses, and each gain creator to the specific gain it creates. Then audit ruthlessly. Pain relievers with no corresponding customer pain are wasted features. Extreme customer pains with no corresponding pain reliever are unmet needs. Label both explicitly. The gaps are not problems to hide; they are the most valuable output of the exercise.',
                 },
                 {
                   n: '05',
                   title: 'Act on the gaps.',
-                  body: "The strategic decisions emerge from the gaps, not from the fits. Wasted features are candidates for removal or de-prioritisation — they consume resources and create no value. Unmet extreme needs are candidates for new product development or repositioning. The canvas is not finished when every region is filled; it is finished when the team has an action plan for the gaps it exposed.",
+                  body: "The strategic decisions emerge from the gaps, not from the fits. Wasted features are candidates for removal or de-prioritisation; they consume resources and create no value. Unmet extreme needs are candidates for new product development or repositioning. The canvas is not finished when every region is filled; it is finished when the team has an action plan for the gaps it exposed.",
                 },
               ].map(({ n, title, body }) => (
                 <div key={n} className="flex gap-5">
@@ -316,24 +316,24 @@ export default function ValuePropositionCanvasPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like &mdash; and what to avoid.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and what to avoid.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
               When it goes well
             </h3>
             <ul className="flex flex-col gap-3 mb-10">
               {[
-                'The Customer Profile traces every entry to real research evidence — a specific interview, observation, or job statement study.',
+                'The Customer Profile traces every entry to real research evidence: a specific interview, observation, or job statement study.',
                 'The team argues about which connections are real. Disagreements about whether a feature genuinely relieves a specific pain are exactly the right conversation to have.',
                 'Gaps are named explicitly and treated as strategic findings, not as evidence of failure or things to explain away.',
                 'The canvas is revisited every time significant new research is completed. A stale Customer Profile is more dangerous than no canvas at all.',
-                'The output is an action plan for the gaps — not a presentation of the fits.',
+                'The output is an action plan for the gaps, not a presentation of the fits.',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
                   <span style={{ color: PLUM, flexShrink: 0, marginTop: 3 }}>✓</span>
@@ -355,7 +355,7 @@ export default function ValuePropositionCanvasPage() {
                 },
                 {
                   mistake: 'Filling the Customer Profile in a workshop.',
-                  fix: "A workshop with no prior research does not produce a Customer Profile — it produces a shared list of assumptions. The Customer Profile should be assembled from research already in hand, with the team interpreting and synthesising evidence, not generating it from memory.",
+                  fix: "A workshop with no prior research does not produce a Customer Profile; it produces a shared list of assumptions. The Customer Profile should be assembled from research already in hand, with the team interpreting and synthesising evidence, not generating it from memory.",
                 },
                 {
                   mistake: 'Connecting everything.',
@@ -385,7 +385,7 @@ export default function ValuePropositionCanvasPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Logistics   LIGHT
+          S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -393,7 +393,7 @@ export default function ValuePropositionCanvasPage() {
             <SectionLabel accent={PLUM}>Logistics</SectionLabel>
             <SectionHeadingLight>Running the canvas from research to strategic finding.</SectionHeadingLight>
             <Body>
-              The Value Proposition Canvas works best as a structured workshop session after research is complete &mdash;
+              The Value Proposition Canvas works best as a structured workshop session after research is complete,
               not as a substitute for doing research. A typical session runs two to four hours for a single customer
               segment, with the most contentious time spent on the connection-drawing and gap-identification steps.
               That contention is a sign the session is working.
@@ -411,11 +411,11 @@ export default function ValuePropositionCanvasPage() {
                 },
                 {
                   label: 'The connection session should generate disagreement',
-                  body: 'When the team connects pain relievers to customer pains, the most valuable moments are the disagreements — "does this feature actually relieve that pain, or do we just hope it does?" The discipline of requiring evidence for each connection forces the team to distinguish between confirmed fit and assumed fit.',
+                  body: 'When the team connects pain relievers to customer pains, the most valuable moments are the disagreements: "does this feature actually relieve that pain, or do we just hope it does?" The discipline of requiring evidence for each connection forces the team to distinguish between confirmed fit and assumed fit.',
                 },
                 {
                   label: 'Label gaps explicitly and prominently',
-                  body: "Wasted features and unmet needs should not be quietly acknowledged and moved past. Label them clearly on the canvas — they are the strategic findings that justify the entire exercise. A canvas where the team has to be reminded what the gaps were is a canvas that did not do its job.",
+                  body: "Wasted features and unmet needs should not be quietly acknowledged and moved past. Label them clearly on the canvas; they are the strategic findings that justify the entire exercise. A canvas where the team has to be reminded what the gaps were is a canvas that did not do its job.",
                 },
                 {
                   label: 'Remote: works well with structure',
@@ -443,7 +443,7 @@ export default function ValuePropositionCanvasPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — AI and this method   DARK
+          S9 - AI and this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -455,7 +455,7 @@ export default function ValuePropositionCanvasPage() {
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Toggle between modes to see what AI produces versus what research-grounded synthesis produces.
-              The distinction is not which canvas looks more complete &mdash; it is which canvas tells you something actionable.
+              The distinction is not which canvas looks more complete; it is which canvas tells you something actionable.
             </p>
             <VPCAIReactivated />
           </div>
@@ -463,7 +463,7 @@ export default function ValuePropositionCanvasPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -484,7 +484,7 @@ export default function ValuePropositionCanvasPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — Frameworks   LIGHT
+          S11 - Frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -496,7 +496,7 @@ export default function ValuePropositionCanvasPage() {
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               The canvas maps to the moments in each framework where the task is connecting customer research
-              to strategic or design decisions &mdash; the transition from understanding the customer to building
+              to strategic or design decisions: the transition from understanding the customer to building
               for them.
             </p>
 
@@ -527,7 +527,7 @@ export default function ValuePropositionCanvasPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Related methods   LIGHT
+          S12 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -567,7 +567,7 @@ export default function ValuePropositionCanvasPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Sources & further reading   LIGHT
+          S13 - Sources & further reading   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -581,7 +581,7 @@ export default function ValuePropositionCanvasPage() {
                   title:  'Value Proposition Design',
                   author: 'Alexander Osterwalder, Yves Pigneur, Gregory Bernarda, and Alan Smith',
                   year:   '2014',
-                  note:   "The canonical reference for the Value Proposition Canvas. Osterwalder's framing makes explicit what every practitioner learns the hard way: the canvas's value is in the gap analysis, not in the fit claims. The book's emphasis on testing each connection against customer evidence — and on treating unmet needs as strategic opportunities — is the most important discipline the method requires.",
+                  note:   "The canonical reference for the Value Proposition Canvas. Osterwalder's framing makes explicit what every practitioner learns the hard way: the canvas's value is in the gap analysis, not in the fit claims. The book's emphasis on testing each connection against customer evidence, and on treating unmet needs as strategic opportunities, is the most important discipline the method requires.",
                 },
                 {
                   title:  'Business Model Generation',
@@ -593,7 +593,7 @@ export default function ValuePropositionCanvasPage() {
                   title:  'Testing Business Ideas',
                   author: 'David Bland and Alexander Osterwalder',
                   year:   '2019',
-                  note:   "The practical companion for the step after the canvas is complete. Bland and Osterwalder provide a library of experiments for testing the connections drawn in the VPC — specifically, for validating that the claimed fit between pain relievers and customer pains holds up under real customer testing. Fills the gap between the canvas's output and what the team should actually build or test next.",
+                  note:   "The practical companion for the step after the canvas is complete. Bland and Osterwalder provide a library of experiments for testing the connections drawn in the VPC, specifically, for validating that the claimed fit between pain relievers and customer pains holds up under real customer testing. Fills the gap between the canvas's output and what the team should actually build or test next.",
                 },
               ].map(({ title, author, year, note }) => (
                 <div
