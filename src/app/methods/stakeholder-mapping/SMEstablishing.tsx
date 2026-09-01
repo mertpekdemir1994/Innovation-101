@@ -168,7 +168,7 @@ export default function SMEstablishing() {
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.4, delay: prefersReduced ? 0 : 0.65 }}
           style={{ userSelect: 'none' }}
-        >CAST OF STAKEHOLDERS — SORTED BY ATTRIBUTE TO REVEAL PRIORITY AND HIDDEN OBSTACLES</motion.text>
+        >CAST OF STAKEHOLDERS, SORTED BY ATTRIBUTE TO REVEAL PRIORITY AND HIDDEN OBSTACLES</motion.text>
       </svg>
     </div>
   )

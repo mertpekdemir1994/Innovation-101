@@ -204,8 +204,8 @@ export default function SMAIReactivated() {
             fill="rgba(255,255,255,0.20)"
             style={{ userSelect: 'none' }}>
             {isAI
-              ? 'AI LISTS OBVIOUS STAKEHOLDERS QUICKLY — BUT OFTEN MISSES INFORMAL, INDIRECT, AND BLOCKING ROLES'
-              : 'HUMAN-LED MAPPING SURFACES THE FULL CAST — INCLUDING WHO AI TENDS TO OVERLOOK'}
+              ? 'AI LISTS OBVIOUS STAKEHOLDERS QUICKLY, BUT OFTEN MISSES INFORMAL, INDIRECT, AND BLOCKING ROLES'
+              : 'HUMAN-LED MAPPING SURFACES THE FULL CAST, INCLUDING WHO AI TENDS TO OVERLOOK'}
           </text>
         </svg>
       </div>
@@ -221,9 +221,9 @@ export default function SMAIReactivated() {
               transition={{ duration: 0.22 }}
             >
               {[
-                { label: 'FULL CAST', body: 'A well-facilitated session surfaces all eight stakeholder types — including indirect recipients, hidden blockers, and community advocates who fall outside the team\'s usual field of view.' },
+                { label: 'FULL CAST', body: 'A well-facilitated session surfaces all eight stakeholder types, including indirect recipients, hidden blockers, and community advocates who fall outside the team\'s usual field of view.' },
                 { label: 'NON-OBVIOUS FIRST', body: 'The most valuable research subjects are often the least obvious: the downstream recipient who first reveals downstream harm, the silent blocker who will stall implementation if not addressed early.' },
-                { label: 'LIVE ATTRIBUTES', body: 'Power, interest, attitude, and influence are nuanced judgements that require conversation, contextual knowledge, and domain expertise — not pattern-matching from public data.' },
+                { label: 'LIVE ATTRIBUTES', body: 'Power, interest, attitude, and influence are nuanced judgements that require conversation, contextual knowledge, and domain expertise, not pattern-matching from public data.' },
               ].map(item => (
                 <div key={item.label} className="rounded-lg border p-4"
                   style={{ borderColor: `${SAGE}0.20)`, background: `${SAGE}0.05)` }}>
@@ -241,7 +241,7 @@ export default function SMAIReactivated() {
               transition={{ duration: 0.22 }}
             >
               {[
-                { label: 'SPEED, NOT SCOPE', body: 'AI generates an initial stakeholder list in seconds. The list is typically correct for the obvious roles, comprehensive within that class — but "comprehensive" here means all the expected names, not all the relevant ones.' },
+                { label: 'SPEED, NOT SCOPE', body: 'AI generates an initial stakeholder list in seconds. The list is typically correct for the obvious roles, comprehensive within that class, but "comprehensive" here means all the expected names, not all the relevant ones.' },
                 { label: 'STRUCTURAL BIAS', body: 'AI draws from documented sources: org charts, case studies, published research. Informal influencers, silent opponents, and people affected downstream rarely appear in those sources. They are systematically underrepresented in AI output.' },
                 { label: 'HUMAN JUDGMENT', body: 'Attribute scoring (especially attitude and influence) requires qualitative judgment: knowing which VP quietly opposes the project, or which community voice makes adoption or breaks it. AI cannot reliably produce this from public data.' },
               ].map(item => (

@@ -29,37 +29,37 @@ const STAKEHOLDERS: Stakeholder[] = [
     id: 'end-user', name: 'END USER', role: 'Primary user',
     power: 'medium', interest: 'high', attitude: 'supporter', influence: 'medium',
     nonObvious: false,
-    detail: 'Direct users of the product or service. Their needs are well-known to the team — sometimes too well, creating confirmation bias. Often under-researched in terms of context: when, where, and why they use it, as opposed to their stated preferences.',
+    detail: 'Direct users of the product or service. Their needs are well-known to the team, sometimes too well, creating confirmation bias. Often under-researched in terms of context: when, where, and why they use it, as opposed to their stated preferences.',
   },
   {
     id: 'decision-maker', name: 'DECISION MAKER', role: 'Authority holder',
     power: 'high', interest: 'high', attitude: 'neutral', influence: 'high',
     nonObvious: false,
-    detail: 'The person whose approval the solution requires. High power and high interest make them the primary target for alignment. They often have a mental model of the problem that must be surfaced and tested — not assumed to match the user research.',
+    detail: 'The person whose approval the solution requires. High power and high interest make them the primary target for alignment. They often have a mental model of the problem that must be surfaced and tested, not assumed to match the user research.',
   },
   {
     id: 'budget-holder', name: 'BUDGET HOLDER', role: 'Resource gatekeeper',
     power: 'high', interest: 'low', attitude: 'neutral', influence: 'low',
     nonObvious: false,
-    detail: 'Controls the money but has little day-to-day interest in the problem. Their priorities are cost, risk, and timelines. They need to be kept satisfied with financial and business-case framing — not user-experience framing.',
+    detail: 'Controls the money but has little day-to-day interest in the problem. Their priorities are cost, risk, and timelines. They need to be kept satisfied with financial and business-case framing, not user-experience framing.',
   },
   {
     id: 'regulator', name: 'REGULATOR', role: 'Rule-setter',
     power: 'high', interest: 'low', attitude: 'neutral', influence: 'low',
     nonObvious: false,
-    detail: 'Regulatory or compliance bodies governing what the solution can do. Often treated as a constraint rather than a stakeholder worth researching — but interviewing compliance officers often reveals where the actual latitude lies, and where it genuinely doesn\'t.',
+    detail: 'Regulatory or compliance bodies governing what the solution can do. Often treated as a constraint rather than a stakeholder worth researching, but interviewing compliance officers often reveals where the actual latitude lies, and where it genuinely doesn\'t.',
   },
   {
     id: 'frontline-staff', name: 'FRONTLINE STAFF', role: 'Daily implementer',
     power: 'medium', interest: 'high', attitude: 'supporter', influence: 'medium',
     nonObvious: false,
-    detail: 'People who carry out the solution in practice — service reps, technicians, nurses, teachers. High interest because the solution affects their daily work. They know failure modes that no one at the strategy level has seen, and are often the first to spot whether a designed solution is feasible.',
+    detail: 'People who carry out the solution in practice: service reps, technicians, nurses, teachers. High interest because the solution affects their daily work. They know failure modes that no one at the strategy level has seen, and are often the first to spot whether a designed solution is feasible.',
   },
   {
     id: 'downstream-affected', name: 'DOWNSTREAM', role: 'Indirect recipient',
     power: 'low', interest: 'medium', attitude: 'supporter', influence: 'low',
     nonObvious: true,
-    detail: 'People affected by the solution\'s outputs but with no direct relationship with the team. They receive downstream effects — the patient affected by a care pathway redesign, the neighbour affected by a logistics route change. Low formal power, but often the people whose lives are most changed.',
+    detail: 'People affected by the solution\'s outputs but with no direct relationship with the team. They receive downstream effects: the patient affected by a care pathway redesign, the neighbour affected by a logistics route change. Low formal power, but often the people whose lives are most changed.',
   },
   {
     id: 'silent-blocker', name: 'SILENT BLOCKER', role: 'Hidden obstacle',
@@ -71,7 +71,7 @@ const STAKEHOLDERS: Stakeholder[] = [
     id: 'community-advocate', name: 'ADVOCATE', role: 'Community voice',
     power: 'low', interest: 'high', attitude: 'supporter', influence: 'high',
     nonObvious: true,
-    detail: 'An informal leader who carries significant influence within the community the solution affects, but has no formal organisational power. Can make or break adoption. Their involvement early — as co-researchers and co-designers, not just interviewees — dramatically changes how the final solution is received.',
+    detail: 'An informal leader who carries significant influence within the community the solution affects, but has no formal organisational power. Can make or break adoption. Their involvement early, as co-researchers and co-designers, not just interviewees, dramatically changes how the final solution is received.',
   },
 ]
 
@@ -83,22 +83,22 @@ function getGroups(sort: SortMode): Group[] {
       return [{ key: 'cast', label: '', sublabel: '', ids: STAKEHOLDERS.map(s => s.id) }]
     case 'power-interest':
       return [
-        { key: 'engage',  label: 'ENGAGE CLOSELY',  sublabel: 'High power + high interest — manage these relationships most actively', ids: ['decision-maker'] },
-        { key: 'satisfy', label: 'KEEP SATISFIED',   sublabel: 'High power + low interest — avoid surprises; check in without overwhelming', ids: ['budget-holder', 'regulator'] },
-        { key: 'inform',  label: 'KEEP INFORMED',    sublabel: 'Lower power + high interest — involve in co-design, keep them updated', ids: ['end-user', 'frontline-staff', 'community-advocate'] },
-        { key: 'monitor', label: 'MONITOR',           sublabel: 'Lower power + low interest — periodic check-ins; watch for attitude shifts', ids: ['downstream-affected', 'silent-blocker'] },
+        { key: 'engage',  label: 'ENGAGE CLOSELY',  sublabel: 'High power + high interest, manage these relationships most actively', ids: ['decision-maker'] },
+        { key: 'satisfy', label: 'KEEP SATISFIED',   sublabel: 'High power + low interest, avoid surprises; check in without overwhelming', ids: ['budget-holder', 'regulator'] },
+        { key: 'inform',  label: 'KEEP INFORMED',    sublabel: 'Lower power + high interest, involve in co-design, keep them updated', ids: ['end-user', 'frontline-staff', 'community-advocate'] },
+        { key: 'monitor', label: 'MONITOR',           sublabel: 'Lower power + low interest, periodic check-ins; watch for attitude shifts', ids: ['downstream-affected', 'silent-blocker'] },
       ]
     case 'attitude':
       return [
-        { key: 'mobilise',    label: 'MOBILISE',    sublabel: 'Supporters — activate, involve, amplify their voice', ids: ['end-user', 'frontline-staff', 'downstream-affected', 'community-advocate'] },
-        { key: 'inform',      label: 'INFORM',      sublabel: 'Neutral — manage expectations; address concerns before they harden', ids: ['decision-maker', 'budget-holder', 'regulator'] },
-        { key: 'plan-around', label: 'PLAN AROUND', sublabel: 'Blockers — surface their resistance early; design around or address it', ids: ['silent-blocker'] },
+        { key: 'mobilise',    label: 'MOBILISE',    sublabel: 'Supporters, activate, involve, amplify their voice', ids: ['end-user', 'frontline-staff', 'downstream-affected', 'community-advocate'] },
+        { key: 'inform',      label: 'INFORM',      sublabel: 'Neutral, manage expectations; address concerns before they harden', ids: ['decision-maker', 'budget-holder', 'regulator'] },
+        { key: 'plan-around', label: 'PLAN AROUND', sublabel: 'Blockers, surface their resistance early; design around or address it', ids: ['silent-blocker'] },
       ]
     case 'influence':
       return [
         { key: 'high-infl', label: 'HIGH INFLUENCE',   sublabel: 'Can shift others\' opinions and decisions at scale', ids: ['decision-maker', 'community-advocate'] },
         { key: 'med-infl',  label: 'MEDIUM INFLUENCE', sublabel: 'Meaningful reach within their domain', ids: ['end-user', 'frontline-staff', 'silent-blocker'] },
-        { key: 'low-infl',  label: 'LOW INFLUENCE',    sublabel: 'Limited direct reach — but often first to signal emerging problems', ids: ['budget-holder', 'regulator', 'downstream-affected'] },
+        { key: 'low-infl',  label: 'LOW INFLUENCE',    sublabel: 'Limited direct reach, but often first to signal emerging problems', ids: ['budget-holder', 'regulator', 'downstream-affected'] },
       ]
   }
 }
@@ -284,7 +284,7 @@ export default function SMInteractive() {
             {selectedStakeholder.nonObvious && (
               <div className="mt-3 pt-3 border-t" style={{ borderColor: `${SAGE}0.18)` }}>
                 <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: `${SAGE}0.65)` }}>
-                  ★ NON-OBVIOUS — teams frequently omit this stakeholder from initial research plans
+                  ★ NON-OBVIOUS, teams frequently omit this stakeholder from initial research plans
                 </p>
               </div>
             )}
@@ -300,7 +300,7 @@ export default function SMInteractive() {
             <p className="text-[9px] font-mono uppercase tracking-widest"
               style={{ color: 'rgba(255,255,255,0.25)' }}>
               {sort === 'cast'
-                ? 'SELECT A CARD TO SEE FULL ATTRIBUTES — THEN SORT THE CAST BY POWER, ATTITUDE, OR INFLUENCE'
+                ? 'SELECT A CARD TO SEE FULL ATTRIBUTES, THEN SORT THE CAST BY POWER, ATTITUDE, OR INFLUENCE'
                 : 'SELECT A CARD TO UNDERSTAND WHAT THIS STAKEHOLDER CONTRIBUTES AND WHAT THEY RISK'}
             </p>
           </motion.div>

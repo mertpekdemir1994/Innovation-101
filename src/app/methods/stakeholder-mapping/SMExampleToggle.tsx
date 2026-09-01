@@ -7,7 +7,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'P&G is developing a new floor-cleaning product. Standard market research is underway. This is the decision-process that produced the Swiffer — and both versions begin from the same starting point. The contrast is in how far the team pushed the stakeholder cast before defining what the product needed to do.'
+const SCENARIO = 'P&G is developing a new floor-cleaning product. Standard market research is underway. This is the decision-process that produced the Swiffer, and both versions begin from the same starting point. The contrast is in how far the team pushed the stakeholder cast before defining what the product needed to do.'
 
 export default function SMExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -67,7 +67,7 @@ export default function SMExampleToggle() {
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 Mapped by power and interest, the retail buyer and regulator required proactive management.
-                The primary user — the person whose behaviour the product had to change — was where the team
+                The primary user, the person whose behaviour the product had to change, was where the team
                 needed to focus research. Standard. Expected. And not yet revealing anything that would change the product.
               </p>
             </div>
@@ -75,7 +75,7 @@ export default function SMExampleToggle() {
             {/* Step 2: pushing the cast */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${SAGE}0.22)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${SAGE}1)` }}>Step 2: Push past the obvious — who else has a stake?</p>
+                style={{ color: `${SAGE}1)` }}>Step 2: Push past the obvious: who else has a stake?</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 The facilitator kept pushing: <em>who else</em> interacts with floor cleaning, even indirectly?
                 The cast expanded.
@@ -85,17 +85,17 @@ export default function SMExampleToggle() {
                   {
                     who: 'ELDERLY & LIMITED-MOBILITY USERS',
                     nonObvious: true,
-                    find: 'This group was not the target demographic in any brief. But when the team ran research with them, a specific physical pattern emerged: the hardest part of cleaning a floor was not the cleaning itself — it was the wringing. Bending to a bucket, wringing a heavy mop, carrying the water. The mop was the problem.',
+                    find: 'This group was not the target demographic in any brief. But when the team ran research with them, a specific physical pattern emerged: the hardest part of cleaning a floor was not the cleaning itself; it was the wringing. Bending to a bucket, wringing a heavy mop, carrying the water. The mop was the problem.',
                   },
                   {
                     who: 'PROFESSIONAL CLEANERS',
                     nonObvious: true,
-                    find: 'Extreme-frequency users nobody had thought to study. Their insight: at high frequency, the time to wring, refill, and replace the mop head dominated the session. Disposable was not a luxury concept — it was a time-saving one.',
+                    find: 'Extreme-frequency users nobody had thought to study. Their insight: at high frequency, the time to wring, refill, and replace the mop head dominated the session. Disposable was not a luxury concept; it was a time-saving one.',
                   },
                   {
                     who: 'HOUSEHOLDS WITH YOUNG CHILDREN',
                     nonObvious: false,
-                    find: 'More frequent cleaning cycles than any other household type. The barrier was the friction of setup and cleanup — not motivation. A faster, lower-friction method would increase frequency of use.',
+                    find: 'More frequent cleaning cycles than any other household type. The barrier was the friction of setup and cleanup, not motivation. A faster, lower-friction method would increase frequency of use.',
                   },
                 ].map(item => (
                   <div key={item.who}
@@ -125,7 +125,7 @@ export default function SMExampleToggle() {
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The elderly and limited-mobility users provided the pivotal insight. When the team studied this
                 group, the job-to-be-done shifted: it was not &ldquo;clean the floor more effectively.&rdquo; It was
-                &ldquo;maintain a clean home without physical strain.&rdquo; The bucket, the wring, the weight, the bending —
+                &ldquo;maintain a clean home without physical strain.&rdquo; The bucket, the wring, the weight, the bending:
                 these were the barriers. Not cleaning power.
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
@@ -139,7 +139,7 @@ export default function SMExampleToggle() {
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
                   The Swiffer was not invented by improving the mop. It was invented by discovering that the
-                  non-obvious stakeholder group — users nobody had briefed the team to study — redefined what
+                  non-obvious stakeholder group (users nobody had briefed the team to study) redefined what
                   the product needed to do entirely. The stakeholder map changed the design brief. The design
                   brief changed the product. The product opened a new category.
                 </p>
@@ -160,7 +160,7 @@ export default function SMExampleToggle() {
               <p className="text-xs text-neutral-600 leading-relaxed">
                 <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
                 The Swiffer research was human-led. This tab imagines the team had opened with an AI-generated
-                stakeholder map instead — to show what that surfaces, and what it misses.
+                stakeholder map instead, to show what that surfaces, and what it misses.
               </p>
             </div>
 
@@ -180,7 +180,7 @@ export default function SMExampleToggle() {
                   { role: 'RETAIL BUYER',       attrs: 'Power: High · Interest: Medium · Attitude: Neutral', note: 'Category management and shelf placement. Margin and velocity requirements documented.', obvious: true },
                   { role: 'PROCUREMENT',        attrs: 'Power: High · Interest: Low · Attitude: Neutral',   note: 'Cost and supplier terms. Standard procurement considerations apply.', obvious: true },
                   { role: 'SAFETY REGULATOR',  attrs: 'Power: High · Interest: Low · Attitude: Neutral',   note: 'Chemical and product safety compliance. Standard review process.', obvious: true },
-                  { role: 'ELDERLY USERS',      attrs: 'Power: Low · Interest: High · Attitude: Supporter', note: 'Secondary consideration — accessibility and ease of use.', obvious: false },
+                  { role: 'ELDERLY USERS',      attrs: 'Power: Low · Interest: High · Attitude: Supporter', note: 'Secondary consideration, accessibility and ease of use.', obvious: false },
                   { role: 'PROFESSIONAL CLEANERS', attrs: 'Power: Low · Interest: Medium · Attitude: Neutral', note: 'Secondary segment. High-frequency use patterns may differ from consumer baseline.', obvious: false },
                 ].map(item => (
                   <div key={item.role} className="rounded p-3"
@@ -221,15 +221,15 @@ export default function SMExampleToggle() {
                 {[
                   {
                     miss: 'The elderly user\'s insight was in the list, but not foregrounded',
-                    why: 'Listed as "accessibility consideration" — a modifier to the main use case, not the key reframing signal. Without a human facilitator making the call to study this group in depth, the brief would not have shifted.',
+                    why: 'Listed as "accessibility consideration", a modifier to the main use case, not the key reframing signal. Without a human facilitator making the call to study this group in depth, the brief would not have shifted.',
                   },
                   {
                     miss: 'Physical strain was not identified as the primary job-to-be-done',
-                    why: 'AI maps attributes from documented sources: focus-group reports, product reviews, market research. These tend to emphasise stated preferences ("cleans well," "easy to use") — not the embodied, physical barriers that emerged from observational research.',
+                    why: 'AI maps attributes from documented sources: focus-group reports, product reviews, market research. These tend to emphasise stated preferences ("cleans well," "easy to use"), not the embodied, physical barriers that emerged from observational research.',
                   },
                   {
                     miss: 'The brief stayed as-is: a better mop',
-                    why: 'The AI output would have improved the conventional mop — better cleaning chemistry, lighter handle, improved wring mechanism. The Swiffer-defining leap (no bucket, no wring, disposable) required treating the "secondary" stakeholder as the primary signal.',
+                    why: 'The AI output would have improved the conventional mop: better cleaning chemistry, lighter handle, improved wring mechanism. The Swiffer-defining leap (no bucket, no wring, disposable) required treating the "secondary" stakeholder as the primary signal.',
                   },
                 ].map(item => (
                   <div key={item.miss} className="rounded p-3"
@@ -248,7 +248,7 @@ export default function SMExampleToggle() {
                   style={{ color: `${INDIGO}0.80)` }}>Where AI helped</p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
                   Speed and completeness on the obvious cast. A well-structured initial list in two minutes,
-                  properly attributed with power and interest scores. A good starting point for the session —
+                  properly attributed with power and interest scores. A good starting point for the session,
                   not the session itself.
                 </p>
               </div>
@@ -259,7 +259,7 @@ export default function SMExampleToggle() {
                 <p className="text-xs text-neutral-700 leading-relaxed">
                   Deciding which &ldquo;secondary&rdquo; stakeholder was actually the primary signal. Making the call
                   to run deep observational research with elderly users. Reframing the design brief from
-                  cleaning efficacy to physical strain. These were human acts — and they were the whole game.
+                  cleaning efficacy to physical strain. These were human acts, and they were the whole game.
                 </p>
               </div>
             </div>
