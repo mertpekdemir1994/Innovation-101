@@ -176,7 +176,7 @@ export default function PAInteractive() {
                   textAnchor="middle" fontSize="13" fontWeight="600"
                   fontFamily="var(--font-body, Inter, sans-serif)"
                   style={{ userSelect: 'none', pointerEvents: 'none' }}
-                  animate={{ fill: st === 'dim' ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.82)' }}
+                  animate={{ fill: st === 'dim' ? 'rgba(255,255,255,0.61)' : 'rgba(255,255,255,0.82)' }}
                   transition={{ duration: 0.22 }}
                 >{name}</motion.text>
                 <motion.text
@@ -184,7 +184,7 @@ export default function PAInteractive() {
                   textAnchor="middle" fontSize="10"
                   fontFamily="var(--font-mono)" letterSpacing="0.04em"
                   style={{ userSelect: 'none', pointerEvents: 'none' }}
-                  animate={{ fill: st === 'dim' ? 'rgba(255,255,255,0.10)' : 'rgba(255,255,255,0.35)' }}
+                  animate={{ fill: st === 'dim' ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.675)' }}
                   transition={{ duration: 0.22 }}
                 >{sub}</motion.text>
               </g>
@@ -237,7 +237,7 @@ export default function PAInteractive() {
                   { label: 'GROUNDED IN', body: PERSONA_DETAIL[activeCard].research },
                 ].map(({ label, body }) => (
                   <div key={label}>
-                    <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.35)' }}>
+                    <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.675)' }}>
                       {label}
                     </p>
                     <p style={{
@@ -262,7 +262,7 @@ export default function PAInteractive() {
               className="flex items-center justify-center h-full"
               style={{ minHeight: 200 }}
             >
-              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.25)', fontStyle: 'italic' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.625)', fontStyle: 'italic' }}>
                 Select a persona to read its description.
               </p>
             </motion.div>

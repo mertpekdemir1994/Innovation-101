@@ -133,7 +133,7 @@ export default function PAAIReactivated() {
                       x={cx} y={244}
                       textAnchor="middle" fontSize="9"
                       fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                      fill={`${AI_C}0.70)`}
+                      fill={`rgba(141,143,245,0.937)`}
                       style={{ userSelect: 'none' }}
                       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
@@ -144,7 +144,7 @@ export default function PAAIReactivated() {
                       x={cx} y={244}
                       textAnchor="middle" fontSize="9"
                       fontFamily="var(--font-mono)" letterSpacing="0.04em"
-                      fill="rgba(255,255,255,0.32)"
+                      fill="rgba(255,255,255,0.66)"
                       style={{ userSelect: 'none' }}
                       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
