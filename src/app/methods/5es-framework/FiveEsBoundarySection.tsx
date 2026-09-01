@@ -38,7 +38,7 @@ function FiveEsMiniSVG() {
   const PHASE_LABELS = ['E', 'EN', 'EG', 'EX', 'EXT']
   const BOOKENDS = [true, false, false, true, true]
   return (
-    <svg viewBox={`0 0 ${MW} ${MH_5ES}`} width="100%" style={{ display: 'block' }}>
+    <svg viewBox={`0 0 ${MW} ${MH_5ES}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}>
       <rect x={0} y={0} width={MW} height={MH_5ES} rx={6} fill={`${TEAL}0.06)`} />
       {[1,2,3,4].map(i => (
         <line key={i} x1={i*MPW} y1={0} x2={i*MPW} y2={MH_5ES}
