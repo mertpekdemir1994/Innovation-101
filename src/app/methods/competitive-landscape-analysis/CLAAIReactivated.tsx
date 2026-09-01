@@ -83,7 +83,7 @@ export default function CLAAIReactivated() {
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}
           width="100%"
-          style={{ overflow: 'visible' }}
+          style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
           aria-label={isAI
             ? 'AI mode: conventional axes with all competitors confidently plotted. The reframed axis and the real white space on the right side remain dim: the human strategic move.'
             : 'Human mode: the analyst sees both the conventional map and knows to reframe the axes to find the actual white space.'}

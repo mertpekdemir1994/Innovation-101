@@ -68,7 +68,7 @@ export default function CLAEstablishing() {
       role="img"
       aria-label="Competitive positioning field: Price (horizontal) vs Prestige (vertical). Eight competitors cluster in the high-price, high-prestige upper-right zone. The lower-left (low price, low prestige) is empty: the un-served white space."
     >
-      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ overflow: 'visible' }}>
+      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}>
         <defs>
           <filter id="cla-est-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="6" result="blur" />
