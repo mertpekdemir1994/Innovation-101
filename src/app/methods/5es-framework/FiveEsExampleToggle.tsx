@@ -112,7 +112,7 @@ export default function FiveEsExampleToggle() {
                         color: item.status === 'WELL DESIGNED'
                           ? `${TEAL}0.65)`
                           : item.status === 'NOT DESIGNED'
-                          ? 'var(--color-neutral-400)'
+                          ? 'var(--color-neutral-500)'
                           : `${AMBER}0.70)`,
                       }}
                     >{item.status}</span>
@@ -211,7 +211,7 @@ export default function FiveEsExampleToggle() {
                           color: item.confidence === 'HIGH'
                             ? 'rgba(99,102,241,0.72)'
                             : item.confidence === 'NONE'
-                            ? 'var(--color-neutral-400)'
+                            ? 'var(--color-neutral-500)'
                             : `${AMBER}0.70)`,
                         }}
                       >AI confidence: {item.confidence}</span>
