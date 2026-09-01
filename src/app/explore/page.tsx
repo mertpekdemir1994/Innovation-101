@@ -34,7 +34,7 @@ export default function ExplorePage() {
       </header>
 
       {frameworks.length === 0 ? (
-        <p className="text-neutral-600">No frameworks yet — content coming soon.</p>
+        <p className="text-neutral-600">No frameworks yet: content coming soon.</p>
       ) : (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {frameworks.map(({ frontmatter }) => (

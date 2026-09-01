@@ -1,4 +1,4 @@
-// Shared mini SVG illustrations — works in server and client contexts (no hooks).
+// Shared mini SVG illustrations: works in server and client contexts (no hooks).
 
 import React from 'react'
 
@@ -19,9 +19,9 @@ function OrbitTick({ cx, cy, r, deg, c }: { cx: number; cy: number; r: number; d
 }
 
 // ── Design Thinking ───────────────────────────────────────────────────────────
-// Lemniscate / figure-eight — scaled mini version of DTStagesHero.
+// Lemniscate / figure-eight: scaled mini version of DTStagesHero.
 // Left loop: E (Empathize, upper-left) + D (Define, lower-left)
-// Center crossing: T (Test — the hinge)
+// Center crossing: T (Test, the hinge)
 // Right loop: I (Ideate, upper-right) + P (Prototype, lower-right)
 // Flow: E → D → crossing → I → P → crossing(T) → repeat
 export function DesignThinkingMini({ c }: P) {

@@ -90,7 +90,7 @@ export default function FrameworkCard({
               style={{ height: 1, background: 'var(--color-neutral-100)' }}
             />
 
-            {/* 5 ── Info block — always visible at rest, no hover dependency */}
+            {/* 5 ── Info block: always visible at rest, no hover dependency */}
             <div className="shrink-0 flex flex-col gap-3">
 
               <div>
@@ -152,10 +152,10 @@ export default function FrameworkCard({
 
             </div>
 
-            {/* Elastic spacer — ensures CTA is always flush with card bottom */}
+            {/* Elastic spacer: ensures CTA is always flush with card bottom */}
             <div className="flex-1" style={{ minHeight: 'var(--space-4)' }} />
 
-            {/* 6 ── CTA — pinned to bottom */}
+            {/* 6 ── CTA: pinned to bottom */}
             <p
               className="font-mono uppercase tracking-widest shrink-0"
               style={{ fontSize: 'var(--text-xs)', color: `${color}0.55)` }}

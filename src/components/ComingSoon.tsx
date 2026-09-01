@@ -2,7 +2,7 @@ import styles from './coming-soon.module.css'
 
 /*
   Shared holding page for sections without content yet.
-  Both READING and SCENARIOS use this — only accent color and copy differ.
+  Both READING and SCENARIOS use this: only accent color and copy differ.
 
   accent:   CSS color value (e.g. 'var(--stage-discovery)')
   glowRgb:  comma-separated R,G,B for the radial background glow
@@ -10,7 +10,7 @@ import styles from './coming-soon.module.css'
   body:     the explanatory paragraph
   footer:   optional quiet closing line (shared on both pages)
 
-  SVG: a regular hexagon traced over 5 of its 6 sides — the missing closing
+  SVG: a regular hexagon traced over 5 of its 6 sides: the missing closing
   side is the deliberate gap. Under prefers-reduced-motion the shape renders
   statically with the gap already visible.
 */
@@ -36,7 +36,7 @@ export default function ComingSoon({ accent, glowRgb, heading, body, footer }: C
         overflow: 'hidden',
       }}
     >
-      {/* Radial accent glow — purely decorative */}
+      {/* Radial accent glow: purely decorative */}
       <div
         aria-hidden="true"
         style={{
@@ -56,7 +56,7 @@ export default function ComingSoon({ accent, glowRgb, heading, body, footer }: C
           padding: '0 1.5rem',
         }}
       >
-        {/* Animated SVG — decorative, aria-hidden */}
+        {/* Animated SVG: decorative, aria-hidden */}
         <svg
           aria-hidden="true"
           viewBox="0 0 180 180"
@@ -65,7 +65,7 @@ export default function ComingSoon({ accent, glowRgb, heading, body, footer }: C
           style={{ display: 'block', margin: '0 auto 2rem' }}
         >
           {/*
-            Hexagon — point up, circumradius 65, center (90, 90).
+            Hexagon: point up, circumradius 65, center (90, 90).
             375 of 390 path units drawn; small gap at closing vertex.
             The <g> rotates as a unit so the gap orbits the perimeter.
           */}
@@ -97,7 +97,7 @@ export default function ComingSoon({ accent, glowRgb, heading, body, footer }: C
           In progress
         </p>
 
-        {/* Heading — primary accessible content */}
+        {/* Heading: primary accessible content */}
         <h1
           className="font-display text-balance"
           style={{
@@ -111,7 +111,7 @@ export default function ComingSoon({ accent, glowRgb, heading, body, footer }: C
           {heading}
         </h1>
 
-        {/* Body — explanatory paragraph */}
+        {/* Body: explanatory paragraph */}
         <p
           style={{
             fontSize: 'var(--text-base)',

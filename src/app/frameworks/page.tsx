@@ -12,7 +12,7 @@ import {
 
 export const metadata: Metadata = { title: 'Frameworks — Innovation 101' }
 
-// ── Framework data — educational/chronological-adoption order ─────────────────
+// ── Framework data: educational/chronological-adoption order ─────────────────
 const FRAMEWORKS = [
   {
     slug: 'design-thinking',
@@ -120,7 +120,7 @@ export default function FrameworksPage() {
             </h1>
             <p className="text-lg max-w-[560px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.50)' }}>
               Six frameworks, each a complete system for moving from problem to solution. Ordered from
-              foundational to radical — pick the one that fits your context.
+              foundational to radical: pick the one that fits your context.
             </p>
           </header>
 

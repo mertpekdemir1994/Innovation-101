@@ -176,7 +176,7 @@ export default function MethodsStageView({ methods }: Props) {
 
   return (
     <div>
-      {/* ── Stage filter pills — styled for dark background ── */}
+      {/* ── Stage filter pills: styled for dark background ── */}
       <div
         className="flex flex-wrap gap-2 mb-10 pb-6"
         style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}
@@ -226,7 +226,7 @@ export default function MethodsStageView({ methods }: Props) {
           className="py-12 text-center"
           style={{ color: 'rgba(255,255,255,0.35)', fontStyle: 'italic', fontSize: 'var(--text-sm)' }}
         >
-          No methods in this stage yet — content coming soon.
+          No methods in this stage yet: content coming soon.
         </p>
       ) : (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch pb-4">
