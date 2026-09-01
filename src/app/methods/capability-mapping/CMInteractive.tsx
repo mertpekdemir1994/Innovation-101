@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700, SVG_H = 268
 
@@ -234,17 +235,17 @@ export default function CMInteractive() {
         {/* Segment labels */}
         <text x={FE_CX} y={16} textAnchor="middle" fontSize="4.5"
           fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-          fill={`${BRICK}0.48)`} style={{ userSelect: 'none' }}>FRONT-END</text>
+          fill={`rgba(183,145,135,0.891)`} style={{ userSelect: 'none' }}>FRONT-END</text>
         <text x={BE_CX} y={16} textAnchor="middle" fontSize="4.5"
           fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-          fill={`${BRICK}0.48)`} style={{ userSelect: 'none' }}>BACK-END</text>
+          fill={`rgba(183,145,135,0.891)`} style={{ userSelect: 'none' }}>BACK-END</text>
         <line x1={392} y1={22} x2={392} y2={226} stroke={`${BRICK}0.10)`} strokeWidth={0.8} />
 
         {/* Layer labels */}
         {([1, 2, 3] as LayerId[]).map(ln => (
           <text key={ln} x={42} y={L[ln].cy} textAnchor="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${BRICK}0.38)`} style={{ userSelect: 'none' }}
+            fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}
             transform={`rotate(-90 42 ${L[ln].cy})`}>
             {ln === 1 ? 'FOUNDATIONAL' : ln === 2 ? 'OPERATIONAL' : 'EPIC-LEVEL'}
           </text>
@@ -282,7 +283,7 @@ export default function CMInteractive() {
               {/* Capability label */}
               <text x={cell.cx} y={cell.cy - 5} textAnchor="middle" dominantBaseline="middle"
                 fontSize="5.8" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
-                fill={isAtRisk || isPartialRisk ? `${AMBER}0.85)` : (getState(cell) === 'have' ? `${BRICK}0.85)` : `${AMBER}0.80)`)}
+                fill={isAtRisk || isPartialRisk ? `${AMBER}0.85)` : (getState(cell) === 'have' ? `rgba(183,145,135,0.969)` : `${AMBER}0.80)`)}
                 style={{ userSelect: 'none' }}>
                 {cell.label}
               </text>
@@ -300,14 +301,14 @@ export default function CMInteractive() {
         {view === 'today' && (
           <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
             fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill={`${AMBER}0.40)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.814)`} style={{ userSelect: 'none' }}>
             {propagating ? 'Everything above a foundational gap is standing on air.' : 'Click any capability. Click a foundational gap to see what rests on it.'}
           </text>
         )}
         {view === 'target' && (
           <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
             fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>
             TARGET view: all capabilities as delivery requires. Toggle to TODAY to see the gaps.
           </text>
         )}

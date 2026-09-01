@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
 
 const SVG_W = 700, SVG_H = 268
@@ -197,17 +198,17 @@ export default function CMAIReactivated() {
         {/* Segment labels */}
         <text x={FE_CX} y={isAI ? 22 : 16} textAnchor="middle" fontSize="4.5"
           fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-          fill={`${BRICK}0.45)`} style={{ userSelect: 'none' }}>FRONT-END</text>
+          fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>FRONT-END</text>
         <text x={BE_CX} y={isAI ? 22 : 16} textAnchor="middle" fontSize="4.5"
           fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-          fill={`${BRICK}0.45)`} style={{ userSelect: 'none' }}>BACK-END</text>
+          fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>BACK-END</text>
         <line x1={392} y1={isAI ? 24 : 20} x2={392} y2={226} stroke={`${BRICK}0.10)`} strokeWidth={0.8} />
 
         {/* Layer labels */}
         {([1, 2, 3] as LayerId[]).map(ln => (
           <text key={ln} x={42} y={L[ln].cy} textAnchor="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${BRICK}0.36)`} style={{ userSelect: 'none' }}
+            fill={`rgba(183,145,135,0.866)`} style={{ userSelect: 'none' }}
             transform={`rotate(-90 42 ${L[ln].cy})`}>
             {ln === 1 ? 'FOUNDATIONAL' : ln === 2 ? 'OPERATIONAL' : 'EPIC-LEVEL'}
           </text>
@@ -250,7 +251,7 @@ export default function CMAIReactivated() {
                   />
                   <text x={cell.cx} y={cell.cy + 2} textAnchor="middle" dominantBaseline="middle"
                     fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                    fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}>
+                    fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>
                     OUTPUT, NOT CAPABILITY
                   </text>
                 </>
@@ -274,7 +275,7 @@ export default function CMAIReactivated() {
               {isDeceptive && (
                 <text x={cell.cx} y={L[cell.layer].y + 9} textAnchor="middle"
                   fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
-                  fill={`${BRICK}0.65)`} style={{ userSelect: 'none' }}>
+                  fill={`rgba(183,145,135,0.926)`} style={{ userSelect: 'none' }}>
                   {cell.label}
                 </text>
               )}
@@ -285,7 +286,7 @@ export default function CMAIReactivated() {
         {/* Caption */}
         <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>
+          fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>
           {isAI
             ? 'Can we judge this work? If not, the honest state is PARTIAL, not HAVE IT.'
             : 'Human view: the map as it honestly is.'}

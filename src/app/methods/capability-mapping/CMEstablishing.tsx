@@ -4,6 +4,7 @@ import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700, SVG_H = 268
 
@@ -139,12 +140,12 @@ export default function CMEstablishing() {
         <motion.g {...fade(0.05)}>
           <text x={FE_CX} y={16} textAnchor="middle" fontSize="4.5"
             fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-            fill={`${BRICK}0.52)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.899)`} style={{ userSelect: 'none' }}>
             FRONT-END
           </text>
           <text x={BE_CX} y={16} textAnchor="middle" fontSize="4.5"
             fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-            fill={`${BRICK}0.52)`} style={{ userSelect: 'none' }}>
+            fill={`rgba(183,145,135,0.899)`} style={{ userSelect: 'none' }}>
             BACK-END
           </text>
           {/* Segment divider */}
@@ -215,7 +216,7 @@ export default function CMEstablishing() {
                 x={c.cx} y={c.cy + 10}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                fill={unsupported && c.state === 'have' ? `${AMBER}0.55)` : sc.label.replace('0.85)', '0.50)').replace('0.78)', '0.52)').replace('0.60)', '0.42)')}
+                fill={unsupported && c.state === 'have' ? `${AMBER_TEXT}0.861)` : sc.label.replace('0.85)', '0.50)').replace('0.78)', '0.52)').replace('0.60)', '0.42)')}
                 style={{ userSelect: 'none' }}>
                 {unsupported && c.state === 'have' ? '⚠ UNSUPPORTED' : sc.stateTag}
               </text>
@@ -227,7 +228,7 @@ export default function CMEstablishing() {
         <motion.g {...fade(1.1)}>
           <text x={BE_CX} y={230} textAnchor="middle" fontSize="3.8"
             fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}>
+            fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>
             ← THIS GAP IS CARRYING EVERYTHING ABOVE IT
           </text>
         </motion.g>
