@@ -72,7 +72,7 @@ export default function C8AIReactivated() {
       {/* SVG */}
       <div className="w-full">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-          preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}
+          preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
           aria-label={isAI
             ? 'AI mode: all 8 panels flooded immediately in indigo, all labeled PLAUSIBLE. No wall between panels. AI-generated ideas cluster in the obvious early zone.'
             : 'Human mode: panels 1–4 muted and labeled OBVIOUS; panels 5–8 clay-accented and labeled ORIGINAL. THE WALL dashed line separates the rows.'}>

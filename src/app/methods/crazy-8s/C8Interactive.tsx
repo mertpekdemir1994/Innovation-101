@@ -116,7 +116,7 @@ export default function C8Interactive() {
         aria-label="Interactive Crazy 8s grid. Click a panel to see what kind of idea it produces.">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
           preserveAspectRatio="xMidYMid meet"
-          style={{ display: 'block', cursor: 'default' }}>
+          style={{ maxWidth: 'var(--width-illustration)', display: 'block', cursor: 'default' }}>
           <defs>
             <filter id="c8-int-glow" x="-20%" y="-20%" width="140%" height="140%">
               <feGaussianBlur in="SourceAlpha" stdDeviation="3.5" result="blur" />
