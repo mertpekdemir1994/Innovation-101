@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import React from 'react'
 
 const SAGE = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 // Larger field so every element is comfortably legible
 const SVG_W = 720
@@ -307,7 +308,7 @@ export default function CLAInteractive() {
           <motion.text
             textAnchor="middle"
             fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-            fill={`${SAGE}0.62)`}
+            fill={`${SAGE_TEXT}0.92)`}
             animate={{ x: crowd.cx, y: crowdLabelY }}
             transition={motT}
             style={{ userSelect: 'none', cursor: 'pointer' } as React.CSSProperties}
@@ -349,7 +350,7 @@ export default function CLAInteractive() {
             <motion.text
               textAnchor="middle" dominantBaseline="middle"
               fontSize="7.5" fontFamily="var(--font-mono)"
-              fill={`${SAGE}0.55)`}
+              fill={`${SAGE_TEXT}0.905)`}
               initial={{ x: ws.w / 2, y: ws.h / 2 + 10 }}
               animate={{ x: ws.w / 2, y: ws.h / 2 + 10 }}
               transition={motT}
