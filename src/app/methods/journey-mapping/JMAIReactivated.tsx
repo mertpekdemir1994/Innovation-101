@@ -195,7 +195,7 @@ export default function JMAIReactivated() {
                   x={350} y={LANE_A_Y + LANE_A_H / 2}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                  fill={`${AI_C}0.65)`} style={{ userSelect: 'none' }}
+                  fill={`rgba(141,143,245,0.926)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.35 }}
                 >AI ASSEMBLES FROM DATA</motion.text>
@@ -205,7 +205,7 @@ export default function JMAIReactivated() {
                   x={350} y={LANE_E_Y + LANE_E_H * 0.7}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                  fill={`${AI_C}0.60)`} style={{ userSelect: 'none' }}
+                  fill={`rgba(141,143,245,0.916)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.35 }}
                 >AI READS EXPRESSED EMOTION</motion.text>
@@ -215,7 +215,7 @@ export default function JMAIReactivated() {
                   x={283} y={EY.gap - 20}
                   textAnchor="start" dominantBaseline="middle"
                   fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill="rgba(251,146,60,0.55)" style={{ userSelect: 'none' }}
+                  fill="rgba(251,146,60,0.874)" style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.35 }}
                 >AI MISSES THIS</motion.text>

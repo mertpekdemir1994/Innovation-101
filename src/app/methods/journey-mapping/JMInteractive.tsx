@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 
 const SVG_W = 700
 const STAGE_W = 140
@@ -114,13 +115,13 @@ function headerStroke(st: string) {
        :                    `${TEAL}0.35)`
 }
 function labelFill(st: string) {
-  return st === 'active'  ? `${TEAL}0.98)`
-       : st === 'hovered' ? `${TEAL}0.82)`
-       : st === 'dim'     ? `${TEAL}0.22)`
-       :                    `${TEAL}0.78)`
+  return st === 'active'  ? `${TEAL_TEXT}0.996)`
+       : st === 'hovered' ? `${TEAL_TEXT}0.962)`
+       : st === 'dim'     ? `${TEAL_TEXT}0.836)`
+       :                    `${TEAL_TEXT}0.954)`
 }
 function contentFill(st: string) {
-  return st === 'dim' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.65)'
+  return st === 'dim' ? 'rgba(255,255,255,0.575)' : 'rgba(255,255,255,0.65)'
 }
 function dotFill(st: string) {
   return st === 'active'  ? `${TEAL}1.0)`
