@@ -121,7 +121,7 @@ export default function IDIAIReactivated() {
                       x={cx} y={badgeY}
                       textAnchor="middle" fontSize="9"
                       fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                      fill={`${AI_C}0.70)`}
+                      fill={`rgba(141,143,245,0.937)`}
                       style={{ userSelect: 'none' }}
                       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
@@ -132,7 +132,7 @@ export default function IDIAIReactivated() {
                       x={cx} y={badgeY}
                       textAnchor="middle" fontSize="9"
                       fontFamily="var(--font-mono)" letterSpacing="0.04em"
-                      fill="rgba(255,255,255,0.28)"
+                      fill="rgba(255,255,255,0.64)"
                       style={{ userSelect: 'none' }}
                       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 type Role = 'facilitator' | 'notetaker' | 'participant'
 
@@ -54,7 +55,7 @@ function avatarStroke(state: string): string {
 function nameFill(state: string): string {
   if (state === 'active')  return 'rgba(255,255,255,0.94)'
   if (state === 'hovered') return 'rgba(255,255,255,0.72)'
-  if (state === 'dim')     return 'rgba(255,255,255,0.20)'
+  if (state === 'dim')     return 'rgba(255,255,255,0.60)'
   return 'rgba(255,255,255,0.78)'
 }
 function haloOpacity(state: string): number {
@@ -190,7 +191,7 @@ export default function IDIInteractive() {
               fontFamily: 'var(--font-mono)',
               letterSpacing: '0.10em',
               textTransform: 'uppercase',
-              color: `${SAGE}0.45)`,
+              color: `${SAGE_TEXT}0.895)`,
             }}
           >
             Click a role to explore
@@ -211,7 +212,7 @@ export default function IDIInteractive() {
             >
               <p
                 className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${SAGE}0.65)` }}
+                style={{ fontSize: 'var(--text-2xs)', color: `${SAGE_TEXT}0.926)` }}
               >
                 Role
               </p>
@@ -241,7 +242,7 @@ export default function IDIInteractive() {
               className="flex items-center justify-center h-full"
               style={{ minHeight: 200 }}
             >
-              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.25)', fontStyle: 'italic' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.625)', fontStyle: 'italic' }}>
                 Select a role to read its description.
               </p>
             </motion.div>

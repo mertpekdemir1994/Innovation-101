@@ -81,13 +81,13 @@ export default function IDIEstablishing() {
         <motion.text
           x={225} y={90} textAnchor="middle"
           fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-          fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           variants={fade} transition={lineT}
         >OBSERVES</motion.text>
         <motion.text
           x={415} y={90} textAnchor="middle"
           fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-          fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           variants={fade} transition={lineT}
         >CONVERSATION</motion.text>
 
