@@ -5,17 +5,17 @@ const CLAY = 'rgba(181,97,62,'
 const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
 const SVG_W = 700
-const SVG_H = 312
+const SVG_H = 390
 
 // Grid geometry - shared across all three appearances
-const GX = 96,  GY = 20
-const GW = 544, GH = 228
+const GX = 96,  GY = 24
+const GW = 544, GH = 280
 const GR = GX + GW   // 640
-const GB = GY + GH   // 248
+const GB = GY + GH   // 304
 const MX = GX + GW / 2  // 368
-const MY = GY + GH / 2  // 134
+const MY = GY + GH / 2  // 164
 
-const CARD_H = 26
+const CARD_H = 28
 
 type Card = {
   id: string
@@ -26,18 +26,20 @@ type Card = {
   lof: boolean
 }
 
+// Cards stack single-file within their quadrant (rather than side-by-side)
+// so each gets the full quadrant width for its label at a legible size.
 const CARDS: Card[] = [
   // LEAP-OF-FAITH (top-right - high importance, unknown)
-  { id: 'a', x: 384, y: 40,  w: 118, label: 'WILL THEY BUY?',      lof: true  },
-  { id: 'b', x: 508, y: 80,  w: 118, label: 'PRICE ACCEPTED?',     lof: true  },
+  { id: 'a', x: 380, y: 54,  w: 252, label: 'WILL THEY BUY?',      lof: true  },
+  { id: 'b', x: 380, y: 92,  w: 252, label: 'PRICE ACCEPTED?',     lof: true  },
   // MONITOR (top-left - high importance, known)
-  { id: 'c', x: 104, y: 40,  w: 126, label: 'BEHAVIOUR EXISTS',    lof: false },
-  { id: 'd', x: 218, y: 82,  w: 110, label: 'TECH IS READY',       lof: false },
+  { id: 'c', x: 104, y: 54,  w: 252, label: 'BEHAVIOUR EXISTS',    lof: false },
+  { id: 'd', x: 104, y: 92,  w: 252, label: 'TECH IS READY',       lof: false },
   // NICE-TO-KNOW (bottom-right - low importance, unknown)
-  { id: 'e', x: 400, y: 170, w: 134, label: 'PREFER FREE RETURNS', lof: false },
+  { id: 'e', x: 380, y: 178, w: 252, label: 'PREFER FREE RETURNS', lof: false },
   // IGNORE (bottom-left - low importance, known)
-  { id: 'f', x: 104, y: 168, w: 114, label: 'CAN SHIP PRODUCT',    lof: false },
-  { id: 'g', x: 224, y: 208, w: 110, label: 'CAN BUILD SITE',      lof: false },
+  { id: 'f', x: 104, y: 178, w: 252, label: 'CAN SHIP PRODUCT',    lof: false },
+  { id: 'g', x: 104, y: 216, w: 252, label: 'CAN BUILD SITE',      lof: false },
 ]
 
 export default function AMPEstablishing() {
@@ -132,32 +134,32 @@ export default function AMPEstablishing() {
 
         {/* Axis name labels */}
         <motion.text
-          transform={`rotate(-90, 16, ${(GY + GB) / 2})`}
-          x={16} y={(GY + GB) / 2}
+          transform={`rotate(-90, 14, ${(GY + GB) / 2})`}
+          x={14} y={(GY + GB) / 2}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-          fill="rgba(255,255,255,0.63)" style={{ userSelect: 'none' }}
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fill="rgba(255,255,255,0.68)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={gridT}
         >IMPORTANCE</motion.text>
 
         <motion.text
-          x={(GX + GR) / 2} y={GB + 26}
+          x={(GX + GR) / 2} y={GB + 42}
           textAnchor="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-          fill="rgba(255,255,255,0.63)" style={{ userSelect: 'none' }}
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fill="rgba(255,255,255,0.68)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={gridT}
         >UNCERTAINTY</motion.text>
 
         {/* Axis end labels */}
-        <motion.text x={GX - 20} y={GY + 4} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>HIGH</motion.text>
-        <motion.text x={GX - 20} y={GB - 2} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>LOW</motion.text>
-        <motion.text x={GX + 2}  y={GB + 20} textAnchor="start"  fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>KNOWN</motion.text>
-        <motion.text x={GR - 2}  y={GB + 20} textAnchor="end"    fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>UNKNOWN</motion.text>
+        <motion.text x={GX - 26} y={GY + 4} textAnchor="middle" fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>HIGH</motion.text>
+        <motion.text x={GX - 26} y={GB - 2} textAnchor="middle" fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>LOW</motion.text>
+        <motion.text x={GX + 2}  y={GB + 26} textAnchor="start"  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>KNOWN</motion.text>
+        <motion.text x={GR - 2}  y={GB + 26} textAnchor="end"    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }} variants={fadeIn} transition={gridT}>UNKNOWN</motion.text>
 
         {/* Quadrant corner labels */}
-        <motion.text x={GX + 8} y={GY + 14} textAnchor="start"
-          fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-          fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
+        <motion.text x={GX + 8} y={GY + 15} textAnchor="start"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={{ ...gridT, delay: prefersReduced ? 0 : 0.28 }}>
           MONITOR
         </motion.text>
@@ -167,28 +169,23 @@ export default function AMPEstablishing() {
           transition={{ ...glowT, delay: prefersReduced ? 0 : 0.42 }}
           filter="url(#amp-est-glow-sm)"
         >
-          <text x={GR - 8} y={GY + 14} textAnchor="end"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
+          <text x={GR - 8} y={GY + 15} textAnchor="end"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={`${CLAY_TEXT}0.979)`} style={{ userSelect: 'none' }}>
             LEAP OF FAITH
           </text>
-          <text x={GR - 8} y={GY + 26} textAnchor="end"
-            fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${CLAY_TEXT}0.916)`} style={{ userSelect: 'none' }}>
-            TEST THESE FIRST
-          </text>
         </motion.g>
 
-        <motion.text x={GX + 8} y={GB - 8} textAnchor="start"
-          fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-          fill="rgba(255,255,255,0.56)" style={{ userSelect: 'none' }}
+        <motion.text x={GX + 8} y={GB - 9} textAnchor="start"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={{ ...gridT, delay: prefersReduced ? 0 : 0.22 }}>
           IGNORE
         </motion.text>
 
-        <motion.text x={GR - 8} y={GB - 8} textAnchor="end"
-          fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-          fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}
+        <motion.text x={GR - 8} y={GB - 9} textAnchor="end"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          fill="rgba(255,255,255,0.60)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={{ ...gridT, delay: prefersReduced ? 0 : 0.26 }}>
           NICE TO KNOW
         </motion.text>
@@ -210,8 +207,8 @@ export default function AMPEstablishing() {
             <text
               x={card.x + card.w / 2} y={card.y + CARD_H / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.11em"
-              fill={card.lof ? `${CLAY_TEXT}0.99)` : 'rgba(255,255,255,0.675)'}
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
+              fill={card.lof ? `${CLAY_TEXT}0.99)` : 'rgba(255,255,255,0.72)'}
               style={{ userSelect: 'none' }}
             >{card.label}</text>
           </motion.g>
@@ -219,10 +216,10 @@ export default function AMPEstablishing() {
 
         {/* Caption */}
         <motion.text
-          x={SVG_W / 2} y={SVG_H - 6}
+          x={SVG_W / 2} y={SVG_H - 10}
           textAnchor="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-          fill="rgba(255,255,255,0.57)" style={{ userSelect: 'none' }}
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
+          fill="rgba(255,255,255,0.60)" style={{ userSelect: 'none' }}
           variants={fadeIn}
           transition={{ ...gridT, delay: prefersReduced ? 0 : 0.72 }}
         >

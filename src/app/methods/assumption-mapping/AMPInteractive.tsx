@@ -6,17 +6,17 @@ const CLAY   = 'rgba(181,97,62,'
 const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const AMBER  = 'rgba(217,119,6,'
 
-const SVG_W = 700, SVG_H = 260
+const SVG_W = 700, SVG_H = 390
 
 // Grid geometry - identical to AMPEstablishing
-const GX = 96,  GY = 20
-const GW = 544, GH = 228
+const GX = 96,  GY = 24
+const GW = 544, GH = 280
 const GR = GX + GW   // 640
-const GB = GY + GH   // 248
+const GB = GY + GH   // 304
 const MX = GX + GW / 2  // 368
-const MY = GY + GH / 2  // 134
+const MY = GY + GH / 2  // 164
 
-const CARD_H = 26
+const CARD_H = 28
 
 type CardId = 'a' | 'b' | 'c' | 'd' | 'e'
 type Quadrant = 'lof' | 'monitor' | 'ntk' | 'ignore'
@@ -39,7 +39,7 @@ type AssumptionCard = {
 const CARDS: AssumptionCard[] = [
   {
     id: 'a',
-    x: 384, y: 40, w: 118,
+    x: 380, y: 54, w: 252,
     label: 'WILL THEY BUY?',
     quadrant: 'lof',
     detail: {
@@ -51,7 +51,7 @@ const CARDS: AssumptionCard[] = [
   },
   {
     id: 'b',
-    x: 508, y: 80, w: 118,
+    x: 380, y: 92, w: 252,
     label: 'PRICE ACCEPTED?',
     quadrant: 'lof',
     detail: {
@@ -63,7 +63,7 @@ const CARDS: AssumptionCard[] = [
   },
   {
     id: 'c',
-    x: 104, y: 40, w: 126,
+    x: 104, y: 54, w: 252,
     label: 'BEHAVIOUR EXISTS',
     quadrant: 'monitor',
     detail: {
@@ -75,7 +75,7 @@ const CARDS: AssumptionCard[] = [
   },
   {
     id: 'd',
-    x: 400, y: 170, w: 134,
+    x: 380, y: 178, w: 252,
     label: 'PREFER FREE RETURNS',
     quadrant: 'ntk',
     detail: {
@@ -87,7 +87,7 @@ const CARDS: AssumptionCard[] = [
   },
   {
     id: 'e',
-    x: 104, y: 168, w: 118,
+    x: 104, y: 178, w: 252,
     label: 'CAN BUILD SITE',
     quadrant: 'ignore',
     detail: {
@@ -100,10 +100,10 @@ const CARDS: AssumptionCard[] = [
 ]
 
 const QUADRANT_LABEL: Record<Quadrant, { text: string; x: number; y: number; anchor: string }> = {
-  lof:    { text: 'LEAP OF FAITH · TEST FIRST', x: GR - 8,  y: GY + 14, anchor: 'end'   },
-  monitor:{ text: 'MONITOR',                    x: GX + 8,  y: GY + 14, anchor: 'start' },
-  ntk:    { text: 'NICE TO KNOW',               x: GR - 8,  y: GB - 8,  anchor: 'end'   },
-  ignore: { text: 'IGNORE',                     x: GX + 8,  y: GB - 8,  anchor: 'start' },
+  lof:    { text: 'LEAP OF FAITH · TEST FIRST', x: GR - 8,  y: GY + 15, anchor: 'end'   },
+  monitor:{ text: 'MONITOR',                    x: GX + 8,  y: GY + 15, anchor: 'start' },
+  ntk:    { text: 'NICE TO KNOW',               x: GR - 8,  y: GB - 9,  anchor: 'end'   },
+  ignore: { text: 'IGNORE',                     x: GX + 8,  y: GB - 9,  anchor: 'start' },
 }
 
 export default function AMPInteractive() {
@@ -142,14 +142,14 @@ export default function AMPInteractive() {
   }
 
   function cardTextFill(card: AssumptionCard): string {
-    if (!active) return card.quadrant === 'lof' ? `${CLAY}0.95)` : 'rgba(255,255,255,0.35)'
-    if (card.id === active) return card.quadrant === 'lof' ? `${CLAY}1)` : 'rgba(255,255,255,0.85)'
-    return 'rgba(255,255,255,0.16)'
+    if (!active) return card.quadrant === 'lof' ? `${CLAY_TEXT}0.95)` : 'rgba(255,255,255,0.68)'
+    if (card.id === active) return card.quadrant === 'lof' ? `${CLAY_TEXT}1)` : 'rgba(255,255,255,0.90)'
+    return card.quadrant === 'lof' ? `${CLAY_TEXT}0.82)` : 'rgba(255,255,255,0.55)'
   }
 
   const activeQ = activeCard?.quadrant
   const lofActive = activeQ === 'lof'
-  const tagColor = lofActive ? `${CLAY}1)` : `${AMBER}0.90)`
+  const tagColor = lofActive ? `${CLAY_TEXT}1)` : `${AMBER}0.90)`
 
   return (
     <div className="w-full" style={{ position: 'relative' }}>
@@ -160,7 +160,7 @@ export default function AMPInteractive() {
       </div>
 
       <p className="font-mono uppercase tracking-widest mb-4"
-        style={{ fontSize: 'var(--text-2xs)', color: `${CLAY}0.55)` }}>
+        style={{ fontSize: 'var(--text-2xs)', color: `${CLAY_TEXT}0.90)` }}>
         Click an assumption to see where it sits, and what to do about it
       </p>
 
@@ -196,24 +196,24 @@ export default function AMPInteractive() {
             stroke="rgba(255,255,255,0.09)" strokeWidth={1} strokeDasharray="4 3" />
 
           {/* Axis labels */}
-          <text transform={`rotate(-90, 16, ${(GY + GB) / 2})`}
-            x={16} y={(GY + GB) / 2}
+          <text transform={`rotate(-90, 14, ${(GY + GB) / 2})`}
+            x={14} y={(GY + GB) / 2}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-            fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>IMPORTANCE</text>
-          <text x={GX - 20} y={GY + 4} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>HIGH</text>
-          <text x={GX - 20} y={GB - 2} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>LOW</text>
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fill="rgba(255,255,255,0.66)" style={{ userSelect: 'none' }}>IMPORTANCE</text>
+          <text x={GX - 26} y={GY + 4} textAnchor="middle" fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }}>HIGH</text>
+          <text x={GX - 26} y={GB - 2} textAnchor="middle" fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }}>LOW</text>
 
           {/* Quadrant labels */}
           {(Object.entries(QUADRANT_LABEL) as [Quadrant, typeof QUADRANT_LABEL[Quadrant]][]).map(([qid, ql]) => (
             <text key={qid}
               x={ql.x} y={ql.y}
               textAnchor={ql.anchor as 'start' | 'end'}
-              fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.13em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing={qid === 'lof' ? '0.03em' : '0.08em'}
               fill={
                 qid === 'lof'
                   ? (activeQ === 'lof' ? `${CLAY_TEXT}0.979)` : `${CLAY_TEXT}0.926)`)
-                  : activeQ === qid ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.59)'
+                  : activeQ === qid ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.62)'
               }
               style={{ userSelect: 'none', transition: 'fill 0.25s' }}>
               {ql.text}
@@ -242,7 +242,7 @@ export default function AMPInteractive() {
               <text
                 x={card.x + card.w / 2} y={card.y + CARD_H / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.11em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                 fill={cardTextFill(card)}
                 style={{ userSelect: 'none', transition: 'fill 0.22s' }}
               >{card.label}</text>
@@ -262,7 +262,7 @@ export default function AMPInteractive() {
               className="flex items-center justify-center h-24 rounded-lg border border-dashed"
               style={{ borderColor: `${CLAY}0.18)` }}
             >
-              <p className="font-mono uppercase tracking-widest text-white/28"
+              <p className="font-mono uppercase tracking-widest text-white/60"
                 style={{ fontSize: 'var(--text-2xs)' }}>
                 Click an assumption to see where it sits
               </p>
@@ -293,10 +293,10 @@ export default function AMPInteractive() {
                   {activeCard.detail.tag}
                 </span>
                 <span className="font-mono font-semibold"
-                  style={{ fontSize: 'var(--text-xs)', color: lofActive ? `${CLAY}1)` : 'rgba(255,255,255,0.70)' }}>
+                  style={{ fontSize: 'var(--text-xs)', color: lofActive ? `${CLAY_TEXT}1)` : 'rgba(255,255,255,0.70)' }}>
                   {activeCard.label}
                 </span>
-                <span style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.30)' }}>
+                <span style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.60)' }}>
                   {activeCard.detail.verdict}
                 </span>
               </div>
@@ -308,7 +308,7 @@ export default function AMPInteractive() {
               <div className="rounded p-3"
                 style={{ background: 'rgba(255,255,255,0.04)', borderLeft: `2px solid ${lofActive ? `${CLAY}0.40)` : 'rgba(255,255,255,0.15)'}` }}>
                 <p className="font-mono uppercase tracking-widest mb-1"
-                  style={{ fontSize: 'var(--text-2xs)', color: lofActive ? `${CLAY}0.65)` : 'rgba(255,255,255,0.28)' }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: lofActive ? `${CLAY_TEXT}0.90)` : 'rgba(255,255,255,0.60)' }}>
                   What to do
                 </p>
                 <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.55)', lineHeight: 'var(--leading-relaxed)' }}>
