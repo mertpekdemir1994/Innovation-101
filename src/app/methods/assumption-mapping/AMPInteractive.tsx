@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY   = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const AMBER  = 'rgba(217,119,6,'
 
 const SVG_W = 700, SVG_H = 260
@@ -199,9 +200,9 @@ export default function AMPInteractive() {
             x={16} y={(GY + GB) / 2}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-            fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>IMPORTANCE</text>
-          <text x={GX - 20} y={GY + 4} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>HIGH</text>
-          <text x={GX - 20} y={GB - 2} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>LOW</text>
+            fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>IMPORTANCE</text>
+          <text x={GX - 20} y={GY + 4} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>HIGH</text>
+          <text x={GX - 20} y={GB - 2} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>LOW</text>
 
           {/* Quadrant labels */}
           {(Object.entries(QUADRANT_LABEL) as [Quadrant, typeof QUADRANT_LABEL[Quadrant]][]).map(([qid, ql]) => (
@@ -211,8 +212,8 @@ export default function AMPInteractive() {
               fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.13em"
               fill={
                 qid === 'lof'
-                  ? (activeQ === 'lof' ? `${CLAY}0.90)` : `${CLAY}0.65)`)
-                  : activeQ === qid ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.18)'
+                  ? (activeQ === 'lof' ? `${CLAY_TEXT}0.979)` : `${CLAY_TEXT}0.926)`)
+                  : activeQ === qid ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.59)'
               }
               style={{ userSelect: 'none', transition: 'fill 0.25s' }}>
               {ql.text}

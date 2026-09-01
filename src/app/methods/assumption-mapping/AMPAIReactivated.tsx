@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY   = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700, SVG_H = 260
 
@@ -117,29 +119,29 @@ export default function AMPAIReactivated() {
           x={16} y={(GY + GB) / 2}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-          fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>IMPORTANCE</text>
-        <text x={GX - 20} y={GY + 4} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>HIGH</text>
-        <text x={GX - 20} y={GB - 2} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>LOW</text>
+          fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>IMPORTANCE</text>
+        <text x={GX - 20} y={GY + 4} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>HIGH</text>
+        <text x={GX - 20} y={GB - 2} textAnchor="middle" fontSize="6" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>LOW</text>
 
         {/* Quadrant labels */}
         <text x={GX + 8} y={GY + 14} textAnchor="start"
           fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-          fill={isAI ? `${INDIGO}0.55)` : 'rgba(255,255,255,0.20)'}
+          fill={isAI ? `${INDIGO_TEXT}0.905)` : 'rgba(255,255,255,0.6)'}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'AI: KNOWN / SAFE' : 'MONITOR'}
         </text>
         <text x={GR - 8} y={GY + 14} textAnchor="end"
           fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-          fill={isAI ? 'rgba(255,255,255,0.18)' : `${CLAY}0.80)`}
+          fill={isAI ? 'rgba(255,255,255,0.59)' : `${CLAY_TEXT}0.958)`}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'LEAP OF FAITH' : 'LEAP OF FAITH · TEST FIRST'}
         </text>
         <text x={GX + 8} y={GB - 8} textAnchor="start"
           fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-          fill="rgba(255,255,255,0.12)" style={{ userSelect: 'none' }}>IGNORE</text>
+          fill="rgba(255,255,255,0.56)" style={{ userSelect: 'none' }}>IGNORE</text>
         <text x={GR - 8} y={GB - 8} textAnchor="end"
           fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-          fill="rgba(255,255,255,0.14)" style={{ userSelect: 'none' }}>NICE TO KNOW</text>
+          fill="rgba(255,255,255,0.57)" style={{ userSelect: 'none' }}>NICE TO KNOW</text>
 
         {/* Static background cards */}
         {STATIC_CARDS.filter(c => !(isAI && c.id === 's1' && false)).map(c => (
@@ -152,7 +154,7 @@ export default function AMPAIReactivated() {
             <text x={c.x + c.w / 2} y={c.y + CARD_H / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.11em"
-              fill="rgba(255,255,255,0.28)" style={{ userSelect: 'none' }}>{c.label}</text>
+              fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}>{c.label}</text>
           </g>
         ))}
 
@@ -172,7 +174,7 @@ export default function AMPAIReactivated() {
               <text x={card.x + card.w / 2} y={card.y + CARD_H / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.11em"
-                fill={isAI ? `${INDIGO}0.90)` : `${CLAY}1)`}
+                fill={isAI ? `${INDIGO_TEXT}0.979)` : `${CLAY_TEXT}1.0)`}
                 style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
                 {card.label}
               </text>
@@ -200,7 +202,7 @@ export default function AMPAIReactivated() {
                 fill={`${INDIGO}0.14)`} stroke={`${INDIGO}0.45)`} strokeWidth={1} />
               <text x={TRAP_CARD.x + 55} y={TRAP_CARD.y - 12} textAnchor="middle" dominantBaseline="middle"
                 fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                fill={`${INDIGO}0.85)`} style={{ userSelect: 'none' }}>CONSENSUS TRAP</text>
+                fill={`${INDIGO_TEXT}0.969)`} style={{ userSelect: 'none' }}>CONSENSUS TRAP</text>
             </motion.g>
           )}
         </AnimatePresence>

@@ -2,6 +2,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const CLAY = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
 const SVG_W = 700
 const SVG_H = 312
@@ -168,12 +169,12 @@ export default function AMPEstablishing() {
         >
           <text x={GR - 8} y={GY + 14} textAnchor="end"
             fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
-            fill={`${CLAY}0.90)`} style={{ userSelect: 'none' }}>
+            fill={`${CLAY_TEXT}0.979)`} style={{ userSelect: 'none' }}>
             LEAP OF FAITH
           </text>
           <text x={GR - 8} y={GY + 26} textAnchor="end"
             fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${CLAY}0.60)`} style={{ userSelect: 'none' }}>
+            fill={`${CLAY_TEXT}0.916)`} style={{ userSelect: 'none' }}>
             TEST THESE FIRST
           </text>
         </motion.g>
@@ -210,7 +211,7 @@ export default function AMPEstablishing() {
               x={card.x + card.w / 2} y={card.y + CARD_H / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.11em"
-              fill={card.lof ? `${CLAY}0.95)` : 'rgba(255,255,255,0.35)'}
+              fill={card.lof ? `${CLAY_TEXT}0.99)` : 'rgba(255,255,255,0.675)'}
               style={{ userSelect: 'none' }}
             >{card.label}</text>
           </motion.g>
