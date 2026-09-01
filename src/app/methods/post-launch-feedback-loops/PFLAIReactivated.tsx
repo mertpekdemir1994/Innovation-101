@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
@@ -216,7 +217,7 @@ export default function PFLAIReactivated() {
             <motion.text x={216} y={135}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-              fill={`${AMBER}0.60)`} style={{ userSelect: 'none' }}
+              fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.30, delay: prefersReduced ? 0 : 0.20 }}>
               ⚠ AVERAGES THE SPECIFIC

@@ -146,7 +146,7 @@ export default function PFLEstablishing() {
         <motion.text x={300} y={187}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-          fill={`${BRICK}0.38)`} style={{ userSelect: 'none' }}
+          fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}
           {...fade(1.7)}>
           ← BACK TO SIGNAL · MEASURES WHETHER THE CHANGE WORKED
         </motion.text>
@@ -183,7 +183,7 @@ export default function PFLEstablishing() {
         <motion.text x={648} y={138}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-          fill={`${BRICK}0.28)`} style={{ userSelect: 'none' }}
+          fill={`rgba(183,145,135,0.849)`} style={{ userSelect: 'none' }}
           transform="rotate(90 648 138)"
           {...fade(1.9)}>
           LOOP CLOSES
@@ -193,7 +193,7 @@ export default function PFLEstablishing() {
         <motion.text x={SVG_W / 2} y={CAP_Y}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.28)" style={{ userSelect: 'none' }}
+          fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           {...fade(2.4)}>
           A loop is only a loop if it closes. Every junction is a place it usually does not.
         </motion.text>

@@ -241,7 +241,7 @@ export default function PFLInteractive() {
         <motion.text x={300} y={187}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-          fill={`${BRICK}0.35)`} style={{ userSelect: 'none' }}
+          fill={`rgba(183,145,135,0.864)`} style={{ userSelect: 'none' }}
           animate={{ opacity: active === 'b4' ? 0.08 : (active ? 0.18 : 0.80) }}
           transition={{ duration: 0.22 }}>
           ← BACK TO SIGNAL · MEASURES WHETHER THE CHANGE WORKED
