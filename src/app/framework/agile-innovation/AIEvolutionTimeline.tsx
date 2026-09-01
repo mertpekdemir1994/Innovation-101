@@ -162,7 +162,7 @@ export default function AIEvolutionTimeline() {
               </span>
             </div>
             <h3 className="text-2xl font-semibold text-neutral-900 mb-space-2">{v.name}</h3>
-            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-5">{v.org}</p>
+            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-5">{v.org}</p>
             <p className="text-base text-neutral-600 leading-relaxed">{v.summary}</p>
 
             {v.limitation && (
@@ -170,7 +170,7 @@ export default function AIEvolutionTimeline() {
                 className="mt-space-6 rounded-lg px-space-5 py-space-4"
                 style={{ background: 'rgba(17,24,39,0.03)', border: '1px solid rgba(17,24,39,0.08)' }}
               >
-                <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-2">
+                <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-2">
                   Acknowledged limitation
                 </p>
                 <p className="text-sm text-neutral-600 leading-relaxed">{v.limitation}</p>
@@ -180,7 +180,7 @@ export default function AIEvolutionTimeline() {
 
           {/* Right: changes */}
           <div>
-            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-400 mb-space-4">
+            <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-4">
               {active === 0 ? 'What it introduced' : 'What changed'}
             </p>
             <div className="space-y-space-3">
