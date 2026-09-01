@@ -50,7 +50,7 @@ export default function RPEstablishing() {
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
         preserveAspectRatio="xMidYMid meet"
-        style={{ display: 'block' }}
+        style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
       >
         <defs>
           <filter id="rp-est-clay-glow" x="-30%" y="-30%" width="160%" height="160%">

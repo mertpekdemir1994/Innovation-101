@@ -65,7 +65,7 @@ export default function RPAIReactivated() {
       {/* SVG */}
       <div className="w-full">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-          preserveAspectRatio="xMidYMid meet" style={{ display: 'block' }}
+          preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
           aria-label={isAI
             ? 'AI mode: all fidelity levels marked AI: INSTANT, the cost of climbing the ladder has collapsed. The just enough to learn judgment is more important, not less.'
             : 'Human mode: fidelity spectrum from rough paper sketch to polished prototype, with cost rising from left to right. Just enough to learn zone marked low.'}>
