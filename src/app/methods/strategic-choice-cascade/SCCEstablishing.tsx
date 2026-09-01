@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
 const SVG_W = 700
 const SVG_H = 536
@@ -68,20 +69,20 @@ export default function SCCEstablishing() {
           />
           <text x={CX} y={c.cy - 6} textAnchor="middle"
             fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
-            fill={c.heart ? `${PLUM}1)` : 'rgba(255,255,255,0.75)'}
+            fill={c.heart ? `${PLUM_TEXT}1.0)` : 'rgba(255,255,255,0.75)'}
             style={{ userSelect: 'none' }}>
             {c.label}
           </text>
           <text x={CX} y={c.cy + 9} textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={c.heart ? `${PLUM}0.55)` : 'rgba(255,255,255,0.28)'}
+            fill={c.heart ? `${PLUM_TEXT}0.905)` : 'rgba(255,255,255,0.64)'}
             style={{ userSelect: 'none' }}>
             {c.sub}
           </text>
           {c.heart && (
             <text x={BOX_RIGHT + 9} y={c.cy + 3} textAnchor="start"
               fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill={`${PLUM}0.50)`} style={{ userSelect: 'none' }}>
+              fill={`${PLUM_TEXT}0.895)`} style={{ userSelect: 'none' }}>
               ★ the heart
             </text>
           )}

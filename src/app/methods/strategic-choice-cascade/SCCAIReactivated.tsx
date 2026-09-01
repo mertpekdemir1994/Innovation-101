@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM   = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 const AMBER  = 'rgba(217,119,6,'
 
 const SVG_W = 700
@@ -131,7 +133,7 @@ export default function SCCAIReactivated() {
                           strokeWidth={0.5} />
                         <text x={BOX_RIGHT + 10} y={c.cy + 2} textAnchor="start"
                           fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                          fill={isWhereOrHow ? `${AMBER}0.75)` : `${INDIGO}0.60)`}
+                          fill={isWhereOrHow ? `rgba(221,132,30,0.95)` : `${INDIGO_TEXT}0.916)`}
                           style={{ userSelect: 'none' }}>
                           {c.aiBadge}
                         </text>
@@ -142,7 +144,7 @@ export default function SCCAIReactivated() {
                     {!isAI && c.heart && (
                       <text x={BOX_RIGHT + 9} y={c.cy + 3} textAnchor="start"
                         fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                        fill={`${PLUM}0.50)`} style={{ userSelect: 'none' }}>
+                        fill={`${PLUM_TEXT}0.895)`} style={{ userSelect: 'none' }}>
                         ★ the heart
                       </text>
                     )}
@@ -179,7 +181,7 @@ export default function SCCAIReactivated() {
                 fill={isAI ? `${PLUM}0.35)` : `${PLUM}0.28)`} />
               <text x={632} y={295} textAnchor="middle"
                 fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                fill={isAI ? `${PLUM}0.35)` : `${PLUM}0.28)`} style={{ userSelect: 'none' }}>
+                fill={isAI ? `${PLUM_TEXT}0.864)` : `${PLUM_TEXT}0.849)`} style={{ userSelect: 'none' }}>
                 {isAI ? '↑ AI CAN CHECK COHERENCE ↓' : '↑ MUST COHERE ↓'}
               </text>
 
@@ -196,7 +198,7 @@ export default function SCCAIReactivated() {
                 fill={isAI ? `${PLUM}0.55)` : `${PLUM}0.48)`} />
               <text x={118} y={222} textAnchor="middle"
                 fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                fill={isAI ? `${PLUM}0.70)` : `${PLUM}0.48)`} style={{ userSelect: 'none' }}>
+                fill={isAI ? `${PLUM_TEXT}0.937)` : `${PLUM_TEXT}0.891)`} style={{ userSelect: 'none' }}>
                 {isAI ? 'BET STAYS HUMAN' : 'MUST FIT'}
               </text>
 
@@ -207,13 +209,13 @@ export default function SCCAIReactivated() {
                     fill={`${PLUM}0.12)`} stroke={`${PLUM}0.35)`} strokeWidth={0.8} />
                   <text x={CX} y={223} textAnchor="middle"
                     fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-                    fill={`${PLUM}0.88)`}
-                    style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM}0.45))` }}>
+                    fill={`${PLUM_TEXT}0.975)`}
+                    style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM_TEXT}0.885))` }}>
                     THE CHOICE / EXCLUSION STAYS HUMAN
                   </text>
                   <text x={CX} y={234} textAnchor="middle"
                     fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`${PLUM}0.50)`} style={{ userSelect: 'none' }}>
+                    fill={`${PLUM_TEXT}0.895)`} style={{ userSelect: 'none' }}>
                     AI&apos;s inclusive default avoids exactly this: it will not exclude
                   </text>
                 </g>
@@ -224,7 +226,7 @@ export default function SCCAIReactivated() {
           {/* Caption */}
           <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill="rgba(255,255,255,0.14)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.57)" style={{ userSelect: 'none' }}>
             {isAI
               ? 'AI CAN FILL ALL FIVE BOXES, BUT STRATEGY IS DECIDING WHAT NOT TO DO, AND THAT IS WHAT AI AVOIDS'
               : 'THE HARDEST CHOICE IS WHERE NOT TO PLAY, AND THAT IS EXACTLY WHERE THE STRATEGIC VALUE LIVES'}

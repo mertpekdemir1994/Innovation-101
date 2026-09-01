@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM  = 'rgba(107,74,119,'
-const AMBER = 'rgba(217,119,6,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
 const SVG_W = 700
 const SVG_H = 536
@@ -158,20 +158,20 @@ export default function SCCInteractive() {
                 />
                 <text x={CX} y={c.cy - 6} textAnchor="middle"
                   fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
-                  fill={isActive ? `${PLUM}1)` : c.heart ? `${PLUM}0.90)` : 'rgba(255,255,255,0.72)'}
+                  fill={isActive ? `${PLUM_TEXT}1.0)` : c.heart ? `${PLUM_TEXT}0.979)` : 'rgba(255,255,255,0.72)'}
                   style={{ userSelect: 'none' }}>
                   {c.label}
                 </text>
                 <text x={CX} y={c.cy + 9} textAnchor="middle"
                   fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                  fill={isActive ? `${PLUM}0.65)` : c.heart ? `${PLUM}0.45)` : 'rgba(255,255,255,0.26)'}
+                  fill={isActive ? `${PLUM_TEXT}0.926)` : c.heart ? `${PLUM_TEXT}0.885)` : 'rgba(255,255,255,0.63)'}
                   style={{ userSelect: 'none' }}>
                   {c.sub}
                 </text>
                 {c.heart && (
                   <text x={BOX_RIGHT + 9} y={c.cy + 3} textAnchor="start"
                     fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                    fill={isActive ? `${PLUM}0.70)` : `${PLUM}0.45)`}
+                    fill={isActive ? `${PLUM_TEXT}0.937)` : `${PLUM_TEXT}0.885)`}
                     style={{ userSelect: 'none' }}>
                     ★ the heart
                   </text>
@@ -211,7 +211,7 @@ export default function SCCInteractive() {
               fill={`${PLUM}1)`} />
             <text x={632} y={295} textAnchor="middle"
               fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-              fill={`${PLUM}1)`} style={{ userSelect: 'none' }}>
+              fill={`${PLUM_TEXT}1.0)`} style={{ userSelect: 'none' }}>
               ↑ MUST COHERE ↓
             </text>
           </motion.g>
@@ -227,7 +227,7 @@ export default function SCCInteractive() {
               fill={`${PLUM}1)`} />
             <text x={118} y={226} textAnchor="middle"
               fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-              fill={`${PLUM}1)`} style={{ userSelect: 'none' }}>
+              fill={`${PLUM_TEXT}1.0)`} style={{ userSelect: 'none' }}>
               MUST FIT
             </text>
           </motion.g>
@@ -236,7 +236,7 @@ export default function SCCInteractive() {
           {!active && (
             <text x={CX} y={SVG_H - 6} textAnchor="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-              fill={`${AMBER}0.30)`} style={{ userSelect: 'none' }}>
+              fill={`rgba(221,132,30,0.86)`} style={{ userSelect: 'none' }}>
               CHANGING ONE CHOICE RIPPLES THROUGH THE OTHERS, A CONTRADICTION BREAKS THE CASCADE
             </text>
           )}
