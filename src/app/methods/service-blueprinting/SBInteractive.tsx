@@ -139,7 +139,7 @@ export default function SBInteractive() {
             onKeyDown={e => onKey(e, 'customer-actions')}
             role="button" tabIndex={0} aria-pressed={activeLayer === 'customer-actions'}
             aria-label="Customer Actions layer"
-            style={{ cursor: 'pointer', outline: 'none' }}
+            style={{ cursor: 'pointer' }}
           >
             <rect x={0} y={CA_Y} width={SVG_W} height={CA_H}
               fill={activeLayer === 'customer-actions' ? `${TEAL}0.22)` : `${TEAL}0.07)`}
@@ -167,7 +167,7 @@ export default function SBInteractive() {
             onKeyDown={e => onKey(e, 'frontstage')}
             role="button" tabIndex={0} aria-pressed={activeLayer === 'frontstage'}
             aria-label="Frontstage layer"
-            style={{ cursor: 'pointer', outline: 'none' }}
+            style={{ cursor: 'pointer' }}
           >
             <rect x={0} y={FS_Y} width={SVG_W} height={FS_H}
               fill={activeLayer === 'frontstage' ? `${TEAL}0.16)` : `${TEAL}0.04)`}
@@ -195,7 +195,7 @@ export default function SBInteractive() {
             onKeyDown={e => onKey(e, 'line-of-visibility')}
             role="button" tabIndex={0} aria-pressed={activeLayer === 'line-of-visibility'}
             aria-label="Line of visibility"
-            style={{ cursor: 'pointer', outline: 'none' }}
+            style={{ cursor: 'pointer' }}
           >
             {/* Hit area */}
             <rect x={0} y={LOV_TOP} width={SVG_W} height={LOV_BOTTOM - LOV_TOP} fill="transparent" />
@@ -228,7 +228,7 @@ export default function SBInteractive() {
             onKeyDown={e => onKey(e, 'backstage')}
             role="button" tabIndex={0} aria-pressed={activeLayer === 'backstage'}
             aria-label="Backstage layer"
-            style={{ cursor: 'pointer', outline: 'none' }}
+            style={{ cursor: 'pointer' }}
           >
             <rect x={0} y={BS_Y} width={SVG_W} height={BS_H}
               fill={activeLayer === 'backstage' ? `${SLATE}0.18)` : `${SLATE}0.05)`}
@@ -256,7 +256,7 @@ export default function SBInteractive() {
             onKeyDown={e => onKey(e, 'support-processes')}
             role="button" tabIndex={0} aria-pressed={activeLayer === 'support-processes'}
             aria-label="Support Processes / Systems layer"
-            style={{ cursor: 'pointer', outline: 'none' }}
+            style={{ cursor: 'pointer' }}
           >
             <rect x={0} y={SP_Y} width={SVG_W} height={SP_H}
               fill={activeLayer === 'support-processes' ? `${SLATE}0.22)` : `${SLATE}0.08)`}
@@ -304,9 +304,9 @@ export default function SBInteractive() {
             <p className="font-mono uppercase tracking-widest mb-1"
               style={{ fontSize: 'var(--text-2xs)', color: `${accentFor(activeLayer)}0.68)` }}
             >{LAYER_DETAIL[activeLayer].tagline}</p>
-            <h4 className="font-semibold mb-4"
+            <h3 className="font-semibold mb-4"
               style={{ fontSize: 'var(--text-xl)', color: '#FAFAFA' }}
-            >{LAYER_DETAIL[activeLayer].heading}</h4>
+            >{LAYER_DETAIL[activeLayer].heading}</h3>
             <p style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.68)' }}>
               {LAYER_DETAIL[activeLayer].body}
             </p>

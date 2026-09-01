@@ -293,9 +293,9 @@ export default function SBBoundarySection() {
             </div>
 
             {/* Detail */}
-            <h4 className="font-semibold mb-3"
+            <h3 className="font-semibold mb-3"
               style={{ fontSize: 'var(--text-xl)', color: '#FAFAFA' }}
-            >{DETAIL[active].heading}</h4>
+            >{DETAIL[active].heading}</h3>
             <p className="mb-5"
               style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.62)' }}
             >{DETAIL[active].description}</p>
