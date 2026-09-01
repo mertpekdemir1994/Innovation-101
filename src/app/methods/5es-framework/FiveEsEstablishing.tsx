@@ -14,7 +14,8 @@ const PCX = [70, 210, 350, 490, 630] as const
 const HDR_TOP = 8, HDR_H = 40
 const CONTENT_Y = 52
 const BAR_BASE  = 152
-const SVG_H     = 168
+const ANNOT_Y   = 172
+const SVG_H     = 206
 
 // Typical fraction of design investment teams put into each phase
 const INV = [0.34, 0.54, 0.91, 0.26, 0.14] as const
@@ -114,7 +115,7 @@ export default function FiveEsEstablishing() {
             <text
               x={PCX[i]} y={HDR_TOP + HDR_H / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={phase.bookend ? `${AMBER}0.88)` : `${TEAL_TEXT}0.983)`}
               style={{ userSelect: 'none' }}
             >{phase.label}</text>
@@ -153,30 +154,30 @@ export default function FiveEsEstablishing() {
                   }}
                   transition={prefersReduced ? { duration: 0 } : { duration: 0.45, ease }}
                 />
-                {/* Phase annotation */}
+                {/* Phase annotation — own row below the bars, clear of bar/column collision */}
                 {phase.core && (
                   <motion.text
-                    x={PCX[i]} y={CONTENT_Y + 14}
+                    x={PCX[i]} y={ANNOT_Y}
                     textAnchor="middle" dominantBaseline="hanging"
-                    fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                     fill={`${TEAL_TEXT}0.926)`} style={{ userSelect: 'none' }}
                     variants={fadeIn} transition={{ ...fT, delay: 0.6 }}
                   >OVER-INVESTED</motion.text>
                 )}
                 {phase.bookend && phase.id === 'extend' && (
                   <motion.text
-                    x={PCX[i]} y={CONTENT_Y + 14}
+                    x={PCX[i]} y={ANNOT_Y}
                     textAnchor="middle" dominantBaseline="hanging"
-                    fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                     fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}
                     variants={fadeIn} transition={{ ...fT, delay: 0.7 }}
                   >MOST NEGLECTED</motion.text>
                 )}
                 {phase.bookend && phase.id !== 'extend' && (
                   <motion.text
-                    x={PCX[i]} y={CONTENT_Y + 14}
+                    x={PCX[i]} y={ANNOT_Y}
                     textAnchor="middle" dominantBaseline="hanging"
-                    fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                     fill={`${AMBER_TEXT}0.851)`} style={{ userSelect: 'none' }}
                     variants={fadeIn} transition={{ ...fT, delay: 0.65 }}
                   >NEGLECTED</motion.text>
@@ -188,9 +189,9 @@ export default function FiveEsEstablishing() {
 
         {/* Bottom label: design investment levels */}
         <motion.text
-          x={SVG_W / 2} y={SVG_H - 4}
+          x={SVG_W / 2} y={SVG_H - 6}
           textAnchor="middle" dominantBaseline="auto"
-          fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           variants={fadeIn} transition={{ ...fT, delay: 0.8 }}
         >TYPICAL DESIGN INVESTMENT BY PHASE</motion.text>
