@@ -1,5 +1,5 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"],
+  "extends": ["next/core-web-vitals", "next/typescript", "plugin:jsx-a11y/recommended"],
   "overrides": [
     {
       "files": [
@@ -31,6 +31,24 @@
       ],
       "rules": {
         "no-restricted-syntax": "off"
+      }
+    },
+    {
+      "files": [
+        "src/app/methods/twelve-levers/**",
+        "src/components/homepage/FrameworksGrid.tsx",
+        "src/app/frameworks/FrameworkChooser.tsx"
+      ],
+      "rules": {
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off"
+      }
+    },
+    {
+      "files": ["src/components/MDXRenderer.tsx"],
+      "rules": {
+        "jsx-a11y/heading-has-content": "off"
       }
     }
   ]
