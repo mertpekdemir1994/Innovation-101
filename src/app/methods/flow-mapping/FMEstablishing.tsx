@@ -347,7 +347,7 @@ export default function FMEstablishing() {
         <motion.text x={SVG_W / 2} y={CAP_Y}
           textAnchor="middle"
           fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-          fill="rgba(255,255,255,0.14)"
+          fill="rgba(255,255,255,0.57)"
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.30, delay: d(1.00) }}

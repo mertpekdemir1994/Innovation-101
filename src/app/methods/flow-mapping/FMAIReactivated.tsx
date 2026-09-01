@@ -282,7 +282,7 @@ export default function FMAIReactivated() {
                   x={350} y={12}
                   textAnchor="middle" dominantBaseline="hanging"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                  fill={`${INDIGO}0.60)`} style={{ userSelect: 'none' }}
+                  fill={`${INDIGO_TEXT}0.916)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30 }}
                 >AI DRAWS THIS FAST, LOOKS COMPLETE</motion.text>
@@ -292,7 +292,7 @@ export default function FMAIReactivated() {
                   x={280} y={DE_CY + 1}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${AMBER}0.38)`} style={{ userSelect: 'none' }}
+                  fill={`${AMBER_TEXT}0.808)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30, delay: 0.10 }}
                 >INVISIBLE TO AI</motion.text>
@@ -301,7 +301,7 @@ export default function FMAIReactivated() {
                   x={300} y={C_CY + 1}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${AMBER}0.30)`} style={{ userSelect: 'none' }}
+                  fill={`${AMBER_TEXT}0.783)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30, delay: 0.15 }}
                 >INVISIBLE TO AI</motion.text>
@@ -310,7 +310,7 @@ export default function FMAIReactivated() {
                   x={(B_CX + B2_CX) / 2} y={B_CY + 90}
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${AMBER}0.30)`} style={{ userSelect: 'none' }}
+                  fill={`${AMBER_TEXT}0.783)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30, delay: 0.12 }}
                 >INVISIBLE TO AI</motion.text>
