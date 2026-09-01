@@ -125,7 +125,7 @@ export default function RPFidelitySelector() {
       {/* ── Mini-spectrum highlight bar ── */}
       <div>
         <p className="font-mono uppercase tracking-widest mb-3"
-          style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+          style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
           Fidelity spectrum
         </p>
 
@@ -152,7 +152,7 @@ export default function RPFidelitySelector() {
                         className="font-mono uppercase tracking-widest text-center"
                         style={{
                           fontSize: 'var(--text-2xs)',
-                          color: isHighlit ? `${CLAY}1)` : 'var(--color-neutral-400)',
+                          color: isHighlit ? `${CLAY}1)` : 'var(--color-neutral-500)',
                           fontWeight: isHighlit || isFeatured ? 600 : 400,
                           whiteSpace: 'nowrap',
                         }}>
@@ -209,7 +209,7 @@ export default function RPFidelitySelector() {
       {/* ── Scenario-to-approach table ── */}
       <div>
         <p className="font-mono uppercase tracking-widest mb-3"
-          style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+          style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
           Full scenario-to-approach mapping
         </p>
         <div className="flex flex-col gap-2">
@@ -245,7 +245,7 @@ export default function RPFidelitySelector() {
                       )}
                     </p>
                     <p className="font-mono uppercase tracking-widest mt-0.5"
-                      style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                      style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                       {row.fidelity}
                     </p>
                   </div>
