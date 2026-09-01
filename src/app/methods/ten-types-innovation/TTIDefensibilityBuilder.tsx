@@ -75,17 +75,17 @@ function getMeter(count: number, catCount: number, allCats: boolean): MeterInfo 
     stateLabel: 'EASILY COPIED',
     stateColor: `${AMBER}0.90)`,
     description: 'A single advantage a competitor can match within a season. Select more types to build a combination.',
-    srText: '1 type selected. Easily copied — a single advantage.',
+    srText: '1 type selected. Easily copied: a single advantage.',
   }
   if (count <= 4) {
     const pct = 18 + (count - 2) * 14  // 2→18%, 3→32%, 4→46%
     return {
       state: 'building', pct,
       fillColor: 'rgba(175,100,60,0.80)',
-      stateLabel: `BUILDING — ${count} TYPES / ${catCount} CATEGOR${catCount === 1 ? 'Y' : 'IES'}`,
+      stateLabel: `BUILDING: ${count} TYPES / ${catCount} CATEGOR${catCount === 1 ? 'Y' : 'IES'}`,
       stateColor: 'rgba(200,120,50,0.92)',
-      description: `Copying this now means matching ${count} distinct innovations at once — harder than a single feature, but still within reach for a well-resourced competitor. Add types from more categories to build a system.`,
-      srText: `${count} types selected across ${catCount} categories. Building — harder to copy but not yet a defensive system.`,
+      description: `Copying this now means matching ${count} distinct innovations at once, harder than a single feature, but still within reach for a well-resourced competitor. Add types from more categories to build a system.`,
+      srText: `${count} types selected across ${catCount} categories. Building, harder to copy but not yet a defensive system.`,
     }
   }
   if (!allCats) {
@@ -93,20 +93,20 @@ function getMeter(count: number, catCount: number, allCats: boolean): MeterInfo 
     return {
       state: 'strong', pct,
       fillColor: `${PLUM}0.82)`,
-      stateLabel: `STRONGLY DEFENSIBLE — ${count} TYPES`,
+      stateLabel: `STRONGLY DEFENSIBLE: ${count} TYPES`,
       stateColor: `${PLUM}0.95)`,
-      description: `To copy this, a competitor must replicate ${count} distinct innovations simultaneously — a genuinely hard target. Add at least one type from each of the three categories to make this the hardest possible position to copy.`,
-      srText: `${count} types selected across ${catCount} categories. Strongly defensible — an interlocking system.`,
+      description: `To copy this, a competitor must replicate ${count} distinct innovations simultaneously, a genuinely hard target. Add at least one type from each of the three categories to make this the hardest possible position to copy.`,
+      srText: `${count} types selected across ${catCount} categories. Strongly defensible: an interlocking system.`,
     }
   }
   const pct = Math.min(88 + (count - 5) * 2, 98)
   return {
     state: 'bonus', pct,
     fillColor: `${PLUM}1)`,
-    stateLabel: `HARDEST TO COPY — ${count} TYPES / ALL 3 CATEGORIES`,
+    stateLabel: `HARDEST TO COPY: ${count} TYPES / ALL 3 CATEGORIES`,
     stateColor: `${PLUM}1)`,
-    description: `Breadth across Configuration, Offering, and Experience makes this system hardest of all to replicate. A competitor must rebuild innovations in every dimension of the business model simultaneously — internal operations, the offering itself, and the customer-facing experience.`,
-    srText: `${count} types selected across all three categories. Hardest to copy — the strongest possible combined position.`,
+    description: `Breadth across Configuration, Offering, and Experience makes this system hardest of all to replicate. A competitor must rebuild innovations in every dimension of the business model simultaneously: internal operations, the offering itself, and the customer-facing experience.`,
+    srText: `${count} types selected across all three categories. Hardest to copy, the strongest possible combined position.`,
   }
 }
 
@@ -244,7 +244,7 @@ export default function TTIDefensibilityBuilder() {
             }}
           >
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.12em', color: `${PLUM}0.88)`, fontWeight: 600 }}>
-              WELL-ROUNDED — BREADTH ACROSS ALL THREE CATEGORIES
+              WELL-ROUNDED: BREADTH ACROSS ALL THREE CATEGORIES
             </p>
           </motion.div>
         )}
@@ -256,7 +256,7 @@ export default function TTIDefensibilityBuilder() {
         width="100%"
         style={{ overflow: 'visible' }}
         role="group"
-        aria-label={`Defensibility builder — ${count} of 10 types selected. ${meter.srText}`}
+        aria-label={`Defensibility builder, ${count} of 10 types selected. ${meter.srText}`}
       >
         <defs>
           <filter id="tti-def-glow" x="-30%" y="-30%" width="160%" height="160%">
@@ -313,7 +313,7 @@ export default function TTIDefensibilityBuilder() {
               role="checkbox"
               tabIndex={0}
               aria-checked={isSel}
-              aria-label={`${tile.lines.join(' ')} — ${isSel ? 'selected, click to remove' : 'click to add to combination'}`}
+              aria-label={`${tile.lines.join(' ')}, ${isSel ? 'selected, click to remove' : 'click to add to combination'}`}
               onKeyDown={(e) => handleKey(e, tile.id)}
             >
               <motion.rect
@@ -386,7 +386,7 @@ export default function TTIDefensibilityBuilder() {
             fill="rgba(255,255,255,0.22)"
             style={{ userSelect: 'none' }}
           >
-            CLICK TILES TO BUILD YOUR COMBINATION — WATCH THE SCALE RESPOND
+            CLICK TILES TO BUILD YOUR COMBINATION, WATCH THE SCALE RESPOND
           </text>
         )}
       </svg>

@@ -21,7 +21,7 @@ const CATEGORIES = [
   { id: 'exp',      label: 'EXPERIENCE',    x1: 432, x2: 684, cx: 558 },
 ]
 
-// All tiles neutral — over-used distinction is a light non-color-coded text marker only
+// All tiles neutral: over-used distinction is a light non-color-coded text marker only
 const TILES = [
   { id: 'profit-model',        cat: 'config',   x: 16,  lines: ['PROFIT', 'MODEL'] },
   { id: 'network',             cat: 'config',   x: 80,  lines: ['NETWORK'] },

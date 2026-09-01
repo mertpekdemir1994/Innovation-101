@@ -21,7 +21,7 @@ const CATEGORIES = [
   { id: 'exp',      label: 'EXPERIENCE',    x1: 432, x2: 684, cx: 558 },
 ]
 
-// No overUsed flag — all tiles are neutral in this section
+// No overUsed flag: all tiles are neutral in this section
 const TILES = [
   { id: 'profit-model',        cat: 'config',   x: 16,  lines: ['PROFIT', 'MODEL'],      aiIdea: ['TRY', 'SUBSCR.'] },
   { id: 'network',             cat: 'config',   x: 80,  lines: ['NETWORK'],              aiIdea: ['ADD', 'PARTNERS'] },
@@ -118,7 +118,7 @@ export default function TTIAIReactivated() {
           </g>
         ))}
 
-        {/* Tiles — all neutral (no over-used distinction in this section) */}
+        {/* Tiles: all neutral (no over-used distinction in this section) */}
         {TILES.map((tile) => {
           const cx = tile.x + TILE_W / 2
           const C = isAI ? INDIGO : PLUM
@@ -240,16 +240,16 @@ export default function TTIAIReactivated() {
           >
             {[
               {
-                h: 'AI fills all ten types — fast',
+                h: 'AI fills all ten types, fast',
                 b: 'Every type gets at least one plausible idea, quickly. This counters the product-only default and makes sure no dimension is overlooked before the team commits to a direction. The breadth is genuinely useful.',
               },
               {
-                h: 'The ideas are generic — by design',
-                b: '"Try subscription" for profit model. "Sell direct online" for channel. "Add a loyalty program" for customer engagement. These are the on-pattern ideas for each type — correct in category, but not specific to this business. They are starting points, not a strategy.',
+                h: 'The ideas are generic, by design',
+                b: '"Try subscription" for profit model. "Sell direct online" for channel. "Add a loyalty program" for customer engagement. These are the on-pattern ideas for each type: correct in category, but not specific to this business. They are starting points, not a strategy.',
               },
               {
                 h: 'The combination stays unchosen',
-                b: 'Which of these ideas should interlock into a defensible system — and why that specific set, for this specific business, would be hard to copy — is a strategic judgment AI does not make. The ten columns are populated; the winning combination is still missing.',
+                b: 'Which of these ideas should interlock into a defensible system, and why that specific set, for this specific business, would be hard to copy, is a strategic judgment AI does not make. The ten columns are populated; the winning combination is still missing.',
               },
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border" style={{ background: `${INDIGO}0.07)`, borderColor: `${INDIGO}0.22)` }}>
@@ -271,11 +271,11 @@ export default function TTIAIReactivated() {
             {[
               {
                 h: 'The combination is the strategy',
-                b: 'Any single type can be copied. The goal is to combine several under-used types — especially the non-product ones — into an interlocking system that rivals must replicate all at once. That combination is what makes an advantage durable.',
+                b: 'Any single type can be copied. The goal is to combine several under-used types (especially the non-product ones) into an interlocking system that rivals must replicate all at once. That combination is what makes an advantage durable.',
               },
               {
                 h: 'Human judgment picks the interlocking set',
-                b: 'Which specific types, for this business, would reinforce each other into a defensible system — and whether that combination is genuinely feasible — requires strategic judgment that depends on deep knowledge of the business and its competitive landscape.',
+                b: 'Which specific types, for this business, would reinforce each other into a defensible system, and whether that combination is genuinely feasible, requires strategic judgment that depends on deep knowledge of the business and its competitive landscape.',
               },
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border" style={{ background: `${PLUM}0.10)`, borderColor: `${PLUM}0.26)` }}>
@@ -293,7 +293,7 @@ export default function TTIAIReactivated() {
       <div className="mt-4 rounded-lg p-4 border border-white/8" style={{ background: 'rgba(255,255,255,0.04)' }}>
         <p className="text-[10px] font-semibold uppercase tracking-wider text-white/28 mb-1">Synthesis</p>
         <p className="text-xs text-white/42 leading-relaxed">
-          AI accelerates the diagnostic and guarantees breadth across all ten types — real value, countering the product-only default. But the payoff of the framework is the specific, non-obvious combination of under-used types that becomes a defensible system. That combination is a strategic judgment that depends on deep knowledge of this business and this competitive landscape. AI gives you ten columns. Human strategy picks the interlocking set.
+          AI accelerates the diagnostic and guarantees breadth across all ten types: real value, countering the product-only default. But the payoff of the framework is the specific, non-obvious combination of under-used types that becomes a defensible system. That combination is a strategic judgment that depends on deep knowledge of this business and this competitive landscape. AI gives you ten columns. Human strategy picks the interlocking set.
         </p>
       </div>
     </div>

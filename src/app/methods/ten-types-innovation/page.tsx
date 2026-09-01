@@ -29,7 +29,7 @@ const FRAMEWORK_LINKS = [
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Backlog',
-    note: 'Shaping a portfolio of backlog work that innovates beyond product performance. The 10 Types helps ensure the backlog invests in the non-product types — process, channel, customer engagement — not only in feature development, which is where backlogs almost always cluster.',
+    note: 'Shaping a portfolio of backlog work that innovates beyond product performance. The 10 Types helps ensure the backlog invests in the non-product types (process, channel, customer engagement) not only in feature development, which is where backlogs almost always cluster.',
   },
   {
     slug: 'lean-startup',
@@ -59,12 +59,12 @@ const RELATED_METHODS: RelatedMethod[] = [
   {
     slug: 'concept-testing',
     name: 'Concept Testing',
-    rel: 'A multi-type innovation still has to be desirable. The 10 Types identifies the combination of innovation dimensions the concept should operate on; concept testing validates that the combined concept is something customers actually want — that the strategic boldness matches real demand.',
+    rel: 'A multi-type innovation still has to be desirable. The 10 Types identifies the combination of innovation dimensions the concept should operate on; concept testing validates that the combined concept is something customers actually want: that the strategic boldness matches real demand.',
   },
   {
     slug: 'jobs-to-be-done',
     name: 'Jobs To Be Done',
-    rel: 'The job a customer is hiring the offering to do can reveal which innovation types — beyond product — would serve it best. A job that is about social belonging points to brand and customer engagement; a job about reliability points to process and service. JTBD and the 10 Types together tell you what the customer needs and which innovation dimensions should serve it.',
+    rel: 'The job a customer is hiring the offering to do can reveal which innovation types (beyond product) would serve it best. A job that is about social belonging points to brand and customer engagement; a job about reliability points to process and service. JTBD and the 10 Types together tell you what the customer needs and which innovation dimensions should serve it.',
   },
 ]
 
@@ -74,7 +74,7 @@ export default function TenTypesInnovationPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -102,7 +102,7 @@ export default function TenTypesInnovationPage() {
               className="mb-3 max-w-[600px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              A diagnostic framework identifying ten distinct dimensions a business can innovate on &mdash; far beyond the product &mdash; and showing that the most durable advantages combine several at once.
+              A diagnostic framework identifying ten distinct dimensions a business can innovate on, far beyond the product, and showing that the most durable advantages combine several at once.
             </p>
 
             <p
@@ -116,7 +116,7 @@ export default function TenTypesInnovationPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -127,7 +127,7 @@ export default function TenTypesInnovationPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -147,7 +147,7 @@ export default function TenTypesInnovationPage() {
                 performance, which is the hardest type to sustain an advantage in and the easiest for competitors to copy,
                 while neglecting the other nine. A better feature can be matched within a season. The framework argues that
                 the most durable and defensible innovations combine multiple types at once, because a combination of interlocking
-                innovations &mdash; across profit model, network, channel, brand, and more &mdash; is far harder for a competitor
+                innovations (across profit model, network, channel, brand, and more) is far harder for a competitor
                 to replicate than any single product feature.
               </Body>
               <Body>
@@ -162,7 +162,7 @@ export default function TenTypesInnovationPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -174,7 +174,7 @@ export default function TenTypesInnovationPage() {
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
               Click any tile to read what that type means, why it matters, and a concrete example. One tile at a time
-              &mdash; the goal here is depth, not breadth.
+              : the goal here is depth, not breadth.
             </p>
             <TTIInteractive />
           </div>
@@ -182,7 +182,7 @@ export default function TenTypesInnovationPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -198,7 +198,7 @@ export default function TenTypesInnovationPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     'You want to stress-test whether a concept is innovating on multiple dimensions or leaning entirely on product performance.',
-                    'You need to deliberately generate ideas in neglected, higher-leverage types — profit model, network, channel, customer engagement.',
+                    'You need to deliberately generate ideas in neglected, higher-leverage types: profit model, network, channel, customer engagement.',
                     'You are analyzing why a competitor\'s advantage is so durable, or diagnosing your own organization\'s innovation blind spots.',
                     'You are trying to build a defensible position, not just a better feature that rivals will match next season.',
                   ].map((item, i) => (
@@ -220,7 +220,7 @@ export default function TenTypesInnovationPage() {
                   {[
                     'You need a quick, in-the-moment session method; this is a strategic, analytical lens, not a fast workshop tool.',
                     'You have no real understanding of the business or market to diagnose; the framework organizes strategic thinking, it does not supply the underlying knowledge.',
-                    'The task is purely to improve one product feature and combination is genuinely not on the table — though the framework\'s whole point is to question that assumption.',
+                    'The task is purely to improve one product feature and combination is genuinely not on the table, though the framework\'s whole point is to question that assumption.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
                       <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
@@ -240,7 +240,7 @@ export default function TenTypesInnovationPage() {
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: the 10 Types is a lens for seeing and combining innovation dimensions, not a source of the
                 ideas themselves or the market knowledge behind them. Its most common failure is being used as a checklist to
-                tick — one idea per type, filed away — rather than as a tool to combine under-used types into a system. The
+                tick, one idea per type, filed away, rather than as a tool to combine under-used types into a system. The
                 framework&rsquo;s value is in the combination; used as a checklist, it becomes an inventory.
               </p>
             </div>
@@ -249,7 +249,7 @@ export default function TenTypesInnovationPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -267,7 +267,7 @@ export default function TenTypesInnovationPage() {
                 {
                   n: '02',
                   title: 'Name the neglected, high-leverage types.',
-                  body: 'Look deliberately at the under-used types, especially the often-overlooked profit model, network, and customer engagement, and ask what innovating there could look like. These are consistently the most neglected and frequently the most defensible — precisely because competitors are not focused there either.',
+                  body: 'Look deliberately at the under-used types, especially the often-overlooked profit model, network, and customer engagement, and ask what innovating there could look like. These are consistently the most neglected and frequently the most defensible, precisely because competitors are not focused there either.',
                 },
                 {
                   n: '03',
@@ -277,7 +277,7 @@ export default function TenTypesInnovationPage() {
                 {
                   n: '04',
                   title: 'Combine several types into a system.',
-                  body: 'This is the decisive move. Rather than one idea per type, deliberately combine several under-used types into an interlocking whole, because a combination is far harder to copy than any single innovation. Ask which types reinforce each other — which profit model, if paired with which channel and which customer engagement, would create a system rather than a feature.',
+                  body: 'This is the decisive move. Rather than one idea per type, deliberately combine several under-used types into an interlocking whole, because a combination is far harder to copy than any single innovation. Ask which types reinforce each other: which profit model, if paired with which channel and which customer engagement, would create a system rather than a feature.',
                 },
                 {
                   n: '05',
@@ -304,7 +304,7 @@ export default function TenTypesInnovationPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — The Defensibility Builder   DARK
+          S7 - The Defensibility Builder   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -315,8 +315,8 @@ export default function TenTypesInnovationPage() {
               className="mb-12 max-w-[560px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              Any single type can be replicated. Combine five or more &mdash; especially across all three categories
-              &mdash; and a rival must match everything at once. Select the types to test the defensibility of the combination.
+              Any single type can be replicated. Combine five or more, especially across all three categories,
+              and a rival must match everything at once. Select the types to test the defensibility of the combination.
             </p>
             <TTIDefensibilityBuilder />
           </div>
@@ -324,13 +324,13 @@ export default function TenTypesInnovationPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Best practices   LIGHT
+          S8 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like &mdash; and the mistakes that prevent it.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and the mistakes that prevent it.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
               When it goes well
@@ -339,7 +339,7 @@ export default function TenTypesInnovationPage() {
               {[
                 'The team sees past product features to the full range of ten innovation dimensions.',
                 'The concept innovates across several types in deliberate combination, not just one.',
-                'Neglected, high-leverage types — profit model, network, customer engagement — get genuine consideration, not a token mention.',
+                'Neglected, high-leverage types (profit model, network, customer engagement) get genuine consideration, not a token mention.',
                 'The diagnostic is honest about how concentrated the organization is in product performance.',
                 'Defensibility is assessed: the team can name how many things a competitor would have to copy at once.',
               ].map((item, i) => (
@@ -359,7 +359,7 @@ export default function TenTypesInnovationPage() {
               {[
                 {
                   mistake: 'Defaulting to product-performance innovation.',
-                  fix: 'The instinct always pulls back to a better feature — the crowded, copyable type. Deliberately force attention to the other nine. Do not let the session end without genuine ideas in the non-product types.',
+                  fix: 'The instinct always pulls back to a better feature, the crowded, copyable type. Deliberately force attention to the other nine. Do not let the session end without genuine ideas in the non-product types.',
                 },
                 {
                   mistake: 'Treating the ten types as a checklist to tick.',
@@ -367,7 +367,7 @@ export default function TenTypesInnovationPage() {
                 },
                 {
                   mistake: 'Underestimating the non-product types.',
-                  fix: 'Profit model, network, and customer engagement are often the most defensible and the most ignored. Do not treat them as secondary to the product. The most powerful advantages in almost every studied case involve at least one non-product type.',
+                  fix: 'Profit model, network, and customer engagement are often the most defensible and the most ignored. Do not treat them as secondary to the product. The strongest advantages in almost every studied case involve at least one non-product type.',
                 },
                 {
                   mistake: 'Stopping at a single type.',
@@ -375,7 +375,7 @@ export default function TenTypesInnovationPage() {
                 },
                 {
                   mistake: 'Using it without market knowledge.',
-                  fix: 'The framework organizes strategic thinking; it does not replace understanding of the business and market. Bring real knowledge of the profit model, channels, and competitive landscape to it — the framework shapes that knowledge, not the other way around.',
+                  fix: 'The framework organizes strategic thinking; it does not replace understanding of the business and market. Bring real knowledge of the profit model, channels, and competitive landscape to it; the framework shapes that knowledge, not the other way around.',
                 },
               ].map(({ mistake, fix }) => (
                 <div
@@ -397,7 +397,7 @@ export default function TenTypesInnovationPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — Logistics   LIGHT
+          S9 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -414,7 +414,7 @@ export default function TenTypesInnovationPage() {
               {[
                 {
                   label: 'Treat it as a strategic session, not a quick workshop',
-                  body: 'Run it with people who understand the business\'s profit model, operations, channels, and brand — not just the product team — because innovating on the non-product types requires knowing how those parts of the business actually work. Cross-functional representation is not a nice-to-have; it is what makes the session able to generate real ideas in the non-product types.',
+                  body: 'Run it with people who understand the business\'s profit model, operations, channels, and brand (not just the product team) because innovating on the non-product types requires knowing how those parts of the business actually work. Cross-functional representation is not a nice-to-have; it is what makes the session able to generate real ideas in the non-product types.',
                 },
                 {
                   label: 'Diagnose before you generate',
@@ -430,7 +430,7 @@ export default function TenTypesInnovationPage() {
                 },
                 {
                   label: 'Use it analytically on winners',
-                  body: 'A powerful practical use is to reverse-engineer why a dominant competitor is hard to beat. Mapping their advantage across the ten types usually reveals a combination, not a single feature, which reframes how to compete with them. Tools and books named as examples, not endorsements.',
+                  body: 'One practical use is to reverse-engineer why a dominant competitor is hard to beat. Mapping their advantage across the ten types usually reveals a combination, not a single feature, which reframes how to compete with them. Tools and books named as examples, not endorsements.',
                 },
               ].map(({ label, body }) => (
                 <div key={label} className="flex gap-4">
@@ -454,7 +454,7 @@ export default function TenTypesInnovationPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — AI and this method   DARK
+          S10 - AI and this method   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -474,13 +474,13 @@ export default function TenTypesInnovationPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — In-depth example   LIGHT
+          S11 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={PLUM}>In-depth example</SectionLabel>
-            <SectionHeadingLight>The same case. The same question. Two approaches — one finds the system, one finds a list.</SectionHeadingLight>
+            <SectionHeadingLight>The same case. The same question. Two approaches, one finds the system, one finds a list.</SectionHeadingLight>
             <p
               className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
@@ -495,7 +495,7 @@ export default function TenTypesInnovationPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Used in these frameworks   LIGHT
+          S12 - Used in these frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -540,7 +540,7 @@ export default function TenTypesInnovationPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Related methods   LIGHT
+          S13 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -579,7 +579,7 @@ export default function TenTypesInnovationPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S14 — Sources   LIGHT
+          S14 - Sources   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -593,19 +593,19 @@ export default function TenTypesInnovationPage() {
                   title:  'Ten Types of Innovation: The Discipline of Building Breakthroughs',
                   author: 'Larry Keeley, Helen Walters, Ryan Pikkel, and Brian Quinn',
                   year:   '2013',
-                  note:   'The definitive book on the framework, from Doblin. Keeley and colleagues present the ten types with detailed case examples and a systematic approach to using them for both diagnosis and generation. The combination thesis — that durable advantage comes from interlocking several types, not from any one — is the book\'s central argument.',
+                  note:   'The definitive book on the framework, from Doblin. Keeley and colleagues present the ten types with detailed case examples and a systematic approach to using them for both diagnosis and generation. The combination thesis, that durable advantage comes from interlocking several types, not from any one, is the book\'s central argument.',
                 },
                 {
                   title:  'The Innovator\'s Dilemma',
                   author: 'Clayton Christensen',
                   year:   '1997',
-                  note:   'The broader theory of why product-only advantages erode. Christensen\'s work explains why incumbents, who focus almost entirely on product performance, are consistently disrupted by entrants who innovate on other dimensions — a thesis that the 10 Types framework gives practical shape to.',
+                  note:   'The broader theory of why product-only advantages erode. Christensen\'s work explains why incumbents, who focus almost entirely on product performance, are consistently disrupted by entrants who innovate on other dimensions: a thesis that the 10 Types framework gives practical shape to.',
                 },
                 {
                   title:  'Business Model Generation',
                   author: 'Alexander Osterwalder and Yves Pigneur',
                   year:   '2010',
-                  note:   'For innovating on the business model — the several non-product types. Osterwalder and Pigneur\'s canvas makes the profit model, network, and channel dimensions of innovation concrete and practical, complementing the 10 Types framework\'s diagnostic scope.',
+                  note:   'For innovating on the business model: the several non-product types. Osterwalder and Pigneur\'s canvas makes the profit model, network, and channel dimensions of innovation concrete and practical, complementing the 10 Types framework\'s diagnostic scope.',
                 },
               ].map(({ title, author, year, note }) => (
                 <div

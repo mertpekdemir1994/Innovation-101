@@ -8,7 +8,7 @@ const INDIGO = 'rgba(99,102,241,'
 
 type Tab = 'traditional' | 'ai'
 
-const SCENARIO = 'A company wants to understand how to build a durable advantage in a category where products are easily copied, and studies a textbook winner: Nespresso, whose coffee was good but not categorically better than rivals’, yet which dominated for years. The question is why the advantage was so durable, and what the 10 Types reveals.'
+const SCENARIO = 'A company wants to understand how to build a durable advantage in a category where products are easily copied, and studies a textbook winner: Nespresso, whose coffee was good but not categorically better than rivals&rsquo;, yet which dominated for years. The question is why the advantage was so durable, and what the 10 Types reveals.'
 
 export default function TTIExampleToggle() {
   const [tab, setTab] = useState<Tab>('traditional')
@@ -61,7 +61,7 @@ export default function TTIExampleToggle() {
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 Analyzing Nespresso across the ten types made the source of its durability visible, and it was not the coffee.
-                Product Performance &mdash; the type everyone fixates on &mdash; was not the answer: the coffee was good but not
+                Product Performance (the type everyone fixates on) was not the answer: the coffee was good but not
                 uniquely so. The durable advantage came from combining several other innovation types into an interlocking system.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -69,7 +69,7 @@ export default function TTIExampleToggle() {
                   { type: 'PROFIT MODEL', detail: 'Razor-and-blades: inexpensive machines, high-margin recurring pod revenue. The economics of the whole business were the innovation, not the espresso quality.' },
                   { type: 'NETWORK + CHANNEL', detail: 'A proprietary pod system and exclusive boutique-and-club distribution that competitors could not easily enter. The channel was a moat.' },
                   { type: 'BRAND + CUSTOMER ENGAGEMENT', detail: 'The Nespresso Club, the boutiques, and the brand ambassador that turned a commodity into a luxury ritual. Customers joined something.' },
-                  { type: 'PRODUCT PERFORMANCE', detail: 'The coffee was good — but not categorically better than rivals’. The product did not create the advantage. The combination around it did.' },
+                  { type: 'PRODUCT PERFORMANCE', detail: 'The coffee was good, but not categorically better than rivals&rsquo;. The product did not create the advantage. The combination around it did.' },
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -99,7 +99,7 @@ export default function TTIExampleToggle() {
                 Why the combination was so hard to copy
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
-                Any one of these innovations alone would have been copyable &mdash; a competitor could match a profit model,
+                Any one of these innovations alone would have been copyable: a competitor could match a profit model,
                 or a channel, or a brand campaign. What made Nespresso durable was that replicating its advantage required
                 matching an interlocking set of profit-model, network, channel, brand, and engagement innovations
                 simultaneously, which competitors struggled for years to do.
@@ -184,7 +184,7 @@ export default function TTIExampleToggle() {
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
                   The AI listed a plausible move in each type in isolation. What it did not do was identify the specific,
-                  interlocking combination &mdash; the particular profit model reinforcing the particular channel and brand and engagement &mdash;
+                  interlocking combination (the particular profit model reinforcing the particular channel and brand and engagement)
                   that would together form a system a competitor could not easily copy.
                 </p>
               </div>
@@ -198,8 +198,8 @@ export default function TTIExampleToggle() {
               <p className="text-sm text-neutral-700 leading-relaxed">
                 Had the team taken the AI&rsquo;s ten-column list as the answer, they would have had a menu of copyable
                 individual moves and no defensible system. AI guaranteed breadth across all ten types and countered the
-                product-only instinct &mdash; real value. But the strategic core &mdash; combining specific under-used types
-                into an interlocking, hard-to-copy system &mdash; was human judgment. The strongest version used AI for
+                product-only instinct: real value. But the strategic core, combining specific under-used types
+                into an interlocking, hard-to-copy system, was human judgment. The strongest version used AI for
                 breadth and human strategy for the combination.
               </p>
             </div>
