@@ -117,12 +117,12 @@ export default function DTStagesHero() {
 
         {/* ── Subtle lobe labels ── */}
         <text x={75} y={CY + 4} textAnchor="middle"
-          fill={`${TEAL}0.18)`} fontSize="9" fontFamily="ui-monospace,monospace"
+          fill={`rgba(61,169,160,0.836)`} fontSize="9" fontFamily="ui-monospace,monospace"
           letterSpacing="0.14em">
           PROBLEM
         </text>
         <text x={685} y={CY + 4} textAnchor="middle"
-          fill={`${TEAL}0.18)`} fontSize="9" fontFamily="ui-monospace,monospace"
+          fill={`rgba(61,169,160,0.836)`} fontSize="9" fontFamily="ui-monospace,monospace"
           letterSpacing="0.14em">
           SOLUTION
         </text>
@@ -175,7 +175,7 @@ export default function DTStagesHero() {
           <polygon points={arrowPts(SEGS[4], 0.5, 7, 4)} fill={`${TEAL}0.45)`} />
           <text
             x={ix - 8} y={iy - 14}
-            textAnchor="middle" fill={`${TEAL}0.42)`}
+            textAnchor="middle" fill={`rgba(61,169,160,0.884)`}
             fontSize="9.5" fontFamily="ui-monospace,monospace" letterSpacing="0.08em"
           >
             iterate
@@ -200,7 +200,7 @@ export default function DTStagesHero() {
                 fill={`${TEAL}0.17)`} stroke={`${TEAL}0.65)`} strokeWidth={2} />
               {/* Short label inside */}
               <text x={node.x} y={node.y + 5} textAnchor="middle"
-                fill={`${TEAL}0.90)`} fontSize="9" fontWeight="600"
+                fill={`rgba(61,169,160,0.98)`} fontSize="9" fontWeight="600"
                 fontFamily="ui-monospace,monospace" letterSpacing="0.04em">
                 {node.label.slice(0, 4).toUpperCase()}
               </text>
@@ -213,7 +213,7 @@ export default function DTStagesHero() {
               </text>
               {/* External: sub-label */}
               <text x={lb.lx} y={lb.ly + 8} textAnchor={lb.anchor}
-                fill="rgba(255,255,255,0.35)" fontSize="11"
+                fill="rgba(255,255,255,0.675)" fontSize="11"
                 fontFamily="Inter,sans-serif">
                 {node.sub}
               </text>

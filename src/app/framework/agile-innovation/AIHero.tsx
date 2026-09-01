@@ -126,7 +126,7 @@ export default function AIHero() {
               {/* Number */}
               <text x={x} y={y - 9}
                 textAnchor="middle"
-                fill={`${PLUM}0.65)`} fontSize="12"
+                fill={`rgba(165,147,174,0.926)`} fontSize="12"
                 fontFamily="ui-monospace, monospace" letterSpacing="0.10em"
               >
                 {stage.n}
@@ -135,7 +135,7 @@ export default function AIHero() {
               {/* Short label */}
               <text x={x} y={y + 9}
                 textAnchor="middle"
-                fill={`${PLUM}1.0)`}
+                fill={`rgba(165,147,174,1.0)`}
                 fontSize="16" fontWeight="700"
                 fontFamily="ui-monospace, monospace" letterSpacing="0.05em"
                 style={{ textTransform: 'uppercase' }}
@@ -154,7 +154,7 @@ export default function AIHero() {
               </text>
               <text x={lx} y={ly + 11}
                 textAnchor={anchor}
-                fill={`${PLUM}0.40)`} fontSize="11"
+                fill={`rgba(165,147,174,0.874)`} fontSize="11"
                 fontFamily="ui-monospace, monospace" letterSpacing="0.10em"
                 style={{ textTransform: 'uppercase' }}
               >

@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(185,28,28,'
+const BRICK_TEXT = 'rgba(216,129,129,'  // brightened text-safe variant of BRICK
 
 const MOVEMENTS = [
   { id: 'embed',   n: '01', short: 'EMBED',   full: 'Embed',            verb: 'Live with the customer',      angle: 0   },
@@ -68,13 +69,13 @@ export default function FDEHeroOrbit() {
 
         {/* Center labels */}
         <text x={cx} y={cy - 10} textAnchor="middle"
-          fill={`${BRICK}0.35)`} fontSize="12"
+          fill={`${BRICK_TEXT}0.87)`} fontSize="12"
           fontFamily="ui-monospace, monospace" letterSpacing="0.14em"
           style={{ textTransform: 'uppercase' }}>
           continuous
         </text>
         <text x={cx} y={cy + 10} textAnchor="middle"
-          fill={`${BRICK}0.20)`} fontSize="11"
+          fill={`${BRICK_TEXT}0.84)`} fontSize="11"
           fontFamily="ui-monospace, monospace" letterSpacing="0.12em"
           style={{ textTransform: 'uppercase' }}>
           loop
@@ -106,7 +107,7 @@ export default function FDEHeroOrbit() {
               {/* Number */}
               <text x={x} y={y - 9}
                 textAnchor="middle"
-                fill={`${BRICK}0.55)`}
+                fill={`${BRICK_TEXT}0.91)`}
                 fontSize="10" fontFamily="ui-monospace, monospace" letterSpacing="0.10em">
                 {movement.n}
               </text>
@@ -114,7 +115,7 @@ export default function FDEHeroOrbit() {
               {/* Short label */}
               <text x={x} y={y + 9}
                 textAnchor="middle"
-                fill={`${BRICK}1.0)`}
+                fill={`${BRICK_TEXT}1.0)`}
                 fontSize="15" fontWeight="700"
                 fontFamily="ui-monospace, monospace" letterSpacing="0.06em"
                 style={{ textTransform: 'uppercase' }}>
@@ -124,7 +125,7 @@ export default function FDEHeroOrbit() {
               {/* External full label */}
               <text x={lx} y={ly - 8}
                 textAnchor={anc}
-                fill={`${BRICK}0.80)`}
+                fill={`${BRICK_TEXT}0.96)`}
                 fontSize="13" fontFamily="ui-monospace, monospace"
                 letterSpacing="0.08em" style={{ textTransform: 'uppercase' }}>
                 {movement.full}
@@ -133,7 +134,7 @@ export default function FDEHeroOrbit() {
               {/* External verb */}
               <text x={lx} y={ly + 10}
                 textAnchor={anc}
-                fill={`${BRICK}0.38)`}
+                fill={`${BRICK_TEXT}0.876)`}
                 fontSize="11" fontFamily="ui-monospace, monospace"
                 letterSpacing="0.10em" style={{ textTransform: 'uppercase' }}>
                 {movement.verb}

@@ -99,7 +99,7 @@ export default function DSDaysHero() {
             {/* Day number */}
             <text
               x={nodeCX(i)} y={yRow - nodeH / 2 + 20}
-              textAnchor="middle" fill={`${CLAY}0.50)`}
+              textAnchor="middle" fill={`rgba(204,139,89,0.895)`}
               fontSize="11" fontFamily="ui-monospace, monospace" letterSpacing="0.1em"
               style={{ textTransform: 'uppercase' }}
             >
@@ -108,7 +108,7 @@ export default function DSDaysHero() {
             {/* Day label */}
             <text
               x={nodeCX(i)} y={yRow - nodeH / 2 + 44}
-              textAnchor="middle" fill={`${CLAY}0.90)`}
+              textAnchor="middle" fill={`rgba(204,139,89,0.979)`}
               fontSize="15" fontWeight="600"
               fontFamily="ui-monospace, monospace" letterSpacing="0.06em"
               style={{ textTransform: 'uppercase' }}
@@ -118,7 +118,7 @@ export default function DSDaysHero() {
             {/* Sub-label */}
             <text
               x={nodeCX(i)} y={yRow - nodeH / 2 + 62}
-              textAnchor="middle" fill={`${CLAY}0.40)`}
+              textAnchor="middle" fill={`rgba(204,139,89,0.874)`}
               fontSize="11" fontFamily="ui-monospace, monospace" letterSpacing="0.08em"
               style={{ textTransform: 'uppercase' }}
             >
@@ -140,7 +140,7 @@ export default function DSDaysHero() {
           />
           <text
             x={svgW - 106} y={svgH - 19}
-            fill={`${CLAY}0.35)`} fontSize="11"
+            fill={`rgba(204,139,89,0.864)`} fontSize="11"
             fontFamily="ui-monospace, monospace" letterSpacing="0.08em"
           >
             run another sprint

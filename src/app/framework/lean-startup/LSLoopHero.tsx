@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const PURPLE = 'rgba(124,58,237,'
+const PURPLE_TEXT = 'rgba(173,132,244,'  // brightened text-safe variant of PURPLE
 
 const NODES = [
   { id: 'build',   label: 'Build',   angle: -90, desc: 'Ideas → Product' },
@@ -119,7 +120,7 @@ export default function LSLoopHero() {
             {/* Label */}
             <text x={node.x} y={node.y + 1}
               textAnchor="middle" dominantBaseline="middle"
-              fill={`${PURPLE}0.90)`} fontSize="16" fontWeight="600"
+              fill={`${PURPLE_TEXT}0.981)`} fontSize="16" fontWeight="600"
               fontFamily="ui-monospace, monospace" letterSpacing="0.08em"
               style={{ textTransform: 'uppercase' }}
             >
@@ -147,14 +148,14 @@ export default function LSLoopHero() {
             stroke={`${PURPLE}0.20)`} strokeWidth={2}
           />
           <text x={leftX} y={forkY + 18}
-            textAnchor="middle" fill={`${PURPLE}0.55)`} fontSize="13"
+            textAnchor="middle" fill={`${PURPLE_TEXT}0.915)`} fontSize="13"
             fontFamily="ui-monospace, monospace" letterSpacing="0.1em"
             style={{ textTransform: 'uppercase' }}
           >
             Pivot
           </text>
           <text x={rightX} y={forkY + 18}
-            textAnchor="middle" fill={`${PURPLE}0.35)`} fontSize="13"
+            textAnchor="middle" fill={`${PURPLE_TEXT}0.877)`} fontSize="13"
             fontFamily="ui-monospace, monospace" letterSpacing="0.1em"
             style={{ textTransform: 'uppercase' }}
           >

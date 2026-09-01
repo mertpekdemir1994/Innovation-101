@@ -85,7 +85,7 @@ function DiamondSVG({ activePhase, hoveredPhase, theme, onPhaseClick, onPhaseHov
   const STROKE_ACTIVE  = isDark ? 'rgba(124,58,237,0.90)' : 'rgba(124,58,237,0.70)'
   const LABEL_DEFAULT  = isDark ? 'rgba(255,255,255,0.50)' : 'rgba(17,24,39,0.45)'
   const LABEL_ACTIVE   = isDark ? '#FFFFFF' : 'var(--color-framework)'
-  const AXIS_COLOR     = isDark ? 'rgba(255,255,255,0.20)' : 'rgba(17,24,39,0.25)'
+  const AXIS_COLOR     = isDark ? 'rgba(255,255,255,0.55)' : 'rgba(17,24,39,0.25)'
 
   return (
     <svg

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PURPLE = 'rgba(124,58,237,'
+const PURPLE_TEXT = 'rgba(173,132,244,'  // brightened text-safe variant of PURPLE
 
 type NodeKey = 'build' | 'measure' | 'learn' | 'pivot'
 
@@ -94,7 +95,7 @@ function NodeButton({
         y={cy}
         textAnchor="middle"
         dominantBaseline="middle"
-        fill={active ? '#fff' : `${PURPLE}0.85)`}
+        fill={active ? '#fff' : `${PURPLE_TEXT}0.972)`}
         fontSize="9"
         fontWeight="600"
         fontFamily="ui-monospace, monospace"
@@ -163,8 +164,8 @@ export default function LSInteractiveSection() {
           ))}
 
           {/* Center label */}
-          <text x={cx} y={cy - 8} textAnchor="middle" fill={`${PURPLE}0.30)`} fontSize="7" fontFamily="ui-monospace, monospace" letterSpacing="0.1em" style={{ textTransform: 'uppercase' }}>Click a phase</text>
-          <text x={cx} y={cy + 6} textAnchor="middle" fill={`${PURPLE}0.20)`} fontSize="7" fontFamily="ui-monospace, monospace" letterSpacing="0.1em" style={{ textTransform: 'uppercase' }}>to explore</text>
+          <text x={cx} y={cy - 8} textAnchor="middle" fill={`${PURPLE_TEXT}0.867)`} fontSize="7" fontFamily="ui-monospace, monospace" letterSpacing="0.1em" style={{ textTransform: 'uppercase' }}>Click a phase</text>
+          <text x={cx} y={cy + 6} textAnchor="middle" fill={`${PURPLE_TEXT}0.848)`} fontSize="7" fontFamily="ui-monospace, monospace" letterSpacing="0.1em" style={{ textTransform: 'uppercase' }}>to explore</text>
 
           {/* Pivot fork */}
           {(() => {
@@ -185,13 +186,13 @@ export default function LSInteractiveSection() {
                     strokeWidth={1}
                     style={{ transition: 'fill 0.2s' }}
                   />
-                  <text x={leftX + 4} y={forkY + 12} textAnchor="middle" fill={isPivotActive ? '#fff' : `${PURPLE}0.70)`} fontSize="7" fontFamily="ui-monospace, monospace" letterSpacing="0.08em" style={{ textTransform: 'uppercase', pointerEvents: 'none' }}>
+                  <text x={leftX + 4} y={forkY + 12} textAnchor="middle" fill={isPivotActive ? '#fff' : `${PURPLE_TEXT}0.943)`} fontSize="7" fontFamily="ui-monospace, monospace" letterSpacing="0.08em" style={{ textTransform: 'uppercase', pointerEvents: 'none' }}>
                     Pivot ↓
                   </text>
                 </g>
 
                 {/* Persevere label */}
-                <text x={rightX} y={forkY + 14} textAnchor="middle" fill={`${PURPLE}0.30)`} fontSize="7" fontFamily="ui-monospace, monospace" letterSpacing="0.08em" style={{ textTransform: 'uppercase' }}>
+                <text x={rightX} y={forkY + 14} textAnchor="middle" fill={`${PURPLE_TEXT}0.867)`} fontSize="7" fontFamily="ui-monospace, monospace" letterSpacing="0.08em" style={{ textTransform: 'uppercase' }}>
                   Persevere
                 </text>
               </g>
