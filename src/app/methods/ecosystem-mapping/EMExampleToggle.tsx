@@ -217,7 +217,7 @@ export default function EMExampleToggle() {
                             ? `${TEAL}0.65)`
                             : item.confidence === 'LOW'
                             ? `${AMBER}0.60)`
-                            : 'var(--color-neutral-400)',
+                            : 'var(--color-neutral-500)',
                         }}
                       >AI: {item.confidence}</span>
                     </div>
