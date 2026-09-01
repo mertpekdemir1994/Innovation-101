@@ -307,7 +307,7 @@ export default function PLAIReactivated() {
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                   AI accelerates the design of the pilot: analyzing segment data to size and characterize potential cohorts,
                   helping construct the metrics instrumentation plan, running market-sizing models for geography selection,
-                  and analyzing pilot results at the end — surfacing patterns across acquisition, retention, and operational
+                  and analyzing pilot results at the end, surfacing patterns across acquisition, retention, and operational
                   performance faster and more completely than manual review. The design work and the analysis work both
                   move faster with AI.
                 </p>
@@ -322,8 +322,8 @@ export default function PLAIReactivated() {
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                   AI can analyze demographic and behavioral data for a candidate segment, but whether THIS segment
-                  represents the population you intend to scale to — given the specific context, the market moment,
-                  the operational constraints — is a judgment call about things AI cannot access. The representativeness
+                  represents the population you intend to scale to (given the specific context, the market moment,
+                  the operational constraints) is a judgment call about things AI cannot access. The representativeness
                   decision is yours to make and yours to defend when the results come in.
                 </p>
               </div>
@@ -336,8 +336,8 @@ export default function PLAIReactivated() {
                   Human judgment: what actually breaks
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-                  What breaks at the boundary — the supplier who cannot actually scale, the support team that hits its
-                  capacity limit, the edge case in the billing flow that only appears at real volume — surfaces in the
+                  What breaks at the boundary (the supplier who cannot actually scale, the support team that hits its
+                  capacity limit, the edge case in the billing flow that only appears at real volume) surfaces in the
                   pilot&rsquo;s operational reality. AI cannot predict this from data. It appears when real systems meet real
                   customers under real conditions. That gap between the model and the reality is the whole point of
                   running the pilot.
@@ -353,7 +353,7 @@ export default function PLAIReactivated() {
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                   Pre-committed criteria answer the binary question of whether results are technically good enough.
-                  The actual go decision carries organizational accountability — for the investment required to scale,
+                  The actual go decision carries organizational accountability: for the investment required to scale,
                   for the people and partners who will be affected, for the timing relative to everything else the
                   business is doing. AI can tell you what the data says. A human decides what to do with it, and
                   is accountable for the consequences of that call.
@@ -370,8 +370,8 @@ export default function PLAIReactivated() {
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 A pilot launch is a manual process end to end. The team selects the segment, defines the geography,
                 sets the metrics and success criteria, runs the operational launch, and calls the gate. The pilot
-                produces real operational experience — what the supply chain actually does at volume, what the support
-                load actually is, what the unit economics actually look like with real customers and real money — and
+                produces real operational experience (what the supply chain actually does at volume, what the support
+                load actually is, what the unit economics actually look like with real customers and real money) and
                 that experience is the irreplaceable input to the scale decision.
               </p>
             </div>
@@ -387,8 +387,8 @@ export default function PLAIReactivated() {
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
               AI changes the design and analysis work around pilots. It does not change what a pilot is: running
               the real thing with bounded exposure to learn from real operational conditions. The judgment calls
-              that make a pilot valid — representativeness, reading what the operations actually produced, calling
-              the gate honestly — remain human.
+              that make a pilot valid (representativeness, reading what the operations actually produced, calling
+              the gate honestly) remain human.
             </p>
           </div>
         </motion.div>

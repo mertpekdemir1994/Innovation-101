@@ -6,12 +6,12 @@ const BRICK = 'rgba(138,75,60,'
 
 const SVG_W = 700, SVG_H = 268
 
-// Pilot zone — the contained, bounded slice
+// Pilot zone: the contained, bounded slice
 const ZN_X = 62, ZN_Y = 44, ZN_W = 342, ZN_H = 170
 const ZN_CX = ZN_X + ZN_W / 2   // 233
 const ZN_CY = ZN_Y + ZN_H / 2   // 129
 
-// Feature tiles inside zone (FULL, REAL solution — no cut pile)
+// Feature tiles inside zone (FULL, REAL solution, no cut pile)
 const FTILES = [
   { x: 76,  y: 80,  w: 82, h: 22, label: 'ALL FEATURES' },
   { x: 170, y: 80,  w: 82, h: 22, label: 'FULL UX'      },
@@ -106,7 +106,7 @@ export default function PLEstablishing() {
           {...fade(0.14)} />
 
         {/* Boundary labels */}
-        {/* SEGMENT — above zone */}
+        {/* SEGMENT: above zone */}
         <motion.text x={ZN_CX} y={ZN_Y - 12}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
@@ -115,7 +115,7 @@ export default function PLEstablishing() {
           ⊞ SEGMENT · WHO IS EXPOSED
         </motion.text>
 
-        {/* GEOGRAPHY — left of zone (rotated) */}
+        {/* GEOGRAPHY: left of zone (rotated) */}
         <motion.text
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
@@ -125,7 +125,7 @@ export default function PLEstablishing() {
           ◈ GEOGRAPHY · WHERE
         </motion.text>
 
-        {/* TIMEFRAME — below zone */}
+        {/* TIMEFRAME: below zone */}
         <motion.text x={ZN_CX} y={ZN_Y + ZN_H + 14}
           textAnchor="middle" dominantBaseline="middle"
           fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
@@ -143,7 +143,7 @@ export default function PLEstablishing() {
           REAL · FULL SOLUTION
         </motion.text>
 
-        {/* Feature tiles (all present — no cut pile) */}
+        {/* Feature tiles (all present, no cut pile) */}
         {FTILES.map((t, i) => (
           <motion.g key={t.label} {...fade(0.40 + i * 0.06)}>
             <rect x={t.x} y={t.y} width={t.w} height={t.h}

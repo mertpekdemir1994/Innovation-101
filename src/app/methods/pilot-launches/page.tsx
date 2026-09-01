@@ -22,25 +22,25 @@ const FRAMEWORK_LINKS = [
     slug: 'double-diamond',
     name: 'Double Diamond',
     phase: 'Deliver',
-    note: 'The Deliver phase of Double Diamond is where a validated concept becomes a real solution at real scale. The pilot launch is the controlled entry point to that transition: before you commit the full operational investment of a broad launch, the pilot tests whether the delivery model actually works under real conditions — with real customers, real operations, and real economics.',
+    note: 'The Deliver phase of Double Diamond is where a validated concept becomes a real solution at real scale. The pilot launch is the controlled entry point to that transition: before you commit the full operational investment of a broad launch, the pilot tests whether the delivery model actually works under real conditions: with real customers, real operations, and real economics.',
   },
   {
     slug: 'lean-startup',
     name: 'Lean Startup',
     phase: 'Measure',
-    note: 'After the Build phase produces the full solution, the pilot is the Measure phase at operational scale. The difference from an MVP measurement cycle is that the pilot is measuring the delivery model — can we actually fulfil this, at what unit economics, with what operational load? — not the product hypothesis. The pre-committed metrics and the gate are the mechanism by which the measurement produces a decision.',
+    note: 'After the Build phase produces the full solution, the pilot is the Measure phase at operational scale. The difference from an MVP measurement cycle is that the pilot is measuring the delivery model (can we actually fulfil this, at what unit economics, with what operational load?) not the product hypothesis. The pre-committed metrics and the gate are the mechanism by which the measurement produces a decision.',
   },
   {
     slug: 'agile-innovation',
     name: 'Agile Innovation',
     phase: 'Release',
-    note: 'The Release phase is not a full launch — it is the bounded delivery of working software or a working solution to real users for the first time. The pilot is the operational counterpart to a Release: it tests whether the full solution can actually be delivered at scale, catching operational and economic failures before the broad release commits the full organisation.',
+    note: 'The Release phase is not a full launch; it is the bounded delivery of working software or a working solution to real users for the first time. The pilot is the operational counterpart to a Release: it tests whether the full solution can actually be delivered at scale, catching operational and economic failures before the broad release commits the full organisation.',
   },
   {
     slug: 'fde',
     name: 'Front-End of Innovation',
     phase: 'Launch',
-    note: 'The Launch stage of the FDE moves a concept from internal development into the market. The pilot is a disciplined, bounded version of that launch: enough real market contact to generate valid operational and customer data, without the full capital exposure of a complete rollout. The pilot output — the gate verdict — is the input to the full Launch decision.',
+    note: 'The Launch stage of the FDE moves a concept from internal development into the market. The pilot is a disciplined, bounded version of that launch: enough real market contact to generate valid operational and customer data, without the full capital exposure of a complete rollout. The pilot output, the gate verdict, is the input to the full Launch decision.',
   },
 ]
 
@@ -48,12 +48,12 @@ const RELATED_METHODS = [
   {
     slug: 'mvp-mlp',
     name: 'MVP & MLP',
-    rel: 'The most important distinction in the Delivery & Validation group. An MVP minimises the PRODUCT — it tests the product hypothesis with the minimum viable feature set. A pilot launch runs the FULL, REAL product with a bounded EXPOSURE. When you run a pilot, the product question is settled; the operational question is what remains. The two methods address different uncertainties and belong at different stages: MVP first, pilot when the product is ready to scale.',
+    rel: 'The most important distinction in the Delivery & Validation group. An MVP minimises the PRODUCT; it tests the product hypothesis with the minimum viable feature set. A pilot launch runs the FULL, REAL product with a bounded EXPOSURE. When you run a pilot, the product question is settled; the operational question is what remains. The two methods address different uncertainties and belong at different stages: MVP first, pilot when the product is ready to scale.',
   },
   {
     slug: 'proof-of-concept',
     name: 'Proof of Concept',
-    rel: 'The PoC answers a technical or feasibility question — can this be built, can this work — using the minimum apparatus necessary to test that specific question. The pilot answers an operational and market question — can this be delivered at scale, with real economics, to real customers — using the full, real solution. PoC comes first, in development. Pilot comes last, before scale. They sit at opposite ends of the validation chain.',
+    rel: 'The PoC answers a technical or feasibility question (can this be built, can this work) using the minimum apparatus necessary to test that specific question. The pilot answers an operational and market question (can this be delivered at scale, with real economics, to real customers) using the full, real solution. PoC comes first, in development. Pilot comes last, before scale. They sit at opposite ends of the validation chain.',
   },
   {
     slug: null,
@@ -63,12 +63,12 @@ const RELATED_METHODS = [
   {
     slug: null,
     name: 'Delivery Roadmap',
-    rel: 'The delivery roadmap sets the sequencing plan for bringing a solution to scale — what ships when, in what order, to whom. The pilot is a specific event on that roadmap: the bounded, real-conditions test before the full rollout begins. The roadmap frames where the pilot sits in the broader delivery sequence, and the pilot gate verdict feeds back into roadmap decisions about timing and staged expansion.',
+    rel: 'The delivery roadmap sets the sequencing plan for bringing a solution to scale: what ships when, in what order, to whom. The pilot is a specific event on that roadmap: the bounded, real-conditions test before the full rollout begins. The roadmap frames where the pilot sits in the broader delivery sequence, and the pilot gate verdict feeds back into roadmap decisions about timing and staged expansion.',
   },
   {
     slug: null,
     name: 'Capability Building',
-    rel: 'Pilots often reveal operational capability gaps that must be closed before scale — packing efficiency, support capacity, supplier reliability. Capability building is the systematic work of closing those gaps. The pilot diagnosis tells you what to build; the capability building work does the building before the second pilot or the full launch.',
+    rel: 'Pilots often reveal operational capability gaps that must be closed before scale: packing efficiency, support capacity, supplier reliability. Capability building is the systematic work of closing those gaps. The pilot diagnosis tells you what to build; the capability building work does the building before the second pilot or the full launch.',
   },
 ]
 
@@ -78,7 +78,7 @@ export default function PilotLaunchesPage() {
   return (
     <>
       {/* ─────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -106,7 +106,7 @@ export default function PilotLaunchesPage() {
               className="mb-3 max-w-[600px]"
               style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}
             >
-              Running your full, real solution with a bounded exposure &mdash; a defined segment, a defined geography, a fixed time window &mdash; to learn from real operational conditions before committing to scale.
+              Running your full, real solution with a bounded exposure: a defined segment, a defined geography, a fixed time window, to learn from real operational conditions before committing to scale.
             </p>
 
             <p
@@ -120,7 +120,7 @@ export default function PilotLaunchesPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK
+          S2 - Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -131,18 +131,18 @@ export default function PilotLaunchesPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={BRICK}>What it is</SectionLabel>
-            <SectionHeadingLight>A bounded, real-conditions test of the full delivery model &mdash; before the scale decision is made.</SectionHeadingLight>
+            <SectionHeadingLight>A bounded, real-conditions test of the full delivery model, before the scale decision is made.</SectionHeadingLight>
 
             <div className="flex flex-col gap-5">
               <Body>
-                A pilot launch runs the complete, real solution &mdash; all features, real operations, real customers,
-                real money &mdash; but contains the exposure to a defined slice of the market: a specific segment,
+                A pilot launch runs the complete, real solution (all features, real operations, real customers,
+                real money) but contains the exposure to a defined slice of the market: a specific segment,
                 a specific geography, a fixed time window with a hard end date. It is not a beta, a soft launch,
                 or a friends-and-family test. It is the full product operating under real commercial conditions,
                 deliberately bounded so that the risk stays manageable while the learning is real.
@@ -153,7 +153,7 @@ export default function PilotLaunchesPage() {
                 A pilot tests whether the delivery model works: can this actually be fulfilled at scale, at
                 what unit economics, with what operational load, to what service standard? When you run a
                 pilot, the product question is settled. The operational question is what remains, and it is
-                a different question entirely &mdash; one that only real conditions can answer.
+                a different question entirely, one that only real conditions can answer.
               </Body>
               <Body>
                 What a pilot finds is almost always operationally specific: a supplier who cannot meet the
@@ -161,7 +161,7 @@ export default function PilotLaunchesPage() {
                 takes twice as long when real people run it for the first time, a unit economics profile that
                 only becomes visible when real orders move through real systems. None of this is predictable
                 from pre-launch analysis. It only appears when the thing actually runs. The pilot creates the
-                conditions for it to run &mdash; controlled, instrumented, reversible.
+                conditions for it to run: controlled, instrumented, reversible.
               </Body>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function PilotLaunchesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -182,7 +182,7 @@ export default function PilotLaunchesPage() {
             >
               Click any element to explore it. The three boundary dimensions define who sees the pilot,
               where, and for how long. The solution inside is complete. The metrics read out to a
-              pre-committed gate. The rest of the world &mdash; the un-launched markets &mdash; waits.
+              pre-committed gate. The rest of the world, the un-launched markets, waits.
             </p>
             <PLInteractive />
           </div>
@@ -190,7 +190,7 @@ export default function PilotLaunchesPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -206,11 +206,11 @@ export default function PilotLaunchesPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'The product concept is validated — MVP or MLP learning is in hand — and the next question is operational: can this be delivered?',
+                    'The product concept is validated (MVP or MLP learning is in hand) and the next question is operational: can this be delivered?',
                     'The operational complexity of a full launch is high enough that failure at scale would be costly to recover from.',
                     'Unit economics, support load, or fulfilment performance are genuinely uncertain until you run the thing at real volume.',
                     'A specific geography, segment, or channel can be isolated cleanly enough to generate valid, representative learning.',
-                    'The organisation needs concrete operational data — not a model, not a projection — before committing the full delivery investment.',
+                    'The organisation needs concrete operational data, not a model, not a projection, before committing the full delivery investment.',
                     'A regulatory, partnership, or capacity constraint requires staged rollout before full availability.',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -231,11 +231,11 @@ export default function PilotLaunchesPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'The product concept itself is still uncertain — this is MVP territory, not pilot territory. Settle the product question first.',
+                    'The product concept itself is still uncertain; this is MVP territory, not pilot territory. Settle the product question first.',
                     'The operational model is standard and well-understood; a pilot adds delay without adding learning.',
                     'The market moves fast enough that a 6–12 week pilot window gives a competitor time to establish.',
                     'No real boundary can be drawn: if the pilot segment cannot be isolated from the rest of the business, the learning will be muddied.',
-                    'The team lacks the operational capacity to run the full solution within the pilot boundary — a scaled-down operation is not a pilot.',
+                    'The team lacks the operational capacity to run the full solution within the pilot boundary; a scaled-down operation is not a pilot.',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className="mt-1 shrink-0 rounded-full w-1.5 h-1.5"
@@ -253,7 +253,7 @@ export default function PilotLaunchesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S6 — How it works   LIGHT
+          S6 - How it works   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -266,17 +266,17 @@ export default function PilotLaunchesPage() {
                 {
                   n: '01',
                   title: 'Define the three boundaries',
-                  body: 'Before anything launches, set the three boundary dimensions explicitly: SEGMENT (who is in the pilot — what type of customer, what cohort, what use case), GEOGRAPHY (where the pilot runs — which locations, which channels, which organisational units), and TIMEFRAME (how long it runs — with a hard, pre-committed end date that is not negotiable). The boundaries must be tight enough to be manageable but representative enough to generate valid learning. A segment of one is not a pilot. A segment of everyone is not a pilot either.',
+                  body: 'Before anything launches, set the three boundary dimensions explicitly: SEGMENT (who is in the pilot: what type of customer, what cohort, what use case), GEOGRAPHY (where the pilot runs: which locations, which channels, which organisational units), and TIMEFRAME (how long it runs, with a hard, pre-committed end date that is not negotiable). The boundaries must be tight enough to be manageable but representative enough to generate valid learning. A segment of one is not a pilot. A segment of everyone is not a pilot either.',
                 },
                 {
                   n: '02',
                   title: 'Pre-commit to metrics and success criteria',
-                  body: 'Before the pilot launches, agree on what success looks like: specific metrics with specific thresholds. Both categories matter. Customer metrics: acquisition cost, retention at 30/60/90 days, NPS, engagement. Operational metrics: fulfilment performance, support load per customer, unit economics at pilot scale, process throughput. Write the criteria down. Get sign-off. Seal them. The discipline of pre-commitment is that the criteria cannot be changed after the results come in — which is exactly when the temptation to change them is highest.',
+                  body: 'Before the pilot launches, agree on what success looks like: specific metrics with specific thresholds. Both categories matter. Customer metrics: acquisition cost, retention at 30/60/90 days, NPS, engagement. Operational metrics: fulfilment performance, support load per customer, unit economics at pilot scale, process throughput. Write the criteria down. Get sign-off. Seal them. The discipline of pre-commitment is that the criteria cannot be changed after the results come in, which is exactly when the temptation to change them is highest.',
                 },
                 {
                   n: '03',
                   title: 'Run the pilot with the full operational stack',
-                  body: 'Launch to the defined segment and geography with the complete, real solution: all product features, the full operational apparatus, real customer onboarding, real support, real money. Do not cut corners on the operational model — a stripped-down operation does not test the delivery model; it tests a different, easier version of it. Instrument everything from day one. Capture operational and customer data continuously, not just at the gate. Treat anomalies as findings: the courier that misses its SLA in week two is a finding, not a nuisance.',
+                  body: 'Launch to the defined segment and geography with the complete, real solution: all product features, the full operational apparatus, real customer onboarding, real support, real money. Do not cut corners on the operational model: a stripped-down operation does not test the delivery model; it tests a different, easier version of it. Instrument everything from day one. Capture operational and customer data continuously, not just at the gate. Treat anomalies as findings: the courier that misses its SLA in week two is a finding, not a nuisance.',
                 },
                 {
                   n: '04',
@@ -304,7 +304,7 @@ export default function PilotLaunchesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S7 — From pilot to full launch [ADDED]   LIGHT
+          S7 - From pilot to full launch [ADDED]   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -315,7 +315,7 @@ export default function PilotLaunchesPage() {
             <div className="flex flex-col gap-5 mb-10">
               <Body>
                 A GO verdict at the gate opens a choice: move to full launch immediately, or expand in
-                stages &mdash; a second pilot with a broader boundary, then a regional rollout, then national,
+                stages: a second pilot with a broader boundary, then a regional rollout, then national,
                 then international. Neither path is automatically right. The choice depends on how much
                 operational confidence the pilot actually generated, how much the learning generalises beyond
                 the pilot boundary, and how much risk the organisation can absorb if the next stage surfaces
@@ -392,7 +392,7 @@ export default function PilotLaunchesPage() {
                 <span className="font-semibold" style={{ color: BRICK }}>On NO-GO verdicts:</span>{' '}
                 A NO-GO verdict does not end the pilot sequence. It starts it. The gate should produce specific,
                 actionable findings about which operational criteria were missed and why. The team closes those
-                gaps &mdash; supplier, process, support capacity, unit economics &mdash; and runs a second pilot with
+                gaps (supplier, process, support capacity, unit economics) and runs a second pilot with
                 the same boundaries and the same criteria. The second pilot tests whether the fixes worked.
                 The gate closes again. This iteration continues until the gate clears.
               </p>
@@ -402,7 +402,7 @@ export default function PilotLaunchesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S8 — Best practices   LIGHT
+          S8 - Best practices   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -417,7 +417,7 @@ export default function PilotLaunchesPage() {
                   body: 'Pre-committed criteria are only pre-committed if they cannot be changed after the results come in. Write them down, get stakeholder sign-off, and treat them as a contract. The temptation to adjust a threshold after seeing results that almost pass is exactly the failure mode the pre-commitment is designed to prevent.',
                 },
                 {
-                  title: 'The end date is not a target — it is a constraint',
+                  title: 'The end date is not a target; it is a constraint',
                   body: 'A pilot without a hard end date is not a pilot. It is a permanent soft launch waiting for someone to feel confident enough to call it. Set the end date before the pilot launches and treat it as immovable. The gate review happens on that date. The decision comes out of that review.',
                 },
                 {
@@ -426,7 +426,7 @@ export default function PilotLaunchesPage() {
                 },
                 {
                   title: 'Treat the pilot segment as a real customer cohort, not a test group',
-                  body: 'Pilot customers are real customers. They get the same product, the same support, the same experience as any future customer would. A pilot that treats participants as a test group — with different SLAs, reduced expectations, or explicit acknowledgment that they are in a test — does not generate valid operational data. It generates data about a different, easier situation.',
+                  body: 'Pilot customers are real customers. They get the same product, the same support, the same experience as any future customer would. A pilot that treats participants as a test group (with different SLAs, reduced expectations, or explicit acknowledgment that they are in a test) does not generate valid operational data. It generates data about a different, easier situation.',
                 },
                 {
                   title: 'Monitor operational metrics from day one',
@@ -452,7 +452,7 @@ export default function PilotLaunchesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S9 — Logistics   LIGHT
+          S9 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -485,7 +485,7 @@ export default function PilotLaunchesPage() {
                   items: [
                     'A real customer segment: actual buyers, not advocates',
                     'A bounded geography or channel with operational reach',
-                    'The complete product and operational stack — no shortcuts',
+                    'The complete product and operational stack, no shortcuts',
                     'Instrumentation to capture metrics from launch day',
                   ],
                 },
@@ -524,7 +524,7 @@ export default function PilotLaunchesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S10 — AI evolving   DARK
+          S10 - AI evolving   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -543,7 +543,7 @@ export default function PilotLaunchesPage() {
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S11 — In-depth example   LIGHT
+          S11 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -562,7 +562,7 @@ export default function PilotLaunchesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S12 — Frameworks   LIGHT
+          S12 - Frameworks   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -601,7 +601,7 @@ export default function PilotLaunchesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S13 — Related methods   LIGHT
+          S13 - Related methods   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -638,7 +638,7 @@ export default function PilotLaunchesPage() {
       </LightSection>
 
       {/* ─────────────────────────────────────────────────────────
-          S14 — Sources   LIGHT
+          S14 - Sources   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -648,11 +648,11 @@ export default function PilotLaunchesPage() {
 
             <div className="flex flex-col gap-3">
               {[
-                'Ries, E. (2011). The Lean Startup. Crown Business. — The foundational text on the Build-Measure-Learn loop; the pilot as a Measure vehicle for the full product is a natural extension of the lean methodology.',
-                'Cooper, R. G. (2019). The Lean and Agile Stage-Gate Process. Industrial Marketing Management. — The gate mechanism and pre-committed success criteria at each stage gate; pilots are a specific implementation of a stage-gate Measure event.',
-                'Blank, S. & Dorf, B. (2012). The Startup Owner\'s Manual. K&S Ranch. — Customer validation and the progression from problem to solution to operational readiness; pilots as the operational validation stage.',
-                'Maurya, A. (2012). Running Lean. O\'Reilly. — Lean Canvas and the transition from validated learning to scalable model; the pilot is the transition point between validated learning and operational commitment.',
-                'Kelley, T. & Kelley, D. (2013). Creative Confidence. Crown Business. — On the mindset of learning from real conditions rather than projections; the pilot as a confidence-building instrument before scale.',
+                'Ries, E. (2011). The Lean Startup. Crown Business. The foundational text on the Build-Measure-Learn loop; the pilot as a Measure vehicle for the full product is a natural extension of the lean methodology.',
+                'Cooper, R. G. (2019). The Lean and Agile Stage-Gate Process. Industrial Marketing Management. The gate mechanism and pre-committed success criteria at each stage gate; pilots are a specific implementation of a stage-gate Measure event.',
+                'Blank, S. & Dorf, B. (2012). The Startup Owner\'s Manual. K&S Ranch. Customer validation and the progression from problem to solution to operational readiness; pilots as the operational validation stage.',
+                'Maurya, A. (2012). Running Lean. O\'Reilly. Lean Canvas and the transition from validated learning to scalable model; the pilot is the transition point between validated learning and operational commitment.',
+                'Kelley, T. & Kelley, D. (2013). Creative Confidence. Crown Business. On the mindset of learning from real conditions rather than projections; the pilot as a confidence-building instrument before scale.',
               ].map((src, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="font-mono font-semibold shrink-0 mt-0.5"

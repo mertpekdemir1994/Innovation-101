@@ -47,37 +47,37 @@ interface ZoneInfo {
 
 const ZONES: Record<ZoneId, ZoneInfo> = {
   segment: {
-    tag: 'BOUNDARY DIMENSION — SEGMENT',
-    headline: 'WHO is exposed to the pilot — and critically, who is not.',
-    body: 'Who you run the pilot with is the most consequential boundary decision. The segment must be real customers with real context — not hand-picked advocates or internal users. The key question is representativeness: does this segment resemble the broader population you intend to scale to? A tight segment (one company type, one use-case vertical, one cohort) gives you more control and cleaner learning signals. A broader segment gives you better representativeness but more to manage. The choice should be driven by which failure mode worries you more.',
+    tag: 'BOUNDARY DIMENSION: SEGMENT',
+    headline: 'WHO is exposed to the pilot, and critically, who is not.',
+    body: 'Who you run the pilot with is the most consequential boundary decision. The segment must be real customers with real context, not hand-picked advocates or internal users. The key question is representativeness: does this segment resemble the broader population you intend to scale to? A tight segment (one company type, one use-case vertical, one cohort) gives you more control and cleaner learning signals. A broader segment gives you better representativeness but more to manage. The choice should be driven by which failure mode worries you more.',
     tradeoff: 'Tradeoff: Tight boundary → cleaner signal, less representative. Broad boundary → better representativeness, harder to instrument and run.',
   },
   geography: {
-    tag: 'BOUNDARY DIMENSION — GEOGRAPHY',
-    headline: 'WHERE the pilot runs — physically, digitally, or organizationally.',
+    tag: 'BOUNDARY DIMENSION: GEOGRAPHY',
+    headline: 'WHERE the pilot runs, physically, digitally, or organizationally.',
     body: 'Geography can mean physical location (two cities), digital channel (one platform or storefront), or organizational unit (one division, one region). The principle is the same: bounded exposure creates clean learning signals and protects the rest of the business from operational strain during the learning period. Choose a geography where you have operational reach and can instrument the experience without heroic effort. The question: can you learn what you need to learn here, with the resources you actually have?',
     tradeoff: 'Tradeoff: Smaller geography → easier to run and instrument. Larger geography → more representative of scale conditions.',
   },
   timeframe: {
-    tag: 'BOUNDARY DIMENSION — TIMEFRAME',
-    headline: 'HOW LONG the pilot runs — with a hard, pre-committed end date.',
-    body: 'The end date is not a target — it is a constraint. Setting a definite end date before the pilot begins forces three disciplines: the team must pre-commit to success criteria (what does "good enough" look like at the end?), the analysis must be complete by then (no deferral), and the go/no-go decision must be made (no indefinite extension). Pilots without end dates tend to drift: they become permanent, accumulate exceptions, or the team loses the nerve to call them. The end date keeps the pilot structurally honest.',
+    tag: 'BOUNDARY DIMENSION: TIMEFRAME',
+    headline: 'HOW LONG the pilot runs, with a hard, pre-committed end date.',
+    body: 'The end date is not a target; it is a constraint. Setting a definite end date before the pilot begins forces three disciplines: the team must pre-commit to success criteria (what does "good enough" look like at the end?), the analysis must be complete by then (no deferral), and the go/no-go decision must be made (no indefinite extension). Pilots without end dates tend to drift: they become permanent, accumulate exceptions, or the team loses the nerve to call them. The end date keeps the pilot structurally honest.',
     tradeoff: 'Tradeoff: Shorter timeframe → faster learning, may not capture long-run patterns. Longer timeframe → more complete picture, slower to decide.',
   },
   solution: {
-    tag: 'THE PRODUCT INSIDE THE ZONE — REAL AND WHOLE',
+    tag: 'THE PRODUCT INSIDE THE ZONE: REAL AND WHOLE',
     headline: 'The solution inside the pilot zone is complete, not minimal.',
-    body: 'This is the key distinction from MVP and MLP. The MVP minimizes the product — builds only what is needed to test the core product hypothesis. The pilot runs the FULL, REAL solution, including all the operational apparatus: supply chain, support, fulfilment, billing, the complete customer journey with real money moving through it. A pilot tests the delivery model and operational capability at a bounded scale, not the product concept. What the pilot reveals about operations, unit economics, and support load is the point — if it also reveals product issues, those are valuable bonus findings.',
+    body: 'This is the key distinction from MVP and MLP. The MVP minimizes the product: builds only what is needed to test the core product hypothesis. The pilot runs the FULL, REAL solution, including all the operational apparatus: supply chain, support, fulfilment, billing, the complete customer journey with real money moving through it. A pilot tests the delivery model and operational capability at a bounded scale, not the product concept. What the pilot reveals about operations, unit economics, and support load is the point; if it also reveals product issues, those are valuable bonus findings.',
   },
   metrics: {
-    tag: 'INSTRUMENTED METRICS — OPERATIONAL AND CUSTOMER',
-    headline: 'What the pilot is designed to measure — agreed before launch.',
-    body: 'The metrics a pilot must answer fall into two categories. Customer metrics: acquisition cost, retention at 30/60/90 days, engagement, satisfaction. Operational metrics: support load per customer, fulfilment performance, unit economics at pilot scale, process throughput under real conditions. Both must be agreed before the pilot begins. "Measuring what emerged" is not a pilot — it is an experiment without a hypothesis. Pre-committing to metrics forces the team to state what "good" looks like before the results come in, removing the risk of retrospective justification.',
+    tag: 'INSTRUMENTED METRICS: OPERATIONAL AND CUSTOMER',
+    headline: 'What the pilot is designed to measure, agreed before launch.',
+    body: 'The metrics a pilot must answer fall into two categories. Customer metrics: acquisition cost, retention at 30/60/90 days, engagement, satisfaction. Operational metrics: support load per customer, fulfilment performance, unit economics at pilot scale, process throughput under real conditions. Both must be agreed before the pilot begins. "Measuring what emerged" is not a pilot; it is an experiment without a hypothesis. Pre-committing to metrics forces the team to state what "good" looks like before the results come in, removing the risk of retrospective justification.',
   },
   gate: {
-    tag: 'THE GO / NO-GO GATE — PRE-COMMITTED CRITERIA ONLY',
+    tag: 'THE GO / NO-GO GATE: PRE-COMMITTED CRITERIA ONLY',
     headline: 'The gate is the discipline. Pre-committed criteria, applied honestly.',
-    body: 'The gate is where the pilot results meet the pre-committed success criteria. GO means proceed to scale, or to the next staged expansion. NO-GO means redesign, pull back, or stop. What makes the gate function is pre-commitment: the criteria are set before the pilot begins, when the team is not yet attached to a result. Criteria set after the results come in tend to bend toward the result — toward whatever the team wants to do next, not toward an honest read of what was learned. Pre-committed criteria keep the gate honest. The gate closes on a date. The answer comes out.',
+    body: 'The gate is where the pilot results meet the pre-committed success criteria. GO means proceed to scale, or to the next staged expansion. NO-GO means redesign, pull back, or stop. What makes the gate function is pre-commitment: the criteria are set before the pilot begins, when the team is not yet attached to a result. Criteria set after the results come in tend to bend toward the result: toward whatever the team wants to do next, not toward an honest read of what was learned. Pre-committed criteria keep the gate honest. The gate closes on a date. The answer comes out.',
     isGate: true,
   },
 }
