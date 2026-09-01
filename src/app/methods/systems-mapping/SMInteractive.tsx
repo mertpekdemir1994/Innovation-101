@@ -55,7 +55,7 @@ export default function SMInteractive() {
               color: isSymptom ? `${AMBER}0.90)` : `${AMBER}0.58)`,
               border: `1.5px solid ${isSymptom ? `${AMBER}0.50)` : `${AMBER}0.25)`}`,
             }}>
-            Fix the symptom — add more testing
+            Fix the symptom: add more testing
           </button>
           <button
             onClick={() => setIntervention(intervention === 'leverage' ? 'none' : 'leverage')}
@@ -301,7 +301,7 @@ export default function SMInteractive() {
               Result: the system put it back
             </p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-              More testing was added. DEFECT RATE fell. For a quarter — exactly as it had the previous
+              More testing was added. DEFECT RATE fell. For a quarter, exactly as it had the previous
               three times, under three different leaders. Then the BALANCING LOOP (B1) absorbed the
               intervention and restored the system. The REINFORCING LOOP (R1) continued running
               underneath, accumulating technical debt via the shortcuts driven by delivery pressure.
@@ -330,7 +330,7 @@ export default function SMInteractive() {
               Result: the whole system shifted
             </p>
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-              The structural change was to <strong>how work was committed to</strong> — not how it was
+              The structural change was to <strong>how work was committed to</strong>, not how it was
               tested. By reducing the delivery pressure at its source, the reinforcing loop (R1)
               weakened: fewer shortcuts, less technical debt accumulation, no acceleration. DEFECT RATE
               fell and stayed down, because the mechanism generating the defects had changed, not just
@@ -341,7 +341,7 @@ export default function SMInteractive() {
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
                 The leverage point was nowhere near the symptom. It looked like doing nothing about quality.
                 Which is precisely why nobody had tried it for two years. The structure produces the
-                behavior — change the structure, and the behavior changes with it.
+                behavior: change the structure, and the behavior changes with it.
               </p>
             </div>
           </motion.div>

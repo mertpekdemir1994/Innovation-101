@@ -64,7 +64,7 @@ export default function SMAIReactivated() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label={isAI
-          ? 'AI-generated causal loop diagram. Only the BALANCING loop B1 (defect rate → testing → defect rate) is clearly visible — this is the documented, believed causality. The REINFORCING loop R1 (delivery pressure → technical debt → more pressure) is faint or absent. A warning reads: your failed theory, elegantly drawn.'
+          ? 'AI-generated causal loop diagram. Only the BALANCING loop B1 (defect rate → testing → defect rate) is clearly visible: this is the documented, believed causality. The REINFORCING loop R1 (delivery pressure → technical debt → more pressure) is faint or absent. A warning reads: your failed theory, elegantly drawn.'
           : 'Complete causal loop diagram showing both loops: REINFORCING R1 (delivery pressure → technical debt → delivery pressure) and BALANCING B1 (defect rate → testing → defect rate). The leverage point glows above the DELIVERY PRESSURE node.'}
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
@@ -104,7 +104,7 @@ export default function SMAIReactivated() {
               <text x={SVG_W / 2} y={14} textAnchor="middle"
                 fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
                 fill={`${AMBER}0.75)`} style={{ userSelect: 'none' }}>
-                ⚠ YOUR FAILED THEORY — DRAWN ELEGANTLY
+                ⚠ YOUR FAILED THEORY, DRAWN ELEGANTLY
               </text>
             </motion.g>
           )}
@@ -134,7 +134,7 @@ export default function SMAIReactivated() {
           </text>
         </motion.g>
 
-        {/* DEFECT RATE — always bright in AI mode (the documented loop) */}
+        {/* DEFECT RATE: always bright in AI mode (the documented loop) */}
         <rect x={390} y={38} width={148} height={27} rx={3}
           fill={isAI ? `${INDIGO}0.12)` : `${AMBER}0.07)`}
           stroke={isAI ? `${INDIGO}0.75)` : `${AMBER}0.55)`}
@@ -146,7 +146,7 @@ export default function SMAIReactivated() {
           DEFECT RATE
         </text>
 
-        {/* TESTING — always bright in AI mode */}
+        {/* TESTING: always bright in AI mode */}
         <rect x={500} y={185} width={148} height={27} rx={3}
           fill={isAI ? `${INDIGO}0.10)` : `${TEAL}0.08)`}
           stroke={isAI ? `${INDIGO}0.68)` : `${TEAL}0.42)`}
@@ -157,7 +157,7 @@ export default function SMAIReactivated() {
           TESTING
         </text>
 
-        {/* REINFORCING LOOP (fades in AI mode — this is what AI misses) */}
+        {/* REINFORCING LOOP (fades in AI mode: this is what AI misses) */}
         <motion.g animate={{ opacity: rLoopOp }}
           transition={{ duration: prefersReduced ? 0 : 0.45, ease }}>
           <path d={R_LEFT_ARC} fill="none"
@@ -172,7 +172,7 @@ export default function SMAIReactivated() {
             fill={`${TEAL}0.30)`} style={{ userSelect: 'none' }}>REINFORCING</text>
         </motion.g>
 
-        {/* BALANCING LOOP (prominent in AI mode — this is what AI draws) */}
+        {/* BALANCING LOOP (prominent in AI mode: this is what AI draws) */}
         <motion.g
           animate={{ opacity: bLoopOp }}
           transition={{ duration: prefersReduced ? 0 : 0.45, ease }}>
@@ -252,7 +252,7 @@ export default function SMAIReactivated() {
           <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
             AI models the causality it is told about, or the causality that is documented. In a
             persistent problem, the documented theory is the organization&rsquo;s existing story about
-            itself — precisely the theory that has already guided the interventions that keep not
+            itself, precisely the theory that has already guided the interventions that keep not
             working. So AI renders your failed theory as a clean professional diagram, with the
             authority that comes with looking complete.
           </p>
@@ -266,7 +266,7 @@ export default function SMAIReactivated() {
           </p>
           <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
             A fluent, coherent, professional-looking causal model of the wrong loops does not merely
-            fail to help — it actively justifies the intervention that cannot work, and it does so
+            fail to help; it actively justifies the intervention that cannot work, and it does so
             with more institutional authority than the vague unease that preceded it. A map of the
             B1 loop alone points exactly where the team was already pushing. It legitimizes a fourth
             round of the failed intervention.
@@ -281,10 +281,10 @@ export default function SMAIReactivated() {
           </p>
           <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
             The reinforcing loop that explains a persistent problem is, by definition, the one
-            nobody has articulated — undocumented, often politically uncomfortable, and not available
+            nobody has articulated: undocumented, often politically uncomfortable, and not available
             in any text AI can read. It surfaces by asking the people inside the system what
             actually happens, and arguing about it in a room. The leverage point, in particular, is
-            a judgment about what is actually true in your organization — not a fact about systems
+            a judgment about what is actually true in your organization, not a fact about systems
             in general.
           </p>
         </div>
@@ -304,7 +304,7 @@ export default function SMAIReactivated() {
             uncomfortable ones. Test the model&rsquo;s predictions against history: if these loops are real,
             what should we have already seen? Confirm what you can, cheaply, before acting on a
             counterintuitive leverage point. The map&rsquo;s value is entirely in whether the loops are
-            real — and reality, here, is not in the documentation.
+            real, and reality, here, is not in the documentation.
           </p>
         </div>
 

@@ -54,7 +54,7 @@ export default function SMEstablishing() {
       <svg
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-        aria-label="Causal loop diagram showing two loops. LEFT — REINFORCING loop R1: DELIVERY PRESSURE drives TECHNICAL DEBT, which slows delivery, which increases DELIVERY PRESSURE further. A self-amplifying vicious circle. RIGHT — BALANCING loop B1: DEFECT RATE drives more TESTING, which reduces DEFECT RATE. An equilibrium-restoring loop that absorbs interventions. A CROSS-ARROW connects the two loops: DELIVERY PRESSURE causes shortcuts that produce DEFECTS — but with a long DELAY, which is why nobody connects them. The LEVERAGE POINT glows above the DELIVERY PRESSURE node, far from where the pain (DEFECT RATE) is felt."
+        aria-label="Causal loop diagram showing two loops. LEFT: REINFORCING loop R1: DELIVERY PRESSURE drives TECHNICAL DEBT, which slows delivery, which increases DELIVERY PRESSURE further. A self-amplifying vicious circle. RIGHT: BALANCING loop B1: DEFECT RATE drives more TESTING, which reduces DEFECT RATE. An equilibrium-restoring loop that absorbs interventions. A CROSS-ARROW connects the two loops: DELIVERY PRESSURE causes shortcuts that produce DEFECTS, but with a long DELAY, which is why nobody connects them. The LEVERAGE POINT glows above the DELIVERY PRESSURE node, far from where the pain (DEFECT RATE) is felt."
         style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
       >
         <defs>
@@ -100,7 +100,7 @@ export default function SMEstablishing() {
             TECHNICAL DEBT
           </text>
 
-          {/* DEFECT RATE — THE SYMPTOM */}
+          {/* DEFECT RATE: THE SYMPTOM */}
           <rect x={390} y={44} width={148} height={BOX_H} rx={3}
             fill={`${AMBER}0.07)`} stroke={`${AMBER}0.55)`} strokeWidth={1.4} />
           <text x={DEFECT_CX} y={DEFECT_CY} textAnchor="middle" dominantBaseline="middle"
@@ -124,14 +124,14 @@ export default function SMEstablishing() {
           </text>
         </motion.g>
 
-        {/* ── REINFORCING LOOP — left arc (PRESSURE → DEBT) ── */}
+        {/* REINFORCING LOOP: left arc (PRESSURE → DEBT) */}
         <motion.path d={R_LEFT_ARC} fill="none"
           stroke={`${TEAL}0.70)`} strokeWidth={1.8}
           markerEnd="url(#sm-est-arr)"
           {...drawPath(0.20, 0.60)}
         />
 
-        {/* ── REINFORCING LOOP — right arc (DEBT → PRESSURE) ── */}
+        {/* REINFORCING LOOP: right arc (DEBT → PRESSURE) */}
         <motion.path d={R_RIGHT_ARC} fill="none"
           stroke={`${TEAL}0.70)`} strokeWidth={1.8}
           markerEnd="url(#sm-est-arr)"
@@ -159,14 +159,14 @@ export default function SMEstablishing() {
             fill={`${TEAL}0.48)`} style={{ userSelect: 'none' }}>+</text>
         </motion.g>
 
-        {/* ── BALANCING LOOP — right arc (DEFECT RATE → TESTING) ── */}
+        {/* BALANCING LOOP: right arc (DEFECT RATE → TESTING) */}
         <motion.path d={B_RIGHT_ARC} fill="none"
           stroke={`${TEAL}0.55)`} strokeWidth={1.5}
           markerEnd="url(#sm-est-arr)"
           {...drawPath(0.75, 0.55)}
         />
 
-        {/* ── BALANCING LOOP — left arc (TESTING → DEFECT RATE, negative) ── */}
+        {/* BALANCING LOOP: left arc (TESTING → DEFECT RATE, negative) */}
         <motion.path d={B_LEFT_ARC} fill="none"
           stroke={`${AMBER}0.50)`} strokeWidth={1.5}
           strokeDasharray="5 3"
@@ -213,7 +213,7 @@ export default function SMEstablishing() {
           <text x={299} y={52} textAnchor="middle"
             fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`${AMBER}0.65)`} style={{ userSelect: 'none' }}>
-            DELAY — MONTHS LATER
+            DELAY: MONTHS LATER
           </text>
           <text x={299} y={65} textAnchor="middle"
             fontSize="3.2" fontFamily="var(--font-mono)" letterSpacing="0.05em"
