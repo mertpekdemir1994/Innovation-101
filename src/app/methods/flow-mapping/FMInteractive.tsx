@@ -4,7 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL  = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 276
@@ -232,7 +234,7 @@ export default function FMInteractive() {
             <text x={EN_CX} y={EN_CY + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-              fill={`${TEAL}0.92)`} style={{ userSelect: 'none' }}>SUBMIT</text>
+              fill={`${TEAL_TEXT}0.983)`} style={{ userSelect: 'none' }}>SUBMIT</text>
           </motion.g>
 
           {/* ── NODE: VALIDATE ─────────────────────────────────────── */}
@@ -252,7 +254,7 @@ export default function FMInteractive() {
             <text x={A_CX} y={A_CY + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${TEAL}0.88)`} style={{ userSelect: 'none' }}>VALIDATE</text>
+              fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>VALIDATE</text>
           </motion.g>
 
           {/* ── NODE: RESOLVED ─────────────────────────────────────── */}
@@ -272,7 +274,7 @@ export default function FMInteractive() {
             <text x={OA_CX} y={OA_CY + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${TEAL}0.90)`} style={{ userSelect: 'none' }}>RESOLVED ✓</text>
+              fill={`${TEAL_TEXT}0.979)`} style={{ userSelect: 'none' }}>RESOLVED ✓</text>
           </motion.g>
 
           {/* ── NODE: DEAD END ─────────────────────────────────────── */}
@@ -300,7 +302,7 @@ export default function FMInteractive() {
             <text x={DE_X + DE_W + 17} y={DE_CY + 1}
               textAnchor="start" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}>DEAD END</text>
+              fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>DEAD END</text>
           </motion.g>
 
           {/* ── NODE: PROCESS ──────────────────────────────────────── */}
@@ -320,7 +322,7 @@ export default function FMInteractive() {
             <text x={B_CX} y={B_CY + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${TEAL}0.88)`} style={{ userSelect: 'none' }}>PROCESS</text>
+              fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>PROCESS</text>
           </motion.g>
 
           {/* ── NODE: APPROVE ──────────────────────────────────────── */}
@@ -340,7 +342,7 @@ export default function FMInteractive() {
             <text x={B2_CX} y={B2_CY + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${TEAL}0.88)`} style={{ userSelect: 'none' }}>APPROVE</text>
+              fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>APPROVE</text>
           </motion.g>
 
           {/* ── NODE: COMPLETE ─────────────────────────────────────── */}
@@ -360,7 +362,7 @@ export default function FMInteractive() {
             <text x={OB_CX} y={OB_CY + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${TEAL}0.90)`} style={{ userSelect: 'none' }}>COMPLETE ✓</text>
+              fill={`${TEAL_TEXT}0.979)`} style={{ userSelect: 'none' }}>COMPLETE ✓</text>
           </motion.g>
 
           {/* ── LOOP hit area + label ──────────────────────────────── */}
@@ -385,7 +387,7 @@ export default function FMInteractive() {
             <text x={(B_CX + B2_CX) / 2} y={B_CY + 73}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={active === 'loop' ? `${AMBER}0.88)` : `${AMBER}0.60)`}
+              fill={active === 'loop' ? `${AMBER}0.88)` : `${AMBER_TEXT}0.876)`}
               style={{ userSelect: 'none', transition: 'fill 0.18s' }}>↺ LOOP</text>
           </motion.g>
 
@@ -411,7 +413,7 @@ export default function FMInteractive() {
             <text x={C_X + 4} y={C_Y - 8}
               textAnchor="start" dominantBaseline="middle"
               fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill={`${AMBER}0.48)`} style={{ userSelect: 'none' }}>⊘ UNINTENDED</text>
+              fill={`${AMBER_TEXT}0.839)`} style={{ userSelect: 'none' }}>⊘ UNINTENDED</text>
           </motion.g>
 
           {/* ── NODE: MANUAL STEP ──────────────────────────────────── */}
@@ -436,14 +438,14 @@ export default function FMInteractive() {
             <text x={(RD_CX + RD_W/2 + OB_X + 20) / 2 + 10} y={(C_CY + OB_CY + OB_H/2) / 2}
               textAnchor="start" dominantBaseline="middle"
               fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill={`${AMBER}0.45)`} style={{ userSelect: 'none' }}>≡ REDUNDANT</text>
+              fill={`${AMBER_TEXT}0.83)`} style={{ userSelect: 'none' }}>≡ REDUNDANT</text>
           </motion.g>
 
           {/* Tap cue */}
           {!active && (
             <text x={SVG_W / 2} y={SVG_H - 7}
               textAnchor="middle" fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}>
+              fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
               tap any node or pathology
             </text>
           )}

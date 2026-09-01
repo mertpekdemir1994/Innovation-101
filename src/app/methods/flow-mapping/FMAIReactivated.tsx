@@ -4,8 +4,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL   = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER  = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const SVG_H = 276
@@ -163,7 +166,7 @@ export default function FMAIReactivated() {
             <text x={(B_CX + B2_CX) / 2} y={B_CY + 73}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-              fill={`${AMBER}0.60)`} style={{ userSelect: 'none' }}>↺ LOOP</text>
+              fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}>↺ LOOP</text>
 
             {/* FORK → ESCALATE */}
             <line x1={FORK_CX} y1={FORK_CY} x2={C_X} y2={C_CY}
@@ -201,7 +204,7 @@ export default function FMAIReactivated() {
           <text x={EN_CX} y={EN_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-            fill={isAI ? `${INDIGO}0.92)` : `${TEAL}0.92)`}
+            fill={isAI ? `${INDIGO_TEXT}0.983)` : `${TEAL_TEXT}0.983)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>SUBMIT</text>
 
           {/* Fork dot */}
@@ -219,7 +222,7 @@ export default function FMAIReactivated() {
           <text x={A_CX} y={A_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={isAI ? `${INDIGO}0.88)` : `${TEAL}0.88)`}
+            fill={isAI ? `${INDIGO_TEXT}0.975)` : `${TEAL_TEXT}0.975)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>VALIDATE</text>
 
           {/* RESOLVED */}
@@ -231,7 +234,7 @@ export default function FMAIReactivated() {
           <text x={OA_CX} y={OA_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={isAI ? `${INDIGO}0.90)` : `${TEAL}0.90)`}
+            fill={isAI ? `${INDIGO_TEXT}0.979)` : `${TEAL_TEXT}0.979)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>RESOLVED ✓</text>
 
           {/* PROCESS */}
@@ -243,7 +246,7 @@ export default function FMAIReactivated() {
           <text x={B_CX} y={B_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={isAI ? `${INDIGO}0.88)` : `${TEAL}0.88)`}
+            fill={isAI ? `${INDIGO_TEXT}0.975)` : `${TEAL_TEXT}0.975)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>PROCESS</text>
 
           {/* APPROVE */}
@@ -255,7 +258,7 @@ export default function FMAIReactivated() {
           <text x={B2_CX} y={B2_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={isAI ? `${INDIGO}0.88)` : `${TEAL}0.88)`}
+            fill={isAI ? `${INDIGO_TEXT}0.975)` : `${TEAL_TEXT}0.975)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>APPROVE</text>
 
           {/* COMPLETE */}
@@ -267,7 +270,7 @@ export default function FMAIReactivated() {
           <text x={OB_CX} y={OB_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={isAI ? `${INDIGO}0.90)` : `${TEAL}0.90)`}
+            fill={isAI ? `${INDIGO_TEXT}0.979)` : `${TEAL_TEXT}0.979)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>COMPLETE ✓</text>
 
           {/* ── AI mode overlays ─────────────────────────────────────── */}

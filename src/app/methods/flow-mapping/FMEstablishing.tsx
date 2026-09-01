@@ -4,7 +4,9 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const TEAL  = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER = 'rgba(245,158,11,'
+const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
 const SVG_H = 276
@@ -103,7 +105,7 @@ export default function FMEstablishing() {
           <text x={EN_CX} y={EN_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
-            fill={`${TEAL}0.92)`} style={{ userSelect: 'none' }}>SUBMIT</text>
+            fill={`${TEAL_TEXT}0.983)`} style={{ userSelect: 'none' }}>SUBMIT</text>
         </motion.g>
 
         {/* ── ENTRY → FORK junction line ────────────────────────────── */}
@@ -145,7 +147,7 @@ export default function FMEstablishing() {
           <text x={A_CX} y={A_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.85)`} style={{ userSelect: 'none' }}>VALIDATE</text>
+            fill={`${TEAL_TEXT}0.969)`} style={{ userSelect: 'none' }}>VALIDATE</text>
         </motion.g>
         {/* VALIDATE → RESOLVED line */}
         <motion.line
@@ -167,7 +169,7 @@ export default function FMEstablishing() {
           <text x={OA_CX} y={OA_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.90)`} style={{ userSelect: 'none' }}>RESOLVED ✓</text>
+            fill={`${TEAL_TEXT}0.979)`} style={{ userSelect: 'none' }}>RESOLVED ✓</text>
         </motion.g>
 
         {/* ── BRANCH B: documented middle path ─────────────────────── */}
@@ -191,7 +193,7 @@ export default function FMEstablishing() {
           <text x={B_CX} y={B_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.85)`} style={{ userSelect: 'none' }}>PROCESS</text>
+            fill={`${TEAL_TEXT}0.969)`} style={{ userSelect: 'none' }}>PROCESS</text>
         </motion.g>
         {/* PROCESS → APPROVE line */}
         <motion.line
@@ -213,7 +215,7 @@ export default function FMEstablishing() {
           <text x={B2_CX} y={B2_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.85)`} style={{ userSelect: 'none' }}>APPROVE</text>
+            fill={`${TEAL_TEXT}0.969)`} style={{ userSelect: 'none' }}>APPROVE</text>
         </motion.g>
         {/* APPROVE → COMPLETE line */}
         <motion.line
@@ -235,7 +237,7 @@ export default function FMEstablishing() {
           <text x={OB_CX} y={OB_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${TEAL}0.90)`} style={{ userSelect: 'none' }}>COMPLETE ✓</text>
+            fill={`${TEAL_TEXT}0.979)`} style={{ userSelect: 'none' }}>COMPLETE ✓</text>
         </motion.g>
 
         {/* ── PATHOLOGIES (amber, appear after documented flow) ─────── */}
@@ -266,7 +268,7 @@ export default function FMEstablishing() {
           <text x={DE_X + DE_W + 17} y={DE_CY + 1}
             textAnchor="start" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${AMBER}0.55)`} style={{ userSelect: 'none' }}>DEAD END</text>
+            fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>DEAD END</text>
         </motion.g>
 
         {/* LOOP: arc from APPROVE bottom back to PROCESS bottom */}
@@ -283,7 +285,7 @@ export default function FMEstablishing() {
           <text x={(B_CX + B2_CX) / 2} y={B_CY + 73}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`${AMBER}0.60)`} style={{ userSelect: 'none' }}>↺ LOOP</text>
+            fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}>↺ LOOP</text>
         </motion.g>
 
         {/* UNINTENDED BRANCH: fork → ESCALATE (accreted, bottom) */}
@@ -300,7 +302,7 @@ export default function FMEstablishing() {
           <text x={FORK_CX + 14} y={(FORK_CY + C_CY) / 2 + 2}
             textAnchor="start" dominantBaseline="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${AMBER}0.45)`} style={{ userSelect: 'none' }}>⊘ UNINTENDED</text>
+            fill={`${AMBER_TEXT}0.83)`} style={{ userSelect: 'none' }}>⊘ UNINTENDED</text>
           {/* ESCALATE node */}
           <rect x={C_X} y={C_Y} width={C_W} height={C_W - 64} rx={5}
             fill={`${AMBER}0.07)`} stroke={`${AMBER}0.38)`} strokeWidth={1}
@@ -338,7 +340,7 @@ export default function FMEstablishing() {
           <text x={(RD_CX + RD_W/2 + OB_X + 20) / 2 + 10} y={(C_CY + OB_CY + OB_H/2) / 2}
             textAnchor="start" dominantBaseline="middle"
             fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`${AMBER}0.45)`} style={{ userSelect: 'none' }}>≡ REDUNDANT</text>
+            fill={`${AMBER_TEXT}0.83)`} style={{ userSelect: 'none' }}>≡ REDUNDANT</text>
         </motion.g>
 
         {/* ── Caption ───────────────────────────────────────────────── */}
