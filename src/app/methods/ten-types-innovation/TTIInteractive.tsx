@@ -191,7 +191,7 @@ export default function TTIInteractive() {
           return (
             <g
               key={tile.id}
-              style={{ cursor: 'pointer', outline: 'none' }}
+              style={{ cursor: 'pointer' }}
               onClick={() => handleClick(tile.id)}
               onMouseEnter={() => setHovered(tile.id)}
               onMouseLeave={() => setHovered(null)}

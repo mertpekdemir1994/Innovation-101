@@ -213,7 +213,7 @@ export default function TenTypesInnovationPage() {
               </div>
 
               <div>
-                <p className="font-mono uppercase tracking-widest mb-4" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}>
+                <p className="font-mono uppercase tracking-widest mb-4" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                   Do not lean on it when
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -223,7 +223,7 @@ export default function TenTypesInnovationPage() {
                     'The task is purely to improve one product feature and combination is genuinely not on the table, though the framework\'s whole point is to question that assumption.',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <span style={{ color: 'var(--color-neutral-400)', flexShrink: 0, marginTop: 2 }}>×</span>
+                      <span style={{ color: 'var(--color-neutral-500)', flexShrink: 0, marginTop: 2 }}>×</span>
                       <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                         {item}
                       </span>
@@ -532,7 +532,7 @@ export default function TenTypesInnovationPage() {
               ))}
             </div>
 
-            <p className="mt-6" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)', fontStyle: 'italic' }}>
+            <p className="mt-6" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)', fontStyle: 'italic' }}>
               Note: the 10 Types is a strategic diagnostic tool. It intentionally maps to fewer frameworks than the universal research methods, and is blank at fast-discovery or session-level phases. These blanks are intentional.
             </p>
           </div>

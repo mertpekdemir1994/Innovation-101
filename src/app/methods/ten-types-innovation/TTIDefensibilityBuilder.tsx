@@ -306,7 +306,7 @@ export default function TTIDefensibilityBuilder() {
           return (
             <g
               key={tile.id}
-              style={{ cursor: 'pointer', outline: 'none' }}
+              style={{ cursor: 'pointer' }}
               onClick={() => toggle(tile.id)}
               onMouseEnter={() => setHovered(tile.id)}
               onMouseLeave={() => setHovered(null)}
