@@ -101,7 +101,7 @@ export default function SBInteractive() {
     <div>
       {/* Blueprint SVG */}
       <div className="w-full select-none mb-8" aria-label="Service blueprint, click a layer to explore it" role="group">
-        <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ display: 'block', overflow: 'visible' }}>
+        <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}>
           <defs>
             <filter id="sb-int-glow" x="-20%" y="-200%" width="140%" height="500%">
               <feGaussianBlur stdDeviation="2.5" result="b" />

@@ -64,7 +64,7 @@ export default function SBAIReactivated() {
 
       {/* Blueprint SVG */}
       <div className="w-full select-none mb-10" aria-hidden="true">
-        <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ display: 'block', overflow: 'visible' }}>
+        <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}>
           <defs>
             <filter id="sb-ai-glow" x="-20%" y="-200%" width="140%" height="500%">
               <feGaussianBlur stdDeviation="2.5" result="b" />
