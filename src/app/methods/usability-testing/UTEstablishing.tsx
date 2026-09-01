@@ -74,7 +74,7 @@ export default function UTEstablishing() {
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Expectation versus behavior gap. Two paths through an interface. The INTENDED PATH is a clean straight line from START through ACCOUNT, BILLING, and CANCEL to DONE. The ACTUAL PATH wanders: it hesitates at ACCOUNT, takes a wrong turn up to Plan Details, backtracks to ACCOUNT, reaches BILLING, then gets stuck before CANCEL, never reaching DONE. Four friction points are marked: HESITATION at ACCOUNT, WRONG TURN at Plan Details, BACKTRACK on the return, STUCK before CANCEL. The gap between the two paths is the finding."
-        style={{ width: '100%', maxWidth: SVG_W, display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
       >
         <defs>
           <filter id="ut-est-glow" x="-20%" y="-20%" width="140%" height="140%">
