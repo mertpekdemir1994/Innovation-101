@@ -17,14 +17,14 @@ const CARDS: { id: Persona; name: string; cx: number }[] = [
 const AI_NOTES: Record<Persona, { well: string; risks: string }> = {
   optimizer: {
     well:  'AI reliably generates an Optimizer-type persona. The tech-savvy, feature-demanding power user is common in training data and matches the dominant assumption about "digital product users." This one AI tends to get right.',
-    risks: "The Optimizer appearing in AI output can create false confidence. One correct-looking persona does not mean the set is complete. The more important question is always: who didn't the AI generate? The Avoider — the most common real user — does not appear.",
+    risks: "The Optimizer appearing in AI output can create false confidence. One correct-looking persona does not mean the set is complete. The more important question is always: who didn't the AI generate? The Avoider, the most common real user, does not appear.",
   },
   avoider: {
     well:  'When given REAL interview data showing anxious, shame-driven budgeting behavior, AI is excellent at clustering these signals, finding the pattern across multiple interviews faster than manual analysis.',
-    risks: "This is the persona AI almost never generates from nothing. The Avoider is underrepresented in public data, non-obvious, and counterintuitive. AI trained on 'budgeting app users' returns confident optimizers; only real interviews surface the Avoider. This persona reframed the entire product — and AI-generation reliably buries it.",
+    risks: "This is the persona AI almost never generates from nothing. The Avoider is underrepresented in public data, non-obvious, and counterintuitive. AI trained on 'budgeting app users' returns confident optimizers; only real interviews surface the Avoider. This persona reframed the entire product, and AI-generation reliably buries it.",
   },
   newcomer: {
-    well:  "AI generates a 'first-timer' persona reasonably well — the pattern is common enough in training data. A Newcomer-type typically appears in AI output alongside the Optimizer.",
+    well:  "AI generates a 'first-timer' persona reasonably well, the pattern is common enough in training data. A Newcomer-type typically appears in AI output alongside the Optimizer.",
     risks: "The generic first-timer AI produces often lacks the specific texture that makes a persona useful: the exact vocabulary confusions, the specific moment shame kicks in, the precise fear triggers. It reads as plausible and teaches you little you did not already assume.",
   },
 }
@@ -79,7 +79,7 @@ export default function PAAIReactivated() {
 
             return (
               <g key={id}>
-                {/* Ambient halo — navy or indigo depending on mode */}
+                {/* Ambient halo: navy or indigo depending on mode */}
                 <motion.ellipse
                   cx={cx} cy={CT + CH / 2}
                   rx={54} ry={82}
@@ -87,7 +87,7 @@ export default function PAAIReactivated() {
                   transition={{ duration: 0.3 }}
                 />
 
-                {/* Card frame — visible surface; dashed when AI mode */}
+                {/* Card frame: visible surface; dashed when AI mode */}
                 <motion.rect
                   x={cx - CW} y={CT}
                   width={CW * 2} height={CH}
@@ -99,7 +99,7 @@ export default function PAAIReactivated() {
                   transition={{ duration: 0.3 }}
                 />
 
-                {/* Avatar — head */}
+                {/* Avatar: head */}
                 <motion.circle
                   cx={cx} cy={headCy} r={12}
                   strokeWidth={1.5}
@@ -107,7 +107,7 @@ export default function PAAIReactivated() {
                   animate={{ fill: avatarFill(id), stroke: avatarStroke(id) }}
                   transition={{ duration: 0.3 }}
                 />
-                {/* Avatar — shoulders dome (no divider line through the figure) */}
+                {/* Avatar: shoulders dome (no divider line through the figure) */}
                 <motion.path
                   d={dome(cx, bodyCy, 17, bodyH)}
                   strokeWidth={1.5}
@@ -246,7 +246,7 @@ export default function PAAIReactivated() {
           The honest synthesis
         </p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
-          AI makes persona <em>production</em> trivial — a polished set of cards in seconds. That is precisely the danger. The value of a persona was never the card; it was the research and synthesis behind it. Used to accelerate clustering of your <em>real</em> interview data, AI is a genuine help. Used to skip the research and generate people from nothing, it produces exactly the assumption-based fiction this method exists to prevent — just faster, more convincingly, and with the authority of a finished artifact. The personas AI doesn&rsquo;t generate are almost always the most important ones.
+          AI makes persona <em>production</em> trivial: a polished set of cards in seconds. That is precisely the danger. The value of a persona was never the card; it was the research and synthesis behind it. Used to accelerate clustering of your <em>real</em> interview data, AI is a genuine help. Used to skip the research and generate people from nothing, it produces exactly the assumption-based fiction this method exists to prevent, just faster, more convincingly, and with the authority of a finished artifact. The personas AI doesn&rsquo;t generate are almost always the most important ones.
         </p>
       </div>
     </div>

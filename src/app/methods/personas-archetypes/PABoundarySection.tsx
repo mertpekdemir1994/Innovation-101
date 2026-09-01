@@ -18,18 +18,18 @@ const DETAIL: Record<State, { heading: string; descriptor: string; body: string;
   personas: {
     heading:    'The RANGE',
     descriptor: 'Multiple research-grounded portraits',
-    body:       'A SET of portraits covering the meaningful diversity of real users — the confident and the anxious, the expert and the first-timer. Plural by design. Built from primary research. The job is to hold the range of real users in the room so you design for people who are not you.',
+    body:       'A SET of portraits covering the meaningful diversity of real users: the confident and the anxious, the expert and the first-timer. Plural by design. Built from primary research. The job is to hold the range of real users in the room so you design for people who are not you.',
   },
   avatars: {
     heading:    'The BEACHHEAD',
     descriptor: 'Single specialized target market',
-    body:       'ONE specific market — the narrowest viable group you commit to dominating before expanding to anyone else. Not a customer portrait: an Avatar is "boutique fitness studio owners in urban markets," not a named fictional person. It is a strategic bet on a beachhead. You use it to concentrate go-to-market resources until you own that ring, then expand outward. An Avatar and a persona answer different questions at different scales — you can have three personas within your Avatar market.',
+    body:       'ONE specific market: the narrowest viable group you commit to dominating before expanding to anyone else. Not a customer portrait: an Avatar is "boutique fitness studio owners in urban markets," not a named fictional person. It is a strategic bet on a beachhead. You use it to concentrate go-to-market resources until you own that ring, then expand outward. An Avatar and a persona answer different questions at different scales; you can have three personas within your Avatar market.',
     link: '/methods/avatars',
   },
   segments: {
     heading:    'The BUCKETS',
     descriptor: 'Demographic or statistical groupings',
-    body:       'Quantitative groupings by age, income, geography, or behavior — used for market sizing and slicing, not for understanding motivation. A segment tells you a group exists and roughly how large it is; a persona tells you what someone inside it wants and why. Building personas from segments alone (demographics plus a stock photo) is the classic error this distinction prevents.',
+    body:       'Quantitative groupings by age, income, geography, or behavior, used for market sizing and slicing, not for understanding motivation. A segment tells you a group exists and roughly how large it is; a persona tells you what someone inside it wants and why. Building personas from segments alone (demographics plus a stock photo) is the classic error this distinction prevents.',
   },
 }
 
@@ -75,7 +75,7 @@ function PersonasSVG() {
       <text x={200} y={172} textAnchor="middle" fontSize="8"
         fontFamily="var(--font-mono)" letterSpacing="0.12em"
         fill="rgba(255,255,255,0.35)" style={{ userSelect: 'none' }}
-      >THE RANGE — THREE PORTRAITS</text>
+      >THE RANGE, THREE PORTRAITS</text>
     </svg>
   )
 }
@@ -92,7 +92,7 @@ function AvatarsSVG() {
           <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
         </filter>
       </defs>
-      {/* Concentric bullseye rings — outer → inner = beachhead */}
+      {/* Concentric bullseye rings: outer to inner = beachhead */}
       {radii.map((r, i) => (
         <circle key={i} cx={200} cy={88} r={r}
           fill={i === 3 ? `${PLUM_B}0.70)` : i === 2 ? `${PLUM_B}0.12)` : i === 1 ? `${PLUM_B}0.08)` : `${PLUM_B}0.05)`}
@@ -108,7 +108,7 @@ function AvatarsSVG() {
       <text x={200} y={172} textAnchor="middle" fontSize="8"
         fontFamily="var(--font-mono)" letterSpacing="0.12em"
         fill="rgba(255,255,255,0.35)" style={{ userSelect: 'none' }}
-      >THE BEACHHEAD — ONE MARKET</text>
+      >THE BEACHHEAD, ONE MARKET</text>
     </svg>
   )
 }
@@ -145,7 +145,7 @@ function SegmentsSVG() {
       <text x={200} y={172} textAnchor="middle" fontSize="8"
         fontFamily="var(--font-mono)" letterSpacing="0.12em"
         fill="rgba(255,255,255,0.35)" style={{ userSelect: 'none' }}
-      >THE BUCKETS — DEMOGRAPHIC GROUPS</text>
+      >THE BUCKETS, DEMOGRAPHIC GROUPS</text>
     </svg>
   )
 }

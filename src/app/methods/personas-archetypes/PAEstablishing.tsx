@@ -67,7 +67,7 @@ export default function PAEstablishing() {
           return (
             <motion.g key={id} variants={riseIn} transition={cardT}>
 
-              {/* ── Card frame — visible navy surface on the dark page ── */}
+              {/* Card frame: visible navy surface on the dark page */}
               <rect
                 x={cx - CW} y={CT}
                 width={CW * 2} height={CH}
@@ -77,14 +77,14 @@ export default function PAEstablishing() {
                 filter="url(#pa-est-glow)"
               />
 
-              {/* ── Avatar — head ── */}
+              {/* Avatar: head */}
               <circle
                 cx={cx} cy={headCy}
                 r={12}
                 fill="rgba(255,255,255,0.12)"
                 stroke="rgba(255,255,255,0.88)" strokeWidth={1.5}
               />
-              {/* ── Avatar — shoulders dome (no divider line through the figure) ── */}
+              {/* Avatar: shoulders dome (no divider line through the figure) */}
               <path
                 d={dome(cx, bodyCy, 17, bodyH)}
                 fill="rgba(255,255,255,0.12)"

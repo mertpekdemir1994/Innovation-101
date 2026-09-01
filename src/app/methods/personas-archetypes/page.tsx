@@ -22,7 +22,7 @@ const FRAMEWORK_LINKS = [
   { slug: 'double-diamond',   name: 'Double Diamond',   phase: 'Define',           note: 'Synthesizing discovery research into who the problem is for.' },
   { slug: 'design-thinking',  name: 'Design Thinking',  phase: 'Define',           note: 'A core synthesis artifact of the define stage, where research becomes design targets.' },
   { slug: 'agile-innovation', name: 'Agile Innovation', phase: 'Discovery Sprint', note: 'Grounding the backlog in specific, research-based user types.' },
-  { slug: 'lean-startup',     name: 'Lean Startup',     phase: 'Build',            note: 'Informs the hypothesis — who the early-adopter customer actually is and what job they need done.' },
+  { slug: 'lean-startup',     name: 'Lean Startup',     phase: 'Build',            note: 'Informs the hypothesis: who the early-adopter customer actually is and what job they need done.' },
 ]
 
 const RELATED_METHODS = [
@@ -30,7 +30,7 @@ const RELATED_METHODS = [
   { slug: 'in-depth-interviews',    name: 'In-Depth Interviews',    rel: 'The primary research source personas are built from. Personas are the synthesis; interviews are the evidence.' },
   { slug: 'contextual-observation', name: 'Contextual Observation', rel: 'Observation of real behavior in context is core evidence for grounded personas alongside interviews.' },
   { slug: 'empathy-mapping',        name: 'Empathy Mapping',        rel: 'A companion synthesis tool; empathy maps often feed directly into a persona.' },
-  { slug: 'jobs-to-be-done',        name: 'Jobs To Be Done',        rel: 'A complementary lens: JTBD focuses on the job the person is trying to do; personas focus on who the person is. Powerful together.' },
+  { slug: 'jobs-to-be-done',        name: 'Jobs To Be Done',        rel: 'A complementary lens: JTBD focuses on the job the person is trying to do; personas focus on who the person is. Useful together.' },
 ]
 
 // ── Page ──────────────────────────────────────────────────────────────────────
@@ -39,7 +39,7 @@ export default function PersonasArchetypesPage() {
   return (
     <>
       {/* ────────────────────────────────────────────────────────────
-          S1 — Header / Identity   DARK
+          S1 - Header / Identity   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -81,7 +81,7 @@ export default function PersonasArchetypesPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S2 — Establishing visual   DARK (scroll-in)
+          S2 - Establishing visual   DARK (scroll-in)
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -92,7 +92,7 @@ export default function PersonasArchetypesPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S3 — What it is   LIGHT
+          S3 - What it is   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -105,7 +105,7 @@ export default function PersonasArchetypesPage() {
                 A persona is a research-grounded portrait of a type of user: their goals, motivations, behaviors, frustrations, and context, distilled into a single, memorable, shareable representation. Archetypes are the same idea at a higher level of abstraction: rather than a named, detailed individual, an archetype captures a behavioral pattern or role (the Optimizer, the Reluctant Adopter, the Power User) stripped of biographical specifics. Personas are concrete; archetypes are abstract; both do the same job.
               </Body>
               <Body>
-                That job is to keep the real diversity of users in the room. Left unchecked, every team designs for itself &mdash; for the user it imagines, who tends to look suspiciously like the team. A well-built set of personas, covering the meaningful range of real users (the confident and the anxious, the expert and the first-timer), forces the team to design for people who are not them. When a designer asks &ldquo;but what would the Avoider do here?&rdquo;, the persona is doing its job.
+                That job is to keep the real diversity of users in the room. Left unchecked, every team designs for itself: for the user it imagines, who tends to look suspiciously like the team. A well-built set of personas, covering the meaningful range of real users (the confident and the anxious, the expert and the first-timer), forces the team to design for people who are not them. When a designer asks &ldquo;but what would the Avoider do here?&rdquo;, the persona is doing its job.
               </Body>
               <Body>
                 The single most important thing about a persona is what it is <em>not</em>: it is not a fictional character invented in a workshop to feel plausible. A persona invented from assumption is worse than no persona, because it wears the authority of a real user while teaching the team only its own biases back. A persona is only as valuable as the research beneath it.
@@ -116,7 +116,7 @@ export default function PersonasArchetypesPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S4 — Interactive signature visual   DARK
+          S4 - Interactive signature visual   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -127,7 +127,7 @@ export default function PersonasArchetypesPage() {
               className="mb-12 max-w-[520px]"
               style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)' }}
             >
-              As you click across the cards, the range becomes tangible &mdash; genuinely different people with genuinely different needs. Designing for only one of them would fail the others.
+              As you click across the cards, the range becomes tangible, genuinely different people with genuinely different needs. Designing for only one of them would fail the others.
             </p>
             <PAInteractive />
           </div>
@@ -135,7 +135,7 @@ export default function PersonasArchetypesPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S5 — When to deploy   LIGHT
+          S5 - When to deploy   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -171,8 +171,8 @@ export default function PersonasArchetypesPage() {
                 </p>
                 <ul className="flex flex-col gap-3">
                   {[
-                    'You have no research to ground them in. A persona built from assumption is actively misleading — see Best Practices.',
-                    'You genuinely have one sharp target customer and want to align focus around them, not cover a range (use an Avatar instead — see section 11).',
+                    'You have no research to ground them in. A persona built from assumption is actively misleading; see Best Practices.',
+                    'You genuinely have one sharp target customer and want to align focus around them, not cover a range (use an Avatar instead, see section 11).',
                     'You need statistical market sizing or demographic segmentation. That is market segmentation, a different tool.',
                     'The team will make beautiful persona posters and then never look at them again. A persona that never enters a real decision is decoration.',
                   ].map((item, i) => (
@@ -200,7 +200,7 @@ export default function PersonasArchetypesPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S6 — How it works   WARM
+          S6 - How it works   WARM
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -218,7 +218,7 @@ export default function PersonasArchetypesPage() {
                 {
                   n: '02',
                   title: 'Find the patterns, not the average.',
-                  body: "Look across the research for meaningful clusters of behavior and motivation — distinct types, not a single blended 'average user' who is, in fact, nobody. The clusters become the personas.",
+                  body: "Look across the research for meaningful clusters of behavior and motivation: distinct types, not a single blended 'average user' who is, in fact, nobody. The clusters become the personas.",
                 },
                 {
                   n: '03',
@@ -228,7 +228,7 @@ export default function PersonasArchetypesPage() {
                 {
                   n: '04',
                   title: 'Build each portrait around what drives decisions.',
-                  body: 'Goals, motivations, behaviors, frustrations, and context — the things that actually change a design decision. Resist padding personas with irrelevant biographical detail (favorite coffee, a stock photo) that adds realism but no design value.',
+                  body: 'Goals, motivations, behaviors, frustrations, and context: the things that actually change a design decision. Resist padding personas with irrelevant biographical detail (favorite coffee, a stock photo) that adds realism but no design value.',
                 },
                 {
                   n: '05',
@@ -262,13 +262,13 @@ export default function PersonasArchetypesPage() {
       </WarmSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S7 — Best practices   LIGHT
+          S7 - Best practices   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
           <div className="py-20">
             <SectionLabel accent={NAVY}>Best practices</SectionLabel>
-            <SectionHeadingLight>What good looks like — and the mistakes that prevent it.</SectionHeadingLight>
+            <SectionHeadingLight>What good looks like, and the mistakes that prevent it.</SectionHeadingLight>
 
             <h3 className="font-semibold mb-4" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
               When it goes well
@@ -309,7 +309,7 @@ export default function PersonasArchetypesPage() {
                 },
                 {
                   mistake: 'Too many personas.',
-                  fix: 'A set of nine personas gets used as often as zero. Keep it to a memorable, usable few — three to five is the usual range.',
+                  fix: 'A set of nine personas gets used as often as zero. Keep it to a memorable, usable few: three to five is the usual range.',
                 },
                 {
                   mistake: 'Building them and shelving them.',
@@ -339,7 +339,7 @@ export default function PersonasArchetypesPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S8 — Logistics   WARM
+          S8 - Logistics   WARM
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -370,7 +370,7 @@ export default function PersonasArchetypesPage() {
                 },
                 {
                   label: 'Sharing them',
-                  body: 'Personas live where the team works — on the wall, in the design system, in the project workspace, referenced by name. Common formats are one-page persona cards; the format matters less than whether people actually reach for them.',
+                  body: 'Personas live where the team works: on the wall, in the design system, in the project workspace, referenced by name. Common formats are one-page persona cards; the format matters less than whether people actually reach for them.',
                 },
               ].map(({ label, body }) => (
                 <div key={label} className="flex gap-4">
@@ -391,7 +391,7 @@ export default function PersonasArchetypesPage() {
       </WarmSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S9 — How AI is evolving this method   DARK
+          S9 - How AI is evolving this method   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -410,7 +410,7 @@ export default function PersonasArchetypesPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S10 — In-depth example   LIGHT
+          S10 - In-depth example   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -426,7 +426,7 @@ export default function PersonasArchetypesPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S11 — Personas vs Avatars vs Segments   DARK  [ADDED]
+          S11 - Personas vs Avatars vs Segments   DARK  [ADDED]
           ──────────────────────────────────────────────────────────── */}
       <DarkSection>
         <Container>
@@ -445,7 +445,7 @@ export default function PersonasArchetypesPage() {
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S12 — Used in these frameworks   LIGHT
+          S12 - Used in these frameworks   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -485,7 +485,7 @@ export default function PersonasArchetypesPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S13 — Related methods   LIGHT
+          S13 - Related methods   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <LightSection>
         <Container prose>
@@ -515,7 +515,7 @@ export default function PersonasArchetypesPage() {
       </LightSection>
 
       {/* ────────────────────────────────────────────────────────────
-          S14 — Sources & further reading   LIGHT
+          S14 - Sources & further reading   LIGHT
           ──────────────────────────────────────────────────────────── */}
       <WarmSection>
         <Container prose>
@@ -529,7 +529,7 @@ export default function PersonasArchetypesPage() {
                   title:  'About Face: The Essentials of Interaction Design',
                   author: 'Alan Cooper, Robert Reimann, David Cronin, and Christopher Noessel',
                   year:   '2014',
-                  note:   'Cooper originated the persona method. This is its definitive treatment — where the concept of the persona as a research-grounded design tool was first fully articulated.',
+                  note:   'Cooper originated the persona method. This is its definitive treatment, where the concept of the persona as a research-grounded design tool was first fully articulated.',
                 },
                 {
                   title:  'The User Is Always Right',
@@ -541,7 +541,7 @@ export default function PersonasArchetypesPage() {
                   title:  'Universal Methods of Design',
                   author: 'Bella Martin and Bruce Hanington',
                   year:   '2012',
-                  note:   'Personas among the wider catalog of research and synthesis methods — useful for understanding how personas fit alongside other tools.',
+                  note:   'Personas among the wider catalog of research and synthesis methods, useful for understanding how personas fit alongside other tools.',
                 },
               ].map(({ title, author, year, note }) => (
                 <div

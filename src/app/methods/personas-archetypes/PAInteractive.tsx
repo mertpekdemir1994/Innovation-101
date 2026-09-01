@@ -38,9 +38,9 @@ const PERSONA_DETAIL: Record<Persona, {
     heading:     'The Avoider',
     tag:         'The anxious one',
     goal:        'Feel okay about money without having to confront the numbers directly.',
-    behavior:    "Avoids checking their balance when they suspect they've overspent. Manages by feel, not tracking. Opens budgeting apps rarely — and closes them quickly when they do.",
+    behavior:    "Avoids checking their balance when they suspect they've overspent. Manages by feel, not tracking. Opens budgeting apps rarely, and closes them quickly when they do.",
     frustration: '"The moment I open a budgeting app I feel judged. The red charts make everything worse."',
-    research:    'The most common type in the research — 6 of 15 interviews. Almost never anticipated. The persona that completely reframed the product direction.',
+    research:    'The most common type in the research: 6 of 15 interviews. Almost never anticipated. The persona that completely reframed the product direction.',
   },
   newcomer: {
     heading:     'The Newcomer',
@@ -108,7 +108,7 @@ export default function PAInteractive() {
           width="100%"
           style={{ overflow: 'visible' }}
           role="group"
-          aria-label="Persona set — click a card to learn about that persona"
+          aria-label="Persona set, click a card to learn about that persona"
         >
           <defs>
             <filter id="pa-int-glow" x="-40%" y="-40%" width="180%" height="180%">
@@ -144,7 +144,7 @@ export default function PAInteractive() {
                   }
                 }}
               >
-                {/* Card frame — visible navy surface */}
+                {/* Card frame: visible navy surface */}
                 <motion.rect
                   x={cx - CW} y={CT}
                   width={CW * 2} height={CH}
@@ -155,14 +155,14 @@ export default function PAInteractive() {
                   transition={{ duration: 0.22 }}
                 />
 
-                {/* Avatar — head (white line art on navy card) */}
+                {/* Avatar: head (white line art on navy card) */}
                 <motion.circle
                   cx={cx} cy={headCy} r={12}
                   strokeWidth={1.5}
                   animate={{ fill: avatarFill(st), stroke: avatarStroke(st) }}
                   transition={{ duration: 0.22 }}
                 />
-                {/* Avatar — shoulders dome (no divider line colliding with figure) */}
+                {/* Avatar: shoulders dome (no divider line colliding with figure) */}
                 <motion.path
                   d={dome(cx, bodyCy, 17, bodyH)}
                   strokeWidth={1.5}
