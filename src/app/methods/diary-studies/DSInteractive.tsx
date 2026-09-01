@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 const SVG_W = 700
 const SVG_H = 268
@@ -118,10 +119,10 @@ export default function DSInteractive() {
             fill="rgba(255,255,255,0.18)" />
           <text x={AXIS_X0} y={AXIS_Y - 6}
             fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.25)" style={{ userSelect: 'none' }}>TIME →</text>
+            fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}>TIME →</text>
           <text x={AXIS_X1 + 6} y={AXIS_Y + 4}
             fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.06em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}>14 DAYS</text>
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>14 DAYS</text>
 
           {/* Entries (appear one by one) */}
           <AnimatePresence>
@@ -150,7 +151,7 @@ export default function DSInteractive() {
                     strokeWidth={e.pattern ? 1.2 : 0.8} />
                   <text x={cx} y={AXIS_Y + 11} textAnchor="middle"
                     fontSize="4.5" fontFamily="system-ui, sans-serif"
-                    fill={e.pattern ? `${SAGE}0.55)` : 'rgba(255,255,255,0.26)'}
+                    fill={e.pattern ? `${SAGE_TEXT}0.905)` : 'rgba(255,255,255,0.63)'}
                     style={{ userSelect: 'none' }}>{e.day}</text>
 
                   {/* Glow */}
@@ -171,17 +172,17 @@ export default function DSInteractive() {
                   <text x={cx} y={cy + 14} textAnchor="middle"
                     fontSize="6.5" fontFamily="system-ui, sans-serif"
                     fontWeight="600" letterSpacing="0.08em"
-                    fill={e.pattern ? `${SAGE}0.92)` : 'rgba(255,255,255,0.74)'}
+                    fill={e.pattern ? `${SAGE_TEXT}0.983)` : 'rgba(255,255,255,0.74)'}
                     style={{ userSelect: 'none' }}>{e.context}</text>
                   <text x={cx} y={cy + 25} textAnchor="middle"
                     fontSize="4.5" fontFamily="system-ui, sans-serif"
-                    fill="rgba(255,255,255,0.30)"
+                    fill="rgba(255,255,255,0.65)"
                     style={{ userSelect: 'none' }}>{`${e.time} · ${e.location}`}</text>
                   <line x1={cardL + 8} y1={cy + 32} x2={cardL + CW - 8} y2={cy + 32}
                     stroke="rgba(255,255,255,0.08)" strokeWidth={0.7} />
                   <text x={cx} y={cy + 44} textAnchor="middle"
                     fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.07em"
-                    fill={e.pattern ? `${SAGE}0.80)` : 'rgba(255,255,255,0.45)'}
+                    fill={e.pattern ? `${SAGE_TEXT}0.958)` : 'rgba(255,255,255,0.725)'}
                     style={{ userSelect: 'none' }}>{e.emotion}</text>
                 </motion.g>
               )
@@ -199,7 +200,7 @@ export default function DSInteractive() {
                   stroke={`${SAGE}0.55)`} fill="none" strokeWidth={1.4} strokeDasharray="4 3" />
                 <text x={378} y={AXIS_Y + 50} textAnchor="middle"
                   fontSize="4.8" fontFamily="system-ui, sans-serif" letterSpacing="0.09em"
-                  fill={`${SAGE}0.70)`} style={{ userSelect: 'none' }}>
+                  fill={`${SAGE_TEXT}0.937)`} style={{ userSelect: 'none' }}>
                   CONTEXT FRICTION PATTERN: DAY 3 / 7 / 10 / 13
                 </text>
               </motion.g>

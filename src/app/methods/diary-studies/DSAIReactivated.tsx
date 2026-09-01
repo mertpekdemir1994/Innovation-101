@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE   = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const SVG_H = 268
@@ -95,10 +97,10 @@ export default function DSAIReactivated() {
             fill="rgba(255,255,255,0.18)" />
           <text x={AXIS_X0} y={AXIS_Y - 6}
             fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.25)" style={{ userSelect: 'none' }}>TIME →</text>
+            fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}>TIME →</text>
           <text x={AXIS_X1 + 6} y={AXIS_Y + 4}
             fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.06em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}>14 DAYS</text>
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>14 DAYS</text>
 
           {/* Cards + overlays */}
           <AnimatePresence mode="wait">
@@ -129,7 +131,7 @@ export default function DSAIReactivated() {
                       strokeWidth={e.pattern ? 1.2 : 0.8} />
                     <text x={cx} y={AXIS_Y + 11} textAnchor="middle"
                       fontSize="4.5" fontFamily="system-ui, sans-serif"
-                      fill={e.pattern ? `${activeColor}0.55)` : 'rgba(255,255,255,0.26)'}
+                      fill={e.pattern ? `${activeColor}0.55)` : 'rgba(255,255,255,0.63)'}
                       style={{ userSelect: 'none' }}>{e.day}</text>
 
                     {/* Glow */}
@@ -152,7 +154,7 @@ export default function DSAIReactivated() {
                           fill={`${INDIGO}0.22)`} />
                         <text x={cardL + 7} y={cy + 12} fontSize="4.5"
                           fontFamily="system-ui, sans-serif" letterSpacing="0.06em"
-                          fill={`${INDIGO}0.85)`} style={{ userSelect: 'none' }}>{e.aiTag}</text>
+                          fill={`${INDIGO_TEXT}0.969)`} style={{ userSelect: 'none' }}>{e.aiTag}</text>
                       </>
                     )}
 
@@ -166,7 +168,7 @@ export default function DSAIReactivated() {
                     {/* Emotion */}
                     <text x={cx} y={cy + (isAI && e.pattern ? 44 : 44)} textAnchor="middle"
                       fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.07em"
-                      fill={e.pattern ? `${activeColor}0.75)` : 'rgba(255,255,255,0.45)'}
+                      fill={e.pattern ? `${activeColor}0.75)` : 'rgba(255,255,255,0.725)'}
                       style={{ userSelect: 'none' }}>{e.emotion}</text>
                   </g>
                 )
@@ -179,7 +181,7 @@ export default function DSAIReactivated() {
                     stroke={`${SAGE}0.50)`} fill="none" strokeWidth={1.2} strokeDasharray="4 3" />
                   <text x={378} y={AXIS_Y + 50} textAnchor="middle"
                     fontSize="4.8" fontFamily="system-ui, sans-serif" letterSpacing="0.09em"
-                    fill={`${SAGE}0.65)`} style={{ userSelect: 'none' }}>
+                    fill={`${SAGE_TEXT}0.926)`} style={{ userSelect: 'none' }}>
                     RESEARCHER IDENTIFIES: CONTEXT FRICTION PATTERN
                   </text>
                 </>
@@ -192,14 +194,14 @@ export default function DSAIReactivated() {
                     stroke={`${INDIGO}0.55)`} fill="none" strokeWidth={1.2} strokeDasharray="4 3" />
                   <text x={378} y={AXIS_Y + 50} textAnchor="middle"
                     fontSize="4.8" fontFamily="system-ui, sans-serif" letterSpacing="0.09em"
-                    fill={`${INDIGO}0.65)`} style={{ userSelect: 'none' }}>
+                    fill={`${INDIGO_TEXT}0.926)`} style={{ userSelect: 'none' }}>
                     AI: FRICTION/AVOIDANCE CLUSTER: 4 / 6 ENTRIES, CONTEXT VARIABLE
                   </text>
                   {/* AI speed badge */}
                   <rect x={14} y={14} width={108} height={16} rx={3}
                     fill={`${INDIGO}0.18)`} stroke={`${INDIGO}0.30)`} strokeWidth={0.7} />
                   <text x={22} y={25} fontSize="5" fontFamily="system-ui, sans-serif"
-                    letterSpacing="0.07em" fill={`${INDIGO}0.80)`}
+                    letterSpacing="0.07em" fill={`${INDIGO_TEXT}0.958)`}
                     style={{ userSelect: 'none' }}>AI: ANALYZED 6 ENTRIES</text>
                 </>
               )}
@@ -209,7 +211,7 @@ export default function DSAIReactivated() {
           {/* Caption */}
           <text x={SVG_W / 2} y={SVG_H - 3} textAnchor="middle"
             fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.18)"
+            fill="rgba(255,255,255,0.59)"
             style={{ userSelect: 'none' }}>
             {isAI
               ? 'AI CAN CLUSTER AND TAG REAL ENTRIES AT SCALE, BUT THE REAL ENTRIES MUST COME FROM REAL PARTICIPANTS'

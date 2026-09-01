@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const SAGE = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 const SVG_W = 700
 const SVG_H = 268
@@ -107,7 +108,7 @@ export default function DSEstablishing() {
               {/* Day label */}
               <text x={cx} y={AXIS_Y + 11} textAnchor="middle"
                 fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.05em"
-                fill={e.pattern ? `${SAGE}0.55)` : 'rgba(255,255,255,0.26)'}
+                fill={e.pattern ? `${SAGE_TEXT}0.905)` : 'rgba(255,255,255,0.63)'}
                 style={{ userSelect: 'none' }}>{e.day}</text>
 
               {/* Glow behind pattern cards */}
@@ -127,13 +128,13 @@ export default function DSEstablishing() {
               <text x={cx} y={cy + 14} textAnchor="middle"
                 fontSize="6.5" fontFamily="system-ui, sans-serif"
                 fontWeight="600" letterSpacing="0.08em"
-                fill={e.pattern ? `${SAGE}0.92)` : 'rgba(255,255,255,0.74)'}
+                fill={e.pattern ? `${SAGE_TEXT}0.983)` : 'rgba(255,255,255,0.74)'}
                 style={{ userSelect: 'none' }}>{e.context}</text>
 
               {/* Time + location */}
               <text x={cx} y={cy + 25} textAnchor="middle"
                 fontSize="4.5" fontFamily="system-ui, sans-serif"
-                fill="rgba(255,255,255,0.30)"
+                fill="rgba(255,255,255,0.65)"
                 style={{ userSelect: 'none' }}>{`${e.time} · ${e.location}`}</text>
 
               {/* Divider */}
@@ -143,7 +144,7 @@ export default function DSEstablishing() {
               {/* Emotion */}
               <text x={cx} y={cy + 44} textAnchor="middle"
                 fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.07em"
-                fill={e.pattern ? `${SAGE}0.80)` : 'rgba(255,255,255,0.45)'}
+                fill={e.pattern ? `${SAGE_TEXT}0.958)` : 'rgba(255,255,255,0.725)'}
                 style={{ userSelect: 'none' }}>{e.emotion}</text>
             </motion.g>
           )
@@ -159,7 +160,7 @@ export default function DSEstablishing() {
             stroke={`${SAGE}0.50)`} fill="none" strokeWidth={1.2} strokeDasharray="4 3" />
           <text x={378} y={AXIS_Y + 50} textAnchor="middle"
             fontSize="4.8" fontFamily="system-ui, sans-serif" letterSpacing="0.09em"
-            fill={`${SAGE}0.65)`} style={{ userSelect: 'none' }}>
+            fill={`${SAGE_TEXT}0.926)`} style={{ userSelect: 'none' }}>
             RECURRING PATTERN: CONTEXT FRICTION → DROPOUT
           </text>
         </motion.g>
