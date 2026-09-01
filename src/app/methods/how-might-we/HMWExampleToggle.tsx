@@ -170,7 +170,7 @@ export default function HMWExampleToggle() {
                           color: scope === 'brave'
                             ? `${NAVY}0.95)`
                             : scope === 'narrow'
-                              ? 'var(--color-neutral-400)'
+                              ? 'var(--color-neutral-500)'
                               : 'var(--color-neutral-800)',
                           lineHeight: 'var(--leading-relaxed)',
                         }}
@@ -189,7 +189,7 @@ export default function HMWExampleToggle() {
                       {scope === 'narrow' && (
                         <span
                           className="font-mono uppercase tracking-widest shrink-0"
-                          style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-400)' }}
+                          style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}
                         >ELIMINATED</span>
                       )}
                     </div>
@@ -279,7 +279,7 @@ export default function HMWExampleToggle() {
                 ))}
                 <p
                   className="text-center"
-                  style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-400)' }}
+                  style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)' }}
                 >+ 10 more questions, all efficiency-framed</p>
               </div>
             </div>
