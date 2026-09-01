@@ -117,7 +117,7 @@ export default function DTEvolutionTimeline() {
               </div>
               <p
                 className="font-mono text-2xs uppercase tracking-widest text-center leading-tight transition-colors duration-200"
-                style={{ color: active === i ? `${TEAL}0.85)` : 'var(--color-neutral-400)' }}
+                style={{ color: active === i ? `${TEAL}0.85)` : 'var(--color-neutral-500)' }}
               >
                 {ver.year}
               </p>

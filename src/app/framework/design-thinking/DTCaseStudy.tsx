@@ -309,7 +309,7 @@ export default function DTCaseStudy() {
           >
             <span
               className="font-mono text-2xs uppercase tracking-widest mb-space-1"
-              style={{ color: activeStage === key ? `${TEAL}0.65)` : 'var(--color-neutral-400)' }}
+              style={{ color: activeStage === key ? `${TEAL}0.65)` : 'var(--color-neutral-500)' }}
             >
               {mode}
             </span>
@@ -321,7 +321,7 @@ export default function DTCaseStudy() {
             </span>
             <span
               className="text-xs"
-              style={{ color: activeStage === key ? `${TEAL}0.55)` : 'var(--color-neutral-400)' }}
+              style={{ color: activeStage === key ? `${TEAL}0.55)` : 'var(--color-neutral-500)' }}
             >
               {sub}
             </span>
