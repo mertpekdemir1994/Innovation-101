@@ -34,33 +34,33 @@ type LayerId = 'customer-actions' | 'frontstage' | 'line-of-visibility' | 'backs
 const LAYER_DETAIL: Record<LayerId, { heading: string; tagline: string; body: string; belowLine: boolean }> = {
   'customer-actions': {
     heading: 'Customer Actions',
-    tagline: 'The visible journey — what the customer does',
+    tagline: 'The visible journey: what the customer does',
     belowLine: false,
     body: 'What the customer does at each stage of their experience. This is the journey map\'s top layer: searching, comparing, signing up, using, and resolving. The blueprint keeps this spine but extends everything downward through the layers that make it possible.',
   },
   'frontstage': {
     heading: 'Frontstage',
-    tagline: 'Above the line — seen by the customer',
+    tagline: 'Above the line: seen by the customer',
     belowLine: false,
-    body: 'The employee actions, interfaces, and touchpoints the customer directly encounters. The person they speak to, the form they complete, the app they open. The frontstage is the visible surface of service delivery — the last layer the customer can see before the line of visibility cuts off their view.',
+    body: 'The employee actions, interfaces, and touchpoints the customer directly encounters. The person they speak to, the form they complete, the app they open. The frontstage is the visible surface of service delivery: the last layer the customer can see before the line of visibility cuts off their view.',
   },
   'line-of-visibility': {
     heading: 'The Line of Visibility',
     tagline: 'The defining boundary of this method',
     belowLine: false,
-    body: 'The explicit divider between what the customer sees and what they do not. Everything above it is experienced by the customer. Everything below it makes the experience possible but stays invisible. The line is the whole point of a service blueprint — and the one thing a journey map deliberately omits. Crossing it is how you trace a customer-facing problem to its operational root.',
+    body: 'The explicit divider between what the customer sees and what they do not. Everything above it is experienced by the customer. Everything below it makes the experience possible but stays invisible. The line is the whole point of a service blueprint, and the one thing a journey map deliberately omits. Crossing it is how you trace a customer-facing problem to its operational root.',
   },
   'backstage': {
     heading: 'Backstage',
-    tagline: 'Below the line — invisible to the customer',
+    tagline: 'Below the line: invisible to the customer',
     belowLine: true,
     body: 'The employee actions the customer never sees. The team processing the request after the call ends, the approval that runs behind the confirmation screen, the preparation that precedes the visible interaction. Invisible but decisive: this is where many customer-facing problems are actually born, in the gap between what the customer experiences and the work happening out of sight.',
   },
   'support-processes': {
     heading: 'Support Processes / Systems',
-    tagline: 'The deepest layer — the infrastructure beneath it all',
+    tagline: 'The deepest layer: the infrastructure beneath it all',
     belowLine: true,
-    body: 'The systems, databases, platforms, and third-party services that enable the backstage and frontstage. The customer never sees this layer, but failures here surface directly as problems the customer feels. Tracing a complaint down to its source often ends here — a slow system, a disconnected database, an unintegrated platform that no one department owns.',
+    body: 'The systems, databases, platforms, and third-party services that enable the backstage and frontstage. The customer never sees this layer, but failures here surface directly as problems the customer feels. Tracing a complaint down to its source often ends here: a slow system, a disconnected database, an unintegrated platform that no one department owns.',
   },
 }
 
@@ -98,7 +98,7 @@ export default function SBInteractive() {
   return (
     <div>
       {/* Blueprint SVG */}
-      <div className="w-full select-none mb-8" aria-label="Service blueprint — click a layer to explore it" role="group">
+      <div className="w-full select-none mb-8" aria-label="Service blueprint, click a layer to explore it" role="group">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ display: 'block', overflow: 'visible' }}>
           <defs>
             <filter id="sb-int-glow" x="-20%" y="-200%" width="140%" height="500%">

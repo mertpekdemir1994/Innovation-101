@@ -72,7 +72,7 @@ export default function SBAIReactivated() {
           {/* Background */}
           <rect x={0} y={0} width={SVG_W} height={SVG_H} rx={8} fill={`${TEAL}0.04)`} />
 
-          {/* Stage headers — indigo tint in AI mode */}
+          {/* Stage headers: indigo tint in AI mode */}
           {STAGE_NAMES.map((name, i) => (
             <g key={name}>
               <rect x={i * STAGE_W + 1} y={HDR_TOP} width={STAGE_W - 2} height={HDR_H}
@@ -98,7 +98,7 @@ export default function SBAIReactivated() {
             />
           ))}
 
-          {/* Customer Actions — AI maps this layer well */}
+          {/* Customer Actions: AI maps this layer well */}
           <rect x={0} y={CA_Y} width={SVG_W} height={CA_H}
             fill={aiMode ? `${INDIGO}0.05)` : `${TEAL}0.07)`}
             style={{ transition: 'fill 0.35s' }}
@@ -110,7 +110,7 @@ export default function SBAIReactivated() {
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >CUSTOMER ACTIONS</text>
 
-          {/* Frontstage — AI maps this layer well */}
+          {/* Frontstage: AI maps this layer well */}
           <rect x={0} y={FS_Y} width={SVG_W} height={FS_H}
             fill={aiMode ? `${INDIGO}0.04)` : `${TEAL}0.04)`}
             style={{ transition: 'fill 0.35s' }}
@@ -134,7 +134,7 @@ export default function SBAIReactivated() {
             fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}
           >LINE OF VISIBILITY</text>
 
-          {/* Backstage — AI maps documented process; misses the real workaround */}
+          {/* Backstage: AI maps documented process; misses the real workaround */}
           <rect x={0} y={BS_Y} width={SVG_W} height={BS_H}
             fill={aiMode ? `${INDIGO}0.05)` : `${SLATE}0.05)`}
             style={{ transition: 'fill 0.35s' }}
@@ -158,7 +158,7 @@ export default function SBAIReactivated() {
           >SUPPORT PROCESSES / SYSTEMS</text>
 
           {/* Undocumented workaround marker:
-              visible (amber/orange) in human mode — "AI MISSES THIS" in AI mode */}
+              visible (amber/orange) in human mode; "AI MISSES THIS" in AI mode */}
           <motion.g animate={{ opacity: aiMode ? 0.18 : 1 }} transition={{ duration: 0.40 }}>
             <circle cx={WORKAROUND_X} cy={WORKAROUND_Y} r={4}
               fill="rgba(251,146,60,0.85)" filter="url(#sb-ai-glow)"
@@ -233,20 +233,20 @@ export default function SBAIReactivated() {
                 style={{ fontSize: 'var(--text-2xs)', color: 'rgba(251,146,60,0.75)' }}
               >What it misses</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
-                AI maps the process as it is written down, and services almost never run the way they are written down. The undocumented workaround a frontline employee invented to cover a broken system, the informal fix between two teams — these keep the service running but appear in no document, so AI omits exactly the parts that matter most.
+                AI maps the process as it is written down, and services almost never run the way they are written down. The undocumented workaround a frontline employee invented to cover a broken system, the informal fix between two teams: these keep the service running but appear in no document, so AI omits exactly the parts that matter most.
               </p>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Synthesis — always visible */}
+      {/* Synthesis: always visible */}
       <div className="rounded-xl p-6" style={{ background: `${TEAL}0.08)`, border: `1px solid ${TEAL}0.20)` }}>
         <p className="font-mono uppercase tracking-widest mb-3"
           style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
-          AI accelerates the documented layers of a blueprint — real value for the frontstage, the recorded backstage, and the systems. It can quantify where breaks show up in logged data. But a blueprint&rsquo;s deepest insight is usually the undocumented reality below the line of visibility: the human workaround holding a broken process together, the unowned gap no ticket ever captures. That reality lives in the frontline staff&rsquo;s heads, not in any dataset. AI drafts the blueprint from what is written; humans correct it with what is true.
+          AI accelerates the documented layers of a blueprint: real value for the frontstage, the recorded backstage, and the systems. It can quantify where breaks show up in logged data. But a blueprint&rsquo;s deepest insight is usually the undocumented reality below the line of visibility: the human workaround holding a broken process together, the unowned gap no ticket ever captures. That reality lives in the frontline staff&rsquo;s heads, not in any dataset. AI drafts the blueprint from what is written; humans correct it with what is true.
         </p>
       </div>
     </div>

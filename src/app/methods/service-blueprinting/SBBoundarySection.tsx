@@ -19,7 +19,7 @@ const ITEMS: { id: Reveal; label: string; summary: string }[] = [
   {
     id: 'journey-mapping',
     label: 'Journey Mapping',
-    summary: 'Above the line only. The customer\'s felt experience — what they do, think, and feel. The top spine of the blueprint.',
+    summary: 'Above the line only. The customer\'s felt experience: what they do, think, and feel. The top spine of the blueprint.',
   },
   {
     id: '5es',
@@ -30,19 +30,19 @@ const ITEMS: { id: Reveal; label: string; summary: string }[] = [
 
 const DETAIL: Record<Reveal, { heading: string; description: string; distinction: string; link?: string }> = {
   blueprint: {
-    heading: 'Service Blueprinting — above and below the line',
-    description: 'A service blueprint maps the full delivery system: the customer\'s experience across the top (everything above the line of visibility), and the frontstage, backstage, and support processes below it. Its power is connecting the felt experience to the operational machine that produces it — and finding where that machine breaks in ways the customer feels but cannot name.',
-    distinction: 'Use Service Blueprinting when the problem lives in the operations beneath the experience — in the handoffs, the backstage, the systems. Reach for Journey Mapping when you need the felt experience alone; reach for the 5Es when you need a fixed evaluation lens applied to the experience phases.',
+    heading: 'Service Blueprinting: above and below the line',
+    description: 'A service blueprint maps the full delivery system: the customer\'s experience across the top (everything above the line of visibility), and the frontstage, backstage, and support processes below it. Its power is connecting the felt experience to the operational machine that produces it, and finding where that machine breaks in ways the customer feels but cannot name.',
+    distinction: 'Use Service Blueprinting when the problem lives in the operations beneath the experience: in the handoffs, the backstage, the systems. Reach for Journey Mapping when you need the felt experience alone; reach for the 5Es when you need a fixed evaluation lens applied to the experience phases.',
   },
   'journey-mapping': {
-    heading: 'Journey Mapping — the top spine',
-    description: 'Journey Mapping is a deliberate counterpart that stays strictly above the line of visibility: what the customer does, thinks, and feels at each stage. It is the top spine that a service blueprint keeps — the customer experience layer — but without the frontstage, backstage, or systems below it. Its signature element is the emotion line: the rising and falling arc of how the customer feels across the whole experience.',
+    heading: 'Journey Mapping: the top spine',
+    description: 'Journey Mapping is a deliberate counterpart that stays strictly above the line of visibility: what the customer does, thinks, and feels at each stage. It is the top spine that a service blueprint keeps (the customer experience layer) but without the frontstage, backstage, or systems below it. Its signature element is the emotion line: the rising and falling arc of how the customer feels across the whole experience.',
     distinction: 'A journey map shows the felt experience. A service blueprint keeps that top spine and adds the operational machine beneath it. The two are complementary halves: understand the experience first, then blueprint the system that delivers it.',
     link: '/methods/journey-mapping',
   },
   '5es': {
-    heading: 'The 5Es Framework — fixed evaluation phases',
-    description: 'The 5Es (Entice, Enter, Engage, Exit, Extend) applies a fixed, standard five-phase lens to any experience — regardless of how the specific experience unfolds. Its power is the consistent evaluation it enables: once you commit to the five phases as a universal structure, you can systematically ask whether each is doing its job, especially the often-neglected bookends (Entice before first contact, Extend long after the core experience).',
+    heading: 'The 5Es Framework: fixed evaluation phases',
+    description: 'The 5Es (Entice, Enter, Engage, Exit, Extend) applies a fixed, standard five-phase lens to any experience, regardless of how the specific experience unfolds. Its power is the consistent evaluation it enables: once you commit to the five phases as a universal structure, you can systematically ask whether each is doing its job, especially the often-neglected bookends (Entice before first contact, Extend long after the core experience).',
     distinction: 'The 5Es evaluates the quality of the experience phases. Service Blueprinting designs the operational system that delivers them. Use the 5Es to evaluate; use the blueprint to redesign. They are complementary: the 5Es tells you which phases need work; the blueprint tells you what in the operations is causing it.',
     link: '/methods/5es',
   },
@@ -124,7 +124,7 @@ function BlueprintMiniSVG() {
       ))}
       <text x={MW / 2} y={MH_FULL - 2} textAnchor="middle" dominantBaseline="auto"
         fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL}0.35)`} style={{ userSelect: 'none' }}
-      >ABOVE + BELOW THE LINE — FULL DELIVERY SYSTEM</text>
+      >ABOVE + BELOW THE LINE, FULL DELIVERY SYSTEM</text>
     </svg>
   )
 }
@@ -147,7 +147,7 @@ function JourneyMappingMiniSVG() {
         </g>
       ))}
       <line x1={0} y1={MDIV_Y} x2={MW} y2={MDIV_Y} stroke="rgba(255,255,255,0.08)" strokeWidth={1} />
-      {/* CA — customer actions + emotion line */}
+      {/* CA: customer actions + emotion line */}
       <rect x={0} y={MCA_Y} width={MW} height={MCA_H} fill={`${TEAL}0.07)`} />
       <text x={3} y={MCA_Y + 7} textAnchor="start" dominantBaseline="hanging"
         fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL}0.52)`} style={{ userSelect: 'none' }}
@@ -168,7 +168,7 @@ function JourneyMappingMiniSVG() {
           fill={`${TEAL}0.90)`} stroke="rgba(255,255,255,0.60)" strokeWidth={0.8}
         />
       })}
-      {/* LOV line — dimmed */}
+      {/* LOV line: dimmed */}
       <line x1={0} y1={MLOV_Y} x2={MW} y2={MLOV_Y}
         stroke="rgba(255,255,255,0.20)" strokeWidth={1.5} strokeDasharray="6 4"
       />
@@ -183,7 +183,7 @@ function JourneyMappingMiniSVG() {
       <text x={MW / 2} y={MLOV_Y + (MH_JM - MLOV_Y) / 2}
         textAnchor="middle" dominantBaseline="middle"
         fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.15)" style={{ userSelect: 'none' }}
-      >NOT IN SCOPE — STAYS ABOVE THE LINE</text>
+      >NOT IN SCOPE, STAYS ABOVE THE LINE</text>
       {/* Column dividers */}
       {[1,2,3,4].map(i => (
         <line key={i} x1={i * MSW} y1={MDIV_Y} x2={i * MSW} y2={MH_JM}

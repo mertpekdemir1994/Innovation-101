@@ -121,7 +121,7 @@ export default function SBEstablishing() {
           ))}
         </motion.g>
 
-        {/* ── LINE OF VISIBILITY — signature element ── */}
+        {/* LINE OF VISIBILITY: signature element */}
         <motion.g
           variants={lovIn}
           transition={prefersReduced ? { duration: 0 } : { duration: 0.55, ease, delay: 0.08 }}
