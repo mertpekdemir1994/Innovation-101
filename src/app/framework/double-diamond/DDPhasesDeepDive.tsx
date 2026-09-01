@@ -144,7 +144,7 @@ function PhaseDiamond({
     <svg
       viewBox="0 0 800 240"
       className="w-full"
-      style={{ overflow: 'visible' }}
+      style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
       role="group"
       aria-label="Double Diamond phases, click to navigate"
     >

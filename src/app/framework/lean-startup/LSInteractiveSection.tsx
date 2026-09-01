@@ -134,10 +134,10 @@ export default function LSInteractiveSection() {
   const phaseActive = activeNode !== 'pivot' ? PHASE_DETAIL[activeNode] : null
 
   return (
-    <div className="grid md:grid-cols-[340px_1fr] gap-space-8 items-start">
+    <div className="grid md:grid-cols-[var(--width-illustration)_1fr] gap-space-8 items-start">
       {/* Left: SVG loop diagram */}
       <div className="flex flex-col items-center">
-        <svg viewBox="0 0 360 340" width="100%" style={{ maxWidth: 340 }} aria-label="Build-Measure-Learn loop diagram">
+        <svg viewBox="0 0 360 340" width="100%" style={{ maxWidth: 'var(--width-illustration)' }} aria-label="Build-Measure-Learn loop diagram">
           {/* Glow ring */}
           <circle cx={cx} cy={cy} r={r + 24} fill="none" stroke={`${PURPLE}0.06)`} strokeWidth={24} />
           {/* Dashed ring */}

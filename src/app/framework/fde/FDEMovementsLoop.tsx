@@ -187,7 +187,7 @@ export default function FDEMovementsLoop() {
   }
 
   return (
-    <div className="grid md:grid-cols-[460px_1fr] gap-space-10 items-start">
+    <div className="grid md:grid-cols-[var(--width-illustration)_1fr] gap-space-10 items-start">
 
       {/* ── Left: orbit + stepper ─────────────────────────────────────────── */}
       <div className="md:sticky md:top-28">
