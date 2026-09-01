@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE  = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 const AMBER = 'rgba(245,158,11,'
 
 function dome(cx: number, cy: number, w: number, h: number): string {
@@ -172,10 +173,10 @@ export default function COInteractive() {
           />
           <text x={392} y={154} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
-            fill={`${SAGE}0.90)`} style={{ userSelect: 'none' }}>CAN I</text>
+            fill={`${SAGE_TEXT}0.979)`} style={{ userSelect: 'none' }}>CAN I</text>
           <text x={392} y={164} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
-            fill={`${SAGE}0.90)`} style={{ userSelect: 'none' }}>MAKE PAYROLL?</text>
+            fill={`${SAGE_TEXT}0.979)`} style={{ userSelect: 'none' }}>MAKE PAYROLL?</text>
         </g>
 
         {/* ── PAPER PILE ── */}
@@ -194,7 +195,7 @@ export default function COInteractive() {
           />
           <text x={451} y={165} textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)"
-            fill={`${SAGE}0.50)`} style={{ userSelect: 'none' }}>INVOICES</text>
+            fill={`${SAGE_TEXT}0.895)`} style={{ userSelect: 'none' }}>INVOICES</text>
         </g>
 
         {/* ── SHOEBOX ── */}
@@ -207,7 +208,7 @@ export default function COInteractive() {
           />
           <text x={528} y={166} textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${SAGE}0.65)`} style={{ userSelect: 'none' }}>RECEIPTS</text>
+            fill={`${SAGE_TEXT}0.926)`} style={{ userSelect: 'none' }}>RECEIPTS</text>
         </g>
 
         {/* ── OBSERVER ── */}
@@ -230,7 +231,7 @@ export default function COInteractive() {
           />
           <text x={644} y={178} textAnchor="middle"
             fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>OBSERVER</text>
+            fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>OBSERVER</text>
         </g>
 
         {/* ── ANNOTATIONS ── */}
@@ -263,7 +264,7 @@ export default function COInteractive() {
         />
         <text x={326} y={74} textAnchor="middle"
           fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-          fill={isHit('say-do-gap') ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.18)'}
+          fill={isHit('say-do-gap') ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.59)'}
           style={{ userSelect: 'none', transition: 'fill 0.25s' }}>THE GAP</text>
 
         {/* ── HIT AREAS (transparent, clickable) ── */}

@@ -2,6 +2,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const SAGE  = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 const AMBER = 'rgba(245,158,11,'
 
 function dome(cx: number, cy: number, w: number, h: number): string {
@@ -156,14 +157,14 @@ export default function COEstablishing() {
             x={392} y={154}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
-            fill={`${SAGE}0.92)`}
+            fill={`${SAGE_TEXT}0.983)`}
             style={{ userSelect: 'none' }}
           >CAN I</text>
           <text
             x={392} y={164}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
-            fill={`${SAGE}0.92)`}
+            fill={`${SAGE_TEXT}0.983)`}
             style={{ userSelect: 'none' }}
           >MAKE PAYROLL?</text>
         </motion.g>
@@ -184,7 +185,7 @@ export default function COEstablishing() {
             x={451} y={165}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)"
-            fill={`${SAGE}0.52)`}
+            fill={`${SAGE_TEXT}0.899)`}
             style={{ userSelect: 'none' }}
           >INVOICES</text>
         </motion.g>
@@ -200,7 +201,7 @@ export default function COEstablishing() {
             x={528} y={166}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${SAGE}0.68)`}
+            fill={`${SAGE_TEXT}0.933)`}
             style={{ userSelect: 'none' }}
           >RECEIPTS</text>
         </motion.g>
@@ -232,7 +233,7 @@ export default function COEstablishing() {
             x={644} y={180}
             textAnchor="middle"
             fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.28)"
+            fill="rgba(255,255,255,0.64)"
             style={{ userSelect: 'none' }}
           >OBSERVER</text>
         </motion.g>
@@ -257,7 +258,7 @@ export default function COEstablishing() {
             x={468} y={90}
             textAnchor="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.16em"
-            fill={`${SAGE}0.82)`}
+            fill={`${SAGE_TEXT}0.962)`}
             style={{ userSelect: 'none' }}
           >REAL</text>
           <line x1={370} y1={95} x2={570} y2={95}
@@ -275,7 +276,7 @@ export default function COEstablishing() {
             x={326} y={74}
             textAnchor="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.20)"
+            fill="rgba(255,255,255,0.6)"
             style={{ userSelect: 'none' }}
           >THE GAP</text>
         </motion.g>

@@ -3,8 +3,10 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE   = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 const AMBER  = 'rgba(245,158,11,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 function dome(cx: number, cy: number, w: number, h: number): string {
   return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 0 ${cx + w} ${cy + h} Z`
@@ -142,10 +144,10 @@ export default function COAIReactivated() {
           />
           <text x={392} y={154} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
-            fill={`${SAGE}0.88)`} style={{ userSelect: 'none' }}>CAN I</text>
+            fill={`${SAGE_TEXT}0.975)`} style={{ userSelect: 'none' }}>CAN I</text>
           <text x={392} y={164} textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
-            fill={`${SAGE}0.88)`} style={{ userSelect: 'none' }}>MAKE PAYROLL?</text>
+            fill={`${SAGE_TEXT}0.975)`} style={{ userSelect: 'none' }}>MAKE PAYROLL?</text>
         </g>
 
         {/* ── PAPER PILE ── dims in AI mode */}
@@ -160,7 +162,7 @@ export default function COAIReactivated() {
           />
           <text x={451} y={165} textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)"
-            fill={`${SAGE}0.48)`} style={{ userSelect: 'none' }}>INVOICES</text>
+            fill={`${SAGE_TEXT}0.891)`} style={{ userSelect: 'none' }}>INVOICES</text>
         </g>
 
         {/* ── SHOEBOX ── dims in AI mode */}
@@ -171,7 +173,7 @@ export default function COAIReactivated() {
           />
           <text x={528} y={166} textAnchor="middle" dominantBaseline="middle"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${SAGE}0.60)`} style={{ userSelect: 'none' }}>RECEIPTS</text>
+            fill={`${SAGE_TEXT}0.916)`} style={{ userSelect: 'none' }}>RECEIPTS</text>
         </g>
 
         {/* ── OBSERVER ── dims in AI mode */}
@@ -191,7 +193,7 @@ export default function COAIReactivated() {
             stroke="rgba(255,255,255,0.07)" strokeWidth={1} strokeDasharray="3 3" />
           <text x={644} y={178} textAnchor="middle"
             fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill="rgba(255,255,255,0.22)" style={{ userSelect: 'none' }}>OBSERVER</text>
+            fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>OBSERVER</text>
         </g>
 
         {/* ── ANNOTATIONS ── */}
@@ -216,7 +218,7 @@ export default function COAIReactivated() {
           strokeWidth={1} strokeDasharray="5 4" />
         <text x={326} y={74} textAnchor="middle"
           fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-          fill="rgba(255,255,255,0.15)" style={{ userSelect: 'none' }}>THE GAP</text>
+          fill="rgba(255,255,255,0.575)" style={{ userSelect: 'none' }}>THE GAP</text>
 
         {/* ── CAMERA FRAME (AI mode only) ── */}
         <AnimatePresence>
@@ -264,7 +266,7 @@ export default function COAIReactivated() {
                 x={FRAME_X + 35} y={FRAME_Y + 13}
                 textAnchor="middle" dominantBaseline="middle"
                 fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                fill={`${INDIGO}0.90)`}
+                fill={`${INDIGO_TEXT}0.979)`}
                 style={{ userSelect: 'none' }}
               >AI ANALYSES</text>
 
@@ -279,13 +281,13 @@ export default function COAIReactivated() {
               <text
                 x={FRAME_X + FRAME_W + 18} y={FRAME_Y + FRAME_H / 2 - 6}
                 fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                fill={`${INDIGO}0.42)`}
+                fill={`${INDIGO_TEXT}0.878)`}
                 style={{ userSelect: 'none' }}
               >OUT OF FRAME</text>
               <text
                 x={FRAME_X + FRAME_W + 18} y={FRAME_Y + FRAME_H / 2 + 6}
                 fontSize="5" fontFamily="var(--font-mono)"
-                fill={`${INDIGO}0.30)`}
+                fill={`${INDIGO_TEXT}0.853)`}
                 style={{ userSelect: 'none' }}
               >the real insight</text>
             </motion.g>
