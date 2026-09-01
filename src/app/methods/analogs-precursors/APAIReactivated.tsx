@@ -4,7 +4,9 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import React from 'react'
 
 const CLAY   = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
 const SVG_H = 258
@@ -157,14 +159,14 @@ export default function APAIReactivated() {
                   x={(ORG_X + 8 + NEAR_ZONE_X2) / 2} y={ORG_Y - 20}
                   textAnchor="middle"
                   fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-                  fill={`${INDIGO}0.65)`}
+                  fill={`${INDIGO_TEXT}0.926)`}
                   style={{ userSelect: 'none' }}
                 >AI RETRIEVES NEAR FIRST</text>
                 <text
                   x={(ORG_X + 8 + NEAR_ZONE_X2) / 2} y={ORG_Y + 22}
                   textAnchor="middle"
                   fontSize="5" fontFamily="var(--font-mono)"
-                  fill={`${INDIGO}0.42)`}
+                  fill={`${INDIGO_TEXT}0.878)`}
                   style={{ userSelect: 'none' }}
                 >surface-similar / obvious</text>
 
@@ -173,14 +175,14 @@ export default function APAIReactivated() {
                   x={(NEAR_ZONE_X2 + AX_END) / 2} y={ORG_Y - 22}
                   textAnchor="middle"
                   fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill="rgba(255,255,255,0.30)"
+                  fill="rgba(255,255,255,0.65)"
                   style={{ userSelect: 'none' }}
                 >← FAR STRUCTURAL MATCH</text>
                 <text
                   x={(NEAR_ZONE_X2 + AX_END) / 2} y={ORG_Y - 13}
                   textAnchor="middle"
                   fontSize="5" fontFamily="var(--font-mono)"
-                  fill="rgba(255,255,255,0.18)"
+                  fill="rgba(255,255,255,0.59)"
                   style={{ userSelect: 'none' }}
                 >harder for AI to surface</text>
               </motion.g>
@@ -264,7 +266,7 @@ export default function APAIReactivated() {
                     x={ORG_X + 13} y={pt.y}
                     dominantBaseline="middle"
                     fontSize="5.5" fontFamily="var(--font-mono)"
-                    fill={`${INDIGO}0.45)`}
+                    fill={`${INDIGO_TEXT}0.885)`}
                     style={{ userSelect: 'none' }}
                   >timing: human</text>
                 )}
@@ -284,7 +286,7 @@ export default function APAIReactivated() {
             x={ORG_X + 13} y={ORG_Y - 3}
             dominantBaseline="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${CLAY}0.90)`}
+            fill={`${CLAY_TEXT}0.979)`}
             style={{ userSelect: 'none' }}
           >CURRENT PROBLEM</text>
         </svg>

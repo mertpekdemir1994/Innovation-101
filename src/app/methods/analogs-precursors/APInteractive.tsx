@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import React from 'react'
 
 const CLAY   = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const INDIGO = 'rgba(99,102,241,'
 
 const SVG_W = 700
@@ -228,14 +229,14 @@ export default function APInteractive() {
             x={ORG_X + 13} y={ORG_Y - 3}
             dominantBaseline="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${CLAY}0.90)`}
+            fill={`${CLAY_TEXT}0.979)`}
             style={{ userSelect: 'none' }}
           >CURRENT PROBLEM</text>
           <text
             x={ORG_X + 13} y={ORG_Y + 9}
             dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={`${CLAY}0.48)`}
+            fill={`${CLAY_TEXT}0.891)`}
             style={{ userSelect: 'none' }}
           >here & now</text>
 

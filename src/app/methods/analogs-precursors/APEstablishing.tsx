@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import React from 'react'
 
 const CLAY = 'rgba(181,97,62,'
+const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
 const SVG_W = 700
 const SVG_H = 258
@@ -97,14 +98,14 @@ export default function APEstablishing() {
             x={AX_END + 8} y={ORG_Y - 5}
             textAnchor="start" dominantBaseline="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-            fill={`${CLAY}0.75)`}
+            fill={`${CLAY_TEXT}0.948)`}
             style={{ userSelect: 'none' }}
           >ANALOGS →</text>
           <text
             x={AX_END + 8} y={ORG_Y + 8}
             textAnchor="start" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={`${CLAY}0.42)`}
+            fill={`${CLAY_TEXT}0.878)`}
             style={{ userSelect: 'none' }}
           >across industries</text>
         </motion.g>
@@ -130,14 +131,14 @@ export default function APEstablishing() {
             x={ORG_X} y={PR_END_Y - 5}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-            fill="rgba(255,255,255,0.42)"
+            fill="rgba(255,255,255,0.71)"
             style={{ userSelect: 'none' }}
           >↑ BACK THROUGH TIME</text>
           <text
             x={ORG_X} y={PR_END_Y - 14}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill="rgba(255,255,255,0.24)"
+            fill="rgba(255,255,255,0.62)"
             style={{ userSelect: 'none' }}
           >PRECURSORS</text>
         </motion.g>
@@ -159,14 +160,14 @@ export default function APEstablishing() {
             x={ORG_X + 13} y={ORG_Y - 3}
             dominantBaseline="middle"
             fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-            fill={`${CLAY}0.90)`}
+            fill={`${CLAY_TEXT}0.979)`}
             style={{ userSelect: 'none' }}
           >CURRENT PROBLEM</text>
           <text
             x={ORG_X + 13} y={ORG_Y + 9}
             dominantBaseline="middle"
             fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={`${CLAY}0.48)`}
+            fill={`${CLAY_TEXT}0.891)`}
             style={{ userSelect: 'none' }}
           >here & now</text>
         </motion.g>
@@ -190,14 +191,14 @@ export default function APEstablishing() {
               x={pt.x} y={ORG_Y - 13}
               textAnchor="middle"
               fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill={`${CLAY}0.82)`}
+              fill={`${CLAY_TEXT}0.962)`}
               style={{ userSelect: 'none' }}
             >{pt.label}</text>
             <text
               x={pt.x} y={ORG_Y - 22}
               textAnchor="middle"
               fontSize="5.5" fontFamily="var(--font-mono)"
-              fill={`${CLAY}0.44)`}
+              fill={`${CLAY_TEXT}0.882)`}
               style={{ userSelect: 'none' }}
             >{pt.sub}</text>
           </motion.g>
@@ -230,7 +231,7 @@ export default function APEstablishing() {
               x={ORG_X - 13} y={pt.y + 7}
               textAnchor="end" dominantBaseline="middle"
               fontSize="5.5" fontFamily="var(--font-mono)"
-              fill="rgba(255,255,255,0.28)"
+              fill="rgba(255,255,255,0.64)"
               style={{ userSelect: 'none' }}
             >{pt.sub}</text>
           </motion.g>
@@ -245,7 +246,7 @@ export default function APEstablishing() {
             x={SVG_W / 2} y={SVG_H - 5}
             textAnchor="middle"
             fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.16)"
+            fill="rgba(255,255,255,0.58)"
             style={{ userSelect: 'none' }}
           >two perpendicular search directions · right for analogs · up for precursors</text>
         </motion.g>
