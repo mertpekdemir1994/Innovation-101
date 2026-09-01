@@ -54,7 +54,7 @@ export default function CTInteractive() {
   const sc = SCENARIOS[scenario]
   const R_TOP = BASE_Y - sc.h
 
-  const hitStyle = { cursor: 'pointer', outline: 'none' } as const
+  const hitStyle = { cursor: 'pointer' } as const
 
   return (
     <div className="w-full">
