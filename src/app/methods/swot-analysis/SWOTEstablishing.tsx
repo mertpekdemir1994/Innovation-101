@@ -76,10 +76,10 @@ export default function SWOTEstablishing() {
           <line x1={30} y1={210} x2={610} y2={210} stroke="rgba(255,255,255,0.18)" strokeWidth={1} strokeDasharray="4 4" />
 
           {/* Axis labels */}
-          <text x={320} y={20} textAnchor="middle" fill="rgba(255,255,255,0.30)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.10em">INTERNAL</text>
-          <text x={320} y={408} textAnchor="middle" fill="rgba(255,255,255,0.30)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.10em">EXTERNAL</text>
-          <text x={22} y={213} textAnchor="middle" fill="rgba(255,255,255,0.30)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(-90,22,213)">HELPFUL</text>
-          <text x={618} y={213} textAnchor="middle" fill="rgba(255,255,255,0.30)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(90,618,213)">HARMFUL</text>
+          <text x={320} y={20} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.10em">INTERNAL</text>
+          <text x={320} y={408} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.10em">EXTERNAL</text>
+          <text x={22} y={213} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(-90,22,213)">HELPFUL</text>
+          <text x={618} y={213} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(90,618,213)">HARMFUL</text>
         </motion.g>
 
         {/* ── Quadrant labels + items ── */}
@@ -104,7 +104,7 @@ export default function SWOTEstablishing() {
               <text
                 x={q.cx} y={q.cy - 36}
                 textAnchor="middle"
-                fill="rgba(255,255,255,0.22)"
+                fill="rgba(255,255,255,0.61)"
                 fontSize={8}
                 fontFamily="var(--font-mono)"
                 letterSpacing="0.06em"
@@ -115,7 +115,7 @@ export default function SWOTEstablishing() {
                   key={i}
                   x={q.cx} y={q.cy - 10 + i * 16}
                   textAnchor="middle"
-                  fill="rgba(255,255,255,0.38)"
+                  fill="rgba(255,255,255,0.69)"
                   fontSize={9}
                   fontFamily="var(--font-body)"
                 >· {item}</text>
