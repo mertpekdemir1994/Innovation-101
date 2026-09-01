@@ -300,7 +300,7 @@ export default function AICaseStudy() {
           >
             <span
               className="font-mono text-2xs uppercase tracking-widest mb-space-1"
-              style={{ color: activeStage === key ? `${PLUM}0.65)` : 'var(--color-neutral-400)' }}
+              style={{ color: activeStage === key ? `${PLUM}0.65)` : 'var(--color-neutral-500)' }}
             >
               {mode}
             </span>
@@ -312,7 +312,7 @@ export default function AICaseStudy() {
             </span>
             <span
               className="text-xs"
-              style={{ color: activeStage === key ? `${PLUM}0.55)` : 'var(--color-neutral-400)' }}
+              style={{ color: activeStage === key ? `${PLUM}0.55)` : 'var(--color-neutral-500)' }}
             >
               {sub}
             </span>
