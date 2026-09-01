@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL  = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER = 'rgba(245,158,11,'
 
 const SVG_W   = 700
@@ -170,7 +171,7 @@ export default function FiveEsInteractive() {
                     fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                     fill={phase.bookend
                       ? (isActive ? `${AMBER}0.95)` : `${AMBER}0.78)`)
-                      : (isActive ? `${TEAL}0.98)` : `${TEAL}0.82)`)}
+                      : (isActive ? `${TEAL_TEXT}0.996)` : `${TEAL_TEXT}0.962)`)}
                     style={{ userSelect: 'none', transition: 'fill 0.20s' }}
                   >{phase.label}</text>
                 </motion.g>
@@ -200,7 +201,7 @@ export default function FiveEsInteractive() {
                     x={PCX[i]} y={SVG_H - 6}
                     textAnchor="middle" dominantBaseline="auto"
                     fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                    fill="rgba(255,255,255,0.18)" style={{ userSelect: 'none' }}
+                    fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
                   >tap</text>
                 )}
               </g>

@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const TEAL  = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER = 'rgba(245,158,11,'
 
 const SVG_W   = 700
@@ -113,7 +114,7 @@ export default function FiveEsEstablishing() {
               x={PCX[i]} y={HDR_TOP + HDR_H / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-              fill={phase.bookend ? `${AMBER}0.88)` : `${TEAL}0.92)`}
+              fill={phase.bookend ? `${AMBER}0.88)` : `${TEAL_TEXT}0.983)`}
               style={{ userSelect: 'none' }}
             >{phase.label}</text>
           </motion.g>

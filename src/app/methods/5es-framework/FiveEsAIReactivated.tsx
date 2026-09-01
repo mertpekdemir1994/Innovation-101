@@ -4,8 +4,10 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL   = 'rgba(42,111,122,'
+const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER  = 'rgba(245,158,11,'
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W   = 700
 const PHASE_W = 140
@@ -131,10 +133,10 @@ export default function FiveEsAIReactivated() {
                   textAnchor="middle" dominantBaseline="middle"
                   fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                   fill={
-                    isCoreInAI ? `${INDIGO}0.92)` :
-                    isBookendInAI ? 'rgba(255,255,255,0.22)' :
-                    aiMode ? `${INDIGO}0.60)` :
-                    phase.bookend ? `${AMBER}0.88)` : `${TEAL}0.92)`
+                    isCoreInAI ? `${INDIGO_TEXT}0.983)` :
+                    isBookendInAI ? 'rgba(255,255,255,0.61)' :
+                    aiMode ? `${INDIGO_TEXT}0.916)` :
+                    phase.bookend ? `${AMBER}0.88)` : `${TEAL_TEXT}0.983)`
                   }
                   style={{ userSelect: 'none', transition: 'fill 0.35s' }}
                 >{phase.label}</text>
@@ -191,7 +193,7 @@ export default function FiveEsAIReactivated() {
             x={SVG_W / 2} y={SVG_H - 4}
             textAnchor="middle" dominantBaseline="auto"
             fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill="rgba(255,255,255,0.20)" style={{ userSelect: 'none' }}
+            fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
           >
             {aiMode ? 'AI EVALUATION CONFIDENCE BY PHASE' : 'TYPICAL DESIGN INVESTMENT BY PHASE'}
           </text>
