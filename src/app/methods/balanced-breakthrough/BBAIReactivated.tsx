@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM   = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 const AMBER  = 'rgba(217,119,6,'
 
 const SVG_W = 700
@@ -109,7 +111,7 @@ export default function BBAIReactivated() {
                     fill={`${AMBER}0.10)`} stroke={`${AMBER}0.25)`} strokeWidth={0.5} />
                   <text x={D_CX} y={D_CY - 56} textAnchor="middle"
                     fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`${AMBER}0.70)`} style={{ userSelect: 'none' }}>
+                    fill={`rgba(221,132,30,0.94)`} style={{ userSelect: 'none' }}>
                     ⚠ AI CAN&apos;T FEEL WHAT PEOPLE WANT
                   </text>
                 </g>
@@ -129,7 +131,7 @@ export default function BBAIReactivated() {
                     fill={`${INDIGO}0.08)`} stroke={`${INDIGO}0.20)`} strokeWidth={0.5} />
                   <text x={F_CX - 27} y={F_CY + 64} textAnchor="middle"
                     fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`${INDIGO}0.60)`} style={{ userSelect: 'none' }}>
+                    fill={`${INDIGO_TEXT}0.916)`} style={{ userSelect: 'none' }}>
                     AI HELPS ASSESS COMPLEXITY
                   </text>
                 </g>
@@ -149,7 +151,7 @@ export default function BBAIReactivated() {
                     fill={`${INDIGO}0.12)`} stroke={`${INDIGO}0.28)`} strokeWidth={0.5} />
                   <text x={V_CX + 27} y={V_CY + 64} textAnchor="middle"
                     fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`${INDIGO}0.72)`} style={{ userSelect: 'none' }}>
+                    fill={`${INDIGO_TEXT}0.941)`} style={{ userSelect: 'none' }}>
                     AI STRONGEST: MODELS ECONOMICS
                   </text>
                 </g>
@@ -165,42 +167,42 @@ export default function BBAIReactivated() {
               <text x={CTR_X} y={CTR_Y - 4} textAnchor="middle"
                 fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
                 fill="rgba(255,255,255,0.95)"
-                style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM}0.75))` }}>
+                style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM_TEXT}0.948))` }}>
                 {isAI ? 'HUMAN' : 'BREAK'}
               </text>
               <text x={CTR_X} y={CTR_Y + 8} textAnchor="middle"
                 fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
                 fill="rgba(255,255,255,0.95)"
-                style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM}0.75))` }}>
+                style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM_TEXT}0.948))` }}>
                 {isAI ? 'JUDGMENT' : 'THROUGH'}
               </text>
 
               {/* Circle labels - AI mode deliberately grades opacity D < F < V (AI strength order) */}
               <text x={D_CX} y={D_CY - 48} textAnchor="middle"
                 fontSize="10" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-                fill={isAI ? `${INDIGO}0.72)` : `${PLUM}0.95)`}
+                fill={isAI ? `${INDIGO_TEXT}0.941)` : `${PLUM_TEXT}0.99)`}
                 style={{ userSelect: 'none' }}>DESIRABILITY</text>
               <text x={D_CX} y={D_CY - 34} textAnchor="middle"
                 fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={isAI ? `${INDIGO}0.52)` : `${PLUM}0.65)`}
+                fill={isAI ? `${INDIGO_TEXT}0.899)` : `${PLUM_TEXT}0.926)`}
                 style={{ userSelect: 'none' }}>do people want it?</text>
 
               <text x={F_CX - 58} y={F_CY + 5} textAnchor="end"
                 fontSize="10" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-                fill={isAI ? `${INDIGO}0.84)` : `${PLUM}0.95)`}
+                fill={isAI ? `${INDIGO_TEXT}0.966)` : `${PLUM_TEXT}0.99)`}
                 style={{ userSelect: 'none' }}>FEASIBILITY</text>
               <text x={F_CX - 58} y={F_CY + 19} textAnchor="end"
                 fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={isAI ? `${INDIGO}0.62)` : `${PLUM}0.65)`}
+                fill={isAI ? `${INDIGO_TEXT}0.92)` : `${PLUM_TEXT}0.926)`}
                 style={{ userSelect: 'none' }}>can we build it?</text>
 
               <text x={V_CX + 58} y={V_CY + 5} textAnchor="start"
                 fontSize="10" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-                fill={isAI ? `${INDIGO}1)` : `${PLUM}0.95)`}
+                fill={isAI ? `${INDIGO_TEXT}1.0)` : `${PLUM_TEXT}0.99)`}
                 style={{ userSelect: 'none' }}>VIABILITY</text>
               <text x={V_CX + 58} y={V_CY + 19} textAnchor="start"
                 fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={isAI ? `${INDIGO}0.78)` : `${PLUM}0.65)`}
+                fill={isAI ? `${INDIGO_TEXT}0.954)` : `${PLUM_TEXT}0.926)`}
                 style={{ userSelect: 'none' }}>does it sustain us?</text>
             </motion.g>
           </AnimatePresence>
@@ -208,7 +210,7 @@ export default function BBAIReactivated() {
           {/* Caption */}
           <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
             fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.36)" style={{ userSelect: 'none' }}>
+            fill="rgba(255,255,255,0.68)" style={{ userSelect: 'none' }}>
             {isAI
               ? 'AI SHIFTS THE WEIGHT OF THE LENSES: THE INTEGRATION JUDGMENT IN THE CENTRE REMAINS HUMAN'
               : 'ALL THREE LENSES REQUIRE HUMAN JUDGMENT: NO SINGLE LENS IS ENOUGH'}

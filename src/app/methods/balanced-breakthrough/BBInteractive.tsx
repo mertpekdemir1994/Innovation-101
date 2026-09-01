@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER = 'rgba(217,119,6,'
 
 const SVG_W = 700
@@ -231,10 +232,10 @@ export default function BBInteractive() {
             <motion.g key={main} animate={{ opacity: op }} transition={fade}>
               <text x={x} y={y} textAnchor={anchor}
                 fontSize="10" fontFamily="var(--font-mono)" letterSpacing="0.13em"
-                fill={`${PLUM}0.95)`} style={{ userSelect: 'none' }}>{main}</text>
+                fill={`${PLUM_TEXT}0.99)`} style={{ userSelect: 'none' }}>{main}</text>
               <text x={x} y={y + 14} textAnchor={anchor}
                 fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={`${PLUM}0.65)`} style={{ userSelect: 'none' }}>{sub}</text>
+                fill={`${PLUM_TEXT}0.926)`} style={{ userSelect: 'none' }}>{sub}</text>
             </motion.g>
           ))}
 
@@ -243,13 +244,13 @@ export default function BBInteractive() {
             <text x={CTR_X} y={CTR_Y - 4} textAnchor="middle"
               fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
               fill="rgba(255,255,255,0.95)"
-              style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM}0.75))` }}>
+              style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM_TEXT}0.948))` }}>
               BREAK
             </text>
             <text x={CTR_X} y={CTR_Y + 8} textAnchor="middle"
               fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
               fill="rgba(255,255,255,0.95)"
-              style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM}0.75))` }}>
+              style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM_TEXT}0.948))` }}>
               THROUGH
             </text>
           </motion.g>
