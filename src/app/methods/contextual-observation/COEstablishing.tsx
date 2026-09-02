@@ -6,7 +6,7 @@ const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 const AMBER = 'rgba(245,158,11,'
 
 function dome(cx: number, cy: number, w: number, h: number): string {
-  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 0 ${cx + w} ${cy + h} Z`
+  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 1 ${cx + w} ${cy + h} Z`
 }
 
 const SVG_W = 700
@@ -42,7 +42,7 @@ export default function COEstablishing() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}
+        style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}
       >
         <defs>
           <filter id="co-est-glow" x="-30%" y="-30%" width="160%" height="160%">
