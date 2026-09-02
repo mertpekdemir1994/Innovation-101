@@ -9,11 +9,14 @@ const PLUM = 'rgba(107,74,119,'
 // O bottom-left (external+helpful) = Opportunities, T bottom-right (external+harmful) = Threats
 // Grid lines cross at cx=320, cy=210
 
+// `color` drives the line/dots (only needs 3:1); `textColor` is a brightened
+// variant for the move label, since plain PLUM/red/blue fail 4.5:1 on this
+// dark background at the opacities `color` uses
 const CROSSINGS = [
-  { id: 'so', label: 'S × O', move: 'PRESS',   x1: 160, y1: 100, x2: 160, y2: 310, color: `${PLUM}0.85)` },
-  { id: 'wt', label: 'W × T', move: 'DEFEND',  x1: 480, y1: 100, x2: 480, y2: 310, color: 'rgba(220,38,38,0.70)' },
-  { id: 'st', label: 'S × T', move: 'COUNTER', x1: 160, y1: 100, x2: 480, y2: 310, color: 'rgba(245,158,11,0.75)' },
-  { id: 'wo', label: 'W × O', move: 'BUILD',   x1: 480, y1: 100, x2: 160, y2: 310, color: 'rgba(59,130,246,0.75)' },
+  { id: 'so', label: 'S × O', move: 'PRESS',   x1: 160, y1: 100, x2: 160, y2: 310, color: `${PLUM}0.85)`, textColor: 'rgba(166,147,174,0.90)' },
+  { id: 'wt', label: 'W × T', move: 'DEFEND',  x1: 480, y1: 100, x2: 480, y2: 310, color: 'rgba(220,38,38,0.70)', textColor: 'rgba(248,113,113,0.90)' },
+  { id: 'st', label: 'S × T', move: 'COUNTER', x1: 160, y1: 100, x2: 480, y2: 310, color: 'rgba(245,158,11,0.75)', textColor: 'rgba(245,158,11,0.75)' },
+  { id: 'wo', label: 'W × O', move: 'BUILD',   x1: 480, y1: 100, x2: 160, y2: 310, color: 'rgba(59,130,246,0.75)', textColor: 'rgba(96,165,250,0.90)' },
 ]
 
 const QUADRANTS = [
@@ -76,10 +79,10 @@ export default function SWOTEstablishing() {
           <line x1={30} y1={210} x2={610} y2={210} stroke="rgba(255,255,255,0.18)" strokeWidth={1} strokeDasharray="4 4" />
 
           {/* Axis labels */}
-          <text x={320} y={20} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.10em">INTERNAL</text>
-          <text x={320} y={408} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.10em">EXTERNAL</text>
-          <text x={22} y={213} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(-90,22,213)">HELPFUL</text>
-          <text x={618} y={213} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={9} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(90,618,213)">HARMFUL</text>
+          <text x={320} y={20} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.10em">INTERNAL</text>
+          <text x={320} y={408} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.10em">EXTERNAL</text>
+          <text x={22} y={213} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(-90,22,213)">HELPFUL</text>
+          <text x={618} y={213} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(90,618,213)">HARMFUL</text>
         </motion.g>
 
         {/* ── Quadrant labels + items ── */}
@@ -92,20 +95,20 @@ export default function SWOTEstablishing() {
             >
               {/* Quadrant label */}
               <text
-                x={q.cx} y={q.cy - 48}
+                x={q.cx} y={q.cy - 50}
                 textAnchor="middle"
                 fill="rgba(255,255,255,0.55)"
-                fontSize={10}
+                fontSize={11}
                 fontFamily="var(--font-mono)"
                 letterSpacing="0.12em"
                 fontWeight={600}
               >{q.label}</text>
               {/* Axis position */}
               <text
-                x={q.cx} y={q.cy - 36}
+                x={q.cx} y={q.cy - 32}
                 textAnchor="middle"
                 fill="rgba(255,255,255,0.61)"
-                fontSize={8}
+                fontSize={11}
                 fontFamily="var(--font-mono)"
                 letterSpacing="0.06em"
               >{q.axis}</text>
@@ -113,10 +116,10 @@ export default function SWOTEstablishing() {
               {q.items.map((item, i) => (
                 <text
                   key={i}
-                  x={q.cx} y={q.cy - 10 + i * 16}
+                  x={q.cx} y={q.cy - 12 + i * 18}
                   textAnchor="middle"
                   fill="rgba(255,255,255,0.69)"
-                  fontSize={9}
+                  fontSize={11}
                   fontFamily="var(--font-body)"
                 >· {item}</text>
               ))}
@@ -141,11 +144,11 @@ export default function SWOTEstablishing() {
               />
               {/* Move label at midpoint */}
               <text
-                x={(c.x1 + c.x2) / 2 + (c.id === 'st' ? 12 : c.id === 'wo' ? -12 : 0)}
+                x={(c.x1 + c.x2) / 2 + (c.id === 'st' ? 40 : c.id === 'wo' ? -40 : 0)}
                 y={(c.y1 + c.y2) / 2 + (c.id === 'so' ? -8 : c.id === 'wt' ? -8 : 0)}
                 textAnchor="middle"
-                fill={c.color}
-                fontSize={8}
+                fill={c.textColor}
+                fontSize={11}
                 fontFamily="var(--font-mono)"
                 letterSpacing="0.12em"
                 fontWeight={600}

@@ -4,6 +4,14 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM_RGB = 'rgba(107,74,119,'
+// Brightened text-safe variants: plain PLUM and RED fail 4.5:1 on this dark
+// background even at full opacity, and plain BLUE only just clears it —
+// `color` (below) stays vivid for backgrounds/borders (3:1 is enough there),
+// `textColor` uses these for anything rendered as text.
+const PLUM_TEXT  = 'rgba(166,147,174,'
+const RED_TEXT   = 'rgba(248,113,113,'
+const BLUE_TEXT  = 'rgba(96,165,250,'
+const AMBER_RGB  = 'rgba(245,158,11,'
 
 type Selection = 'none' | 's' | 'w' | 'o' | 't' | 'so' | 'wt' | 'st' | 'wo' | 'internal' | 'external' | 'helpful' | 'harmful'
 
@@ -14,6 +22,7 @@ const QUADRANT_INFO = {
     items: ['Loyal customer base', 'Dense local store footprint', '30 years of supplier relationships'],
     note: 'These are real. But a list of strengths, alone, points to no action. Strengths only become strategy when you cross them with something.',
     color: PLUM_RGB,
+    textColor: PLUM_TEXT,
   },
   w: {
     label: 'WEAKNESSES',
@@ -21,6 +30,7 @@ const QUADRANT_INFO = {
     items: ['No functioning delivery logistics', 'App with a one-star rating', 'Thin margins under price pressure'],
     note: 'The most honest quadrant, and the one teams most often soften. If this list is diplomatic, the two most important crossings (W×T and W×O) become impossible.',
     color: 'rgba(220,38,38,',
+    textColor: RED_TEXT,
   },
   o: {
     label: 'OPPORTUNITIES',
@@ -28,13 +38,15 @@ const QUADRANT_INFO = {
     items: ['"Shop local" sentiment rising', 'Convenience delivery demand', 'National player not yet in our markets'],
     note: 'External, meaning outside your control. A common mistake: filing an aspiration here. An opportunity is something in the world, not something you want to do.',
     color: 'rgba(59,130,246,',
+    textColor: BLUE_TEXT,
   },
   t: {
     label: 'THREATS',
     axis: 'External · Harmful',
     items: ['National online grocery entrant arriving', 'Changing consumer price sensitivity', 'Regulatory cost increases'],
     note: 'A trivial threat and an existential one look identical in this box. Before acting on the crossings, weight by magnitude and probability.',
-    color: 'rgba(245,158,11,',
+    color: AMBER_RGB,
+    textColor: AMBER_RGB,
   },
 }
 
@@ -42,24 +54,28 @@ const CROSSING_INFO = {
   so: {
     label: 'S × O: PRESS',
     color: PLUM_RGB,
+    textColor: PLUM_TEXT,
     description: 'Match a real advantage to a real opening. Your dense local footprint × "shop local" sentiment and convenience demand → same-day pickup from existing stores, using proximity a national player cannot match for years. These are your most aggressive, highest-confidence moves.',
     instruction: 'Ask: where can we do more of what we are good at, because the world is opening for it?',
   },
   wt: {
     label: 'W × T: DEFEND',
     color: 'rgba(220,38,38,',
+    textColor: RED_TEXT,
     description: 'Where a vulnerability meets an external danger. No delivery logistics × national online entrant arriving → the entrant\'s first advantage is the one you cannot counter. Fix this before anything else. These moves usually deserve attention before the exciting S×O press moves.',
     instruction: 'Ask: where are we exposed in a way that could sink us, and what must we address first?',
   },
   st: {
     label: 'S × T: COUNTER',
-    color: 'rgba(245,158,11,',
+    color: AMBER_RGB,
+    textColor: AMBER_RGB,
     description: 'Use something you have to blunt something coming. Your supplier relationships × the threat of national-player price leverage → build a local-sourcing story the national player structurally cannot tell. Turn your asset against their advantage.',
     instruction: 'Ask: what do we have that directly blunts what is coming at us?',
   },
   wo: {
     label: 'W × O: BUILD',
     color: 'rgba(59,130,246,',
+    textColor: BLUE_TEXT,
     description: 'An opening you cannot yet reach because of a gap in yourself. No delivery logistics × the convenience-delivery opportunity → you cannot access this opportunity in your current state. The move is to build the missing capability, or honestly decide to let the opportunity go.',
     instruction: 'Ask: what would we need to build or fix in order to reach for this?',
   },
@@ -87,12 +103,12 @@ export default function SWOTInteractive() {
   const aInfo = (selected === 'internal' || selected === 'external' || selected === 'helpful' || selected === 'harmful')
     ? AXIS_INFO[selected] : null
 
-  const btnStyle = (id: Selection, color: string): React.CSSProperties => ({
+  const btnStyle = (id: Selection, color: string, textColor: string = color): React.CSSProperties => ({
     background: selected === id ? `${color}0.14)` : 'rgba(255,255,255,0.04)',
     border: `1px solid ${selected === id ? `${color}0.40)` : 'rgba(255,255,255,0.12)'}`,
-    color: selected === id ? `${color}0.90)` : 'rgba(255,255,255,0.50)',
+    color: selected === id ? `${textColor}0.90)` : 'rgba(255,255,255,0.50)',
     fontFamily: 'var(--font-mono)',
-    fontSize: '10px',
+    fontSize: '11px',
     letterSpacing: '0.10em',
     padding: '8px 14px',
     borderRadius: '4px',
@@ -106,7 +122,7 @@ export default function SWOTInteractive() {
 
       {/* ── Axis buttons ── */}
       <div style={{ marginBottom: '24px' }}>
-        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.30)', marginBottom: '10px' }}>
+        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.50)', marginBottom: '10px' }}>
           THE TWO AXES: click to understand what they mean
         </p>
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
@@ -120,16 +136,16 @@ export default function SWOTInteractive() {
 
       {/* ── Quadrant buttons ── */}
       <div style={{ marginBottom: '24px' }}>
-        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.30)', marginBottom: '10px' }}>
+        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.50)', marginBottom: '10px' }}>
           THE FOUR QUADRANTS: each holds a list; the list alone points to nothing
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
           {(['s', 'w', 'o', 't'] as const).map(id => {
             const q = QUADRANT_INFO[id]
             return (
-              <button key={id} onClick={() => toggle(id)} style={btnStyle(id, q.color)}>
+              <button key={id} onClick={() => toggle(id)} style={btnStyle(id, q.color, q.textColor)}>
                 {q.label}
-                <span style={{ display: 'block', fontSize: '8px', opacity: 0.65, marginTop: '2px' }}>{q.axis}</span>
+                <span style={{ display: 'block', fontSize: '11px', opacity: 0.65, marginTop: '2px' }}>{q.axis}</span>
               </button>
             )
           })}
@@ -138,14 +154,14 @@ export default function SWOTInteractive() {
 
       {/* ── Crossing buttons ── */}
       <div style={{ marginBottom: '28px' }}>
-        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.30)', marginBottom: '10px' }}>
+        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.50)', marginBottom: '10px' }}>
           THE FOUR CROSSINGS: this is where strategy appears
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
           {(['so', 'wt', 'st', 'wo'] as const).map(id => {
             const c = CROSSING_INFO[id]
             return (
-              <button key={id} onClick={() => toggle(id)} style={btnStyle(id, c.color)}>
+              <button key={id} onClick={() => toggle(id)} style={btnStyle(id, c.color, c.textColor)}>
                 {c.label}
               </button>
             )
@@ -171,7 +187,7 @@ export default function SWOTInteractive() {
           >
             {qInfo && (
               <>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: `${qInfo.color}0.70)`, marginBottom: '12px' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.12em', color: `${qInfo.textColor}0.85)`, marginBottom: '12px' }}>
                   {qInfo.label}: {qInfo.axis}
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 14px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
@@ -181,20 +197,20 @@ export default function SWOTInteractive() {
                     </li>
                   ))}
                 </ul>
-                <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.42)', lineHeight: 1.6, fontStyle: 'italic', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '12px' }}>
+                <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.50)', lineHeight: 1.6, fontStyle: 'italic', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '12px' }}>
                   {qInfo.note}
                 </p>
               </>
             )}
             {cInfo && (
               <>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em', color: `${cInfo.color}0.80)`, marginBottom: '12px', fontWeight: 600 }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.12em', color: `${cInfo.textColor}0.90)`, marginBottom: '12px', fontWeight: 600 }}>
                   {cInfo.label}
                 </p>
                 <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.65, marginBottom: '14px' }}>
                   {cInfo.description}
                 </p>
-                <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.42)', lineHeight: 1.6, fontStyle: 'italic', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '12px' }}>
+                <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.50)', lineHeight: 1.6, fontStyle: 'italic', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '12px' }}>
                   {cInfo.instruction}
                 </p>
               </>
@@ -209,7 +225,7 @@ export default function SWOTInteractive() {
       </AnimatePresence>
 
       {selected === 'none' && (
-        <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.28)', lineHeight: 1.6, fontStyle: 'italic' }}>
+        <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.50)', lineHeight: 1.6, fontStyle: 'italic' }}>
           Select an axis, a quadrant, or a crossing above. The quadrants are setup; the crossings are the strategy.
         </p>
       )}
