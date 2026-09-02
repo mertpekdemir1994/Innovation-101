@@ -4,6 +4,11 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { spring } from '@/lib/motion'
 
+// This dark, saturated violet (matches --color-framework) fails 4.5:1 as
+// text on the dark panel/section backgrounds this component renders on,
+// even near full opacity — brightened text-safe variant.
+const PURPLE_TEXT = 'rgba(173,132,244,'
+
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 export type Phase = 'discover' | 'define' | 'develop' | 'deliver'
@@ -140,7 +145,7 @@ function DiamondSVG({ activePhase, hoveredPhase, theme, onPhaseClick, onPhaseHov
               y={PHASE_LABEL_POS[phase.id].y}
               textAnchor="middle"
               dominantBaseline="middle"
-              fontSize="11"
+              fontSize="13"
               fontFamily="var(--font-mono)"
               fontWeight="500"
               letterSpacing="0.08em"
@@ -186,7 +191,7 @@ function DiamondSVG({ activePhase, hoveredPhase, theme, onPhaseClick, onPhaseHov
           x={x}
           y={234}
           textAnchor={anchor as 'start' | 'middle' | 'end'}
-          fontSize="9"
+          fontSize="13"
           fontFamily="var(--font-mono)"
           letterSpacing="0.10em"
           fill={AXIS_COLOR}
@@ -242,7 +247,7 @@ function PhasePanel({ phase, content, onClose, onOpenMethod }: PhasePanelProps) 
     >
       <div className="flex items-start justify-between gap-space-4 mb-space-6">
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest mb-space-2" style={{ color: 'rgba(124,58,237,0.85)' }}>
+          <p className="font-mono text-xs uppercase tracking-widest mb-space-2" style={{ color: `${PURPLE_TEXT}0.85)` }}>
             {config.type === 'diverge' ? '↗ Diverge' : '↘ Converge'}
           </p>
           <h3 className="text-2xl font-semibold" style={{ color: textPrimary }}>{content.headline}</h3>
@@ -309,7 +314,7 @@ function PhasePanel({ phase, content, onClose, onOpenMethod }: PhasePanelProps) 
                           className="rounded-md px-space-4 py-space-3"
                           style={{ background: 'rgba(124,58,237,0.08)', borderLeft: '2px solid rgba(124,58,237,0.50)' }}
                         >
-                          <p className="text-xs font-semibold mb-space-1 font-mono uppercase tracking-widest" style={{ color: 'rgba(124,58,237,0.70)' }}>
+                          <p className="text-xs font-semibold mb-space-1 font-mono uppercase tracking-widest" style={{ color: `${PURPLE_TEXT}0.85)` }}>
                             Key question
                           </p>
                           <p className="text-sm italic leading-relaxed" style={{ color: textPrimary }}>{activity.prompt}</p>
@@ -321,7 +326,7 @@ function PhasePanel({ phase, content, onClose, onOpenMethod }: PhasePanelProps) 
                           type="button"
                           onClick={(e) => onOpenMethod(activity.methodSlug!, e.currentTarget)}
                           className="font-mono text-xs uppercase tracking-widest underline"
-                          style={{ color: 'rgba(124,58,237,0.85)' }}
+                          style={{ color: `${PURPLE_TEXT}0.85)` }}
                         >
                           See method: {activity.methodSlug.replace(/-/g, ' ')} →
                         </button>
@@ -503,7 +508,7 @@ export default function DoubleDiamondViz({ phaseContent, theme = 'light' }: Doub
                 exit={prefersReduced ? {} : { opacity: 0, y: -4 }}
                 transition={{ duration: 0.15 }}
                 className="font-mono text-xs uppercase tracking-widest mb-space-2 min-h-[1.25rem]"
-                style={{ color: 'rgba(124,58,237,0.80)' }}
+                style={{ color: `${PURPLE_TEXT}0.85)` }}
               >
                 {PHASES.find((p) => p.id === hoveredPhase)?.tagline}
               </motion.p>
