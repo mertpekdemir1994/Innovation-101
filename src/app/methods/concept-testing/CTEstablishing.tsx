@@ -8,7 +8,7 @@ const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
-const SVG_H = 295
+const SVG_H = 310
 
 // Bar geometry
 const BAR_W   = 90
@@ -98,16 +98,16 @@ export default function CTEstablishing() {
         >76%</motion.text>
 
         {/* Stated label above bar */}
-        <text x={S_CX} y={38} textAnchor="middle"
-          fill="rgba(255,255,255,0.65)" fontSize={8} fontWeight={600}
+        <text x={S_CX} y={36} textAnchor="middle"
+          fill="rgba(255,255,255,0.65)" fontSize={11} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">STATED</text>
-        <text x={S_CX} y={52} textAnchor="middle"
-          fill="rgba(255,255,255,0.64)" fontSize={6.5} fontFamily="monospace"
+        <text x={S_CX} y={54} textAnchor="middle"
+          fill="rgba(255,255,255,0.64)" fontSize={11} fontFamily="monospace"
           letterSpacing={0.8}>What people say</text>
 
         {/* Below-bar label */}
-        <text x={S_CX} y={BASE_Y + 14} textAnchor="middle"
-          fill={`${AMBER_TEXT}0.861)`} fontSize={6.5} fontFamily="monospace"
+        <text x={S_CX} y={BASE_Y + 16} textAnchor="middle"
+          fill={`${AMBER_TEXT}0.861)`} fontSize={11} fontFamily="monospace"
           letterSpacing={0.6}>Stated preference</text>
 
         {/* ── REVEALED BAR (PLUM) ───────────────────────────── */}
@@ -139,16 +139,16 @@ export default function CTEstablishing() {
         >28%</motion.text>
 
         {/* Revealed label above track */}
-        <text x={R_CX} y={38} textAnchor="middle"
-          fill="rgba(255,255,255,0.65)" fontSize={8} fontWeight={600}
+        <text x={R_CX} y={36} textAnchor="middle"
+          fill="rgba(255,255,255,0.65)" fontSize={11} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">REVEALED</text>
-        <text x={R_CX} y={52} textAnchor="middle"
-          fill="rgba(255,255,255,0.64)" fontSize={6.5} fontFamily="monospace"
+        <text x={R_CX} y={54} textAnchor="middle"
+          fill="rgba(255,255,255,0.64)" fontSize={11} fontFamily="monospace"
           letterSpacing={0.8}>What people do</text>
 
         {/* Below-bar label */}
-        <text x={R_CX} y={BASE_Y + 14} textAnchor="middle"
-          fill={`${PLUM_TEXT}0.905)`} fontSize={6.5} fontFamily="monospace"
+        <text x={R_CX} y={BASE_Y + 16} textAnchor="middle"
+          fill={`${PLUM_TEXT}0.905)`} fontSize={11} fontFamily="monospace"
           letterSpacing={0.6}>Revealed commitment</text>
 
         {/* ── THRESHOLD LINE ────────────────────────────────── */}
@@ -163,12 +163,12 @@ export default function CTEstablishing() {
             strokeDasharray="6 4" />
 
           {/* Threshold label block (right side) */}
-          <text x={548} y={TH_Y - 6}
-            fill="rgba(255,255,255,0.70)" fontSize={7.5} fontWeight={600}
-            letterSpacing={1.2} fontFamily="monospace">SUCCESS THRESHOLD</text>
-          <text x={548} y={TH_Y + 5}
-            fill="rgba(255,255,255,0.675)" fontSize={6.5} fontFamily="monospace"
-            letterSpacing={0.8}>SET IN ADVANCE · 40%</text>
+          <text x={530} y={TH_Y - 10}
+            fill="rgba(255,255,255,0.70)" fontSize={11} fontWeight={600}
+            letterSpacing={1.0} fontFamily="monospace">SUCCESS THRESHOLD</text>
+          <text x={530} y={TH_Y + 12}
+            fill="rgba(255,255,255,0.675)" fontSize={11} fontFamily="monospace"
+            letterSpacing={0.4}>SET IN ADVANCE · 40%</text>
 
           {/* Small tick marks at bars */}
           <line x1={S_L - 4} y1={TH_Y} x2={S_L + BAR_W + 4} y2={TH_Y}
@@ -194,32 +194,46 @@ export default function CTEstablishing() {
             stroke="rgba(255,255,255,0.18)" strokeWidth={1} />
 
           {/* Gap label */}
-          <text x={GAP_CX} y={136} textAnchor="middle"
-            fill="rgba(255,255,255,0.675)" fontSize={7} fontWeight={600}
-            letterSpacing={1.2} fontFamily="monospace">STATED vs</text>
-          <text x={GAP_CX} y={147} textAnchor="middle"
-            fill="rgba(255,255,255,0.675)" fontSize={7} fontWeight={600}
-            letterSpacing={1.2} fontFamily="monospace">REVEALED GAP</text>
+          <text x={GAP_CX} y={140} textAnchor="middle"
+            fill="rgba(255,255,255,0.675)" fontSize={11} fontWeight={600}
+            letterSpacing={1.0} fontFamily="monospace">STATED vs</text>
+          <text x={GAP_CX} y={158} textAnchor="middle"
+            fill="rgba(255,255,255,0.675)" fontSize={11} fontWeight={600}
+            letterSpacing={1.0} fontFamily="monospace">REVEALED GAP</text>
 
-          {/* Verdict badge near revealed bar */}
-          <rect x={R_L - 4} y={R_TOP - 26} width={BAR_W + 8} height={18} rx={3}
+          {/* Verdict badge - positioned above the percentage number, in the R-bar
+              column plus the buffer before the threshold label, since the gap
+              between the percentage (near the bar top) and the bar itself is too
+              narrow to hold a full line of 11pt text. */}
+          <rect x={395} y={140} width={130} height={20} rx={3}
             fill="rgba(245,158,11,0.10)" stroke="rgba(245,158,11,0.28)" strokeWidth={1} />
-          <text x={R_CX} y={R_TOP - 13} textAnchor="middle"
-            fill="rgba(245,158,11,0.70)" fontSize={6.5} fontWeight={600}
-            letterSpacing={1.0} fontFamily="monospace">× BELOW THRESHOLD</text>
+          <text x={460} y={154} textAnchor="middle"
+            fill="rgba(245,158,11,0.80)" fontSize={11} fontWeight={600}
+            letterSpacing={0.3} fontFamily="monospace">× BELOW THRESHOLD</text>
         </motion.g>
 
         {/* Caption */}
         <motion.text
-          x={SVG_W / 2} y={SVG_H - 6}
+          x={SVG_W / 2} y={SVG_H - 20}
           textAnchor="middle"
-          fill="rgba(255,255,255,0.6)" fontSize={6.5} fontFamily="monospace"
-          letterSpacing={0.8}
+          fill="rgba(255,255,255,0.6)" fontSize={11} fontFamily="monospace"
+          letterSpacing={0.2}
           initial={{ opacity: 0 }}
           animate={{ opacity: show ? 1 : 0 }}
           transition={{ duration: dur(0.3), delay: del(1.0) }}
         >
-          stated interest is almost always high · revealed commitment is where the truth lives · the threshold is drawn in advance
+          stated interest is almost always high · revealed commitment is where the truth lives
+        </motion.text>
+        <motion.text
+          x={SVG_W / 2} y={SVG_H - 4}
+          textAnchor="middle"
+          fill="rgba(255,255,255,0.6)" fontSize={11} fontFamily="monospace"
+          letterSpacing={0.2}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: show ? 1 : 0 }}
+          transition={{ duration: dur(0.3), delay: del(1.0) }}
+        >
+          the threshold is drawn in advance
         </motion.text>
       </svg>
     </div>

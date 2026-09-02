@@ -60,7 +60,7 @@ export default function CTExampleToggle() {
                   { label: 'RECRUITING', text: 'Real target customers, not colleagues or friends. Screened against the actual target profile to ensure the reactions came from the right people.' },
                 ].map((col, i) => (
                   <div key={i} className="rounded p-3" style={{ background: `${PLUM}0.04)` }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-2 text-neutral-500">{col.label}</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-wider mb-2 text-neutral-500">{col.label}</p>
                     <p className="text-xs text-neutral-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: col.text }} />
                   </div>
                 ))}
@@ -88,7 +88,7 @@ export default function CTExampleToggle() {
                     <p className="text-xs text-neutral-500">Far fewer actually signed up and provided payment. The gap between saying yes and doing it was stark.</p>
                   </div>
                   <div className="border-t border-neutral-100 pt-3 rounded p-2 bg-amber-50">
-                    <p className="text-[9px] font-semibold uppercase tracking-wider text-amber-700 mb-1">Threshold: 40% · Verdict: × FAILS</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-amber-700 mb-1">Threshold: 40% · Verdict: × FAILS</p>
                     <p className="text-xs text-neutral-600">28% did not clear the pre-set 40% threshold, and because the bar was set before the test, there was no way to spin the warm verbal interest into a green light.</p>
                   </div>
                 </div>
@@ -140,21 +140,21 @@ export default function CTExampleToggle() {
               <div className="flex items-center justify-between mb-4">
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
                   style={{ color: `${INDIGO}0.90)` }}>What AI produced</p>
-                <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full"
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                   style={{ background: `${INDIGO}0.10)`, color: `${INDIGO}0.80)`, border: `1px solid ${INDIGO}0.25)` }}>
                   Simulated customers
                 </span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="rounded p-3" style={{ background: `${INDIGO}0.05)` }}>
-                  <p className="text-[9px] font-semibold uppercase tracking-wider mb-2"
+                  <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
                     style={{ color: `${INDIGO}0.70)` }}>AI customer reactions</p>
                   <p className="text-xs text-neutral-600 leading-relaxed">
                     Playing the target customer, AI reported the concept sounded appealing, valuable, and worth trying. A synthetic panel of simulated customers returned a strong positive interest rate. Every simulated customer said yes.
                   </p>
                 </div>
                 <div className="rounded p-3" style={{ background: `${INDIGO}0.05)` }}>
-                  <p className="text-[9px] font-semibold uppercase tracking-wider mb-2"
+                  <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
                     style={{ color: `${INDIGO}0.70)` }}>What AI could not do</p>
                   <p className="text-xs text-neutral-600 leading-relaxed">
                     Asked to commit, simulated customers had no payment to part with, no premium to weigh against a real budget, no competing priorities. They could not reveal the gap between &ldquo;sounds appealing&rdquo; and &ldquo;I will actually pay for this.&rdquo;

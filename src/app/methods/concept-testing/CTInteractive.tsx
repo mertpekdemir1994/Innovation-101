@@ -23,8 +23,8 @@ const TH_Y  = 162   // threshold line
 
 // Two scenarios for revealed bar
 const SCENARIOS = {
-  below: { h: 58, pct: '28%', label: '× BELOW THRESHOLD', labelColor: `rgba(245,158,11,0.72)` },
-  above: { h: 96, pct: '45%', label: '✓ CLEARS THRESHOLD', labelColor: `rgba(107,74,119,0.90)` },
+  below: { h: 58, pct: '28%', label: '× BELOW THRESHOLD', labelColor: `rgba(245,158,11,0.80)` },
+  above: { h: 96, pct: '45%', label: '✓ CLEARS THRESHOLD', labelColor: `${PLUM_TEXT}0.95)` },
 }
 
 type El = 'stated' | 'revealed' | 'threshold' | null
@@ -62,19 +62,19 @@ export default function CTInteractive() {
     <div className="w-full">
       {/* Scenario toggle */}
       <div className="flex items-center gap-3 mb-4 flex-wrap">
-        <span className="text-[9px] font-semibold uppercase tracking-[1.8px]"
-          style={{ color: `${PLUM}0.55)` }}>Revealed outcome:</span>
+        <span className="text-[10px] font-semibold uppercase tracking-[1.8px]"
+          style={{ color: `${PLUM_TEXT}0.95)` }}>Revealed outcome:</span>
         {(['below', 'above'] as Scenario[]).map(s => (
           <button key={s} onClick={() => setScenario(s)}
             className="px-3 py-1 rounded-full text-[10px] font-semibold tracking-wide transition-all"
             style={{
               background: scenario === s ? (s === 'below' ? 'rgba(245,158,11,0.14)' : `${PLUM}0.18)`) : 'rgba(255,255,255,0.05)',
               border: `1px solid ${scenario === s ? (s === 'below' ? 'rgba(245,158,11,0.38)' : `${PLUM}0.42)`) : 'rgba(255,255,255,0.12)'}`,
-              color: scenario === s ? '#fff' : 'rgba(255,255,255,0.40)',
+              color: scenario === s ? '#fff' : 'rgba(255,255,255,0.55)',
             }}
           >{s === 'below' ? '× Falls Below Threshold' : '✓ Clears Threshold'}</button>
         ))}
-        <span className="text-[9px] text-white/25 ml-2">→ click bars and threshold to explore</span>
+        <span className="text-[10px] text-white/55 ml-2">→ click bars and threshold to explore</span>
       </div>
 
       {/* SVG */}
@@ -113,14 +113,14 @@ export default function CTInteractive() {
           fontSize={13} fontWeight={600} fontFamily="monospace"
           style={{ transition: 'fill 0.22s' }}>76%</text>
         {/* Top label */}
-        <text x={S_CX} y={34} textAnchor="middle"
-          fill="rgba(255,255,255,0.60)" fontSize={7.5} fontWeight={600}
+        <text x={S_CX} y={36} textAnchor="middle"
+          fill="rgba(255,255,255,0.60)" fontSize={11} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">STATED</text>
-        <text x={S_CX} y={46} textAnchor="middle"
-          fill="rgba(255,255,255,0.64)" fontSize={6.5} fontFamily="monospace">What people say</text>
+        <text x={S_CX} y={54} textAnchor="middle"
+          fill="rgba(255,255,255,0.64)" fontSize={11} fontFamily="monospace">What people say</text>
         {/* Bottom label */}
-        <text x={S_CX} y={BASE_Y + 12} textAnchor="middle"
-          fill={`${AMBER_TEXT}0.83)`} fontSize={6.5} fontFamily="monospace">Stated preference</text>
+        <text x={S_CX} y={BASE_Y + 16} textAnchor="middle"
+          fill={`${AMBER_TEXT}0.83)`} fontSize={11} fontFamily="monospace">Stated preference</text>
         {/* Hit area */}
         <rect x={S_L - 6} y={S_TOP - 16} width={BAR_W + 12} height={S_H + 30}
           fill="transparent" role="button" tabIndex={0} aria-label="Stated preference, click to learn more"
@@ -160,20 +160,20 @@ export default function CTInteractive() {
         {/* Verdict badge */}
         <motion.text
           x={R_CX} textAnchor="middle"
-          fontSize={6.5} fontWeight={600} letterSpacing={1.0} fontFamily="monospace"
+          fontSize={11} fontWeight={600} letterSpacing={0.3} fontFamily="monospace"
           fill={sc.labelColor}
-          animate={{ y: R_TOP - 22 }}
+          animate={{ y: R_TOP - 30 }}
           transition={{ duration: prefersReduced ? 0 : 0.42 }}
         >{sc.label}</motion.text>
         {/* Top label */}
-        <text x={R_CX} y={34} textAnchor="middle"
-          fill="rgba(255,255,255,0.60)" fontSize={7.5} fontWeight={600}
+        <text x={R_CX} y={36} textAnchor="middle"
+          fill="rgba(255,255,255,0.60)" fontSize={11} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">REVEALED</text>
-        <text x={R_CX} y={46} textAnchor="middle"
-          fill="rgba(255,255,255,0.64)" fontSize={6.5} fontFamily="monospace">What people do</text>
+        <text x={R_CX} y={54} textAnchor="middle"
+          fill="rgba(255,255,255,0.64)" fontSize={11} fontFamily="monospace">What people do</text>
         {/* Bottom label */}
-        <text x={R_CX} y={BASE_Y + 12} textAnchor="middle"
-          fill={`${PLUM_TEXT}0.885)`} fontSize={6.5} fontFamily="monospace">Revealed commitment</text>
+        <text x={R_CX} y={BASE_Y + 16} textAnchor="middle"
+          fill={`${PLUM_TEXT}0.885)`} fontSize={11} fontFamily="monospace">Revealed commitment</text>
         {/* Hit area (full track height) */}
         <rect x={R_L - 6} y={S_TOP - 16} width={BAR_W + 12} height={S_H + 30}
           fill="transparent" role="button" tabIndex={0} aria-label="Revealed preference, click to learn more"
@@ -189,13 +189,13 @@ export default function CTInteractive() {
           strokeDasharray="6 4"
           style={{ transition: 'stroke 0.22s, stroke-width 0.22s' }} />
         {/* Threshold label */}
-        <text x={548} y={TH_Y - 6}
+        <text x={530} y={TH_Y - 10}
           fill={`rgba(255,255,255,${active === 'threshold' ? '0.85' : '0.60'})`}
-          fontSize={7} fontWeight={600} letterSpacing={1.2} fontFamily="monospace"
+          fontSize={11} fontWeight={600} letterSpacing={0.6} fontFamily="monospace"
           style={{ transition: 'fill 0.22s' }}>SUCCESS THRESHOLD</text>
-        <text x={548} y={TH_Y + 5}
-          fill="rgba(255,255,255,0.65)" fontSize={6} fontFamily="monospace"
-          letterSpacing={0.8}>SET IN ADVANCE · 40%</text>
+        <text x={530} y={TH_Y + 12}
+          fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="monospace"
+          letterSpacing={0.1}>SET IN ADVANCE · 40%</text>
         {/* Hit area for threshold */}
         <rect x={105} y={TH_Y - 8} width={435} height={16}
           fill="transparent" role="button" tabIndex={0} aria-label="Success threshold, click to learn more"
@@ -226,7 +226,7 @@ export default function CTInteractive() {
             <p className="text-[10px] font-semibold uppercase tracking-[1.6px] mb-2"
               style={{
                 color: active === 'stated' ? 'rgba(245,158,11,0.88)'
-                  : active === 'revealed' ? `${PLUM}0.88)`
+                  : active === 'revealed' ? `${PLUM_TEXT}0.95)`
                   : 'rgba(255,255,255,0.65)',
               }}>
               {DETAILS[active].heading}
@@ -243,7 +243,7 @@ export default function CTInteractive() {
               <span className="text-[10px] font-semibold shrink-0 mt-0.5"
                 style={{
                   color: active === 'stated' ? 'rgba(245,158,11,0.80)'
-                    : active === 'revealed' ? `${PLUM}0.80)`
+                    : active === 'revealed' ? `${PLUM_TEXT}0.90)`
                     : 'rgba(255,255,255,0.50)',
                 }}>KEY</span>
               <p className="text-xs text-white/50 leading-relaxed">{DETAILS[active].key}</p>

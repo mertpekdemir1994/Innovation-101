@@ -10,7 +10,7 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W  = 700
-const SVG_H  = 278
+const SVG_H  = 296
 const BAR_W  = 90
 const BASE_Y = 238
 
@@ -49,7 +49,7 @@ export default function CTAIReactivated() {
                 background: mode === m
                   ? m === 'ai' ? `${INDIGO}0.22)` : `${PLUM}0.22)`
                   : 'transparent',
-                color: mode === m ? '#fff' : 'rgba(255,255,255,0.38)',
+                color: mode === m ? '#fff' : 'rgba(255,255,255,0.55)',
                 border: `1px solid ${mode === m ? (m === 'ai' ? `${INDIGO}0.50)` : `${PLUM}0.50)`) : 'transparent'}`,
               }}
             >{m === 'human' ? 'Human Research' : 'With AI'}</button>
@@ -88,16 +88,16 @@ export default function CTAIReactivated() {
           fontSize={13} fontWeight={600} fontFamily="monospace"
           style={{ transition: 'fill 0.35s' }}>76%</text>
         {/* Labels */}
-        <text x={S_CX} y={34} textAnchor="middle"
-          fill="rgba(255,255,255,0.60)" fontSize={7.5} fontWeight={600}
+        <text x={S_CX} y={36} textAnchor="middle"
+          fill="rgba(255,255,255,0.60)" fontSize={11} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">STATED</text>
-        <text x={S_CX} y={46} textAnchor="middle"
-          fill="rgba(255,255,255,0.64)" fontSize={6} fontFamily="monospace">
+        <text x={S_CX} y={54} textAnchor="middle"
+          fill="rgba(255,255,255,0.64)" fontSize={11} fontFamily="monospace">
           {isAI ? 'AI simulates warm interest' : 'What people say'}
         </text>
-        <text x={S_CX} y={BASE_Y + 12} textAnchor="middle"
+        <text x={S_CX} y={BASE_Y + 16} textAnchor="middle"
           fill={isAI ? `${INDIGO_TEXT}0.895)` : `${AMBER_TEXT}0.845)`}
-          fontSize={6} fontFamily="monospace"
+          fontSize={11} fontFamily="monospace"
           style={{ transition: 'fill 0.35s' }}>
           {isAI ? 'AI-generated (stated only)' : 'Stated preference'}
         </text>
@@ -119,22 +119,20 @@ export default function CTAIReactivated() {
                 fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" strokeWidth={1}
                 strokeDasharray="4 3" />
               <text x={R_CX} y={BASE_Y - 5} textAnchor="middle"
-                fill="rgba(255,255,255,0.65)" fontSize={6.5} fontFamily="monospace">—</text>
-              {/* Cannot produce label */}
-              <rect x={R_L - 4} y={S_TOP + 10} width={BAR_W + 8} height={80} rx={4}
+                fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="monospace">—</text>
+              {/* Cannot produce label - box widened beyond the bar's own column since
+                  three lines of 11pt text no longer fit the original bar-width box */}
+              <rect x={365} y={S_TOP + 10} width={150} height={80} rx={4}
                 fill={`${INDIGO}0.05)`} stroke={`${INDIGO}0.15)`} strokeWidth={1}
                 strokeDasharray="4 3" />
-              <text x={R_CX} y={S_TOP + 42} textAnchor="middle"
-                fill={`${INDIGO_TEXT}0.885)`} fontSize={6.5} fontWeight={600} fontFamily="monospace"
-                letterSpacing={0.6}>AI CANNOT</text>
-              <text x={R_CX} y={S_TOP + 54} textAnchor="middle"
-                fill={`${INDIGO_TEXT}0.885)`} fontSize={6.5} fontWeight={600} fontFamily="monospace"
-                letterSpacing={0.6}>PRODUCE</text>
+              <text x={R_CX} y={S_TOP + 48} textAnchor="middle"
+                fill={`${INDIGO_TEXT}0.885)`} fontSize={11} fontWeight={600} fontFamily="monospace"
+                letterSpacing={0.2}>AI CANNOT PRODUCE</text>
               <text x={R_CX} y={S_TOP + 66} textAnchor="middle"
-                fill={`${INDIGO_TEXT}0.885)`} fontSize={6.5} fontWeight={600} fontFamily="monospace"
-                letterSpacing={0.6}>REVEALED</text>
-              <text x={R_CX} y={S_TOP + 78} textAnchor="middle"
-                fill={`${INDIGO_TEXT}0.853)`} fontSize={5.5} fontFamily="monospace">No stake · no commitment</text>
+                fill={`${INDIGO_TEXT}0.885)`} fontSize={11} fontWeight={600} fontFamily="monospace"
+                letterSpacing={0.4}>REVEALED</text>
+              <text x={R_CX} y={S_TOP + 84} textAnchor="middle"
+                fill={`${INDIGO_TEXT}0.853)`} fontSize={11} fontFamily="monospace">NOTHING AT STAKE</text>
             </motion.g>
           ) : (
             /* Human mode: genuine revealed bar */
@@ -147,27 +145,28 @@ export default function CTAIReactivated() {
                 filter="url(#ct-ai-glow)" />
               <text x={R_CX} y={BASE_Y - R_H - 10} textAnchor="middle"
                 fill={`${PLUM_TEXT}0.975)`} fontSize={13} fontWeight={600} fontFamily="monospace">28%</text>
-              {/* Verdict */}
-              <rect x={R_L - 4} y={BASE_Y - R_H - 28} width={BAR_W + 8} height={17} rx={3}
+              {/* Verdict - widened and moved above the percentage so the 18-character
+                  label at 11pt doesn't overlap the "28%" number below it */}
+              <rect x={373} y={133} width={124} height={20} rx={3}
                 fill="rgba(245,158,11,0.10)" stroke="rgba(245,158,11,0.28)" strokeWidth={1} />
-              <text x={R_CX} y={BASE_Y - R_H - 16} textAnchor="middle"
-                fill="rgba(245,158,11,0.72)" fontSize={6.5} fontWeight={600}
-                letterSpacing={1.0} fontFamily="monospace">× BELOW THRESHOLD</text>
+              <text x={R_CX} y={147} textAnchor="middle"
+                fill="rgba(245,158,11,0.80)" fontSize={11} fontWeight={600}
+                letterSpacing={0.3} fontFamily="monospace">× BELOW THRESHOLD</text>
             </motion.g>
           )}
         </AnimatePresence>
 
         {/* Top label for revealed */}
-        <text x={R_CX} y={34} textAnchor="middle"
-          fill="rgba(255,255,255,0.60)" fontSize={7.5} fontWeight={600}
+        <text x={R_CX} y={36} textAnchor="middle"
+          fill="rgba(255,255,255,0.60)" fontSize={11} fontWeight={600}
           letterSpacing={1.4} fontFamily="monospace">REVEALED</text>
-        <text x={R_CX} y={46} textAnchor="middle"
-          fill="rgba(255,255,255,0.64)" fontSize={6} fontFamily="monospace">
+        <text x={R_CX} y={54} textAnchor="middle"
+          fill="rgba(255,255,255,0.64)" fontSize={11} fontFamily="monospace">
           {isAI ? 'No stake, cannot commit' : 'What people do'}
         </text>
-        <text x={R_CX} y={BASE_Y + 12} textAnchor="middle"
+        <text x={R_CX} y={BASE_Y + 16} textAnchor="middle"
           fill={isAI ? `${INDIGO_TEXT}0.874)` : `${PLUM_TEXT}0.885)`}
-          fontSize={6} fontFamily="monospace"
+          fontSize={11} fontFamily="monospace"
           style={{ transition: 'fill 0.35s' }}>
           {isAI ? 'Absent, structurally impossible' : 'Revealed commitment'}
         </text>
@@ -177,29 +176,34 @@ export default function CTAIReactivated() {
           stroke={isAI ? `${INDIGO}0.40)` : 'rgba(255,255,255,0.52)'}
           strokeWidth={1.5} strokeDasharray="6 4"
           style={{ transition: 'stroke 0.35s' }} />
-        <text x={548} y={TH_Y - 6}
+        <text x={530} y={TH_Y - 10}
           fill={isAI ? `${INDIGO_TEXT}0.916)` : 'rgba(255,255,255,0.62)'}
-          fontSize={7} fontWeight={600} letterSpacing={1.2} fontFamily="monospace"
+          fontSize={11} fontWeight={600} letterSpacing={0.2} fontFamily="monospace"
           style={{ transition: 'fill 0.35s' }}>
-          {isAI ? 'THRESHOLD: CANNOT CLEAR' : 'SUCCESS THRESHOLD'}
+          {isAI ? 'THRESHOLD: UNREACHABLE' : 'SUCCESS THRESHOLD'}
         </text>
-        <text x={548} y={TH_Y + 5}
-          fill="rgba(255,255,255,0.64)" fontSize={6} fontFamily="monospace" letterSpacing={0.8}>
+        <text x={530} y={TH_Y + 12}
+          fill="rgba(255,255,255,0.64)" fontSize={11} fontFamily="monospace" letterSpacing={0.1}>
           SET IN ADVANCE · 40%
         </text>
 
         {/* AI annotation at bottom */}
         <AnimatePresence>
           {isAI && (
-            <motion.text
+            <motion.g
               key="ai-note"
-              x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
-              fill={`${INDIGO_TEXT}0.878)`} fontSize={6.5} fontFamily="monospace" letterSpacing={0.8}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
             >
-              AI can only ever produce the warm stated bar · the revealed bar requires real users with something at stake
-            </motion.text>
+              <text x={SVG_W / 2} y={SVG_H - 20} textAnchor="middle"
+                fill={`${INDIGO_TEXT}0.878)`} fontSize={11} fontFamily="monospace" letterSpacing={0.2}>
+                AI can only ever produce the warm stated bar ·
+              </text>
+              <text x={SVG_W / 2} y={SVG_H - 4} textAnchor="middle"
+                fill={`${INDIGO_TEXT}0.878)`} fontSize={11} fontFamily="monospace" letterSpacing={0.2}>
+                the revealed bar requires real users with something at stake
+              </text>
+            </motion.g>
           )}
         </AnimatePresence>
       </svg>
@@ -216,7 +220,7 @@ export default function CTAIReactivated() {
               <div key={i} className="rounded-lg p-4 border"
                 style={{ background: `${INDIGO}0.06)`, borderColor: `${INDIGO}0.20)` }}>
                 <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
-                  style={{ color: `${INDIGO}0.78)` }}>{card.h}</p>
+                  style={{ color: `${INDIGO_TEXT}0.90)` }}>{card.h}</p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.b}</p>
               </div>
             ))}
@@ -234,7 +238,7 @@ export default function CTAIReactivated() {
               <div key={i} className="rounded-lg p-4 border"
                 style={{ background: `${PLUM}0.10)`, borderColor: `${PLUM}0.26)` }}>
                 <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
-                  style={{ color: `${PLUM}0.82)` }}>{card.h}</p>
+                  style={{ color: `${PLUM_TEXT}0.90)` }}>{card.h}</p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.b}</p>
               </div>
             ))}
@@ -245,8 +249,8 @@ export default function CTAIReactivated() {
       {/* Synthesis card */}
       <div className="mt-3 rounded-lg p-4 border border-white/8"
         style={{ background: 'rgba(255,255,255,0.04)' }}>
-        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/28 mb-1">Synthesis</p>
-        <p className="text-xs text-white/42 leading-relaxed">
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/60 mb-1">Synthesis</p>
+        <p className="text-xs text-white/55 leading-relaxed">
           AI can help design the test well and synthesize real results afterward. It cannot substitute for the test itself, because the test measures revealed preference (real people doing costly things) and a model with nothing at stake can only produce the stated interest the method was built to see past.
         </p>
       </div>
