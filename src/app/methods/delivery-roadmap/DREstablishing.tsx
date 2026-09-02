@@ -56,7 +56,7 @@ export default function DREstablishing() {
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Confidence-gradient bet sequence. Four bet boxes sit left to right: PROOF (now, firm solid border), RELEASE (next, mostly solid), PILOT (later, dashed border), ROLLOUT (far, faded and dashed). Gate markers sit between each pair. Two learning arrows curve backwards from later bets to earlier bets, showing how what you learn reshapes what comes next."
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
+        style={{ width: '100%', margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="dr-est-glow" x="-30%" y="-30%" width="160%" height="160%">
@@ -105,9 +105,9 @@ export default function DREstablishing() {
               {g.label}
             </text>
             <text x={g.x} y={202} textAnchor="middle" fontSize="11"
-              fontFamily="var(--font-mono)" letterSpacing="0.04em"
+              fontFamily="var(--font-mono)" letterSpacing="0.02em"
               fill={`rgba(183,145,135,0.84)`} style={{ userSelect: 'none' }}>
-              PROCEED · ADJUST · STOP
+              PROC. · ADJ. · STOP
             </text>
           </motion.g>
         ))}
