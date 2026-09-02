@@ -11,7 +11,7 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
-const SVG_H = 380
+const SVG_H = 400
 
 type ActorId = 'platform' | 'hosts' | 'guests' | 'payment' | 'photographers' | 'cleaning' | 'regulators' | 'neighbors'
 
@@ -44,10 +44,30 @@ function actorById(id: ActorId): ActorDef {
   return ACTORS.find(a => a.id === id)!
 }
 
+// Internal label position - only used for actors whose label fits inside
+// the node (PLATFORM, HOSTS, GUESTS). All others use externalLabelY below.
 function nodeLabelY(actor: ActorDef, lineIndex: number): number {
-  const lh = actor.focal ? 10 : 8.5
+  const lh = actor.focal ? 16 : 8.5
   const topOffset = -(actor.label.length - 1) * lh / 2
   return actor.cy + topOffset + lineIndex * lh
+}
+
+// Nodes too small to hold their label at 11pt get it positioned outside the
+// circle instead, above or below depending on which side has open room -
+// same layout as EMEstablishing.
+const EXTERNAL_LABEL_DIR: Partial<Record<ActorId, 'above' | 'below'>> = {
+  payment: 'below',
+  photographers: 'below',
+  cleaning: 'above',
+  regulators: 'below',
+  neighbors: 'above',
+}
+
+function externalLabelY(actor: ActorDef, lineIndex: number): number {
+  const dir = EXTERNAL_LABEL_DIR[actor.id]
+  return dir === 'above'
+    ? actor.cy - actor.r - 32 + lineIndex * 16
+    : actor.cy + actor.r + 16 + lineIndex * 16
 }
 
 export default function EMAIReactivated() {
@@ -73,7 +93,7 @@ export default function EMAIReactivated() {
                   background: isActive
                     ? (isAI ? `${INDIGO}0.78)` : 'rgba(255,255,255,0.90)')
                     : 'transparent',
-                  color: isActive ? (isAI ? '#fff' : '#111') : 'rgba(255,255,255,0.45)',
+                  color: isActive ? (isAI ? '#fff' : '#111') : 'rgba(255,255,255,0.55)',
                 }}
                 aria-pressed={isActive}
               >{label}</button>
@@ -97,11 +117,13 @@ export default function EMAIReactivated() {
             style={{ transition: 'fill 0.35s' }}
           />
 
-          {/* Connections */}
+          {/* Connections - label at 30% from "from" toward "to" instead of
+              the midpoint; several midpoint labels overlap the PLATFORM hub
+              circle at 11pt */}
           {CONNECTIONS.map(c => {
             const fa = actorById(c.from), ta = actorById(c.to)
-            const lx = (fa.cx + ta.cx) / 2
-            const ly = (fa.cy + ta.cy) / 2
+            const lx = fa.cx + (ta.cx - fa.cx) * 0.3
+            const ly = fa.cy + (ta.cy - fa.cy) * 0.3
             const dimInAI = aiMode && !c.obvious
             return (
               <motion.g key={`conn-${c.from}-${c.to}`}
@@ -120,7 +142,7 @@ export default function EMAIReactivated() {
                 />
                 <text x={lx} y={ly - 6}
                   textAnchor="middle" dominantBaseline="auto"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                   fill={
                     aiMode
                       ? (c.obvious ? `${INDIGO_TEXT}0.905)` : `${AMBER_TEXT}0.798)`)
@@ -163,10 +185,10 @@ export default function EMAIReactivated() {
                 />
                 {actor.label.map((line, li) => (
                   <text key={li}
-                    x={actor.cx} y={nodeLabelY(actor, li)}
+                    x={actor.cx} y={EXTERNAL_LABEL_DIR[actor.id] ? externalLabelY(actor, li) : nodeLabelY(actor, li)}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize={actor.focal ? '6.5' : '5.5'}
-                    fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                    fontSize="11"
+                    fontFamily="var(--font-mono)" letterSpacing="0.05em"
                     fill={
                       aiMode
                         ? (actor.obvious ? `${INDIGO_TEXT}0.962)` : `${AMBER_TEXT}0.876)`)
@@ -186,16 +208,19 @@ export default function EMAIReactivated() {
                 <motion.text key="ai-maps"
                   x={350} y={198 + 60}
                   textAnchor="middle" dominantBaseline="hanging"
-                  fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                   fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30 }}
                 >AI MAPS THE VISIBLE WEB</motion.text>
 
+                {/* Moved above the photographers node instead of below - its
+                    label now sits below the node externally (see
+                    EXTERNAL_LABEL_DIR), and the two would otherwise collide */}
                 <motion.text key="ai-misses"
-                  x={88} y={294 + 36}
+                  x={88} y={294 - 30 - 32}
                   textAnchor="middle" dominantBaseline="hanging"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                   fill={`${AMBER_TEXT}0.83)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30 }}
@@ -220,7 +245,7 @@ export default function EMAIReactivated() {
               style={{ background: `${INDIGO}0.06)`, border: `1px solid ${INDIGO}0.20)` }}
             >
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}
+                style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_TEXT}0.90)` }}
               >Where AI is strong</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
                 AI can rapidly assemble the documented, visible structure of a well-understood ecosystem: the obvious actors and the textbook flows between them. For a known domain like a rental marketplace, AI quickly produces the platform, hosts, guests, payment provider structure: the standard two-sided-market description. Genuinely useful as a starting scaffold and faster than building from scratch.
@@ -243,7 +268,7 @@ export default function EMAIReactivated() {
       {/* Synthesis - always visible */}
       <div className="rounded-xl p-6" style={{ background: `${TEAL}0.08)`, border: `1px solid ${TEAL}0.20)` }}>
         <p className="font-mono uppercase tracking-widest mb-3"
-          style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
+          style={{ fontSize: 'var(--text-2xs)', color: `${TEAL_TEXT}0.90)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
           AI accelerates the assembly and analysis of the visible ecosystem: real value. It can produce the documented structure of a domain fast, model how value flows through the mapped system, and keep the map current as the ecosystem shifts. But the distinctive payoff of ecosystem mapping is spotting the non-obvious actor and the informal flow that reveal where a system can actually be moved. That depends on human system-knowledge and the deliberate hunt for what the common description omits, which is exactly what AI, reasoning from that common description, is least likely to surface. Use AI to build the visible scaffold; hunt for the hidden actors yourself.

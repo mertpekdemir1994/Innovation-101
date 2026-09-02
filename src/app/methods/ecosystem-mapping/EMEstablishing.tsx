@@ -8,7 +8,7 @@ const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
-const SVG_H = 380
+const SVG_H = 400
 
 type ActorId = 'platform' | 'hosts' | 'guests' | 'payment' | 'photographers' | 'cleaning' | 'regulators' | 'neighbors'
 
@@ -41,16 +41,38 @@ function actorById(id: ActorId): ActorDef {
   return ACTORS.find(a => a.id === id)!
 }
 
+// Label at 30% of the way from the "from" actor toward "to", instead of the
+// midpoint - at an 11pt floor, several labels at the true midpoint overlap
+// the large PLATFORM hub circle. Pulling them toward the spoke end clears it.
 function connMidpoint(c: ConnectionDef): { lx: number; ly: number } {
   const fa = actorById(c.from), ta = actorById(c.to)
-  return { lx: (fa.cx + ta.cx) / 2, ly: (fa.cy + ta.cy) / 2 }
+  return { lx: fa.cx + (ta.cx - fa.cx) * 0.3, ly: fa.cy + (ta.cy - fa.cy) * 0.3 }
 }
 
+// Internal label position - only used for actors whose label fits inside
+// the node (PLATFORM, HOSTS, GUESTS). All others use externalLabelY below.
 function nodeLabelY(actor: ActorDef, lineIndex: number): number {
-  const lh = actor.focal ? 10 : 8.5
+  const lh = actor.focal ? 16 : 8.5
   const total = actor.label.length
   const topOffset = -(total - 1) * lh / 2
   return actor.cy + topOffset + lineIndex * lh
+}
+
+// Nodes too small to hold their label at 11pt get it positioned outside the
+// circle instead, above or below depending on which side has open room.
+const EXTERNAL_LABEL_DIR: Partial<Record<ActorId, 'above' | 'below'>> = {
+  payment: 'below',
+  photographers: 'below',
+  cleaning: 'above',
+  regulators: 'below',
+  neighbors: 'above',
+}
+
+function externalLabelY(actor: ActorDef, lineIndex: number): number {
+  const dir = EXTERNAL_LABEL_DIR[actor.id]
+  return dir === 'above'
+    ? actor.cy - actor.r - 32 + lineIndex * 16
+    : actor.cy + actor.r + 16 + lineIndex * 16
 }
 
 export default function EMEstablishing() {
@@ -107,7 +129,7 @@ export default function EMEstablishing() {
                 />
                 <text x={lx} y={ly - 6}
                   textAnchor="middle" dominantBaseline="auto"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                   fill={`${TEAL_TEXT}0.905)`} style={{ userSelect: 'none' }}
                 >{c.label}</text>
               </motion.g>
@@ -127,10 +149,10 @@ export default function EMEstablishing() {
               />
               {actor.label.map((line, li) => (
                 <text key={li}
-                  x={actor.cx} y={nodeLabelY(actor, li)}
+                  x={actor.cx} y={EXTERNAL_LABEL_DIR[actor.id] ? externalLabelY(actor, li) : nodeLabelY(actor, li)}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize={actor.focal ? '6.5' : '5.5'}
-                  fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="11"
+                  fontFamily="var(--font-mono)" letterSpacing="0.05em"
                   fill={`${TEAL_TEXT}0.979)`} style={{ userSelect: 'none' }}
                 >{line}</text>
               ))}
@@ -150,7 +172,7 @@ export default function EMEstablishing() {
                 />
                 <text x={lx} y={ly - 6}
                   textAnchor="middle" dominantBaseline="auto"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                   fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}
                 >{c.label}</text>
               </motion.g>
@@ -175,10 +197,10 @@ export default function EMEstablishing() {
               />
               {actor.label.map((line, li) => (
                 <text key={li}
-                  x={actor.cx} y={nodeLabelY(actor, li)}
+                  x={actor.cx} y={externalLabelY(actor, li)}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="5.5"
-                  fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                  fontSize="11"
+                  fontFamily="var(--font-mono)" letterSpacing="0.04em"
                   fill={`${AMBER}0.82)`} style={{ userSelect: 'none' }}
                 >{line}</text>
               ))}
@@ -194,13 +216,13 @@ export default function EMEstablishing() {
           <circle cx={14} cy={SVG_H - 14} r={5} fill={`${TEAL}0.14)`} stroke={`${TEAL}0.45)`} strokeWidth={1} />
           <text x={22} y={SVG_H - 14}
             textAnchor="start" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={`${TEAL_TEXT}0.895)`} style={{ userSelect: 'none' }}
           >OBVIOUS ACTOR</text>
-          <circle cx={130} cy={SVG_H - 14} r={5} fill={`${AMBER}0.06)`} stroke={`${AMBER}0.42)`} strokeWidth={1} />
-          <text x={138} y={SVG_H - 14}
+          <circle cx={144} cy={SVG_H - 14} r={5} fill={`${AMBER}0.06)`} stroke={`${AMBER}0.42)`} strokeWidth={1} />
+          <text x={152} y={SVG_H - 14}
             textAnchor="start" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}
           >NON-OBVIOUS ACTOR</text>
         </motion.g>

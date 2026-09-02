@@ -9,7 +9,7 @@ const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
-const SVG_H = 380
+const SVG_H = 400
 
 type ActorId = 'platform' | 'hosts' | 'guests' | 'payment' | 'photographers' | 'cleaning' | 'regulators' | 'neighbors'
 
@@ -111,11 +111,31 @@ function connOpacity(c: ConnectionDef, active: ActorId | null): number {
   return 0.08
 }
 
+// Internal label position - only used for actors whose label fits inside
+// the node (PLATFORM, HOSTS, GUESTS). All others use externalLabelY below.
 function nodeLabelY(actor: ActorDef, lineIndex: number): number {
-  const lh = actor.focal ? 10 : 8.5
+  const lh = actor.focal ? 16 : 8.5
   const total = actor.label.length
   const topOffset = -(total - 1) * lh / 2
   return actor.cy + topOffset + lineIndex * lh
+}
+
+// Nodes too small to hold their label at 11pt get it positioned outside the
+// circle instead, above or below depending on which side has open room -
+// same layout as DEstablishing.
+const EXTERNAL_LABEL_DIR: Partial<Record<ActorId, 'above' | 'below'>> = {
+  payment: 'below',
+  photographers: 'below',
+  cleaning: 'above',
+  regulators: 'below',
+  neighbors: 'above',
+}
+
+function externalLabelY(actor: ActorDef, lineIndex: number): number {
+  const dir = EXTERNAL_LABEL_DIR[actor.id]
+  return dir === 'above'
+    ? actor.cy - actor.r - 32 + lineIndex * 16
+    : actor.cy + actor.r + 16 + lineIndex * 16
 }
 
 export default function EMInteractive() {
@@ -139,11 +159,13 @@ export default function EMInteractive() {
 
           <rect x={0} y={0} width={SVG_W} height={SVG_H} rx={8} fill={`${TEAL}0.04)`} />
 
-          {/* Connections (drawn under nodes) */}
+          {/* Connections (drawn under nodes) - label positioned 30% of the
+              way from "from" to "to" instead of the midpoint, since several
+              midpoint labels overlap the large PLATFORM hub circle at 11pt */}
           {CONNECTIONS.map(c => {
             const fa = actorById(c.from), ta = actorById(c.to)
-            const lx = (fa.cx + ta.cx) / 2
-            const ly = (fa.cy + ta.cy) / 2
+            const lx = fa.cx + (ta.cx - fa.cx) * 0.3
+            const ly = fa.cy + (ta.cy - fa.cy) * 0.3
             const op = connOpacity(c, active)
             return (
               <motion.g key={`conn-${c.from}-${c.to}`}
@@ -157,7 +179,7 @@ export default function EMInteractive() {
                 />
                 <text x={lx} y={ly - 6}
                   textAnchor="middle" dominantBaseline="auto"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                   fill={c.obvious ? `${TEAL_TEXT}0.905)` : `${AMBER_TEXT}0.845)`}
                   style={{ userSelect: 'none' }}
                 >{c.label}</text>
@@ -215,10 +237,10 @@ export default function EMInteractive() {
                 {/* Labels */}
                 {actor.label.map((line, li) => (
                   <text key={li}
-                    x={actor.cx} y={nodeLabelY(actor, li)}
+                    x={actor.cx} y={EXTERNAL_LABEL_DIR[actor.id] ? externalLabelY(actor, li) : nodeLabelY(actor, li)}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize={actor.focal ? '6.5' : '5.5'}
-                    fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                    fontSize="11"
+                    fontFamily="var(--font-mono)" letterSpacing="0.05em"
                     fill={actor.obvious ? `${TEAL_TEXT}0.979)` : `${AMBER}0.82)`}
                     style={{ userSelect: 'none', transition: 'fill 0.18s' }}
                   >{line}</text>
@@ -231,7 +253,7 @@ export default function EMInteractive() {
           {!active && (
             <text x={SVG_W / 2} y={SVG_H - 8}
               textAnchor="middle" dominantBaseline="auto"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
               fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
             >tap any actor</text>
           )}
@@ -258,7 +280,7 @@ export default function EMInteractive() {
               <p className="font-mono uppercase tracking-widest mb-1"
                 style={{
                   fontSize: 'var(--text-2xs)',
-                  color: activeActor.obvious ? `${TEAL}0.80)` : `${AMBER}0.80)`,
+                  color: activeActor.obvious ? `${TEAL_TEXT}0.95)` : `${AMBER}0.80)`,
                 }}
               >{activeActor.label.join(' ')}
                 {!activeActor.obvious && (
@@ -280,7 +302,7 @@ export default function EMInteractive() {
                   <p className="font-semibold mb-2"
                     style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.62)' }}
                   >{label}</p>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.48)', lineHeight: 'var(--leading-relaxed)' }}>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.55)', lineHeight: 'var(--leading-relaxed)' }}>
                     {body}
                   </p>
                 </div>
@@ -291,7 +313,7 @@ export default function EMInteractive() {
       </AnimatePresence>
 
       {!active && (
-        <p className="text-center" style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.28)', marginTop: '1rem' }}>
+        <p className="text-center" style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.55)', marginTop: '1rem' }}>
           Select an actor to see their role, flows, and leverage
         </p>
       )}
