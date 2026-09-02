@@ -4,15 +4,19 @@ import { motion, useReducedMotion } from 'framer-motion'
 const CLAY = 'rgba(181,97,62,'
 const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
-const SVG_W = 700
+// Wide field: grid width was stretched (544→784) to give the hero a
+// cinematic ~2.4:1 frame; card widths/x-positions grew with their quadrant
+// so each still gets the full quadrant width for its label. Grid height and
+// all y-positions untouched.
+const SVG_W = 940
 const SVG_H = 390
 
 // Grid geometry - shared across all three appearances
 const GX = 96,  GY = 24
-const GW = 544, GH = 280
-const GR = GX + GW   // 640
+const GW = 784, GH = 280
+const GR = GX + GW   // 880
 const GB = GY + GH   // 304
-const MX = GX + GW / 2  // 368
+const MX = GX + GW / 2  // 488
 const MY = GY + GH / 2  // 164
 
 const CARD_H = 28
@@ -30,16 +34,16 @@ type Card = {
 // so each gets the full quadrant width for its label at a legible size.
 const CARDS: Card[] = [
   // LEAP-OF-FAITH (top-right - high importance, unknown)
-  { id: 'a', x: 380, y: 54,  w: 252, label: 'WILL THEY BUY?',      lof: true  },
-  { id: 'b', x: 380, y: 92,  w: 252, label: 'PRICE ACCEPTED?',     lof: true  },
+  { id: 'a', x: 500, y: 54,  w: 372, label: 'WILL THEY BUY?',      lof: true  },
+  { id: 'b', x: 500, y: 92,  w: 372, label: 'PRICE ACCEPTED?',     lof: true  },
   // MONITOR (top-left - high importance, known)
-  { id: 'c', x: 104, y: 54,  w: 252, label: 'BEHAVIOUR EXISTS',    lof: false },
-  { id: 'd', x: 104, y: 92,  w: 252, label: 'TECH IS READY',       lof: false },
+  { id: 'c', x: 104, y: 54,  w: 372, label: 'BEHAVIOUR EXISTS',    lof: false },
+  { id: 'd', x: 104, y: 92,  w: 372, label: 'TECH IS READY',       lof: false },
   // NICE-TO-KNOW (bottom-right - low importance, unknown)
-  { id: 'e', x: 380, y: 178, w: 252, label: 'PREFER FREE RETURNS', lof: false },
+  { id: 'e', x: 500, y: 178, w: 372, label: 'PREFER FREE RETURNS', lof: false },
   // IGNORE (bottom-left - low importance, known)
-  { id: 'f', x: 104, y: 178, w: 252, label: 'CAN SHIP PRODUCT',    lof: false },
-  { id: 'g', x: 104, y: 216, w: 252, label: 'CAN BUILD SITE',      lof: false },
+  { id: 'f', x: 104, y: 178, w: 372, label: 'CAN SHIP PRODUCT',    lof: false },
+  { id: 'g', x: 104, y: 216, w: 372, label: 'CAN BUILD SITE',      lof: false },
 ]
 
 export default function AMPEstablishing() {
@@ -69,7 +73,7 @@ export default function AMPEstablishing() {
       variants={container}
       aria-label="Importance by uncertainty risk grid. Top-right quadrant (high importance, unknown) glows in clay orange and is labelled LEAP OF FAITH: TEST THESE FIRST. Other quadrants: top-left is MONITOR, bottom-right is NICE TO KNOW, bottom-left is IGNORE. Seven assumption cards are placed across the four quadrants."
     >
-      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
+      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           <filter id="amp-est-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="6" result="blur" />
