@@ -6,11 +6,11 @@ const BRICK = 'rgba(138,75,60,'
 const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
-const SVG_W = 700, SVG_H = 268
+const SVG_W = 700, SVG_H = 280
 
-const FE_X = 84, BE_X = 400, CELL_W = 296
-const FE_CX = FE_X + 148
-const BE_CX = BE_X + 148
+const FE_X = 92, BE_X = 400, CELL_W = 288
+const FE_CX = FE_X + CELL_W / 2
+const BE_CX = BE_X + CELL_W / 2
 
 const L = {
   1: { y: 168, h: 56, cy: 196 },
@@ -233,20 +233,19 @@ export default function CMInteractive() {
         <rect x={0} y={0} width={SVG_W} height={SVG_H} fill="rgba(10,10,18,0.96)" rx={6} />
 
         {/* Segment labels */}
-        <text x={FE_CX} y={16} textAnchor="middle" fontSize="4.5"
-          fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+        <text x={FE_CX} y={16} textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
           fill={`rgba(183,145,135,0.891)`} style={{ userSelect: 'none' }}>FRONT-END</text>
-        <text x={BE_CX} y={16} textAnchor="middle" fontSize="4.5"
-          fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+        <text x={BE_CX} y={16} textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
           fill={`rgba(183,145,135,0.891)`} style={{ userSelect: 'none' }}>BACK-END</text>
-        <line x1={392} y1={22} x2={392} y2={226} stroke={`${BRICK}0.10)`} strokeWidth={0.8} />
+        <line x1={390} y1={22} x2={390} y2={226} stroke={`${BRICK}0.10)`} strokeWidth={0.8} />
 
         {/* Layer labels */}
         {([1, 2, 3] as LayerId[]).map(ln => (
-          <text key={ln} x={42} y={L[ln].cy} textAnchor="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}
-            transform={`rotate(-90 42 ${L[ln].cy})`}>
+          <text key={ln} x={4} y={L[ln].y + 15} textAnchor="start"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="-0.01em" fontWeight="600"
+            fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}>
             {ln === 1 ? 'FOUNDATIONAL' : ln === 2 ? 'OPERATIONAL' : 'EPIC-LEVEL'}
           </text>
         ))}
@@ -281,15 +280,15 @@ export default function CMInteractive() {
                 filter={(isGap || isAtRisk || isPartialRisk) ? 'url(#cm-int-amber-glow)' : (active === cell.id ? 'url(#cm-int-glow)' : undefined)}
               />
               {/* Capability label */}
-              <text x={cell.cx} y={cell.cy - 5} textAnchor="middle" dominantBaseline="middle"
-                fontSize="5.8" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+              <text x={cell.cx} y={cell.cy - 6} textAnchor="middle" dominantBaseline="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                 fill={isAtRisk || isPartialRisk ? `${AMBER}0.85)` : (getState(cell) === 'have' ? `rgba(183,145,135,0.969)` : `${AMBER}0.80)`)}
                 style={{ userSelect: 'none' }}>
                 {cell.label}
               </text>
               {/* State label */}
-              <text x={cell.cx} y={cell.cy + 10} textAnchor="middle" dominantBaseline="middle"
-                fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              <text x={cell.cx} y={cell.cy + 11} textAnchor="middle" dominantBaseline="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                 fill={stateLabelColor(cell)} style={{ userSelect: 'none' }}>
                 {stateLabel(cell)}
               </text>
@@ -299,15 +298,15 @@ export default function CMInteractive() {
 
         {/* Today/Target gap indicator */}
         {view === 'today' && (
-          <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
-            fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle" fontSize="11"
+            fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${AMBER_TEXT}0.814)`} style={{ userSelect: 'none' }}>
             {propagating ? 'Everything above a foundational gap is standing on air.' : 'Click any capability. Click a foundational gap to see what rests on it.'}
           </text>
         )}
         {view === 'target' && (
-          <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
-            fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle" fontSize="11"
+            fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>
             TARGET view: all capabilities as delivery requires. Toggle to TODAY to see the gaps.
           </text>
@@ -363,7 +362,7 @@ export default function CMInteractive() {
               style={{ fontSize: 'var(--text-base)', color: `${BRICK}0.82)` }}>
               {activeCell.info.headline}
             </p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.70)', lineHeight: 'var(--leading-relaxed)' }}>
               {activeCell.info.body}
             </p>
             {activeCell.layer === 1 && view === 'today' && (
@@ -373,7 +372,7 @@ export default function CMInteractive() {
                   style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.65)` }}>
                   Foundational dependency
                 </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.55)', lineHeight: 'var(--leading-relaxed)' }}>
                   {activeCell.today === 'gap'
                     ? `Everything that depends on ${activeCell.label} is at risk: ${activeCell.blocks.map(bid => CELLS.find(c => c.id === bid)?.label).join(' and ')}. These capabilities cannot be stronger than their foundation. Click the SVG cell to activate propagation.`
                     : `PARTIAL is more dangerous than GAP because it is mistaken for present. ${activeCell.label} appears on the list as a tick, and the ${activeCell.blocks.map(bid => CELLS.find(c => c.id === bid)?.label).join(' and ')} above it proceed as though it is solid.`}
@@ -394,7 +393,7 @@ export default function CMInteractive() {
               style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.65)` }}>
               You are looking at TODAY
             </p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.55)', lineHeight: 'var(--leading-relaxed)' }}>
               The gaps between TARGET and TODAY are the delivery gaps, the specific missing capabilities that
               will stop you shipping. Click any capability to explore it. Click <strong>PIPELINE RELIABILITY</strong>{' '}
               (the foundational GAP) to see instability propagate upward.

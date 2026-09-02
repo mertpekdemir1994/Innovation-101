@@ -7,12 +7,12 @@ const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
-const SVG_W = 700, SVG_H = 268
+const SVG_W = 700, SVG_H = 280
 
-// Layout: left label column (80px) + front-end (298px) + gap (18px) + back-end (298px) + margin (6px)
-const FE_X = 84, BE_X = 400, CELL_W = 296
-const FE_CX = FE_X + 148   // 232
-const BE_CX = BE_X + 148   // 548
+// Layout: left label column (92px) + front-end (288px) + gap (20px) + back-end (288px) + margin (12px)
+const FE_X = 92, BE_X = 400, CELL_W = 288
+const FE_CX = FE_X + CELL_W / 2   // 236
+const BE_CX = BE_X + CELL_W / 2   // 544
 
 // Layer rows (bottom = FOUNDATIONAL, top = EPIC)
 // L1 FOUNDATIONAL: y=168, h=56
@@ -139,28 +139,27 @@ export default function CMEstablishing() {
 
         {/* Segment labels */}
         <motion.g {...fade(0.05)}>
-          <text x={FE_CX} y={16} textAnchor="middle" fontSize="4.5"
-            fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+          <text x={FE_CX} y={16} textAnchor="middle" fontSize="11"
+            fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={`rgba(183,145,135,0.899)`} style={{ userSelect: 'none' }}>
             FRONT-END
           </text>
-          <text x={BE_CX} y={16} textAnchor="middle" fontSize="4.5"
-            fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+          <text x={BE_CX} y={16} textAnchor="middle" fontSize="11"
+            fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={`rgba(183,145,135,0.899)`} style={{ userSelect: 'none' }}>
             BACK-END
           </text>
           {/* Segment divider */}
-          <line x1={392} y1={22} x2={392} y2={226} stroke={`${BRICK}0.12)`} strokeWidth={0.8} />
+          <line x1={390} y1={22} x2={390} y2={226} stroke={`${BRICK}0.12)`} strokeWidth={0.8} />
         </motion.g>
 
-        {/* Layer labels (left side, rotated) */}
+        {/* Layer labels (left side, one per row, horizontal) */}
         {LAYER_ORDER.map(ln => (
           <motion.text key={ln}
-            x={42} y={L[ln].cy}
-            textAnchor="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            x={4} y={L[ln].y + 15}
+            textAnchor="start"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="-0.01em" fontWeight="600"
             fill={`rgba(183,145,135,0.874)`} style={{ userSelect: 'none' }}
-            transform={`rotate(-90 42 ${L[ln].cy})`}
             {...fade(layerDelay[ln])}>
             {L[ln].label}
           </motion.text>
@@ -206,17 +205,17 @@ export default function CMEstablishing() {
               />
               {/* Capability name */}
               <text
-                x={c.cx} y={c.cy - 5}
+                x={c.cx} y={c.cy - 6}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="6.0" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                 fill={sc.label} style={{ userSelect: 'none' }}>
                 {c.label}
               </text>
               {/* State tag */}
               <text
-                x={c.cx} y={c.cy + 10}
+                x={c.cx} y={c.cy + 11}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                 fill={unsupported && c.state === 'have' ? `${AMBER_TEXT}0.861)` : sc.label.replace('0.85)', '0.50)').replace('0.78)', '0.52)').replace('0.60)', '0.42)')}
                 style={{ userSelect: 'none' }}>
                 {unsupported && c.state === 'have' ? '⚠ UNSUPPORTED' : sc.stateTag}
@@ -227,16 +226,16 @@ export default function CMEstablishing() {
 
         {/* "GAP" annotation below PIPELINE RELIABILITY */}
         <motion.g {...fade(1.1)}>
-          <text x={BE_CX} y={230} textAnchor="middle" fontSize="3.8"
-            fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          <text x={BE_CX} y={244} textAnchor="middle" fontSize="11"
+            fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>
             ← THIS GAP IS CARRYING EVERYTHING ABOVE IT
           </text>
         </motion.g>
 
         {/* Caption */}
-        <motion.text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
-          fontFamily="var(--font-mono)" letterSpacing="0.06em"
+        <motion.text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }}
           {...fade(1.5)}>
           Capability is a stack. A gap at the foundation holds up everything above it.

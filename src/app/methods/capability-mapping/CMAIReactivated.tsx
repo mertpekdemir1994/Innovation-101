@@ -3,19 +3,24 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const AMBER  = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
-const SVG_W = 700, SVG_H = 268
-const FE_X = 84, BE_X = 400, CELL_W = 296
-const FE_CX = FE_X + 148
-const BE_CX = BE_X + 148
+function textSafe(c: string) { return c === INDIGO ? INDIGO_TEXT : c === BRICK ? BRICK_TEXT : c }
 
+const SVG_W = 700, SVG_H = 290
+const FE_X = 92, BE_X = 400, CELL_W = 288
+const FE_CX = FE_X + CELL_W / 2
+const BE_CX = BE_X + CELL_W / 2
+
+// Extra top padding accommodates the two-line AI-mode header annotation
 const L = {
-  1: { y: 168, h: 56, cy: 196 },
-  2: { y: 96,  h: 56, cy: 124 },
-  3: { y: 26,  h: 56, cy: 54  },
+  1: { y: 196, h: 56, cy: 224 },
+  2: { y: 124, h: 56, cy: 152 },
+  3: { y: 54,  h: 56, cy: 82  },
 }
 
 type Mode = 'human' | 'ai'
@@ -36,12 +41,12 @@ interface CellDef {
 }
 
 const CELLS: CellDef[] = [
-  { id: 'fe-l1', layer: 1, seg: 'fe', x: FE_X, cy: 196, cx: FE_CX, label: 'DATA QUALITY',        humanState: 'partial',   aiState: 'partial'   },
-  { id: 'be-l1', layer: 1, seg: 'be', x: BE_X, cy: 196, cx: BE_CX, label: 'PIPELINE RELIABILITY', humanState: 'gap',       aiState: 'deceptive' },
-  { id: 'fe-l2', layer: 2, seg: 'fe', x: FE_X, cy: 124, cx: FE_CX, label: 'REAL-TIME SERVING',   humanState: 'partial',   aiState: 'indigo'    },
-  { id: 'be-l2', layer: 2, seg: 'be', x: BE_X, cy: 124, cx: BE_CX, label: 'LIVE SYSTEM OPS',     humanState: 'partial',   aiState: 'partial'   },
-  { id: 'fe-l3', layer: 3, seg: 'fe', x: FE_X, cy: 54,  cx: FE_CX, label: 'PERSONALISATION',     humanState: 'have',      aiState: 'have'      },
-  { id: 'be-l3', layer: 3, seg: 'be', x: BE_X, cy: 54,  cx: BE_CX, label: 'REAL-TIME RECS',      humanState: 'have',      aiState: 'have'      },
+  { id: 'fe-l1', layer: 1, seg: 'fe', x: FE_X, cy: 224, cx: FE_CX, label: 'DATA QUALITY',        humanState: 'partial',   aiState: 'partial'   },
+  { id: 'be-l1', layer: 1, seg: 'be', x: BE_X, cy: 224, cx: BE_CX, label: 'PIPELINE RELIABILITY', humanState: 'gap',       aiState: 'deceptive' },
+  { id: 'fe-l2', layer: 2, seg: 'fe', x: FE_X, cy: 152, cx: FE_CX, label: 'REAL-TIME SERVING',   humanState: 'partial',   aiState: 'indigo'    },
+  { id: 'be-l2', layer: 2, seg: 'be', x: BE_X, cy: 152, cx: BE_CX, label: 'LIVE SYSTEM OPS',     humanState: 'partial',   aiState: 'partial'   },
+  { id: 'fe-l3', layer: 3, seg: 'fe', x: FE_X, cy: 82,  cx: FE_CX, label: 'PERSONALISATION',     humanState: 'have',      aiState: 'have'      },
+  { id: 'be-l3', layer: 3, seg: 'be', x: BE_X, cy: 82,  cx: BE_CX, label: 'REAL-TIME RECS',      humanState: 'have',      aiState: 'have'      },
 ]
 
 const CARDS = [
@@ -143,7 +148,7 @@ export default function CMAIReactivated() {
                 ? m === 'ai' ? `${INDIGO}0.85)` : `${BRICK}0.85)`
                 : 'transparent',
               color: mode === m ? '#fff'
-                : m === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`,
+                : m === 'ai' ? `${INDIGO_TEXT}0.90)` : `${BRICK_TEXT}0.90)`,
               border: `1.5px solid ${mode === m
                 ? m === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`
                 : m === 'ai' ? `${INDIGO}0.30)` : `${BRICK}0.30)`}`,
@@ -188,38 +193,37 @@ export default function CMAIReactivated() {
 
         {/* Header annotation */}
         {isAI && (
-          <text x={SVG_W / 2} y={15} textAnchor="middle" fontSize="4.5"
-            fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+          <text x={SVG_W / 2} y={16} textAnchor="middle" fontSize="11"
+            fontFamily="var(--font-mono)" letterSpacing="0.02em" fontWeight="600"
             fill={`${AMBER}0.72)`} style={{ userSelect: 'none' }}>
             ⚠ PIPELINE RELIABILITY: SOLID ON THE SURFACE, HOLLOW UNDERNEATH
           </text>
         )}
 
         {/* Segment labels */}
-        <text x={FE_CX} y={isAI ? 22 : 16} textAnchor="middle" fontSize="4.5"
-          fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+        <text x={FE_CX} y={isAI ? 32 : 16} textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
           fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>FRONT-END</text>
-        <text x={BE_CX} y={isAI ? 22 : 16} textAnchor="middle" fontSize="4.5"
-          fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+        <text x={BE_CX} y={isAI ? 32 : 16} textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
           fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>BACK-END</text>
-        <line x1={392} y1={isAI ? 24 : 20} x2={392} y2={226} stroke={`${BRICK}0.10)`} strokeWidth={0.8} />
+        <line x1={390} y1={isAI ? 38 : 22} x2={390} y2={254} stroke={`${BRICK}0.10)`} strokeWidth={0.8} />
 
         {/* Layer labels */}
         {([1, 2, 3] as LayerId[]).map(ln => (
-          <text key={ln} x={42} y={L[ln].cy} textAnchor="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
-            fill={`rgba(183,145,135,0.866)`} style={{ userSelect: 'none' }}
-            transform={`rotate(-90 42 ${L[ln].cy})`}>
+          <text key={ln} x={4} y={L[ln].y + 15} textAnchor="start"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="-0.01em" fontWeight="600"
+            fill={`rgba(183,145,135,0.866)`} style={{ userSelect: 'none' }}>
             {ln === 1 ? 'FOUNDATIONAL' : ln === 2 ? 'OPERATIONAL' : 'EPIC-LEVEL'}
           </text>
         ))}
 
         {/* Upward arrows */}
-        <line x1={FE_CX} y1={162} x2={FE_CX} y2={104} stroke={`${BRICK}0.25)`} strokeWidth={0.9} markerEnd="url(#cm-ai-up)" />
-        <line x1={BE_CX} y1={162} x2={BE_CX} y2={104}
+        <line x1={FE_CX} y1={190} x2={FE_CX} y2={132} stroke={`${BRICK}0.25)`} strokeWidth={0.9} markerEnd="url(#cm-ai-up)" />
+        <line x1={BE_CX} y1={190} x2={BE_CX} y2={132}
           stroke={isAI ? `${AMBER}0.38)` : `${AMBER}0.28)`} strokeWidth={0.9} markerEnd="url(#cm-ai-up)" />
-        <line x1={FE_CX} y1={90} x2={FE_CX} y2={34} stroke={`${BRICK}0.22)`} strokeWidth={0.9} markerEnd="url(#cm-ai-up)" />
-        <line x1={BE_CX} y1={90} x2={BE_CX} y2={34}
+        <line x1={FE_CX} y1={118} x2={FE_CX} y2={62} stroke={`${BRICK}0.22)`} strokeWidth={0.9} markerEnd="url(#cm-ai-up)" />
+        <line x1={BE_CX} y1={118} x2={BE_CX} y2={62}
           stroke={isAI ? `${AMBER}0.35)` : `${AMBER}0.25)`} strokeWidth={0.9} markerEnd="url(#cm-ai-up)" />
 
         {/* Cells */}
@@ -241,8 +245,8 @@ export default function CMAIReactivated() {
               {isDeceptive && (
                 <>
                   <rect
-                    x={cell.x + 12} y={L[cell.layer].y + 12}
-                    width={CELL_W - 24} height={L[cell.layer].h - 24}
+                    x={cell.x + 12} y={L[cell.layer].y + 14}
+                    width={CELL_W - 24} height={L[cell.layer].h - 28}
                     fill="rgba(4,2,1,0.80)"
                     stroke={`${AMBER}0.35)`}
                     strokeWidth={0.8}
@@ -250,7 +254,7 @@ export default function CMAIReactivated() {
                     rx={2}
                   />
                   <text x={cell.cx} y={cell.cy + 2} textAnchor="middle" dominantBaseline="middle"
-                    fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                     fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>
                     OUTPUT, NOT CAPABILITY
                   </text>
@@ -259,13 +263,13 @@ export default function CMAIReactivated() {
               {/* Capability label (not shown when deceptive fill takes over) */}
               {!isDeceptive && (
                 <>
-                  <text x={cell.cx} y={cell.cy - 5} textAnchor="middle" dominantBaseline="middle"
-                    fontSize="5.8" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+                  <text x={cell.cx} y={cell.cy - 6} textAnchor="middle" dominantBaseline="middle"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                     fill={cellLabel(cell)} style={{ userSelect: 'none' }}>
                     {cell.label}
                   </text>
-                  <text x={cell.cx} y={cell.cy + 10} textAnchor="middle" dominantBaseline="middle"
-                    fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                  <text x={cell.cx} y={cell.cy + 11} textAnchor="middle" dominantBaseline="middle"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                     fill={stateTagColor(cell)} style={{ userSelect: 'none' }}>
                     {stateText(cell)}
                   </text>
@@ -273,8 +277,8 @@ export default function CMAIReactivated() {
               )}
               {/* Deceptive cell: show label above, with state appearing solid */}
               {isDeceptive && (
-                <text x={cell.cx} y={L[cell.layer].y + 9} textAnchor="middle"
-                  fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+                <text x={cell.cx} y={L[cell.layer].y + 10} textAnchor="middle"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                   fill={`rgba(183,145,135,0.926)`} style={{ userSelect: 'none' }}>
                   {cell.label}
                 </text>
@@ -284,8 +288,8 @@ export default function CMAIReactivated() {
         })}
 
         {/* Caption */}
-        <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
-          fontFamily="var(--font-mono)" letterSpacing="0.06em"
+        <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>
           {isAI
             ? 'Can we judge this work? If not, the honest state is PARTIAL, not HAVE IT.'
@@ -310,15 +314,15 @@ export default function CMAIReactivated() {
               }}>
               <div className="flex items-center gap-2 mb-2">
                 <span className="font-mono tracking-widest px-2 py-0.5 rounded-full"
-                  style={{ fontSize: 'var(--text-2xs)', background: `${c.color}0.12)`, color: `${c.color}0.78)`, border: `1px solid ${c.color}0.25)` }}>
+                  style={{ fontSize: 'var(--text-2xs)', background: `${c.color}0.12)`, color: `${textSafe(c.color)}0.85)`, border: `1px solid ${c.color}0.25)` }}>
                   {c.badge}
                 </span>
               </div>
               <p className="font-semibold mb-2"
-                style={{ fontSize: 'var(--text-sm)', color: `${c.color}0.85)` }}>
+                style={{ fontSize: 'var(--text-sm)', color: `${textSafe(c.color)}0.90)` }}>
                 {c.head}
               </p>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.70)', lineHeight: 'var(--leading-relaxed)' }}>
                 {c.body}
               </p>
             </div>
