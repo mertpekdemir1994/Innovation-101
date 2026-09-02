@@ -49,7 +49,7 @@ export default function DPEstablishing() {
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="A decision fork. A principle sits on the incoming path before the junction. At the fork, one branch is taken (lit and open, labelled SPEED). The other branch is closed off (an X barrier in amber, labelled CLOSED · CONFIGURABILITY). On the right, a counter-example shows a platitude (BE USER-CENTRED) where both branches remain equally open, closing nothing."
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
+        style={{ width: '100%', margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="dp-est-plum-glow" x="-30%" y="-30%" width="160%" height="160%">
