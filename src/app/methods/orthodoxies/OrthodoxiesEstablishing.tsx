@@ -119,7 +119,7 @@ export default function OrthodoxiesEstablishing() {
         {/* Central space label */}
         <motion.g variants={fade} transition={lblT}>
           <text x={SCX} y={SCY + 3} textAnchor="middle" dominantBaseline="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.20em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.20em"
             fill="rgba(255,255,255,0.55)" style={{ userSelect: 'none' }}>
             IDEA SPACE
           </text>
@@ -163,7 +163,7 @@ export default function OrthodoxiesEstablishing() {
         {/* TOP label */}
         <motion.g variants={fade} transition={lblT}>
           <text x={SCX} y={TY - 14} textAnchor="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill="rgba(255,255,255,0.50)" style={{ userSelect: 'none' }}>
             CUSTOMERS MUST OWN THE PRODUCT
           </text>
@@ -172,7 +172,7 @@ export default function OrthodoxiesEstablishing() {
         {/* BOTTOM label */}
         <motion.g variants={fade} transition={lblT}>
           <text x={SCX} y={BY + 16} textAnchor="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill="rgba(255,255,255,0.50)" style={{ userSelect: 'none' }}>
             IN-PERSON DELIVERY REQUIRED
           </text>
@@ -184,7 +184,7 @@ export default function OrthodoxiesEstablishing() {
             transform={`rotate(-90, ${LX - 28}, ${SCY})`}
             x={LX - 28} y={SCY}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill="rgba(255,255,255,0.50)"
             style={{ userSelect: 'none' }}
           >PREMIUM PRICING = CREDIBILITY</text>
@@ -193,7 +193,7 @@ export default function OrthodoxiesEstablishing() {
         {/* RIGHT wall label: sage, above the top segment */}
         <motion.g variants={fade} transition={lblT}>
           <text x={RX} y={LY1 - 10} textAnchor="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill={`${SAGE_TEXT}0.937)`} style={{ userSelect: 'none' }}>
             SOLD THROUGH DEALERS ONLY
           </text>
@@ -237,20 +237,26 @@ export default function OrthodoxiesEstablishing() {
           filter="url(#ortho-est-glow-sm)"
         >
           <text x={OPP_CX} y={SCY - 9} textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.18em"
             fill={`${SAGE_TEXT}0.937)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
           <text x={OPP_CX} y={SCY + 9} textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.18em"
             fill={`${SAGE_TEXT}0.937)`} style={{ userSelect: 'none' }}>SPACE</text>
         </motion.g>
 
-        {/* Caption */}
+        {/* Caption: split across two lines — the single-line sentence no
+            longer fits SVG_W at 11pt */}
         <motion.g variants={fade}
           transition={{ ...lblT, delay: prefersReduced ? 0 : 0.60 }}>
-          <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          <text x={SVG_W / 2} y={SVG_H - 23} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
-            every industry is governed by rules nobody wrote · the breakthrough lives on the other side of one of them
+            every industry is governed by rules nobody wrote ·
+          </text>
+          <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
+            the breakthrough lives on the other side of one of them
           </text>
         </motion.g>
       </svg>

@@ -45,7 +45,7 @@ export default function OrthodoxiesAIReactivated() {
                 background: mode === m
                   ? m === 'ai' ? `${INDIGO}0.25)` : `${SAGE}0.25)`
                   : 'transparent',
-                color: mode === m ? '#fff' : 'rgba(255,255,255,0.38)',
+                color: mode === m ? '#fff' : 'rgba(255,255,255,0.50)',
                 border: `1px solid ${mode === m
                   ? (m === 'ai' ? `${INDIGO}0.55)` : `${SAGE}0.55)`)
                   : 'transparent'}`,
@@ -92,7 +92,7 @@ export default function OrthodoxiesAIReactivated() {
 
         {/* Center label */}
         <text x={SCX} y={SCY + 3} textAnchor="middle" dominantBaseline="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.20em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.20em"
           fill={isAI ? `${INDIGO_TEXT}0.836)` : 'rgba(255,255,255,0.54)'}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'CONSENSUS AS FACT' : 'IDEA SPACE'}
@@ -144,14 +144,14 @@ export default function OrthodoxiesAIReactivated() {
 
         {/* ── WALL LABELS ── */}
         <text x={SCX} y={TY - 14} textAnchor="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
           fill={isAI ? `${INDIGO_TEXT}0.916)` : 'rgba(255,255,255,0.48)'}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'AI: "this is simply how it works"' : 'CUSTOMERS MUST OWN THE PRODUCT'}
         </text>
 
         <text x={SCX} y={BY + 16} textAnchor="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
           fill={isAI ? `${INDIGO_TEXT}0.916)` : 'rgba(255,255,255,0.48)'}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'AI: "standard industry practice"' : 'IN-PERSON DELIVERY REQUIRED'}
@@ -161,14 +161,14 @@ export default function OrthodoxiesAIReactivated() {
           transform={`rotate(-90, ${LX - 28}, ${SCY})`}
           x={LX - 28} y={SCY}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
           fill={isAI ? `${INDIGO_TEXT}0.916)` : 'rgba(255,255,255,0.48)'}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'AI: "obvious market reality"' : 'PREMIUM PRICING = CREDIBILITY'}
         </text>
 
         <text x={RX} y={LY1 - 10} textAnchor="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
           fill={isAI ? `${INDIGO_TEXT}0.916)` : `${SAGE_TEXT}0.926)`}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>
           {isAI ? 'AI: "required distribution model"' : 'SOLD THROUGH DEALERS ONLY'}
@@ -199,10 +199,12 @@ export default function OrthodoxiesAIReactivated() {
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: prefersReduced ? 0 : 0.35 }}
             >
-              <rect x={RX + 6} y={SCY - 10} width={48} height={20} rx={3}
+              {/* Widened 48 -> 90: "CONFIRMED" doesn't fit the old badge
+                  width at 11pt */}
+              <rect x={RX + 6} y={SCY - 12} width={90} height={24} rx={3}
                 fill={`${INDIGO}0.18)`} stroke={`${INDIGO}0.45)`} strokeWidth={1} />
-              <text x={RX + 30} y={SCY + 1} textAnchor="middle" dominantBaseline="middle"
-                fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              <text x={RX + 51} y={SCY} textAnchor="middle" dominantBaseline="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                 fill={`${INDIGO_TEXT}0.969)`} style={{ userSelect: 'none' }}>CONFIRMED</text>
             </motion.g>
           )}
@@ -215,10 +217,10 @@ export default function OrthodoxiesAIReactivated() {
         <g style={{ opacity: isAI ? 0.12 : 0.70, transition: 'opacity 0.5s' }}
           filter="url(#ortho-ai-glow-sm)">
           <text x={OPP_CX} y={SCY - 9} textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.18em"
             fill={`${SAGE_TEXT}0.958)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
           <text x={OPP_CX} y={SCY + 9} textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.18em"
             fill={`${SAGE_TEXT}0.958)`} style={{ userSelect: 'none' }}>SPACE</text>
         </g>
       </svg>
@@ -249,8 +251,8 @@ export default function OrthodoxiesAIReactivated() {
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border"
                 style={{ background: `${INDIGO}0.07)`, borderColor: `${INDIGO}0.22)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
-                  style={{ color: `${INDIGO}0.80)` }}>{card.h}</p>
+                <p className="text-2xs font-semibold uppercase tracking-wider mb-2"
+                  style={{ color: `${INDIGO_TEXT}0.90)` }}>{card.h}</p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.b}</p>
               </div>
             ))}
@@ -275,8 +277,8 @@ export default function OrthodoxiesAIReactivated() {
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border"
                 style={{ background: `${SAGE}0.08)`, borderColor: `${SAGE}0.22)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
-                  style={{ color: `${SAGE}1)` }}>{card.h}</p>
+                <p className="text-2xs font-semibold uppercase tracking-wider mb-2"
+                  style={{ color: `${SAGE_TEXT}1)` }}>{card.h}</p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.b}</p>
               </div>
             ))}
@@ -287,8 +289,8 @@ export default function OrthodoxiesAIReactivated() {
       {/* Synthesis */}
       <div className="mt-4 rounded-lg p-4 border border-white/8"
         style={{ background: 'rgba(255,255,255,0.04)' }}>
-        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/28 mb-1">Synthesis</p>
-        <p className="text-xs text-white/42 leading-relaxed">
+        <p className="text-2xs font-semibold uppercase tracking-wider text-white/50 mb-1">Synthesis</p>
+        <p className="text-xs text-white/50 leading-relaxed">
           AI is a double-edged tool for this method. Asked to describe an industry, it reinforces the walls as fact. Asked to articulate an industry&rsquo;s assumptions and then flip a named one, it can genuinely help surface candidates and explore inversions. But keep the act of distrusting the obvious yours; that is the one thing a model trained to reproduce the consensus cannot supply.
         </p>
       </div>

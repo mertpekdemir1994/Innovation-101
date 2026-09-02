@@ -4,6 +4,9 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE   = 'rgba(61,107,90,'
 const INDIGO = 'rgba(99,102,241,'
+// darker indigo for text on this light background — plain INDIGO can't
+// reach 4.5:1 on white even at full opacity
+const INDIGO_DARK = 'rgba(79,70,229,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -33,7 +36,7 @@ export default function OrthodoxiesExampleToggle() {
                 ? (t === 'ai' ? `${INDIGO}0.35)` : `${SAGE}0.35)`)
                 : 'var(--color-neutral-100)'}`,
               color: tab === t
-                ? t === 'ai' ? `${INDIGO}1)` : `${SAGE}1)`
+                ? t === 'ai' ? `${INDIGO_DARK}1)` : `${SAGE}1)`
                 : 'var(--color-neutral-600)',
             }}
           >
@@ -44,7 +47,7 @@ export default function OrthodoxiesExampleToggle() {
 
       {/* Scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
+        <span className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
       </div>
 
@@ -59,7 +62,7 @@ export default function OrthodoxiesExampleToggle() {
           >
             {/* Setup */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${SAGE}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${SAGE}1)` }}>How the session worked</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 The team deliberately included people from outside the eyewear industry, outsiders who had not yet
@@ -74,7 +77,7 @@ export default function OrthodoxiesExampleToggle() {
 
             {/* The orthodoxies and their flips */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${SAGE}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${SAGE}1)` }}>The orthodoxies surfaced, and their flips</p>
               <div className="space-y-4">
                 {[
@@ -101,14 +104,14 @@ export default function OrthodoxiesExampleToggle() {
                 ].map((item, i) => (
                   <div key={i} className="rounded p-4"
                     style={{ background: `${SAGE}0.05)`, borderLeft: `2px solid ${SAGE}0.40)` }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
-                      style={{ color: `${SAGE}0.65)` }}>Orthodoxy</p>
+                    <p className="text-2xs font-semibold uppercase tracking-wider mb-1"
+                      style={{ color: `${SAGE}0.95)` }}>Orthodoxy</p>
                     <p className="text-xs text-neutral-700 italic mb-2">&ldquo;{item.ortho}&rdquo;</p>
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
-                      style={{ color: `${SAGE}0.80)` }}>The flip</p>
+                    <p className="text-2xs font-semibold uppercase tracking-wider mb-1"
+                      style={{ color: `${SAGE}0.95)` }}>The flip</p>
                     <p className="text-xs text-neutral-700 mb-2">{item.flip}</p>
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
-                      style={{ color: `${SAGE}0.55)` }}>Opportunity beyond</p>
+                    <p className="text-2xs font-semibold uppercase tracking-wider mb-1"
+                      style={{ color: `${SAGE}0.95)` }}>Opportunity beyond</p>
                     <p className="text-xs text-neutral-600 leading-relaxed">{item.opp}</p>
                   </div>
                 ))}
@@ -118,7 +121,7 @@ export default function OrthodoxiesExampleToggle() {
             {/* What followed */}
             <div className="border rounded-lg p-5"
               style={{ borderColor: `${SAGE}0.28)`, background: `${SAGE}0.04)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-3"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-3"
                 style={{ color: `${SAGE}1)` }}>What the flips revealed together</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 Taken together, those four flips described a completely different eyewear business: affordable,
@@ -126,7 +129,7 @@ export default function OrthodoxiesExampleToggle() {
                 None of it required new technology. It required recognizing that a set of universally-held
                 industry &ldquo;truths&rdquo; were merely assumptions, and doing the opposite.
               </p>
-              <p className="text-sm font-semibold" style={{ color: `${SAGE}0.88)` }}>
+              <p className="text-sm font-semibold" style={{ color: `${SAGE}1)` }}>
                 The breakthrough came entirely from the human act of seeing the water the whole industry was swimming in, and choosing to step out of it.
               </p>
             </div>
@@ -143,7 +146,7 @@ export default function OrthodoxiesExampleToggle() {
             <div className="rounded-lg px-4 py-3 border"
               style={{ background: `${INDIGO}0.05)`, borderColor: `${INDIGO}0.20)` }}>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
+                <span className="font-semibold" style={{ color: `${INDIGO_DARK}0.90)` }}>Hypothetical:</span>{' '}
                 The real disruption came from human insight, not AI. This tab imagines the same team had instead
                 started by asking an AI to describe the eyewear industry, to show what that approach reveals,
                 and what it misses.
@@ -153,10 +156,10 @@ export default function OrthodoxiesExampleToggle() {
             {/* What AI produced */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
               <div className="flex items-center justify-between mb-4">
-                <p className="text-[10px] font-semibold uppercase tracking-widest"
-                  style={{ color: `${INDIGO}0.90)` }}>What AI produced</p>
-                <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full"
-                  style={{ background: `${INDIGO}0.10)`, color: `${INDIGO}0.80)`, border: `1px solid ${INDIGO}0.25)` }}>
+                <p className="text-2xs font-semibold uppercase tracking-widest"
+                  style={{ color: `${INDIGO_DARK}0.90)` }}>What AI produced</p>
+                <span className="text-2xs font-semibold px-2 py-0.5 rounded-full"
+                  style={{ background: `${INDIGO}0.10)`, color: `${INDIGO_DARK}0.90)`, border: `1px solid ${INDIGO}0.25)` }}>
                   Consensus recited as fact
                 </span>
               </div>
@@ -184,10 +187,10 @@ export default function OrthodoxiesExampleToggle() {
                 ].map((item, i) => (
                   <div key={i} className="rounded p-3"
                     style={{ background: `${INDIGO}0.05)`, borderLeft: `2px solid ${INDIGO}0.28)` }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
-                      style={{ color: `${INDIGO}0.65)` }}>{item.tag}</p>
+                    <p className="text-2xs font-semibold uppercase tracking-wider mb-1"
+                      style={{ color: `${INDIGO_DARK}0.90)` }}>{item.tag}</p>
                     <p className="text-xs text-neutral-700 italic mb-1.5">{item.ai}</p>
-                    <p className="text-[10px] text-neutral-500 leading-relaxed">↑ {item.note}</p>
+                    <p className="text-2xs text-neutral-500 leading-relaxed">↑ {item.note}</p>
                   </div>
                 ))}
               </div>
@@ -196,14 +199,14 @@ export default function OrthodoxiesExampleToggle() {
             {/* What changed when re-aimed */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.18)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-widest mb-3"
-                  style={{ color: `${INDIGO}0.80)` }}>When re-aimed: more useful</p>
+                <p className="text-2xs font-semibold uppercase tracking-widest mb-3"
+                  style={{ color: `${INDIGO_DARK}0.90)` }}>When re-aimed: more useful</p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
                   When the team changed the question to &ldquo;what does the eyewear industry take for granted, and for each assumption, imagine the opposite,&rdquo; AI became genuinely useful: it laid out candidate orthodoxies and generated inversions to explore. Used this way, it accelerated the surfacing and the flipping.
                 </p>
               </div>
               <div className="border rounded-lg p-5 border-amber-200 bg-amber-50">
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-700 mb-3">
+                <p className="text-2xs font-semibold uppercase tracking-widest text-amber-700 mb-3">
                   The judgment stayed human
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
@@ -215,8 +218,8 @@ export default function OrthodoxiesExampleToggle() {
             {/* Honest readout */}
             <div className="rounded-lg p-5 border"
               style={{ background: `${INDIGO}0.04)`, borderColor: `${INDIGO}0.18)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
-                style={{ color: `${INDIGO}0.80)` }}>The honest readout</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-2"
+                style={{ color: `${INDIGO_DARK}0.90)` }}>The honest readout</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 Used naively, AI entrenched the industry&rsquo;s orthodoxies, presenting every assumption as fact,
                 thickening the walls rather than naming them. Aimed deliberately at articulating assumptions and generating

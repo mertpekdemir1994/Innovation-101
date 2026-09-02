@@ -117,7 +117,7 @@ export default function OrthodoxiesInteractive() {
 
   return (
     <div className="w-full">
-      <p className="text-xs text-white/38 mb-4 font-mono tracking-widest uppercase">
+      <p className="text-xs text-white/50 mb-4 font-mono tracking-widest uppercase">
         Click a wall to name the hidden belief · then flip it
       </p>
 
@@ -162,7 +162,7 @@ export default function OrthodoxiesInteractive() {
 
         {/* Center label */}
         <text x={SCX} y={SCY + 3} textAnchor="middle" dominantBaseline="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.20em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.20em"
           fill="rgba(255,255,255,0.54)" style={{ userSelect: 'none' }}>IDEA SPACE</text>
 
         {/* ── WALLS ── */}
@@ -197,7 +197,7 @@ export default function OrthodoxiesInteractive() {
 
         {/* ── WALL LABELS ── */}
         <text x={SCX} y={TY - 14} textAnchor="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
           fill={selected === 'top' ? `${SAGE_TEXT}0.969)` : 'rgba(255,255,255,0.71)'}
           style={{ userSelect: 'none', transition: 'fill 0.25s', cursor: 'pointer' }}
           onClick={() => selectWall('top')}>
@@ -205,7 +205,7 @@ export default function OrthodoxiesInteractive() {
         </text>
 
         <text x={SCX} y={BY + 16} textAnchor="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
           fill={selected === 'bottom' ? `${SAGE_TEXT}0.969)` : 'rgba(255,255,255,0.71)'}
           style={{ userSelect: 'none', transition: 'fill 0.25s', cursor: 'pointer' }}
           onClick={() => selectWall('bottom')}>
@@ -216,7 +216,7 @@ export default function OrthodoxiesInteractive() {
           transform={`rotate(-90, ${LX - 28}, ${SCY})`}
           x={LX - 28} y={SCY}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
           fill={selected === 'left' ? `${SAGE_TEXT}0.969)` : 'rgba(255,255,255,0.71)'}
           style={{ userSelect: 'none', transition: 'fill 0.25s', cursor: 'pointer' }}
           onClick={() => selectWall('left')}>
@@ -224,7 +224,7 @@ export default function OrthodoxiesInteractive() {
         </text>
 
         <text x={RX} y={LY1 - 10} textAnchor="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
           fill={selected === 'right' ? `${SAGE_TEXT}0.979)` : `${SAGE_TEXT}0.912)`}
           style={{ userSelect: 'none', transition: 'fill 0.25s', cursor: 'pointer' }}
           onClick={() => selectWall('right')}>
@@ -263,10 +263,10 @@ export default function OrthodoxiesInteractive() {
         <g style={{ opacity: selected === null ? 0.70 : (selected === 'right' && flipped ? 1.0 : 0.20), transition: 'opacity 0.4s' }}
           filter="url(#ortho-int-glow-sm)">
           <text x={OPP_CX} y={SCY - 9} textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.18em"
             fill={`${SAGE_TEXT}0.958)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
           <text x={OPP_CX} y={SCY + 9} textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.18em"
             fill={`${SAGE_TEXT}0.958)`} style={{ userSelect: 'none' }}>SPACE</text>
         </g>
 
@@ -279,10 +279,10 @@ export default function OrthodoxiesInteractive() {
               <ellipse cx={g.cx} cy={g.cy} rx={g.rx} ry={g.ry}
                 fill={`${SAGE}0.18)`} />
               <text x={g.cx} y={g.cy - 6} textAnchor="middle"
-                fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.16em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.16em"
                 fill={`${SAGE_TEXT}0.941)`} style={{ userSelect: 'none' }}>OPPORTUNITY</text>
               <text x={g.cx} y={g.cy + 8} textAnchor="middle"
-                fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.16em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.16em"
                 fill={`${SAGE_TEXT}0.941)`} style={{ userSelect: 'none' }}>BEYOND</text>
             </g>
           )
@@ -319,7 +319,7 @@ export default function OrthodoxiesInteractive() {
               className="flex items-center justify-center h-24 rounded-lg border border-dashed"
               style={{ borderColor: `${SAGE}0.18)` }}
             >
-              <p className="text-xs text-white/28 font-mono tracking-widest uppercase">
+              <p className="text-xs text-white/50 font-mono tracking-widest uppercase">
                 Click a wall to name the hidden belief
               </p>
             </motion.div>
@@ -332,8 +332,8 @@ export default function OrthodoxiesInteractive() {
               className="rounded-lg border p-5"
               style={{ borderColor: `${SAGE}0.22)`, background: `${SAGE}0.06)` }}
             >
-              <p className="text-[9px] font-semibold uppercase tracking-widest mb-1"
-                style={{ color: `${SAGE}0.80)` }}>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-1"
+                style={{ color: `${SAGE_TEXT}0.90)` }}>
                 Orthodoxy · {WALLS[selected].label}
               </p>
               <p className="text-sm font-semibold text-white/80 mb-2">
@@ -348,7 +348,7 @@ export default function OrthodoxiesInteractive() {
                 style={{
                   background: `${SAGE}0.18)`,
                   border: `1px solid ${SAGE}0.45)`,
-                  color: `${SAGE}1)`,
+                  color: `${SAGE_TEXT}1)`,
                 }}
               >
                 Flip it, what if the opposite were true? →
@@ -364,11 +364,11 @@ export default function OrthodoxiesInteractive() {
               style={{ borderColor: `${SAGE}0.30)`, background: `${SAGE}0.09)` }}
             >
               <div>
-                <p className="text-[9px] font-semibold uppercase tracking-widest mb-1"
-                  style={{ color: `${SAGE}0.80)` }}>
+                <p className="text-2xs font-semibold uppercase tracking-widest mb-1"
+                  style={{ color: `${SAGE_TEXT}0.90)` }}>
                   The flip · what if the opposite were true?
                 </p>
-                <p className="text-sm font-semibold mb-2" style={{ color: `${SAGE}1)` }}>
+                <p className="text-sm font-semibold mb-2" style={{ color: `${SAGE_TEXT}1)` }}>
                   {WALLS[selected].flip}
                 </p>
                 <p className="text-sm text-white/60 leading-relaxed">
@@ -377,8 +377,8 @@ export default function OrthodoxiesInteractive() {
               </div>
               <div className="rounded p-3"
                 style={{ background: 'rgba(255,255,255,0.04)', borderLeft: `2px solid ${SAGE}0.35)` }}>
-                <p className="text-[9px] font-semibold uppercase tracking-widest mb-1"
-                  style={{ color: `${SAGE}0.60)` }}>
+                <p className="text-2xs font-semibold uppercase tracking-widest mb-1"
+                  style={{ color: `${SAGE_TEXT}0.90)` }}>
                   How Might We seed
                 </p>
                 <p className="text-xs text-white/55 leading-relaxed italic">
@@ -387,7 +387,7 @@ export default function OrthodoxiesInteractive() {
               </div>
               <button
                 onClick={reset}
-                className="text-xs text-white/30 hover:text-white/55 transition-colors font-mono tracking-widest uppercase"
+                className="text-xs text-white/50 hover:text-white/55 transition-colors font-mono tracking-widest uppercase"
               >
                 ← Back to all walls
               </button>
