@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY = 'rgba(31,58,95,'
+const NAVY_TEXT = 'rgba(141,155,173,'  // brightened text-safe variant of NAVY
 
 type Persona = 'optimizer' | 'avoider' | 'newcomer'
 
@@ -180,8 +181,8 @@ export default function PAInteractive() {
                   transition={{ duration: 0.22 }}
                 >{name}</motion.text>
                 <motion.text
-                  x={cx} y={244}
-                  textAnchor="middle" fontSize="10"
+                  x={cx} y={247}
+                  textAnchor="middle" fontSize="12"
                   fontFamily="var(--font-mono)" letterSpacing="0.04em"
                   style={{ userSelect: 'none', pointerEvents: 'none' }}
                   animate={{ fill: st === 'dim' ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.675)' }}
@@ -200,7 +201,7 @@ export default function PAInteractive() {
               fontFamily:    'var(--font-mono)',
               letterSpacing: '0.10em',
               textTransform: 'uppercase',
-              color:         `${NAVY}0.55)`,
+              color:         `${NAVY_TEXT}0.90)`,
             }}
           >
             Click a card to explore
@@ -219,13 +220,13 @@ export default function PAInteractive() {
               exit={prefersReduced ? { opacity: 0 } : { opacity: 0, y: -8 }}
               transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
             >
-              <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.65)` }}>
+              <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY_TEXT}0.90)` }}>
                 Persona
               </p>
               <h3 className="font-display font-semibold mb-1" style={{ fontSize: 'var(--text-2xl)', color: '#FAFAFA', lineHeight: 1.2 }}>
                 {PERSONA_DETAIL[activeCard].heading}
               </h3>
-              <p className="font-mono mb-5" style={{ fontSize: 'var(--text-xs)', color: `${NAVY}0.70)`, letterSpacing: '0.06em' }}>
+              <p className="font-mono mb-5" style={{ fontSize: 'var(--text-xs)', color: `${NAVY_TEXT}0.90)`, letterSpacing: '0.06em' }}>
                 {PERSONA_DETAIL[activeCard].tag}
               </p>
 

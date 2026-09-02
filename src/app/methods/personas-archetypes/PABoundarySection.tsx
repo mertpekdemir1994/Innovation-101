@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY = 'rgba(31,58,95,'
+const NAVY_TEXT = 'rgba(141,155,173,'  // brightened text-safe variant of NAVY
 
 type State = 'personas' | 'avatars' | 'segments'
 
@@ -65,14 +66,14 @@ function PersonasSVG() {
               fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.58)" strokeWidth={1.5}
             />
             <line x1={cx - 32} y1={82} x2={cx + 32} y2={82} stroke="rgba(255,255,255,0.10)" strokeWidth={1} />
-            <text x={cx} y={96} textAnchor="middle" fontSize="6"
+            <text x={cx} y={99} textAnchor="middle" fontSize="11"
               fontFamily="var(--font-mono)" letterSpacing="0.08em"
               fill="rgba(255,255,255,0.55)" style={{ userSelect: 'none' }}
             >{labels[i]}</text>
           </g>
         )
       })}
-      <text x={200} y={172} textAnchor="middle" fontSize="8"
+      <text x={200} y={172} textAnchor="middle" fontSize="11"
         fontFamily="var(--font-mono)" letterSpacing="0.12em"
         fill="rgba(255,255,255,0.675)" style={{ userSelect: 'none' }}
       >THE RANGE, THREE PORTRAITS</text>
@@ -83,7 +84,8 @@ function PersonasSVG() {
 const PLUM_B = 'rgba(107,74,119,'
 
 function AvatarsSVG() {
-  const radii = [72, 52, 33, 16]
+  // Innermost ring widened 16 -> 28: "AVATAR" doesn't fit a 32-wide circle at 11pt
+  const radii = [72, 52, 33, 28]
   return (
     <svg viewBox="0 0 400 180" width="100%" style={{ overflow: 'visible' }} aria-hidden="true">
       <defs>
@@ -102,10 +104,10 @@ function AvatarsSVG() {
         />
       ))}
       <text x={200} y={91} textAnchor="middle" dominantBaseline="middle"
-        fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
         fill="rgba(255,255,255,0.92)" style={{ userSelect: 'none' }}
       >AVATAR</text>
-      <text x={200} y={172} textAnchor="middle" fontSize="8"
+      <text x={200} y={172} textAnchor="middle" fontSize="11"
         fontFamily="var(--font-mono)" letterSpacing="0.12em"
         fill="rgba(255,255,255,0.675)" style={{ userSelect: 'none' }}
       >THE BEACHHEAD, ONE MARKET</text>
@@ -129,20 +131,21 @@ function SegmentsSVG() {
       <line x1={30} y1={baseY} x2={370} y2={baseY} stroke="rgba(255,255,255,0.14)" strokeWidth={1} />
       {bars.map(({ x, h, label }) => (
         <g key={x}>
+          {/* Widened 52 -> 68: "AGE 18–24" doesn't fit a 52-wide bar at 11pt */}
           <rect
-            x={x - 26} y={baseY - h}
-            width={52} height={h}
+            x={x - 34} y={baseY - h}
+            width={68} height={h}
             rx={3}
             fill={`${NAVY}0.18)`}
             stroke="rgba(255,255,255,0.22)" strokeWidth={1}
           />
-          <text x={x} y={baseY + 14} textAnchor="middle" fontSize="5.5"
+          <text x={x} y={baseY + 14} textAnchor="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill="rgba(255,255,255,0.675)" style={{ userSelect: 'none' }}
           >{label}</text>
         </g>
       ))}
-      <text x={200} y={172} textAnchor="middle" fontSize="8"
+      <text x={200} y={172} textAnchor="middle" fontSize="11"
         fontFamily="var(--font-mono)" letterSpacing="0.12em"
         fill="rgba(255,255,255,0.675)" style={{ userSelect: 'none' }}
       >THE BUCKETS, DEMOGRAPHIC GROUPS</text>
@@ -184,7 +187,7 @@ export default function PABoundarySection() {
               style={{
                 fontSize:   'var(--text-sm)',
                 background: isActive ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.04)',
-                color:      isActive ? '#FAFAFA' : 'rgba(255,255,255,0.42)',
+                color:      isActive ? '#FAFAFA' : 'rgba(255,255,255,0.50)',
                 border:     `1px solid ${isActive ? 'rgba(255,255,255,0.28)' : 'rgba(255,255,255,0.08)'}`,
               }}
             >
@@ -223,13 +226,13 @@ export default function PABoundarySection() {
               exit={prefersReduced ? { opacity: 0 } : { opacity: 0, y: -6 }}
               transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
             >
-              <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.35)' }}>
+              <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.50)' }}>
                 {STATES.find((s) => s.id === active)?.label}
               </p>
               <h3 className="font-display font-semibold mb-2" style={{ fontSize: 'var(--text-2xl)', color: '#FAFAFA', lineHeight: 1.2 }}>
                 {detail.heading}
               </h3>
-              <p className="font-mono mb-5" style={{ fontSize: 'var(--text-xs)', color: `${NAVY}0.65)`, letterSpacing: '0.06em' }}>
+              <p className="font-mono mb-5" style={{ fontSize: 'var(--text-xs)', color: `${NAVY_TEXT}0.90)`, letterSpacing: '0.06em' }}>
                 {detail.descriptor}
               </p>
               <p style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.62)' }}>

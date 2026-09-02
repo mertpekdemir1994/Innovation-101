@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY = 'rgba(31,58,95,'
+// darker indigo for text on this light background — plain rgba(99,102,241,)
+// can't reach 4.5:1 on white even at full opacity
+const INDIGO_DARK = 'rgba(79,70,229,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -39,7 +42,7 @@ const CONTENT: Record<Tab, React.ReactNode> = {
         That persona appeared in six of the fifteen interviews. The team would never have designed for her, or even imagined her, without talking to real people. And designing for her (calm, reassuring, minimal, judgment-free) rather than only for the confident Optimizer changed the entire direction of the product.
       </p>
       <div className="rounded-lg p-5 mt-6" style={{ background: `${NAVY}0.04)`, borderLeft: `3px solid ${NAVY}0.28)` }}>
-        <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.68)` }}>
+        <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.90)` }}>
           The insight
         </p>
         <p style={{ fontStyle: 'italic', color: 'var(--color-neutral-800)' }}>
@@ -60,7 +63,7 @@ const CONTENT: Record<Tab, React.ReactNode> = {
         When the team later fed their actual interview transcripts into AI to help cluster the data, it was genuinely useful: AI found the patterns faster, grouped similar experiences, and accelerated the synthesis. But AI generating personas from nothing produced confident fiction that confirmed the team&rsquo;s bias and hid the surprising truth.
       </p>
       <div className="rounded-lg p-5 mt-6" style={{ background: 'rgba(99,102,241,0.04)', borderLeft: '3px solid rgba(99,102,241,0.38)' }}>
-        <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: 'rgba(99,102,241,0.70)' }}>
+        <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_DARK}0.90)` }}>
           The honest readout
         </p>
         <p style={{ fontStyle: 'italic', color: 'var(--color-neutral-800)' }}>

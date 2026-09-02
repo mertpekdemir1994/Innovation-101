@@ -4,7 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY = 'rgba(31,58,95,'
+const NAVY_TEXT = 'rgba(141,155,173,'  // brightened text-safe variant of NAVY
 const AI_C = 'rgba(99,102,241,'
+const AI_C_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of AI_C
 
 type Persona = 'optimizer' | 'avoider' | 'newcomer'
 
@@ -130,8 +132,8 @@ export default function PAAIReactivated() {
                   {isAI ? (
                     <motion.text
                       key="ai"
-                      x={cx} y={244}
-                      textAnchor="middle" fontSize="9"
+                      x={cx} y={247}
+                      textAnchor="middle" fontSize="12"
                       fontFamily="var(--font-mono)" letterSpacing="0.08em"
                       fill={`rgba(141,143,245,0.937)`}
                       style={{ userSelect: 'none' }}
@@ -141,8 +143,8 @@ export default function PAAIReactivated() {
                   ) : (
                     <motion.text
                       key="human"
-                      x={cx} y={244}
-                      textAnchor="middle" fontSize="9"
+                      x={cx} y={247}
+                      textAnchor="middle" fontSize="12"
                       fontFamily="var(--font-mono)" letterSpacing="0.04em"
                       fill="rgba(255,255,255,0.66)"
                       style={{ userSelect: 'none' }}
@@ -212,7 +214,7 @@ export default function PAAIReactivated() {
                     style={{ overflow: 'hidden' }}
                   >
                     <div className="pt-2">
-                      <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: `${AI_C}0.70)` }}>
+                      <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: `${AI_C_TEXT}0.90)` }}>
                         What AI does well
                       </p>
                       <p className="mb-4" style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -231,7 +233,7 @@ export default function PAAIReactivated() {
                     key="idle"
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                     transition={{ duration: 0.15 }}
-                    style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.35)', fontStyle: 'italic' }}
+                    style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.50)', fontStyle: 'italic' }}
                   >Toggle to AI to see what changes.</motion.p>
                 )}
               </AnimatePresence>
@@ -242,7 +244,7 @@ export default function PAAIReactivated() {
 
       {/* Honest synthesis */}
       <div className="mt-10 rounded-xl p-6" style={{ background: `${NAVY}0.08)`, border: `1px solid ${NAVY}0.20)` }}>
-        <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.70)` }}>
+        <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY_TEXT}0.90)` }}>
           The honest synthesis
         </p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>

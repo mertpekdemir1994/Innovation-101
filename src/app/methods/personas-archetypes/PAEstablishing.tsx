@@ -6,7 +6,7 @@ const NAVY = 'rgba(31,58,95,'
 
 const CARDS = [
   { id: 'optimizer', name: 'The Optimizer', sub: 'The power user',   goal: 'Total control',     frustration: 'Apps lack depth',      cx: 120 },
-  { id: 'avoider',   name: 'The Avoider',   sub: 'The anxious one',  goal: 'Feel reassured',    frustration: 'Apps amplify anxiety', cx: 360 },
+  { id: 'avoider',   name: 'The Avoider',   sub: 'The anxious one',  goal: 'Feel reassured',    frustration: 'Never feels safe', cx: 360 },
   { id: 'newcomer',  name: 'The Newcomer',  sub: 'The first-timer',  goal: 'Learn the basics',  frustration: "It's all jargon",      cx: 600 },
 ] as const
 
@@ -94,14 +94,14 @@ export default function PAEstablishing() {
               {/* ── GOAL ── */}
               <text
                 x={cx} y={115}
-                textAnchor="middle" fontSize="5.5"
+                textAnchor="middle" fontSize="12"
                 fontFamily="var(--font-mono)" letterSpacing="0.10em"
                 fill="rgba(255,255,255,0.48)"
                 style={{ userSelect: 'none' }}
               >GOAL</text>
               <text
-                x={cx} y={129}
-                textAnchor="middle" fontSize="8"
+                x={cx} y={134}
+                textAnchor="middle" fontSize="12"
                 fontFamily="var(--font-body, Inter, sans-serif)"
                 fill="rgba(255,255,255,0.88)"
                 style={{ userSelect: 'none' }}
@@ -109,15 +109,15 @@ export default function PAEstablishing() {
 
               {/* ── FRUSTRATION ── */}
               <text
-                x={cx} y={149}
-                textAnchor="middle" fontSize="5.5"
+                x={cx} y={158}
+                textAnchor="middle" fontSize="12"
                 fontFamily="var(--font-mono)" letterSpacing="0.10em"
                 fill="rgba(255,255,255,0.48)"
                 style={{ userSelect: 'none' }}
               >FRUSTRATION</text>
               <text
-                x={cx} y={163}
-                textAnchor="middle" fontSize="8"
+                x={cx} y={177}
+                textAnchor="middle" fontSize="12"
                 fontFamily="var(--font-body, Inter, sans-serif)"
                 fill="rgba(255,255,255,0.88)"
                 style={{ userSelect: 'none' }}
@@ -132,8 +132,8 @@ export default function PAEstablishing() {
                 style={{ userSelect: 'none' }}
               >{name}</text>
               <text
-                x={cx} y={244}
-                textAnchor="middle" fontSize="10"
+                x={cx} y={247}
+                textAnchor="middle" fontSize="12"
                 fontFamily="var(--font-mono)" letterSpacing="0.04em"
                 fill="rgba(255,255,255,0.675)"
                 style={{ userSelect: 'none' }}
