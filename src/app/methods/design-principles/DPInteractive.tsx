@@ -89,7 +89,7 @@ export default function DPInteractive() {
       {/* Candidate principle buttons */}
       <div>
         <p className="font-mono uppercase tracking-widest mb-3"
-          style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.55)` }}>
+          style={{ fontSize: 'var(--text-2xs)', color: `${PLUM_TEXT}0.90)` }}>
           Select a candidate principle: bring it to the fork
         </p>
         <div className="flex flex-wrap gap-2">
@@ -105,7 +105,7 @@ export default function DPInteractive() {
                   : 'transparent',
                 color: active === p.id
                   ? p.type === 'real' ? '#fff' : `${AMBER}0.90)`
-                  : p.type === 'real' ? `${PLUM}0.70)` : `${AMBER}0.55)`,
+                  : p.type === 'real' ? `${PLUM_TEXT}0.90)` : `${AMBER}0.70)`,
                 border: `1.5px solid ${active === p.id
                   ? p.type === 'real' ? `${PLUM}0.70)` : `${AMBER}0.45)`
                   : p.type === 'real' ? `${PLUM}0.28)` : `${AMBER}0.25)`}`,
@@ -169,10 +169,10 @@ export default function DPInteractive() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.20 }}>
-              <rect x={26} y={100} width={196} height={24} rx={3}
+              <rect x={26} y={90} width={196} height={40} rx={3}
                 fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)" strokeWidth={0.7} strokeDasharray="4 3" />
-              <text x={124} y={112} textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+              <text x={124} y={114} textAnchor="middle" dominantBaseline="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0em"
                 fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>
                 PRINCIPLE NOT YET SELECTED
               </text>
@@ -183,17 +183,17 @@ export default function DPInteractive() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.22, ease }}>
-              <rect x={26} y={97} width={196} height={30} rx={3}
+              <rect x={26} y={90} width={196} height={44} rx={3}
                 fill={isReal ? `${PLUM}0.08)` : `${AMBER}0.06)`}
                 stroke={isReal ? `${PLUM}0.35)` : `${AMBER}0.30)`}
                 strokeWidth={0.8} />
-              <text x={124} y={107} textAnchor="middle"
-                fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              <text x={124} y={106} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0em"
                 fill={isReal ? `${PLUM_TEXT}0.899)` : `${AMBER_TEXT}0.851)`} style={{ userSelect: 'none' }}>
                 {isReal ? 'PRINCIPLE: SEE BUTTON ABOVE' : 'PLATITUDE: SEE BUTTON ABOVE'}
               </text>
-              <text x={124} y={120} textAnchor="middle"
-                fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+              <text x={124} y={124} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                 fill={isReal ? `${PLUM_TEXT}0.962)` : `${AMBER}0.72)`} style={{ userSelect: 'none' }}>
                 {isReal
                   ? (selected.taken ?? 'REAL PRINCIPLE')
@@ -215,7 +215,9 @@ export default function DPInteractive() {
           filter={selected ? 'url(#dp-int-plum-glow)' : undefined}
         />
 
-        {/* UNDECIDED warning at junction */}
+        {/* UNDECIDED warning - moved above the now-taller badge box (it used to
+            sit just above the junction, but the box at 11pt now occupies that
+            space, y 90-134) */}
         <AnimatePresence>
           {showUndecided && (
             <motion.g key="undecided"
@@ -223,8 +225,8 @@ export default function DPInteractive() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.22 }}>
-              <text x={FX} y={FY - 10} textAnchor="middle"
-                fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+              <text x={FX} y={78} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                 fill={`${AMBER}0.75)`} style={{ userSelect: 'none' }}>
                 ⚠ UNDECIDED
               </text>
@@ -251,14 +253,14 @@ export default function DPInteractive() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.22 }}>
-              <text x={TX + 8} y={TY - 4} textAnchor="start"
-                fontSize="5.0" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+              <text x={TX + 8} y={TY - 8} textAnchor="start"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fontWeight="600"
                 fill={isReal ? `${PLUM_TEXT}0.975)` : `${PLUM_TEXT}0.885)`} style={{ userSelect: 'none' }}>
                 {isReal ? 'TAKEN' : 'OPEN'}
               </text>
               {isReal && selected.taken && (
-                <text x={TX + 8} y={TY + 8} textAnchor="start"
-                  fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                <text x={TX + 8} y={TY + 10} textAnchor="start"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${PLUM_TEXT}0.899)`} style={{ userSelect: 'none' }}>
                   {selected.taken}
                 </text>
@@ -306,14 +308,14 @@ export default function DPInteractive() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.22 }}>
-              <text x={CX + 8} y={CY - 2} textAnchor="start"
-                fontSize="5.0" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+              <text x={CX + 8} y={CY - 8} textAnchor="start"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fontWeight="600"
                 fill={isReal ? `${AMBER}0.85)` : `${PLUM_TEXT}0.885)`} style={{ userSelect: 'none' }}>
                 {isReal ? 'CLOSED' : 'OPEN'}
               </text>
               {isReal && selected.closed && (
                 <text x={CX + 8} y={CY + 10} textAnchor="start"
-                  fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
                   {selected.closed}
                 </text>
@@ -325,13 +327,13 @@ export default function DPInteractive() {
         {/* Default branch labels (when no principle selected) */}
         {selected === null && (
           <>
-            <text x={TX + 8} y={TY + 2} textAnchor="start"
-              fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+            <text x={TX + 8} y={TY + 4} textAnchor="start"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
               fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
               BRANCH A
             </text>
-            <text x={CX + 8} y={CY + 2} textAnchor="start"
-              fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+            <text x={CX + 8} y={CY + 4} textAnchor="start"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
               fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
               BRANCH B
             </text>
@@ -355,20 +357,20 @@ export default function DPInteractive() {
 
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <p className="font-mono uppercase tracking-widest"
-                style={{ fontSize: 'var(--text-2xs)', color: isReal ? `${PLUM}0.70)` : `${AMBER}0.70)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: isReal ? `${PLUM_TEXT}0.90)` : `${AMBER}0.70)` }}>
                 {isReal ? 'Result: closes a branch' : 'Result: closes no branch'}
               </p>
               <span className="font-mono text-xs px-2 py-0.5 rounded-full"
                 style={{
                   background: isReal ? `${PLUM}0.12)` : `${AMBER}0.10)`,
-                  color: isReal ? `${PLUM}0.80)` : `${AMBER}0.80)`,
+                  color: isReal ? `${PLUM_TEXT}0.95)` : `${AMBER}0.80)`,
                   border: `1px solid ${isReal ? `${PLUM}0.25)` : `${AMBER}0.25)`}`,
                 }}>
                 {isReal ? 'PRINCIPLE' : 'PLATITUDE'}
               </span>
             </div>
 
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.70)', lineHeight: 'var(--leading-relaxed)' }}>
               {isReal
                 ? `This closes the "${selected.closed}" branch. Any team that adopts this principle has, in advance, agreed to say no to power-user configurability requests, regardless of how compelling they sound in the moment.`
                 : `This principle remains open to every direction. There is no branch it closes. Under pressure, it provides no guidance because any choice can claim to honour it.`}
@@ -380,15 +382,15 @@ export default function DPInteractive() {
                 borderLeft: `2px solid ${isReal ? `${PLUM}0.35)` : `${AMBER}0.35)`}`,
               }}>
               <p className="font-mono uppercase tracking-widest mb-1"
-                style={{ fontSize: 'var(--text-2xs)', color: isReal ? `${PLUM}0.60)` : `${AMBER}0.60)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: isReal ? `${PLUM_TEXT}0.85)` : `${AMBER}0.70)` }}>
                 Arguability test: can a reasonable person argue the opposite?
               </p>
               <p className="font-semibold"
-                style={{ fontSize: 'var(--text-sm)', color: isReal ? `${PLUM}0.85)` : `${AMBER}0.78)` }}>
+                style={{ fontSize: 'var(--text-sm)', color: isReal ? `${PLUM_TEXT}0.95)` : `${AMBER}0.78)` }}>
                 {isReal ? 'YES: this is a principle.' : 'NO: this is a platitude.'}
               </p>
               <p className="mt-1"
-                style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}
+                style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.60)', lineHeight: 'var(--leading-relaxed)' }}
                 dangerouslySetInnerHTML={{ __html: selected.arguableNote }} />
             </div>
           </motion.div>
@@ -402,7 +404,7 @@ export default function DPInteractive() {
             transition={{ duration: 0.20 }}
             className="rounded-lg p-5"
             style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.02)' }}>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.55)' }}>
               Select a candidate principle above to bring it to the fork. Real principles close one branch. Platitudes close none.
             </p>
           </motion.div>

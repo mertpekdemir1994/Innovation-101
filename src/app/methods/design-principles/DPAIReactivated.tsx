@@ -99,14 +99,18 @@ export default function DPAIReactivated() {
 
         <rect x={0} y={0} width={SVG_W} height={SVG_H} fill="rgba(10,10,18,0.96)" rx={6} />
 
-        {/* AI mode: floating principles around the fork */}
+        {/* AI mode: floating principles around the fork - widened (the longest
+            candidate is 37 characters, which does not fit a 208-wide box at
+            11pt) and shifted left into the space the human-mode badge would
+            otherwise occupy, since it's hidden in AI mode; row spacing grown
+            to keep a real gap between stacked lines */}
         <AnimatePresence>
           {isAI && AI_PRINCIPLES.map((text, i) => {
             const positions = [
-              { x: 480, y: 30 },
-              { x: 500, y: 70 },
-              { x: 490, y: 118 },
-              { x: 480, y: 165 },
+              { x: 220, y: 45 },
+              { x: 220, y: 87 },
+              { x: 220, y: 129 },
+              { x: 220, y: 171 },
             ]
             const pos = positions[i]
             return (
@@ -115,10 +119,10 @@ export default function DPAIReactivated() {
                 animate={{ opacity: 0.70, x: 0 }}
                 exit={{ opacity: 0, x: 8 }}
                 transition={{ duration: 0.28, delay: prefersReduced ? 0 : i * 0.06, ease }}>
-                <rect x={pos.x} y={pos.y - 8} width={208} height={16} rx={3}
+                <rect x={pos.x} y={pos.y - 11} width={290} height={22} rx={3}
                   fill={`${INDIGO}0.06)`} stroke={`${INDIGO}0.20)`} strokeWidth={0.6} />
-                <text x={pos.x + 6} y={pos.y + 1} textAnchor="start" dominantBaseline="middle"
-                  fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.05em"
+                <text x={pos.x + 10} y={pos.y + 1} textAnchor="start" dominantBaseline="middle"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${INDIGO_TEXT}0.926)`} style={{ userSelect: 'none' }}>
                   {text}
                 </text>
@@ -135,8 +139,8 @@ export default function DPAIReactivated() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.28 }}>
-              <text x={SVG_W / 2} y={14} textAnchor="middle"
-                fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+              <text x={SVG_W / 2} y={20} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fontWeight="600"
                 fill={`${AMBER}0.72)`} style={{ userSelect: 'none' }}>
                 ⚠ CLOSES NO BRANCHES: FORK UNDECIDED
               </text>
@@ -152,20 +156,20 @@ export default function DPAIReactivated() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.28 }}>
-              <rect x={26} y={98} width={196} height={30} rx={3}
+              <rect x={14} y={90} width={210} height={58} rx={3}
                 fill={`${PLUM}0.08)`} stroke={`${PLUM}0.35)`} strokeWidth={0.8} />
-              <text x={124} y={108} textAnchor="middle"
-                fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              <text x={119} y={106} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                 fill={`${PLUM_TEXT}0.899)`} style={{ userSelect: 'none' }}>
                 PRINCIPLE
               </text>
-              <text x={124} y={118} textAnchor="middle"
-                fontSize="4.6" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+              <text x={119} y={122} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0em" fontWeight="600"
                 fill={`${PLUM_TEXT}0.958)`} style={{ userSelect: 'none' }}>
                 SPEED OVER CONFIGURABILITY
               </text>
-              <text x={124} y={127} textAnchor="middle"
-                fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+              <text x={119} y={138} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                 fill={`${PLUM_TEXT}0.878)`} style={{ userSelect: 'none' }}>
                 EVEN WHEN POWER USERS ASK
               </text>
@@ -173,8 +177,10 @@ export default function DPAIReactivated() {
           )}
         </AnimatePresence>
 
-        {/* Incoming path */}
-        <line x1={24} y1={FY} x2={FX} y2={FY}
+        {/* Incoming path - in human mode it starts at the badge's right edge
+            (224) instead of the canvas edge, since the widened badge box now
+            occupies that space */}
+        <line x1={isAI ? 24 : 224} y1={FY} x2={FX} y2={FY}
           stroke={isAI ? `${INDIGO}0.25)` : `${PLUM}0.35)`} strokeWidth={1.4} />
 
         {/* Junction circle */}
@@ -228,13 +234,13 @@ export default function DPAIReactivated() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.22 }}>
-              <text x={TX + 8} y={TY + 2} textAnchor="start"
-                fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              <text x={TX + 8} y={TY + 4} textAnchor="start"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                 fill={`${INDIGO_TEXT}0.878)`} style={{ userSelect: 'none' }}>
                 OPEN
               </text>
-              <text x={CX + 8} y={CY + 2} textAnchor="start"
-                fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              <text x={CX + 8} y={CY + 8} textAnchor="start"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                 fill={`${INDIGO_TEXT}0.878)`} style={{ userSelect: 'none' }}>
                 OPEN
               </text>
@@ -245,23 +251,23 @@ export default function DPAIReactivated() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.22 }}>
-              <text x={TX + 8} y={TY - 4} textAnchor="start"
-                fontSize="5.0" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+              <text x={TX + 8} y={TY - 8} textAnchor="start"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fontWeight="600"
                 fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}>
                 TAKEN
               </text>
-              <text x={TX + 8} y={TY + 7} textAnchor="start"
-                fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              <text x={TX + 8} y={TY + 10} textAnchor="start"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                 fill={`${PLUM_TEXT}0.899)`} style={{ userSelect: 'none' }}>
                 {HUMAN_PRINCIPLE.taken}
               </text>
-              <text x={CX + 8} y={CY - 3} textAnchor="start"
-                fontSize="5.0" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+              <text x={CX + 8} y={CY - 8} textAnchor="start"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fontWeight="600"
                 fill={`${AMBER}0.82)`} style={{ userSelect: 'none' }}>
                 CLOSED
               </text>
-              <text x={CX + 8} y={CY + 9} textAnchor="start"
-                fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              <text x={CX + 8} y={CY + 10} textAnchor="start"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                 fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
                 {HUMAN_PRINCIPLE.closed}
               </text>

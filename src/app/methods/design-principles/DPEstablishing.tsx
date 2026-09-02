@@ -7,7 +7,7 @@ const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
-const SVG_W = 700, SVG_H = 268
+const SVG_W = 700, SVG_H = 276
 
 // Fork junction
 const FX = 230, FY = 134
@@ -82,32 +82,39 @@ export default function DPEstablishing() {
         {/* Dark background */}
         <rect x={0} y={0} width={SVG_W} height={SVG_H} fill="rgba(10,10,18,0.96)" rx={6} />
 
-        {/* ── PRINCIPLE LABEL (appears first, on the incoming path) ── */}
+        {/* ── PRINCIPLE LABEL (appears first, on the incoming path) ──
+             Widened and made taller, and the detail line split in two - at an
+             11pt floor the box can no longer hold three lines (one of them 38
+             characters) at its original 196x34 size. The incoming path now
+             runs from the box's right edge to the fork instead of underneath it. */}
         <motion.g {...fade(0.32)}>
-          <rect x={26} y={93} width={196} height={34} rx={3}
+          <rect x={14} y={88} width={210} height={72} rx={3}
             fill={`${PLUM}0.07)`} stroke={`${PLUM}0.28)`} strokeWidth={0.8} />
-          <text x={124} y={105} textAnchor="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          <text x={119} y={104} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${PLUM_TEXT}0.895)`} style={{ userSelect: 'none' }}>
             PRINCIPLE
           </text>
-          <text x={124} y={116} textAnchor="middle"
-            fontSize="5.0" fontFamily="var(--font-mono)" letterSpacing="0.07em" fontWeight="600"
+          <text x={119} y={120} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0em" fontWeight="600"
             fill={`${PLUM_TEXT}0.958)`} style={{ userSelect: 'none' }}>
             SPEED OVER CONFIGURABILITY
           </text>
-          <text x={124} y={126} textAnchor="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          <text x={119} y={136} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${PLUM_TEXT}0.882)`} style={{ userSelect: 'none' }}>
-            EVEN WHEN POWER USERS ASK FOR OPTIONS
+            EVEN WHEN POWER USERS
           </text>
-          {/* Connecting tick from badge to path */}
-          <line x1={124} y1={127} x2={124} y2={134} stroke={`${PLUM}0.22)`} strokeWidth={0.6} />
+          <text x={119} y={152} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
+            fill={`${PLUM_TEXT}0.882)`} style={{ userSelect: 'none' }}>
+            ASK FOR OPTIONS
+          </text>
         </motion.g>
 
         {/* ── INCOMING PATH ── */}
         <motion.path
-          d={`M 24,${FY} L ${FX},${FY}`}
+          d={`M 224,${FY} L ${FX},${FY}`}
           fill="none"
           stroke={`${PLUM}0.42)`}
           strokeWidth={1.6}
@@ -155,28 +162,32 @@ export default function DPEstablishing() {
             fill="none" stroke={`${AMBER}0.35)`} strokeWidth={1.0} />
         </motion.g>
 
-        {/* ── BRANCH LABELS ── */}
+        {/* ── BRANCH LABELS ──
+             Both flipped from start-anchored (extending right past the branch
+             tip) to end-anchored (extending left, back toward the fork).
+             At 11pt the old rightward placement ran straight through the
+             PLATITUDE section on the other side of the divider. */}
         <motion.g {...fade(1.18)}>
           {/* Taken label */}
-          <text x={TX + 8} y={TY - 8} textAnchor="start"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+          <text x={TX - 12} y={TY - 10} textAnchor="end"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fontWeight="600"
             fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             TAKEN
           </text>
-          <text x={TX + 8} y={TY + 4} textAnchor="start"
-            fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          <text x={TX - 12} y={TY + 8} textAnchor="end"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${PLUM_TEXT}0.899)`} style={{ userSelect: 'none' }}>
             SPEED · SIMPLICITY
           </text>
 
           {/* Closed label */}
-          <text x={CX + 8} y={CY - 4} textAnchor="start"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+          <text x={CX - 22} y={CY - 8} textAnchor="end"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fontWeight="600"
             fill={`${AMBER}0.82)`} style={{ userSelect: 'none' }}>
             CLOSED
           </text>
-          <text x={CX + 8} y={CY + 8} textAnchor="start"
-            fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          <text x={CX - 22} y={CY + 10} textAnchor="end"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
             CONFIGURABILITY
           </text>
@@ -191,13 +202,13 @@ export default function DPEstablishing() {
         {/* ── PLATITUDE COUNTER (right section) ── */}
         <motion.g {...fade(1.38)}>
           {/* Header */}
-          <text x={586} y={78} textAnchor="middle"
-            fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+          <text x={586} y={76} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}>
             PLATITUDE
           </text>
-          <text x={586} y={89} textAnchor="middle"
-            fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          <text x={586} y={94} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
             fill="rgba(255,255,255,0.675)" style={{ userSelect: 'none' }}>
             BE USER-CENTRED
           </text>
@@ -218,21 +229,21 @@ export default function DPEstablishing() {
             markerEnd="url(#dp-est-arr-dim)" />
 
           {/* "CLOSES NOTHING" */}
-          <text x={586} y={184} textAnchor="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={586} y={182} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
             CLOSES NOTHING
           </text>
-          <text x={586} y={193} textAnchor="middle"
-            fontSize="3.2" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          <text x={586} y={200} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>
             FORK UNDECIDED
           </text>
         </motion.g>
 
         {/* ── CAPTION ── */}
-        <motion.text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
-          fontFamily="var(--font-mono)" letterSpacing="0.06em"
+        <motion.text x={SVG_W / 2} y={SVG_H - 10} textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           {...fade(1.65)}>
           A principle&apos;s value is in what it closes: there must be something it closes.
