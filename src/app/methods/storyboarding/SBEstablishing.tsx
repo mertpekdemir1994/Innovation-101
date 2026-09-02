@@ -140,7 +140,7 @@ export default function SBEstablishing() {
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Five-panel storyboard sequence. Frame 1: A parent in front of an open fridge with no product present, the real situation before the concept appears. Frame 2: The parent opens the app on their phone. Frame 3: They see a suggestion on the screen. Frame 4: THE GAP, an empty fractured panel, the frame nobody could draw. The sequence halts here because nobody can say what the person sees, or why the app knows what is in their fridge. Frame 5: A positive outcome, but it cannot be reached without crossing the gap. The gap is the finding."
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
+        style={{ width: '100%', margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="sb-est-clay-glow" x="-30%" y="-30%" width="160%" height="160%">
