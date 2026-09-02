@@ -26,17 +26,21 @@ export default function LSLoopHero() {
   const nodePositions = NODES.map((n) => ({ ...n, ...polarToXY(cx, cy, r, n.angle) }))
 
   const forkY  = cy + r + 54
-  const leftX  = cx - 76
-  const rightX = cx + 76
+  const leftX  = cx - 110
+  const rightX = cx + 110
 
   return (
     <div className="w-full flex justify-center items-center py-space-6 select-none" aria-hidden="true">
       <svg
-        viewBox="0 0 600 560"
+        viewBox="0 0 1456 560"
         width="100%"
-        style={{ maxWidth: 640 }}
         className="overflow-visible"
       >
+      {/* Canvas widened from the original 600-wide composition (1.07:1, the
+          most square of the six hero diagrams) toward 2.6:1 by framing it
+          wider, not stretching the circle — the loop's own geometry is
+          untouched, just recentered via this translate. */}
+      <g transform="translate(428, 0)">
         {/* Outer glow ring */}
         <motion.circle
           cx={cx} cy={cy} r={r + 44}
@@ -75,27 +79,27 @@ export default function LSLoopHero() {
         })}
 
         {/* Center labels */}
-        <motion.text x={cx} y={cy - 12} textAnchor="middle"
-          fill={`${PURPLE_TEXT}0.905)`} fontSize="15" fontFamily="ui-monospace, monospace"
-          letterSpacing="0.12em" style={{ textTransform: 'uppercase' }}
+        <motion.text x={cx} y={cy - 24} textAnchor="middle"
+          fill={`${PURPLE_TEXT}0.905)`} fontSize="26" fontFamily="ui-monospace, monospace"
+          letterSpacing="0.1em" style={{ textTransform: 'uppercase' }}
           initial={prefersReduced ? {} : { opacity: 0 }}
           animate={prefersReduced ? {} : { opacity: 1 }}
           transition={{ delay: 1.0 }}
         >
           BUILD
         </motion.text>
-        <motion.text x={cx} y={cy + 7} textAnchor="middle"
-          fill={`${PURPLE_TEXT}0.858)`} fontSize="12" fontFamily="ui-monospace, monospace"
-          letterSpacing="0.1em" style={{ textTransform: 'uppercase' }}
+        <motion.text x={cx} y={cy + 10} textAnchor="middle"
+          fill={`${PURPLE_TEXT}0.858)`} fontSize="21" fontFamily="ui-monospace, monospace"
+          letterSpacing="0.08em" style={{ textTransform: 'uppercase' }}
           initial={prefersReduced ? {} : { opacity: 0 }}
           animate={prefersReduced ? {} : { opacity: 1 }}
           transition={{ delay: 1.05 }}
         >
           MEASURE
         </motion.text>
-        <motion.text x={cx} y={cy + 26} textAnchor="middle"
-          fill={`${PURPLE_TEXT}0.839)`} fontSize="12" fontFamily="ui-monospace, monospace"
-          letterSpacing="0.1em" style={{ textTransform: 'uppercase' }}
+        <motion.text x={cx} y={cy + 44} textAnchor="middle"
+          fill={`${PURPLE_TEXT}0.839)`} fontSize="21" fontFamily="ui-monospace, monospace"
+          letterSpacing="0.08em" style={{ textTransform: 'uppercase' }}
           initial={prefersReduced ? {} : { opacity: 0 }}
           animate={prefersReduced ? {} : { opacity: 1 }}
           transition={{ delay: 1.1 }}
@@ -120,8 +124,8 @@ export default function LSLoopHero() {
             {/* Label */}
             <text x={node.x} y={node.y + 1}
               textAnchor="middle" dominantBaseline="middle"
-              fill={`${PURPLE_TEXT}0.981)`} fontSize="16" fontWeight="600"
-              fontFamily="ui-monospace, monospace" letterSpacing="0.08em"
+              fill={`${PURPLE_TEXT}0.981)`} fontSize="20" fontWeight="600"
+              fontFamily="ui-monospace, monospace" letterSpacing="0.03em"
               style={{ textTransform: 'uppercase' }}
             >
               {node.label}
@@ -148,20 +152,21 @@ export default function LSLoopHero() {
             stroke={`${PURPLE}0.20)`} strokeWidth={2}
           />
           <text x={leftX} y={forkY + 18}
-            textAnchor="middle" fill={`${PURPLE_TEXT}0.915)`} fontSize="13"
+            textAnchor="middle" fill={`${PURPLE_TEXT}0.915)`} fontSize="22"
             fontFamily="ui-monospace, monospace" letterSpacing="0.1em"
             style={{ textTransform: 'uppercase' }}
           >
             Pivot
           </text>
           <text x={rightX} y={forkY + 18}
-            textAnchor="middle" fill={`${PURPLE_TEXT}0.877)`} fontSize="13"
+            textAnchor="middle" fill={`${PURPLE_TEXT}0.877)`} fontSize="22"
             fontFamily="ui-monospace, monospace" letterSpacing="0.1em"
             style={{ textTransform: 'uppercase' }}
           >
             Persevere
           </text>
         </motion.g>
+      </g>
       </svg>
     </div>
   )
