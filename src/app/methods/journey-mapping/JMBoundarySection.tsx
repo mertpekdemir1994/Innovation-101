@@ -79,7 +79,7 @@ function JourneyMiniSVG() {
           <rect x={i * 64 + 1} y={4} width={62} height={MINI_HDR_H} rx={3}
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.35)`} strokeWidth={1} />
           <text x={cx} y={18} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${TEAL_TEXT}0.962)`} style={{ userSelect: 'none' }}
           >STAGE {i + 1}</text>
         </g>
@@ -88,10 +88,10 @@ function JourneyMiniSVG() {
       <line x1={0} y1={34} x2={MINI_W} y2={34} stroke="rgba(255,255,255,0.08)" strokeWidth={1} />
       {/* Lane labels */}
       <text x={3} y={50} textAnchor="start" dominantBaseline="middle"
-        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
+        fontSize="11" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
       >ACTIONS</text>
       <text x={3} y={70} textAnchor="start" dominantBaseline="middle"
-        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
+        fontSize="11" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
       >THOUGHTS</text>
       <line x1={0} y1={80} x2={MINI_W} y2={80} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
       {/* Emotion line */}
@@ -103,7 +103,7 @@ function JourneyMiniSVG() {
           fill={`${TEAL}0.90)`} stroke="rgba(255,255,255,0.60)" strokeWidth={0.8}
         />
       ))}
-      <text x={MINI_W / 2} y={126} textAnchor="middle" fontSize="4" fontFamily="var(--font-mono)"
+      <text x={MINI_W / 2} y={122} textAnchor="middle" fontSize="11" fontFamily="var(--font-mono)"
         fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}
       >FLEXIBLE STAGES, EXPERIENCER&apos;S SIDE ONLY</text>
     </svg>
@@ -123,7 +123,7 @@ function FiveEsSVG() {
           <rect x={i * 64 + 1} y={4} width={62} height={MINI_HDR_H} rx={3}
             fill={`${INDIGO}0.18)`} stroke={`${INDIGO}0.55)`} strokeWidth={1.5} />
           <text x={MINI_SCX[i]} y={18} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`${INDIGO_TEXT}0.979)`} style={{ userSelect: 'none' }}
           >{p}</text>
         </g>
@@ -135,7 +135,7 @@ function FiveEsSVG() {
           stroke={`${INDIGO}0.12)`} strokeWidth={1}
         />
       ))}
-      <text x={MINI_W / 2} y={126} textAnchor="middle" fontSize="4" fontFamily="var(--font-mono)"
+      <text x={MINI_W / 2} y={122} textAnchor="middle" fontSize="11" fontFamily="var(--font-mono)"
         fill={`${INDIGO_TEXT}0.874)`} style={{ userSelect: 'none' }}
       >FIXED PHASES, CONSISTENT EVALUATION LENS</text>
     </svg>
@@ -144,8 +144,8 @@ function FiveEsSVG() {
 
 function BlueprintSVG() {
   return (
-    <svg viewBox={`0 0 ${MINI_W} 200`} width="100%" aria-hidden="true">
-      <rect x={0} y={0} width={MINI_W} height={200} rx={6} fill={`${TEAL}0.04)`} />
+    <svg viewBox={`0 0 ${MINI_W} 210`} width="100%" aria-hidden="true">
+      <rect x={0} y={0} width={MINI_W} height={210} rx={6} fill={`${TEAL}0.04)`} />
       {/* Stage headers */}
       {MINI_SCX.map((cx, i) => (
         <rect key={i} x={i * 64 + 1} y={4} width={62} height={MINI_HDR_H} rx={3}
@@ -154,16 +154,17 @@ function BlueprintSVG() {
       <line x1={0} y1={34} x2={MINI_W} y2={34} stroke="rgba(255,255,255,0.08)" strokeWidth={1} />
       {/* Experiencer lanes (above) */}
       <text x={3} y={50} textAnchor="start" dominantBaseline="middle"
-        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
+        fontSize="11" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
       >ACTIONS</text>
       <text x={3} y={68} textAnchor="start" dominantBaseline="middle"
-        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
+        fontSize="11" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
       >THOUGHTS</text>
       {/* Emotion line */}
       <path d={MINI_PATH} stroke={`${TEAL}0.75)`} strokeWidth={1.5} strokeLinecap="round" fill="none" />
-      {/* LINE OF VISIBILITY */}
+      {/* LINE OF VISIBILITY: label moved up (112 -> 105) so its descender
+          clears the dashed line at 11pt instead of touching it */}
       <line x1={0} y1={115} x2={MINI_W} y2={115} stroke="rgba(255,255,255,0.45)" strokeWidth={1.5} strokeDasharray="4 3" />
-      <text x={MINI_W - 4} y={112} textAnchor="end" fontSize="4" fontFamily="var(--font-mono)"
+      <text x={MINI_W - 4} y={105} textAnchor="end" fontSize="11" fontFamily="var(--font-mono)"
         fill="rgba(255,255,255,0.725)" style={{ userSelect: 'none' }}
       >LINE OF VISIBILITY</text>
       {/* Backstage lanes (below) */}
@@ -175,11 +176,12 @@ function BlueprintSVG() {
         <g key={label}>
           <line x1={0} y1={y - 8} x2={MINI_W} y2={y - 8} stroke={`${SLATE}0.15)`} strokeWidth={1} />
           <text x={3} y={y} textAnchor="start" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" fill={`${SLATE_TEXT}0.905)`} style={{ userSelect: 'none' }}
+            fontSize="11" fontFamily="var(--font-mono)" fill={`${SLATE_TEXT}0.905)`} style={{ userSelect: 'none' }}
           >{label}</text>
         </g>
       ))}
-      <text x={MINI_W / 2} y={196} textAnchor="middle" fontSize="4" fontFamily="var(--font-mono)"
+      {/* y moved 196 -> 200 (viewBox grew 200 -> 210) for descender clearance at 11pt */}
+      <text x={MINI_W / 2} y={200} textAnchor="middle" fontSize="11" fontFamily="var(--font-mono)"
         fill={`${SLATE_TEXT}0.885)`} style={{ userSelect: 'none' }}
       >BACKSTAGE ADDED, OPERATIONAL MACHINERY</text>
     </svg>
@@ -207,9 +209,9 @@ export default function JMBoundarySection() {
             aria-pressed={active === id}
           >
             <p className="font-semibold mb-1.5"
-              style={{ fontSize: 'var(--text-sm)', color: active === id ? '#FAFAFA' : 'rgba(255,255,255,0.42)' }}
+              style={{ fontSize: 'var(--text-sm)', color: active === id ? '#FAFAFA' : 'rgba(255,255,255,0.50)' }}
             >{label}</p>
-            <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.30)' }}>
+            <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.50)' }}>
               {summary}
             </p>
           </button>
@@ -247,7 +249,7 @@ export default function JMBoundarySection() {
               style={{ background: `${TEAL}0.08)`, border: `1px solid ${TEAL}0.18)` }}
             >
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.68)` }}
+                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL_TEXT}0.90)` }}
               >When to reach for this instead</p>
               <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.62)' }}>
                 {DETAIL[active].distinction}
@@ -260,7 +262,7 @@ export default function JMBoundarySection() {
                 <Link
                   href={DETAIL[active].link!}
                   className="inline-flex items-center gap-1.5 font-mono uppercase tracking-widest"
-                  style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
+                  style={{ fontSize: 'var(--text-2xs)', color: `${TEAL_TEXT}0.90)` }}
                 >
                   Go to {ITEMS.find(i => i.id === active)?.label}
                   <span aria-hidden="true">→</span>

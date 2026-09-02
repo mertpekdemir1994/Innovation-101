@@ -8,8 +8,13 @@ const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AI_C = 'rgba(99,102,241,'
 
 const SVG_W = 700
-const STAGE_W = 140
-const SCX = [70, 210, 350, 490, 630] as const
+// GRID_X0 reserves a left gutter for the ACTIONS/THOUGHTS/EMOTIONS lane
+// labels: at 11pt "THOUGHTS" no longer fits in the sliver of margin the old
+// smaller font used, so the 5 stage columns are narrower (140 -> 125) to
+// make room, not wider — SVG_W itself never changes. (Mirrors JMEstablishing.)
+const GRID_X0 = 75
+const STAGE_W = 125
+const SCX = [137.5, 262.5, 387.5, 512.5, 637.5] as const
 
 const HDR_TOP = 8, HDR_H = 36
 const DIV_Y = HDR_TOP + HDR_H + 4
@@ -23,23 +28,26 @@ const SVG_H = LANE_E_Y + LANE_E_H
 
 const EY = { discover: 178, consider: 152, gap: 205, start: 182, use: 142, reflect: 165 }
 
+// Recomputed for the new (narrower) stage spacing: control points sit 1/3
+// of each segment's x-gap in from either anchor, at the anchor's own y.
 const EMOTION_PATH =
-  `M 70,${EY.discover} ` +
-  `C 118,${EY.discover - 8} 162,${EY.consider + 4} 210,${EY.consider} ` +
-  `C 235,${EY.consider + 5} 258,${EY.gap - 4} 280,${EY.gap} ` +
-  `C 300,${EY.gap + 2} 330,${EY.start + 6} 350,${EY.start} ` +
-  `C 390,${EY.start - 12} 440,${EY.use + 3} 490,${EY.use} ` +
-  `C 534,${EY.use + 2} 582,${EY.reflect - 4} 630,${EY.reflect}`
+  `M 137.5,${EY.discover} ` +
+  `C 179.2,${EY.discover} 220.8,${EY.consider} 262.5,${EY.consider} ` +
+  `C 283.3,${EY.consider} 304.2,${EY.gap} 325,${EY.gap} ` +
+  `C 345.8,${EY.gap} 366.7,${EY.start} 387.5,${EY.start} ` +
+  `C 429.2,${EY.start} 470.8,${EY.use} 512.5,${EY.use} ` +
+  `C 554.2,${EY.use} 595.8,${EY.reflect} 637.5,${EY.reflect}`
 
 // AI version: flattened emotion line (AI reads expressed text, doesn't catch the true gap dip)
-// The gap dip barely registers; the line is smoother and misses the lowest point
+// The gap dip barely registers; the line is smoother and misses the lowest point.
+// Same re-anchoring approach as EMOTION_PATH above, applied to the AI-flattened y's.
 const AI_EMOTION_PATH =
-  `M 70,${EY.discover} ` +
-  `C 118,${EY.discover - 4} 162,${EY.consider + 8} 210,${EY.consider + 8} ` +
-  `C 235,${EY.consider + 8} 258,${EY.start - 4} 280,${EY.start - 4} ` +   // gap barely dips vs. true gap at EY.gap
-  `C 300,${EY.start - 4} 330,${EY.start + 2} 350,${EY.start + 2} ` +
-  `C 390,${EY.start} 440,${EY.use + 5} 490,${EY.use + 5} ` +
-  `C 534,${EY.use + 8} 582,${EY.reflect + 2} 630,${EY.reflect + 2}`
+  `M 137.5,${EY.discover} ` +
+  `C 179.2,${EY.discover} 220.8,${EY.consider + 8} 262.5,${EY.consider + 8} ` +
+  `C 283.3,${EY.consider + 8} 304.2,${EY.start - 4} 325,${EY.start - 4} ` +   // gap barely dips vs. true gap at EY.gap
+  `C 345.8,${EY.start - 4} 366.7,${EY.start + 2} 387.5,${EY.start + 2} ` +
+  `C 429.2,${EY.start + 2} 470.8,${EY.use + 5} 512.5,${EY.use + 5} ` +
+  `C 554.2,${EY.use + 5} 595.8,${EY.reflect + 2} 637.5,${EY.reflect + 2}`
 
 const STAGES = ['DISCOVER', 'CONSIDER', 'START', 'USE', 'REFLECT'] as const
 
@@ -105,7 +113,7 @@ export default function JMAIReactivated() {
           {STAGES.map((name, i) => (
             <g key={name}>
               <rect
-                x={i * STAGE_W + 1} y={HDR_TOP}
+                x={GRID_X0 + i * STAGE_W + 1} y={HDR_TOP}
                 width={STAGE_W - 2} height={HDR_H}
                 rx={4}
                 fill={aiMode ? `${AI_C}0.06)` : `${TEAL}0.10)`}
@@ -116,7 +124,7 @@ export default function JMAIReactivated() {
               <text
                 x={SCX[i]} y={HDR_TOP + HDR_H / 2 + 2}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                 fill={aiMode ? `rgba(141,143,245,0.958)` : `${TEAL_TEXT}0.969)`}
                 style={{ userSelect: 'none', transition: 'fill 0.35s' }}
               >{name}</text>
@@ -127,8 +135,8 @@ export default function JMAIReactivated() {
           <line x1={0} y1={DIV_Y}        x2={SVG_W} y2={DIV_Y}        stroke="rgba(255,255,255,0.08)" strokeWidth={1} />
           <line x1={0} y1={LANE_T_Y - 2} x2={SVG_W} y2={LANE_T_Y - 2} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
           <line x1={0} y1={LANE_E_Y - 2} x2={SVG_W} y2={LANE_E_Y - 2} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
-          {[1, 2, 3, 4].map((i) => (
-            <line key={i} x1={i * STAGE_W} y1={DIV_Y} x2={i * STAGE_W} y2={SVG_H}
+          {[0, 1, 2, 3, 4].map((i) => (
+            <line key={i} x1={GRID_X0 + i * STAGE_W} y1={DIV_Y} x2={GRID_X0 + i * STAGE_W} y2={SVG_H}
               stroke="rgba(255,255,255,0.05)" strokeWidth={1}
             />
           ))}
@@ -140,14 +148,14 @@ export default function JMAIReactivated() {
             { label: 'EMOTIONS', y: LANE_E_Y + LANE_E_H / 2 },
           ].map(({ label, y }) => (
             <text key={label} x={4} y={y} textAnchor="start" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
             >{label}</text>
           ))}
 
           {/* Emotion area fill */}
           <motion.path
-            d={`${aiMode ? AI_EMOTION_PATH : EMOTION_PATH} L 630,${LANE_E_Y + LANE_E_H} L 70,${LANE_E_Y + LANE_E_H} Z`}
+            d={`${aiMode ? AI_EMOTION_PATH : EMOTION_PATH} L 637.5,${LANE_E_Y + LANE_E_H} L 137.5,${LANE_E_Y + LANE_E_H} Z`}
             fill={aiMode ? `${AI_C}0.04)` : `${TEAL}0.05)`}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
@@ -179,10 +187,10 @@ export default function JMAIReactivated() {
 
           {/* True gap dip marker (human mode: visible; AI mode: faint = AI misses it) */}
           <motion.g animate={{ opacity: aiMode ? 0.18 : 0.90 }} transition={{ duration: 0.4 }}>
-            <circle cx={280} cy={EY.gap} r={3} fill="rgba(251,146,60,0.85)" />
-            <text x={284} y={EY.gap - 7} textAnchor="start" dominantBaseline="middle"
-              fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill="rgba(251,146,60,0.70)" style={{ userSelect: 'none' }}
+            <circle cx={325} cy={EY.gap} r={3} fill="rgba(251,146,60,0.85)" />
+            <text x={329} y={EY.gap - 7} textAnchor="start" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fill="rgba(251,146,60,0.85)" style={{ userSelect: 'none' }}
             >THE GAP</text>
           </motion.g>
 
@@ -194,27 +202,32 @@ export default function JMAIReactivated() {
                   key="ai-assembles"
                   x={350} y={LANE_A_Y + LANE_A_H / 2}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                   fill={`rgba(141,143,245,0.926)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.35 }}
                 >AI ASSEMBLES FROM DATA</motion.text>
 
+                {/* y moved 186 -> 145 (0.7 fraction -> near the lane top): at
+                    11pt this now overlaps "AI MISSES THIS" near the gap unless
+                    the two are separated vertically */}
                 <motion.text
                   key="ai-emotion"
-                  x={350} y={LANE_E_Y + LANE_E_H * 0.7}
+                  x={350} y={LANE_E_Y + 15}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                   fill={`rgba(141,143,245,0.916)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.35 }}
                 >AI READS EXPRESSED EMOTION</motion.text>
 
+                {/* x moved 283 -> 329 (matches the gap circle's new x=325),
+                    y moved gap-20 -> gap-30 for clearance from the label above */}
                 <motion.text
                   key="ai-misses"
-                  x={283} y={EY.gap - 20}
+                  x={329} y={EY.gap - 30}
                   textAnchor="start" dominantBaseline="middle"
-                  fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                   fill="rgba(251,146,60,0.874)" style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.35 }}
@@ -239,7 +252,7 @@ export default function JMAIReactivated() {
               style={{ background: `${AI_C}0.06)`, border: `1px solid ${AI_C}0.20)` }}
             >
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${AI_C}0.70)` }}
+                style={{ fontSize: 'var(--text-2xs)', color: 'rgba(141,143,245,0.90)' }}
               >What AI does well</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
                 AI can synthesize a draft journey map from large volumes of existing data (support transcripts, reviews, survey responses, analytics) in minutes rather than days. It is also genuinely useful for keeping maps continuously current from live data, rather than letting them go stale after a single project.
@@ -264,7 +277,7 @@ export default function JMAIReactivated() {
         style={{ background: `${TEAL}0.08)`, border: `1px solid ${TEAL}0.20)` }}
       >
         <p className="font-mono uppercase tracking-widest mb-3"
-          style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
+          style={{ fontSize: 'var(--text-2xs)', color: `${TEAL_TEXT}0.90)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
           AI makes journey mapping faster, broader, and continuously current: real gains. But the deepest insight a journey map produces, the surprising emotional low, usually in a gap, that reframes the whole problem, tends to come from a human following a real person through the experience and noticing what the data never recorded. AI assembles the map; human research finds the silence. The strongest practice uses AI for scale and currency, and human research to catch the un-expressed truth that does not appear in any dataset.

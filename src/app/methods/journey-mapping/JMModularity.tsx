@@ -7,8 +7,14 @@ const TEAL = 'rgba(42,111,122,'
 const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 
 const SVG_W = 700
-const STAGE_W = 140
-const SCX = [70, 210, 350, 490, 630] as const
+// GRID_X0 reserves a left gutter for the lane labels. "OPPORTUNITIES" (the
+// longest of the 6 possible lane labels here) needs a wider gutter than the
+// other Journey Mapping files' 75 — 115 — so the 5 stage columns are
+// narrower here too (140 -> 117) to make room, not wider — SVG_W never
+// changes. (Mirrors JMEstablishing/JMInteractive/JMAIReactivated.)
+const GRID_X0 = 115
+const STAGE_W = 117
+const SCX = [173.5, 290.5, 407.5, 524.5, 641.5] as const
 
 const HDR_TOP = 8
 const HDR_H = 36
@@ -17,13 +23,15 @@ const HDR_BOTTOM = HDR_TOP + HDR_H + 4  // 48
 const EY_BASE = { discover: 28, consider: 14, gap: 55, start: 38, use: 8, reflect: 22 }
 // These are relative to the EMOTIONS lane top (will be offset by computed lane Y)
 
+// Recomputed for the new (narrower) stage spacing: control points sit 1/3
+// of each segment's x-gap in from either anchor, at the anchor's own y.
 const EMOTION_PATH = (laneY: number) =>
-  `M 70,${laneY + EY_BASE.discover} ` +
-  `C 118,${laneY + EY_BASE.discover - 7} 162,${laneY + EY_BASE.consider + 3} 210,${laneY + EY_BASE.consider} ` +
-  `C 235,${laneY + EY_BASE.consider + 4} 258,${laneY + EY_BASE.gap - 3} 280,${laneY + EY_BASE.gap} ` +
-  `C 300,${laneY + EY_BASE.gap + 2} 330,${laneY + EY_BASE.start + 4} 350,${laneY + EY_BASE.start} ` +
-  `C 390,${laneY + EY_BASE.start - 10} 440,${laneY + EY_BASE.use + 2} 490,${laneY + EY_BASE.use} ` +
-  `C 534,${laneY + EY_BASE.use + 2} 582,${laneY + EY_BASE.reflect - 3} 630,${laneY + EY_BASE.reflect}`
+  `M 173.5,${laneY + EY_BASE.discover} ` +
+  `C 212.5,${laneY + EY_BASE.discover} 251.5,${laneY + EY_BASE.consider} 290.5,${laneY + EY_BASE.consider} ` +
+  `C 310,${laneY + EY_BASE.consider} 329.5,${laneY + EY_BASE.gap} 349,${laneY + EY_BASE.gap} ` +
+  `C 368.5,${laneY + EY_BASE.gap} 388,${laneY + EY_BASE.start} 407.5,${laneY + EY_BASE.start} ` +
+  `C 446.5,${laneY + EY_BASE.start} 485.5,${laneY + EY_BASE.use} 524.5,${laneY + EY_BASE.use} ` +
+  `C 563.5,${laneY + EY_BASE.use} 602.5,${laneY + EY_BASE.reflect} 641.5,${laneY + EY_BASE.reflect}`
 
 type LaneId = 'actions' | 'thoughts' | 'emotions' | 'touchpoints' | 'pain-points' | 'opportunities'
 
@@ -40,7 +48,7 @@ const STAGE_NAMES = ['DISCOVER', 'CONSIDER', 'START', 'USE', 'REFLECT'] as const
 
 const LANE_CONTENT: Record<LaneId, string[]> = {
   actions:       ['Searches broadly', 'Compares options', 'Signs up',         'Uses regularly', 'Reviews & refers'],
-  thoughts:      ['"Something better?"', '"Looks right"', '"Why so hard?"', '"Works!"',       '"Worth it"'],
+  thoughts:      ['"Better option?"', '"Looks right"', '"Why so hard?"', '"Works!"',       '"Worth it"'],
   emotions:      [],  // rendered as the emotion line, not text
   touchpoints:   ['Search / Ads',    'Reviews / Peers', 'Email / UI',      'App / Support',  'Email / Renewal'],
   'pain-points': ['Too many options', 'Scattered info',  'Opaque onboard',  'Slow support',   'No check-in'],
@@ -125,7 +133,7 @@ export default function JMModularity() {
           {STAGE_NAMES.map((name, i) => (
             <g key={name}>
               <rect
-                x={i * STAGE_W + 1} y={HDR_TOP}
+                x={GRID_X0 + i * STAGE_W + 1} y={HDR_TOP}
                 width={STAGE_W - 2} height={HDR_H}
                 rx={4}
                 fill={`${TEAL}0.10)`}
@@ -135,7 +143,7 @@ export default function JMModularity() {
               <text
                 x={SCX[i]} y={HDR_TOP + HDR_H / 2 + 2}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                 fill={`${TEAL_TEXT}0.969)`} style={{ userSelect: 'none' }}
               >{name}</text>
             </g>
@@ -144,11 +152,11 @@ export default function JMModularity() {
           {/* Header bottom divider */}
           <line x1={0} y1={HDR_BOTTOM} x2={SVG_W} y2={HDR_BOTTOM} stroke="rgba(255,255,255,0.08)" strokeWidth={1} />
 
-          {/* Column dividers */}
-          {[1, 2, 3, 4].map((i) => (
+          {/* Column dividers (incl. the label-gutter boundary at i=0) */}
+          {[0, 1, 2, 3, 4].map((i) => (
             <line key={i}
-              x1={i * STAGE_W} y1={HDR_BOTTOM}
-              x2={i * STAGE_W} y2={svgH}
+              x1={GRID_X0 + i * STAGE_W} y1={HDR_BOTTOM}
+              x2={GRID_X0 + i * STAGE_W} y2={svgH}
               stroke="rgba(255,255,255,0.05)" strokeWidth={1}
             />
           ))}
@@ -175,7 +183,7 @@ export default function JMModularity() {
 
                   {/* Lane label at left */}
                   <text x={4} y={laneY + height / 2} textAnchor="start" dominantBaseline="middle"
-                    fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                     fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
                   >{label}</text>
 
@@ -188,7 +196,7 @@ export default function JMModularity() {
                         stroke="none"
                       />
                       <path
-                        d={`${EMOTION_PATH(laneY + 8)} L 630,${laneY + height} L 70,${laneY + height} Z`}
+                        d={`${EMOTION_PATH(laneY + 8)} L 641.5,${laneY + height} L 173.5,${laneY + height} Z`}
                         fill={`${TEAL}0.04)`}
                         stroke="none"
                       />
@@ -207,7 +215,7 @@ export default function JMModularity() {
                         />
                       ))}
                       {/* Gap marker */}
-                      <circle cx={280} cy={laneY + 8 + EY_BASE.gap} r={2.5}
+                      <circle cx={349} cy={laneY + 8 + EY_BASE.gap} r={2.5}
                         fill="rgba(251,146,60,0.80)"
                       />
                     </>
@@ -217,7 +225,7 @@ export default function JMModularity() {
                       <text key={i}
                         x={SCX[i]} y={laneY + height / 2}
                         textAnchor="middle" dominantBaseline="middle"
-                        fontSize="6.5" fontFamily="var(--font-body, Inter, sans-serif)"
+                        fontSize="11" fontFamily="var(--font-body, Inter, sans-serif)"
                         fill={id === 'thoughts' ? 'rgba(255,255,255,0.50)' : id === 'opportunities' ? `${TEAL_TEXT}0.941)` : 'rgba(255,255,255,0.62)'}
                         fontStyle={id === 'thoughts' ? 'italic' : 'normal'}
                         style={{ userSelect: 'none' }}

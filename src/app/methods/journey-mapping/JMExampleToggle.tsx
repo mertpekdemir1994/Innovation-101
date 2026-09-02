@@ -17,6 +17,7 @@ const CONTENT: Record<Tab, {
   verdict: string
   verdictLabel: string
   verdictColor: string
+  verdictBorderColor: string
 }> = {
   traditional: {
     intro: 'A hospital is redesigning its cancer care pathway, from a patient\'s first symptom through diagnosis, treatment, and follow-up. Each clinical department believes its own touchpoint works well. The team uses journey mapping to understand the whole experience.',
@@ -28,7 +29,10 @@ const CONTENT: Record<Tab, {
     finding: 'The insight was invisible to every individual department, because no department owned the gap. It surfaced only because the map spanned the whole journey and because a human had followed real patients into that silence and heard what it felt like.',
     verdict: 'The redesign targeted the gaps directly: proactive communication, a single point of contact, and support during the waits. The clinical care had never been the problem. The spaces between it were.',
     verdictLabel: 'Result',
-    verdictColor: 'rgba(5,150,105,0.75)',
+    // emerald-800, full opacity — plain emerald-600 can't reach 4.5:1 on
+    // white even at full opacity
+    verdictColor: 'rgba(6,95,70,1)',
+    verdictBorderColor: 'rgba(6,95,70,0.22)',
   },
   ai: {
     intro: 'The same hospital builds the map with AI assistance. AI synthesizes a draft journey map from a large corpus of existing data (patient satisfaction surveys, complaint records, support communications, and appointment logs) across thousands of patients, in a fraction of the time.',
@@ -40,7 +44,10 @@ const CONTENT: Record<Tab, {
     finding: 'The abandonment felt in the silence, the most important insight, the one that reframed the entire redesign, was precisely the emotion that left no data trail. A team relying on the AI map alone would likely have optimized the moments patients complained about and missed the gap that hurt them most.',
     verdict: 'AI assembled a broad, quantified map fast and proved the problem\'s scale: real value. But the un-expressed emotional truth that reframed the whole redesign came from a human in the silence, not from the data.',
     verdictLabel: 'Result',
-    verdictColor: 'rgba(251,146,60,0.75)',
+    // amber-700, full opacity — plain amber(251,146,60) can't reach 4.5:1
+    // on white even at full opacity
+    verdictColor: 'rgba(180,83,9,1)',
+    verdictBorderColor: 'rgba(180,83,9,0.22)',
   },
 }
 
@@ -91,7 +98,7 @@ export default function JMExampleToggle() {
                 <div className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center font-mono text-xs font-semibold"
                   style={{
                     background: 'rgba(42,111,122,0.08)',
-                    color: 'rgba(42,111,122,0.70)',
+                    color: 'rgba(42,111,122,0.95)',
                     border: '1px solid rgba(42,111,122,0.22)',
                     marginTop: 2,
                   }}
@@ -119,7 +126,7 @@ export default function JMExampleToggle() {
           <div className="rounded-xl p-5"
             style={{
               background: 'var(--color-neutral-50)',
-              border: `1px solid ${d.verdictColor.replace('0.75', '0.22')}`,
+              border: `1px solid ${d.verdictBorderColor}`,
             }}
           >
             <p className="font-mono uppercase tracking-widest mb-2"

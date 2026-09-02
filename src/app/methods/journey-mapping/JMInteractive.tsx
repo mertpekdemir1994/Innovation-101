@@ -7,8 +7,13 @@ const TEAL = 'rgba(42,111,122,'
 const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 
 const SVG_W = 700
-const STAGE_W = 140
-const SCX = [70, 210, 350, 490, 630] as const
+// GRID_X0 reserves a left gutter for the ACTIONS/THOUGHTS/EMOTIONS lane
+// labels: at 11pt "THOUGHTS" no longer fits in the sliver of margin the old
+// smaller font used, so the 5 stage columns are narrower (140 -> 125) to
+// make room, not wider — SVG_W itself never changes. (Mirrors JMEstablishing.)
+const GRID_X0 = 75
+const STAGE_W = 125
+const SCX = [137.5, 262.5, 387.5, 512.5, 637.5] as const
 
 const HDR_TOP = 8, HDR_H = 36
 const DIV_Y = HDR_TOP + HDR_H + 4
@@ -22,13 +27,15 @@ const SVG_H = LANE_E_Y + LANE_E_H
 
 const EY = { discover: 178, consider: 152, gap: 205, start: 182, use: 142, reflect: 165 }
 
+// Recomputed for the new (narrower) stage spacing: control points sit 1/3
+// of each segment's x-gap in from either anchor, at the anchor's own y.
 const EMOTION_PATH =
-  `M 70,${EY.discover} ` +
-  `C 118,${EY.discover - 8} 162,${EY.consider + 4} 210,${EY.consider} ` +
-  `C 235,${EY.consider + 5} 258,${EY.gap - 4} 280,${EY.gap} ` +
-  `C 300,${EY.gap + 2} 330,${EY.start + 6} 350,${EY.start} ` +
-  `C 390,${EY.start - 12} 440,${EY.use + 3} 490,${EY.use} ` +
-  `C 534,${EY.use + 2} 582,${EY.reflect - 4} 630,${EY.reflect}`
+  `M 137.5,${EY.discover} ` +
+  `C 179.2,${EY.discover} 220.8,${EY.consider} 262.5,${EY.consider} ` +
+  `C 283.3,${EY.consider} 304.2,${EY.gap} 325,${EY.gap} ` +
+  `C 345.8,${EY.gap} 366.7,${EY.start} 387.5,${EY.start} ` +
+  `C 429.2,${EY.start} 470.8,${EY.use} 512.5,${EY.use} ` +
+  `C 554.2,${EY.use} 595.8,${EY.reflect} 637.5,${EY.reflect}`
 
 type StageId = 'discover' | 'consider' | 'start' | 'use' | 'reflect'
 
@@ -158,11 +165,11 @@ export default function JMInteractive() {
           {/* Ambient background */}
           <rect x={0} y={0} width={SVG_W} height={SVG_H} rx={8} fill={`${TEAL}0.04)`} />
 
-          {/* Column dividers */}
-          {[1, 2, 3, 4].map((i) => (
+          {/* Column dividers (incl. the label-gutter boundary at i=0) */}
+          {[0, 1, 2, 3, 4].map((i) => (
             <line key={i}
-              x1={i * STAGE_W} y1={DIV_Y}
-              x2={i * STAGE_W} y2={SVG_H}
+              x1={GRID_X0 + i * STAGE_W} y1={DIV_Y}
+              x2={GRID_X0 + i * STAGE_W} y2={SVG_H}
               stroke="rgba(255,255,255,0.05)" strokeWidth={1}
             />
           ))}
@@ -179,14 +186,14 @@ export default function JMInteractive() {
             { label: 'EMOTIONS', y: LANE_E_Y + LANE_E_H / 2 },
           ].map(({ label, y }) => (
             <text key={label} x={4} y={y} textAnchor="start" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none', pointerEvents: 'none' }}
             >{label}</text>
           ))}
 
           {/* Emotion area fill */}
           <path
-            d={`${EMOTION_PATH} L 630,${LANE_E_Y + LANE_E_H} L 70,${LANE_E_Y + LANE_E_H} Z`}
+            d={`${EMOTION_PATH} L 637.5,${LANE_E_Y + LANE_E_H} L 137.5,${LANE_E_Y + LANE_E_H} Z`}
             fill={`${TEAL}0.05)`}
           />
 
@@ -203,10 +210,10 @@ export default function JMInteractive() {
 
           {/* Gap annotation: most visible when nothing selected */}
           <g style={{ opacity: activeStage ? 0.25 : 0.80, transition: 'opacity 0.22s' }}>
-            <circle cx={280} cy={EY.gap} r={3} fill="rgba(251,146,60,0.80)" />
-            <text x={285} y={EY.gap - 7} textAnchor="start" dominantBaseline="middle"
-              fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill="rgba(251,146,60,0.70)" style={{ userSelect: 'none', pointerEvents: 'none' }}
+            <circle cx={325} cy={EY.gap} r={3} fill="rgba(251,146,60,0.80)" />
+            <text x={329} y={EY.gap - 7} textAnchor="start" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fill="rgba(251,146,60,0.85)" style={{ userSelect: 'none', pointerEvents: 'none' }}
             >THE GAP</text>
           </g>
 
@@ -233,13 +240,13 @@ export default function JMInteractive() {
               >
                 {/* Invisible click target for the full column */}
                 <rect
-                  x={i * STAGE_W} y={0} width={STAGE_W} height={SVG_H}
+                  x={GRID_X0 + i * STAGE_W} y={0} width={STAGE_W} height={SVG_H}
                   fill="transparent"
                 />
 
                 {/* Stage header box */}
                 <motion.rect
-                  x={i * STAGE_W + 1} y={HDR_TOP}
+                  x={GRID_X0 + i * STAGE_W + 1} y={HDR_TOP}
                   width={STAGE_W - 2} height={HDR_H}
                   rx={4}
                   animate={{ fill: headerFill(st), stroke: headerStroke(st) }}
@@ -249,7 +256,7 @@ export default function JMInteractive() {
                 <motion.text
                   x={SCX[i]} y={HDR_TOP + HDR_H / 2 + 2}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                   style={{ userSelect: 'none', pointerEvents: 'none' }}
                   animate={{ fill: labelFill(st) }}
                   transition={{ duration: 0.18 }}
@@ -259,7 +266,7 @@ export default function JMInteractive() {
                 <motion.text
                   x={SCX[i]} y={LANE_A_Y + LANE_A_H / 2}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="6" fontFamily="var(--font-body, Inter, sans-serif)"
+                  fontSize="11" fontFamily="var(--font-body, Inter, sans-serif)"
                   style={{ userSelect: 'none', pointerEvents: 'none' }}
                   animate={{ fill: contentFill(st) }}
                   transition={{ duration: 0.18 }}
@@ -277,7 +284,7 @@ export default function JMInteractive() {
                 {/* Active stage: column highlight overlay */}
                 {st === 'active' && (
                   <rect
-                    x={i * STAGE_W + 1} y={DIV_Y}
+                    x={GRID_X0 + i * STAGE_W + 1} y={DIV_Y}
                     width={STAGE_W - 2} height={SVG_H - DIV_Y}
                     fill={`${TEAL}0.06)`} rx={2}
                     style={{ pointerEvents: 'none' }}
@@ -292,7 +299,7 @@ export default function JMInteractive() {
           <p className="text-center mt-4"
             style={{
               fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)',
-              letterSpacing: '0.10em', textTransform: 'uppercase', color: `${TEAL}0.50)`,
+              letterSpacing: '0.10em', textTransform: 'uppercase', color: `${TEAL_TEXT}0.90)`,
             }}
           >Click a stage to explore</p>
         )}
@@ -312,13 +319,13 @@ export default function JMInteractive() {
                 transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
               >
                 <p className="font-mono uppercase tracking-widest mb-3"
-                  style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.65)` }}
+                  style={{ fontSize: 'var(--text-2xs)', color: `${TEAL_TEXT}0.90)` }}
                 >Journey stage</p>
                 <h3 className="font-semibold mb-1"
                   style={{ fontSize: 'var(--text-2xl)', color: '#FAFAFA', lineHeight: 1.2 }}
                 >{s.label}</h3>
                 <p className="font-mono mb-6"
-                  style={{ fontSize: 'var(--text-xs)', color: `${TEAL}0.72)`, letterSpacing: '0.06em' }}
+                  style={{ fontSize: 'var(--text-xs)', color: `${TEAL_TEXT}0.90)`, letterSpacing: '0.06em' }}
                 >{s.emotionLabel}</p>
 
                 <div className="flex flex-col gap-4">
@@ -330,7 +337,7 @@ export default function JMInteractive() {
                   ].map(({ label, body }) => (
                     <div key={label}>
                       <p className="font-mono uppercase tracking-widest mb-1"
-                        style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.35)' }}
+                        style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.50)' }}
                       >{label}</p>
                       <p style={{
                         fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)',
@@ -364,7 +371,7 @@ export default function JMInteractive() {
               className="flex items-center justify-center h-full"
               style={{ minHeight: 200 }}
             >
-              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.25)', fontStyle: 'italic' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.50)', fontStyle: 'italic' }}>
                 Select a stage to read its description.
               </p>
             </motion.div>
