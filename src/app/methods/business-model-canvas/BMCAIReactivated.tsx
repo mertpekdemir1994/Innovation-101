@@ -119,7 +119,7 @@ export default function BMCAIReactivated() {
             key={m}
             onClick={() => setMode(m)}
             style={{
-              fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.08em',
+              fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.08em',
               padding: '7px 18px', borderRadius: '20px', cursor: 'pointer',
               transition: prefersReduced ? 'none' : 'all 0.2s',
               border: `1px solid ${m === mode ? (m === 'adversary' ? `${PLUM}0.60)` : `${INDIGO}0.60)`) : 'rgba(255,255,255,0.14)'}`,
@@ -270,7 +270,7 @@ export default function BMCAIReactivated() {
               borderRadius: '6px',
             }}>
               <p style={{
-                fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.06em',
+                fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.06em',
                 fontWeight: 600, color: accent === PLUM ? `${PLUM_TEXT}0.95)` : `${accent}0.80)`, marginBottom: '8px',
               }}>{label}</p>
               <p style={{ color: 'rgba(255,255,255,0.56)', fontSize: '12px', lineHeight: 1.65, margin: 0 }}>
@@ -286,7 +286,7 @@ export default function BMCAIReactivated() {
         marginTop: '12px', padding: '16px 20px',
         background: `${PLUM}0.06)`, border: `1px solid ${PLUM}0.20)`, borderRadius: '6px',
       }}>
-        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.06em', color: `${PLUM_TEXT}0.95)`, marginBottom: '8px' }}>
+        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.06em', color: `${PLUM_TEXT}0.95)`, marginBottom: '8px' }}>
           THE HONEST SYNTHESIS
         </p>
         <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '13px', lineHeight: 1.65, margin: 0 }}>

@@ -348,7 +348,7 @@ export default function BMCInteractive() {
               borderRadius: '8px',
             }}>
             <p style={{
-              fontFamily: 'var(--font-mono)', fontSize: '10px',
+              fontFamily: 'var(--font-mono)', fontSize: '11px',
               letterSpacing: '0.10em', fontWeight: 600,
               color: `${PLUM_TEXT}1)`, marginBottom: '10px',
             }}>
@@ -359,7 +359,7 @@ export default function BMCInteractive() {
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
               <div style={{ padding: '12px 14px', background: `${PLUM}0.08)`, borderRadius: '6px', border: `1px solid ${PLUM}0.18)` }}>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.08em', color: `${PLUM_TEXT}0.90)`, marginBottom: '6px' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.08em', color: `${PLUM_TEXT}0.90)`, marginBottom: '6px' }}>
                   DEPENDS ON
                 </p>
                 <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
@@ -371,7 +371,7 @@ export default function BMCInteractive() {
                 </ul>
               </div>
               <div style={{ padding: '12px 14px', background: `${AMBER}0.06)`, borderRadius: '6px', border: `1px solid ${AMBER}0.18)` }}>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.08em', color: `${AMBER}0.75)`, marginBottom: '6px' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.08em', color: `${AMBER}0.75)`, marginBottom: '6px' }}>
                   UNTESTED HYPOTHESIS
                 </p>
                 <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.58)', lineHeight: 1.6, margin: 0 }}>
@@ -394,7 +394,7 @@ export default function BMCInteractive() {
               marginTop: '20px', padding: '20px 24px',
               background: `${AMBER}0.06)`, border: `1px solid ${AMBER}0.22)`, borderRadius: '8px',
             }}>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.10em', color: `${AMBER}0.80)`, marginBottom: '10px' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.10em', color: `${AMBER}0.80)`, marginBottom: '10px' }}>
               SEGMENT CHANGE: THREE BLOCKS MUST MOVE
             </p>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.80)', lineHeight: 1.55, marginBottom: '12px' }}>
@@ -420,7 +420,7 @@ export default function BMCInteractive() {
               marginTop: '20px', padding: '20px 24px',
               background: `${AMBER}0.08)`, border: `2px solid ${AMBER}0.45)`, borderRadius: '8px',
             }}>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.10em', color: `${AMBER}0.90)`, marginBottom: '10px' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.10em', color: `${AMBER}0.90)`, marginBottom: '10px' }}>
               ⚠ THE BREAK: THIS IS THE METHOD
             </p>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.88)', lineHeight: 1.55, marginBottom: '12px' }}>
