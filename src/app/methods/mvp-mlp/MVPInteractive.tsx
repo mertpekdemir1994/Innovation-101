@@ -5,25 +5,29 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 const BRICK = 'rgba(138,75,60,'
 
 const SVG_W = 700
-const SVG_H = 266
+const SVG_H = 280
 
 // Geometry (identical to MVPEstablishing)
 const CORE_X = 206, CORE_Y = 20, CORE_W = 288, CORE_H = 110
 const CORE_CX = CORE_X + CORE_W / 2
 const CORE_CY = CORE_Y + CORE_H / 2
 
-const MVP_X = 22, MVP_Y = 36, MVP_W = 158, MVP_H = 80
+// MVP/MLP badge height grown 80 -> 100: at 11pt the bottom caption line no
+// longer fits on one line, so it splits into two.
+const MVP_X = 22, MVP_Y = 36, MVP_W = 158, MVP_H = 100
 const MVP_CX = MVP_X + MVP_W / 2
 
-const MLP_X = 520, MLP_Y = 36, MLP_W = 158, MLP_H = 80
+const MLP_X = 520, MLP_Y = 36, MLP_W = 158, MLP_H = 100
 const MLP_CX = MLP_X + MLP_W / 2
 
+// CORE ACTION and CORE FEATURE widened (80->90, 90->98): at 11pt their labels
+// no longer fit the old tile width. Neighbors repositioned to keep the gaps.
 const FTILES = [
   { x: 218, y: 38, w: 82,  h: 26, label: 'CORE VALUE'   },
-  { x: 308, y: 38, w: 80,  h: 26, label: 'CORE ACTION'  },
-  { x: 396, y: 38, w: 86,  h: 26, label: 'CORE DATA'    },
-  { x: 250, y: 74, w: 90,  h: 26, label: 'CORE FEATURE' },
-  { x: 350, y: 74, w: 86,  h: 26, label: 'CORE FLOW'    },
+  { x: 306, y: 38, w: 90,  h: 26, label: 'CORE ACTION'  },
+  { x: 402, y: 38, w: 86,  h: 26, label: 'CORE DATA'    },
+  { x: 246, y: 74, w: 98,  h: 26, label: 'CORE FEATURE' },
+  { x: 354, y: 74, w: 86,  h: 26, label: 'CORE FLOW'    },
 ]
 
 const CUT_X = 206, CUT_Y = 164, CUT_W = 288, CUT_H = 72
@@ -118,12 +122,15 @@ export default function MVPInteractive() {
             stroke={coreHi ? `${BRICK}0.58)` : `${BRICK}0.32)`}
             strokeWidth={1.3}
             style={{ transition: 'fill 0.22s, stroke 0.22s', cursor: 'pointer' }} />
+          {/* "· IDENTICAL IN BOTH PRODUCTS" dropped: at 11pt the full line
+              overflowed the core box, and the MVP/MLP badges either side of
+              a single shared core already make the point */}
           <text x={CORE_CX} y={CORE_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em"
             fill={coreHi ? `rgba(183,145,135,0.958)` : `rgba(183,145,135,0.899)`}
             style={{ userSelect: 'none', transition: 'fill 0.22s' }}>
-            SHARED CORE · IDENTICAL IN BOTH PRODUCTS
+            SHARED CORE
           </text>
 
           {/* Feature tiles: IDENTICAL count and labels regardless of mvp/mlp toggle */}
@@ -134,7 +141,7 @@ export default function MVPInteractive() {
                 style={{ filter: 'url(#mvpi-glow-sm)' }} />
               <text x={t.x + t.w / 2} y={t.y + t.h / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                 fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}>
                 {t.label}
               </text>
@@ -162,20 +169,25 @@ export default function MVPInteractive() {
               stroke={mvpIsActive ? `${BRICK}0.58)` : `${BRICK}0.32)`}
               strokeWidth={1.1}
               style={{ transition: 'fill 0.22s, stroke 0.22s' }} />
-            <text x={MVP_CX} y={MVP_Y + 18} textAnchor="middle" dominantBaseline="middle"
-              fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
+            <text x={MVP_CX} y={MVP_Y + 16} textAnchor="middle" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
               fill={`${BRICK}${mvpIsActive ? '0.65)' : '0.40)'}`}
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}>MVP</text>
-            <text x={MVP_CX} y={MVP_Y + 31} textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            <text x={MVP_CX} y={MVP_Y + 32} textAnchor="middle" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={`rgba(183,145,135,0.857)`} style={{ userSelect: 'none' }}>TUNED FOR</text>
-            <text x={MVP_CX} y={MVP_Y + 48} textAnchor="middle" dominantBaseline="middle"
-              fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+            <text x={MVP_CX} y={MVP_Y + 52} textAnchor="middle" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
               fill={`${BRICK}${mvpIsActive ? '0.95)' : '0.65)'}`}
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}>LEARNING</text>
-            <text x={MVP_CX} y={MVP_Y + 64} textAnchor="middle" dominantBaseline="middle"
-              fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-              fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>FAST · CHEAP · HONEST SIGNAL</text>
+            {/* Split across two lines: "FAST · CHEAP · HONEST SIGNAL" no
+                longer fits the 158-wide badge on one line at 11pt */}
+            <text x={MVP_CX} y={MVP_Y + 72} textAnchor="middle" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+              fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>FAST · CHEAP</text>
+            <text x={MVP_CX} y={MVP_Y + 88} textAnchor="middle" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+              fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>HONEST SIGNAL</text>
           </g>
 
           {/* MLP badge */}
@@ -189,20 +201,25 @@ export default function MVPInteractive() {
               stroke={mlpIsActive ? `${BRICK}0.58)` : `${BRICK}0.32)`}
               strokeWidth={1.1}
               style={{ transition: 'fill 0.22s, stroke 0.22s' }} />
-            <text x={MLP_CX} y={MLP_Y + 18} textAnchor="middle" dominantBaseline="middle"
-              fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
+            <text x={MLP_CX} y={MLP_Y + 16} textAnchor="middle" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
               fill={`${BRICK}${mlpIsActive ? '0.65)' : '0.40)'}`}
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}>MLP</text>
-            <text x={MLP_CX} y={MLP_Y + 31} textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            <text x={MLP_CX} y={MLP_Y + 32} textAnchor="middle" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={`rgba(183,145,135,0.857)`} style={{ userSelect: 'none' }}>TUNED FOR</text>
-            <text x={MLP_CX} y={MLP_Y + 48} textAnchor="middle" dominantBaseline="middle"
-              fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+            <text x={MLP_CX} y={MLP_Y + 52} textAnchor="middle" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
               fill={`${BRICK}${mlpIsActive ? '0.95)' : '0.65)'}`}
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}>LOVE</text>
-            <text x={MLP_CX} y={MLP_Y + 64} textAnchor="middle" dominantBaseline="middle"
-              fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-              fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>CRAFT · RESONANCE · ADVOCATES</text>
+            {/* Split across two lines: "CRAFT · RESONANCE · ADVOCATES" no
+                longer fits the 158-wide badge on one line at 11pt */}
+            <text x={MLP_CX} y={MLP_Y + 72} textAnchor="middle" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+              fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>CRAFT · RESONANCE</text>
+            <text x={MLP_CX} y={MLP_Y + 88} textAnchor="middle" dominantBaseline="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+              fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>ADVOCATES</text>
           </g>
 
           {/* Cut pile */}
@@ -211,12 +228,14 @@ export default function MVPInteractive() {
             tabIndex={0}
             onClick={() => setActive(cutsIsActive ? 'mvp' : 'cuts')}
             onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && setActive(cutsIsActive ? 'mvp' : 'cuts')}>
+            {/* "· BOTH DISCARDED THESE" dropped: at 11pt it overflowed the
+                cut box, and the dashed styling + item labels already say it */}
             <text x={CUT_CX} y={CUT_Y - 8}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
               fill={cutsHi ? `rgba(183,145,135,0.905)` : 'rgba(255,255,255,0.58)'}
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}>
-              SHARED CUT PILE · BOTH DISCARDED THESE
+              SHARED CUT PILE
             </text>
             <rect x={CUT_X} y={CUT_Y} width={CUT_W} height={CUT_H} rx={6}
               fill={cutsHi ? `${BRICK}0.07)` : 'none'}
@@ -230,7 +249,7 @@ export default function MVPInteractive() {
                   strokeDasharray="3 3" />
                 <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 1}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                   fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
                   {c.label}
                 </text>
@@ -259,7 +278,7 @@ export default function MVPInteractive() {
           transition={{ duration: 0.22 }}
           className="mt-4 rounded-xl p-6 border"
           style={{ background: `${BRICK}0.05)`, borderColor: `${BRICK}0.22)` }}>
-          <p className="text-[10px] font-mono font-semibold uppercase tracking-widest mb-2"
+          <p className="text-2xs font-mono font-semibold uppercase tracking-widest mb-2"
             style={{ color: `${BRICK}0.85)` }}>
             {card.tag}
           </p>
@@ -273,8 +292,8 @@ export default function MVPInteractive() {
           {card.risk && (
             <div className="mt-4 rounded-lg p-4"
               style={{ background: 'rgba(217,119,6,0.05)', borderLeft: '2px solid rgba(217,119,6,0.35)' }}>
-              <p className="text-[9px] font-mono font-semibold uppercase tracking-widest mb-1"
-                style={{ color: 'rgba(217,119,6,0.80)' }}>
+              <p className="text-2xs font-mono font-semibold uppercase tracking-widest mb-1"
+                style={{ color: 'rgba(217,119,6,0.95)' }}>
                 {card.riskLabel}
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -289,11 +308,11 @@ export default function MVPInteractive() {
       {(mvpIsActive || mlpIsActive) && (
         <div className="mt-4 rounded-lg p-4"
           style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.10)' }}>
-          <p className="text-[9px] font-mono font-semibold uppercase tracking-widest mb-1"
-            style={{ color: 'rgba(255,255,255,0.38)' }}>
+          <p className="text-2xs font-mono font-semibold uppercase tracking-widest mb-1"
+            style={{ color: 'rgba(255,255,255,0.50)' }}>
             THE MARKET CONDITION THAT TIPS THE CHOICE
           </p>
-          <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.45)', lineHeight: 'var(--leading-relaxed)' }}>
+          <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.55)', lineHeight: 'var(--leading-relaxed)' }}>
             Novel category, low expectations → a bare MVP can teach a lot. Crowded, high-expectation market → an unlovable MVP teaches almost nothing, because users leave for alternatives. The more competitive and expectation-laden the market, the more &ldquo;lovable&rdquo; is part of &ldquo;viable&rdquo; at all.
           </p>
         </div>
@@ -310,11 +329,11 @@ export default function MVPInteractive() {
           <button key={btn.id}
             onClick={() => setActive(btn.id)}
             aria-pressed={active === btn.id}
-            className="px-3 py-1 rounded-full text-[10px] font-mono font-semibold uppercase tracking-widest transition-all"
+            className="px-3 py-1 rounded-full text-2xs font-mono font-semibold uppercase tracking-widest transition-all"
             style={{
               background: active === btn.id ? `${BRICK}0.10)` : 'transparent',
               border: `1px solid ${active === btn.id ? `${BRICK}0.38)` : 'rgba(255,255,255,0.12)'}`,
-              color: active === btn.id ? `${BRICK}1)` : 'rgba(255,255,255,0.35)',
+              color: active === btn.id ? `${BRICK}1)` : 'rgba(255,255,255,0.50)',
             }}>
             {btn.label}
           </button>

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
@@ -13,18 +14,22 @@ const SVG_H = 266
 const CORE_X = 206, CORE_Y = 20, CORE_W = 288, CORE_H = 110
 const CORE_CX = CORE_X + CORE_W / 2
 
-const MVP_X = 22, MVP_Y = 36, MVP_W = 158, MVP_H = 80
+// MVP/MLP badge height grown 80 -> 100: at 11pt the bottom caption line no
+// longer fits on one line, so it splits into two.
+const MVP_X = 22, MVP_Y = 36, MVP_W = 158, MVP_H = 100
 const MVP_CX = MVP_X + MVP_W / 2
 
-const MLP_X = 520, MLP_Y = 36, MLP_W = 158, MLP_H = 80
+const MLP_X = 520, MLP_Y = 36, MLP_W = 158, MLP_H = 100
 const MLP_CX = MLP_X + MLP_W / 2
 
+// CORE ACTION and CORE FEATURE widened (80->90, 90->98): at 11pt their labels
+// no longer fit the old tile width. Neighbors repositioned to keep the gaps.
 const FTILES = [
   { x: 218, y: 38, w: 82,  h: 26, label: 'CORE VALUE'   },
-  { x: 308, y: 38, w: 80,  h: 26, label: 'CORE ACTION'  },
-  { x: 396, y: 38, w: 86,  h: 26, label: 'CORE DATA'    },
-  { x: 250, y: 74, w: 90,  h: 26, label: 'CORE FEATURE' },
-  { x: 350, y: 74, w: 86,  h: 26, label: 'CORE FLOW'    },
+  { x: 306, y: 38, w: 90,  h: 26, label: 'CORE ACTION'  },
+  { x: 402, y: 38, w: 86,  h: 26, label: 'CORE DATA'    },
+  { x: 246, y: 74, w: 98,  h: 26, label: 'CORE FEATURE' },
+  { x: 354, y: 74, w: 86,  h: 26, label: 'CORE FLOW'    },
 ]
 
 const CUT_X = 206, CUT_Y = 164, CUT_W = 288, CUT_H = 72
@@ -38,8 +43,10 @@ const CITEMS = [
   { x: 356, y: 212, w: 80, h: 22, label: 'LATER...'    },
 ]
 
-// AI cost-collapse badge: appears over MLP optimization in AI mode
-const AI_BADGE = { x: MLP_X - 2, y: MLP_Y - 22, w: MLP_W + 4, h: 18 }
+// AI cost-collapse badge: appears over MLP optimization in AI mode.
+// Grown to hold 2 lines at 11pt ("AI MAKES THIS CHEAP NOW" no longer fits
+// one line at this badge's width).
+const AI_BADGE = { x: MLP_X - 2, y: 2, w: MLP_W + 4, h: 32 }
 
 type Mode = 'human' | 'ai'
 
@@ -93,8 +100,8 @@ export default function MVPAIReactivated() {
                 ? (m === 'ai' ? `${INDIGO}0.35)` : `${BRICK}0.35)`)
                 : 'rgba(255,255,255,0.14)'}`,
               color: mode === m
-                ? (m === 'ai' ? `${INDIGO}1)` : `${BRICK}1)`)
-                : 'rgba(255,255,255,0.42)',
+                ? (m === 'ai' ? `${INDIGO_TEXT}1)` : `${BRICK_TEXT}1)`)
+                : 'rgba(255,255,255,0.50)',
             }}>
             {m === 'human' ? 'Traditional' : 'With AI'}
           </button>
@@ -128,11 +135,14 @@ export default function MVPAIReactivated() {
             style={{ filter: 'url(#mvpai-glow-sm)' }} />
           <rect x={CORE_X} y={CORE_Y} width={CORE_W} height={CORE_H} rx={8}
             fill={`${BRICK}0.05)`} stroke={`${BRICK}0.32)`} strokeWidth={1.3} />
+          {/* "· IDENTICAL IN BOTH PRODUCTS" dropped: at 11pt the full line
+              overflowed the core box, and the MVP/MLP badges either side of
+              a single shared core already make the point */}
           <text x={CORE_CX} y={CORE_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em"
             fill={`rgba(183,145,135,0.899)`} style={{ userSelect: 'none' }}>
-            SHARED CORE · IDENTICAL IN BOTH PRODUCTS
+            SHARED CORE
           </text>
 
           {/* Feature tiles: unchanged */}
@@ -143,7 +153,7 @@ export default function MVPAIReactivated() {
                 style={{ filter: 'url(#mvpai-glow-sm)' }} />
               <text x={t.x + t.w / 2} y={t.y + t.h / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                 fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}>
                 {t.label}
               </text>
@@ -168,22 +178,28 @@ export default function MVPAIReactivated() {
             stroke={`${BRICK}${isAI ? '0.16)' : '0.32)'}`}
             strokeWidth={1.1}
             style={{ opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s, stroke 0.35s' }} />
-          <text x={MVP_CX} y={MVP_Y + 18} textAnchor="middle" dominantBaseline="middle"
-            fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
+          <text x={MVP_CX} y={MVP_Y + 16} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
             fill={`rgba(183,145,135,0.895)`}
             style={{ userSelect: 'none', opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s' }}>MVP</text>
-          <text x={MVP_CX} y={MVP_Y + 31} textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={MVP_CX} y={MVP_Y + 32} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`rgba(183,145,135,0.857)`}
             style={{ userSelect: 'none', opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s' }}>TUNED FOR</text>
-          <text x={MVP_CX} y={MVP_Y + 48} textAnchor="middle" dominantBaseline="middle"
-            fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+          <text x={MVP_CX} y={MVP_Y + 52} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={`rgba(183,145,135,0.975)`}
             style={{ userSelect: 'none', opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s' }}>LEARNING</text>
-          <text x={MVP_CX} y={MVP_Y + 64} textAnchor="middle" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          {/* Split across two lines: "FAST · CHEAP · HONEST SIGNAL" no
+              longer fits the 158-wide badge on one line at 11pt */}
+          <text x={MVP_CX} y={MVP_Y + 72} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`rgba(183,145,135,0.885)`}
-            style={{ userSelect: 'none', opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s' }}>FAST · CHEAP · HONEST SIGNAL</text>
+            style={{ userSelect: 'none', opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s' }}>FAST · CHEAP</text>
+          <text x={MVP_CX} y={MVP_Y + 88} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+            fill={`rgba(183,145,135,0.885)`}
+            style={{ userSelect: 'none', opacity: isAI ? 0.45 : 1.0, transition: 'opacity 0.35s' }}>HONEST SIGNAL</text>
 
           {/* MLP badge: highlighted in AI mode */}
           <rect x={MLP_X - 3} y={MLP_Y - 3} width={MLP_W + 6} height={MLP_H + 6} rx={9}
@@ -194,22 +210,28 @@ export default function MVPAIReactivated() {
             stroke={isAI ? `${INDIGO}0.45)` : `${BRICK}0.32)`}
             strokeWidth={1.1}
             style={{ transition: 'fill 0.35s, stroke 0.35s' }} />
-          <text x={MLP_CX} y={MLP_Y + 18} textAnchor="middle" dominantBaseline="middle"
-            fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
+          <text x={MLP_CX} y={MLP_Y + 16} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
             fill={isAI ? `${INDIGO_TEXT}0.926)` : `rgba(183,145,135,0.895)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>MLP</text>
-          <text x={MLP_CX} y={MLP_Y + 31} textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={MLP_CX} y={MLP_Y + 32} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={isAI ? `${INDIGO_TEXT}0.878)` : `rgba(183,145,135,0.857)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>TUNED FOR</text>
-          <text x={MLP_CX} y={MLP_Y + 48} textAnchor="middle" dominantBaseline="middle"
-            fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+          <text x={MLP_CX} y={MLP_Y + 52} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={isAI ? `${INDIGO_TEXT}0.983)` : `rgba(183,145,135,0.975)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>LOVE</text>
-          <text x={MLP_CX} y={MLP_Y + 64} textAnchor="middle" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          {/* Split across two lines: "CRAFT · RESONANCE · ADVOCATES" no
+              longer fits the 158-wide badge on one line at 11pt */}
+          <text x={MLP_CX} y={MLP_Y + 72} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={isAI ? `${INDIGO_TEXT}0.905)` : `rgba(183,145,135,0.885)`}
-            style={{ userSelect: 'none', transition: 'fill 0.35s' }}>CRAFT · RESONANCE · ADVOCATES</text>
+            style={{ userSelect: 'none', transition: 'fill 0.35s' }}>CRAFT · RESONANCE</text>
+          <text x={MLP_CX} y={MLP_Y + 88} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+            fill={isAI ? `${INDIGO_TEXT}0.905)` : `rgba(183,145,135,0.885)`}
+            style={{ userSelect: 'none', transition: 'fill 0.35s' }}>ADVOCATES</text>
 
           {/* AI cost-collapse badge (AI mode only) */}
           <AnimatePresence>
@@ -221,11 +243,18 @@ export default function MVPAIReactivated() {
                 transition={{ duration: 0.28 }}>
                 <rect x={AI_BADGE.x} y={AI_BADGE.y} width={AI_BADGE.w} height={AI_BADGE.h} rx={4}
                   fill={`${INDIGO}0.15)`} stroke={`${INDIGO}0.50)`} strokeWidth={0.9} />
-                <text x={AI_BADGE.x + AI_BADGE.w / 2} y={AI_BADGE.y + AI_BADGE.h / 2 + 1}
+                {/* Split across two lines: doesn't fit the badge width at 11pt */}
+                <text x={AI_BADGE.x + AI_BADGE.w / 2} y={AI_BADGE.y + 12}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
                   fill={`${INDIGO_TEXT}0.979)`} style={{ userSelect: 'none' }}>
-                  AI MAKES THIS CHEAP NOW
+                  AI MAKES THIS
+                </text>
+                <text x={AI_BADGE.x + AI_BADGE.w / 2} y={AI_BADGE.y + 26}
+                  textAnchor="middle" dominantBaseline="middle"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+                  fill={`${INDIGO_TEXT}0.979)`} style={{ userSelect: 'none' }}>
+                  CHEAP NOW
                 </text>
               </motion.g>
             )}
@@ -239,27 +268,30 @@ export default function MVPAIReactivated() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.30, delay: 0.10 }}>
-                {/* TASTE annotation near MLP */}
-                <line x1={MLP_X} y1={MLP_Y + 48} x2={MLP_X - 16} y2={MLP_Y + 48}
+                {/* TASTE annotation: moved from beside MLP (which at 11pt
+                    overflowed leftward into the CORE FLOW tile) to the open
+                    gap below the MLP badge instead */}
+                <line x1={MLP_CX} y1={MLP_Y + MLP_H} x2={MLP_CX} y2={MLP_Y + MLP_H + 10}
                   stroke={`${BRICK}0.45)`} strokeWidth={0.8} />
-                <text x={MLP_X - 20} y={MLP_Y + 48}
-                  textAnchor="end" dominantBaseline="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                <text x={MLP_CX} y={MLP_Y + MLP_H + 19}
+                  textAnchor="middle" dominantBaseline="middle"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                   fill={`rgba(183,145,135,0.937)`} style={{ userSelect: 'none' }}>
                   TASTE: HUMAN
                 </text>
-                {/* INTERPRETATION annotation near cut pile */}
+                {/* INTERPRETATION annotation near cut pile; 2nd line moved
+                    10 -> 16 below the 1st for clearance at 11pt */}
                 <line x1={CORE_CX - 20} y1={CUT_Y + CUT_H / 2} x2={CORE_X - 10} y2={CUT_Y + CUT_H / 2}
                   stroke={`${BRICK}0.35)`} strokeWidth={0.8} />
                 <text x={CORE_X - 14} y={CUT_Y + CUT_H / 2}
                   textAnchor="end" dominantBaseline="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                   fill={`rgba(183,145,135,0.912)`} style={{ userSelect: 'none' }}>
                   INTERPRETATION:
                 </text>
-                <text x={CORE_X - 14} y={CUT_Y + CUT_H / 2 + 10}
+                <text x={CORE_X - 14} y={CUT_Y + CUT_H / 2 + 16}
                   textAnchor="end" dominantBaseline="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                   fill={`rgba(183,145,135,0.912)`} style={{ userSelect: 'none' }}>
                   HUMAN JUDGMENT
                 </text>
@@ -268,11 +300,13 @@ export default function MVPAIReactivated() {
           </AnimatePresence>
 
           {/* Cut pile: unchanged */}
+          {/* "· BOTH DISCARDED THESE" dropped: at 11pt it overflowed the
+              cut box, and the dashed styling + item labels already say it */}
           <text x={CUT_CX} y={CUT_Y - 8}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
-            SHARED CUT PILE · BOTH DISCARDED THESE
+            SHARED CUT PILE
           </text>
           <rect x={CUT_X} y={CUT_Y} width={CUT_W} height={CUT_H} rx={6}
             fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth={0.9}
@@ -284,7 +318,7 @@ export default function MVPAIReactivated() {
                 strokeDasharray="3 3" />
               <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                 fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
                 {c.label}
               </text>
@@ -309,15 +343,15 @@ export default function MVPAIReactivated() {
                   background: isAI ? `${INDIGO}0.05)` : `${BRICK}0.05)`,
                   borderColor: isAI ? `${INDIGO}0.20)` : `${BRICK}0.20)`,
                 }}>
-                <p className="text-[10px] font-mono font-semibold uppercase tracking-widest mb-2"
-                  style={{ color: isAI ? `${INDIGO}0.80)` : `${BRICK}0.80)` }}>
+                <p className="text-2xs font-mono font-semibold uppercase tracking-widest mb-2"
+                  style={{ color: isAI ? `${INDIGO_TEXT}0.90)` : `${BRICK_TEXT}0.90)` }}>
                   {c.tag}
                 </p>
                 <h3 className="font-semibold mb-2"
-                  style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}>
+                  style={{ fontSize: 'var(--text-sm)', color: '#FAFAFA' }}>
                   {c.headline}
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                   {c.body}
                 </p>
               </div>

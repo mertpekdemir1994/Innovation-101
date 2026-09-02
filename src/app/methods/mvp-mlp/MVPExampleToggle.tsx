@@ -4,6 +4,9 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
 const INDIGO = 'rgba(99,102,241,'
+// darker indigo for text on this light background — plain INDIGO can't reach
+// 4.5:1 on white at any opacity this file uses
+const INDIGO_DARK = 'rgba(79,70,229,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -32,7 +35,7 @@ export default function MVPExampleToggle() {
                 ? (t === 'ai' ? `${INDIGO}0.35)` : `${BRICK}0.35)`)
                 : 'var(--color-neutral-100)'}`,
               color: tab === t
-                ? t === 'ai' ? `${INDIGO}1)` : `${BRICK}1)`
+                ? t === 'ai' ? `${INDIGO_DARK}1)` : `${BRICK}1)`
                 : 'var(--color-neutral-600)',
             }}>
             {t === 'traditional' ? 'Traditional Approach' : 'With AI (hypothetical)'}
@@ -42,7 +45,7 @@ export default function MVPExampleToggle() {
 
       {/* Shared scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">
+        <span className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mr-2">
           Shared scenario
         </span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
@@ -60,7 +63,7 @@ export default function MVPExampleToggle() {
 
             {/* The shared prioritization work */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${BRICK}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${BRICK}1)` }}>The shared work, same for both routes</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 First, the team identified the true core: the small set of features that actually delivered the
@@ -73,7 +76,7 @@ export default function MVPExampleToggle() {
 
             {/* The market judgment */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${BRICK}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${BRICK}1)` }}>The judgment that mattered: what would this market tolerate?</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The team thought hard about the market. The category was crowded and expectations were high:
@@ -89,8 +92,8 @@ export default function MVPExampleToggle() {
               </p>
               <div className="rounded p-3 mt-1"
                 style={{ background: 'rgba(217,119,6,0.05)', borderLeft: '2px solid rgba(217,119,6,0.35)' }}>
-                <p className="text-[9px] font-mono font-semibold uppercase tracking-wider mb-1"
-                  style={{ color: 'rgba(217,119,6,0.80)' }}>FALSE NEGATIVE RISK</p>
+                <p className="text-2xs font-mono font-semibold uppercase tracking-wider mb-1"
+                  style={{ color: 'rgba(180,83,9,1)' }}>FALSE NEGATIVE RISK</p>
                 <p className="text-xs text-neutral-600 leading-relaxed">
                   In a crowded market with polished alternatives, people churn from a joyless product regardless
                   of the idea. Reading that churn as a verdict on the concept kills good ideas based on bad tests.
@@ -100,7 +103,7 @@ export default function MVPExampleToggle() {
 
             {/* What they built */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${BRICK}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${BRICK}1)` }}>What they built: the same core, executed with craft</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 They built a Minimum LOVABLE Product: the same minimal core (no extra features) but executed
@@ -120,14 +123,14 @@ export default function MVPExampleToggle() {
                   { label: 'Core built with craft', items: ['Spending clarity (considered, clean)', 'Single goal (human copy, encouraging)', 'Progress view (satisfying, not clinical)'] },
                 ].map(col => (
                   <div key={col.label}>
-                    <p className="text-[9px] font-mono font-semibold uppercase tracking-wider mb-2"
-                      style={{ color: col.label.includes('cut') ? 'var(--color-neutral-500)' : `${BRICK}0.80)` }}>
+                    <p className="text-2xs font-mono font-semibold uppercase tracking-wider mb-2"
+                      style={{ color: col.label.includes('cut') ? 'var(--color-neutral-500)' : `${BRICK}0.90)` }}>
                       {col.label}
                     </p>
                     <ul className="flex flex-col gap-1">
                       {col.items.map((item, i) => (
                         <li key={i} className="text-xs text-neutral-600 flex gap-1.5">
-                          <span style={{ color: col.label.includes('cut') ? 'var(--color-neutral-300)' : `${BRICK}0.60)`, flexShrink: 0 }}>
+                          <span style={{ color: col.label.includes('cut') ? 'var(--color-neutral-300)' : `${BRICK}0.90)`, flexShrink: 0 }}>
                             {col.label.includes('cut') ? '×' : '→'}
                           </span>
                           {item}
@@ -142,7 +145,7 @@ export default function MVPExampleToggle() {
             {/* The result */}
             <div className="border rounded-lg p-5"
               style={{ borderColor: `${BRICK}0.30)`, background: `${BRICK}0.04)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-3"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-3"
                 style={{ color: `${BRICK}1)` }}>What the lovable minimum produced</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 Early users did not merely tolerate it; they advocated for it. Because it was genuinely
@@ -171,7 +174,7 @@ export default function MVPExampleToggle() {
             <div className="rounded-lg px-4 py-3 border"
               style={{ background: `${INDIGO}0.05)`, borderColor: `${INDIGO}0.20)` }}>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
+                <span className="font-semibold" style={{ color: `${INDIGO_DARK}0.90)` }}>Hypothetical:</span>{' '}
                 The personal finance case above was built by a traditional team. This tab imagines the team
                 had leaned on AI throughout, to show where it genuinely helps, and where the human judgment
                 calls remain load-bearing.
@@ -181,10 +184,10 @@ export default function MVPExampleToggle() {
             {/* Genuine uplift: the main section */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
               <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-                <p className="text-[10px] font-semibold uppercase tracking-widest"
-                  style={{ color: `${INDIGO}0.90)` }}>Where AI gave substantial, genuine uplift</p>
-                <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full"
-                  style={{ background: `${INDIGO}0.10)`, color: `${INDIGO}0.80)`, border: `1px solid ${INDIGO}0.25)` }}>
+                <p className="text-2xs font-semibold uppercase tracking-widest"
+                  style={{ color: `${INDIGO_DARK}0.90)` }}>Where AI gave substantial, genuine uplift</p>
+                <span className="text-2xs font-semibold px-2 py-0.5 rounded-full"
+                  style={{ background: `${INDIGO}0.10)`, color: `${INDIGO_DARK}0.90)`, border: `1px solid ${INDIGO}0.25)` }}>
                   Cost of lovable collapsed
                 </span>
               </div>
@@ -210,8 +213,8 @@ export default function MVPExampleToggle() {
 
             {/* Two human limits */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${INDIGO}0.90)` }}>Where human judgment stayed load-bearing</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
+                style={{ color: `${INDIGO_DARK}0.90)` }}>Where human judgment stayed load-bearing</p>
               <div className="space-y-4">
                 {[
                   {
@@ -227,10 +230,10 @@ export default function MVPExampleToggle() {
                 ].map((item, i) => (
                   <div key={i} className="rounded p-4"
                     style={{ background: `${INDIGO}0.05)`, borderLeft: `2px solid ${INDIGO}0.28)` }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-1.5"
-                      style={{ color: `${INDIGO}0.65)` }}>{item.tag}</p>
+                    <p className="text-2xs font-semibold uppercase tracking-wider mb-1.5"
+                      style={{ color: `${INDIGO_DARK}0.90)` }}>{item.tag}</p>
                     <p className="text-xs text-neutral-700 leading-relaxed mb-2">{item.text}</p>
-                    <p className="text-[10px] text-neutral-500 leading-relaxed font-mono">↑ {item.note}</p>
+                    <p className="text-2xs text-neutral-500 leading-relaxed font-mono">↑ {item.note}</p>
                   </div>
                 ))}
               </div>
@@ -239,8 +242,8 @@ export default function MVPExampleToggle() {
             {/* Honest readout */}
             <div className="rounded-lg p-5 border"
               style={{ background: `${INDIGO}0.04)`, borderColor: `${INDIGO}0.18)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
-                style={{ color: `${INDIGO}0.80)` }}>The honest readout</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-2"
+                style={{ color: `${INDIGO_DARK}0.90)` }}>The honest readout</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 AI makes lovable affordable: that is a genuine, material improvement to how this method
                 should be practiced, and teams should use it. The human work that remains is not diminished:

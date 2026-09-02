@@ -5,28 +5,31 @@ import { motion, useInView, useReducedMotion } from 'framer-motion'
 const BRICK = 'rgba(138,75,60,'
 
 const SVG_W = 700
-const SVG_H = 266
+const SVG_H = 280
 
 // Shared core (center, prominent)
 const CORE_X = 206, CORE_Y = 20, CORE_W = 288, CORE_H = 110
 const CORE_CX = CORE_X + CORE_W / 2  // 350
 const CORE_CY = CORE_Y + CORE_H / 2  // 75
 
-// MVP optimization badge (left)
-const MVP_X = 22, MVP_Y = 36, MVP_W = 158, MVP_H = 80
+// MVP optimization badge (left). Height grown 80 -> 100: at 11pt the bottom
+// caption line no longer fits on one line, so it splits into two.
+const MVP_X = 22, MVP_Y = 36, MVP_W = 158, MVP_H = 100
 const MVP_CX = MVP_X + MVP_W / 2  // 101
 
 // MLP optimization badge (right)
-const MLP_X = 520, MLP_Y = 36, MLP_W = 158, MLP_H = 80
+const MLP_X = 520, MLP_Y = 36, MLP_W = 158, MLP_H = 100
 const MLP_CX = MLP_X + MLP_W / 2  // 599
 
 // Feature tiles inside core (identical, reused verbatim in Interactive and AIReactivated)
+// CORE ACTION and CORE FEATURE widened (80->90, 90->98): at 11pt their labels
+// no longer fit the old tile width. Neighbors repositioned to keep the gaps.
 const FTILES = [
   { x: 218, y: 38, w: 82,  h: 26, label: 'CORE VALUE'   },
-  { x: 308, y: 38, w: 80,  h: 26, label: 'CORE ACTION'  },
-  { x: 396, y: 38, w: 86,  h: 26, label: 'CORE DATA'    },
-  { x: 250, y: 74, w: 90,  h: 26, label: 'CORE FEATURE' },
-  { x: 350, y: 74, w: 86,  h: 26, label: 'CORE FLOW'    },
+  { x: 306, y: 38, w: 90,  h: 26, label: 'CORE ACTION'  },
+  { x: 402, y: 38, w: 86,  h: 26, label: 'CORE DATA'    },
+  { x: 246, y: 74, w: 98,  h: 26, label: 'CORE FEATURE' },
+  { x: 354, y: 74, w: 86,  h: 26, label: 'CORE FLOW'    },
 ]
 
 // Shared cut pile (below core, same for both products)
@@ -42,7 +45,7 @@ const CITEMS = [
   { x: 356, y: 212, w: 80, h: 22, label: 'LATER...'    },
 ]
 
-const CAP_Y = SVG_H - 8  // 258
+const CAP_Y = SVG_H - 26  // two caption lines now, 16 apart, ending 10 above the bottom edge
 
 export default function MVPEstablishing() {
   const ref = useRef<SVGSVGElement>(null)
@@ -82,11 +85,14 @@ export default function MVPEstablishing() {
             style={{ filter: 'url(#mvpe-glow)' }} />
           <rect x={CORE_X} y={CORE_Y} width={CORE_W} height={CORE_H} rx={8}
             fill={`${BRICK}0.05)`} stroke={`${BRICK}0.32)`} strokeWidth={1.3} />
+          {/* "· IDENTICAL IN BOTH PRODUCTS" dropped: at 11pt the full line
+              overflowed the core box, and the MVP/MLP badges either side of
+              a single shared core already make the point */}
           <text x={CORE_CX} y={CORE_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em"
             fill={`rgba(183,145,135,0.899)`} style={{ userSelect: 'none' }}>
-            SHARED CORE · IDENTICAL IN BOTH PRODUCTS
+            SHARED CORE
           </text>
         </motion.g>
 
@@ -101,7 +107,7 @@ export default function MVPEstablishing() {
               style={{ filter: 'url(#mvpe-glow-sm)' }} />
             <text x={t.x + t.w / 2} y={t.y + t.h / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
               fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}>
               {t.label}
             </text>
@@ -119,9 +125,11 @@ export default function MVPEstablishing() {
             stroke={`${BRICK}0.28)`} strokeWidth={0.9} strokeDasharray="4 3" />
           <line x1={CORE_CX} y1={CORE_Y + CORE_H} x2={CUT_CX} y2={CUT_Y - 2}
             stroke={`${BRICK}0.20)`} strokeWidth={0.9} strokeDasharray="3 3" />
-          <text x={CORE_CX + 7} y={(CORE_Y + CORE_H + CUT_Y) / 2}
+          {/* Moved from the true midpoint toward the core end: at 11pt it
+              now collides with the "SHARED CUT PILE" header below it */}
+          <text x={CORE_CX + 7} y={CORE_Y + CORE_H + (CUT_Y - CORE_Y - CORE_H) * 0.3}
             dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`rgba(183,145,135,0.849)`} style={{ userSelect: 'none' }}>
             BOTH CUT
           </text>
@@ -134,29 +142,37 @@ export default function MVPEstablishing() {
           transition={{ duration: 0.40, delay: d(0.60) }}>
           <rect x={MVP_X} y={MVP_Y} width={MVP_W} height={MVP_H} rx={6}
             fill={`${BRICK}0.06)`} stroke={`${BRICK}0.36)`} strokeWidth={1.1} />
-          <text x={MVP_CX} y={MVP_Y + 18}
+          <text x={MVP_CX} y={MVP_Y + 16}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
             fill={`rgba(183,145,135,0.895)`} style={{ userSelect: 'none' }}>
             MVP
           </text>
-          <text x={MVP_CX} y={MVP_Y + 31}
+          <text x={MVP_CX} y={MVP_Y + 32}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`rgba(183,145,135,0.857)`} style={{ userSelect: 'none' }}>
             TUNED FOR
           </text>
-          <text x={MVP_CX} y={MVP_Y + 48}
+          <text x={MVP_CX} y={MVP_Y + 52}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={`rgba(183,145,135,0.975)`} style={{ userSelect: 'none' }}>
             LEARNING
           </text>
-          <text x={MVP_CX} y={MVP_Y + 64}
+          {/* Split across two lines: "FAST · CHEAP · HONEST SIGNAL" no
+              longer fits the 158-wide badge on one line at 11pt */}
+          <text x={MVP_CX} y={MVP_Y + 72}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>
-            FAST · CHEAP · HONEST SIGNAL
+            FAST · CHEAP
+          </text>
+          <text x={MVP_CX} y={MVP_Y + 88}
+            textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+            fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>
+            HONEST SIGNAL
           </text>
         </motion.g>
 
@@ -167,29 +183,37 @@ export default function MVPEstablishing() {
           transition={{ duration: 0.40, delay: d(0.66) }}>
           <rect x={MLP_X} y={MLP_Y} width={MLP_W} height={MLP_H} rx={6}
             fill={`${BRICK}0.06)`} stroke={`${BRICK}0.36)`} strokeWidth={1.1} />
-          <text x={MLP_CX} y={MLP_Y + 18}
+          <text x={MLP_CX} y={MLP_Y + 16}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
             fill={`rgba(183,145,135,0.895)`} style={{ userSelect: 'none' }}>
             MLP
           </text>
-          <text x={MLP_CX} y={MLP_Y + 31}
+          <text x={MLP_CX} y={MLP_Y + 32}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`rgba(183,145,135,0.857)`} style={{ userSelect: 'none' }}>
             TUNED FOR
           </text>
-          <text x={MLP_CX} y={MLP_Y + 48}
+          <text x={MLP_CX} y={MLP_Y + 52}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={`rgba(183,145,135,0.975)`} style={{ userSelect: 'none' }}>
             LOVE
           </text>
-          <text x={MLP_CX} y={MLP_Y + 64}
+          {/* Split across two lines: "CRAFT · RESONANCE · ADVOCATES" no
+              longer fits the 158-wide badge on one line at 11pt */}
+          <text x={MLP_CX} y={MLP_Y + 72}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>
-            CRAFT · RESONANCE · ADVOCATES
+            CRAFT · RESONANCE
+          </text>
+          <text x={MLP_CX} y={MLP_Y + 88}
+            textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+            fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>
+            ADVOCATES
           </text>
         </motion.g>
 
@@ -198,11 +222,13 @@ export default function MVPEstablishing() {
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.40, delay: d(0.80) }}>
+          {/* "· BOTH DISCARDED THESE" dropped: at 11pt it overflowed the cut
+              box, and the dashed styling + item labels below already say it */}
           <text x={CUT_CX} y={CUT_Y - 8}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
-            SHARED CUT PILE · BOTH DISCARDED THESE
+            SHARED CUT PILE
           </text>
           <rect x={CUT_X} y={CUT_Y} width={CUT_W} height={CUT_H} rx={6}
             fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth={0.9}
@@ -220,22 +246,32 @@ export default function MVPEstablishing() {
               strokeDasharray="3 3" />
             <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
               fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
               {c.label}
             </text>
           </motion.g>
         ))}
 
-        {/* Caption */}
+        {/* Caption: split across two lines — the single-line sentence no
+            longer fits SVG_W at 11pt */}
         <motion.text x={CORE_CX} y={CAP_Y} textAnchor="middle"
-          fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.57)"
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.30, delay: d(1.12) }}
           style={{ userSelect: 'none' }}>
-          SAME MINIMUM SCOPE · SAME RUTHLESS CUTS · THE ONLY DIFFERENCE IS WHAT THE CORE IS OPTIMIZED FOR
+          SAME MINIMUM SCOPE · SAME RUTHLESS CUTS
+        </motion.text>
+        <motion.text x={CORE_CX} y={CAP_Y + 16} textAnchor="middle"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fill="rgba(255,255,255,0.57)"
+          initial={{ opacity: 0 }}
+          animate={visible ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.30, delay: d(1.12) }}
+          style={{ userSelect: 'none' }}>
+          THE ONLY DIFFERENCE IS WHAT THE CORE IS OPTIMIZED FOR
         </motion.text>
       </svg>
     </div>
