@@ -7,8 +7,14 @@ const TEAL_TEXT = 'rgba(116,161,168,'  // brightened text-safe variant of TEAL
 const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
-const SVG_W = 700
+// Canvas widened from the original 700-wide composition (1.75:1) toward
+// 2.4:1 by framing it wider, not stretching the hub-and-spoke layout — the
+// diagram's own geometry is untouched, just recentered via a translate
+// (see OFFSET_X below, applied to every child except the full-bleed
+// background rect).
+const SVG_W = 960
 const SVG_H = 400
+const OFFSET_X = 130
 
 type ActorId = 'platform' | 'hosts' | 'guests' | 'payment' | 'photographers' | 'cleaning' | 'regulators' | 'neighbors'
 
@@ -25,14 +31,19 @@ const ACTORS: ActorDef[] = [
   { id: 'neighbors',     cx: 634, cy: 198, r: 26, label: ['NEIGHBORS &', 'COMMUNITY'], obvious: false, focal: false },
 ]
 
-type ConnectionDef = { from: ActorId; to: ActorId; label: string; obvious: boolean }
+type ConnectionDef = { from: ActorId; to: ActorId; label: string; obvious: boolean; t?: number }
 
 const CONNECTIONS: ConnectionDef[] = [
   { from: 'hosts',         to: 'platform',   label: 'LISTINGS / REVENUE',     obvious: true  },
   { from: 'guests',        to: 'platform',   label: 'BOOKINGS / DEMAND',      obvious: true  },
-  { from: 'payment',       to: 'platform',   label: 'TRANSACTION FEES',       obvious: true  },
+  // payment sits directly above platform (same cx), so the default 30%
+  // midpoint lands right on payment's own external label — pulled to 55%
+  // to clear it.
+  { from: 'payment',       to: 'platform',   label: 'TRANSACTION FEES',       obvious: true,  t: 0.55 },
   { from: 'photographers', to: 'hosts',      label: 'PROFESSIONAL PHOTOS',    obvious: false },
-  { from: 'cleaning',      to: 'platform',   label: 'SERVICE LAYER',          obvious: false },
+  // Same issue: cleaning's external label sits "above" the node, right where
+  // the default 30% midpoint toward platform would land.
+  { from: 'cleaning',      to: 'platform',   label: 'SERVICE LAYER',          obvious: false, t: 0.5  },
   { from: 'regulators',    to: 'platform',   label: 'PERMITS & CONSTRAINTS',  obvious: false },
   { from: 'neighbors',     to: 'regulators', label: 'COMMUNITY PRESSURE',     obvious: false },
 ]
@@ -46,7 +57,8 @@ function actorById(id: ActorId): ActorDef {
 // the large PLATFORM hub circle. Pulling them toward the spoke end clears it.
 function connMidpoint(c: ConnectionDef): { lx: number; ly: number } {
   const fa = actorById(c.from), ta = actorById(c.to)
-  return { lx: fa.cx + (ta.cx - fa.cx) * 0.3, ly: fa.cy + (ta.cy - fa.cy) * 0.3 }
+  const t = c.t ?? 0.3
+  return { lx: fa.cx + (ta.cx - fa.cx) * t, ly: fa.cy + (ta.cy - fa.cy) * t }
 }
 
 // Internal label position - only used for actors whose label fits inside
@@ -99,7 +111,7 @@ export default function EMEstablishing() {
       viewport={{ once: true, margin: '-80px' }}
       aria-hidden="true"
     >
-      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
+      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           <filter id="em-est-glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="4" result="b" />
@@ -116,6 +128,8 @@ export default function EMEstablishing() {
           fill={`${TEAL}0.04)`}
           variants={fade} transition={{ ...fT, duration: 0.5 }}
         />
+
+        <g transform={`translate(${OFFSET_X}, 0)`}>
 
         {/* ── Obvious connections (drawn FIRST, under nodes) ── */}
         <motion.g variants={staggerObv}>
@@ -226,6 +240,8 @@ export default function EMEstablishing() {
             fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}
           >NON-OBVIOUS ACTOR</text>
         </motion.g>
+
+        </g>
       </svg>
     </motion.div>
   )
