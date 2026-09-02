@@ -4,7 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE = 'rgba(61,107,90,'
+const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 const AI_C = 'rgba(99,102,241,'
+const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of AI_C/INDIGO
 
 type Role = 'facilitator' | 'notetaker' | 'participant'
 
@@ -119,7 +121,7 @@ export default function IDIAIReactivated() {
                     <motion.text
                       key="ai"
                       x={cx} y={badgeY}
-                      textAnchor="middle" fontSize="9"
+                      textAnchor="middle" fontSize="11"
                       fontFamily="var(--font-mono)" letterSpacing="0.08em"
                       fill={`rgba(141,143,245,0.937)`}
                       style={{ userSelect: 'none' }}
@@ -130,7 +132,7 @@ export default function IDIAIReactivated() {
                     <motion.text
                       key="human"
                       x={cx} y={badgeY}
-                      textAnchor="middle" fontSize="9"
+                      textAnchor="middle" fontSize="11"
                       fontFamily="var(--font-mono)" letterSpacing="0.04em"
                       fill="rgba(255,255,255,0.64)"
                       style={{ userSelect: 'none' }}
@@ -203,7 +205,7 @@ export default function IDIAIReactivated() {
                     <div className="pt-2">
                       <p
                         className="font-mono uppercase tracking-widest mb-1"
-                        style={{ fontSize: 'var(--text-2xs)', color: `${AI_C}0.70)` }}
+                        style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_TEXT}0.90)` }}
                       >What AI does well</p>
                       <p
                         className="mb-4"
@@ -239,7 +241,7 @@ export default function IDIAIReactivated() {
       >
         <p
           className="font-mono uppercase tracking-widest mb-3"
-          style={{ fontSize: 'var(--text-2xs)', color: `${SAGE}0.70)` }}
+          style={{ fontSize: 'var(--text-2xs)', color: `${SAGE_TEXT}0.90)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
           AI&rsquo;s leverage on this method is real and growing: it removes the note-taking burden almost entirely, and it makes interviewing at scale genuinely possible for the first time. But the core of the method (a present human earning enough trust to hear an un-rationalized truth, and the judgment to chase the unexpected thread) is exactly the part AI is weakest at. The teams that get the most from AI here use it to amplify human interviewing (scale, transcription, synthesis) rather than to replace the human judgment that makes an interview worth running.

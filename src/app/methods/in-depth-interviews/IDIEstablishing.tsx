@@ -80,13 +80,13 @@ export default function IDIEstablishing() {
         {/* Connector micro-labels: float between the head circles */}
         <motion.text
           x={225} y={90} textAnchor="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
           fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           variants={fade} transition={lineT}
         >OBSERVES</motion.text>
         <motion.text
           x={415} y={90} textAnchor="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
           fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           variants={fade} transition={lineT}
         >CONVERSATION</motion.text>

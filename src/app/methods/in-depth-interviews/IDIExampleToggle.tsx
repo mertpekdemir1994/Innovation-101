@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE = 'rgba(61,107,90,'
+// darker indigo for light backgrounds — plain rgba(99,102,241,) can't reach
+// 4.5:1 on white even at full opacity, this variant clears it comfortably
+const INDIGO_DARK = 'rgba(79,70,229,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -50,7 +53,7 @@ const CONTENT: Record<Tab, React.ReactNode> = {
       >
         <p
           className="font-mono uppercase tracking-widest mb-2"
-          style={{ fontSize: 'var(--text-2xs)', color: `${SAGE}0.65)` }}
+          style={{ fontSize: 'var(--text-2xs)', color: `${SAGE}0.90)` }}
         >
           The insight
         </p>
@@ -77,7 +80,7 @@ const CONTENT: Record<Tab, React.ReactNode> = {
       >
         <p
           className="font-mono uppercase tracking-widest mb-2"
-          style={{ fontSize: 'var(--text-2xs)', color: 'rgba(99,102,241,0.70)' }}
+          style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_DARK}0.90)` }}
         >
           The honest readout
         </p>
