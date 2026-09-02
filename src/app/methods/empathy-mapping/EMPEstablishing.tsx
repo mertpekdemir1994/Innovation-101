@@ -4,17 +4,21 @@ import { motion, useReducedMotion } from 'framer-motion'
 
 const NAVY = 'rgba(31,58,95,'
 
-const SVG_W = 700
+// Quadrant width stretched (328→493) to give the hero a cinematic ~2.3:1
+// frame, keeping the 2×2 grid + central-figure cross metaphor completely
+// intact — height and every vertical dimension are content-driven (label +
+// divider + three quote rows) and untouched.
+const SVG_W = 1030
 const SVG_H = 448
 
 // Quadrant rects - 24px horizontal gap, 44px vertical gap
-const TL = { x: 10,  y: 10,  w: 328, h: 188 }  // SAYS
-const TR = { x: 362, y: 10,  w: 328, h: 188 }  // THINKS
-const BL = { x: 10,  y: 242, w: 328, h: 188 }  // DOES
-const BR = { x: 362, y: 242, w: 328, h: 188 }  // FEELS
+const TL = { x: 10,  y: 10,  w: 493, h: 188 }  // SAYS
+const TR = { x: 527, y: 10,  w: 493, h: 188 }  // THINKS
+const BL = { x: 10,  y: 242, w: 493, h: 188 }  // DOES
+const BR = { x: 527, y: 242, w: 493, h: 188 }  // FEELS
 
 // Central figure
-const CX = 350, CY = 220, CRO = 36, CRI = 26
+const CX = 515, CY = 220, CRO = 36, CRI = 26
 const HEAD_CY = 209, HEAD_R = 10
 
 type QuadrantBlock = {
@@ -76,7 +80,7 @@ export default function EMPEstablishing() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}
+        style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}
       >
         <defs>
           <filter id="emp-est-glow" x="-20%" y="-20%" width="140%" height="140%">
@@ -99,8 +103,8 @@ export default function EMPEstablishing() {
 
         {/* Cross guide lines (very subtle) */}
         <motion.g variants={fadeIn} transition={T}>
-          <line x1={350} y1={10}  x2={350} y2={430} stroke="rgba(255,255,255,0.04)" strokeWidth={1} />
-          <line x1={10}  y1={220} x2={690} y2={220} stroke="rgba(255,255,255,0.04)" strokeWidth={1} />
+          <line x1={CX} y1={10}  x2={CX} y2={430} stroke="rgba(255,255,255,0.04)" strokeWidth={1} />
+          <line x1={10}  y1={220} x2={SVG_W - 10} y2={220} stroke="rgba(255,255,255,0.04)" strokeWidth={1} />
         </motion.g>
 
         {/* Four quadrants */}
@@ -185,11 +189,11 @@ export default function EMPEstablishing() {
         {/* SAYS-vs-DOES tension hint (left arm of cross) */}
         <motion.g variants={fadeIn} transition={{ ...T, delay: prefersReduced ? 0 : 0.80 }}>
           <line
-            x1={172} y1={200} x2={172} y2={240}
+            x1={256} y1={200} x2={256} y2={240}
             stroke="rgba(255,255,255,0.10)" strokeDasharray="2 2" strokeWidth={0.8}
           />
           <text
-            x={172} y={222}
+            x={256} y={222}
             textAnchor="middle" dominantBaseline="middle"
             fontSize="11" fontFamily="var(--font-mono)"
             fill="rgba(255,255,255,0.58)"
