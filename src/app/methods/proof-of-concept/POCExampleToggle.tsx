@@ -4,6 +4,9 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
 const INDIGO = 'rgba(99,102,241,'
+// darker indigo for text on this light background — plain INDIGO can't
+// reach 4.5:1 on white even at full opacity
+const INDIGO_DARK = 'rgba(79,70,229,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -42,7 +45,7 @@ export default function POCExampleToggle() {
 
       {/* Shared scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">
+        <span className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mr-2">
           Shared scenario
         </span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
@@ -60,7 +63,7 @@ export default function POCExampleToggle() {
 
             {/* The question, precisely named */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${BRICK}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${BRICK}1)` }}>The one question, named precisely</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The team resisted the temptation to ask &ldquo;will our delay-prediction product work?&rdquo;, a
@@ -77,7 +80,7 @@ export default function POCExampleToggle() {
             {/* What the rig included / excluded */}
             <div className="grid md:grid-cols-2 gap-4">
               <div className="border rounded-lg p-5" style={{ borderColor: `${BRICK}0.20)`, background: `${BRICK}0.03)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-widest mb-3"
+                <p className="text-2xs font-semibold uppercase tracking-widest mb-3"
                   style={{ color: `${BRICK}1)` }}>What the rig included</p>
                 <ul className="flex flex-col gap-2">
                   {[
@@ -87,14 +90,14 @@ export default function POCExampleToggle() {
                     'A result readout: accuracy score, breakdown by route type',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-2">
-                      <span style={{ color: `${BRICK}0.80)`, flexShrink: 0 }}>→</span>
+                      <span style={{ color: `${BRICK}0.90)`, flexShrink: 0 }}>→</span>
                       <span className="text-xs text-neutral-700 leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="border rounded-lg p-5 border-neutral-100 bg-neutral-50">
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mb-3">
+                <p className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mb-3">
                   What it excluded (deliberately)
                 </p>
                 <ul className="flex flex-col gap-2">
@@ -115,7 +118,7 @@ export default function POCExampleToggle() {
 
             {/* Real messy data */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${BRICK}0.20)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${BRICK}1)` }}>Tested on real messy data, not cleaned samples</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The team insisted on testing with 18 months of actual, uncleaned operational data,
@@ -129,7 +132,7 @@ export default function POCExampleToggle() {
             {/* Qualified verdict */}
             <div className="border rounded-lg p-5"
               style={{ borderColor: `${BRICK}0.30)`, background: `${BRICK}0.05)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-3"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-3"
                 style={{ color: `${BRICK}1)` }}>The verdict, qualified and useful</p>
               <div className="flex items-start gap-3 mb-4">
                 <span className="text-xs font-semibold px-2 py-0.5 rounded"
@@ -151,7 +154,7 @@ export default function POCExampleToggle() {
                 product, with cross-border as a phase-two problem requiring different data sources. That
                 decision, made now, saved months of building the wrong thing.
               </p>
-              <p className="text-sm font-semibold" style={{ color: `${BRICK}0.85)` }}>
+              <p className="text-sm font-semibold" style={{ color: `${BRICK}0.90)` }}>
                 The verdict, including its conditions, was the deliverable. Not the notebook. Not the model. The knowledge.
               </p>
             </div>
@@ -169,7 +172,7 @@ export default function POCExampleToggle() {
             <div className="rounded-lg px-4 py-3 border"
               style={{ background: `${INDIGO}0.05)`, borderColor: `${INDIGO}0.20)` }}>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
+                <span className="font-semibold" style={{ color: `${INDIGO_DARK}0.90)` }}>Hypothetical:</span>{' '}
                 The logistics PoC above was built by a specialist team over roughly a week. This tab
                 imagines the same question tested with AI coding assistance, to show where AI genuinely
                 compresses time, and where the human judgment calls remain.
@@ -179,10 +182,10 @@ export default function POCExampleToggle() {
             {/* Genuine uplift */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
               <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-                <p className="text-[10px] font-semibold uppercase tracking-widest"
-                  style={{ color: `${INDIGO}0.90)` }}>Where AI gave substantial uplift</p>
-                <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full"
-                  style={{ background: `${INDIGO}0.10)`, color: `${INDIGO}0.80)`, border: `1px solid ${INDIGO}0.25)` }}>
+                <p className="text-2xs font-semibold uppercase tracking-widest"
+                  style={{ color: `${INDIGO_DARK}0.90)` }}>Where AI gave substantial uplift</p>
+                <span className="text-2xs font-semibold px-2 py-0.5 rounded-full"
+                  style={{ background: `${INDIGO}0.10)`, color: `${INDIGO_DARK}0.90)`, border: `1px solid ${INDIGO}0.25)` }}>
                   Days → hours
                 </span>
               </div>
@@ -203,8 +206,8 @@ export default function POCExampleToggle() {
 
             {/* Two limits */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${INDIGO}0.90)` }}>Where human judgment remained essential</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
+                style={{ color: `${INDIGO_DARK}0.90)` }}>Where human judgment remained essential</p>
               <div className="space-y-4">
                 {[
                   {
@@ -220,10 +223,10 @@ export default function POCExampleToggle() {
                 ].map((item, i) => (
                   <div key={i} className="rounded p-4"
                     style={{ background: `${INDIGO}0.05)`, borderLeft: `2px solid ${INDIGO}0.28)` }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-1.5"
-                      style={{ color: `${INDIGO}0.65)` }}>{item.tag}</p>
+                    <p className="text-2xs font-semibold uppercase tracking-wider mb-1.5"
+                      style={{ color: `${INDIGO_DARK}0.90)` }}>{item.tag}</p>
                     <p className="text-xs text-neutral-700 leading-relaxed mb-2">{item.text}</p>
-                    <p className="text-[10px] text-neutral-500 leading-relaxed font-mono">
+                    <p className="text-2xs text-neutral-500 leading-relaxed font-mono">
                       ↑ {item.note}
                     </p>
                   </div>
@@ -234,8 +237,8 @@ export default function POCExampleToggle() {
             {/* Honest readout */}
             <div className="rounded-lg p-5 border"
               style={{ background: `${INDIGO}0.04)`, borderColor: `${INDIGO}0.18)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
-                style={{ color: `${INDIGO}0.80)` }}>The honest readout</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-2"
+                style={{ color: `${INDIGO_DARK}0.90)` }}>The honest readout</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 AI compresses rig-building substantially and genuinely, this is one of the clearest
                 examples of AI giving a team real leverage. The human work that remained was not

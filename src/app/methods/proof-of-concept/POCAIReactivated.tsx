@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
@@ -24,7 +25,8 @@ const TAPS = [
   { x: 294, label: 'PROCESS' },
   { x: 368, label: 'EVALUATE' },
 ]
-const COMP_W = 56, COMP_H = 20
+// Widened 56 -> 68: "EVALUATE" doesn't fit the old tile width at 11pt
+const COMP_W = 68, COMP_H = 20
 
 const OUT_X = 468, OUT_Y = 60, OUT_W = 172, OUT_H = 84
 const OUT_CX = OUT_X + OUT_W / 2
@@ -38,9 +40,10 @@ const GHOSTS = [
   { x: 412, y: 194, w: 218, h: 42, label: 'NO PRODUCT SHELL'  },
 ]
 
-// AI speed badge (appears in AI mode over the apparatus)
+// AI speed badge (appears in AI mode over the apparatus).
+// Widened 144 -> 190: "AI BUILDS THIS RIG FAST" doesn't fit the old width at 11pt.
 const AI_BADGE = {
-  x: APP_CX - 72, y: APP_CY - 10, w: 144, h: 22,
+  x: APP_CX - 95, y: APP_CY - 10, w: 190, h: 22,
 }
 
 type Mode = 'human' | 'ai'
@@ -95,8 +98,8 @@ export default function POCAIReactivated() {
                 ? (m === 'ai' ? `${INDIGO}0.35)` : `${BRICK}0.35)`)
                 : 'rgba(255,255,255,0.14)'}`,
               color: mode === m
-                ? (m === 'ai' ? `${INDIGO}1)` : `${BRICK}1)`)
-                : 'rgba(255,255,255,0.42)',
+                ? (m === 'ai' ? `${INDIGO_TEXT}1)` : `${BRICK_TEXT}1)`)
+                : 'rgba(255,255,255,0.50)',
             }}>
             {m === 'human' ? 'Traditional (Human-Led)' : 'With AI'}
           </button>
@@ -124,14 +127,14 @@ export default function POCAIReactivated() {
 
           {/* Question label: always BRICK (human judgment) */}
           <text x={APP_CX} y={27} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.18em"
-            fill={`${BRICK}${isAI ? '0.90)' : '0.55)'}`}
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.18em"
+            fill={`${BRICK_TEXT}${isAI ? '0.90)' : '0.80)'}`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>
             ONE CRITICAL QUESTION
           </text>
           {isAI && (
             <text x={APP_CX + 148} y={27} textAnchor="start"
-              fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
               fill={`rgba(183,145,135,0.92)`} style={{ userSelect: 'none' }}>
               ← HUMAN JUDGMENT
             </text>
@@ -144,7 +147,7 @@ export default function POCAIReactivated() {
             fill={`${BRICK}0.05)`} stroke={`${BRICK}0.20)`} strokeWidth={1.0} />
           <text x={INP_X + INP_W / 2} y={INP_CY}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill={`rgba(183,145,135,0.885)`} style={{ userSelect: 'none' }}>
             RAW INPUT
           </text>
@@ -167,7 +170,7 @@ export default function POCAIReactivated() {
             style={{ transition: 'fill 0.35s, stroke 0.35s' }} />
           <text x={APP_CX} y={APP_Y + APP_H - 8}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={isAI ? `${INDIGO_TEXT}0.832)` : `rgba(183,145,135,0.819)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>
             PROVING RIG, INTERNAL, BARE
@@ -196,7 +199,7 @@ export default function POCAIReactivated() {
                 style={{ transition: 'fill 0.35s, stroke 0.35s' }} />
               <text x={t.x} y={TAP_Y1 + COMP_H / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                 fill={isAI ? `${INDIGO_TEXT}0.958)` : `rgba(183,145,135,0.92)`}
                 style={{ userSelect: 'none', transition: 'fill 0.35s' }}>
                 {t.label}
@@ -217,7 +220,7 @@ export default function POCAIReactivated() {
                   fill={`${INDIGO}0.15)`} stroke={`${INDIGO}0.50)`} strokeWidth={0.9} />
                 <text x={AI_BADGE.x + AI_BADGE.w / 2} y={AI_BADGE.y + AI_BADGE.h / 2 + 1}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
                   fill={`${INDIGO_TEXT}0.979)`} style={{ userSelect: 'none' }}>
                   AI BUILDS THIS RIG FAST
                 </text>
@@ -236,7 +239,7 @@ export default function POCAIReactivated() {
             fill={`${BRICK}0.04)`} stroke={`${BRICK}0.22)`} strokeWidth={1.0} />
           <text x={OUT_CX} y={OUT_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}>
             VERDICT
           </text>
@@ -248,7 +251,7 @@ export default function POCAIReactivated() {
           <circle cx={IND_CX} cy={PASS_CY} r={4.5} fill={`${BRICK}0.78)`} />
           <text x={IND_CX + 16} y={PASS_CY + 1}
             dominantBaseline="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
             fill={`rgba(183,145,135,0.975)`} style={{ userSelect: 'none' }}>
             PASS
           </text>
@@ -256,7 +259,7 @@ export default function POCAIReactivated() {
             fill="none" stroke="rgba(255,255,255,0.13)" strokeWidth={1.0} />
           <text x={IND_CX + 16} y={FAIL_CY + 1}
             dominantBaseline="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
             FAIL
           </text>
@@ -264,7 +267,7 @@ export default function POCAIReactivated() {
           {/* Verdict condition label (AI mode) */}
           {isAI && (
             <text x={OUT_CX} y={156} textAnchor="middle"
-              fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
               fill={`rgba(183,145,135,0.916)`} style={{ userSelect: 'none' }}>
               CONDITIONS: HUMAN JUDGMENT
             </text>
@@ -278,7 +281,7 @@ export default function POCAIReactivated() {
                 strokeDasharray="5 4" />
               <text x={g.x + g.w / 2} y={g.y + 16}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                 fill="rgba(255,255,255,0.57)" style={{ userSelect: 'none' }}>
                 {g.label}
               </text>
@@ -303,15 +306,15 @@ export default function POCAIReactivated() {
                   background: isAI ? `${INDIGO}0.05)` : `${BRICK}0.05)`,
                   borderColor: isAI ? `${INDIGO}0.20)` : `${BRICK}0.20)`,
                 }}>
-                <p className="text-[10px] font-mono font-semibold uppercase tracking-widest mb-2"
-                  style={{ color: isAI ? `${INDIGO}0.80)` : `${BRICK}0.80)` }}>
+                <p className="text-2xs font-mono font-semibold uppercase tracking-widest mb-2"
+                  style={{ color: isAI ? `${INDIGO_TEXT}0.90)` : `${BRICK_TEXT}0.90)` }}>
                   {card.tag}
                 </p>
                 <h3 className="font-semibold mb-2"
-                  style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}>
+                  style={{ fontSize: 'var(--text-sm)', color: '#FAFAFA' }}>
                   {card.headline}
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                   {card.body}
                 </p>
               </div>

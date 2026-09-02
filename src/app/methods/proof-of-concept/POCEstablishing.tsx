@@ -29,7 +29,8 @@ const TAPS = [
   { x: 294, label: 'PROCESS' },
   { x: 368, label: 'EVALUATE' },
 ]
-const COMP_W = 56, COMP_H = 20
+// Widened 56 -> 68: "EVALUATE" doesn't fit the old tile width at 11pt
+const COMP_W = 68, COMP_H = 20
 
 // Wires
 const W1 = { x1: INP_X + INP_W, y1: INP_CY, x2: APP_X, y2: APP_CY }
@@ -44,7 +45,7 @@ const FAIL_CY = OUT_Y + 58        // 118
 
 // Ghost absent elements (below apparatus)
 const GHOSTS = [
-  { x: 30,  y: 194, w: 150, h: 42, label: 'NO INTERFACE',      note: 'costs time · buys no certainty' },
+  { x: 30,  y: 194, w: 150, h: 42, label: 'NO INTERFACE',      note: 'costs time only'                },
   { x: 198, y: 194, w: 196, h: 42, label: 'NO EXTRA FEATURES', note: 'one question only'              },
   { x: 412, y: 194, w: 218, h: 42, label: 'NO PRODUCT SHELL',  note: 'internal · bare · discarded'   },
 ]
@@ -85,7 +86,7 @@ export default function POCEstablishing() {
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.40, delay: d(0.10) }}>
           <text x={Q_CX} y={Q_Y - 10 + 24} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.18em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.18em"
             fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}>
             ONE CRITICAL QUESTION
           </text>
@@ -109,15 +110,16 @@ export default function POCEstablishing() {
             fill={`${BRICK}0.05)`} stroke={`${BRICK}0.25)`} strokeWidth={1.0} />
           <text x={INP_X + INP_W / 2} y={INP_CY - 5}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}>
             RAW INPUT
           </text>
+          {/* "/ signal" dropped: doesn't fit the 116-wide block at 11pt */}
           <text x={INP_X + INP_W / 2} y={INP_CY + 7}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`rgba(183,145,135,0.853)`} style={{ userSelect: 'none' }}>
-            (real data / signal)
+            (real data)
           </text>
         </motion.g>
 
@@ -143,7 +145,7 @@ export default function POCEstablishing() {
             fill={`${BRICK}0.04)`} stroke={`${BRICK}0.28)`} strokeWidth={1.2} />
           <text x={APP_CX} y={APP_Y + APP_H - 8}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`rgba(183,145,135,0.819)`} style={{ userSelect: 'none' }}>
             PROVING RIG, INTERNAL, BARE
           </text>
@@ -175,7 +177,7 @@ export default function POCEstablishing() {
               style={{ filter: 'url(#poc-est-glow-sm)' }} />
             <text x={t.x} y={TAP_Y1 + COMP_H / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={`rgba(183,145,135,0.937)`} style={{ userSelect: 'none' }}>
               {t.label}
             </text>
@@ -200,7 +202,7 @@ export default function POCEstablishing() {
             fill={`${BRICK}0.04)`} stroke={`${BRICK}0.25)`} strokeWidth={1.0} />
           <text x={OUT_CX} y={OUT_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}>
             VERDICT
           </text>
@@ -213,7 +215,7 @@ export default function POCEstablishing() {
           <circle cx={IND_CX} cy={PASS_CY} r={4.5} fill={`${BRICK}0.80)`} />
           <text x={IND_CX + 16} y={PASS_CY + 1}
             dominantBaseline="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
             fill={`rgba(183,145,135,0.975)`} style={{ userSelect: 'none' }}>
             PASS
           </text>
@@ -222,7 +224,7 @@ export default function POCEstablishing() {
             fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth={1.0} />
           <text x={IND_CX + 16} y={FAIL_CY + 1}
             dominantBaseline="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             FAIL
           </text>
@@ -237,15 +239,15 @@ export default function POCEstablishing() {
             <rect x={g.x} y={g.y} width={g.w} height={g.h} rx={4}
               fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth={0.8}
               strokeDasharray="5 4" />
-            <text x={g.x + g.w / 2} y={g.y + 15}
+            <text x={g.x + g.w / 2} y={g.y + 13}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
               fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
               {g.label}
             </text>
-            <text x={g.x + g.w / 2} y={g.y + 29}
+            <text x={g.x + g.w / 2} y={g.y + 31}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
               fill="rgba(255,255,255,0.55)" style={{ userSelect: 'none' }}>
               {g.note}
             </text>
@@ -254,7 +256,7 @@ export default function POCEstablishing() {
 
         {/* Caption */}
         <motion.text x={Q_CX} y={CAP_Y} textAnchor="middle"
-          fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.57)"
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}

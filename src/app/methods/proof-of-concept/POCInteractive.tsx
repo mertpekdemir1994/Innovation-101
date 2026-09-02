@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 
 const SVG_W = 700
 const SVG_H = 258
@@ -22,7 +23,8 @@ const TAPS = [
   { x: 294, label: 'PROCESS' },
   { x: 368, label: 'EVALUATE' },
 ]
-const COMP_W = 56, COMP_H = 20
+// Widened 56 -> 68: "EVALUATE" doesn't fit the old tile width at 11pt
+const COMP_W = 68, COMP_H = 20
 
 const OUT_X = 468, OUT_Y = 60, OUT_W = 172, OUT_H = 84
 const OUT_CX = OUT_X + OUT_W / 2
@@ -84,7 +86,7 @@ const ZONES: Zone[] = [
     tag: 'THE ANTI-PATTERN',
     headline: 'The moment it acquires an interface, it stops being a PoC.',
     body: 'Scope drift is the PoC\'s defining failure. It begins the moment the team adds something that does not serve the critical question: a cleaner interface, an extra feature, some polish. Each addition feels cheap at the time. But they accumulate, and suddenly the PoC has become a half-built, unvalidated product with all the shortcuts of an experiment and none of the rigour of a product. The other failure: growing the PoC into production. The artifact was built to prove, not to ship.',
-    hitX: APP_CX, hitY: 175, hitW: 220, hitH: 18,
+    hitX: APP_CX, hitY: 175, hitW: 280, hitH: 18,
   },
 ]
 
@@ -120,7 +122,7 @@ export default function POCInteractive() {
 
           {/* ONE CRITICAL QUESTION label / clickable zone */}
           <text x={APP_CX} y={27} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.18em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.18em"
             fill={active === 'question' ? `rgba(183,145,135,0.979)` : `rgba(183,145,135,0.895)`}
             style={{ userSelect: 'none', cursor: 'pointer',
               transition: 'fill 0.22s' }}>
@@ -134,7 +136,7 @@ export default function POCInteractive() {
             fill={`${BRICK}0.05)`} stroke={`${BRICK}0.22)`} strokeWidth={1.0} />
           <text x={INP_X + INP_W / 2} y={INP_CY}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill={`rgba(183,145,135,0.891)`} style={{ userSelect: 'none' }}>
             RAW INPUT
           </text>
@@ -154,7 +156,7 @@ export default function POCInteractive() {
             style={{ transition: 'fill 0.22s, stroke 0.22s', cursor: 'pointer' }} />
           <text x={APP_CX} y={APP_Y + APP_H - 8}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`rgba(183,145,135,0.819)`} style={{ userSelect: 'none' }}>
             PROVING RIG, INTERNAL, BARE
           </text>
@@ -173,7 +175,7 @@ export default function POCInteractive() {
                 fill={`${BRICK}0.06)`} stroke={`${BRICK}0.28)`} strokeWidth={0.8} />
               <text x={t.x} y={TAP_Y1 + COMP_H / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                 fill={`rgba(183,145,135,0.92)`} style={{ userSelect: 'none' }}>
                 {t.label}
               </text>
@@ -182,7 +184,7 @@ export default function POCInteractive() {
 
           {/* Scope drift label (clickable) */}
           <text x={APP_CX} y={174} textAnchor="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill={active === 'discard' ? 'rgba(217,119,6,0.85)' : 'rgba(255,255,255,0.59)'}
             style={{ userSelect: 'none', cursor: 'pointer', transition: 'fill 0.22s' }}>
             ↓  SCOPE DRIFT ANTI-PATTERN  ↓
@@ -200,7 +202,7 @@ export default function POCInteractive() {
             style={{ transition: 'fill 0.22s, stroke 0.22s', cursor: 'pointer' }} />
           <text x={OUT_CX} y={OUT_Y + 11}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}>
             VERDICT
           </text>
@@ -213,7 +215,7 @@ export default function POCInteractive() {
           <circle cx={IND_CX} cy={PASS_CY} r={4.5} fill={`${BRICK}0.78)`} />
           <text x={IND_CX + 16} y={PASS_CY + 1}
             dominantBaseline="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
             fill={`rgba(183,145,135,0.975)`} style={{ userSelect: 'none' }}>
             PASS
           </text>
@@ -222,7 +224,7 @@ export default function POCInteractive() {
             fill="none" stroke="rgba(255,255,255,0.13)" strokeWidth={1.0} />
           <text x={IND_CX + 16} y={FAIL_CY + 1}
             dominantBaseline="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
             FAIL
           </text>
@@ -237,7 +239,7 @@ export default function POCInteractive() {
                 style={{ transition: 'fill 0.22s, stroke 0.22s', cursor: 'pointer' }} />
               <text x={g.x + g.w / 2} y={g.y + 16}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                 fill={active === 'absent' ? `rgba(183,145,135,0.905)` : 'rgba(255,255,255,0.58)'}
                 style={{ userSelect: 'none', transition: 'fill 0.22s' }}>
                 {g.label}
@@ -281,23 +283,26 @@ export default function POCInteractive() {
                 : `${BRICK}0.22)`,
             }}>
             <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
-              <span className="text-[10px] font-semibold font-mono uppercase tracking-widest"
+              <span className="text-2xs font-semibold font-mono uppercase tracking-widest"
                 style={{
                   color: activeZone.id === 'discard'
                     ? 'rgba(217,119,6,0.85)'
-                    : `${BRICK}0.85)`,
+                    : `${BRICK_TEXT}1)`,
                 }}>
                 {activeZone.tag}
               </span>
               <button onClick={() => setActive(null)}
-                className="text-xs text-neutral-500 hover:text-neutral-600"
+                className="text-xs transition-colors"
+                style={{ color: 'rgba(255,255,255,0.50)' }}
+                onMouseEnter={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.75)' }}
+                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.50)' }}
                 aria-label="Close detail">×</button>
             </div>
             <h3 className="font-semibold mb-3"
-              style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-900)' }}>
+              style={{ fontSize: 'var(--text-base)', color: '#FAFAFA' }}>
               {activeZone.headline}
             </h3>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
               {activeZone.body}
             </p>
           </motion.div>
@@ -310,7 +315,7 @@ export default function POCInteractive() {
           <button key={z.id}
             onClick={() => toggle(z.id)}
             aria-pressed={active === z.id}
-            className="px-3 py-1 rounded-full text-[10px] font-mono font-semibold uppercase tracking-widest transition-all"
+            className="px-3 py-1 rounded-full text-2xs font-mono font-semibold uppercase tracking-widest transition-all"
             style={{
               background: active === z.id
                 ? (z.id === 'discard' ? 'rgba(217,119,6,0.10)' : `${BRICK}0.10)`)
@@ -319,8 +324,8 @@ export default function POCInteractive() {
                 ? (z.id === 'discard' ? 'rgba(217,119,6,0.35)' : `${BRICK}0.35)`)
                 : 'rgba(255,255,255,0.12)'}`,
               color: active === z.id
-                ? (z.id === 'discard' ? 'rgba(217,119,6,0.90)' : `${BRICK}1)`)
-                : 'rgba(255,255,255,0.35)',
+                ? (z.id === 'discard' ? 'rgba(217,119,6,0.90)' : `${BRICK_TEXT}1)`)
+                : 'rgba(255,255,255,0.50)',
             }}>
             {z.tag}
           </button>
