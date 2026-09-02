@@ -213,7 +213,7 @@ export default function AIRhythmSection() {
                 borderLeft: `3px solid ${activeStage === stage.id ? `${PLUM}0.65)` : 'transparent'}`,
               }}
             >
-              <span className="font-mono text-xs font-semibold" style={{ color: `${PLUM}0.40)` }}>
+              <span className="font-mono text-xs font-semibold" style={{ color: `${PLUM}0.90)` }}>
                 {stage.n}
               </span>
               <div>
@@ -222,12 +222,12 @@ export default function AIRhythmSection() {
                   {stage.label}
                   {stage.special && (
                     <span className="font-mono text-2xs px-space-1 rounded"
-                      style={{ background: `${PLUM}0.10)`, color: `${PLUM}0.70)`, fontSize: '0.55rem', letterSpacing: '0.05em' }}>
+                      style={{ background: `${PLUM}0.10)`, color: `${PLUM}0.90)`, fontSize: '0.6875rem', letterSpacing: '0.05em' }}>
                       DISCOVER
                     </span>
                   )}
                 </p>
-                <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${PLUM}0.40)` }}>
+                <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${PLUM}0.90)` }}>
                   {stage.mode}
                 </p>
               </div>
@@ -242,8 +242,8 @@ export default function AIRhythmSection() {
           <div key={stage.id} ref={(el) => { sectionRefs.current[i] = el }}>
             {/* Mobile header */}
             <div className="md:hidden mb-space-4 flex items-center gap-space-3">
-              <span className="font-mono text-xs font-semibold" style={{ color: `${PLUM}0.55)` }}>{stage.n}</span>
-              <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${PLUM}0.55)` }}>{stage.mode}</span>
+              <span className="font-mono text-xs font-semibold" style={{ color: `${PLUM}0.90)` }}>{stage.n}</span>
+              <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${PLUM}0.90)` }}>{stage.mode}</span>
             </div>
 
             {/* Discovery Sprint distinction callout */}
@@ -253,7 +253,7 @@ export default function AIRhythmSection() {
                 style={{ background: `${PLUM}0.06)`, border: `1px solid ${PLUM}0.14)` }}
               >
                 <span className="font-mono text-2xs uppercase tracking-widest shrink-0"
-                  style={{ color: `${PLUM}0.70)` }}>
+                  style={{ color: `${PLUM}0.90)` }}>
                   The discovery layer
                 </span>
                 <span className="text-sm text-neutral-600 leading-relaxed">
@@ -290,7 +290,7 @@ export default function AIRhythmSection() {
                       <span className="font-semibold text-sm text-neutral-900">{act.title}</span>
                       <span
                         className="text-base shrink-0 ml-space-3 transition-transform duration-200"
-                        style={{ color: `${PLUM}0.60)`, transform: isOpen ? 'rotate(45deg)' : 'none' }}
+                        style={{ color: `${PLUM}0.90)`, transform: isOpen ? 'rotate(45deg)' : 'none' }}
                       >
                         +
                       </span>
@@ -317,7 +317,7 @@ export default function AIRhythmSection() {
               className="mt-space-6 rounded-xl px-space-6 py-space-5"
               style={{ background: `${PLUM}0.04)`, border: `1px solid ${PLUM}0.12)` }}
             >
-              <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${PLUM}0.65)` }}>
+              <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${PLUM}0.90)` }}>
                 The key question
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed italic">{stage.keyQuestion}</p>

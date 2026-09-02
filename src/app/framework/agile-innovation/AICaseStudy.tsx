@@ -140,7 +140,7 @@ function ArtifactBlock({ artifact }: { artifact: Artifact }) {
         className="rounded-xl p-space-6"
         style={{ background: `${PLUM}0.04)`, border: `1px solid ${PLUM}0.10)` }}
       >
-        <p className="font-mono text-2xs uppercase tracking-widest mb-space-4" style={{ color: `${PLUM}0.65)` }}>
+        <p className="font-mono text-2xs uppercase tracking-widest mb-space-4" style={{ color: `${PLUM}0.90)` }}>
           {artifact.label}
         </p>
         <div className="space-y-space-3">
@@ -168,7 +168,7 @@ function ArtifactBlock({ artifact }: { artifact: Artifact }) {
         className="rounded-xl p-space-6"
         style={{ background: `${PLUM}0.04)`, borderLeft: `4px solid ${PLUM}0.50)` }}
       >
-        <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${PLUM}0.70)` }}>
+        <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${PLUM}0.90)` }}>
           {artifact.label}
         </p>
         {artifact.lines.map((line, i) => (
@@ -214,7 +214,7 @@ function StageContent({ stageKey }: { stageKey: StageKey }) {
         className="rounded-lg px-space-5 py-space-4"
         style={{ background: `${PLUM}0.05)`, borderLeft: `3px solid ${PLUM}0.40)` }}
       >
-        <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${PLUM}0.70)` }}>
+        <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${PLUM}0.90)` }}>
           What it meant
         </p>
         <p className="text-sm text-neutral-700 leading-relaxed italic">{stage.insight}</p>
@@ -270,7 +270,7 @@ export default function AICaseStudy() {
           ))}
         </div>
         <div className="px-space-6 md:px-space-8 py-space-7">
-          <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${PLUM}0.65)` }}>
+          <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${PLUM}0.90)` }}>
             The problem
           </p>
           <p
@@ -300,7 +300,7 @@ export default function AICaseStudy() {
           >
             <span
               className="font-mono text-2xs uppercase tracking-widest mb-space-1"
-              style={{ color: activeStage === key ? `${PLUM}0.65)` : 'var(--color-neutral-500)' }}
+              style={{ color: activeStage === key ? `${PLUM}0.90)` : 'var(--color-neutral-500)' }}
             >
               {mode}
             </span>
@@ -312,7 +312,7 @@ export default function AICaseStudy() {
             </span>
             <span
               className="text-xs"
-              style={{ color: activeStage === key ? `${PLUM}0.55)` : 'var(--color-neutral-500)' }}
+              style={{ color: activeStage === key ? `${PLUM}0.90)` : 'var(--color-neutral-500)' }}
             >
               {sub}
             </span>

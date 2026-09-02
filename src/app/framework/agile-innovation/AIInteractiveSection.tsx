@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,77,122,'
+// This muted plum fails 4.5:1 as text on the dark section background at
+// any opacity, even 1.0 — brightened text-safe variant.
+const PLUM_TEXT = 'rgba(166,147,174,'
 
 type StageId = 'discovery' | 'backlog' | 'sprint' | 'review' | 'retro'
 
@@ -312,7 +315,7 @@ export default function AIInteractiveSection() {
               >
                 <span
                   className="font-mono text-2xs uppercase tracking-widest mb-space-1"
-                  style={{ color: isActive ? `${PLUM}0.80)` : 'rgba(255,255,255,0.30)' }}
+                  style={{ color: isActive ? `${PLUM_TEXT}0.85)` : 'rgba(255,255,255,0.30)' }}
                 >
                   {stage.n}
                 </span>
@@ -324,14 +327,14 @@ export default function AIInteractiveSection() {
                 </span>
                 <span
                   className="font-mono text-2xs mt-space-1"
-                  style={{ color: isActive ? `${PLUM}0.65)` : 'rgba(255,255,255,0.20)' }}
+                  style={{ color: isActive ? `${PLUM_TEXT}0.85)` : 'rgba(255,255,255,0.20)' }}
                 >
                   {stage.mode}
                 </span>
                 {stage.special && !agileDevMode && (
                   <span
                     className="font-mono text-2xs mt-space-1 px-space-1 rounded"
-                    style={{ background: `${PLUM}0.15)`, color: `${PLUM}0.65)`, fontSize: '0.55rem', letterSpacing: '0.05em' }}
+                    style={{ background: `${PLUM}0.15)`, color: `${PLUM_TEXT}0.85)`, fontSize: '0.6875rem', letterSpacing: '0.05em' }}
                   >
                     DISCOVER
                   </span>
@@ -368,7 +371,7 @@ export default function AIInteractiveSection() {
                 className="rounded-xl p-space-5 mb-space-5"
                 style={{ background: `${PLUM}0.12)`, border: `1px solid ${PLUM}0.22)` }}
               >
-                <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${PLUM}0.65)` }}>
+                <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${PLUM_TEXT}0.85)` }}>
                   {detail.example.co}
                 </p>
                 <p className="text-sm leading-relaxed italic" style={{ color: 'rgba(255,255,255,0.75)' }}>

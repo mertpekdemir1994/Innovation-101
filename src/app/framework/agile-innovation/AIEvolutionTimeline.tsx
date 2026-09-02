@@ -125,7 +125,7 @@ export default function AIEvolutionTimeline() {
                 style={{
                   background: active === i ? `${PLUM}1)` : `${PLUM}0.08)`,
                   border: `1px solid ${active === i ? 'transparent' : `${PLUM}0.20)`}`,
-                  color: active === i ? '#fff' : `${PLUM}0.70)`,
+                  color: active === i ? '#fff' : `${PLUM}0.90)`,
                 }}
               >
                 {i + 1}
@@ -156,7 +156,7 @@ export default function AIEvolutionTimeline() {
             <div className="flex items-center gap-space-3 mb-space-5">
               <span
                 className="font-mono text-2xs uppercase tracking-widest px-space-3 py-space-1 rounded-full"
-                style={{ color: `${PLUM}0.80)`, background: `${PLUM}0.08)`, border: `1px solid ${PLUM}0.15)` }}
+                style={{ color: `${PLUM}0.90)`, background: `${PLUM}0.08)`, border: `1px solid ${PLUM}0.15)` }}
               >
                 {v.badge}
               </span>
@@ -192,7 +192,7 @@ export default function AIEvolutionTimeline() {
                 >
                   <span
                     className="font-mono text-xs px-space-2 py-space-1 rounded shrink-0 self-start"
-                    style={{ background: `${PLUM}0.08)`, color: `${PLUM}0.80)`, whiteSpace: 'nowrap' }}
+                    style={{ background: `${PLUM}0.08)`, color: `${PLUM}0.90)`, whiteSpace: 'nowrap' }}
                   >
                     {change.tag}
                   </span>
