@@ -37,7 +37,11 @@ export default function AIHero() {
 
   return (
     <div className="w-full flex justify-center items-center py-space-6 select-none" aria-hidden="true">
-      <svg viewBox="0 0 900 700" width="100%" style={{ maxWidth: 900 }} className="overflow-visible">
+      <svg viewBox="0 0 1820 700" width="100%" className="overflow-visible">
+      {/* Canvas widened from the original 900-wide composition (1.29:1) toward
+          2.6:1 by framing it wider, not stretching the circle — the loop's
+          own geometry is untouched, just recentered via this translate. */}
+      <g transform="translate(460, 0)">
 
         {/* Outer glow ring */}
         <motion.circle cx={cx} cy={cy} r={r + 54}
@@ -76,10 +80,10 @@ export default function AIHero() {
         {/* Center labels */}
         {['continuous', 'cycle'].map((word, i) => (
           <motion.text key={word}
-            x={cx} y={cy - 9 + i * 22}
+            x={cx} y={cy - 14 + i * 34}
             textAnchor="middle"
             fill={`${PLUM}${i === 0 ? '0.45)' : '0.28)'}`}
-            fontSize={i === 0 ? '15' : '12'}
+            fontSize={i === 0 ? '28' : '22'}
             fontFamily="ui-monospace, monospace" letterSpacing="0.12em"
             style={{ textTransform: 'uppercase' }}
             initial={prefersReduced ? {} : { opacity: 0 }}
@@ -124,38 +128,38 @@ export default function AIHero() {
               />
 
               {/* Number */}
-              <text x={x} y={y - 9}
+              <text x={x} y={y - 10}
                 textAnchor="middle"
-                fill={`rgba(165,147,174,0.926)`} fontSize="12"
+                fill={`rgba(165,147,174,0.926)`} fontSize="14"
                 fontFamily="ui-monospace, monospace" letterSpacing="0.10em"
               >
                 {stage.n}
               </text>
 
               {/* Short label */}
-              <text x={x} y={y + 9}
+              <text x={x} y={y + 11}
                 textAnchor="middle"
                 fill={`rgba(165,147,174,1.0)`}
-                fontSize="16" fontWeight="700"
-                fontFamily="ui-monospace, monospace" letterSpacing="0.05em"
+                fontSize="17" fontWeight="700"
+                fontFamily="ui-monospace, monospace" letterSpacing="0.02em"
                 style={{ textTransform: 'uppercase' }}
               >
                 {stage.short}
               </text>
 
               {/* External full label */}
-              <text x={lx} y={ly - 7}
+              <text x={lx} y={ly - 10}
                 textAnchor={anchor}
                 fill={`${PLUM}${stage.special ? '0.85)' : '0.60)'}`}
-                fontSize="13" fontFamily="ui-monospace, monospace"
-                letterSpacing="0.08em" style={{ textTransform: 'uppercase' }}
+                fontSize="24" fontFamily="ui-monospace, monospace"
+                letterSpacing="0.06em" style={{ textTransform: 'uppercase' }}
               >
                 {stage.full}
               </text>
-              <text x={lx} y={ly + 11}
+              <text x={lx} y={ly + 17}
                 textAnchor={anchor}
-                fill={`rgba(165,147,174,0.874)`} fontSize="11"
-                fontFamily="ui-monospace, monospace" letterSpacing="0.10em"
+                fill={`rgba(165,147,174,0.874)`} fontSize="20"
+                fontFamily="ui-monospace, monospace" letterSpacing="0.06em"
                 style={{ textTransform: 'uppercase' }}
               >
                 {stage.verb}
@@ -163,6 +167,7 @@ export default function AIHero() {
             </motion.g>
           )
         })}
+      </g>
       </svg>
     </div>
   )
