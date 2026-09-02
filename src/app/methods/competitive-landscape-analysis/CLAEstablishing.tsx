@@ -5,31 +5,34 @@ import React from 'react'
 const SAGE = 'rgba(61,107,90,'
 const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
-// Larger field for legibility
-const SVG_W = 720
+// Wide field: the plot's field width was stretched (585→805) to give the
+// hero a cinematic ~2.4:1 frame; every competitor's x-position (and the
+// crowd ellipse) was rescaled proportionally within the field so the
+// relative Price ordering is unchanged. Field height/y-positions untouched.
+const SVG_W = 940
 const SVG_H = 394
 const FX = 78   // Y-axis x-position
 const FY = 26   // field top
-const FW = 585  // field width
+const FW = 805  // field width
 const FH = 304  // field height
-const F_R = FX + FW  // 663
+const F_R = FX + FW  // 883
 const F_B = FY + FH  // 330
 
 // All competitors cluster in upper-right (high price, high prestige).
 // Lower-left quadrant is the genuine white space.
 const COMPS = [
-  { id: 'a', cx: 532, cy: 70  },  // heritage brand
-  { id: 'b', cx: 582, cy: 95  },  // premium challenger
-  { id: 'c', cx: 486, cy: 82  },  // quality specialist
-  { id: 'd', cx: 556, cy: 132 },  // prestige niche
-  { id: 'e', cx: 615, cy: 55  },  // category leader
-  { id: 'f', cx: 435, cy: 158 },  // mid-market
-  { id: 'g', cx: 310, cy: 218 },  // budget entry
-  { id: 'h', cx: 248, cy: 186 },  // value segment
+  { id: 'a', cx: 703, cy: 70  },  // heritage brand
+  { id: 'b', cx: 772, cy: 95  },  // premium challenger
+  { id: 'c', cx: 640, cy: 82  },  // quality specialist
+  { id: 'd', cx: 736, cy: 132 },  // prestige niche
+  { id: 'e', cx: 817, cy: 55  },  // category leader
+  { id: 'f', cx: 569, cy: 158 },  // mid-market
+  { id: 'g', cx: 397, cy: 218 },  // budget entry
+  { id: 'h', cx: 312, cy: 186 },  // value segment
 ] as const
 
 // Ellipse enclosing the upper-right cluster
-const CROWD = { cx: 534, cy: 88, rx: 128, ry: 74 }
+const CROWD = { cx: 706, cy: 88, rx: 176, ry: 74 }
 
 // White space: derived from COMPS so it always occupies the actual empty region.
 // Cluster is upper-right → WS is lower-left: right edge = leftmost dot − gap,
@@ -68,7 +71,7 @@ export default function CLAEstablishing() {
       role="img"
       aria-label="Competitive positioning field: Price (horizontal) vs Prestige (vertical). Eight competitors cluster in the high-price, high-prestige upper-right zone. The lower-left (low price, low prestige) is empty: the un-served white space."
     >
-      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
+      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           <filter id="cla-est-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="6" result="blur" />
