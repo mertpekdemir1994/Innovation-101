@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY   = 'rgba(31,58,95,'
+const NAVY_TEXT = 'rgba(141,155,173,'  // brightened text-safe variant of NAVY
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 const AMBER  = 'rgba(245,158,11,'
@@ -96,7 +97,7 @@ export default function EMPAIReactivated() {
               background: mode === id
                 ? (id === 'ai' ? `${INDIGO}0.80)` : `${NAVY}0.80)`)
                 : 'transparent',
-              color: mode === id ? '#fff' : 'rgba(255,255,255,0.50)',
+              color: mode === id ? '#fff' : 'rgba(255,255,255,0.55)',
               border: `1.5px solid ${mode === id
                 ? (id === 'ai' ? `${INDIGO}0.60)` : 'rgba(255,255,255,0.30)')
                 : 'rgba(255,255,255,0.16)'}`,
@@ -157,40 +158,42 @@ export default function EMPAIReactivated() {
                   style={{ transition: 'stroke 0.35s' }}
                 />
 
-                {/* Observable badge in AI mode */}
+                {/* Observable badge in AI mode - widened, "AI RELIABLE ✓"
+                    doesn't fit an 84-wide badge at 11pt */}
                 {isAI && q.isObservable && (
                   <g>
                     <rect
-                      x={cx - 42} y={q.rect.y + q.rect.h - 24}
-                      width={84} height={14} rx={3}
+                      x={cx - 55} y={q.rect.y + q.rect.h - 30}
+                      width={110} height={22} rx={3}
                       fill={`${INDIGO}0.12)`}
                       stroke={`${INDIGO}0.25)`}
                       strokeWidth={0.7}
                     />
                     <text
-                      x={cx} y={q.rect.y + q.rect.h - 17}
+                      x={cx} y={q.rect.y + q.rect.h - 19}
                       textAnchor="middle" dominantBaseline="middle"
-                      fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                       fill={`${INDIGO_TEXT}0.937)`}
                       style={{ userSelect: 'none' }}
                     >AI RELIABLE ✓</text>
                   </g>
                 )}
 
-                {/* Inferred badge in AI mode */}
+                {/* Inferred badge in AI mode - widened, "AI INFERS FROM
+                    SURFACE ⚠" doesn't fit a 100-wide badge at 11pt */}
                 {isAI && !q.isObservable && (
                   <g>
                     <rect
-                      x={cx - 50} y={q.rect.y + q.rect.h - 24}
-                      width={100} height={14} rx={3}
+                      x={cx - 100} y={q.rect.y + q.rect.h - 30}
+                      width={200} height={22} rx={3}
                       fill={`${AMBER}0.08)`}
                       stroke={`${AMBER}0.22)`}
                       strokeWidth={0.7}
                     />
                     <text
-                      x={cx} y={q.rect.y + q.rect.h - 17}
+                      x={cx} y={q.rect.y + q.rect.h - 19}
                       textAnchor="middle" dominantBaseline="middle"
-                      fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                       fill={`${AMBER_TEXT}0.876)`}
                       style={{ userSelect: 'none' }}
                     >{isFeeels ? 'SURFACE WORDS ONLY ⚠' : 'AI INFERS FROM SURFACE ⚠'}</text>
@@ -201,7 +204,7 @@ export default function EMPAIReactivated() {
                 <text
                   x={cx} y={q.rect.y + 18}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                   fill={isFeeels ? 'rgba(255,255,255,0.88)' : 'rgba(255,255,255,0.72)'}
                   fontWeight="600"
                   style={{ userSelect: 'none' }}
@@ -213,7 +216,8 @@ export default function EMPAIReactivated() {
                   stroke={isFeeels ? `${NAVY}0.45)` : 'rgba(255,255,255,0.08)'}
                 />
 
-                {/* Entries with fade/swap in AI mode */}
+                {/* Entries with fade/swap in AI mode - rows taller (16 -> 22)
+                    and spacing wider (22 -> 26) to hold single-line 11pt text */}
                 <AnimatePresence mode="wait">
                   <motion.g
                     key={`${q.id}-${isAI ? 'ai' : 'human'}`}
@@ -225,8 +229,8 @@ export default function EMPAIReactivated() {
                     {entries.map((entry, i) => (
                       <g key={i}>
                         <rect
-                          x={q.rect.x + 16} y={q.rect.y + 34 + i * 22}
-                          width={q.rect.w - 32} height={16} rx={3}
+                          x={q.rect.x + 16} y={q.rect.y + 34 + i * 26}
+                          width={q.rect.w - 32} height={22} rx={3}
                           fill="rgba(255,255,255,0.06)"
                           stroke={
                             isAI && q.isObservable
@@ -237,9 +241,9 @@ export default function EMPAIReactivated() {
                           style={{ transition: 'stroke 0.35s' }}
                         />
                         <text
-                          x={q.rect.x + 24} y={q.rect.y + 34 + i * 22 + 8}
+                          x={q.rect.x + 24} y={q.rect.y + 34 + i * 26 + 11}
                           textAnchor="start" dominantBaseline="middle"
-                          fontSize="5" fontFamily="var(--font-inter,sans-serif)"
+                          fontSize="11" fontFamily="var(--font-inter,sans-serif)"
                           fill={
                             isAI && q.isObservable
                               ? `${INDIGO_TEXT}0.937)`
@@ -252,18 +256,20 @@ export default function EMPAIReactivated() {
                   </motion.g>
                 </AnimatePresence>
 
-                {/* FEELS heart + THINKS note */}
+                {/* FEELS heart + THINKS note - pushed down (142/154 -> 136/148
+                    is wrong direction; entries now end lower, ~108, and the
+                    widened badge sits at h-30, so heart moves to clear both) */}
                 {isFeeels && (
                   <>
                     <line
-                      x1={q.rect.x + 20} y1={q.rect.y + 142}
-                      x2={q.rect.x + q.rect.w - 20} y2={q.rect.y + 142}
+                      x1={q.rect.x + 20} y1={q.rect.y + 130}
+                      x2={q.rect.x + q.rect.w - 20} y2={q.rect.y + 130}
                       stroke={`${NAVY}0.38)`}
                     />
                     <text
-                      x={cx} y={q.rect.y + 154}
+                      x={cx} y={q.rect.y + 145}
                       textAnchor="middle" dominantBaseline="middle"
-                      fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                       fill="rgba(255,255,255,0.65)"
                       style={{ userSelect: 'none' }}
                     >♥ INTERPRETIVE HEART</text>
@@ -287,22 +293,22 @@ export default function EMPAIReactivated() {
                   stroke={`${INDIGO}0.40)`} strokeDasharray="3 2" strokeWidth={1}
                 />
                 <rect
-                  x={100} y={209} width={144} height={22} rx={4}
+                  x={77} y={205} width={190} height={44} rx={4}
                   fill={`${INDIGO}0.08)`}
                   stroke={`${INDIGO}0.22)`}
                   strokeWidth={0.7}
                 />
                 <text
-                  x={172} y={218}
+                  x={172} y={223}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${INDIGO_TEXT}0.926)`}
                   style={{ userSelect: 'none' }}
                 >CONTRADICTION IN DATA</text>
                 <text
-                  x={172} y={228}
+                  x={172} y={239}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="3.5" fontFamily="var(--font-mono)"
+                  fontSize="11" fontFamily="var(--font-mono)"
                   fill={`${INDIGO_TEXT}0.885)`}
                   style={{ userSelect: 'none' }}
                 >meaning: left to humans</text>
@@ -340,7 +346,7 @@ export default function EMPAIReactivated() {
             >
               <p
                 className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}
+                style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_TEXT}0.90)` }}
               >Where AI is reliable</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.60)', lineHeight: 'var(--leading-relaxed)' }}>
                 Given interview transcripts and behavioral data, AI populates SAYS and DOES quickly and accurately: these are observable and stated, so extraction is a task AI does well. This is genuinely useful for assembling the observable half of the map from a large corpus of research.
@@ -377,7 +383,7 @@ export default function EMPAIReactivated() {
       >
         <p
           className="font-mono uppercase tracking-widest mb-2"
-          style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.60)` }}
+          style={{ fontSize: 'var(--text-2xs)', color: `${NAVY_TEXT}0.85)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
           Use AI for SAYS and DOES: fast, accurate, handles volume well. Use human judgment for THINKS, FEELS, and the interpretation of the gap. The method&rsquo;s value lives in the inferred half, and that is exactly where AI&rsquo;s surface-level inference is most confidently wrong.

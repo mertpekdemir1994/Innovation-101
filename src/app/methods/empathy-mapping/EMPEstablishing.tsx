@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 const NAVY = 'rgba(31,58,95,'
 
 const SVG_W = 700
-const SVG_H = 440
+const SVG_H = 448
 
 // Quadrant rects - 24px horizontal gap, 44px vertical gap
 const TL = { x: 10,  y: 10,  w: 328, h: 188 }  // SAYS
@@ -127,7 +127,7 @@ export default function EMPEstablishing() {
               <text
                 x={cx} y={r.y + 18}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                 fill={isFeeels ? 'rgba(255,255,255,0.88)' : 'rgba(255,255,255,0.72)'}
                 fontWeight="600"
                 style={{ userSelect: 'none' }}
@@ -140,20 +140,21 @@ export default function EMPEstablishing() {
                 stroke={isFeeels ? `${NAVY}0.45)` : 'rgba(255,255,255,0.08)'}
               />
 
-              {/* Evidence entries */}
+              {/* Evidence entries - rows taller (16 -> 22) and spacing wider
+                  (22 -> 26) to hold single-line 11pt text */}
               {entries.map((entry, i) => (
                 <g key={i}>
                   <rect
-                    x={r.x + 16} y={r.y + 34 + i * 22}
-                    width={r.w - 32} height={16} rx={3}
+                    x={r.x + 16} y={r.y + 34 + i * 26}
+                    width={r.w - 32} height={22} rx={3}
                     fill="rgba(255,255,255,0.06)"
                     stroke="rgba(255,255,255,0.14)"
                     strokeWidth={0.7}
                   />
                   <text
-                    x={r.x + 24} y={r.y + 34 + i * 22 + 8}
+                    x={r.x + 24} y={r.y + 34 + i * 26 + 11}
                     textAnchor="start" dominantBaseline="middle"
-                    fontSize="5" fontFamily="var(--font-inter,sans-serif)"
+                    fontSize="11" fontFamily="var(--font-inter,sans-serif)"
                     fill={isFeeels ? 'rgba(255,255,255,0.72)' : 'rgba(255,255,255,0.60)'}
                     style={{ userSelect: 'none' }}
                   >{entry}</text>
@@ -169,9 +170,9 @@ export default function EMPEstablishing() {
                     stroke={`${NAVY}0.38)`}
                   />
                   <text
-                    x={cx} y={r.y + 170}
+                    x={cx} y={r.y + 172}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                     fill="rgba(255,255,255,0.65)"
                     style={{ userSelect: 'none' }}
                   >♥ INTERPRETIVE HEART</text>
@@ -190,7 +191,7 @@ export default function EMPEstablishing() {
           <text
             x={172} y={222}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)"
+            fontSize="11" fontFamily="var(--font-mono)"
             fill="rgba(255,255,255,0.58)"
             style={{ userSelect: 'none' }}
           >≠</text>
@@ -218,7 +219,7 @@ export default function EMPEstablishing() {
         <motion.text
           x={SVG_W / 2} y={SVG_H - 8}
           textAnchor="middle" dominantBaseline="auto"
-          fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.59)"
           style={{ userSelect: 'none' }}
           variants={fadeIn}

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY  = 'rgba(31,58,95,'
+const NAVY_TEXT = 'rgba(141,155,173,'  // brightened text-safe variant of NAVY
 const AMBER = 'rgba(245,158,11,'
 
 const SVG_W = 700
@@ -126,7 +127,7 @@ export default function EMPInteractive() {
           className="rounded-full px-5 py-2 text-sm font-semibold transition-colors"
           style={{
             background: active === 'gap' ? `${AMBER}0.82)` : 'transparent',
-            color: active === 'gap' ? '#fff' : `${AMBER}0.65)`,
+            color: active === 'gap' ? '#fff' : `${AMBER}0.72)`,
             border: `1.5px solid ${active === 'gap' ? `${AMBER}0.60)` : `${AMBER}0.28)`}`,
           }}
           aria-pressed={active === 'gap'}
@@ -158,7 +159,7 @@ export default function EMPInteractive() {
             <text
               x={SVG_W / 2} y={SVG_H - 8}
               textAnchor="middle" dominantBaseline="auto"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
               fill="rgba(255,255,255,0.59)"
               style={{ userSelect: 'none' }}
             >tap a quadrant or use the buttons above to reveal what goes there</text>
@@ -215,7 +216,7 @@ export default function EMPInteractive() {
                 <text
                   x={cx} y={q.rect.y + 18}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                   fill={isActive
                     ? (isFeeels ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0.88)')
                     : (isFeeels ? 'rgba(255,255,255,0.80)' : 'rgba(255,255,255,0.65)')}
@@ -229,21 +230,22 @@ export default function EMPInteractive() {
                   stroke="rgba(255,255,255,0.08)"
                 />
 
-                {/* Entries */}
+                {/* Entries - rows taller (16 -> 22) and spacing wider
+                    (22 -> 26) to hold single-line 11pt text */}
                 {q.entries.map((entry, i) => (
                   <g key={i}>
                     <rect
-                      x={q.rect.x + 16} y={q.rect.y + 34 + i * 22}
-                      width={q.rect.w - 32} height={16} rx={3}
+                      x={q.rect.x + 16} y={q.rect.y + 34 + i * 26}
+                      width={q.rect.w - 32} height={22} rx={3}
                       fill={isActive ? 'rgba(255,255,255,0.10)' : 'rgba(255,255,255,0.06)'}
                       stroke={isActive ? 'rgba(255,255,255,0.24)' : 'rgba(255,255,255,0.14)'}
                       strokeWidth={0.7}
                       style={{ transition: 'fill 0.20s, stroke 0.20s' }}
                     />
                     <text
-                      x={q.rect.x + 24} y={q.rect.y + 34 + i * 22 + 8}
+                      x={q.rect.x + 24} y={q.rect.y + 34 + i * 26 + 11}
                       textAnchor="start" dominantBaseline="middle"
-                      fontSize="5" fontFamily="var(--font-inter,sans-serif)"
+                      fontSize="11" fontFamily="var(--font-inter,sans-serif)"
                       fill={isActive ? 'rgba(255,255,255,0.80)' : (isFeeels ? 'rgba(255,255,255,0.72)' : 'rgba(255,255,255,0.60)')}
                       style={{ userSelect: 'none', transition: 'fill 0.20s' }}
                     >{entry}</text>
@@ -260,9 +262,9 @@ export default function EMPInteractive() {
                       style={{ transition: 'stroke 0.20s' }}
                     />
                     <text
-                      x={cx} y={q.rect.y + 170}
+                      x={cx} y={q.rect.y + 172}
                       textAnchor="middle" dominantBaseline="middle"
-                      fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                       fill={isActive ? 'rgba(255,255,255,0.725)' : 'rgba(255,255,255,0.64)'}
                       style={{ userSelect: 'none', transition: 'fill 0.20s' }}
                     >♥ INTERPRETIVE HEART</text>
@@ -290,7 +292,7 @@ export default function EMPInteractive() {
                 <text
                   x={172} y={222}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="9" fontFamily="var(--font-mono)"
+                  fontSize="11" fontFamily="var(--font-mono)"
                   fill={`${AMBER}0.72)`}
                   style={{ userSelect: 'none' }}
                 >≠</text>
@@ -332,7 +334,7 @@ export default function EMPInteractive() {
                 className="font-mono uppercase tracking-widest mb-2"
                 style={{
                   fontSize: 'var(--text-2xs)',
-                  color: active === 'gap' ? `${AMBER}0.75)` : `${NAVY}0.65)`,
+                  color: active === 'gap' ? `${AMBER}0.75)` : `${NAVY_TEXT}0.90)`,
                 }}
               >{activeDetail.title}</p>
               <p
@@ -356,7 +358,7 @@ export default function EMPInteractive() {
                 className="font-mono uppercase tracking-widest mb-1"
                 style={{
                   fontSize: 'var(--text-2xs)',
-                  color: active === 'gap' ? `${AMBER}0.65)` : `${NAVY}0.55)`,
+                  color: active === 'gap' ? `${AMBER}0.65)` : `${NAVY_TEXT}0.85)`,
                 }}
               >How to read it</p>
               <p
