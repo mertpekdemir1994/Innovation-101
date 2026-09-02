@@ -158,7 +158,7 @@ export default function BBInteractive() {
 
       {/* Instruction */}
       <p className="font-mono uppercase tracking-widest"
-        style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.55)` }}>
+        style={{ fontSize: 'var(--text-2xs)', color: `${PLUM_TEXT}0.95)` }}>
         Click any zone to explore what lives there
       </p>
 
@@ -225,16 +225,16 @@ export default function BBInteractive() {
 
           {/* Circle labels - animate opacity with their circle's involvement */}
           {([
-            { x: D_CX, y: D_CY - 48, main: 'DESIRABILITY', sub: 'do people want it?', anchor: 'middle' as const, op: dLabelOp },
-            { x: F_CX - 58, y: F_CY + 5, main: 'FEASIBILITY', sub: 'can we build it?', anchor: 'end' as const, op: fLabelOp },
-            { x: V_CX + 58, y: V_CY + 5, main: 'VIABILITY', sub: 'does it sustain us?', anchor: 'start' as const, op: vLabelOp },
+            { x: D_CX, y: D_CY - 50, main: 'DESIRABILITY', sub: 'do people want it?', anchor: 'middle' as const, op: dLabelOp },
+            { x: F_CX - 58, y: F_CY + 2, main: 'FEASIBILITY', sub: 'can we build it?', anchor: 'end' as const, op: fLabelOp },
+            { x: V_CX + 58, y: V_CY + 2, main: 'VIABILITY', sub: 'does it sustain us?', anchor: 'start' as const, op: vLabelOp },
           ]).map(({ x, y, main, sub, anchor, op }) => (
             <motion.g key={main} animate={{ opacity: op }} transition={fade}>
               <text x={x} y={y} textAnchor={anchor}
-                fontSize="10" fontFamily="var(--font-mono)" letterSpacing="0.13em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                 fill={`${PLUM_TEXT}0.99)`} style={{ userSelect: 'none' }}>{main}</text>
-              <text x={x} y={y + 14} textAnchor={anchor}
-                fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              <text x={x} y={y + 16} textAnchor={anchor}
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                 fill={`${PLUM_TEXT}0.926)`} style={{ userSelect: 'none' }}>{sub}</text>
             </motion.g>
           ))}
@@ -242,13 +242,13 @@ export default function BBInteractive() {
           {/* BREAKTHROUGH label - dims when a non-center region is active */}
           <motion.g animate={{ opacity: ctLabelOp }} transition={fade}>
             <text x={CTR_X} y={CTR_Y - 4} textAnchor="middle"
-              fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
               fill="rgba(255,255,255,0.95)"
               style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM_TEXT}0.948))` }}>
               BREAK
             </text>
             <text x={CTR_X} y={CTR_Y + 8} textAnchor="middle"
-              fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
               fill="rgba(255,255,255,0.95)"
               style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM_TEXT}0.948))` }}>
               THROUGH
@@ -327,19 +327,19 @@ export default function BBInteractive() {
               <p className="font-mono uppercase tracking-widest font-semibold"
                 style={{
                   fontSize: 'var(--text-xs)',
-                  color: activeRegion.zone === 'good' ? `${PLUM}1)` :
+                  color: activeRegion.zone === 'good' ? `${PLUM_TEXT}1)` :
                          activeRegion.zone === 'trap' ? `${AMBER}0.85)` :
                          'rgba(255,255,255,0.55)',
                 }}>
                 {activeRegion.label}
               </p>
               <span className="font-mono uppercase tracking-widest"
-                style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.30)' }}>
+                style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.60)' }}>
                 {activeRegion.sublabel}
               </span>
               {activeRegion.zone === 'trap' && (
                 <span className="font-mono uppercase tracking-widest rounded-full px-2 py-0.5"
-                  style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)`, background: `${AMBER}0.10)`, border: `1px solid ${AMBER}0.22)` }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.90)`, background: `${AMBER}0.10)`, border: `1px solid ${AMBER}0.22)` }}>
                   FAILURE MODE
                 </span>
               )}
@@ -353,7 +353,7 @@ export default function BBInteractive() {
             <div className="rounded-lg p-3"
               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
               <p className="font-mono uppercase tracking-widest mb-1"
-                style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.28)' }}>
+                style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.60)' }}>
                 Example
               </p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -372,7 +372,7 @@ export default function BBInteractive() {
             className="rounded-xl p-5 text-center"
             style={{ border: '1px dashed rgba(255,255,255,0.10)' }}>
             <p className="font-mono uppercase tracking-widest"
-              style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.22)' }}>
+              style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.60)' }}>
               Select a zone above: centre, overlap, or single circle
             </p>
           </motion.div>

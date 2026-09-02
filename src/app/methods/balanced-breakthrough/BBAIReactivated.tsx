@@ -9,7 +9,7 @@ const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDI
 const AMBER  = 'rgba(217,119,6,'
 
 const SVG_W = 700
-const SVG_H = 320
+const SVG_H = 400
 
 const D_CX = 350, D_CY = 113
 const F_CX = 285, F_CY = 226
@@ -49,8 +49,8 @@ export default function BBAIReactivated() {
                 ? m === 'ai' ? `${INDIGO}0.35)` : `${PLUM}0.35)`
                 : 'rgba(255,255,255,0.12)'}`,
               color: mode === m
-                ? m === 'ai' ? `${INDIGO}1)` : `${PLUM}1)`
-                : 'rgba(255,255,255,0.40)',
+                ? m === 'ai' ? `${INDIGO_TEXT}1)` : `${PLUM_TEXT}1)`
+                : 'rgba(255,255,255,0.55)',
             }}>
             {m === 'human' ? 'Human-led' : 'With AI (hypothetical)'}
           </button>
@@ -104,18 +104,6 @@ export default function BBAIReactivated() {
                 strokeDasharray={isAI ? '4 3' : undefined}
                 style={{ filter: isAI ? 'url(#bb-ai-indigo-glow)' : 'url(#bb-ai-plum-glow)' }}
               />
-              {/* D badge */}
-              {isAI && (
-                <g>
-                  <rect x={D_CX - 38} y={D_CY - 66} width={76} height={14} rx={3}
-                    fill={`${AMBER}0.10)`} stroke={`${AMBER}0.25)`} strokeWidth={0.5} />
-                  <text x={D_CX} y={D_CY - 56} textAnchor="middle"
-                    fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`rgba(221,132,30,0.94)`} style={{ userSelect: 'none' }}>
-                    ⚠ AI CAN&apos;T FEEL WHAT PEOPLE WANT
-                  </text>
-                </g>
-              )}
 
               {/* F circle */}
               <circle cx={F_CX} cy={F_CY} r={R}
@@ -124,18 +112,6 @@ export default function BBAIReactivated() {
                 strokeWidth={isAI ? (1.4 * 0.75) : 1.4}
                 style={{ filter: isAI ? 'url(#bb-ai-indigo-glow)' : 'url(#bb-ai-plum-glow)' }}
               />
-              {/* F badge */}
-              {isAI && (
-                <g>
-                  <rect x={F_CX - 72} y={F_CY + 54} width={90} height={14} rx={3}
-                    fill={`${INDIGO}0.08)`} stroke={`${INDIGO}0.20)`} strokeWidth={0.5} />
-                  <text x={F_CX - 27} y={F_CY + 64} textAnchor="middle"
-                    fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`${INDIGO_TEXT}0.916)`} style={{ userSelect: 'none' }}>
-                    AI HELPS ASSESS COMPLEXITY
-                  </text>
-                </g>
-              )}
 
               {/* V circle */}
               <circle cx={V_CX} cy={V_CY} r={R}
@@ -144,18 +120,6 @@ export default function BBAIReactivated() {
                 strokeWidth={isAI ? 1.8 : 1.4}
                 style={{ filter: isAI ? 'url(#bb-ai-indigo-glow)' : 'url(#bb-ai-plum-glow)' }}
               />
-              {/* V badge */}
-              {isAI && (
-                <g>
-                  <rect x={V_CX - 18} y={V_CY + 54} width={90} height={14} rx={3}
-                    fill={`${INDIGO}0.12)`} stroke={`${INDIGO}0.28)`} strokeWidth={0.5} />
-                  <text x={V_CX + 27} y={V_CY + 64} textAnchor="middle"
-                    fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`${INDIGO_TEXT}0.941)`} style={{ userSelect: 'none' }}>
-                    AI STRONGEST: MODELS ECONOMICS
-                  </text>
-                </g>
-              )}
 
               {/* Center */}
               <circle cx={CTR_X} cy={CTR_Y} r={34}
@@ -165,13 +129,13 @@ export default function BBAIReactivated() {
                 style={{ filter: 'url(#bb-ai-center-glow)' }}
               />
               <text x={CTR_X} y={CTR_Y - 4} textAnchor="middle"
-                fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
                 fill="rgba(255,255,255,0.95)"
                 style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM_TEXT}0.948))` }}>
                 {isAI ? 'HUMAN' : 'BREAK'}
               </text>
               <text x={CTR_X} y={CTR_Y + 8} textAnchor="middle"
-                fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
                 fill="rgba(255,255,255,0.95)"
                 style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM_TEXT}0.948))` }}>
                 {isAI ? 'JUDGMENT' : 'THROUGH'}
@@ -179,37 +143,67 @@ export default function BBAIReactivated() {
 
               {/* Circle labels - AI mode deliberately grades opacity D < F < V (AI strength order) */}
               <text x={D_CX} y={D_CY - 48} textAnchor="middle"
-                fontSize="10" fontFamily="var(--font-mono)" letterSpacing="0.13em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                 fill={isAI ? `${INDIGO_TEXT}0.941)` : `${PLUM_TEXT}0.99)`}
                 style={{ userSelect: 'none' }}>DESIRABILITY</text>
-              <text x={D_CX} y={D_CY - 34} textAnchor="middle"
-                fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              <text x={D_CX} y={D_CY - 32} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                 fill={isAI ? `${INDIGO_TEXT}0.899)` : `${PLUM_TEXT}0.926)`}
                 style={{ userSelect: 'none' }}>do people want it?</text>
 
               <text x={F_CX - 58} y={F_CY + 5} textAnchor="end"
-                fontSize="10" fontFamily="var(--font-mono)" letterSpacing="0.13em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                 fill={isAI ? `${INDIGO_TEXT}0.966)` : `${PLUM_TEXT}0.99)`}
                 style={{ userSelect: 'none' }}>FEASIBILITY</text>
-              <text x={F_CX - 58} y={F_CY + 19} textAnchor="end"
-                fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              <text x={F_CX - 58} y={F_CY + 21} textAnchor="end"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                 fill={isAI ? `${INDIGO_TEXT}0.92)` : `${PLUM_TEXT}0.926)`}
                 style={{ userSelect: 'none' }}>can we build it?</text>
 
               <text x={V_CX + 58} y={V_CY + 5} textAnchor="start"
-                fontSize="10" fontFamily="var(--font-mono)" letterSpacing="0.13em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                 fill={isAI ? `${INDIGO_TEXT}1.0)` : `${PLUM_TEXT}0.99)`}
                 style={{ userSelect: 'none' }}>VIABILITY</text>
-              <text x={V_CX + 58} y={V_CY + 19} textAnchor="start"
-                fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              <text x={V_CX + 58} y={V_CY + 21} textAnchor="start"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                 fill={isAI ? `${INDIGO_TEXT}0.954)` : `${PLUM_TEXT}0.926)`}
                 style={{ userSelect: 'none' }}>does it sustain us?</text>
             </motion.g>
           </AnimatePresence>
 
+          {/* AI-mode notes - moved below the circles, they no longer fit as
+              in-circle badges at a legible size */}
+          {isAI && (
+            <motion.g
+              initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={fade}>
+              <text x={133} y={345} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
+                fill={`rgba(221,132,30,0.94)`} style={{ userSelect: 'none' }}>AI CAN&apos;T FEEL</text>
+              <text x={133} y={361} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
+                fill={`rgba(221,132,30,0.94)`} style={{ userSelect: 'none' }}>WHAT PEOPLE WANT</text>
+
+              <text x={350} y={345} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
+                fill={`${INDIGO_TEXT}0.916)`} style={{ userSelect: 'none' }}>AI HELPS ASSESS</text>
+              <text x={350} y={361} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
+                fill={`${INDIGO_TEXT}0.916)`} style={{ userSelect: 'none' }}>COMPLEXITY</text>
+
+              <text x={567} y={345} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
+                fill={`${INDIGO_TEXT}0.941)`} style={{ userSelect: 'none' }}>AI STRONGEST:</text>
+              <text x={567} y={361} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
+                fill={`${INDIGO_TEXT}0.941)`} style={{ userSelect: 'none' }}>MODELS ECONOMICS</text>
+            </motion.g>
+          )}
+
           {/* Caption */}
-          <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
-            fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          <text x={SVG_W / 2} y={SVG_H - 10} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill="rgba(255,255,255,0.68)" style={{ userSelect: 'none' }}>
             {isAI
               ? 'AI SHIFTS THE WEIGHT OF THE LENSES: THE INTEGRATION JUDGMENT IN THE CENTRE REMAINS HUMAN'
@@ -234,7 +228,7 @@ export default function BBAIReactivated() {
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${PLUM}0.18)`, background: `${PLUM}0.04)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: `${PLUM}0.75)` }}>{item.label}</p>
+                <p className="text-[10px] font-mono uppercase tracking-widest" style={{ color: `${PLUM_TEXT}0.95)` }}>{item.label}</p>
                 <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{item.body}</p>
               </div>
             ))}
@@ -265,7 +259,7 @@ export default function BBAIReactivated() {
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${item.color}0.20)`, background: `${item.color}0.05)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: `${item.color}0.78)` }}>{item.label}</p>
+                <p className="text-[10px] font-mono uppercase tracking-widest" style={{ color: item.color === AMBER ? `${AMBER}0.90)` : `${INDIGO_TEXT}0.95)` }}>{item.label}</p>
                 <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{item.body}</p>
               </div>
             ))}
@@ -283,7 +277,7 @@ export default function BBAIReactivated() {
             transition={{ duration: 0.22 }}
             className="rounded-xl border p-4"
             style={{ borderColor: `${PLUM}0.25)`, background: `${PLUM}0.06)` }}>
-            <p className="text-[9px] font-mono uppercase tracking-widest mb-2" style={{ color: `${PLUM}0.70)` }}>
+            <p className="text-[10px] font-mono uppercase tracking-widest mb-2" style={{ color: `${PLUM_TEXT}0.95)` }}>
               The integration judgment, centre, remains human
             </p>
             <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.52)' }}>

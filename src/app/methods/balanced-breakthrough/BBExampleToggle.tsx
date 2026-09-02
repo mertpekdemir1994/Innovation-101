@@ -193,7 +193,7 @@ export default function BBExampleToggle() {
                 ].map(item => (
                   <div key={item.label} className="rounded p-3"
                     style={{ background: 'rgba(245,158,11,0.05)', borderLeft: '2px solid rgba(245,158,11,0.22)' }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-widest mb-1 text-amber-700">{item.label}</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-widest mb-1 text-amber-700">{item.label}</p>
                     <p className="text-xs text-neutral-700 leading-relaxed">{item.detail}</p>
                   </div>
                 ))}

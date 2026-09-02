@@ -6,7 +6,7 @@ const PLUM = 'rgba(107,74,119,'
 const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
 const SVG_W = 700
-const SVG_H = 340
+const SVG_H = 420
 
 // Three circle centers
 const D_CX = 350, D_CY = 113
@@ -120,7 +120,7 @@ export default function BBEstablishing() {
       <motion.text
         x={D_CX} y={D_CY - 34}
         textAnchor="middle"
-        fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
         fill={`${PLUM_TEXT}0.933)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
@@ -144,7 +144,7 @@ export default function BBEstablishing() {
       <motion.text
         x={F_CX - 56} y={F_CY + 20}
         textAnchor="end"
-        fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
         fill={`${PLUM_TEXT}0.933)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
@@ -168,7 +168,7 @@ export default function BBEstablishing() {
       <motion.text
         x={V_CX + 56} y={V_CY + 20}
         textAnchor="start"
-        fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
         fill={`${PLUM_TEXT}0.933)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
@@ -181,7 +181,7 @@ export default function BBEstablishing() {
       <motion.text
         x={CTR_X} y={CTR_Y - 4}
         textAnchor="middle"
-        fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
+        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
         fill="rgba(255,255,255,0.95)"
         style={{ userSelect: 'none', filter: `drop-shadow(0 0 10px ${PLUM_TEXT}0.958))` }}
         initial={prefersReduced ? {} : { opacity: 0 }}
@@ -192,7 +192,7 @@ export default function BBEstablishing() {
       <motion.text
         x={CTR_X} y={CTR_Y + 8}
         textAnchor="middle"
-        fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em" fontWeight="600"
+        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
         fill="rgba(255,255,255,0.95)"
         style={{ userSelect: 'none', filter: `drop-shadow(0 0 10px ${PLUM_TEXT}0.958))` }}
         initial={prefersReduced ? {} : { opacity: 0 }}
@@ -201,82 +201,50 @@ export default function BBEstablishing() {
         THROUGH
       </motion.text>
 
-      {/* Failure-mode labels - each backed by a dark rect for legibility in the overlap zones */}
-
-      {/* D+F overlap: love without sustainability */}
-      <motion.rect x={264} y={161} width={88} height={26} rx={3}
-        fill="rgba(8,3,14,0.60)"
+      {/* Failure-mode markers - small dots at each overlap zone, explained in
+          a legend row below. The two-line labels no longer fit inside the
+          small overlap lenses at a legible size, so they moved out. */}
+      <motion.circle cx={308} cy={174} r={3} fill={`${PLUM_TEXT}0.95)`}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.71)} />
-      <motion.text x={308} y={171} textAnchor="middle"
-        fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
-        initial={prefersReduced ? {} : { opacity: 0 }}
-        animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
-        transition={fade(0.72)}>
-        LOVE WITHOUT
-      </motion.text>
-      <motion.text x={308} y={182} textAnchor="middle"
-        fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
-        initial={prefersReduced ? {} : { opacity: 0 }}
-        animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
-        transition={fade(0.73)}>
-        SUSTAINABILITY
-      </motion.text>
-
-      {/* D+V overlap: promise without capability */}
-      <motion.rect x={348} y={161} width={88} height={26} rx={3}
-        fill="rgba(8,3,14,0.60)"
+      <motion.circle cx={392} cy={174} r={3} fill={`${PLUM_TEXT}0.95)`}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.71)} />
-      <motion.text x={392} y={171} textAnchor="middle"
-        fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
-        initial={prefersReduced ? {} : { opacity: 0 }}
-        animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
-        transition={fade(0.72)}>
-        PROMISE WITHOUT
-      </motion.text>
-      <motion.text x={392} y={182} textAnchor="middle"
-        fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
-        initial={prefersReduced ? {} : { opacity: 0 }}
-        animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
-        transition={fade(0.73)}>
-        CAPABILITY
-      </motion.text>
-
-      {/* F+V overlap: product without a market */}
-      <motion.rect x={306} y={240} width={88} height={26} rx={3}
-        fill="rgba(8,3,14,0.60)"
+      <motion.circle cx={350} cy={253} r={3} fill={`${PLUM_TEXT}0.95)`}
         initial={prefersReduced ? {} : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
         transition={fade(0.71)} />
-      <motion.text x={350} y={250} textAnchor="middle"
-        fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
-        initial={prefersReduced ? {} : { opacity: 0 }}
-        animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
-        transition={fade(0.72)}>
-        PRODUCT WITHOUT
-      </motion.text>
-      <motion.text x={350} y={261} textAnchor="middle"
-        fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-        fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}
-        initial={prefersReduced ? {} : { opacity: 0 }}
-        animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
-        transition={fade(0.73)}>
-        A MARKET
-      </motion.text>
+
+      {/* Failure-mode legend */}
+      {[
+        { x: 133, l1: 'D+F: LOVE WITHOUT', l2: 'SUSTAINABILITY' },
+        { x: 350, l1: 'D+V: PROMISE WITHOUT', l2: 'CAPABILITY' },
+        { x: 567, l1: 'F+V: PRODUCT WITHOUT', l2: 'A MARKET' },
+      ].map((item, i) => (
+        <motion.g key={item.x}
+          initial={prefersReduced ? {} : { opacity: 0 }}
+          animate={inView ? { opacity: 1 } : (prefersReduced ? {} : { opacity: 0 })}
+          transition={fade(0.72 + i * 0.03)}>
+          <text x={item.x} y={345} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
+            fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}>
+            {item.l1}
+          </text>
+          <text x={item.x} y={361} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
+            fill={`${PLUM_TEXT}0.975)`} style={{ userSelect: 'none' }}>
+            {item.l2}
+          </text>
+        </motion.g>
+      ))}
 
       {/* Caption */}
       <motion.text
-        x={SVG_W / 2} y={SVG_H - 6}
+        x={SVG_W / 2} y={SVG_H - 10}
         textAnchor="middle"
-        fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
         fill="rgba(255,255,255,0.68)"
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? {} : { opacity: 0 }}
