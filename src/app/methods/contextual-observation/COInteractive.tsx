@@ -23,19 +23,19 @@ const ELEMENT_DATA: Record<NonNullable<El>, { label: string; headline: string; b
     label: 'WORKAROUND',
     headline: 'The real question behind the sticky note',
     body: '"Can I make payroll?" is not an accounting question. It is a cash-flow anxiety question. The sticky note exists because the accounting software does not answer that question quickly enough. Workarounds are always a symptom of a gap between what the tool does and what the person actually needs.',
-    color: `${SAGE}1)`,
+    color: `${SAGE_TEXT}1)`,
   },
   friction: {
     label: 'FRICTION POINT',
     headline: 'Where the real effort goes',
     body: 'This pile of papers and invoices is not disorganisation. It is an improvised system. The person is expending effort here that an ideal tool would eliminate. Friction points reveal the real job the user is doing, which is almost never the job the software was designed for.',
-    color: `${SAGE}1)`,
+    color: `${SAGE_TEXT}1)`,
   },
   'env-detail': {
     label: 'ENVIRONMENTAL DETAIL',
     headline: 'The shoebox is the real filing system',
     body: 'Every receipt in this box is data the official software has never seen. Environmental details like this reveal parallel systems: the shoebox, the sticky note on the screen, the folder on the desktop. Together they show the gap between the designed system and the lived system.',
-    color: `${SAGE}1)`,
+    color: `${SAGE_TEXT}1)`,
   },
   'say-do-gap': {
     label: 'SAY-vs-DO GAP',
@@ -76,7 +76,7 @@ export default function COInteractive() {
 
   return (
     <div className="w-full">
-      <p className="text-xs text-white/38 mb-4 font-mono tracking-widest uppercase">
+      <p className="text-xs text-white/55 mb-4 font-mono tracking-widest uppercase">
         Click any scene element to reveal the observation insight
       </p>
 
@@ -162,52 +162,54 @@ export default function COInteractive() {
             stroke="rgba(255,255,255,0.28)" strokeWidth={2} strokeLinecap="round" />
         </g>
 
-        {/* ── STICKY NOTE ── */}
+        {/* ── STICKY NOTE ── (widened; sticky, paper pile, and shoebox all
+             shifted right of their original spots to make room, same as
+             COEstablishing) */}
         <g style={{ opacity: stickOpacity, transition: 'opacity 0.3s' }}>
-          <rect x={370} y={143} width={44} height={28} rx={3}
+          <rect x={358} y={138} width={108} height={42} rx={3}
             fill={isHit('workaround') ? `${SAGE}0.32)` : `${SAGE}0.20)`}
             stroke={isHit('workaround') ? `${SAGE}0.90)` : `${SAGE}0.65)`}
             strokeWidth={isHit('workaround') ? 2 : 1.5}
             filter="url(#co-int-glow)"
             style={{ transition: 'fill 0.25s, stroke 0.25s' }}
           />
-          <text x={392} y={154} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
+          <text x={412} y={155} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
             fill={`${SAGE_TEXT}0.979)`} style={{ userSelect: 'none' }}>CAN I</text>
-          <text x={392} y={164} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
+          <text x={412} y={173} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${SAGE_TEXT}0.979)`} style={{ userSelect: 'none' }}>MAKE PAYROLL?</text>
         </g>
 
-        {/* ── PAPER PILE ── */}
+        {/* ── PAPER PILE ── (label moved below the shape, matching OBSERVER) */}
         <g style={{ opacity: papOpacity, transition: 'opacity 0.3s' }}>
-          <rect x={426} y={152} width={48} height={8} rx={2}
+          <rect x={480} y={152} width={48} height={8} rx={2}
             fill="rgba(255,255,255,0.02)"
             stroke={isHit('friction') ? `${SAGE}0.70)` : `${SAGE}0.24)`}
             strokeWidth={isHit('friction') ? 1.5 : 1}
             style={{ transition: 'stroke 0.25s' }}
           />
-          <rect x={422} y={158} width={58} height={12} rx={2}
+          <rect x={476} y={158} width={58} height={12} rx={2}
             fill="rgba(255,255,255,0.02)"
             stroke={isHit('friction') ? `${SAGE}0.70)` : `${SAGE}0.30)`}
             strokeWidth={isHit('friction') ? 1.5 : 1}
             style={{ transition: 'stroke 0.25s' }}
           />
-          <text x={451} y={165} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)"
+          <text x={505} y={185} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)"
             fill={`${SAGE_TEXT}0.895)`} style={{ userSelect: 'none' }}>INVOICES</text>
         </g>
 
-        {/* ── SHOEBOX ── */}
+        {/* ── SHOEBOX ── (label moved below the shape) */}
         <g style={{ opacity: boxOpacity, transition: 'opacity 0.3s' }}>
-          <rect x={492} y={160} width={72} height={12} rx={2}
+          <rect x={546} y={160} width={72} height={12} rx={2}
             fill={isHit('env-detail') ? `${SAGE}0.18)` : `${SAGE}0.09)`}
             stroke={isHit('env-detail') ? `${SAGE}0.75)` : `${SAGE}0.38)`}
             strokeWidth={isHit('env-detail') ? 1.5 : 1}
             style={{ transition: 'fill 0.25s, stroke 0.25s' }}
           />
-          <text x={528} y={166} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          <text x={582} y={186} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${SAGE_TEXT}0.926)`} style={{ userSelect: 'none' }}>RECEIPTS</text>
         </g>
 
@@ -229,14 +231,14 @@ export default function COInteractive() {
             strokeWidth={1}
             strokeDasharray="3 3"
           />
-          <text x={644} y={178} textAnchor="middle"
-            fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          <text x={644} y={185} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>OBSERVER</text>
         </g>
 
         {/* ── ANNOTATIONS ── */}
         <text x={213} y={90} textAnchor="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.16em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
           fill={`${AMBER}${active === 'stated' ? '0.90)' : '0.38)'}`}
           style={{ userSelect: 'none', transition: 'fill 0.3s' }}>STATED</text>
         <line x1={168} y1={95} x2={258} y2={95}
@@ -245,11 +247,11 @@ export default function COInteractive() {
           style={{ transition: 'stroke 0.3s' }}
         />
 
-        <text x={468} y={90} textAnchor="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.16em"
+        <text x={488} y={90} textAnchor="middle"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
           fill={`${SAGE}${['workaround','friction','env-detail'].includes(active ?? '') ? '0.92)' : '0.40)'}`}
           style={{ userSelect: 'none', transition: 'fill 0.3s' }}>REAL</text>
-        <line x1={370} y1={95} x2={570} y2={95}
+        <line x1={350} y1={95} x2={630} y2={95}
           stroke={`${SAGE}${['workaround','friction','env-detail'].includes(active ?? '') ? '0.44)' : '0.18)'}`}
           strokeWidth={1} strokeDasharray="4 3"
           style={{ transition: 'stroke 0.3s' }}
@@ -263,7 +265,7 @@ export default function COInteractive() {
           style={{ transition: 'stroke 0.25s, stroke-width 0.25s' }}
         />
         <text x={326} y={74} textAnchor="middle"
-          fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
           fill={isHit('say-do-gap') ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.59)'}
           style={{ userSelect: 'none', transition: 'fill 0.25s' }}>THE GAP</text>
 
@@ -285,7 +287,7 @@ export default function COInteractive() {
         />
         {/* WORKAROUND - sticky note */}
         <rect
-          x={362} y={136} width={60} height={42}
+          x={350} y={132} width={124} height={54}
           fill="transparent"
           stroke={isHit('workaround') ? `${SAGE}0.45)` : 'transparent'}
           strokeWidth={1.5}
@@ -300,7 +302,7 @@ export default function COInteractive() {
         />
         {/* FRICTION - paper pile */}
         <rect
-          x={414} y={146} width={74} height={30}
+          x={470} y={146} width={70} height={48}
           fill="transparent"
           stroke={isHit('friction') ? `${SAGE}0.40)` : 'transparent'}
           strokeWidth={1.5}
@@ -315,7 +317,7 @@ export default function COInteractive() {
         />
         {/* ENVIRONMENTAL DETAIL - shoebox */}
         <rect
-          x={484} y={154} width={88} height={24}
+          x={540} y={154} width={84} height={42}
           fill="transparent"
           stroke={isHit('env-detail') ? `${SAGE}0.45)` : 'transparent'}
           strokeWidth={1.5}
@@ -328,9 +330,10 @@ export default function COInteractive() {
           aria-pressed={isHit('env-detail')}
           aria-label="Click to reveal insight: Environmental detail (shoebox of receipts)"
         />
-        {/* SAY-vs-DO GAP - gap zone */}
+        {/* SAY-vs-DO GAP - gap zone (kept clear of the sticky-note hit area, which
+            now extends to x=350 after the sticky note was widened) */}
         <rect
-          x={274} y={72} width={104} height={98}
+          x={274} y={72} width={71} height={98}
           fill="transparent"
           stroke={isHit('say-do-gap') ? 'rgba(255,255,255,0.22)' : 'transparent'}
           strokeWidth={1.5}
@@ -358,7 +361,7 @@ export default function COInteractive() {
               className="flex items-center justify-center h-24 rounded-lg border border-dashed"
               style={{ borderColor: `${SAGE}0.18)` }}
             >
-              <p className="text-xs text-white/28 font-mono tracking-widest uppercase">
+              <p className="text-xs text-white/55 font-mono tracking-widest uppercase">
                 Select an element above
               </p>
             </motion.div>
@@ -376,7 +379,7 @@ export default function COInteractive() {
               }}
             >
               <p
-                className="text-[9px] font-semibold uppercase tracking-widest mb-1.5"
+                className="text-[10px] font-semibold uppercase tracking-widest mb-1.5"
                 style={{ color: ELEMENT_DATA[active].color }}
               >
                 {ELEMENT_DATA[active].label}

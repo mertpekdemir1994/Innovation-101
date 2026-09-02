@@ -10,7 +10,7 @@ function dome(cx: number, cy: number, w: number, h: number): string {
 }
 
 const SVG_W = 700
-const SVG_H = 268
+const SVG_H = 272
 
 export default function COEstablishing() {
   const prefersReduced = useReducedMotion()
@@ -67,7 +67,7 @@ export default function COEstablishing() {
 
         {/* Ambient wash over real-behavior area */}
         <motion.ellipse
-          cx={465} cy={162} rx={165} ry={42}
+          cx={488} cy={162} rx={165} ry={42}
           fill={`${SAGE}0.05)`}
           variants={fade} transition={envT}
         />
@@ -141,66 +141,71 @@ export default function COEstablishing() {
             stroke="rgba(255,255,255,0.32)" strokeWidth={2} strokeLinecap="round" />
         </motion.g>
 
-        {/* ── STICKY NOTE (WORKAROUND) ── */}
+        {/* ── STICKY NOTE (WORKAROUND) ──
+             Widened from its original 44x28 - "MAKE PAYROLL?" doesn't fit a box
+             that narrow at an 11pt floor - and shifted left, with the paper pile
+             and shoebox shifted right in turn, to make room. */}
         <motion.g
           variants={scaleIn}
           transition={elemT}
-          style={{ transformOrigin: '392px 156px' } as React.CSSProperties}
+          style={{ transformOrigin: '412px 159px' } as React.CSSProperties}
         >
-          <rect x={370} y={143} width={44} height={28} rx={3}
+          <rect x={358} y={138} width={108} height={42} rx={3}
             fill={`${SAGE}0.22)`}
             stroke={`${SAGE}0.72)`}
             strokeWidth={1.5}
             filter="url(#co-est-glow)"
           />
           <text
-            x={392} y={154}
+            x={412} y={155}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
             fill={`${SAGE_TEXT}0.983)`}
             style={{ userSelect: 'none' }}
           >CAN I</text>
           <text
-            x={392} y={164}
+            x={412} y={173}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${SAGE_TEXT}0.983)`}
             style={{ userSelect: 'none' }}
           >MAKE PAYROLL?</text>
         </motion.g>
 
-        {/* ── PAPER PILE ── */}
+        {/* ── PAPER PILE ──
+             Label moved below the shape (matching OBSERVER's treatment) instead
+             of crammed inside it - "INVOICES" doesn't fit a 58-wide box at 11pt. */}
         <motion.g variants={fade} transition={elemT}>
-          <rect x={426} y={152} width={48} height={8} rx={2}
+          <rect x={480} y={152} width={48} height={8} rx={2}
             fill="rgba(255,255,255,0.03)"
             stroke={`${SAGE}0.24)`}
             strokeWidth={1}
           />
-          <rect x={422} y={158} width={58} height={13} rx={2}
+          <rect x={476} y={158} width={58} height={13} rx={2}
             fill="rgba(255,255,255,0.03)"
             stroke={`${SAGE}0.32)`}
             strokeWidth={1}
           />
           <text
-            x={451} y={165}
-            textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)"
+            x={505} y={185}
+            textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)"
             fill={`${SAGE_TEXT}0.899)`}
             style={{ userSelect: 'none' }}
           >INVOICES</text>
         </motion.g>
 
-        {/* ── SHOEBOX / RECEIPTS ── */}
+        {/* ── SHOEBOX / RECEIPTS ── (label moved below, see paper pile note) */}
         <motion.g variants={fade} transition={elemT}>
-          <rect x={492} y={160} width={72} height={12} rx={2}
+          <rect x={546} y={160} width={72} height={12} rx={2}
             fill={`${SAGE}0.10)`}
             stroke={`${SAGE}0.40)`}
             strokeWidth={1}
           />
           <text
-            x={528} y={166}
-            textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            x={582} y={186}
+            textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${SAGE_TEXT}0.933)`}
             style={{ userSelect: 'none' }}
           >RECEIPTS</text>
@@ -230,9 +235,9 @@ export default function COEstablishing() {
             strokeDasharray="3 3"
           />
           <text
-            x={644} y={180}
+            x={644} y={185}
             textAnchor="middle"
-            fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill="rgba(255,255,255,0.64)"
             style={{ userSelect: 'none' }}
           >OBSERVER</text>
@@ -244,7 +249,7 @@ export default function COEstablishing() {
           <text
             x={213} y={90}
             textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.16em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${AMBER}0.75)`}
             style={{ userSelect: 'none' }}
           >STATED</text>
@@ -255,13 +260,13 @@ export default function COEstablishing() {
         {/* REAL label + underline (sage - papers/workaround side) */}
         <motion.g variants={fade} transition={annT}>
           <text
-            x={468} y={90}
+            x={488} y={90}
             textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.16em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${SAGE_TEXT}0.962)`}
             style={{ userSelect: 'none' }}
           >REAL</text>
-          <line x1={370} y1={95} x2={570} y2={95}
+          <line x1={350} y1={95} x2={630} y2={95}
             stroke={`${SAGE}0.28)`} strokeWidth={1} strokeDasharray="4 3" />
         </motion.g>
 
@@ -275,7 +280,7 @@ export default function COEstablishing() {
           <text
             x={326} y={74}
             textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill="rgba(255,255,255,0.6)"
             style={{ userSelect: 'none' }}
           >THE GAP</text>
@@ -283,15 +288,26 @@ export default function COEstablishing() {
 
         {/* Caption */}
         <motion.text
-          x={SVG_W / 2} y={256}
+          x={SVG_W / 2} y={250}
           textAnchor="middle"
-          fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.59)"
           style={{ userSelect: 'none' }}
           variants={fade}
           transition={{ ...annT, delay: prefersReduced ? 0 : 0.6 }}
         >
-          the real environment shows what no interview would surface · workarounds are failures of the current system made visible
+          the real environment shows what no interview would surface ·
+        </motion.text>
+        <motion.text
+          x={SVG_W / 2} y={266}
+          textAnchor="middle"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
+          fill="rgba(255,255,255,0.59)"
+          style={{ userSelect: 'none' }}
+          variants={fade}
+          transition={{ ...annT, delay: prefersReduced ? 0 : 0.6 }}
+        >
+          workarounds are failures of the current system made visible
         </motion.text>
       </svg>
     </motion.div>

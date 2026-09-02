@@ -40,7 +40,7 @@ export default function COAIReactivated() {
                 background: mode === m
                   ? m === 'ai' ? `${INDIGO}0.25)` : `${SAGE}0.25)`
                   : 'transparent',
-                color: mode === m ? '#fff' : 'rgba(255,255,255,0.38)',
+                color: mode === m ? '#fff' : 'rgba(255,255,255,0.55)',
                 border: `1px solid ${mode === m
                   ? (m === 'ai' ? `${INDIGO}0.55)` : `${SAGE}0.55)`)
                   : 'transparent'}`,
@@ -134,45 +134,46 @@ export default function COAIReactivated() {
             stroke="rgba(255,255,255,0.28)" strokeWidth={2} strokeLinecap="round" />
         </g>
 
-        {/* ── STICKY NOTE ── dims in AI mode */}
+        {/* ── STICKY NOTE ── dims in AI mode (widened; sticky, paper pile, and
+             shoebox all shifted right of their original spots, matching COEstablishing) */}
         <g style={{ opacity: outsideOpacity(), transition: 'opacity 0.5s' }}>
-          <rect x={370} y={143} width={44} height={28} rx={3}
+          <rect x={358} y={138} width={108} height={42} rx={3}
             fill={`${SAGE}0.20)`}
             stroke={`${SAGE}0.65)`}
             strokeWidth={1.5}
             filter="url(#co-ai-glow)"
           />
-          <text x={392} y={154} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
+          <text x={412} y={155} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
             fill={`${SAGE_TEXT}0.975)`} style={{ userSelect: 'none' }}>CAN I</text>
-          <text x={392} y={164} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.05em"
+          <text x={412} y={173} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${SAGE_TEXT}0.975)`} style={{ userSelect: 'none' }}>MAKE PAYROLL?</text>
         </g>
 
-        {/* ── PAPER PILE ── dims in AI mode */}
+        {/* ── PAPER PILE ── dims in AI mode (label moved below the shape) */}
         <g style={{ opacity: outsideOpacity(), transition: 'opacity 0.5s' }}>
-          <rect x={426} y={152} width={48} height={8} rx={2}
+          <rect x={480} y={152} width={48} height={8} rx={2}
             fill="rgba(255,255,255,0.02)"
             stroke={`${SAGE}0.22)`} strokeWidth={1}
           />
-          <rect x={422} y={158} width={58} height={12} rx={2}
+          <rect x={476} y={158} width={58} height={12} rx={2}
             fill="rgba(255,255,255,0.02)"
             stroke={`${SAGE}0.28)`} strokeWidth={1}
           />
-          <text x={451} y={165} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)"
+          <text x={505} y={185} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)"
             fill={`${SAGE_TEXT}0.891)`} style={{ userSelect: 'none' }}>INVOICES</text>
         </g>
 
-        {/* ── SHOEBOX ── dims in AI mode */}
+        {/* ── SHOEBOX ── dims in AI mode (label moved below the shape) */}
         <g style={{ opacity: outsideOpacity(), transition: 'opacity 0.5s' }}>
-          <rect x={492} y={160} width={72} height={12} rx={2}
+          <rect x={546} y={160} width={72} height={12} rx={2}
             fill={`${SAGE}0.09)`}
             stroke={`${SAGE}0.36)`} strokeWidth={1}
           />
-          <text x={528} y={166} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          <text x={582} y={186} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${SAGE_TEXT}0.916)`} style={{ userSelect: 'none' }}>RECEIPTS</text>
         </g>
 
@@ -191,24 +192,24 @@ export default function COAIReactivated() {
           />
           <line x1={630} y1={148} x2={582} y2={154}
             stroke="rgba(255,255,255,0.07)" strokeWidth={1} strokeDasharray="3 3" />
-          <text x={644} y={178} textAnchor="middle"
-            fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          <text x={644} y={185} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>OBSERVER</text>
         </g>
 
         {/* ── ANNOTATIONS ── */}
         <text x={213} y={90} textAnchor="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.16em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
           fill={`${AMBER}${isAI ? '0.60)' : '0.72)'}`}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>STATED</text>
         <line x1={168} y1={95} x2={258} y2={95}
           stroke={`${AMBER}0.22)`} strokeWidth={1} strokeDasharray="4 3" />
 
-        <text x={468} y={90} textAnchor="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.16em"
+        <text x={488} y={90} textAnchor="middle"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
           fill={`${SAGE}${isAI ? '0.22)' : '0.80)'}`}
           style={{ userSelect: 'none', transition: 'fill 0.4s' }}>REAL</text>
-        <line x1={370} y1={95} x2={570} y2={95}
+        <line x1={350} y1={95} x2={630} y2={95}
           stroke={`${SAGE}${isAI ? '0.10)' : '0.26)'}`}
           strokeWidth={1} strokeDasharray="4 3"
           style={{ transition: 'stroke 0.4s' }} />
@@ -217,7 +218,7 @@ export default function COAIReactivated() {
           stroke="rgba(255,255,255,0.08)"
           strokeWidth={1} strokeDasharray="5 4" />
         <text x={326} y={74} textAnchor="middle"
-          fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
           fill="rgba(255,255,255,0.575)" style={{ userSelect: 'none' }}>THE GAP</text>
 
         {/* ── CAMERA FRAME (AI mode only) ── */}
@@ -255,38 +256,42 @@ export default function COAIReactivated() {
                   strokeLinecap="square"
                 />
               ))}
-              {/* IN FRAME label */}
+              {/* IN FRAME label - widened, "AI ANALYSES" doesn't fit the
+                  original 58-wide badge at 11pt */}
               <rect
-                x={FRAME_X + 6} y={FRAME_Y + 6} width={58} height={14} rx={3}
+                x={FRAME_X + 6} y={FRAME_Y + 6} width={100} height={20} rx={3}
                 fill={`${INDIGO}0.15)`}
                 stroke={`${INDIGO}0.35)`}
                 strokeWidth={1}
               />
               <text
-                x={FRAME_X + 35} y={FRAME_Y + 13}
+                x={FRAME_X + 56} y={FRAME_Y + 16}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                 fill={`${INDIGO_TEXT}0.979)`}
                 style={{ userSelect: 'none' }}
               >AI ANALYSES</text>
 
-              {/* OUT OF FRAME arrow + label */}
+              {/* OUT OF FRAME arrow + label - label moved above the whole
+                  out-of-frame zone (sticky note, papers, shoebox) since
+                  positioning it beside the frame at 11pt now overlaps the
+                  widened sticky note */}
               <line
                 x1={FRAME_X + FRAME_W + 14} y1={FRAME_Y + FRAME_H / 2}
-                x2={480} y2={164}
+                x2={505} y2={158}
                 stroke={`${INDIGO}0.28)`}
                 strokeWidth={1}
                 strokeDasharray="3 3"
               />
               <text
-                x={FRAME_X + FRAME_W + 18} y={FRAME_Y + FRAME_H / 2 - 6}
-                fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                x={488} y={104} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                 fill={`${INDIGO_TEXT}0.878)`}
                 style={{ userSelect: 'none' }}
               >OUT OF FRAME</text>
               <text
-                x={FRAME_X + FRAME_W + 18} y={FRAME_Y + FRAME_H / 2 + 6}
-                fontSize="5" fontFamily="var(--font-mono)"
+                x={488} y={120} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)"
                 fill={`${INDIGO_TEXT}0.853)`}
                 style={{ userSelect: 'none' }}
               >the real insight</text>
@@ -326,7 +331,7 @@ export default function COAIReactivated() {
                 style={{ background: `${INDIGO}0.07)`, borderColor: `${INDIGO}0.22)` }}
               >
                 <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
-                  style={{ color: `${INDIGO}0.80)` }}>{card.h}</p>
+                  style={{ color: `${INDIGO_TEXT}0.90)` }}>{card.h}</p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.b}</p>
               </div>
             ))}
@@ -356,7 +361,7 @@ export default function COAIReactivated() {
                 style={{ background: `${SAGE}0.08)`, borderColor: `${SAGE}0.22)` }}
               >
                 <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
-                  style={{ color: `${SAGE}1)` }}>{card.h}</p>
+                  style={{ color: `${SAGE_TEXT}1)` }}>{card.h}</p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.b}</p>
               </div>
             ))}
@@ -366,8 +371,8 @@ export default function COAIReactivated() {
 
       {/* Synthesis */}
       <div className="mt-4 rounded-lg p-4 border border-white/8" style={{ background: 'rgba(255,255,255,0.04)' }}>
-        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/28 mb-1">Synthesis</p>
-        <p className="text-xs text-white/42 leading-relaxed">
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/60 mb-1">Synthesis</p>
+        <p className="text-xs text-white/55 leading-relaxed">
           AI excels at analysing what happens inside the system it can see: clicks, hesitations, paths, drop-off rates. What it cannot see is the environment around the system: the workarounds, the parallel tools, the questions users are actually trying to answer. Contextual observation is irreplaceable precisely because the most important research data is not on the screen.
         </p>
       </div>

@@ -92,7 +92,7 @@ export default function COExampleToggle() {
                       borderLeft: `2px solid ${SAGE}0.42)`,
                     }}
                   >
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
+                    <p className="text-[10px] font-semibold uppercase tracking-wider mb-1"
                       style={{ color: `${SAGE}0.72)` }}>{item.tag}</p>
                     <p className="text-xs text-neutral-700 leading-relaxed">{item.detail}</p>
                   </div>
@@ -139,7 +139,7 @@ export default function COExampleToggle() {
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
                   style={{ color: `${INDIGO}0.90)` }}>What AI would find (hypothetical)</p>
                 <span
-                  className="text-[9px] font-semibold px-2 py-0.5 rounded-full"
+                  className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                   style={{
                     background: `${INDIGO}0.10)`,
                     color: `${INDIGO}0.80)`,
@@ -174,7 +174,7 @@ export default function COExampleToggle() {
                       borderLeft: `2px solid ${INDIGO}0.28)`,
                     }}
                   >
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
+                    <p className="text-[10px] font-semibold uppercase tracking-wider mb-1"
                       style={{ color: `${INDIGO}0.62)` }}>{item.tag}</p>
                     <p className="text-xs text-neutral-700 leading-relaxed">{item.detail}</p>
                   </div>
