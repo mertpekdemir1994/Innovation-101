@@ -4,6 +4,9 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM   = 'rgba(107,74,119,'
 const INDIGO = 'rgba(99,102,241,'
+// darker indigo for text on this light background — plain INDIGO can't
+// reach 4.5:1 on white even at full opacity
+const INDIGO_DARK = 'rgba(79,70,229,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -32,7 +35,7 @@ export default function SCCExampleToggle() {
                 ? t === 'ai' ? `${INDIGO}0.35)` : `${PLUM}0.35)`
                 : 'var(--color-neutral-100)'}`,
               color: tab === t
-                ? t === 'ai' ? `${INDIGO}1)` : `${PLUM}1)`
+                ? t === 'ai' ? `${INDIGO_DARK}1)` : `${PLUM}1)`
                 : 'var(--color-neutral-600)',
             }}>
             {t === 'traditional' ? 'Working the cascade together' : 'With AI (hypothetical)'}
@@ -42,7 +45,7 @@ export default function SCCExampleToggle() {
 
       {/* Scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
+        <span className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
       </div>
 
@@ -57,7 +60,7 @@ export default function SCCExampleToggle() {
 
             {/* The hard part: making real choices */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${PLUM}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${PLUM}1)` }}>The hard part was the choosing</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The leadership team worked the cascade together. Their winning aspiration was clear
@@ -76,7 +79,7 @@ export default function SCCExampleToggle() {
 
             {/* The cascade working */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${PLUM}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${PLUM}1)` }}>The choices locked together</p>
               <div className="space-y-3">
                 {[
@@ -106,10 +109,10 @@ export default function SCCExampleToggle() {
                       background: item.heart ? `${PLUM}0.06)` : `${PLUM}0.03)`,
                       borderLeft: `2px solid ${item.heart ? `${PLUM}0.55)` : `${PLUM}0.20)`}`,
                     }}>
-                    <p className="text-[10px] font-semibold uppercase tracking-widest mb-1.5"
-                      style={{ color: item.heart ? `${PLUM}0.90)` : `${PLUM}0.60)` }}>
+                    <p className="text-2xs font-semibold uppercase tracking-widest mb-1.5"
+                      style={{ color: item.heart ? `${PLUM}0.90)` : `${PLUM}0.85)` }}>
                       {item.choice}
-                      {item.heart && <span className="ml-2 normal-case" style={{ color: `${PLUM}0.55)` }}>★ the heart</span>}
+                      {item.heart && <span className="ml-2 normal-case" style={{ color: `${PLUM}0.85)` }}>★ the heart</span>}
                     </p>
                     <p className="text-xs text-neutral-700 leading-relaxed">{item.body}</p>
                   </div>
@@ -119,7 +122,7 @@ export default function SCCExampleToggle() {
 
             {/* Result */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${PLUM}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${PLUM}1)` }}>What they got, and why it worked</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The result was a real strategy, not because any single choice was brilliant, but
@@ -146,7 +149,7 @@ export default function SCCExampleToggle() {
             <div className="rounded-lg px-4 py-3 border"
               style={{ background: `${INDIGO}0.05)`, borderColor: `${INDIGO}0.20)` }}>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical.</span>{' '}
+                <span className="font-semibold" style={{ color: `${INDIGO_DARK}0.90)` }}>Hypothetical.</span>{' '}
                 This tab imagines what might happen if leadership had asked an AI to build the strategy
                 using the cascade, since the real case was human-led. It illustrates a specific failure
                 mode, AI&apos;s inclusive, plausibility-seeking default, not a claim about what any
@@ -156,8 +159,8 @@ export default function SCCExampleToggle() {
 
             {/* What the AI produced */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${INDIGO}0.90)` }}>The AI cascade: thorough, articulate, and the tell</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
+                style={{ color: `${INDIGO_DARK}0.90)` }}>The AI cascade: thorough, articulate, and the tell</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The AI produced a thorough, articulate, well-structured cascade, and that was the tell.
                 Its winning aspiration was inspiring: to be the most valued partner for clients across
@@ -171,7 +174,7 @@ export default function SCCExampleToggle() {
                 and balanced.
               </p>
               <div className="rounded-lg p-4" style={{ background: `${INDIGO}0.05)`, border: `1px solid ${INDIGO}0.15)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-widest mb-2" style={{ color: `${INDIGO}0.70)` }}>
+                <p className="text-2xs font-semibold uppercase tracking-widest mb-2" style={{ color: `${INDIGO_DARK}0.90)` }}>
                   The problem
                 </p>
                 <p className="text-sm text-neutral-700 leading-relaxed">
@@ -187,7 +190,7 @@ export default function SCCExampleToggle() {
 
             {/* The specific traps */}
             <div className="border rounded-lg p-5" style={{ borderColor: 'rgba(245,158,11,0.25)' }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4 text-amber-700">
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4 text-amber-700">
                 What the inclusive default produces
               </p>
               <div className="space-y-3">
@@ -207,7 +210,7 @@ export default function SCCExampleToggle() {
                 ].map(item => (
                   <div key={item.label} className="rounded p-3"
                     style={{ background: 'rgba(245,158,11,0.05)', borderLeft: '2px solid rgba(245,158,11,0.22)' }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-widest mb-1 text-amber-700">{item.label}</p>
+                    <p className="text-2xs font-semibold uppercase tracking-widest mb-1 text-amber-700">{item.label}</p>
                     <p className="text-xs text-neutral-700 leading-relaxed">{item.detail}</p>
                   </div>
                 ))}
@@ -216,8 +219,8 @@ export default function SCCExampleToggle() {
 
             {/* Honest synthesis */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${INDIGO}0.90)` }}>How AI could have been used well</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
+                style={{ color: `${INDIGO_DARK}0.90)` }}>How AI could have been used well</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 Used well, AI could have helped: enumerating the segments and their competitive
                 dynamics, sketching how-to-win options for consideration, checking whether the
@@ -227,8 +230,8 @@ export default function SCCExampleToggle() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="rounded-lg border p-4" style={{ borderColor: `${INDIGO}0.18)` }}>
-                  <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
-                    style={{ color: `${INDIGO}0.80)` }}>Where AI genuinely helps</p>
+                  <p className="text-2xs font-semibold uppercase tracking-widest mb-2"
+                    style={{ color: `${INDIGO_DARK}0.90)` }}>Where AI genuinely helps</p>
                   <p className="text-xs text-neutral-700 leading-relaxed">
                     Enumerating and analysing the segments. Drafting and sharpening a winning aspiration.
                     Listing the capabilities a given how-to-win would require. Checking coherence between
@@ -236,7 +239,7 @@ export default function SCCExampleToggle() {
                   </p>
                 </div>
                 <div className="rounded-lg border p-4 border-amber-200 bg-amber-50">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-700 mb-2">
+                  <p className="text-2xs font-semibold uppercase tracking-widest text-amber-700 mb-2">
                     What must stay human
                   </p>
                   <p className="text-xs text-neutral-700 leading-relaxed">

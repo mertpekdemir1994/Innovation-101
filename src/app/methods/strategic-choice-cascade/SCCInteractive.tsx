@@ -8,7 +8,7 @@ const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const SVG_W = 700
 const SVG_H = 536
 
-const BOX_W = 264
+const BOX_W = 290
 const BOX_H = 50
 const CX = 350
 const BOX_LEFT  = CX - BOX_W / 2
@@ -104,7 +104,7 @@ export default function SCCInteractive() {
   return (
     <div className="w-full space-y-6">
       <p className="font-mono uppercase tracking-widest"
-        style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.55)` }}>
+        style={{ fontSize: 'var(--text-2xs)', color: `${PLUM_TEXT}0.85)` }}>
         Click any choice to reveal it and its connections, Where to Play and How to Win are the heart
       </p>
 
@@ -156,21 +156,21 @@ export default function SCCInteractive() {
                   strokeWidth={isActive ? 1.8 : c.heart ? 1.5 : 1.1}
                   style={{ filter: (isActive || c.heart) ? 'url(#scc-int-glow)' : 'none', transition: 'all 0.18s' }}
                 />
-                <text x={CX} y={c.cy - 6} textAnchor="middle"
-                  fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
+                <text x={CX} y={c.cy - 8} textAnchor="middle"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
                   fill={isActive ? `${PLUM_TEXT}1.0)` : c.heart ? `${PLUM_TEXT}0.979)` : 'rgba(255,255,255,0.72)'}
                   style={{ userSelect: 'none' }}>
                   {c.label}
                 </text>
-                <text x={CX} y={c.cy + 9} textAnchor="middle"
-                  fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                <text x={CX} y={c.cy + 10} textAnchor="middle"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
                   fill={isActive ? `${PLUM_TEXT}0.926)` : c.heart ? `${PLUM_TEXT}0.885)` : 'rgba(255,255,255,0.63)'}
                   style={{ userSelect: 'none' }}>
                   {c.sub}
                 </text>
                 {c.heart && (
                   <text x={BOX_RIGHT + 9} y={c.cy + 3} textAnchor="start"
-                    fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                     fill={isActive ? `${PLUM_TEXT}0.937)` : `${PLUM_TEXT}0.885)`}
                     style={{ userSelect: 'none' }}>
                     ★ the heart
@@ -210,7 +210,7 @@ export default function SCCInteractive() {
               points={`${BOX_RIGHT + 1},${66} ${BOX_RIGHT + 11},${60} ${BOX_RIGHT + 11},${72}`}
               fill={`${PLUM}1)`} />
             <text x={632} y={295} textAnchor="middle"
-              fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
               fill={`${PLUM_TEXT}1.0)`} style={{ userSelect: 'none' }}>
               ↑ MUST COHERE ↓
             </text>
@@ -226,7 +226,7 @@ export default function SCCInteractive() {
               points={`${BOX_LEFT - 1},${274} ${BOX_LEFT - 11},${268} ${BOX_LEFT - 11},${280}`}
               fill={`${PLUM}1)`} />
             <text x={118} y={226} textAnchor="middle"
-              fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
               fill={`${PLUM_TEXT}1.0)`} style={{ userSelect: 'none' }}>
               MUST FIT
             </text>
@@ -235,7 +235,7 @@ export default function SCCInteractive() {
           {/* AMBER coherence-break warning: shows in idle state as hint */}
           {!active && (
             <text x={CX} y={SVG_H - 6} textAnchor="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
               fill={`rgba(221,132,30,0.86)`} style={{ userSelect: 'none' }}>
               CHANGING ONE CHOICE RIPPLES THROUGH THE OTHERS, A CONTRADICTION BREAKS THE CASCADE
             </text>
@@ -259,19 +259,19 @@ export default function SCCInteractive() {
             }}>
             <div className="flex items-baseline gap-3 flex-wrap">
               <p className="font-mono uppercase tracking-widest font-semibold"
-                style={{ fontSize: 'var(--text-xs)', color: `${PLUM}1)` }}>
+                style={{ fontSize: 'var(--text-xs)', color: `${PLUM_TEXT}1)` }}>
                 {activeChoice.label}
               </p>
               {activeChoice.heart && (
                 <span className="font-mono uppercase tracking-widest rounded-full px-2 py-0.5"
-                  style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.80)`, background: `${PLUM}0.12)`, border: `1px solid ${PLUM}0.28)` }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: `${PLUM_TEXT}0.85)`, background: `${PLUM}0.12)`, border: `1px solid ${PLUM}0.28)` }}>
                   ★ The Heart of the Strategy
                 </span>
               )}
             </div>
 
             <p className="font-mono uppercase tracking-widest"
-              style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.60)` }}>
+              style={{ fontSize: 'var(--text-2xs)', color: `${PLUM_TEXT}0.85)` }}>
               {activeChoice.keyQuestion}
             </p>
 
@@ -286,10 +286,10 @@ export default function SCCInteractive() {
             <div className="rounded-lg p-3"
               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.50)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${PLUM_TEXT}0.85)` }}>
                 How it connects
               </p>
-              <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.45)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
                 {activeChoice.links}
               </p>
             </div>
@@ -303,7 +303,7 @@ export default function SCCInteractive() {
             className="rounded-xl p-5 text-center"
             style={{ border: '1px dashed rgba(255,255,255,0.10)' }}>
             <p className="font-mono uppercase tracking-widest"
-              style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.22)' }}>
+              style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.50)' }}>
               Select any choice above, Where to Play and How to Win are the heart
             </p>
           </motion.div>

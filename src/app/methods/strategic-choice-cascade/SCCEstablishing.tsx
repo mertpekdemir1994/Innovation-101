@@ -6,9 +6,9 @@ const PLUM = 'rgba(107,74,119,'
 const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
 const SVG_W = 700
-const SVG_H = 536
+const SVG_H = 550
 
-const BOX_W = 264
+const BOX_W = 290
 const BOX_H = 50
 const CX = 350
 const BOX_LEFT  = CX - BOX_W / 2  // 218
@@ -67,21 +67,21 @@ export default function SCCEstablishing() {
             strokeWidth={c.heart ? 1.6 : 1.1}
             style={{ filter: c.heart ? 'url(#scc-est-glow)' : 'none' }}
           />
-          <text x={CX} y={c.cy - 6} textAnchor="middle"
-            fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
+          <text x={CX} y={c.cy - 8} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
             fill={c.heart ? `${PLUM_TEXT}1.0)` : 'rgba(255,255,255,0.75)'}
             style={{ userSelect: 'none' }}>
             {c.label}
           </text>
-          <text x={CX} y={c.cy + 9} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          <text x={CX} y={c.cy + 10} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
             fill={c.heart ? `${PLUM_TEXT}0.905)` : 'rgba(255,255,255,0.64)'}
             style={{ userSelect: 'none' }}>
             {c.sub}
           </text>
           {c.heart && (
             <text x={BOX_RIGHT + 9} y={c.cy + 3} textAnchor="start"
-              fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
               fill={`${PLUM_TEXT}0.895)`} style={{ userSelect: 'none' }}>
               ★ the heart
             </text>
@@ -130,7 +130,7 @@ export default function SCCEstablishing() {
       <motion.text
         x={632} y={295}
         textAnchor="middle"
-        fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
         fill={`${PLUM_TEXT}0.849)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
@@ -161,7 +161,7 @@ export default function SCCEstablishing() {
       <motion.text
         x={128} y={226}
         textAnchor="middle"
-        fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
         fill={`${PLUM_TEXT}0.891)`}
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
@@ -172,15 +172,26 @@ export default function SCCEstablishing() {
 
       {/* Caption */}
       <motion.text
-        x={SVG_W / 2} y={SVG_H - 6}
+        x={SVG_W / 2} y={SVG_H - 22}
         textAnchor="middle"
-        fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
         fill="rgba(255,255,255,0.57)"
         style={{ userSelect: 'none' }}
         initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
         animate={inView ? { opacity: 1 } : (prefersReduced ? { opacity: 1 } : { opacity: 0 })}
         transition={tr(1.14)}>
-        STRATEGY IS NOT FIVE BOXES FILLED INDEPENDENTLY, IT IS FIVE CHOICES THAT MUST REINFORCE ONE ANOTHER
+        STRATEGY IS NOT FIVE BOXES FILLED INDEPENDENTLY,
+      </motion.text>
+      <motion.text
+        x={SVG_W / 2} y={SVG_H - 6}
+        textAnchor="middle"
+        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+        fill="rgba(255,255,255,0.57)"
+        style={{ userSelect: 'none' }}
+        initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
+        animate={inView ? { opacity: 1 } : (prefersReduced ? { opacity: 1 } : { opacity: 0 })}
+        transition={tr(1.14)}>
+        IT IS FIVE CHOICES THAT MUST REINFORCE ONE ANOTHER
       </motion.text>
     </svg>
   )

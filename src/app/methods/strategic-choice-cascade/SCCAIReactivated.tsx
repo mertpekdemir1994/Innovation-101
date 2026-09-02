@@ -9,22 +9,28 @@ const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDI
 const AMBER  = 'rgba(217,119,6,'
 
 const SVG_W = 700
-const SVG_H = 536
+const SVG_H = 566
 
-const BOX_W = 264
-const BOX_H = 50
+const BOX_W = 290
+const BOX_H = 64
 const CX = 350
 const BOX_LEFT  = CX - BOX_W / 2
 const BOX_RIGHT = CX + BOX_W / 2
+
+// Line offsets shared by every box: label / sub / (AI mode only) badge,
+// each 18px apart so three stacked 11pt lines never touch.
+const LABEL_DY = -18, SUB_DY = 0, BADGE_DY = 18
+
+const CAPTION_Y1 = 538, CAPTION_Y2 = 554
 
 type Mode = 'human' | 'ai'
 
 const HUMAN_CHOICES = [
   { id: 'aspiration',   cy: 66,  label: 'WINNING ASPIRATION',  sub: 'what does winning look like?',          heart: false, aiBadge: null },
-  { id: 'where',        cy: 170, label: 'WHERE TO PLAY',       sub: 'which markets, segments, channels?',    heart: true,  aiBadge: 'AI LISTS ALL OPTIONS, WON\'T EXCLUDE' },
-  { id: 'how',          cy: 274, label: 'HOW TO WIN',          sub: 'how do we create unique value there?',  heart: true,  aiBadge: 'AI OFFERS MULTIPLE WAYS, WON\'T COMMIT' },
-  { id: 'capabilities', cy: 378, label: 'CAPABILITIES',        sub: 'what must we be able to do?',           heart: false, aiBadge: 'AI CAN ENUMERATE THESE' },
-  { id: 'systems',      cy: 482, label: 'MANAGEMENT SYSTEMS',  sub: 'what systems and measures sustain it?', heart: false, aiBadge: 'AI CAN SUGGEST THESE' },
+  { id: 'where',        cy: 170, label: 'WHERE TO PLAY',       sub: 'which markets, segments, channels?',    heart: true,  aiBadge: 'LISTS OPTIONS, WON\'T EXCLUDE' },
+  { id: 'how',          cy: 274, label: 'HOW TO WIN',          sub: 'how do we create unique value there?',  heart: true,  aiBadge: 'OFFERS WAYS, WON\'T COMMIT' },
+  { id: 'capabilities', cy: 378, label: 'CAPABILITIES',        sub: 'what must we be able to do?',           heart: false, aiBadge: 'CAN ENUMERATE THESE' },
+  { id: 'systems',      cy: 482, label: 'MANAGEMENT SYSTEMS',  sub: 'what systems and measures sustain it?', heart: false, aiBadge: 'CAN SUGGEST THESE' },
 ]
 
 export default function SCCAIReactivated() {
@@ -49,8 +55,8 @@ export default function SCCAIReactivated() {
                 ? m === 'ai' ? `${INDIGO}0.35)` : `${PLUM}0.35)`
                 : 'rgba(255,255,255,0.12)'}`,
               color: mode === m
-                ? m === 'ai' ? `${INDIGO}1)` : `${PLUM}1)`
-                : 'rgba(255,255,255,0.40)',
+                ? m === 'ai' ? `${INDIGO_TEXT}1)` : `${PLUM_TEXT}1)`
+                : 'rgba(255,255,255,0.50)',
             }}>
             {m === 'human' ? 'Human-led' : 'With AI (hypothetical)'}
           </button>
@@ -100,8 +106,10 @@ export default function SCCAIReactivated() {
                 const boxColor   = isAI ? (isWhereOrHow ? AMBER : INDIGO) : PLUM
                 const fillAlpha  = isAI ? (isWhereOrHow ? '0.08)' : '0.06)') : (c.heart ? '0.14)' : '0.06)')
                 const strokeAlpha = isAI ? (isWhereOrHow ? '0.50)' : '0.35)') : (c.heart ? '0.70)' : '0.38)')
-                const labelColor = isAI ? (isWhereOrHow ? `${AMBER}0.90)` : `${INDIGO}0.70)`) : (c.heart ? `${PLUM}1)` : 'rgba(255,255,255,0.72)')
-                const subColor   = isAI ? (isWhereOrHow ? `${AMBER}0.50)` : `${INDIGO}0.40)`) : (c.heart ? `${PLUM}0.55)` : 'rgba(255,255,255,0.28)')
+                // plain INDIGO/PLUM/AMBER fail 4.5:1 on this dark background at these
+                // opacities — use the brightened _TEXT variants (or a higher AMBER opacity)
+                const labelColor = isAI ? (isWhereOrHow ? `${AMBER}1)` : `${INDIGO_TEXT}1)`) : (c.heart ? `${PLUM_TEXT}1)` : 'rgba(255,255,255,0.72)')
+                const subColor   = isAI ? (isWhereOrHow ? `${AMBER}0.90)` : `${INDIGO_TEXT}0.85)`) : (c.heart ? `${PLUM_TEXT}0.85)` : 'rgba(255,255,255,0.50)')
                 const glowId = isAI ? (isWhereOrHow ? 'url(#scc-ai-amber-glow)' : 'url(#scc-ai-indigo-glow)') : (c.heart ? 'url(#scc-ai-plum-glow)' : 'none')
 
                 return (
@@ -113,37 +121,32 @@ export default function SCCAIReactivated() {
                       strokeWidth={isAIwarn ? 1.5 : 1.2}
                       style={{ filter: glowId }}
                     />
-                    <text x={CX} y={c.cy - 6} textAnchor="middle"
-                      fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
+                    <text x={CX} y={c.cy + LABEL_DY} textAnchor="middle"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.13em" fontWeight="600"
                       fill={labelColor} style={{ userSelect: 'none' }}>
                       {c.label}
                     </text>
-                    <text x={CX} y={c.cy + 9} textAnchor="middle"
-                      fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                    <text x={CX} y={c.cy + SUB_DY} textAnchor="middle"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
                       fill={subColor} style={{ userSelect: 'none' }}>
                       {c.sub}
                     </text>
 
-                    {/* AI badges */}
+                    {/* AI badge: a third line inside the box (the side gutter
+                        isn't wide enough to hold a full sentence at 11pt) */}
                     {isAI && c.aiBadge && (
-                      <g>
-                        <rect x={BOX_RIGHT + 6} y={c.cy - 9} width={160} height={14} rx={3}
-                          fill={isWhereOrHow ? `${AMBER}0.10)` : `${INDIGO}0.08)`}
-                          stroke={isWhereOrHow ? `${AMBER}0.25)` : `${INDIGO}0.18)`}
-                          strokeWidth={0.5} />
-                        <text x={BOX_RIGHT + 10} y={c.cy + 2} textAnchor="start"
-                          fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                          fill={isWhereOrHow ? `rgba(221,132,30,0.95)` : `${INDIGO_TEXT}0.916)`}
-                          style={{ userSelect: 'none' }}>
-                          {c.aiBadge}
-                        </text>
-                      </g>
+                      <text x={CX} y={c.cy + BADGE_DY} textAnchor="middle"
+                        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                        fill={isWhereOrHow ? `rgba(221,132,30,0.95)` : `${INDIGO_TEXT}0.916)`}
+                        style={{ userSelect: 'none' }}>
+                        {c.aiBadge}
+                      </text>
                     )}
 
                     {/* Human mode heart badge */}
                     {!isAI && c.heart && (
                       <text x={BOX_RIGHT + 9} y={c.cy + 3} textAnchor="start"
-                        fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                         fill={`${PLUM_TEXT}0.895)`} style={{ userSelect: 'none' }}>
                         ★ the heart
                       </text>
@@ -180,9 +183,9 @@ export default function SCCAIReactivated() {
                 points={`${BOX_RIGHT + 1},${66} ${BOX_RIGHT + 11},${60} ${BOX_RIGHT + 11},${72}`}
                 fill={isAI ? `${PLUM}0.35)` : `${PLUM}0.28)`} />
               <text x={632} y={295} textAnchor="middle"
-                fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                 fill={isAI ? `${PLUM_TEXT}0.864)` : `${PLUM_TEXT}0.849)`} style={{ userSelect: 'none' }}>
-                {isAI ? '↑ AI CAN CHECK COHERENCE ↓' : '↑ MUST COHERE ↓'}
+                {isAI ? '↑ AI CHECKS ↓' : '↑ MUST COHERE ↓'}
               </text>
 
               {/* WHERE↔HOW arc */}
@@ -197,26 +200,22 @@ export default function SCCAIReactivated() {
                 points={`${BOX_LEFT - 1},${274} ${BOX_LEFT - 11},${268} ${BOX_LEFT - 11},${280}`}
                 fill={isAI ? `${PLUM}0.55)` : `${PLUM}0.48)`} />
               <text x={118} y={222} textAnchor="middle"
-                fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                 fill={isAI ? `${PLUM_TEXT}0.937)` : `${PLUM_TEXT}0.891)`} style={{ userSelect: 'none' }}>
                 {isAI ? 'BET STAYS HUMAN' : 'MUST FIT'}
               </text>
 
-              {/* AI mode: "THE CHOICE STAYS HUMAN" center overlay */}
+              {/* AI mode: "THE CHOICE STAYS HUMAN" center overlay, in the gap
+                  between the WHERE and HOW boxes */}
               {isAI && (
                 <g>
-                  <rect x={BOX_LEFT - 20} y={212} width={BOX_W + 40} height={28} rx={4}
+                  <rect x={BOX_LEFT - 20} y={207} width={BOX_W + 40} height={30} rx={4}
                     fill={`${PLUM}0.12)`} stroke={`${PLUM}0.35)`} strokeWidth={0.8} />
-                  <text x={CX} y={223} textAnchor="middle"
-                    fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+                  <text x={CX} y={222} textAnchor="middle" dominantBaseline="middle"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
                     fill={`${PLUM_TEXT}0.975)`}
                     style={{ userSelect: 'none', filter: `drop-shadow(0 0 8px ${PLUM_TEXT}0.885))` }}>
-                    THE CHOICE / EXCLUSION STAYS HUMAN
-                  </text>
-                  <text x={CX} y={234} textAnchor="middle"
-                    fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-                    fill={`${PLUM_TEXT}0.895)`} style={{ userSelect: 'none' }}>
-                    AI&apos;s inclusive default avoids exactly this: it will not exclude
+                    THE CHOICE TO EXCLUDE STAYS HUMAN
                   </text>
                 </g>
               )}
@@ -224,12 +223,19 @@ export default function SCCAIReactivated() {
           </AnimatePresence>
 
           {/* Caption */}
-          <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          <text x={SVG_W / 2} y={CAPTION_Y1} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
             fill="rgba(255,255,255,0.57)" style={{ userSelect: 'none' }}>
             {isAI
-              ? 'AI CAN FILL ALL FIVE BOXES, BUT STRATEGY IS DECIDING WHAT NOT TO DO, AND THAT IS WHAT AI AVOIDS'
-              : 'THE HARDEST CHOICE IS WHERE NOT TO PLAY, AND THAT IS EXACTLY WHERE THE STRATEGIC VALUE LIVES'}
+              ? 'AI CAN FILL ALL FIVE BOXES, BUT STRATEGY IS DECIDING'
+              : 'THE HARDEST CHOICE IS WHERE NOT TO PLAY,'}
+          </text>
+          <text x={SVG_W / 2} y={CAPTION_Y2} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+            fill="rgba(255,255,255,0.57)" style={{ userSelect: 'none' }}>
+            {isAI
+              ? 'WHAT NOT TO DO, AND THAT IS WHAT AI AVOIDS'
+              : 'AND THAT IS EXACTLY WHERE THE STRATEGIC VALUE LIVES'}
           </text>
         </svg>
       </div>
@@ -250,7 +256,7 @@ export default function SCCAIReactivated() {
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${PLUM}0.18)`, background: `${PLUM}0.04)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: `${PLUM}0.75)` }}>{item.label}</p>
+                <p className="text-2xs font-mono uppercase tracking-widest" style={{ color: `${PLUM_TEXT}0.85)` }}>{item.label}</p>
                 <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{item.body}</p>
               </div>
             ))}
@@ -266,22 +272,28 @@ export default function SCCAIReactivated() {
               {
                 label: 'WHERE AI HELPS',
                 color: INDIGO,
+                textColor: INDIGO_TEXT,
+                textOpacity: '0.85)',
                 body: 'AI can draft and sharpen a winning aspiration, enumerate where-to-play options and how-to-win approaches for consideration, list the capabilities a given how-to-win would require, and check coherence between choices already made. As a sparring partner, it adds real value.',
               },
               {
                 label: 'WHERE AI STRUGGLES',
                 color: AMBER,
+                textColor: AMBER,
+                textOpacity: '1)',
                 body: 'Asked to choose, AI will present options with pros and cons rather than commit. Its instinct to cover all the bases (offend no possibility) is the precise opposite of strategy. A where-to-play that includes everywhere is a non-choice, and AI\'s default is exactly that.',
               },
               {
                 label: 'THE BET STAYS HUMAN',
                 color: PLUM,
+                textColor: PLUM_TEXT,
+                textOpacity: '0.85)',
                 body: 'A real strategic choice is a bet: a commitment of the organisation\'s resources and future on a particular where-and-how, made under uncertainty, owned by accountable leaders. That act of decision, and the courage to exclude, cannot be delegated to a model that bears none of the consequences.',
               },
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${item.color}0.20)`, background: `${item.color}0.05)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: `${item.color}0.78)` }}>{item.label}</p>
+                <p className="text-2xs font-mono uppercase tracking-widest" style={{ color: `${item.textColor}${item.textOpacity}` }}>{item.label}</p>
                 <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{item.body}</p>
               </div>
             ))}
