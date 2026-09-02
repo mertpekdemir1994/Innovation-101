@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const AMBER = 'rgba(245,158,11,'
 
 const SVG_W = 700, SVG_H = 268
@@ -135,16 +136,16 @@ export default function UTInteractive() {
 
         {/* Legend */}
         <g>
-          <line x1={22} y1={22} x2={46} y2={22} stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" />
-          <text x={50} y={22} dominantBaseline="middle" fontSize="4.0"
+          <line x1={22} y1={20} x2={46} y2={20} stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" />
+          <text x={50} y={20} dominantBaseline="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill="rgba(255,255,255,0.725)" style={{ userSelect: 'none' }}>
             INTENDED PATH
           </text>
-          <line x1={22} y1={34} x2={46} y2={34} stroke={`${BRICK}0.85)`} strokeWidth="1.5" />
-          <text x={50} y={34} dominantBaseline="middle" fontSize="4.0"
+          <line x1={22} y1={40} x2={46} y2={40} stroke={`${BRICK}0.85)`} strokeWidth="1.5" />
+          <text x={50} y={40} dominantBaseline="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={`rgba(183,145,135,0.969)`} style={{ userSelect: 'none' }}>
+            fill={`${BRICK_TEXT}0.969)`} style={{ userSelect: 'none' }}>
             ACTUAL PATH
           </text>
         </g>
@@ -160,7 +161,7 @@ export default function UTInteractive() {
                 strokeWidth="1" rx={3} />
               <text x={NODE_CX[i]} y={N_CY}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                 fill={isUnreached ? 'rgba(255,255,255,0.61)' : 'rgba(255,255,255,0.80)'}
                 style={{ userSelect: 'none' }}>
                 {n.label}
@@ -170,8 +171,8 @@ export default function UTInteractive() {
         })}
 
         {/* NOT REACHED label */}
-        <text x={521} y={103} textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+        <text x={521} y={95} textAnchor="middle" dominantBaseline="middle"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
           fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
           NOT REACHED
         </text>
@@ -183,9 +184,9 @@ export default function UTInteractive() {
           strokeWidth="1" rx={3} />
         <text x={WN_CX} y={WN_CY}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
-          PLAN DETAILS
+          PLAN INFO
         </text>
 
         {/* Intended path arrows */}
@@ -223,7 +224,9 @@ export default function UTInteractive() {
           const pos = FRICTION_POS[z]
           const isWrong = z === 'wrongTurn'
           const markerColor = isWrong ? `${AMBER}0.90)` : `${BRICK}0.90)`
-          const labelColor = isWrong ? `${AMBER}0.85)` : `${BRICK}0.85)`
+          // plain BRICK fails 4.5:1 on this dark background even at 0.85 —
+          // use the brightened BRICK_TEXT variant for the label text
+          const labelColor = isWrong ? `${AMBER}0.85)` : `${BRICK_TEXT}0.85)`
           const labelMap: Record<string, string> = {
             hesitation: 'HESITATION',
             wrongTurn: 'WRONG TURN',
@@ -232,8 +235,8 @@ export default function UTInteractive() {
           }
           const labelPosMap: Record<string, { lx: number; ly: number }> = {
             hesitation: { lx: 187, ly: 90  },
-            wrongTurn:  { lx: 338, ly: 46  },
-            backtrack:  { lx: 160, ly: 78  },
+            wrongTurn:  { lx: 360, ly: 40  },
+            backtrack:  { lx: 130, ly: 68  },
             stuck:      { lx: 400, ly: 90  },
           }
           const lp = labelPosMap[z]
@@ -250,7 +253,7 @@ export default function UTInteractive() {
               {/* Label */}
               <text x={lp.lx} y={lp.ly}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
                 fill={labelColor} style={{ userSelect: 'none', cursor: 'pointer' }}
                 onClick={() => setActive(active === z ? null : z)}>
                 {labelMap[z]}
@@ -265,16 +268,17 @@ export default function UTInteractive() {
           )
         })}
 
-        {/* Divergence annotation */}
+        {/* Divergence annotation, placed in the open space below the flow so
+            it doesn't collide with NOT REACHED */}
         <motion.g animate={{ opacity: active ? 0.20 : 1 }} transition={{ duration: 0.22 }}>
-          <text x={510} y={72} textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`rgba(183,145,135,0.878)`} style={{ userSelect: 'none' }}>
+          <text x={510} y={165} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fill={`${BRICK_TEXT}0.878)`} style={{ userSelect: 'none' }}>
             THE DIVERGENCE
           </text>
-          <text x={510} y={83} textAnchor="middle" dominantBaseline="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`rgba(183,145,135,0.853)`} style={{ userSelect: 'none' }}>
+          <text x={510} y={183} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+            fill={`${BRICK_TEXT}0.853)`} style={{ userSelect: 'none' }}>
             IS THE FINDING
           </text>
         </motion.g>
@@ -293,8 +297,8 @@ export default function UTInteractive() {
                 ? id === 'wrongTurn' ? `${AMBER}0.15)` : `${BRICK}0.15)`
                 : 'transparent',
               color: active === id
-                ? id === 'wrongTurn' ? `${AMBER}0.90)` : `${BRICK}0.90)`
-                : id === 'wrongTurn' ? `${AMBER}0.45)` : `${BRICK}0.45)`,
+                ? id === 'wrongTurn' ? `${AMBER}0.90)` : `${BRICK_TEXT}0.90)`
+                : id === 'wrongTurn' ? `${AMBER}0.70)` : `${BRICK_TEXT}0.80)`,
               border: `1px solid ${active === id
                 ? id === 'wrongTurn' ? `${AMBER}0.50)` : `${BRICK}0.50)`
                 : id === 'wrongTurn' ? `${AMBER}0.22)` : `${BRICK}0.22)`}`,
@@ -307,7 +311,7 @@ export default function UTInteractive() {
           <button
             onClick={() => setActive(null)}
             className="rounded-full px-3 py-1 text-xs font-mono tracking-widest"
-            style={{ background: 'transparent', color: 'rgba(255,255,255,0.30)', border: '1px solid rgba(255,255,255,0.12)' }}
+            style={{ background: 'transparent', color: 'rgba(255,255,255,0.50)', border: '1px solid rgba(255,255,255,0.12)' }}
           >
             CLEAR
           </button>
@@ -330,7 +334,7 @@ export default function UTInteractive() {
             }}
           >
             <p className="font-mono uppercase tracking-widest mb-2"
-              style={{ fontSize: 'var(--text-2xs)', color: info.isWrong ? `${AMBER}0.75)` : `${BRICK}0.70)` }}>
+              style={{ fontSize: 'var(--text-2xs)', color: info.isWrong ? `${AMBER}0.75)` : `${BRICK_TEXT}0.85)` }}>
               {info.tag}
             </p>
             <p className="font-semibold mb-3"
@@ -354,7 +358,7 @@ export default function UTInteractive() {
 
       {!active && (
         <p className="font-mono text-center"
-          style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.09em' }}>
+          style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.50)', letterSpacing: '0.09em' }}>
           CLICK THE INTENDED PATH OR ANY FRICTION POINT TO EXPLORE
         </p>
       )}

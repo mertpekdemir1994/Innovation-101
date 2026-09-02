@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const AMBER  = 'rgba(245,158,11,'
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
@@ -41,18 +42,20 @@ const ACTUAL_PATH = [
   'C 360 120 385 118 400 119',
 ].join(' ')
 
-// AI heuristic flags shown on the intended path (AI mode only)
+// AI heuristic flags shown on the intended path (AI mode only). Text drops
+// the "AI:" prefix (the legend already establishes the context) so each
+// badge fits its 130px width at 11pt without colliding with its neighbor.
 const AI_FLAGS = [
-  { x: 187, y: 148, text: 'AI: AMBIGUOUS LABEL', w: 120 },
-  { x: 321, y: 148, text: 'AI: MISSING FEEDBACK', w: 126 },
-  { x: 455, y: 148, text: 'AI: LOW VISIBILITY', w: 108 },
+  { x: 187, y: 158, text: 'AMBIGUOUS LABEL',  w: 130 },
+  { x: 321, y: 158, text: 'MISSING FEEDBACK', w: 130 },
+  { x: 455, y: 158, text: 'LOW VISIBILITY',   w: 130 },
 ]
 
 // Friction points (same positions as other components)
 const FRICTION_POS = [
   { cx: 187, cy: 124, label: 'HESITATION', lx: 187, ly: 90  },
-  { cx: 273, cy: 62,  label: 'WRONG TURN', lx: 338, ly: 46  },
-  { cx: 234, cy: 95,  label: 'BACKTRACK',  lx: 160, ly: 78  },
+  { cx: 273, cy: 62,  label: 'WRONG TURN', lx: 360, ly: 40  },
+  { cx: 234, cy: 95,  label: 'BACKTRACK',  lx: 130, ly: 68  },
   { cx: 400, cy: 119, label: 'STUCK',      lx: 400, ly: 90  },
 ]
 
@@ -79,7 +82,7 @@ export default function UTAIReactivated() {
                 ? m === 'ai' ? `${INDIGO}0.85)` : `${BRICK}0.85)`
                 : 'transparent',
               color: mode === m ? '#fff'
-                : m === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`,
+                : m === 'ai' ? `${INDIGO_TEXT}0.85)` : `${BRICK_TEXT}0.85)`,
               border: `1.5px solid ${mode === m
                 ? m === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`
                 : m === 'ai' ? `${INDIGO}0.30)` : `${BRICK}0.30)`}`,
@@ -121,19 +124,19 @@ export default function UTAIReactivated() {
         <motion.g
           animate={{ opacity: 1 }}
           transition={{ duration: 0.30 }}>
-          <line x1={22} y1={22} x2={46} y2={22}
+          <line x1={22} y1={20} x2={46} y2={20}
             stroke={isAI ? `${INDIGO}0.75)` : 'rgba(255,255,255,0.45)'} strokeWidth="1.5" />
-          <text x={50} y={22} dominantBaseline="middle" fontSize="4.0"
+          <text x={50} y={20} dominantBaseline="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill={isAI ? `${INDIGO_TEXT}0.948)` : 'rgba(255,255,255,0.725)'}
             style={{ userSelect: 'none' }}>
             {isAI ? 'AI REVIEWS THIS PATH' : 'INTENDED PATH'}
           </text>
-          <line x1={22} y1={34} x2={46} y2={34}
+          <line x1={22} y1={40} x2={46} y2={40}
             stroke={isAI ? 'rgba(138,75,60,0.20)' : `${BRICK}0.85)`} strokeWidth="1.5" />
-          <text x={50} y={34} dominantBaseline="middle" fontSize="4.0"
+          <text x={50} y={40} dominantBaseline="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
-            fill={isAI ? 'rgba(183,145,135,0.832)' : `rgba(183,145,135,0.969)`}
+            fill={isAI ? `${BRICK_TEXT}0.832)` : `${BRICK_TEXT}0.969)`}
             style={{ userSelect: 'none' }}>
             {isAI ? 'NOT ACCESSIBLE TO AI' : 'ACTUAL PATH'}
           </text>
@@ -150,7 +153,7 @@ export default function UTAIReactivated() {
                 strokeWidth="1" rx={3} />
               <text x={NODE_CX[i]} y={N_CY}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                 fill={isUnreached ? 'rgba(255,255,255,0.61)' : 'rgba(255,255,255,0.80)'}
                 style={{ userSelect: 'none' }}>
                 {n.label}
@@ -160,8 +163,8 @@ export default function UTAIReactivated() {
         })}
 
         {/* NOT REACHED */}
-        <text x={521} y={103} textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+        <text x={521} y={95} textAnchor="middle" dominantBaseline="middle"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
           fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
           NOT REACHED
         </text>
@@ -172,9 +175,9 @@ export default function UTAIReactivated() {
             fill={`${AMBER}0.07)`} stroke={`${AMBER}0.35)`} strokeWidth="1" rx={3} />
           <text x={WN_CX} y={WN_CY}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
-            PLAN DETAILS
+            PLAN INFO
           </text>
         </motion.g>
 
@@ -211,8 +214,8 @@ export default function UTAIReactivated() {
                 stroke="rgba(10,10,18,0.80)" strokeWidth="1.5" />
               <text x={f.lx} y={f.ly}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
-                fill={f.label === 'WRONG TURN' ? `${AMBER}0.85)` : `rgba(183,145,135,0.969)`}
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+                fill={f.label === 'WRONG TURN' ? `${AMBER}0.85)` : `${BRICK_TEXT}0.969)`}
                 style={{ userSelect: 'none' }}>
                 {f.label}
               </text>
@@ -226,12 +229,12 @@ export default function UTAIReactivated() {
             <motion.g key={flag.text}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.28, delay: prefersReduced ? 0 : 0.08 + i * 0.07 }}>
-              <rect x={flag.x - flag.w / 2} y={flag.y - 9}
-                width={flag.w} height={18}
+              <rect x={flag.x - flag.w / 2} y={flag.y - 13}
+                width={flag.w} height={26}
                 fill={`${INDIGO}0.08)`} stroke={`${INDIGO}0.30)`} strokeWidth="1" rx={2} />
               <text x={flag.x} y={flag.y}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
                 fill={`${INDIGO_TEXT}0.958)`} style={{ userSelect: 'none' }}>
                 {flag.text}
               </text>
@@ -242,10 +245,10 @@ export default function UTAIReactivated() {
         {/* "NOT ACCESSIBLE TO AI" overlay on actual path area (AI mode) */}
         <AnimatePresence>
           {isAI && (
-            <motion.text x={230} y={168}
+            <motion.text x={230} y={190}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-              fill={`rgba(183,145,135,0.864)`} style={{ userSelect: 'none' }}
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+              fill={`${BRICK_TEXT}0.864)`} style={{ userSelect: 'none' }}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.30, delay: prefersReduced ? 0 : 0.25 }}>
               ← ACTUAL PATH NOT ACCESSIBLE TO AI →
@@ -253,16 +256,17 @@ export default function UTAIReactivated() {
           )}
         </AnimatePresence>
 
-        {/* Divergence annotation (dims in AI mode) */}
+        {/* Divergence annotation (dims in AI mode), placed below the AI-flag
+            badges and the "not accessible" overlay so nothing collides */}
         <motion.g animate={{ opacity: isAI ? 0.15 : 1 }} transition={{ duration: 0.30 }}>
-          <text x={510} y={72} textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill={`rgba(183,145,135,0.878)`} style={{ userSelect: 'none' }}>
+          <text x={510} y={215} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fill={`${BRICK_TEXT}0.878)`} style={{ userSelect: 'none' }}>
             THE DIVERGENCE
           </text>
-          <text x={510} y={83} textAnchor="middle" dominantBaseline="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-            fill={`rgba(183,145,135,0.853)`} style={{ userSelect: 'none' }}>
+          <text x={510} y={233} textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+            fill={`${BRICK_TEXT}0.853)`} style={{ userSelect: 'none' }}>
             IS THE FINDING
           </text>
         </motion.g>
@@ -285,15 +289,15 @@ export default function UTAIReactivated() {
                 style={{ border: `1px solid ${INDIGO}0.22)`, background: `${INDIGO}0.05)` }}>
                 <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
                   <p className="font-mono uppercase tracking-widest"
-                    style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.80)` }}>
+                    style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_TEXT}0.85)` }}>
                     Where AI genuinely helps: heuristic review
                   </p>
                   <span className="font-mono text-xs px-2 py-0.5 rounded-full"
-                    style={{ background: `${INDIGO}0.12)`, color: `${INDIGO}0.75)`, border: `1px solid ${INDIGO}0.25)` }}>
+                    style={{ background: `${INDIGO}0.12)`, color: `${INDIGO_TEXT}0.85)`, border: `1px solid ${INDIGO}0.25)` }}>
                     Real uplift
                   </span>
                 </div>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                   AI knows the established usability principles (clarity of labels, visibility of system status,
                   consistency, error prevention, recognition over recall) and can review an interface against them
                   quickly, flagging obvious violations: ambiguous labels, missing feedback, inconsistent patterns,
@@ -310,7 +314,7 @@ export default function UTAIReactivated() {
                   style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.80)` }}>
                   What AI cannot do: watch a real person get confused
                 </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
                   The actual path, the wandering, hesitant, wrong-turn-taking route a real person takes, is
                   invisible to AI. AI reasons from documented principles and patterns. The entire value of a
                   usability test is that real human confusion is not derivable from principles: it is specific,
@@ -320,7 +324,7 @@ export default function UTAIReactivated() {
                 </p>
                 <div className="rounded p-3"
                   style={{ background: `${AMBER}0.06)`, borderLeft: `2px solid ${AMBER}0.35)` }}>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.58)', lineHeight: 'var(--leading-relaxed)' }}>
                     And a simulated user walkthrough is not a substitute: it produces a plausible narrative of
                     a &ldquo;typical user&rdquo; navigating the interface, which sounds reasonable and is, in effect, a
                     restatement of what the team already assumed. The gap between assumption and reality is the
@@ -334,10 +338,10 @@ export default function UTAIReactivated() {
             <div className="rounded-lg p-4"
               style={{ border: `1px solid ${BRICK}0.22)`, background: `${BRICK}0.04)` }}>
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.70)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK_TEXT}0.85)` }}>
                 The traditional method: watch the person, not the screen
               </p>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                 A usability test is five people, five tasks, one facilitator who says nothing. The intended path
                 is what you assumed would happen. The actual path is what a stranger does. The gap between them
                 (the hesitations, the wrong turns, the backtracks, the places where the person simply stops)
@@ -351,10 +355,10 @@ export default function UTAIReactivated() {
           <div className="rounded-lg p-4"
             style={{ background: `${BRICK}0.04)`, border: `1px solid ${BRICK}0.16)` }}>
             <p className="font-mono uppercase tracking-widest mb-2"
-              style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.60)` }}>
+              style={{ fontSize: 'var(--text-2xs)', color: `${BRICK_TEXT}0.85)` }}>
               The honest synthesis
             </p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
               Use AI for heuristic review; it genuinely catches obvious violations fast, and that raises the
               floor. But the method&rsquo;s core act is watching a real, specific human struggle in ways nobody
               predicted. That is not reviewable, derivable, or simulatable. Let AI clear the obvious problems.

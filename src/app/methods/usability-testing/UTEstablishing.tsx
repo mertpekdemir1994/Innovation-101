@@ -48,12 +48,10 @@ const ACTUAL_PATH = [
 // Friction point positions and metadata
 const FRICTION = [
   { cx: 187, cy: 124, label: 'HESITATION', lx: 187, ly: 90,  pathT: 0.22, animD: 1.3 },
-  { cx: 273, cy: 62,  label: 'WRONG TURN', lx: 338, ly: 46,  pathT: 0.40, animD: 2.0 },
-  { cx: 234, cy: 95,  label: 'BACKTRACK',  lx: 160, ly: 80,  pathT: 0.58, animD: 2.6 },
+  { cx: 273, cy: 62,  label: 'WRONG TURN', lx: 360, ly: 40,  pathT: 0.40, animD: 2.0 },
+  { cx: 234, cy: 95,  label: 'BACKTRACK',  lx: 130, ly: 68,  pathT: 0.58, animD: 2.6 },
   { cx: 400, cy: 119, label: 'STUCK',      lx: 400, ly: 90,  pathT: 1.00, animD: 3.5 },
 ]
-
-const CAP_Y = SVG_H - 7  // 261
 
 export default function UTEstablishing() {
   const ref = useRef<SVGSVGElement>(null)
@@ -96,14 +94,14 @@ export default function UTEstablishing() {
 
         {/* Legend */}
         <motion.g {...fade(0.04)}>
-          <line x1={22} y1={22} x2={46} y2={22} stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" />
-          <text x={50} y={22} dominantBaseline="middle" fontSize="4.0"
+          <line x1={22} y1={20} x2={46} y2={20} stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" />
+          <text x={50} y={20} dominantBaseline="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill="rgba(255,255,255,0.725)" style={{ userSelect: 'none' }}>
             INTENDED PATH
           </text>
-          <line x1={22} y1={34} x2={46} y2={34} stroke={`${BRICK}0.85)`} strokeWidth="1.5" />
-          <text x={50} y={34} dominantBaseline="middle" fontSize="4.0"
+          <line x1={22} y1={40} x2={46} y2={40} stroke={`${BRICK}0.85)`} strokeWidth="1.5" />
+          <text x={50} y={40} dominantBaseline="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill={`rgba(183,145,135,0.969)`} style={{ userSelect: 'none' }}>
             ACTUAL PATH
@@ -121,7 +119,7 @@ export default function UTEstablishing() {
                 strokeWidth="1" rx={3} />
               <text x={NODE_CX[i]} y={N_CY}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                 fill={isUnreached ? 'rgba(255,255,255,0.61)' : 'rgba(255,255,255,0.80)'}
                 style={{ userSelect: 'none' }}>
                 {n.label}
@@ -131,9 +129,9 @@ export default function UTEstablishing() {
         })}
 
         {/* "NOT REACHED" label above N4/N5 */}
-        <motion.text x={521} y={103}
+        <motion.text x={521} y={95}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
           fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
           {...fade(0.30)}>
           NOT REACHED
@@ -145,9 +143,9 @@ export default function UTEstablishing() {
             fill={`${AMBER}0.07)`} stroke={`${AMBER}0.40)`} strokeWidth="1" rx={3} />
           <text x={WN_CX} y={WN_CY}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
-            PLAN DETAILS
+            PLAN INFO
           </text>
         </motion.g>
 
@@ -192,7 +190,7 @@ export default function UTEstablishing() {
             {/* Label */}
             <text x={f.lx} y={f.ly}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
               fill={f.label === 'WRONG TURN' ? `${AMBER}0.85)` : `rgba(183,145,135,0.969)`}
               style={{ userSelect: 'none' }}>
               {f.label}
@@ -200,29 +198,37 @@ export default function UTEstablishing() {
           </motion.g>
         ))}
 
-        {/* Divergence annotation (appears mid-animation) */}
+        {/* Divergence annotation (appears mid-animation), placed in the open
+            space below the flow so it doesn't collide with NOT REACHED */}
         <motion.g {...fade(2.1)}>
-          <text x={510} y={72}
+          <text x={510} y={165}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`rgba(183,145,135,0.878)`} style={{ userSelect: 'none' }}>
             THE DIVERGENCE
           </text>
-          <text x={510} y={83}
+          <text x={510} y={183}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
             fill={`rgba(183,145,135,0.853)`} style={{ userSelect: 'none' }}>
             IS THE FINDING
           </text>
         </motion.g>
 
         {/* Caption */}
-        <motion.text x={SVG_W / 2} y={CAP_Y}
+        <motion.text x={SVG_W / 2} y={SVG_H - 22}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
           fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           {...fade(3.6)}>
-          The intended path is what you assumed. The actual path is what a stranger did. The gap is the finding.
+          The intended path is what you assumed.
+        </motion.text>
+        <motion.text x={SVG_W / 2} y={SVG_H - 6}
+          textAnchor="middle" dominantBaseline="middle"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
+          {...fade(3.6)}>
+          The actual path is what a stranger did. The gap is the finding.
         </motion.text>
       </svg>
     </div>
