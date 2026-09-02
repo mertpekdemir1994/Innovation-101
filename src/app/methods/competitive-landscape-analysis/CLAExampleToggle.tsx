@@ -157,7 +157,7 @@ export default function CLAExampleToggle() {
               <div className="flex items-center justify-between mb-4">
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
                   style={{ color: `${INDIGO}0.90)` }}>What AI produced: a fast, accurate conventional map</p>
-                <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full"
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                   style={{ background: `${INDIGO}0.10)`, color: `${INDIGO}0.80)`, border: `1px solid ${INDIGO}0.25)` }}>
                   conventional axes only
                 </span>
@@ -188,7 +188,7 @@ export default function CLAExampleToggle() {
                 ].map((item, i) => (
                   <div key={i} className="rounded p-3"
                     style={{ background: `${INDIGO}0.05)`, borderLeft: `2px solid ${INDIGO}0.28)` }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
+                    <p className="text-[10px] font-semibold uppercase tracking-wider mb-1"
                       style={{ color: `${INDIGO}0.65)` }}>{item.label}</p>
                     <p className="text-xs text-neutral-700 italic mb-1.5">{item.ai}</p>
                     <p className="text-[10px] text-neutral-500 leading-relaxed">↑ {item.note}</p>

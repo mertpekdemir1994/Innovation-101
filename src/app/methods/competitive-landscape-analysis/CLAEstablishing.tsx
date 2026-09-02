@@ -7,7 +7,7 @@ const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 // Larger field for legibility
 const SVG_W = 720
-const SVG_H = 372
+const SVG_H = 394
 const FX = 78   // Y-axis x-position
 const FY = 26   // field top
 const FW = 585  // field width
@@ -107,13 +107,13 @@ export default function CLAEstablishing() {
           <path d={`M ${F_R - 7} ${F_B - 4} L ${F_R + 2} ${F_B} L ${F_R - 7} ${F_B + 4}`}
             stroke="rgba(255,255,255,0.52)" strokeWidth={2} fill="none"
             strokeLinecap="round" strokeLinejoin="round" />
-          <text x={FX + 6}    y={F_B + 16} fontSize="8"  fontFamily="var(--font-mono)"
+          <text x={FX + 6}    y={F_B + 16} fontSize="12"  fontFamily="var(--font-mono)"
             letterSpacing="0.10em" fill="rgba(255,255,255,0.71)" style={{ userSelect: 'none' }}>LOW</text>
-          <text x={F_R - 6}   y={F_B + 16} fontSize="8"  fontFamily="var(--font-mono)"
+          <text x={F_R - 6}   y={F_B + 16} fontSize="12"  fontFamily="var(--font-mono)"
             letterSpacing="0.10em" fill="rgba(255,255,255,0.71)" textAnchor="end"
             style={{ userSelect: 'none' }}>HIGH</text>
-          <text x={(FX + F_R) / 2} y={F_B + 26} fontSize="8.5" fontFamily="var(--font-mono)"
-            letterSpacing="0.14em" fill="rgba(255,255,255,0.50)" textAnchor="middle"
+          <text x={(FX + F_R) / 2} y={F_B + 32} fontSize="12" fontFamily="var(--font-mono)"
+            letterSpacing="0.10em" fill="rgba(255,255,255,0.50)" textAnchor="middle"
             style={{ userSelect: 'none' }}>PRICE →</text>
         </motion.g>
 
@@ -128,12 +128,12 @@ export default function CLAEstablishing() {
             transform={`rotate(-90, ${FX - 28}, ${(FY + F_B) / 2})`}
             x={FX - 28} y={(FY + F_B) / 2}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+            fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill="rgba(255,255,255,0.50)" style={{ userSelect: 'none' }}>↑ PRESTIGE LEVEL</text>
-          <text x={FX - 10} y={F_B - 6} textAnchor="end" fontSize="8"
+          <text x={FX - 10} y={F_B - 6} textAnchor="end" fontSize="12"
             fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.68)"
             style={{ userSelect: 'none' }}>SIMPLE</text>
-          <text x={FX - 10} y={FY + 12} textAnchor="end" fontSize="8"
+          <text x={FX - 10} y={FY + 14} textAnchor="end" fontSize="12"
             fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.68)"
             style={{ userSelect: 'none' }}>EXPERT</text>
         </motion.g>
@@ -153,12 +153,12 @@ export default function CLAEstablishing() {
           <text
             x={CROWD.cx} y={CROWD.cy - CROWD.ry + 24}
             textAnchor="middle"
-            fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+            fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${SAGE_TEXT}0.958)`} style={{ userSelect: 'none' }}>CROWDED ZONE</text>
           <text
-            x={CROWD.cx} y={CROWD.cy - CROWD.ry + 38}
+            x={CROWD.cx} y={CROWD.cy - CROWD.ry + 42}
             textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)"
+            fontSize="12" fontFamily="var(--font-mono)"
             fill={`${SAGE_TEXT}0.895)`} style={{ userSelect: 'none' }}>8 players competing here</text>
         </motion.g>
 
@@ -192,14 +192,14 @@ export default function CLAEstablishing() {
             filter="url(#cla-est-glow)"
           />
           <text
-            x={WS.x + WS.w / 2} y={WS.y + WS.h / 2 - 8}
+            x={WS.x + WS.w / 2} y={WS.y + WS.h / 2 - 10}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.16em"
+            fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${SAGE_TEXT}0.99)`} style={{ userSelect: 'none' }}>WHITE SPACE</text>
           <text
-            x={WS.x + WS.w / 2} y={WS.y + WS.h / 2 + 10}
+            x={WS.x + WS.w / 2} y={WS.y + WS.h / 2 + 12}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="7" fontFamily="var(--font-mono)"
+            fontSize="12" fontFamily="var(--font-mono)" letterSpacing="-0.02em"
             fill={`${SAGE_TEXT}0.92)`} style={{ userSelect: 'none' }}>no competitor here</text>
         </motion.g>
 
@@ -208,15 +208,15 @@ export default function CLAEstablishing() {
           variants={fadeIn}
           transition={{ ...zoneT, delay: d(0.76) }}
         >
-          <line x1={FX} y1={SVG_H - 16} x2={F_R} y2={SVG_H - 16}
+          <line x1={FX} y1={SVG_H - 22} x2={F_R} y2={SVG_H - 22}
             stroke="rgba(255,255,255,0.08)" strokeWidth={1} />
-          <text x={FX + 2} y={SVG_H - 5} textAnchor="start"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={FX + 2} y={SVG_H - 8} textAnchor="start"
+            fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             ← INTERNAL / HOW THE BUSINESS WORKS
           </text>
-          <text x={F_R - 2} y={SVG_H - 5} textAnchor="end"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={F_R - 2} y={SVG_H - 8} textAnchor="end"
+            fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             CUSTOMER-FACING / HOW IT FEELS →
           </text>

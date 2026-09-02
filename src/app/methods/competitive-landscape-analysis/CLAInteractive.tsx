@@ -8,7 +8,7 @@ const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 // Larger field so every element is comfortably legible
 const SVG_W = 720
-const SVG_H = 338
+const SVG_H = 346
 const FX = 78
 const FY = 26
 const FW = 580
@@ -191,13 +191,13 @@ export default function CLAInteractive() {
           style={{
             background: isReframed ? `${SAGE}0.12)` : 'transparent',
             border: `1px solid ${isReframed ? `${SAGE}0.40)` : 'rgba(255,255,255,0.20)'}`,
-            color: isReframed ? `${SAGE}1)` : 'rgba(255,255,255,0.65)',
+            color: isReframed ? `${SAGE_TEXT}1)` : 'rgba(255,255,255,0.65)',
           }}
         >
           {isReframed ? '← Reset to conventional axes' : '⇄ Reframe axes'}
         </button>
         <span className="text-xs font-mono tracking-widest"
-          style={{ color: 'rgba(255,255,255,0.32)' }}>
+          style={{ color: 'rgba(255,255,255,0.50)' }}>
           {isReframed ? 'REFRAMED: APPROACHABILITY × PRICE' : 'CONVENTIONAL: PRICE × PRESTIGE'}
         </span>
       </div>
@@ -256,14 +256,14 @@ export default function CLAInteractive() {
             <motion.g key={`x-${axisSet}`}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={fadeT}>
-              <text x={FX + 6}         y={F_B + 15} fontSize="8"   fontFamily="var(--font-mono)"
-                letterSpacing="0.10em" fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}>
+              <text x={FX + 6}         y={F_B + 16} fontSize="12"   fontFamily="var(--font-mono)"
+                letterSpacing="0.06em" fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}>
                 {labels.xLeft}</text>
-              <text x={F_R - 6}        y={F_B + 15} fontSize="8"   fontFamily="var(--font-mono)"
-                letterSpacing="0.10em" fill="rgba(255,255,255,0.7)" textAnchor="end"
+              <text x={F_R - 6}        y={F_B + 16} fontSize="12"   fontFamily="var(--font-mono)"
+                letterSpacing="0.06em" fill="rgba(255,255,255,0.7)" textAnchor="end"
                 style={{ userSelect: 'none' }}>{labels.xRight}</text>
-              <text x={(FX + F_R) / 2} y={F_B + 25} fontSize="8.5" fontFamily="var(--font-mono)"
-                letterSpacing="0.14em" fill="rgba(255,255,255,0.48)" textAnchor="middle"
+              <text x={(FX + F_R) / 2} y={F_B + 32} fontSize="12" fontFamily="var(--font-mono)"
+                letterSpacing="0.08em" fill="rgba(255,255,255,0.48)" textAnchor="middle"
                 style={{ userSelect: 'none' }}>{labels.xAxis}</text>
             </motion.g>
           </AnimatePresence>
@@ -283,13 +283,13 @@ export default function CLAInteractive() {
                 transform={`rotate(-90, ${FX - 28}, ${(FY + F_B) / 2})`}
                 x={FX - 28} y={(FY + F_B) / 2}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+                fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                 fill="rgba(255,255,255,0.48)"
                 style={{ userSelect: 'none' }}>{labels.yAxis}</text>
-              <text x={FX - 10} y={F_B - 6} textAnchor="end" fontSize="8"
+              <text x={FX - 10} y={F_B - 6} textAnchor="end" fontSize="12"
                 fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.67)"
                 style={{ userSelect: 'none' }}>{labels.yBottom}</text>
-              <text x={FX - 10} y={FY + 12} textAnchor="end" fontSize="8"
+              <text x={FX - 10} y={FY + 14} textAnchor="end" fontSize="12"
                 fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.67)"
                 style={{ userSelect: 'none' }}>{labels.yTop}</text>
             </motion.g>
@@ -307,7 +307,7 @@ export default function CLAInteractive() {
           />
           <motion.text
             textAnchor="middle"
-            fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+            fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${SAGE_TEXT}0.92)`}
             animate={{ x: crowd.cx, y: crowdLabelY }}
             transition={motT}
@@ -340,19 +340,19 @@ export default function CLAInteractive() {
             {/* Labels - centred inside the box */}
             <motion.text
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="9.5" fontFamily="var(--font-mono)" letterSpacing="0.16em"
-              fill={`${SAGE}${panel.type === 'whitespace' ? '1.0' : '0.88'})`}
-              initial={{ x: ws.w / 2, y: ws.h / 2 - 8 }}
-              animate={{ x: ws.w / 2, y: ws.h / 2 - 8 }}
+              fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+              fill={`${SAGE_TEXT}${panel.type === 'whitespace' ? '1.0' : '0.88'})`}
+              initial={{ x: ws.w / 2, y: ws.h / 2 - 9 }}
+              animate={{ x: ws.w / 2, y: ws.h / 2 - 9 }}
               transition={motT}
               style={{ userSelect: 'none', pointerEvents: 'none' } as React.CSSProperties}
             >WHITE SPACE</motion.text>
             <motion.text
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="7.5" fontFamily="var(--font-mono)"
+              fontSize="12" fontFamily="var(--font-mono)" letterSpacing="-0.02em"
               fill={`${SAGE_TEXT}0.905)`}
-              initial={{ x: ws.w / 2, y: ws.h / 2 + 10 }}
-              animate={{ x: ws.w / 2, y: ws.h / 2 + 10 }}
+              initial={{ x: ws.w / 2, y: ws.h / 2 + 11 }}
+              animate={{ x: ws.w / 2, y: ws.h / 2 + 11 }}
               transition={motT}
               style={{ userSelect: 'none', pointerEvents: 'none' } as React.CSSProperties}
             >click to explore</motion.text>
@@ -425,7 +425,7 @@ export default function CLAInteractive() {
             animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.18 }}
             className="rounded-lg border p-5 text-sm"
-            style={{ borderColor: 'var(--color-neutral-100)', color: 'var(--color-neutral-500)' }}
+            style={{ borderColor: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.55)' }}
           >
             {isReframed
               ? 'Axes reframed: the crowded cluster has moved to the left (intimidating). The right side (approachable, accessible) is now the white space. Click the white space to explore the opportunity.'
@@ -445,14 +445,14 @@ export default function CLAInteractive() {
             >
               <div className="flex items-center gap-3">
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
-                  style={{ color: `${SAGE}0.90)` }}>{c.label}</p>
-                <span className="text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
-                  style={{ background: `${SAGE}0.10)`, color: `${SAGE}0.72)`, border: `1px solid ${SAGE}0.22)` }}>
+                  style={{ color: `${SAGE_TEXT}0.95)` }}>{c.label}</p>
+                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                  style={{ background: `${SAGE}0.10)`, color: `${SAGE_TEXT}0.90)`, border: `1px solid ${SAGE}0.22)` }}>
                   {c.sub}
                 </span>
               </div>
-              <p className="text-sm text-neutral-700 leading-relaxed">{c.positioning}</p>
-              <p className="text-xs text-neutral-500 italic">
+              <p className="text-sm text-white text-opacity-70 leading-relaxed">{c.positioning}</p>
+              <p className="text-xs text-white text-opacity-55 italic">
                 {isReframed
                   ? 'On the reframed axis: positioned at the intimidating end. Approachability is not how this player competes.'
                   : 'On the conventional axis: competes where most of the market competes.'}
@@ -470,21 +470,21 @@ export default function CLAInteractive() {
             style={{ borderColor: `${SAGE}0.18)`, background: `${SAGE}0.03)` }}
           >
             <p className="text-[10px] font-semibold uppercase tracking-widest"
-              style={{ color: `${SAGE}0.80)` }}>The crowded zone</p>
-            <p className="text-sm text-neutral-700 leading-relaxed">
+              style={{ color: `${SAGE_TEXT}0.90)` }}>The crowded zone</p>
+            <p className="text-sm text-white text-opacity-70 leading-relaxed">
               This is where the entire market competes. Every player has converged on the same two or three
               dimensions, driving toward feature parity and margin erosion. Entering here means choosing a
               position on the conventional axes, and then fighting, at great expense, for incremental
               differentiation in a space that is already defined.
             </p>
-            <p className="text-sm text-neutral-700 leading-relaxed">
+            <p className="text-sm text-white text-opacity-70 leading-relaxed">
               The crowded zone is not a failure of the competitors; it is the result of each company sensibly
               watching its nearest rivals and matching what works. The result is a field of increasingly
               similar offerings. The map makes the pattern visible, and seeing it clearly is the first
               step to escaping it.
             </p>
             {!isReframed && (
-              <p className="text-xs text-neutral-500 italic">
+              <p className="text-xs text-white text-opacity-55 italic">
                 Try reframing the axes to see how the crowded zone shifts on different dimensions.
               </p>
             )}
@@ -500,27 +500,27 @@ export default function CLAInteractive() {
             style={{ borderColor: `${SAGE}0.28)`, background: `${SAGE}0.05)` }}
           >
             <p className="text-[10px] font-semibold uppercase tracking-widest"
-              style={{ color: `${SAGE}0.90)` }}>
+              style={{ color: `${SAGE_TEXT}0.95)` }}>
               {isReframed ? 'The white space on the reframed axis' : 'The white space'}
             </p>
-            <p className="text-sm text-neutral-700 leading-relaxed">
+            <p className="text-sm text-white text-opacity-70 leading-relaxed">
               {isReframed
                 ? 'After reframing to approachability vs price, the entire right side of the field is empty. No competitor has positioned on being genuinely approachable and accessible: every player, from the budget entry-level to the ultra-premium leader, uses the expert-oriented category conventions. The gap between where competitors actually sit and where un-served customers might want them is now visible.'
                 : 'This region has no competitors. On the conventional axes, the lower-left represents a position that combines accessible price with simplified, low-barrier positioning, something no current player occupies.'}
             </p>
             <div className="border-t pt-4 space-y-2" style={{ borderColor: `${SAGE}0.15)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest"
-                style={{ color: `${SAGE}0.70)` }}>The critical question</p>
-              <p className="text-sm font-semibold text-neutral-800 leading-relaxed">
+                style={{ color: `${SAGE_TEXT}0.85)` }}>The critical question</p>
+              <p className="text-sm font-semibold text-white text-opacity-90 leading-relaxed">
                 Is this space empty because it is an un-served opportunity, or because no viable business can survive here?
               </p>
-              <p className="text-sm text-neutral-700 leading-relaxed">
+              <p className="text-sm text-white text-opacity-70 leading-relaxed">
                 Both exist. A white space on a competitive map is necessary but not sufficient. It tells you
                 no competitor is here; it does not tell you whether customers would come if you were.
                 The judgment requires customer research: who lives in this space, what they need, and whether
                 they would choose a product designed for them over the crowded alternatives.
               </p>
-              <p className="text-sm text-neutral-600 italic">
+              <p className="text-sm text-white text-opacity-55 italic">
                 The map finds the gap. Interviews, observation, and concept testing determine whether the gap is real.
               </p>
             </div>

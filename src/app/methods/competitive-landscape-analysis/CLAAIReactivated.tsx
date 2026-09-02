@@ -9,7 +9,7 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 720
-const SVG_H = 338
+const SVG_H = 386
 
 const FX = 78
 const FY = 26
@@ -69,7 +69,7 @@ export default function CLAAIReactivated() {
                 ? (m === 'ai' ? `${INDIGO}0.35)` : `${SAGE}0.35)`)
                 : 'rgba(255,255,255,0.18)'}`,
               color: mode === m
-                ? m === 'ai' ? `${INDIGO}1)` : `${SAGE}1)`
+                ? m === 'ai' ? `${INDIGO_TEXT}1)` : `${SAGE_TEXT}1)`
                 : 'rgba(255,255,255,0.60)',
             }}
           >
@@ -134,22 +134,22 @@ export default function CLAAIReactivated() {
             strokeLinecap="round" strokeLinejoin="round" />
 
           {/* Axis labels - always CONVENTIONAL in AI mode */}
-          <text x={FX + 6} y={F_B + 15} fontSize="8" fontFamily="var(--font-mono)"
-            letterSpacing="0.10em" fill="rgba(255,255,255,0.69)"
+          <text x={FX + 6} y={F_B + 16} fontSize="12" fontFamily="var(--font-mono)"
+            letterSpacing="0.06em" fill="rgba(255,255,255,0.69)"
             style={{ userSelect: 'none' }}>LOW</text>
-          <text x={F_R - 6} y={F_B + 15} fontSize="8" fontFamily="var(--font-mono)"
-            letterSpacing="0.10em" fill="rgba(255,255,255,0.69)" textAnchor="end"
+          <text x={F_R - 6} y={F_B + 16} fontSize="12" fontFamily="var(--font-mono)"
+            letterSpacing="0.06em" fill="rgba(255,255,255,0.69)" textAnchor="end"
             style={{ userSelect: 'none' }}>HIGH</text>
-          <text x={(FX + F_R) / 2} y={F_B + 25} fontSize="8.5" fontFamily="var(--font-mono)"
-            letterSpacing="0.14em" fill={`rgba(255,255,255,${isAI ? '0.50' : '0.42'})`} textAnchor="middle"
+          <text x={(FX + F_R) / 2} y={F_B + 32} fontSize="12" fontFamily="var(--font-mono)"
+            letterSpacing="0.08em" fill={`rgba(255,255,255,${isAI ? '0.55' : '0.50'})`} textAnchor="middle"
             style={{ userSelect: 'none' }}>PRICE →</text>
 
           <text
             transform={`rotate(-90, ${FX - 28}, ${(FY + F_B) / 2})`}
             x={FX - 28} y={(FY + F_B) / 2}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-            fill={`rgba(255,255,255,${isAI ? '0.50' : '0.42'})`}
+            fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fill={`rgba(255,255,255,${isAI ? '0.55' : '0.50'})`}
             style={{ userSelect: 'none' }}>↑ PRESTIGE LEVEL</text>
 
           {/* AI "conventional only" badge */}
@@ -159,13 +159,13 @@ export default function CLAAIReactivated() {
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 transition={fade}
               >
-                <rect x={(FX + F_R) / 2 - 84} y={F_B + 32}
-                  width={168} height={16} rx={4}
+                <rect x={(FX + F_R) / 2 - 115} y={F_B + 48}
+                  width={230} height={22} rx={4}
                   fill={`${INDIGO}0.10)`} stroke={`${INDIGO}0.30)`} strokeWidth={0.8} />
-                <text x={(FX + F_R) / 2} y={F_B + 42} textAnchor="middle"
-                  fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                <text x={(FX + F_R) / 2} y={F_B + 63} textAnchor="middle"
+                  fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${INDIGO_TEXT}0.948)`} style={{ userSelect: 'none' }}>
-                  AI: CONVENTIONAL AXES / DEFAULT FRAMING
+                  AI: CONVENTIONAL AXES ONLY
                 </text>
               </motion.g>
             )}
@@ -179,7 +179,7 @@ export default function CLAAIReactivated() {
             strokeWidth={isAI ? 1.5 : 1} strokeDasharray="4 3"
           />
           <text x={CROWD.cx} y={Math.max(FY + 14, CROWD.cy - CROWD.ry + 22)} textAnchor="middle"
-            fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+            fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={isAI ? `${INDIGO_TEXT}0.937)` : `${SAGE_TEXT}0.926)`}
             style={{ userSelect: 'none' }}>
             {isAI ? 'AI: "MARKET IS CROWDED"' : 'CROWDED ZONE'}
@@ -210,8 +210,8 @@ export default function CLAAIReactivated() {
           />
           <motion.text x={WS_CONV.x + WS_CONV.w / 2} y={WS_CONV.y + WS_CONV.h / 2}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-            fill={`${SAGE}${isAI ? '0.40' : '0.90'})`}
+            fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fill={`${SAGE_TEXT}${isAI ? '0.85' : '0.99'})`}
             animate={{ opacity: isAI ? 0.5 : 1.0 }}
             transition={fade}
             style={{ userSelect: 'none' }}>
@@ -234,17 +234,17 @@ export default function CLAAIReactivated() {
                   strokeDasharray="3 4"
                 />
                 <text x={WS_REFRAMED.x + WS_REFRAMED.w / 2}
-                  y={WS_REFRAMED.y + WS_REFRAMED.h / 2 - 8}
+                  y={WS_REFRAMED.y + WS_REFRAMED.h / 2 - 9}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                  fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                   fill={`${SAGE_TEXT}0.92)`}
                   style={{ userSelect: 'none' }}>
                   REFRAMED WHITE SPACE
                 </text>
                 <text x={WS_REFRAMED.x + WS_REFRAMED.w / 2}
-                  y={WS_REFRAMED.y + WS_REFRAMED.h / 2 + 10}
+                  y={WS_REFRAMED.y + WS_REFRAMED.h / 2 + 11}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="7.5" fontFamily="var(--font-mono)"
+                  fontSize="12" fontFamily="var(--font-mono)"
                   fill={`${SAGE_TEXT}0.874)`}
                   style={{ userSelect: 'none' }}>
                   visible on new axes
@@ -268,17 +268,17 @@ export default function CLAAIReactivated() {
                   strokeDasharray="3 5"
                 />
                 <text x={WS_REFRAMED.x + WS_REFRAMED.w / 2}
-                  y={WS_REFRAMED.y + WS_REFRAMED.h / 2 - 8}
+                  y={WS_REFRAMED.y + WS_REFRAMED.h / 2 - 9}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="12" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                   fill="rgba(255,255,255,0.61)"
                   style={{ userSelect: 'none' }}>
                   HUMAN REFRAME REQUIRED
                 </text>
                 <text x={WS_REFRAMED.x + WS_REFRAMED.w / 2}
-                  y={WS_REFRAMED.y + WS_REFRAMED.h / 2 + 10}
+                  y={WS_REFRAMED.y + WS_REFRAMED.h / 2 + 11}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="7.5" fontFamily="var(--font-mono)"
+                  fontSize="12" fontFamily="var(--font-mono)"
                   fill="rgba(255,255,255,0.565)"
                   style={{ userSelect: 'none' }}>
                   axis not in training data
@@ -301,8 +301,8 @@ export default function CLAAIReactivated() {
             <div className="rounded-lg border p-5 space-y-2"
               style={{ borderColor: `${SAGE}0.22)`, background: `${SAGE}0.04)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest"
-                style={{ color: `${SAGE}0.85)` }}>Human advantage: the reframe</p>
-              <p className="text-sm text-neutral-700 leading-relaxed">
+                style={{ color: `${SAGE_TEXT}0.95)` }}>Human advantage: the reframe</p>
+              <p className="text-sm text-white text-opacity-70 leading-relaxed">
                 A human analyst looks at the conventional map (price × prestige, everyone in the crowded zone)
                 and thinks to ask: &ldquo;what axis is the industry NOT competing on?&rdquo; That question, and the axis
                 it reveals, is the move that surfaces white space invisible on the default framing.
@@ -311,8 +311,8 @@ export default function CLAAIReactivated() {
             <div className="rounded-lg border p-5 space-y-2"
               style={{ borderColor: `${SAGE}0.18)`, background: `${SAGE}0.03)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest"
-                style={{ color: `${SAGE}0.75)` }}>Human advantage: judging the gap</p>
-              <p className="text-sm text-neutral-700 leading-relaxed">
+                style={{ color: `${SAGE_TEXT}0.85)` }}>Human advantage: judging the gap</p>
+              <p className="text-sm text-white text-opacity-70 leading-relaxed">
                 Once the white space appears, telling an un-served opportunity from an unviable void requires
                 customer understanding, not just a gap on the map. That judgment combines the positioning
                 map with interviews, observation, and concept testing: all human work.
@@ -330,8 +330,8 @@ export default function CLAAIReactivated() {
               <div className="rounded-lg border p-5 space-y-2"
                 style={{ borderColor: `${INDIGO}0.22)`, background: `${INDIGO}0.04)` }}>
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
-                  style={{ color: `${INDIGO}0.80)` }}>AI accelerates: gathering and mapping</p>
-                <p className="text-sm text-neutral-700 leading-relaxed">
+                  style={{ color: `${INDIGO_TEXT}0.95)` }}>AI accelerates: gathering and mapping</p>
+                <p className="text-sm text-white text-opacity-70 leading-relaxed">
                   AI gathers competitive information fast and produces a solid first-pass map: who is playing,
                   how they describe themselves, where they cluster. On the conventional axes the industry uses,
                   AI assembles the documented landscape quickly and accurately. Genuine time savings.
@@ -340,8 +340,8 @@ export default function CLAAIReactivated() {
               <div className="rounded-lg border p-5 space-y-2"
                 style={{ borderColor: `${INDIGO}0.18)`, background: `${INDIGO}0.03)` }}>
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
-                  style={{ color: `${INDIGO}0.70)` }}>AI limitation: the framing trap</p>
-                <p className="text-sm text-neutral-700 leading-relaxed">
+                  style={{ color: `${INDIGO_TEXT}0.85)` }}>AI limitation: the framing trap</p>
+                <p className="text-sm text-white text-opacity-70 leading-relaxed">
                   AI maps the field on the axes the industry is already using, because those are the axes
                   the existing literature uses. It cannot propose the fresh axis that reveals a gap the
                   industry is not measuring, because that axis appears nowhere in its training data by design.
@@ -352,8 +352,8 @@ export default function CLAAIReactivated() {
             <div className="rounded-lg border p-5"
               style={{ borderColor: `${INDIGO}0.20)`, background: `${INDIGO}0.04)` }}>
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
-                style={{ color: `${INDIGO}0.80)` }}>Where AI helps most</p>
-              <p className="text-sm text-neutral-700 leading-relaxed">
+                style={{ color: `${INDIGO_TEXT}0.95)` }}>Where AI helps most</p>
+              <p className="text-sm text-white text-opacity-70 leading-relaxed">
                 AI is strongest at the legwork: cataloging players, summarizing stated positioning, and populating
                 the map on axes you specify. The research that normally takes days can be compressed to hours.
                 The gap is the reframe: when you tell AI specifically &ldquo;map this market on unconventional axes
