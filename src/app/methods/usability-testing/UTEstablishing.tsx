@@ -72,7 +72,7 @@ export default function UTEstablishing() {
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Expectation versus behavior gap. Two paths through an interface. The INTENDED PATH is a clean straight line from START through ACCOUNT, BILLING, and CANCEL to DONE. The ACTUAL PATH wanders: it hesitates at ACCOUNT, takes a wrong turn up to Plan Details, backtracks to ACCOUNT, reaches BILLING, then gets stuck before CANCEL, never reaching DONE. Four friction points are marked: HESITATION at ACCOUNT, WRONG TURN at Plan Details, BACKTRACK on the return, STUCK before CANCEL. The gap between the two paths is the finding."
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
+        style={{ width: '100%', margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="ut-est-glow" x="-20%" y="-20%" width="140%" height="140%">
@@ -107,6 +107,17 @@ export default function UTEstablishing() {
             ACTUAL PATH
           </text>
         </motion.g>
+
+        {/* Friction point circle markers: rendered *behind* the node boxes/text
+            (two of the four sit exactly on a node's center, matching where the
+            actual path pauses there) so the crisp label text on top never gets
+            obscured by the dot underneath. */}
+        {FRICTION.map((f) => (
+          <motion.circle key={`dot-${f.label}`} {...fade(f.animD)}
+            cx={f.cx} cy={f.cy} r={5}
+            fill={f.label === 'WRONG TURN' ? `${AMBER}0.90)` : `${BRICK}0.90)`}
+            stroke="rgba(10,10,18,0.80)" strokeWidth="1.5" />
+        ))}
 
         {/* Main interface nodes */}
         {NODES.map((n, i) => {
@@ -180,14 +191,10 @@ export default function UTEstablishing() {
           }}
         />
 
-        {/* Friction point markers (appear as actual path reaches each one) */}
+        {/* Friction point labels (the circle markers render earlier, behind
+            the node boxes -- see above) */}
         {FRICTION.map((f) => (
           <motion.g key={f.label} {...fade(f.animD)}>
-            {/* Circle marker on path */}
-            <circle cx={f.cx} cy={f.cy} r={5}
-              fill={f.label === 'WRONG TURN' ? `${AMBER}0.90)` : `${BRICK}0.90)`}
-              stroke="rgba(10,10,18,0.80)" strokeWidth="1.5" />
-            {/* Label */}
             <text x={f.lx} y={f.ly}
               textAnchor="middle" dominantBaseline="middle"
               fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
