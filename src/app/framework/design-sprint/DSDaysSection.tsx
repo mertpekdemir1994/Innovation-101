@@ -211,17 +211,17 @@ export default function DSDaysSection() {
                 borderLeft: `3px solid ${activeDay === day.id ? `${CLAY}0.65)` : 'transparent'}`,
               }}
             >
-              <span className="font-mono text-xs font-semibold" style={{ color: `${CLAY}0.40)` }}>
+              <span className="font-mono text-xs font-semibold" style={{ color: `${CLAY}1)` }}>
                 {day.n}
               </span>
               <div>
                 <p
                   className="font-semibold text-sm"
-                  style={{ color: activeDay === day.id ? `${CLAY}0.90)` : 'var(--color-neutral-600)' }}
+                  style={{ color: activeDay === day.id ? `${CLAY}1)` : 'var(--color-neutral-600)' }}
                 >
                   {day.label}
                 </p>
-                <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${CLAY}0.40)` }}>
+                <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${CLAY}1)` }}>
                   {day.mode}
                 </p>
               </div>
@@ -235,8 +235,8 @@ export default function DSDaysSection() {
         {DAYS.map((day, i) => (
           <div key={day.id} ref={(el) => { sectionRefs.current[i] = el }}>
             <div className="md:hidden mb-space-4 flex items-center gap-space-3">
-              <span className="font-mono text-xs font-semibold" style={{ color: `${CLAY}0.55)` }}>{day.n}</span>
-              <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${CLAY}0.55)` }}>{day.mode}</span>
+              <span className="font-mono text-xs font-semibold" style={{ color: `${CLAY}1)` }}>{day.n}</span>
+              <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${CLAY}1)` }}>{day.mode}</span>
             </div>
 
             <h3
@@ -266,7 +266,7 @@ export default function DSDaysSection() {
                       <span className="font-semibold text-sm text-neutral-900">{act.title}</span>
                       <span
                         className="text-base shrink-0 ml-space-3 transition-transform duration-200"
-                        style={{ color: `${CLAY}0.60)`, transform: isOpen ? 'rotate(45deg)' : 'none' }}
+                        style={{ color: `${CLAY}1)`, transform: isOpen ? 'rotate(45deg)' : 'none' }}
                       >
                         +
                       </span>
@@ -293,7 +293,7 @@ export default function DSDaysSection() {
               className="mt-space-6 rounded-xl px-space-6 py-space-5"
               style={{ background: `${CLAY}0.04)`, border: `1px solid ${CLAY}0.12)` }}
             >
-              <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${CLAY}0.65)` }}>
+              <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${CLAY}1)` }}>
                 The key question
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed italic">{day.keyQuestion}</p>

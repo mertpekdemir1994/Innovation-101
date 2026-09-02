@@ -110,14 +110,14 @@ export default function DSEvolutionTimeline() {
                 style={{
                   background: active === i ? `${CLAY}1)` : `${CLAY}0.08)`,
                   border: `1px solid ${active === i ? 'transparent' : `${CLAY}0.20)`}`,
-                  color: active === i ? '#fff' : `${CLAY}0.70)`,
+                  color: active === i ? '#fff' : `${CLAY}1)`,
                 }}
               >
                 {i + 1}
               </div>
               <p
                 className="font-mono text-2xs uppercase tracking-widest text-center leading-tight transition-colors duration-200"
-                style={{ color: active === i ? `${CLAY}0.85)` : 'var(--color-neutral-500)' }}
+                style={{ color: active === i ? `${CLAY}1)` : 'var(--color-neutral-500)' }}
               >
                 {ver.year}
               </p>
@@ -141,7 +141,7 @@ export default function DSEvolutionTimeline() {
             <div className="flex items-center gap-space-3 mb-space-5">
               <span
                 className="font-mono text-2xs uppercase tracking-widest px-space-3 py-space-1 rounded-full"
-                style={{ color: `${CLAY}0.80)`, background: `${CLAY}0.08)`, border: `1px solid ${CLAY}0.15)` }}
+                style={{ color: `${CLAY}1)`, background: `${CLAY}0.08)`, border: `1px solid ${CLAY}0.15)` }}
               >
                 {v.badge}
               </span>
@@ -177,7 +177,7 @@ export default function DSEvolutionTimeline() {
                 >
                   <span
                     className="font-mono text-xs px-space-2 py-space-1 rounded shrink-0 self-start"
-                    style={{ background: `${CLAY}0.08)`, color: `${CLAY}0.80)`, whiteSpace: 'nowrap' }}
+                    style={{ background: `${CLAY}0.08)`, color: `${CLAY}1)`, whiteSpace: 'nowrap' }}
                   >
                     {change.tag}
                   </span>
@@ -204,7 +204,7 @@ export default function DSEvolutionTimeline() {
                   type="button"
                   onClick={() => setActive(active + 1)}
                   className="text-sm font-semibold transition-opacity hover:opacity-70 flex items-center gap-space-2"
-                  style={{ color: `${CLAY}0.85)` }}
+                  style={{ color: `${CLAY}1)` }}
                 >
                   {VERSIONS[active + 1].year} →
                 </button>

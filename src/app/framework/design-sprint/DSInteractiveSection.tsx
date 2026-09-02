@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY = 'rgba(180,83,9,'
+// This dark amber (amber-700) fails 4.5:1 as text on the dark section
+// background at any opacity, even 1.0 — brightened text-safe variant.
+const CLAY_TEXT = 'rgba(230,150,90,'
 
 type DayKey = 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday'
 
@@ -315,7 +318,7 @@ export default function DSInteractiveSection() {
               >
                 <span
                   className="font-mono text-2xs uppercase tracking-widest mb-space-1"
-                  style={{ color: isActive ? `${CLAY}0.80)` : 'rgba(255,255,255,0.30)' }}
+                  style={{ color: isActive ? `${CLAY_TEXT}0.85)` : 'rgba(255,255,255,0.30)' }}
                 >
                   {day.n}
                 </span>
@@ -328,7 +331,7 @@ export default function DSInteractiveSection() {
                 {'sublabel' in day && (
                   <span
                     className="font-mono text-2xs"
-                    style={{ color: isActive ? `${CLAY}0.65)` : 'rgba(255,255,255,0.20)' }}
+                    style={{ color: isActive ? `${CLAY_TEXT}0.85)` : 'rgba(255,255,255,0.20)' }}
                   >
                     {day.sublabel}
                   </span>
@@ -365,7 +368,7 @@ export default function DSInteractiveSection() {
                 className="rounded-xl p-space-5 mb-space-5"
                 style={{ background: `${CLAY}0.12)`, border: `1px solid ${CLAY}0.22)` }}
               >
-                <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${CLAY}0.65)` }}>
+                <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${CLAY_TEXT}0.85)` }}>
                   {detail.example.co}
                 </p>
                 <p className="text-sm leading-relaxed italic" style={{ color: 'rgba(255,255,255,0.75)' }}>
