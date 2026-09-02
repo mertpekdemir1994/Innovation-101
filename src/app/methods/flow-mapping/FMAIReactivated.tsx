@@ -11,7 +11,7 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
-const SVG_H = 276
+const SVG_H = 284
 
 // ── Node geometry (same as Establishing and Interactive) ─────────────────────
 const EN_X=10, EN_Y=110, EN_W=76, EN_H=26
@@ -63,7 +63,7 @@ export default function FMAIReactivated() {
                 className="rounded-full px-5 py-1.5 text-sm font-semibold transition-colors"
                 style={{
                   background: on ? (ai ? `${INDIGO}0.80)` : 'rgba(255,255,255,0.90)') : 'transparent',
-                  color: on ? (ai ? '#fff' : '#111') : 'rgba(255,255,255,0.45)',
+                  color: on ? (ai ? '#fff' : '#111') : 'rgba(255,255,255,0.55)',
                 }}
                 aria-pressed={on}
               >{label}</button>
@@ -150,11 +150,11 @@ export default function FMAIReactivated() {
               fill={`${AMBER}0.07)`} stroke={`${AMBER}0.42)`} strokeWidth={1} />
             <text x={DE_CX} y={DE_CY + 1}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
               fill={`${AMBER}0.82)`} style={{ userSelect: 'none' }}>REVIEW QUEUE</text>
-            <text x={DE_X + DE_W + 8} y={DE_CY + 1}
+            <text x={DE_X + DE_W + 10} y={DE_CY + 1}
               textAnchor="start" dominantBaseline="middle"
-              fontSize="6" fontFamily="var(--font-mono)"
+              fontSize="11" fontFamily="var(--font-mono)"
               fill={`${AMBER}0.72)`} style={{ userSelect: 'none' }}>✕</text>
 
             {/* LOOP arc */}
@@ -165,7 +165,7 @@ export default function FMAIReactivated() {
             />
             <text x={(B_CX + B2_CX) / 2} y={B_CY + 73}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
               fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}>↺ LOOP</text>
 
             {/* FORK → ESCALATE */}
@@ -176,7 +176,7 @@ export default function FMAIReactivated() {
               fill={`${AMBER}0.07)`} stroke={`${AMBER}0.38)`} strokeWidth={1} strokeDasharray="5 3" />
             <text x={C_CX} y={C_CY + 1}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
               fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>ESCALATE</text>
 
             {/* ESCALATE → MANUAL STEP → COMPLETE */}
@@ -187,7 +187,7 @@ export default function FMAIReactivated() {
               fill={`${AMBER}0.07)`} stroke={`${AMBER}0.38)`} strokeWidth={1} strokeDasharray="5 3" />
             <text x={RD_CX} y={C_CY + 1}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.01em"
               fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>MANUAL STEP</text>
             <line x1={RD_CX + RD_W/2} y1={C_CY} x2={OB_X + 20} y2={OB_CY + OB_H/2}
               stroke={`${AMBER}0.38)`} strokeWidth={1} strokeDasharray="5 3"
@@ -203,7 +203,7 @@ export default function FMAIReactivated() {
           />
           <text x={EN_CX} y={EN_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={isAI ? `${INDIGO_TEXT}0.983)` : `${TEAL_TEXT}0.983)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>SUBMIT</text>
 
@@ -221,7 +221,7 @@ export default function FMAIReactivated() {
           />
           <text x={A_CX} y={A_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={isAI ? `${INDIGO_TEXT}0.975)` : `${TEAL_TEXT}0.975)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>VALIDATE</text>
 
@@ -233,7 +233,7 @@ export default function FMAIReactivated() {
           />
           <text x={OA_CX} y={OA_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={isAI ? `${INDIGO_TEXT}0.979)` : `${TEAL_TEXT}0.979)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>RESOLVED ✓</text>
 
@@ -245,7 +245,7 @@ export default function FMAIReactivated() {
           />
           <text x={B_CX} y={B_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={isAI ? `${INDIGO_TEXT}0.975)` : `${TEAL_TEXT}0.975)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>PROCESS</text>
 
@@ -257,7 +257,7 @@ export default function FMAIReactivated() {
           />
           <text x={B2_CX} y={B2_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={isAI ? `${INDIGO_TEXT}0.975)` : `${TEAL_TEXT}0.975)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>APPROVE</text>
 
@@ -269,7 +269,7 @@ export default function FMAIReactivated() {
           />
           <text x={OB_CX} y={OB_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={isAI ? `${INDIGO_TEXT}0.979)` : `${TEAL_TEXT}0.979)`}
             style={{ userSelect: 'none', transition: 'fill 0.40s' }}>COMPLETE ✓</text>
 
@@ -281,7 +281,7 @@ export default function FMAIReactivated() {
                 <motion.text key="ai-draws"
                   x={350} y={12}
                   textAnchor="middle" dominantBaseline="hanging"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                   fill={`${INDIGO_TEXT}0.916)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30 }}
@@ -291,25 +291,30 @@ export default function FMAIReactivated() {
                 <motion.text key="ai-invisible"
                   x={280} y={DE_CY + 1}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${AMBER_TEXT}0.808)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30, delay: 0.10 }}
                 >INVISIBLE TO AI</motion.text>
 
+                {/* Moved above the ESCALATE node (was centered on it at
+                    (300, C_CY+1)) - at 11pt this label is wider than the
+                    node and collided with the ESCALATE text itself */}
                 <motion.text key="ai-invisible2"
-                  x={300} y={C_CY + 1}
+                  x={C_CX} y={194}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${AMBER_TEXT}0.783)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30, delay: 0.15 }}
                 >INVISIBLE TO AI</motion.text>
 
+                {/* Moved above the LOOP label (was below it at B_CY+90,
+                    which put it inside the ESCALATE row at 11pt) */}
                 <motion.text key="ai-invisible3"
-                  x={(B_CX + B2_CX) / 2} y={B_CY + 90}
+                  x={(B_CX + B2_CX) / 2} y={B_CY + 55}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${AMBER_TEXT}0.783)`} style={{ userSelect: 'none' }}
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   transition={{ duration: 0.30, delay: 0.12 }}
@@ -334,7 +339,7 @@ export default function FMAIReactivated() {
               style={{ background: `${INDIGO}0.06)`, border: `1px solid ${INDIGO}0.20)` }}
             >
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}
+                style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_TEXT}0.90)` }}
               >Where AI is genuinely fast</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
                 Given a description, process documentation, or a spec, AI can generate a clean, structured
@@ -366,7 +371,7 @@ export default function FMAIReactivated() {
       {/* Synthesis */}
       <div className="rounded-xl p-6" style={{ background: `${TEAL}0.08)`, border: `1px solid ${TEAL}0.20)` }}>
         <p className="font-mono uppercase tracking-widest mb-3"
-          style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}
+          style={{ fontSize: 'var(--text-2xs)', color: `${TEAL_TEXT}0.90)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
           Use AI to draft the documented flow fast; it is genuinely useful as a first-pass scaffold and faster

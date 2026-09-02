@@ -9,7 +9,7 @@ const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
-const SVG_H = 276
+const SVG_H = 284
 
 // ── Node geometry (shared constants) ─────────────────────────────────────────
 
@@ -104,7 +104,7 @@ export default function FMEstablishing() {
             filter="url(#fm-est-glow)" />
           <text x={EN_CX} y={EN_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={`${TEAL_TEXT}0.983)`} style={{ userSelect: 'none' }}>SUBMIT</text>
         </motion.g>
 
@@ -146,7 +146,7 @@ export default function FMEstablishing() {
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.50)`} strokeWidth={1} />
           <text x={A_CX} y={A_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={`${TEAL_TEXT}0.969)`} style={{ userSelect: 'none' }}>VALIDATE</text>
         </motion.g>
         {/* VALIDATE → RESOLVED line */}
@@ -168,7 +168,7 @@ export default function FMEstablishing() {
             fill={`${TEAL}0.14)`} stroke={`${TEAL}0.55)`} strokeWidth={1.2} />
           <text x={OA_CX} y={OA_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={`${TEAL_TEXT}0.979)`} style={{ userSelect: 'none' }}>RESOLVED ✓</text>
         </motion.g>
 
@@ -192,7 +192,7 @@ export default function FMEstablishing() {
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.50)`} strokeWidth={1} />
           <text x={B_CX} y={B_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={`${TEAL_TEXT}0.969)`} style={{ userSelect: 'none' }}>PROCESS</text>
         </motion.g>
         {/* PROCESS → APPROVE line */}
@@ -214,7 +214,7 @@ export default function FMEstablishing() {
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.50)`} strokeWidth={1} />
           <text x={B2_CX} y={B2_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={`${TEAL_TEXT}0.969)`} style={{ userSelect: 'none' }}>APPROVE</text>
         </motion.g>
         {/* APPROVE → COMPLETE line */}
@@ -236,7 +236,7 @@ export default function FMEstablishing() {
             fill={`${TEAL}0.14)`} stroke={`${TEAL}0.55)`} strokeWidth={1.2} />
           <text x={OB_CX} y={OB_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={`${TEAL_TEXT}0.979)`} style={{ userSelect: 'none' }}>COMPLETE ✓</text>
         </motion.g>
 
@@ -258,16 +258,16 @@ export default function FMEstablishing() {
             filter="url(#fm-est-amber)" />
           <text x={DE_CX} y={DE_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${AMBER}0.82)`} style={{ userSelect: 'none' }}>REVIEW QUEUE</text>
           {/* Dead end X marker */}
-          <text x={DE_X + DE_W + 8} y={DE_CY + 1}
+          <text x={DE_X + DE_W + 10} y={DE_CY + 1}
             textAnchor="start" dominantBaseline="middle"
-            fontSize="6" fontFamily="var(--font-mono)"
+            fontSize="11" fontFamily="var(--font-mono)"
             fill={`${AMBER}0.72)`} style={{ userSelect: 'none' }}>✕</text>
-          <text x={DE_X + DE_W + 17} y={DE_CY + 1}
+          <text x={DE_X + DE_W + 22} y={DE_CY + 1}
             textAnchor="start" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
             fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>DEAD END</text>
         </motion.g>
 
@@ -284,7 +284,7 @@ export default function FMEstablishing() {
           />
           <text x={(B_CX + B2_CX) / 2} y={B_CY + 73}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}>↺ LOOP</text>
         </motion.g>
 
@@ -301,7 +301,7 @@ export default function FMEstablishing() {
           {/* Unintended branch label near the diagonal */}
           <text x={FORK_CX + 14} y={(FORK_CY + C_CY) / 2 + 2}
             textAnchor="start" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${AMBER_TEXT}0.83)`} style={{ userSelect: 'none' }}>⊘ UNINTENDED</text>
           {/* ESCALATE node */}
           <rect x={C_X} y={C_Y} width={C_W} height={C_W - 64} rx={5}
@@ -309,7 +309,7 @@ export default function FMEstablishing() {
             strokeDasharray="5 3" filter="url(#fm-est-amber)" />
           <text x={C_CX} y={C_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>ESCALATE</text>
         </motion.g>
 
@@ -329,7 +329,7 @@ export default function FMEstablishing() {
             strokeDasharray="5 3" />
           <text x={RD_CX} y={C_CY + 1}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.01em"
             fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>MANUAL STEP</text>
           {/* MANUAL STEP → COMPLETE diagonal (redundant path) */}
           <line x1={RD_CX + RD_W/2} y1={C_CY} x2={OB_X + 20} y2={OB_CY + OB_H/2}
@@ -339,14 +339,14 @@ export default function FMEstablishing() {
           {/* Redundant label */}
           <text x={(RD_CX + RD_W/2 + OB_X + 20) / 2 + 10} y={(C_CY + OB_CY + OB_H/2) / 2}
             textAnchor="start" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${AMBER_TEXT}0.83)`} style={{ userSelect: 'none' }}>≡ REDUNDANT</text>
         </motion.g>
 
         {/* ── Caption ───────────────────────────────────────────────── */}
         <motion.text x={SVG_W / 2} y={CAP_Y}
           textAnchor="middle"
-          fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.57)"
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
