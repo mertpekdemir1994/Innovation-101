@@ -214,7 +214,7 @@ export default function LSInteractiveSection() {
                 className="px-space-3 py-space-1 rounded-full text-xs transition-colors duration-200"
                 style={{
                   background: activeMvp === i ? `${PURPLE}1)` : `${PURPLE}0.07)`,
-                  color: activeMvp === i ? '#fff' : `${PURPLE}0.75)`,
+                  color: activeMvp === i ? '#fff' : `${PURPLE_TEXT}0.85)`,
                   fontWeight: activeMvp === i ? 600 : 400,
                 }}
               >
@@ -267,7 +267,7 @@ export default function LSInteractiveSection() {
               >
                 <p
                   className="font-mono text-2xs uppercase tracking-widest mb-space-3"
-                  style={{ color: `${PURPLE}0.65)` }}
+                  style={{ color: `${PURPLE_TEXT}0.85)` }}
                 >
                   {phaseActive.example.co}
                 </p>
@@ -315,7 +315,7 @@ export default function LSInteractiveSection() {
                   >
                     <span
                       className="font-mono text-xs font-semibold shrink-0 mt-0.5"
-                      style={{ color: `${PURPLE}0.65)` }}
+                      style={{ color: `${PURPLE_TEXT}0.85)` }}
                     >
                       {String(i + 1).padStart(2, '0')}
                     </span>

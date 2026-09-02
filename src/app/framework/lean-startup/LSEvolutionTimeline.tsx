@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PURPLE = 'rgba(124,58,237,'
+// This component renders in a WarmSection (light bg) — plain PURPLE fails
+// 4.5:1 as text even near full opacity; darkened text-safe variant.
+const PURPLE_DARK = 'rgba(108,51,206,'
 
 const VERSIONS = [
   {
@@ -124,14 +127,14 @@ export default function LSEvolutionTimeline() {
                 style={{
                   background: active === i ? `${PURPLE}1)` : `${PURPLE}0.08)`,
                   border: `1px solid ${active === i ? 'transparent' : `${PURPLE}0.20)`}`,
-                  color: active === i ? '#fff' : `${PURPLE}0.70)`,
+                  color: active === i ? '#fff' : `${PURPLE_DARK}0.85)`,
                 }}
               >
                 {i + 1}
               </div>
               <p
                 className="font-mono text-2xs uppercase tracking-widest text-center leading-tight transition-colors duration-200"
-                style={{ color: active === i ? `${PURPLE}0.85)` : 'var(--color-neutral-500)' }}
+                style={{ color: active === i ? `${PURPLE_DARK}0.90)` : 'var(--color-neutral-500)' }}
               >
                 {ver.year}
               </p>
@@ -156,7 +159,7 @@ export default function LSEvolutionTimeline() {
               <span
                 className="font-mono text-2xs uppercase tracking-widest px-space-3 py-space-1 rounded-full"
                 style={{
-                  color: `${PURPLE}0.80)`,
+                  color: `${PURPLE_DARK}0.85)`,
                   background: `${PURPLE}0.08)`,
                   border: `1px solid ${PURPLE}0.15)`,
                 }}
@@ -197,7 +200,7 @@ export default function LSEvolutionTimeline() {
                     className="font-mono text-xs px-space-2 py-space-1 rounded shrink-0 self-start"
                     style={{
                       background: `${PURPLE}0.08)`,
-                      color: `${PURPLE}0.80)`,
+                      color: `${PURPLE_DARK}0.85)`,
                       whiteSpace: 'nowrap',
                     }}
                   >
@@ -226,7 +229,7 @@ export default function LSEvolutionTimeline() {
                   type="button"
                   onClick={() => setActive(active + 1)}
                   className="text-sm font-semibold transition-opacity hover:opacity-70 flex items-center gap-space-2"
-                  style={{ color: `${PURPLE}0.85)` }}
+                  style={{ color: `${PURPLE_DARK}0.90)` }}
                 >
                   {VERSIONS[active + 1].year} →
                 </button>

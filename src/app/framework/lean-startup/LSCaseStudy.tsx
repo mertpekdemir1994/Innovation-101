@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PURPLE = 'rgba(124,58,237,'
+// This component renders in a WarmSection (light bg) — plain PURPLE fails
+// 4.5:1 as text even near full opacity; darkened text-safe variant.
+const PURPLE_DARK = 'rgba(108,51,206,'
 
 type LoopKey = 'loop1' | 'loop2' | 'loop3'
 
@@ -136,7 +139,7 @@ function ArtifactBlock({ artifact }: { artifact: Artifact }) {
             className="text-sm text-neutral-700 leading-relaxed"
             style={
               line.includes('no meaningful change') || line.includes('41%')
-                ? { fontWeight: 600, color: `${PURPLE}0.85)` }
+                ? { fontWeight: 600, color: `${PURPLE_DARK}0.90)` }
                 : {}
             }
           >
@@ -160,7 +163,7 @@ function LoopContent({ loopKey }: { loopKey: LoopKey }) {
       >
         <p
           className="font-mono text-2xs uppercase tracking-widest mb-space-3"
-          style={{ color: `${PURPLE}0.70)` }}
+          style={{ color: `${PURPLE_DARK}0.85)` }}
         >
           Hypothesis
         </p>
@@ -174,7 +177,7 @@ function LoopContent({ loopKey }: { loopKey: LoopKey }) {
         <div className="flex items-center gap-space-3 mb-space-3">
           <span
             className="font-mono text-2xs uppercase tracking-widest px-space-3 py-space-1 rounded-full"
-            style={{ background: `${PURPLE}0.08)`, color: `${PURPLE}0.80)` }}
+            style={{ background: `${PURPLE}0.08)`, color: `${PURPLE_DARK}0.85)` }}
           >
             Build
           </span>
@@ -201,7 +204,7 @@ function LoopContent({ loopKey }: { loopKey: LoopKey }) {
       >
         <p
           className="font-mono text-2xs uppercase tracking-widest mb-space-2"
-          style={{ color: `${PURPLE}0.70)` }}
+          style={{ color: `${PURPLE_DARK}0.85)` }}
         >
           Learn
         </p>
@@ -274,7 +277,7 @@ export default function LSCaseStudy() {
         <div className="px-space-6 md:px-space-8 py-space-7">
           <p
             className="font-mono text-2xs uppercase tracking-widest mb-space-3"
-            style={{ color: `${PURPLE}0.65)` }}
+            style={{ color: `${PURPLE_DARK}0.85)` }}
           >
             The problem
           </p>
@@ -312,7 +315,7 @@ export default function LSCaseStudy() {
             <span
               className="font-mono text-2xs uppercase tracking-widest mb-space-1"
               style={{
-                color: activeLoop === key ? `${PURPLE}0.65)` : 'var(--color-neutral-500)',
+                color: activeLoop === key ? `${PURPLE_DARK}0.90)` : 'var(--color-neutral-500)',
               }}
             >
               {sub}
@@ -320,7 +323,7 @@ export default function LSCaseStudy() {
             <span
               className="font-semibold text-sm"
               style={{
-                color: activeLoop === key ? `${PURPLE}0.90)` : 'var(--color-neutral-700)',
+                color: activeLoop === key ? `${PURPLE_DARK}0.95)` : 'var(--color-neutral-700)',
               }}
             >
               {label}
@@ -328,7 +331,7 @@ export default function LSCaseStudy() {
             {pivotType && (
               <span
                 className="font-mono text-2xs uppercase tracking-widest mt-space-1"
-                style={{ color: `${PURPLE}0.50)` }}
+                style={{ color: `${PURPLE_DARK}0.85)` }}
               >
                 {pivotType}
               </span>

@@ -4,6 +4,9 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PURPLE = 'rgba(124,58,237,'
+// This component renders in a LightSection (white bg) — plain PURPLE fails
+// 4.5:1 as text even near full opacity; darkened text-safe variant.
+const PURPLE_DARK = 'rgba(108,51,206,'
 
 type PhaseId = 'build' | 'measure' | 'learn'
 
@@ -167,7 +170,7 @@ export default function LSPhasesSection() {
             >
               <span
                 className="font-mono text-xs font-semibold"
-                style={{ color: `${PURPLE}0.40)` }}
+                style={{ color: `${PURPLE_DARK}0.85)` }}
               >
                 {phase.n}
               </span>
@@ -175,14 +178,14 @@ export default function LSPhasesSection() {
                 <p
                   className="font-semibold text-sm"
                   style={{
-                    color: activePhase === phase.id ? `${PURPLE}0.90)` : 'var(--color-neutral-600)',
+                    color: activePhase === phase.id ? `${PURPLE_DARK}0.95)` : 'var(--color-neutral-600)',
                   }}
                 >
                   {phase.label}
                 </p>
                 <p
                   className="font-mono text-2xs uppercase tracking-widest"
-                  style={{ color: `${PURPLE}0.40)` }}
+                  style={{ color: `${PURPLE_DARK}0.85)` }}
                 >
                   {phase.mode}
                 </p>
@@ -203,13 +206,13 @@ export default function LSPhasesSection() {
             <div className="md:hidden mb-space-4 flex items-center gap-space-3">
               <span
                 className="font-mono text-xs font-semibold"
-                style={{ color: `${PURPLE}0.55)` }}
+                style={{ color: `${PURPLE_DARK}0.85)` }}
               >
                 {phase.n}
               </span>
               <span
                 className="font-mono text-2xs uppercase tracking-widest"
-                style={{ color: `${PURPLE}0.55)` }}
+                style={{ color: `${PURPLE_DARK}0.85)` }}
               >
                 {phase.mode}
               </span>
@@ -263,7 +266,7 @@ export default function LSPhasesSection() {
                       <span
                         className="text-base shrink-0 ml-space-3 transition-transform duration-200"
                         style={{
-                          color: `${PURPLE}0.60)`,
+                          color: `${PURPLE_DARK}0.85)`,
                           transform: isOpen ? 'rotate(45deg)' : 'none',
                         }}
                       >
@@ -297,7 +300,7 @@ export default function LSPhasesSection() {
             >
               <p
                 className="font-mono text-2xs uppercase tracking-widest mb-space-3"
-                style={{ color: `${PURPLE}0.65)` }}
+                style={{ color: `${PURPLE_DARK}0.85)` }}
               >
                 The key question
               </p>
