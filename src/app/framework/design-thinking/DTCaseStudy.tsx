@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL = 'rgba(13,148,136,'
+// This teal fails 4.5:1 as text on white/warm backgrounds at any opacity,
+// even 1.0 (max 3.74) — darkened text-safe variant (teal-800).
+const TEAL_DARK = 'rgba(17,94,89,'
 
 type StageKey = 'empathize' | 'define' | 'ideate' | 'prototype' | 'test'
 
@@ -143,7 +146,7 @@ function ArtifactBlock({ artifact }: { artifact: Artifact }) {
         className="rounded-xl p-space-6"
         style={{ background: `${TEAL}0.04)`, border: `1px solid ${TEAL}0.10)` }}
       >
-        <p className="font-mono text-2xs uppercase tracking-widest mb-space-4" style={{ color: `${TEAL}0.65)` }}>
+        <p className="font-mono text-2xs uppercase tracking-widest mb-space-4" style={{ color: `${TEAL_DARK}0.85)` }}>
           {artifact.label}
         </p>
         <div className="space-y-space-3">
@@ -171,7 +174,7 @@ function ArtifactBlock({ artifact }: { artifact: Artifact }) {
         className="rounded-xl p-space-6"
         style={{ background: `${TEAL}0.04)`, borderLeft: `4px solid ${TEAL}0.50)` }}
       >
-        <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${TEAL}0.70)` }}>
+        <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${TEAL_DARK}0.85)` }}>
           {artifact.label}
         </p>
         {artifact.lines.map((line, i) => (
@@ -221,7 +224,7 @@ function StageContent({ stageKey }: { stageKey: StageKey }) {
         className="rounded-lg px-space-5 py-space-4"
         style={{ background: `${TEAL}0.05)`, borderLeft: `3px solid ${TEAL}0.40)` }}
       >
-        <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${TEAL}0.70)` }}>
+        <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${TEAL_DARK}0.85)` }}>
           Pattern that emerged
         </p>
         <p className="text-sm text-neutral-700 leading-relaxed italic">{stage.insight}</p>
@@ -278,7 +281,7 @@ export default function DTCaseStudy() {
           ))}
         </div>
         <div className="px-space-6 md:px-space-8 py-space-7">
-          <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${TEAL}0.65)` }}>
+          <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${TEAL_DARK}0.85)` }}>
             The problem
           </p>
           <p
@@ -309,19 +312,19 @@ export default function DTCaseStudy() {
           >
             <span
               className="font-mono text-2xs uppercase tracking-widest mb-space-1"
-              style={{ color: activeStage === key ? `${TEAL}0.65)` : 'var(--color-neutral-500)' }}
+              style={{ color: activeStage === key ? `${TEAL_DARK}0.90)` : 'var(--color-neutral-500)' }}
             >
               {mode}
             </span>
             <span
               className="font-semibold text-sm"
-              style={{ color: activeStage === key ? `${TEAL}0.90)` : 'var(--color-neutral-700)' }}
+              style={{ color: activeStage === key ? `${TEAL_DARK}0.90)` : 'var(--color-neutral-700)' }}
             >
               {label}
             </span>
             <span
               className="text-xs"
-              style={{ color: activeStage === key ? `${TEAL}0.55)` : 'var(--color-neutral-500)' }}
+              style={{ color: activeStage === key ? `${TEAL_DARK}0.90)` : 'var(--color-neutral-500)' }}
             >
               {sub}
             </span>

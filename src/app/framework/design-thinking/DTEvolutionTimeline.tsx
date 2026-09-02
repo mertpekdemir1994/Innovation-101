@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL = 'rgba(13,148,136,'
+// This teal fails 4.5:1 as text on white/warm backgrounds at any opacity,
+// even 1.0 (max 3.74) — darkened text-safe variant (teal-800).
+const TEAL_DARK = 'rgba(17,94,89,'
 
 const VERSIONS = [
   {
@@ -110,14 +113,14 @@ export default function DTEvolutionTimeline() {
                 style={{
                   background: active === i ? `${TEAL}1)` : `${TEAL}0.08)`,
                   border: `1px solid ${active === i ? 'transparent' : `${TEAL}0.20)`}`,
-                  color: active === i ? '#fff' : `${TEAL}0.70)`,
+                  color: active === i ? '#fff' : `${TEAL_DARK}0.85)`,
                 }}
               >
                 {i + 1}
               </div>
               <p
                 className="font-mono text-2xs uppercase tracking-widest text-center leading-tight transition-colors duration-200"
-                style={{ color: active === i ? `${TEAL}0.85)` : 'var(--color-neutral-500)' }}
+                style={{ color: active === i ? `${TEAL_DARK}0.90)` : 'var(--color-neutral-500)' }}
               >
                 {ver.year}
               </p>
@@ -141,7 +144,7 @@ export default function DTEvolutionTimeline() {
             <div className="flex items-center gap-space-3 mb-space-5">
               <span
                 className="font-mono text-2xs uppercase tracking-widest px-space-3 py-space-1 rounded-full"
-                style={{ color: `${TEAL}0.80)`, background: `${TEAL}0.08)`, border: `1px solid ${TEAL}0.15)` }}
+                style={{ color: `${TEAL_DARK}0.85)`, background: `${TEAL}0.08)`, border: `1px solid ${TEAL}0.15)` }}
               >
                 {v.badge}
               </span>
@@ -177,7 +180,7 @@ export default function DTEvolutionTimeline() {
                 >
                   <span
                     className="font-mono text-xs px-space-2 py-space-1 rounded shrink-0 self-start"
-                    style={{ background: `${TEAL}0.08)`, color: `${TEAL}0.80)`, whiteSpace: 'nowrap' }}
+                    style={{ background: `${TEAL}0.08)`, color: `${TEAL_DARK}0.85)`, whiteSpace: 'nowrap' }}
                   >
                     {change.tag}
                   </span>
@@ -204,7 +207,7 @@ export default function DTEvolutionTimeline() {
                   type="button"
                   onClick={() => setActive(active + 1)}
                   className="text-sm font-semibold transition-opacity hover:opacity-70 flex items-center gap-space-2"
-                  style={{ color: `${TEAL}0.85)` }}
+                  style={{ color: `${TEAL_DARK}0.90)` }}
                 >
                   {VERSIONS[active + 1].year} →
                 </button>

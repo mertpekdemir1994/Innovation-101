@@ -4,6 +4,9 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL = 'rgba(13,148,136,'
+// This teal fails 4.5:1 as text on white/warm backgrounds at any opacity,
+// even 1.0 (max 3.74) — darkened text-safe variant (teal-800).
+const TEAL_DARK = 'rgba(17,94,89,'
 
 type StageId = 'empathize' | 'define' | 'ideate' | 'prototype' | 'test'
 
@@ -211,17 +214,17 @@ export default function DTStagesSection() {
                 borderLeft: `3px solid ${activeStage === stage.id ? `${TEAL}0.65)` : 'transparent'}`,
               }}
             >
-              <span className="font-mono text-xs font-semibold" style={{ color: `${TEAL}0.40)` }}>
+              <span className="font-mono text-xs font-semibold" style={{ color: `${TEAL_DARK}0.85)` }}>
                 {stage.n}
               </span>
               <div>
                 <p
                   className="font-semibold text-sm"
-                  style={{ color: activeStage === stage.id ? `${TEAL}0.90)` : 'var(--color-neutral-600)' }}
+                  style={{ color: activeStage === stage.id ? `${TEAL_DARK}0.90)` : 'var(--color-neutral-600)' }}
                 >
                   {stage.label}
                 </p>
-                <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${TEAL}0.40)` }}>
+                <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${TEAL_DARK}0.85)` }}>
                   {stage.mode}
                 </p>
               </div>
@@ -235,8 +238,8 @@ export default function DTStagesSection() {
         {STAGES.map((stage, i) => (
           <div key={stage.id} ref={(el) => { sectionRefs.current[i] = el }}>
             <div className="md:hidden mb-space-4 flex items-center gap-space-3">
-              <span className="font-mono text-xs font-semibold" style={{ color: `${TEAL}0.55)` }}>{stage.n}</span>
-              <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${TEAL}0.55)` }}>{stage.mode}</span>
+              <span className="font-mono text-xs font-semibold" style={{ color: `${TEAL_DARK}0.85)` }}>{stage.n}</span>
+              <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${TEAL_DARK}0.85)` }}>{stage.mode}</span>
             </div>
 
             <h3
@@ -266,7 +269,7 @@ export default function DTStagesSection() {
                       <span className="font-semibold text-sm text-neutral-900">{act.title}</span>
                       <span
                         className="text-base shrink-0 ml-space-3 transition-transform duration-200"
-                        style={{ color: `${TEAL}0.60)`, transform: isOpen ? 'rotate(45deg)' : 'none' }}
+                        style={{ color: `${TEAL_DARK}0.85)`, transform: isOpen ? 'rotate(45deg)' : 'none' }}
                       >
                         +
                       </span>
@@ -293,7 +296,7 @@ export default function DTStagesSection() {
               className="mt-space-6 rounded-xl px-space-6 py-space-5"
               style={{ background: `${TEAL}0.04)`, border: `1px solid ${TEAL}0.12)` }}
             >
-              <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${TEAL}0.65)` }}>
+              <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${TEAL_DARK}0.85)` }}>
                 The key question
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed italic">{stage.keyQuestion}</p>

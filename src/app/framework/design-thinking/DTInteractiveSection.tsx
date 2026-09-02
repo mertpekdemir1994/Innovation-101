@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const TEAL = 'rgba(13,148,136,'
+// Plain TEAL only clears 4.5:1 on this dark background above ~0.92 opacity
+// (a narrow margin) — brightened text-safe variant (teal-400) for headroom.
+const TEAL_TEXT = 'rgba(45,212,191,'
 
 type StageKey = 'empathize' | 'define' | 'ideate' | 'prototype' | 'test'
 type LensKey = 'desirability' | 'feasibility' | 'viability' | null
@@ -175,7 +178,7 @@ export default function DTInteractiveSection() {
           >
             <span
               className="font-mono text-2xs uppercase tracking-widest mb-space-1"
-              style={{ color: activeStage === stage.id ? `${TEAL}0.80)` : 'rgba(255,255,255,0.30)' }}
+              style={{ color: activeStage === stage.id ? `${TEAL_TEXT}0.85)` : 'rgba(255,255,255,0.30)' }}
             >
               {stage.n}
             </span>
@@ -214,7 +217,7 @@ export default function DTInteractiveSection() {
               className="rounded-xl p-space-5 mb-space-5"
               style={{ background: `${TEAL}0.12)`, border: `1px solid ${TEAL}0.22)` }}
             >
-              <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${TEAL}0.65)` }}>
+              <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${TEAL_TEXT}0.85)` }}>
                 {detail.example.co}
               </p>
               <p className="text-sm leading-relaxed italic" style={{ color: 'rgba(255,255,255,0.75)' }}>
