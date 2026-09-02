@@ -8,7 +8,7 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
-const SVG_H = 262
+const SVG_H = 278
 
 const AXIS_Y  = 118
 const AXIS_X1 = 54
@@ -22,9 +22,9 @@ type Mode = 'human' | 'ai'
 type Rung = { id: string; x: number; low: boolean; name: string; sub: string; cost: string; aicost: string }
 
 const RUNGS: Rung[] = [
-  { id: 'paper',    x: 103, low: true,  name: 'PAPER SKETCH',       sub: 'hand-drawn · minutes · free',  cost: 'MINUTES / FREE', aicost: 'AI: INSTANT' },
-  { id: 'quick',   x: 248, low: true,  name: 'CONCEPTUAL VISUAL',  sub: 'fast drawn or digital',         cost: 'UNDER AN HOUR',  aicost: 'AI: INSTANT' },
-  { id: 'click',   x: 393, low: false, name: 'CLICKABLE MOCKUP',   sub: 'e.g. Figma · interactive',     cost: 'HOURS',          aicost: 'AI: INSTANT' },
+  { id: 'paper',    x: 103, low: true,  name: 'PAPER SKETCH',       sub: 'hand-drawn, free',             cost: 'MINUTES / FREE', aicost: 'AI: INSTANT' },
+  { id: 'quick',   x: 248, low: true,  name: 'CONCEPTUAL VISUAL',  sub: 'drawn or digital',              cost: 'UNDER AN HOUR',  aicost: 'AI: INSTANT' },
+  { id: 'click',   x: 393, low: false, name: 'CLICKABLE MOCKUP',   sub: 'Figma, interactive',           cost: 'HOURS',          aicost: 'AI: INSTANT' },
   { id: 'polished', x: 558, low: false, name: 'POLISHED PROTOTYPE', sub: 'near-real · expensive',        cost: 'DAYS',           aicost: 'AI: INSTANT' },
 ]
 
@@ -54,8 +54,8 @@ export default function RPAIReactivated() {
                 ? m === 'ai' ? `${INDIGO}0.35)` : `${CLAY}0.35)`
                 : 'rgba(255,255,255,0.12)'}`,
               color: mode === m
-                ? m === 'ai' ? `${INDIGO}1)` : `${CLAY}1)`
-                : 'rgba(255,255,255,0.40)',
+                ? m === 'ai' ? `${INDIGO_TEXT}1)` : `${CLAY_TEXT}1)`
+                : 'rgba(255,255,255,0.50)',
             }}>
             {m === 'human' ? 'Human-led' : 'With AI (hypothetical)'}
           </button>
@@ -100,7 +100,7 @@ export default function RPAIReactivated() {
                 <rect x={AXIS_X1} y={AXIS_Y - 20} width={AXIS_X2 - AXIS_X1} height={14} rx={3}
                   fill={`${INDIGO}0.08)`} stroke={`${INDIGO}0.18)`} strokeWidth={0.6} />
                 <text x={(AXIS_X1 + AXIS_X2) / 2} y={AXIS_Y - 10} textAnchor="middle"
-                  fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                   fill={`${INDIGO_TEXT}0.937)`} style={{ userSelect: 'none' }}>
                   AI COLLAPSES THE COST OF FIDELITY, ALL LEVELS NOW INSTANT
                 </text>
@@ -121,12 +121,12 @@ export default function RPAIReactivated() {
                 const fillColor = isAI
                   ? `${INDIGO}0.10)` : r.low ? `${CLAY}0.12)` : 'rgba(255,255,255,0.05)'
                 const nameColor = isAI
-                  ? `${INDIGO}0.80)` : r.low ? `${CLAY}0.88)` : 'rgba(255,255,255,0.58)'
+                  ? `${INDIGO_TEXT}0.90)` : r.low ? `${CLAY_TEXT}0.90)` : 'rgba(255,255,255,0.58)'
                 const subColor = isAI
-                  ? `${INDIGO}0.42)` : r.low ? `${CLAY}0.44)` : 'rgba(255,255,255,0.26)'
+                  ? `${INDIGO_TEXT}0.80)` : r.low ? `${CLAY_TEXT}0.85)` : 'rgba(255,255,255,0.50)'
                 const costDisplay = isAI ? r.aicost : r.cost
                 const costColor = isAI
-                  ? `${INDIGO}0.60)` : r.low ? `${CLAY}0.42)` : 'rgba(255,255,255,0.25)'
+                  ? `${INDIGO_TEXT}0.85)` : r.low ? `${CLAY_TEXT}0.80)` : 'rgba(255,255,255,0.50)'
                 return (
                   <g key={r.id}>
                     <line x1={r.x} y1={AXIS_Y - 5} x2={r.x} y2={AXIS_Y + 5}
@@ -138,13 +138,13 @@ export default function RPAIReactivated() {
                       stroke={isAI ? `${INDIGO}0.10)` : (r.low ? `${CLAY}0.14)` : 'rgba(255,255,255,0.08)')}
                       strokeWidth={0.8} strokeDasharray="2 2" />
                     <text x={r.x} y={NAME_Y} textAnchor="middle"
-                      fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.11em"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.11em"
                       fill={nameColor} style={{ userSelect: 'none' }}>{r.name}</text>
                     <text x={r.x} y={SUB_Y} textAnchor="middle"
-                      fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
                       fill={subColor} style={{ userSelect: 'none' }}>{r.sub}</text>
                     <text x={r.x} y={AXIS_Y + 20} textAnchor="middle"
-                      fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                       fill={costColor} style={{ userSelect: 'none' }}>{costDisplay}</text>
                   </g>
                 )
@@ -159,14 +159,17 @@ export default function RPAIReactivated() {
                 <line x1={ZONE_X2} y1={154} x2={ZONE_X2} y2={170}
                   stroke={`${CLAY}${isAI ? '0.55)' : '0.32)'}`} strokeWidth={isAI ? 1.2 : 0.8} />
                 <text x={ZONE_MID} y={182} textAnchor="middle"
-                  fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
-                  fill={`${CLAY}${isAI ? '0.90)' : '0.72)'}`}
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                  fill={`${CLAY_TEXT}${isAI ? '0.95)' : '0.85)'}`}
                   style={{ filter: isAI ? `drop-shadow(0 0 6px ${CLAY_TEXT}0.874))` : 'none', userSelect: 'none' }}>
                   {isAI ? '← THIS JUDGMENT MATTERS MORE, NOT LESS' : 'JUST ENOUGH TO LEARN'}
                 </text>
                 {isAI && (
-                  <text x={ZONE_MID} y={194} textAnchor="middle"
-                    fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  // x moved ZONE_MID -> SVG_W/2: at 11pt this sentence is wide
+                  // enough that centering on the zone would run it off the
+                  // left edge of the canvas
+                  <text x={SVG_W / 2} y={200} textAnchor="middle"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                     fill={`${CLAY_TEXT}0.891)`} style={{ userSelect: 'none' }}>
                     AI removed the cost that used to enforce this, the discipline must stay human
                   </text>
@@ -178,15 +181,17 @@ export default function RPAIReactivated() {
                 <g>
                   <rect x={300} y={50} width={360} height={20} rx={3}
                     fill="rgba(245,158,11,0.07)" stroke="rgba(245,158,11,0.18)" strokeWidth={0.6} />
+                  {/* Shortened: the full phrase doesn't fit the 360-wide
+                      rect at 11pt */}
                   <text x={480} y={63} textAnchor="middle"
-                    fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                     fill="rgba(245,158,11,0.861)" style={{ userSelect: 'none' }}>
-                    ⚠ AI DEFAULTS TO HIGH FIDELITY, FEEDBACK DRIFTS TO POLISH BY DEFAULT
+                    ⚠ AI DEFAULTS TO HIGH FIDELITY BY DEFAULT
                   </text>
                 </g>
               ) : (
                 <text x={558} y={56} textAnchor="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                   fill="rgba(245,158,11,0.814)" style={{ userSelect: 'none' }}>
                   ⚠ FEEDBACK DRIFTS TO POLISH PAST HERE
                 </text>
@@ -194,13 +199,21 @@ export default function RPAIReactivated() {
             </motion.g>
           </AnimatePresence>
 
-          {/* Caption */}
-          <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          {/* Caption: split across two lines — the single-line sentence no
+              longer fits SVG_W at 11pt */}
+          <text x={SVG_W / 2} y={SVG_H - 22} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill="rgba(255,255,255,0.57)" style={{ userSelect: 'none' }}>
             {isAI
-              ? 'AI COLLAPSES THE COST OF FIDELITY, THE JUDGMENT ABOUT WHAT TO BUILD IS MORE IMPORTANT THAN EVER'
-              : 'THE RIGHT FIDELITY IS NOT THE HIGHEST YOU CAN BUILD, IT IS THE LOWEST THAT ANSWERS YOUR QUESTION'}
+              ? 'AI COLLAPSES THE COST OF FIDELITY,'
+              : 'THE RIGHT FIDELITY IS NOT THE HIGHEST YOU CAN BUILD,'}
+          </text>
+          <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fill="rgba(255,255,255,0.57)" style={{ userSelect: 'none' }}>
+            {isAI
+              ? 'THE JUDGMENT ABOUT WHAT TO BUILD IS MORE IMPORTANT THAN EVER'
+              : 'IT IS THE LOWEST THAT ANSWERS YOUR QUESTION'}
           </text>
         </svg>
       </div>
@@ -221,7 +234,7 @@ export default function RPAIReactivated() {
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${CLAY}0.18)`, background: `${CLAY}0.04)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: `${CLAY}0.75)` }}>{item.label}</p>
+                <p className="text-2xs font-mono uppercase tracking-widest" style={{ color: `${CLAY_TEXT}0.90)` }}>{item.label}</p>
                 <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{item.body}</p>
               </div>
             ))}
@@ -240,7 +253,7 @@ export default function RPAIReactivated() {
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${INDIGO}0.18)`, background: `${INDIGO}0.04)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: `${INDIGO}0.75)` }}>{item.label}</p>
+                <p className="text-2xs font-mono uppercase tracking-widest" style={{ color: `${INDIGO_TEXT}0.90)` }}>{item.label}</p>
                 <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{item.body}</p>
               </div>
             ))}

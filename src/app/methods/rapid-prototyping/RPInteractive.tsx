@@ -33,24 +33,24 @@ type RungDef = {
 const RUNGS: RungDef[] = [
   {
     id: 'paper', x: 103, low: true,
-    name: 'PAPER SKETCH', sub: 'hand-drawn · minutes · free',
-    cost: 'MINUTES / FREE', feedback: 'raw concept & structure',
+    name: 'PAPER SKETCH', sub: 'hand-drawn, free',
+    cost: 'MINUTES / FREE', feedback: 'raw concept',
     headline: 'The fastest thing you can build, and often the most honest.',
     body: 'Hand-drawn, made in minutes, nearly free. Show someone a rough paper sketch and they comment on the concept, the flow, whether the idea solves their problem, because it is obviously unfinished, so they engage with the idea rather than the surface. No one wastes a word on colors or fonts. For most early-stage concept questions, this is the highest-learning-per-effort option available.',
     note: 'Default to paper for any question of the form "does this concept make sense?". Start here before climbing up the ladder.',
   },
   {
     id: 'quick', x: 248, low: true,
-    name: 'CONCEPTUAL VISUAL', sub: 'fast drawn or digital',
-    cost: 'UNDER AN HOUR', feedback: 'concept feedback (slightly richer)',
+    name: 'CONCEPTUAL VISUAL', sub: 'drawn or digital',
+    cost: 'UNDER AN HOUR', feedback: 'concept feedback',
     headline: 'A step up in legibility, still clearly rough.',
     body: 'A fast digital or drawn representation that communicates the concept more concretely than paper: richer, slightly more grounded, still clearly unfinished. Good for sharing an idea more legibly or preparing for a slightly broader audience than a paper sketch would serve. Still in concept territory. The feedback is still concept-level; the fidelity is still low.',
     note: 'Watch for feedback beginning to drift toward the surface as it starts looking more finished. The moment users comment on layout or color, you have climbed past concept territory.',
   },
   {
     id: 'click', x: 393, low: false,
-    name: 'CLICKABLE MOCKUP', sub: 'e.g. Figma · interactive',
-    cost: 'HOURS', feedback: 'flow & interaction feedback',
+    name: 'CLICKABLE MOCKUP', sub: 'Figma, interactive',
+    cost: 'HOURS', feedback: 'flow feedback',
     headline: 'The digital workhorse, once the concept is settled.',
     body: 'An interactive mock the user can click through. More effort, and more real. Warranted specifically when the learning question is about flow or interaction: "does this navigation make sense? is this sequence right?" For digital products, this is the workhorse fidelity once the concept has been validated at a lower level. As it starts looking finished, feedback begins drifting toward the surface: color, copy, layout.',
     note: 'Earn the clickable mock. It is warranted when the question is specifically about flow and interaction, not before. A polished-looking clickable mock before the concept is settled pulls feedback toward polish too early.',
@@ -58,7 +58,7 @@ const RUNGS: RungDef[] = [
   {
     id: 'polished', x: 558, low: false,
     name: 'POLISHED PROTOTYPE', sub: 'near-real · expensive',
-    cost: 'DAYS', feedback: 'polish & surface feedback ⚠',
+    cost: 'DAYS', feedback: 'surface feedback ⚠',
     headline: 'Expensive, slow, and for early learning often counterproductive.',
     body: 'Looks almost like the real product. Useful for late-stage refinement questions, but for early concept learning, often counterproductive: users react to it as finished, commenting on visual polish and wording rather than whether the concept works. It can over-commit a team to a direction before it is validated, and it makes the prototype too precious to discard.',
     note: 'Save high fidelity for late-stage questions about refinement. Spending days on a polished prototype before the concept is validated is one of the most common, and most costly, prototyping mistakes.',
@@ -111,12 +111,12 @@ export default function RPInteractive() {
             stroke="rgba(255,255,255,0.18)" strokeWidth={1} fill="none"
             strokeLinecap="round" strokeLinejoin="round" />
           <text x={AXIS_X1+2} y={AXIS_Y+10} textAnchor="start"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
             ROUGH · FAST
           </text>
           <text x={AXIS_X2+4} y={AXIS_Y+10} textAnchor="start"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
             HIGH FIDELITY →
           </text>
@@ -127,12 +127,15 @@ export default function RPInteractive() {
             const isDimmed   = selected !== null && !isSelected
             const strokeO  = isSelected ? (r.low ? '1.0)' : '0.80)') : isDimmed ? '0.12)' : (r.low ? '0.80)' : '0.32)')
             const fillO    = isSelected ? (r.low ? '0.20)' : '0.12)') : isDimmed ? '0.03)' : (r.low ? '0.12)' : '0.05)')
-            const nameO    = isSelected ? (r.low ? '1.00)' : '0.90)') : isDimmed ? '0.14)' : (r.low ? '0.88)' : '0.58)')
-            const subO     = isSelected ? (r.low ? '0.60)' : '0.45)') : isDimmed ? '0.08)' : (r.low ? '0.44)' : '0.26)')
+            // Text opacities floor at each color's accessible minimum even in
+            // the "dimmed" state — plain CLAY fails 4.5:1 at any opacity, so
+            // name/sub use CLAY_TEXT instead of CLAY for the low-fidelity rungs.
+            const nameO    = isSelected ? (r.low ? '1.00)' : '0.90)') : isDimmed ? (r.low ? '0.80)' : '0.50)') : (r.low ? '0.90)' : '0.58)')
+            const subO     = isSelected ? (r.low ? '0.90)' : '0.60)') : isDimmed ? (r.low ? '0.80)' : '0.50)') : (r.low ? '0.85)' : '0.50)')
             const circleStroke = r.low ? `${CLAY}${strokeO}` : `rgba(255,255,255,${strokeO}`
             const circleFill   = r.low ? `${CLAY}${fillO}`   : `rgba(255,255,255,${fillO}`
-            const nameColor    = r.low ? `${CLAY}${nameO}`   : `rgba(255,255,255,${nameO}`
-            const subColor     = r.low ? `${CLAY}${subO}`    : `rgba(255,255,255,${subO}`
+            const nameColor    = r.low ? `${CLAY_TEXT}${nameO}` : `rgba(255,255,255,${nameO}`
+            const subColor     = r.low ? `${CLAY_TEXT}${subO}`  : `rgba(255,255,255,${subO}`
 
             return (
               <g key={r.id}
@@ -165,16 +168,16 @@ export default function RPInteractive() {
                   strokeWidth={0.8} strokeDasharray="2 2" />
                 {/* Name */}
                 <text x={r.x} y={NAME_Y} textAnchor="middle"
-                  fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.11em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.11em"
                   fill={nameColor} style={{ userSelect: 'none' }}>{r.name}</text>
                 {/* Sub */}
                 <text x={r.x} y={SUB_Y} textAnchor="middle"
-                  fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
                   fill={subColor} style={{ userSelect: 'none' }}>{r.sub}</text>
                 {/* Feedback type below axis (only when selected) */}
                 {isSelected && (
                   <text x={r.x} y={AXIS_Y + 22} textAnchor="middle"
-                    fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                     fill={r.low ? `${CLAY_TEXT}0.948)` : 'rgba(255,255,255,0.71)'}
                     style={{ userSelect: 'none' }}>
                     → {r.feedback}
@@ -192,14 +195,14 @@ export default function RPInteractive() {
           <line x1={ZONE_X2} y1={154} x2={ZONE_X2} y2={170}
             stroke={`${CLAY}0.32)`} strokeWidth={0.8} />
           <text x={ZONE_MID} y={182} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill={`${CLAY_TEXT}0.941)`} style={{ userSelect: 'none' }}>
             JUST ENOUGH TO LEARN
           </text>
 
           {/* ── Caption ── */}
           <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill="rgba(255,255,255,0.565)" style={{ userSelect: 'none' }}>
             THE FEEDBACK A PROTOTYPE INVITES DEPENDS ON HOW FINISHED IT LOOKS, ROUGHNESS IS A FEATURE
           </text>
@@ -215,7 +218,7 @@ export default function RPInteractive() {
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.18 }}
             className="rounded-lg border p-5 text-sm"
-            style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.35)' }}>
+            style={{ borderColor: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.50)' }}>
             Click a fidelity level to see what it costs, what feedback it invites, and when to use it.
           </motion.div>
         ) : (
@@ -231,21 +234,21 @@ export default function RPInteractive() {
             }}
           >
             <div className="flex items-center gap-3 flex-wrap">
-              <span className="text-[10px] font-semibold uppercase tracking-widest"
-                style={{ color: sel.low ? `${CLAY}0.90)` : 'rgba(255,255,255,0.60)' }}>
+              <span className="text-2xs font-semibold uppercase tracking-widest"
+                style={{ color: sel.low ? `${CLAY_TEXT}1)` : 'rgba(255,255,255,0.60)' }}>
                 {sel.name}
               </span>
-              <span className="text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
+              <span className="text-2xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
                 style={{
                   background: sel.low ? `${CLAY}0.10)` : 'rgba(255,255,255,0.07)',
-                  color:      sel.low ? `${CLAY}0.80)` : 'rgba(255,255,255,0.50)',
+                  color:      sel.low ? `${CLAY_TEXT}0.90)` : 'rgba(255,255,255,0.50)',
                   border:     `1px solid ${sel.low ? `${CLAY}0.22)` : 'rgba(255,255,255,0.12)'}`,
                 }}>
                 {sel.cost}
               </span>
               {sel.id === 'click' && (
-                <span className="text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
-                  style={{ background: `${CLAY}0.14)`, color: `${CLAY}0.90)`, border: `1px solid ${CLAY}0.30)` }}>
+                <span className="text-2xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                  style={{ background: `${CLAY}0.14)`, color: `${CLAY_TEXT}1)`, border: `1px solid ${CLAY}0.30)` }}>
                   ★ digital workhorse
                 </span>
               )}
@@ -258,16 +261,16 @@ export default function RPInteractive() {
             </div>
             <div className="border-t pt-4"
               style={{ borderColor: sel.low ? `${CLAY}0.14)` : 'rgba(255,255,255,0.08)' }}>
-              <p className="text-[9px] font-semibold uppercase tracking-widest mb-1"
-                style={{ color: sel.low ? `${CLAY}0.60)` : 'rgba(255,255,255,0.35)' }}>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-1"
+                style={{ color: sel.low ? `${CLAY_TEXT}0.90)` : 'rgba(255,255,255,0.50)' }}>
                 Feedback invited
               </p>
               <p className="text-sm italic"
-                style={{ color: 'rgba(255,255,255,0.42)' }}>{sel.feedback}</p>
+                style={{ color: 'rgba(255,255,255,0.55)' }}>{sel.feedback}</p>
             </div>
             <div className="pt-0">
               <p className="text-xs leading-relaxed italic"
-                style={{ color: 'rgba(255,255,255,0.30)' }}>{sel.note}</p>
+                style={{ color: 'rgba(255,255,255,0.50)' }}>{sel.note}</p>
             </div>
           </motion.div>
         )}

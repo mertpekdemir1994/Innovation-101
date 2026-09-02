@@ -3,7 +3,13 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY   = 'rgba(181,97,62,'
+// darker clay for text on this light background — plain CLAY can't
+// reach 4.5:1 on white even at full opacity
+const CLAY_DARK = 'rgba(140,74,47,'
 const INDIGO = 'rgba(99,102,241,'
+// darker indigo for text on this light background — plain INDIGO can't
+// reach 4.5:1 on white even at full opacity
+const INDIGO_DARK = 'rgba(79,70,229,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -32,7 +38,7 @@ export default function RPExampleToggle() {
                 ? t === 'ai' ? `${INDIGO}0.35)` : `${CLAY}0.35)`
                 : 'var(--color-neutral-100)'}`,
               color: tab === t
-                ? t === 'ai' ? `${INDIGO}1)` : `${CLAY}1)`
+                ? t === 'ai' ? `${INDIGO_DARK}0.90)` : `${CLAY_DARK}0.90)`
                 : 'var(--color-neutral-600)',
             }}>
             {t === 'traditional' ? 'Human-led (low fidelity)' : 'With AI'}
@@ -42,7 +48,7 @@ export default function RPExampleToggle() {
 
       {/* Scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
+        <span className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
       </div>
 
@@ -57,8 +63,8 @@ export default function RPExampleToggle() {
 
             {/* Learning question */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${CLAY}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${CLAY}1)` }}>Starting from the learning question</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
+                style={{ color: `${CLAY_DARK}0.90)` }}>Starting from the learning question</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The team named the question before building anything: do users understand this concept,
                 and does the main flow make sense? Because that question was about concept and flow
@@ -74,8 +80,8 @@ export default function RPExampleToggle() {
 
             {/* What the testing taught */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${CLAY}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${CLAY}1)` }}>What the rough prototype made possible</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
+                style={{ color: `${CLAY_DARK}0.90)` }}>What the rough prototype made possible</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 They put the rough mockup in front of real users. Because the prototype was so clearly
                 unfinished, users engaged with the concept rather than the surface: they talked about
@@ -100,7 +106,7 @@ export default function RPExampleToggle() {
                 ].map(item => (
                   <div key={item.label} className="rounded p-4"
                     style={{ background: `${CLAY}0.05)`, borderLeft: `2px solid ${CLAY}0.28)` }}>
-                    <p className="text-xs font-semibold mb-1" style={{ color: `${CLAY}0.88)` }}>
+                    <p className="text-xs font-semibold mb-1" style={{ color: `${CLAY_DARK}0.90)` }}>
                       {item.label}
                     </p>
                     <p className="text-xs text-neutral-700 leading-relaxed">{item.detail}</p>
@@ -121,7 +127,7 @@ export default function RPExampleToggle() {
             <div className="rounded-lg px-4 py-3 border"
               style={{ background: `${INDIGO}0.05)`, borderColor: `${INDIGO}0.20)` }}>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Both approaches are real.</span>{' '}
+                <span className="font-semibold" style={{ color: `${INDIGO_DARK}0.90)` }}>Both approaches are real.</span>{' '}
                 This tab shows what actually happened when the team used AI, including both the genuine
                 upside and the trap it created. It is not a hypothetical warning; it is what
                 playing with the economics of fidelity produces in practice.
@@ -130,8 +136,8 @@ export default function RPExampleToggle() {
 
             {/* The power */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${INDIGO}0.90)` }}>The power: near-real in minutes</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
+                style={{ color: `${INDIGO_DARK}0.90)` }}>The power: near-real in minutes</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 Facing the same question, the team described the feature to an AI and, in minutes,
                 had a refined, styled, clickable prototype that looked and felt almost like a real
@@ -147,7 +153,7 @@ export default function RPExampleToggle() {
 
             {/* The trap */}
             <div className="border rounded-lg p-5" style={{ borderColor: 'rgba(245,158,11,0.25)' }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4 text-amber-700">
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4 text-amber-700">
                 The trap: the feedback shifted to polish
               </p>
               <div className="space-y-3 mb-4">
@@ -167,7 +173,7 @@ export default function RPExampleToggle() {
                 ].map(item => (
                   <div key={item.label} className="rounded p-3"
                     style={{ background: 'rgba(245,158,11,0.05)', borderLeft: '2px solid rgba(245,158,11,0.22)' }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-widest mb-1 text-amber-700">{item.label}</p>
+                    <p className="text-2xs font-semibold uppercase tracking-widest mb-1 text-amber-700">{item.label}</p>
                     <p className="text-xs text-neutral-700 leading-relaxed">{item.detail}</p>
                   </div>
                 ))}
@@ -176,8 +182,8 @@ export default function RPExampleToggle() {
 
             {/* Synthesis */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${INDIGO}0.90)` }}>What the strongest practice looked like</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
+                style={{ color: `${INDIGO_DARK}0.90)` }}>What the strongest practice looked like</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 The teams that used AI well kept asking the old questions: what do we need to learn,
                 and what is the least that answers it? Sometimes they still started with a rough
@@ -187,8 +193,8 @@ export default function RPExampleToggle() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="rounded-lg border p-4" style={{ borderColor: `${INDIGO}0.18)` }}>
-                  <p className="text-[10px] font-semibold uppercase tracking-widest mb-2"
-                    style={{ color: `${INDIGO}0.80)` }}>Where AI genuinely helped</p>
+                  <p className="text-2xs font-semibold uppercase tracking-widest mb-2"
+                    style={{ color: `${INDIGO_DARK}0.90)` }}>Where AI genuinely helped</p>
                   <p className="text-xs text-neutral-700 leading-relaxed">
                     Fast iteration once the concept was validated. Quickly testing flow variations.
                     Generating multiple polished directions to compare. Speed when fidelity was
@@ -196,7 +202,7 @@ export default function RPExampleToggle() {
                   </p>
                 </div>
                 <div className="rounded-lg border p-4 border-amber-200 bg-amber-50">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-700 mb-2">
+                  <p className="text-2xs font-semibold uppercase tracking-widest text-amber-700 mb-2">
                     What had to stay human
                   </p>
                   <p className="text-xs text-neutral-700 leading-relaxed">

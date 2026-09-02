@@ -3,6 +3,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const CLAY = 'rgba(181,97,62,'
+// darker clay for text on this light background — plain CLAY can't
+// reach 4.5:1 on white even at full opacity
+const CLAY_DARK = 'rgba(140,74,47,'
 
 // ── Chip → rung mapping ────────────────────────────────────────────────────────
 
@@ -99,7 +102,7 @@ export default function RPFidelitySelector() {
       {/* ── Chip selector ── */}
       <div>
         <p className="font-mono uppercase tracking-widest mb-3"
-          style={{ fontSize: 'var(--text-2xs)', color: `${CLAY}0.80)` }}>
+          style={{ fontSize: 'var(--text-2xs)', color: `${CLAY_DARK}0.90)` }}>
           Start from your learning question
         </p>
         <div className="flex flex-wrap gap-2">
@@ -113,7 +116,7 @@ export default function RPFidelitySelector() {
                 style={{
                   background: isActive ? `${CLAY}0.10)` : 'var(--color-neutral-50)',
                   border: `1px solid ${isActive ? `${CLAY}0.35)` : 'var(--color-neutral-200)'}`,
-                  color: isActive ? `${CLAY}1)` : 'var(--color-neutral-600)',
+                  color: isActive ? `${CLAY_DARK}0.90)` : 'var(--color-neutral-600)',
                 }}>
                 {c.label}
               </button>
@@ -152,13 +155,13 @@ export default function RPFidelitySelector() {
                         className="font-mono uppercase tracking-widest text-center"
                         style={{
                           fontSize: 'var(--text-2xs)',
-                          color: isHighlit ? `${CLAY}1)` : 'var(--color-neutral-500)',
+                          color: isHighlit ? `${CLAY_DARK}0.90)` : 'var(--color-neutral-500)',
                           fontWeight: isHighlit || isFeatured ? 600 : 400,
                           whiteSpace: 'nowrap',
                         }}>
                         {r.label}
                         {isFeatured && !isHighlit && (
-                          <span style={{ color: `${CLAY}0.45)`, marginLeft: 4 }}>★</span>
+                          <span style={{ color: `${CLAY_DARK}0.90)`, marginLeft: 4 }}>★</span>
                         )}
                       </span>
                       {/* Dot */}
@@ -186,7 +189,7 @@ export default function RPFidelitySelector() {
                   exit={{ opacity: 0, y: -4 }}
                   transition={fade()}
                   className="font-mono uppercase tracking-widest text-center"
-                  style={{ fontSize: 'var(--text-2xs)', color: `${CLAY}0.70)` }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: `${CLAY_DARK}0.90)` }}>
                   ← low on the ladder · concept questions live here
                 </motion.p>
               )}
@@ -197,7 +200,7 @@ export default function RPFidelitySelector() {
                   exit={{ opacity: 0, y: -4 }}
                   transition={fade()}
                   className="font-mono uppercase tracking-widest text-center"
-                  style={{ fontSize: 'var(--text-2xs)', color: `${CLAY}0.70)` }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: `${CLAY_DARK}0.90)` }}>
                   ★ the digital workhorse, earn it once the concept is settled
                 </motion.p>
               )}
@@ -235,11 +238,11 @@ export default function RPFidelitySelector() {
                 <div className="flex flex-col md:flex-row md:items-start gap-2 md:gap-4">
                   <div className="shrink-0" style={{ minWidth: 200 }}>
                     <p className="font-semibold"
-                      style={{ fontSize: 'var(--text-sm)', color: highlighted ? `${CLAY}1)` : 'var(--color-neutral-900)' }}>
+                      style={{ fontSize: 'var(--text-sm)', color: highlighted ? `${CLAY_DARK}0.90)` : 'var(--color-neutral-900)' }}>
                       {row.approach}
                       {row.featured && (
-                        <span className="ml-2 text-[9px] font-semibold uppercase tracking-widest px-1.5 py-0.5 rounded-full"
-                          style={{ background: `${CLAY}0.12)`, color: `${CLAY}0.80)`, border: `1px solid ${CLAY}0.22)` }}>
+                        <span className="ml-2 text-2xs font-semibold uppercase tracking-widest px-1.5 py-0.5 rounded-full"
+                          style={{ background: `${CLAY}0.12)`, color: `${CLAY_DARK}0.90)`, border: `1px solid ${CLAY}0.22)` }}>
                           workhorse
                         </span>
                       )}

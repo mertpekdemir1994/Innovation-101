@@ -6,7 +6,7 @@ const CLAY = 'rgba(181,97,62,'
 const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
 const SVG_W = 700
-const SVG_H = 262
+const SVG_H = 278
 
 const AXIS_Y   = 118
 const AXIS_X1  = 54
@@ -18,15 +18,15 @@ const SUB_Y       = 92
 const COST_Y      = 138
 const BRACKET_Y   = 162
 const JUST_Y      = 182
-const JUST_SUB_Y  = 194
-const CAPTION_Y   = SVG_H - 6
+const JUST_SUB_Y  = 200  // widened gap from JUST_Y (182): 12 was tuned for ~5.5px text
+const CAPTION_Y   = SVG_H - 22  // two caption lines now, 16 apart
 
 type Rung = { id: string; x: number; low: boolean; name: string; sub: string; cost: string }
 
 const RUNGS: Rung[] = [
-  { id: 'paper',    x: 103, low: true,  name: 'PAPER SKETCH',       sub: 'hand-drawn · minutes · free',   cost: 'MINUTES / FREE' },
-  { id: 'quick',   x: 248, low: true,  name: 'CONCEPTUAL VISUAL',  sub: 'fast drawn or digital',          cost: 'UNDER AN HOUR'  },
-  { id: 'click',   x: 393, low: false, name: 'CLICKABLE MOCKUP',   sub: 'e.g. Figma · interactive',      cost: 'HOURS'          },
+  { id: 'paper',    x: 103, low: true,  name: 'PAPER SKETCH',       sub: 'hand-drawn, free',              cost: 'MINUTES / FREE' },
+  { id: 'quick',   x: 248, low: true,  name: 'CONCEPTUAL VISUAL',  sub: 'drawn or digital',               cost: 'UNDER AN HOUR'  },
+  { id: 'click',   x: 393, low: false, name: 'CLICKABLE MOCKUP',   sub: 'Figma, interactive',            cost: 'HOURS'          },
   { id: 'polished', x: 558, low: false, name: 'POLISHED PROTOTYPE', sub: 'near-real · expensive',         cost: 'DAYS'           },
 ]
 
@@ -73,12 +73,12 @@ export default function RPEstablishing() {
             stroke="rgba(255,255,255,0.20)" strokeWidth={1} fill="none"
             strokeLinecap="round" strokeLinejoin="round" />
           <text x={AXIS_X1+2} y={AXIS_Y+10} textAnchor="start"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             ROUGH · FAST
           </text>
           <text x={AXIS_X2+4} y={AXIS_Y+10} textAnchor="start"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             HIGH FIDELITY →
           </text>
@@ -89,9 +89,9 @@ export default function RPEstablishing() {
           const delay = prefersReduced ? 0 : 0.10 + i * 0.12
           const circleStroke = r.low ? `${CLAY}0.80)` : 'rgba(255,255,255,0.32)'
           const circleFill   = r.low ? `${CLAY}0.12)` : 'rgba(255,255,255,0.05)'
-          const nameColor    = r.low ? `${CLAY}0.88)` : 'rgba(255,255,255,0.58)'
-          const subColor     = r.low ? `${CLAY}0.44)` : 'rgba(255,255,255,0.26)'
-          const costColor    = r.low ? `${CLAY}0.42)` : 'rgba(255,255,255,0.25)'
+          const nameColor    = r.low ? `${CLAY_TEXT}0.95)` : 'rgba(255,255,255,0.58)'
+          const subColor     = r.low ? `${CLAY_TEXT}0.85)` : 'rgba(255,255,255,0.50)'
+          const costColor    = r.low ? `${CLAY_TEXT}0.80)` : 'rgba(255,255,255,0.50)'
           return (
             <motion.g key={r.id}
               initial={{ opacity: 0, y: 8 }}
@@ -112,15 +112,15 @@ export default function RPEstablishing() {
                 strokeWidth={0.8} strokeDasharray="2 2" />
               {/* Name */}
               <text x={r.x} y={NAME_Y} textAnchor="middle"
-                fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.11em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.11em"
                 fill={nameColor} style={{ userSelect: 'none' }}>{r.name}</text>
               {/* Sub */}
               <text x={r.x} y={SUB_Y} textAnchor="middle"
-                fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
                 fill={subColor} style={{ userSelect: 'none' }}>{r.sub}</text>
               {/* Cost below axis */}
               <text x={r.x} y={COST_Y} textAnchor="middle"
-                fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                 fill={costColor} style={{ userSelect: 'none' }}>{r.cost}</text>
             </motion.g>
           )
@@ -133,7 +133,7 @@ export default function RPEstablishing() {
           transition={{ duration: 0.28, delay: prefersReduced ? 0 : 0.58 }}
         >
           <text x={558} y={WARNING_Y} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill="rgba(245,158,11,0.826)" style={{ userSelect: 'none' }}>
             ⚠ FEEDBACK DRIFTS TO POLISH PAST HERE
           </text>
@@ -154,27 +154,37 @@ export default function RPEstablishing() {
             stroke={`${CLAY}0.36)`} strokeWidth={0.8} />
           {/* Label */}
           <text x={ZONE_MID} y={JUST_Y} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill={`${CLAY_TEXT}0.958)`}
             style={{ filter: `drop-shadow(0 0 5px ${CLAY_TEXT}0.843))`, userSelect: 'none' }}>
             JUST ENOUGH TO LEARN
           </text>
           <text x={ZONE_MID} y={JUST_SUB_Y} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`${CLAY_TEXT}0.87)`} style={{ userSelect: 'none' }}>
             default low · the lowest that answers your question
           </text>
         </motion.g>
 
-        {/* ── Caption ── */}
+        {/* ── Caption: split across two lines — the single-line sentence no
+            longer fits SVG_W at 11pt ── */}
         <motion.text x={SVG_W / 2} y={CAPTION_Y} textAnchor="middle"
-          fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.57)"
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.28, delay: prefersReduced ? 0 : 0.84 }}
           style={{ userSelect: 'none' }}>
-          THE RIGHT FIDELITY IS NOT THE HIGHEST YOU CAN BUILD, IT IS THE LOWEST THAT ANSWERS YOUR CURRENT QUESTION
+          THE RIGHT FIDELITY IS NOT THE HIGHEST YOU CAN BUILD,
+        </motion.text>
+        <motion.text x={SVG_W / 2} y={CAPTION_Y + 16} textAnchor="middle"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fill="rgba(255,255,255,0.57)"
+          initial={{ opacity: 0 }}
+          animate={visible ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.28, delay: prefersReduced ? 0 : 0.84 }}
+          style={{ userSelect: 'none' }}>
+          IT IS THE LOWEST THAT ANSWERS YOUR CURRENT QUESTION
         </motion.text>
       </svg>
     </div>
