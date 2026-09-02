@@ -44,7 +44,7 @@ export default function SMInteractive() {
       {/* Intervention buttons */}
       <div>
         <p className="font-mono uppercase tracking-widest mb-3"
-          style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.55)` }}>
+          style={{ fontSize: 'var(--text-2xs)', color: `${TEAL_TEXT}0.85)` }}>
           Choose where to intervene in the system
         </p>
         <div className="flex gap-3 flex-wrap">
@@ -54,7 +54,7 @@ export default function SMInteractive() {
             className="rounded-full px-5 py-2 text-sm font-semibold transition-all"
             style={{
               background: isSymptom ? `${AMBER}0.18)` : 'transparent',
-              color: isSymptom ? `${AMBER}0.90)` : `${AMBER}0.58)`,
+              color: isSymptom ? `${AMBER}0.90)` : `${AMBER}0.70)`,
               border: `1.5px solid ${isSymptom ? `${AMBER}0.50)` : `${AMBER}0.25)`}`,
             }}>
             Fix the symptom: add more testing
@@ -65,7 +65,7 @@ export default function SMInteractive() {
             className="rounded-full px-5 py-2 text-sm font-semibold transition-all"
             style={{
               background: isLeverage ? `${TEAL}0.80)` : 'transparent',
-              color: isLeverage ? '#fff' : `${TEAL}0.65)`,
+              color: isLeverage ? '#fff' : `${TEAL_TEXT}0.85)`,
               border: `1.5px solid ${isLeverage ? `${TEAL}0.70)` : `${TEAL}0.28)`}`,
             }}>
             Find the leverage point
@@ -122,13 +122,13 @@ export default function SMInteractive() {
             strokeWidth={isLeverage ? 2.0 : 1.4}
             filter={isLeverage ? 'url(#sm-int-teal-glow)' : undefined} />
           <text x={PRESSURE_CX} y={PRESSURE_CY} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
             fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             DELIVERY PRESSURE
           </text>
           {isLeverage && (
-            <text x={PRESSURE_CX} y={PRESSURE_CY - 14} textAnchor="middle"
-              fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            <text x={PRESSURE_CX} y={PRESSURE_CY - 24} textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={`${TEAL_TEXT}0.958)`} style={{ userSelect: 'none' }}>
               ⚡ LEVERAGE POINT
             </text>
@@ -141,7 +141,7 @@ export default function SMInteractive() {
           <rect x={28} y={192} width={178} height={27} rx={3}
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.55)`} strokeWidth={1.4} />
           <text x={DEBT_CX} y={DEBT_CY} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
             fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             TECHNICAL DEBT
           </text>
@@ -156,12 +156,12 @@ export default function SMInteractive() {
             strokeWidth={isSymptom ? 1.8 : 1.4}
             filter={isSymptom ? 'url(#sm-int-amber-glow)' : undefined} />
           <text x={DEFECT_CX} y={DEFECT_CY} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
             fill={`${AMBER}0.85)`} style={{ userSelect: 'none' }}>
             DEFECT RATE
           </text>
-          <text x={DEFECT_CX} y={DEFECT_CY + 14} textAnchor="middle"
-            fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={DEFECT_CX} y={DEFECT_CY + 27} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
             THE SYMPTOM
           </text>
@@ -176,13 +176,13 @@ export default function SMInteractive() {
             strokeWidth={isSymptom ? 2.0 : 1.2}
             filter={isSymptom ? 'url(#sm-int-teal-glow)' : undefined} />
           <text x={TESTING_CX} y={TESTING_CY} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
             fill={`${TEAL_TEXT}0.954)`} style={{ userSelect: 'none' }}>
             TESTING
           </text>
           {isSymptom && (
-            <text x={TESTING_CX} y={TESTING_CY - 14} textAnchor="middle"
-              fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            <text x={TESTING_CX} y={TESTING_CY - 24} textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={`${TEAL_TEXT}0.948)`} style={{ userSelect: 'none' }}>
               ↑ MORE TESTING
             </text>
@@ -196,11 +196,11 @@ export default function SMInteractive() {
             stroke={`${TEAL}0.70)`} strokeWidth={1.8} markerEnd="url(#sm-int-arr)" />
           <path d={R_RIGHT_ARC} fill="none"
             stroke={`${TEAL}0.70)`} strokeWidth={1.8} markerEnd="url(#sm-int-arr)" />
-          <text x={117} y={126} textAnchor="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" fontWeight="600"
+          <text x={117} y={122} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" fontWeight="600"
             fill={`${TEAL_TEXT}0.885)`} style={{ userSelect: 'none' }}>R1</text>
-          <text x={117} y={137} textAnchor="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={117} y={142} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${TEAL_TEXT}0.853)`} style={{ userSelect: 'none' }}>REINFORCING</text>
         </motion.g>
 
@@ -212,11 +212,11 @@ export default function SMInteractive() {
           <path d={B_LEFT_ARC} fill="none"
             stroke={`${AMBER}0.50)`} strokeWidth={1.5} strokeDasharray="5 3"
             markerEnd="url(#sm-int-arr-neg)" />
-          <text x={516} y={120} textAnchor="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" fontWeight="600"
+          <text x={516} y={116} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" fontWeight="600"
             fill={`${TEAL_TEXT}0.864)`} style={{ userSelect: 'none' }}>B1</text>
-          <text x={516} y={131} textAnchor="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={516} y={136} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${TEAL_TEXT}0.843)`} style={{ userSelect: 'none' }}>BALANCING</text>
         </motion.g>
 
@@ -227,7 +227,7 @@ export default function SMInteractive() {
             stroke={`${AMBER}0.40)`} strokeWidth={1.2} strokeDasharray="4 3"
             markerEnd="url(#sm-int-arr-neg)" />
           <text x={299} y={47} textAnchor="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>⏱ DELAY</text>
         </motion.g>
 
@@ -239,13 +239,13 @@ export default function SMInteractive() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.28, delay: prefersReduced ? 0 : 0.35 }}>
-              <text x={516} y={160} textAnchor="middle"
-                fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+              <text x={516} y={156} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
                 fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
                 ↺ ABSORBED
               </text>
-              <text x={516} y={172} textAnchor="middle"
-                fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              <text x={516} y={176} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
                 fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>
                 B1 restores the system
               </text>
@@ -261,13 +261,13 @@ export default function SMInteractive() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.28, delay: prefersReduced ? 0 : 0.35 }}>
-              <text x={117} y={160} textAnchor="middle"
-                fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+              <text x={117} y={156} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
                 fill={`${TEAL_TEXT}0.969)`} style={{ userSelect: 'none' }}>
                 SYSTEM SHIFTS
               </text>
-              <text x={117} y={172} textAnchor="middle"
-                fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              <text x={117} y={176} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
                 fill={`${TEAL_TEXT}0.912)`} style={{ userSelect: 'none' }}>
                 R1 loop weakens
               </text>
@@ -285,7 +285,7 @@ export default function SMInteractive() {
             transition={{ duration: 0.20 }}
             className="rounded-lg p-5"
             style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.02)' }}>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.50)' }}>
               Select an intervention above. One is what most organizations do. One is what actually changes the system.
             </p>
           </motion.div>
@@ -302,7 +302,7 @@ export default function SMInteractive() {
               style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.72)` }}>
               Result: the system put it back
             </p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
               More testing was added. DEFECT RATE fell. For a quarter, exactly as it had the previous
               three times, under three different leaders. Then the BALANCING LOOP (B1) absorbed the
               intervention and restored the system. The REINFORCING LOOP (R1) continued running
@@ -310,7 +310,7 @@ export default function SMInteractive() {
             </p>
             <div className="rounded p-3"
               style={{ background: `${AMBER}0.06)`, borderLeft: `2px solid ${AMBER}0.40)` }}>
-              <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.58)', lineHeight: 'var(--leading-relaxed)' }}>
                 This is <strong>policy resistance</strong>. The harder you push on the symptom, the harder
                 the balancing loop pushes back. The intervention consumed time (increasing delivery pressure),
                 which accelerated the reinforcing loop, which restored the defects. Pushing harder is not a
@@ -328,10 +328,10 @@ export default function SMInteractive() {
             className="rounded-lg p-5 space-y-3"
             style={{ background: `${TEAL}0.05)`, border: `1px solid ${TEAL}0.22)` }}>
             <p className="font-mono uppercase tracking-widest"
-              style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.75)` }}>
+              style={{ fontSize: 'var(--text-2xs)', color: `${TEAL_TEXT}0.85)` }}>
               Result: the whole system shifted
             </p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
               The structural change was to <strong>how work was committed to</strong>, not how it was
               tested. By reducing the delivery pressure at its source, the reinforcing loop (R1)
               weakened: fewer shortcuts, less technical debt accumulation, no acceleration. DEFECT RATE
@@ -340,7 +340,7 @@ export default function SMInteractive() {
             </p>
             <div className="rounded p-3"
               style={{ background: `${TEAL}0.06)`, borderLeft: `2px solid ${TEAL}0.40)` }}>
-              <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.58)', lineHeight: 'var(--leading-relaxed)' }}>
                 The leverage point was nowhere near the symptom. It looked like doing nothing about quality.
                 Which is precisely why nobody had tried it for two years. The structure produces the
                 behavior: change the structure, and the behavior changes with it.

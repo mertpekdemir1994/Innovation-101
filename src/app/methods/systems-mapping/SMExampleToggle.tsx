@@ -5,6 +5,11 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 const TEAL   = 'rgba(42,111,122,'
 const AMBER  = 'rgba(245,158,11,'
 const INDIGO = 'rgba(99,102,241,'
+// Darker/higher-opacity variants for text on this light background: plain
+// INDIGO and AMBER fail 4.5:1 on white even at full opacity, and TEAL needs
+// a much higher floor than it uses elsewhere as text.
+const INDIGO_DARK = 'rgba(79,70,229,'
+const AMBER_DARK  = 'rgba(180,83,9,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -29,7 +34,7 @@ export default function SMExampleToggle() {
                 ? t === 'ai' ? `${INDIGO}0.85)` : `${TEAL}0.85)`
                 : 'transparent',
               color: tab === t ? '#fff'
-                : t === 'ai' ? `${INDIGO}0.70)` : `${TEAL}0.70)`,
+                : t === 'ai' ? `${INDIGO_DARK}0.90)` : `${TEAL}0.95)`,
               border: `1.5px solid ${tab === t
                 ? t === 'ai' ? `${INDIGO}0.70)` : `${TEAL}0.70)`
                 : t === 'ai' ? `${INDIGO}0.30)` : `${TEAL}0.30)`}`,
@@ -42,7 +47,7 @@ export default function SMExampleToggle() {
       <div className="rounded-lg px-4 py-3 mb-6"
         style={{ background: `${TEAL}0.05)`, border: `1px solid ${TEAL}0.16)` }}>
         <p className="font-mono uppercase tracking-widest mb-1"
-          style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.55)` }}>Shared scenario</p>
+          style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.95)` }}>Shared scenario</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
           {SCENARIO}
         </p>
@@ -63,7 +68,7 @@ export default function SMExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ border: `1px solid ${TEAL}0.20)`, background: `${TEAL}0.04)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.65)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.95)` }}>
                 Start from the recurring behavior, not the latest incident
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -77,7 +82,7 @@ export default function SMExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ border: `1px solid ${TEAL}0.15)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.55)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.95)` }}>
                 The obvious loop everyone already knew
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -91,7 +96,7 @@ export default function SMExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ border: `1px solid ${TEAL}0.15)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.55)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.95)` }}>
                 The loop nobody had articulated
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -108,7 +113,7 @@ export default function SMExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ border: `1px solid ${TEAL}0.15)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.55)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.95)` }}>
                 Feeding the problem by fighting it
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -123,11 +128,11 @@ export default function SMExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ border: `1px solid ${TEAL}0.28)`, background: `${TEAL}0.05)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.70)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.95)` }}>
                 The leverage point nobody had tried
               </p>
               <p className="font-semibold"
-                style={{ fontSize: 'var(--text-sm)', color: `${TEAL}0.85)` }}>
+                style={{ fontSize: 'var(--text-sm)', color: `${TEAL}0.95)` }}>
                 The leverage point was nowhere near the pain. It was not in testing at all. It was in how
                 work was committed to: reducing the pressure that generated the shortcuts. Unglamorous,
                 politically awkward, and it looked, to anyone watching, like doing nothing about quality.
@@ -147,7 +152,7 @@ export default function SMExampleToggle() {
             <div className="rounded-lg px-4 py-3"
               style={{ background: `${INDIGO}0.06)`, border: `1px solid ${INDIGO}0.20)` }}>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
-                <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
+                <span className="font-semibold" style={{ color: `${INDIGO_DARK}0.90)` }}>Hypothetical:</span>{' '}
                 The traditional approach above is what the team actually did. This tab imagines the same
                 team had leaned on AI to build the causal model, to show where it genuinely helps and
                 what it structurally cannot do.
@@ -158,11 +163,11 @@ export default function SMExampleToggle() {
               style={{ border: `1px solid ${INDIGO}0.22)`, background: `${INDIGO}0.04)` }}>
               <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
                 <p className="font-mono uppercase tracking-widest"
-                  style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.80)` }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_DARK}0.90)` }}>
                   The good, and it is real
                 </p>
                 <span className="font-mono text-xs px-2 py-0.5 rounded-full"
-                  style={{ background: `${INDIGO}0.12)`, color: `${INDIGO}0.75)`, border: `1px solid ${INDIGO}0.25)` }}>
+                  style={{ background: `${INDIGO}0.12)`, color: `${INDIGO_DARK}0.90)`, border: `1px solid ${INDIGO}0.25)` }}>
                   Blank-page problem
                 </span>
               </div>
@@ -178,7 +183,7 @@ export default function SMExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ border: `1px solid ${AMBER}0.22)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${AMBER_DARK}1)` }}>
                 But it rendered the failed theory
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -193,7 +198,7 @@ export default function SMExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ border: `1px solid ${AMBER}0.22)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${AMBER_DARK}1)` }}>
                 The loop that mattered was not in the description
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -209,7 +214,7 @@ export default function SMExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ border: `1px solid ${AMBER}0.22)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${AMBER_DARK}1)` }}>
                 The real danger: a fourth failed intervention with more authority
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -224,7 +229,7 @@ export default function SMExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ background: `${TEAL}0.04)`, border: `1px solid ${TEAL}0.18)` }}>
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.62)` }}>The honest readout</p>
+                style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.95)` }}>The honest readout</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 Use AI to draft the model and widen the hypotheses; that is real value, and it solves
                 the blank-page problem. But what it draws is your own theory, tidied. The loops that

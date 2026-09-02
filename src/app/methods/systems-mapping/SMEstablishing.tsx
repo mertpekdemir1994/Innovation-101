@@ -88,7 +88,7 @@ export default function SMEstablishing() {
           <rect x={28} y={44} width={178} height={BOX_H} rx={3}
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.55)`} strokeWidth={1.4} />
           <text x={PRESSURE_CX} y={PRESSURE_CY} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
             fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             DELIVERY PRESSURE
           </text>
@@ -97,7 +97,7 @@ export default function SMEstablishing() {
           <rect x={28} y={198} width={178} height={BOX_H} rx={3}
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.55)`} strokeWidth={1.4} />
           <text x={DEBT_CX} y={DEBT_CY} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
             fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             TECHNICAL DEBT
           </text>
@@ -106,12 +106,12 @@ export default function SMEstablishing() {
           <rect x={390} y={44} width={148} height={BOX_H} rx={3}
             fill={`${AMBER}0.07)`} stroke={`${AMBER}0.55)`} strokeWidth={1.4} />
           <text x={DEFECT_CX} y={DEFECT_CY} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
             fill={`${AMBER}0.85)`} style={{ userSelect: 'none' }}>
             DEFECT RATE
           </text>
-          <text x={DEFECT_CX} y={DEFECT_CY + 14} textAnchor="middle"
-            fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={DEFECT_CX} y={DEFECT_CY + 27} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>
             THE SYMPTOM
           </text>
@@ -120,7 +120,7 @@ export default function SMEstablishing() {
           <rect x={500} y={198} width={148} height={BOX_H} rx={3}
             fill={`${TEAL}0.08)`} stroke={`${TEAL}0.42)`} strokeWidth={1.2} />
           <text x={TESTING_CX} y={TESTING_CY} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
             fill={`${TEAL_TEXT}0.954)`} style={{ userSelect: 'none' }}>
             TESTING
           </text>
@@ -142,22 +142,22 @@ export default function SMEstablishing() {
 
         {/* R1 label */}
         <motion.g {...fade(0.62)}>
-          <text x={117} y={128} textAnchor="middle"
-            fontSize="7.0" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+          <text x={117} y={124} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={`${TEAL_TEXT}0.905)`} style={{ userSelect: 'none' }}>
             R1
           </text>
-          <text x={117} y={140} textAnchor="middle"
-            fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={117} y={144} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${TEAL_TEXT}0.87)`} style={{ userSelect: 'none' }}>
             REINFORCING ↗
           </text>
           {/* "+" labels on reinforcing arrows */}
           <text x={42} y={133} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)"
+            fontSize="11" fontFamily="var(--font-mono)"
             fill={`${TEAL_TEXT}0.891)`} style={{ userSelect: 'none' }}>+</text>
           <text x={194} y={133} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)"
+            fontSize="11" fontFamily="var(--font-mono)"
             fill={`${TEAL_TEXT}0.891)`} style={{ userSelect: 'none' }}>+</text>
         </motion.g>
 
@@ -178,22 +178,22 @@ export default function SMEstablishing() {
 
         {/* B1 label */}
         <motion.g {...fade(1.08)}>
-          <text x={516} y={122} textAnchor="middle"
-            fontSize="7.0" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+          <text x={516} y={118} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
             fill={`${TEAL_TEXT}0.885)`} style={{ userSelect: 'none' }}>
             B1
           </text>
-          <text x={516} y={134} textAnchor="middle"
-            fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={516} y={138} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${TEAL_TEXT}0.853)`} style={{ userSelect: 'none' }}>
             BALANCING ↘
           </text>
           {/* "+" and "−" on balancing arrows */}
           <text x={594} y={130} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)"
+            fontSize="11" fontFamily="var(--font-mono)"
             fill={`${TEAL_TEXT}0.878)`} style={{ userSelect: 'none' }}>+</text>
           <text x={484} y={130} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)"
+            fontSize="11" fontFamily="var(--font-mono)"
             fill={`${AMBER_TEXT}0.845)`} style={{ userSelect: 'none' }}>−</text>
         </motion.g>
 
@@ -207,18 +207,18 @@ export default function SMEstablishing() {
 
         {/* Delay marker on cross-arrow */}
         <motion.g filter="url(#sm-est-amber-glow)" {...fade(1.32)}>
-          <text x={299} y={46} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.04em"
+          <text x={299} y={26} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill={`${AMBER}0.85)`} style={{ userSelect: 'none' }}>
             ⏱
           </text>
-          <text x={299} y={52} textAnchor="middle"
-            fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          <text x={299} y={44} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`${AMBER_TEXT}0.891)`} style={{ userSelect: 'none' }}>
             DELAY: MONTHS LATER
           </text>
-          <text x={299} y={65} textAnchor="middle"
-            fontSize="3.2" fontFamily="var(--font-mono)" letterSpacing="0.05em"
+          <text x={299} y={62} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
             fill={`${AMBER_TEXT}0.82)`} style={{ userSelect: 'none' }}>
             shortcuts → defects
           </text>
@@ -230,7 +230,7 @@ export default function SMEstablishing() {
           <path d={`M ${PRESSURE_CX},4 L ${PRESSURE_CX + 12},14 L ${PRESSURE_CX},24 L ${PRESSURE_CX - 12},14 Z`}
             fill={`${TEAL}0.20)`} stroke={`${TEAL}0.90)`} strokeWidth={1.2} />
           <text x={PRESSURE_CX} y={38} textAnchor="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${TEAL_TEXT}0.948)`} style={{ userSelect: 'none' }}>
             LEVERAGE POINT
           </text>
@@ -240,7 +240,7 @@ export default function SMEstablishing() {
         </motion.g>
 
         {/* ── CAPTION ── */}
-        <motion.text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="3.8"
+        <motion.text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="11"
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
           fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           {...fade(1.78)}>

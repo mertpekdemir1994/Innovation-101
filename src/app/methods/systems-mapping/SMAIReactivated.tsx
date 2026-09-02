@@ -53,7 +53,7 @@ export default function SMAIReactivated() {
                 ? m === 'ai' ? `${INDIGO}0.82)` : `${TEAL}0.82)`
                 : 'transparent',
               color: mode === m ? '#fff'
-                : m === 'ai' ? `${INDIGO}0.70)` : `${TEAL}0.70)`,
+                : m === 'ai' ? `${INDIGO_TEXT}0.85)` : `${TEAL_TEXT}0.85)`,
               border: `1.5px solid ${mode === m
                 ? m === 'ai' ? `${INDIGO}0.68)` : `${TEAL}0.68)`
                 : m === 'ai' ? `${INDIGO}0.28)` : `${TEAL}0.28)`}`,
@@ -104,8 +104,8 @@ export default function SMAIReactivated() {
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
               animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}>
-              <text x={SVG_W / 2} y={14} textAnchor="middle"
-                fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+              <text x={SVG_W / 2} y={16} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
                 fill={`${AMBER}0.75)`} style={{ userSelect: 'none' }}>
                 ⚠ YOUR FAILED THEORY, DRAWN ELEGANTLY
               </text>
@@ -119,7 +119,7 @@ export default function SMAIReactivated() {
           <rect x={28} y={38} width={178} height={27} rx={3}
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.55)`} strokeWidth={1.4} />
           <text x={PRESSURE_CX} y={PRESSURE_CY} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
             fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             DELIVERY PRESSURE
           </text>
@@ -131,7 +131,7 @@ export default function SMAIReactivated() {
           <rect x={28} y={185} width={178} height={27} rx={3}
             fill={`${TEAL}0.10)`} stroke={`${TEAL}0.55)`} strokeWidth={1.4} />
           <text x={DEBT_CX} y={DEBT_CY} textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
             fill={`${TEAL_TEXT}0.975)`} style={{ userSelect: 'none' }}>
             TECHNICAL DEBT
           </text>
@@ -144,7 +144,7 @@ export default function SMAIReactivated() {
           strokeWidth={isAI ? 1.8 : 1.4}
           filter={isAI ? 'url(#sm-ai-indigo-glow)' : undefined} />
         <text x={DEFECT_CX} y={DEFECT_CY} textAnchor="middle" dominantBaseline="middle"
-          fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
           fill={isAI ? `${INDIGO_TEXT}0.975)` : `${AMBER}0.85)`} style={{ userSelect: 'none' }}>
           DEFECT RATE
         </text>
@@ -155,7 +155,7 @@ export default function SMAIReactivated() {
           stroke={isAI ? `${INDIGO}0.68)` : `${TEAL}0.42)`}
           strokeWidth={isAI ? 1.6 : 1.2} />
         <text x={TESTING_CX} y={TESTING_CY} textAnchor="middle" dominantBaseline="middle"
-          fontSize="5.4" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
           fill={isAI ? `${INDIGO_TEXT}0.958)` : `${TEAL_TEXT}0.954)`} style={{ userSelect: 'none' }}>
           TESTING
         </text>
@@ -167,11 +167,11 @@ export default function SMAIReactivated() {
             stroke={`${TEAL}0.70)`} strokeWidth={1.8} markerEnd="url(#sm-ai-arr)" />
           <path d={R_RIGHT_ARC} fill="none"
             stroke={`${TEAL}0.70)`} strokeWidth={1.8} markerEnd="url(#sm-ai-arr)" />
-          <text x={117} y={118} textAnchor="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" fontWeight="600"
+          <text x={117} y={114} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" fontWeight="600"
             fill={`${TEAL_TEXT}0.885)`} style={{ userSelect: 'none' }}>R1</text>
-          <text x={117} y={130} textAnchor="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={117} y={134} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${TEAL_TEXT}0.853)`} style={{ userSelect: 'none' }}>REINFORCING</text>
         </motion.g>
 
@@ -189,11 +189,11 @@ export default function SMAIReactivated() {
             strokeWidth={isAI ? 2.2 : 1.5}
             strokeDasharray={isAI ? '' : '5 3'}
             markerEnd={isAI ? 'url(#sm-ai-arr-indigo)' : 'url(#sm-ai-arr-neg)'} />
-          <text x={516} y={115} textAnchor="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" fontWeight="600"
+          <text x={516} y={111} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" fontWeight="600"
             fill={isAI ? `${INDIGO_TEXT}0.912)` : `${TEAL_TEXT}0.864)`} style={{ userSelect: 'none' }}>B1</text>
-          <text x={516} y={127} textAnchor="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={516} y={131} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={isAI ? `${INDIGO_TEXT}0.885)` : `${TEAL_TEXT}0.843)`} style={{ userSelect: 'none' }}>BALANCING</text>
         </motion.g>
 
@@ -204,7 +204,7 @@ export default function SMAIReactivated() {
             stroke={`${AMBER}0.40)`} strokeWidth={1.2} strokeDasharray="4 3"
             markerEnd="url(#sm-ai-arr-neg)" />
           <text x={299} y={44} textAnchor="middle"
-            fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>⏱ DELAY</text>
         </motion.g>
 
@@ -215,7 +215,7 @@ export default function SMAIReactivated() {
           <path d={`M ${PRESSURE_CX},5 L ${PRESSURE_CX + 10},15 L ${PRESSURE_CX},25 L ${PRESSURE_CX - 10},15 Z`}
             fill={`${TEAL}0.18)`} stroke={`${TEAL}0.88)`} strokeWidth={1.2} />
           <text x={PRESSURE_CX} y={33} textAnchor="middle"
-            fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${TEAL_TEXT}0.941)`} style={{ userSelect: 'none' }}>
             LEVERAGE POINT
           </text>
@@ -229,15 +229,15 @@ export default function SMAIReactivated() {
           style={{ background: `${INDIGO}0.05)`, border: `1px solid ${INDIGO}0.20)` }}>
           <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
             <p className="font-mono uppercase tracking-widest"
-              style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.80)` }}>
+              style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_TEXT}0.85)` }}>
               Where AI genuinely helps
             </p>
             <span className="font-mono text-xs px-2 py-0.5 rounded-full"
-              style={{ background: `${INDIGO}0.12)`, color: `${INDIGO}0.75)`, border: `1px solid ${INDIGO}0.25)` }}>
+              style={{ background: `${INDIGO}0.12)`, color: `${INDIGO_TEXT}0.85)`, border: `1px solid ${INDIGO}0.25)` }}>
               Blank-page problem
             </span>
           </div>
-          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+          <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
             Systems mapping has always suffered from the blank-page problem. AI can propose variables,
             suggest causal relationships, close loops, and produce a clean readable diagram in minutes.
             It also asks good questions: what else might drive this variable? It widens the hypothesis
@@ -252,7 +252,7 @@ export default function SMAIReactivated() {
             style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.72)` }}>
             It renders your existing theory
           </p>
-          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+          <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
             AI models the causality it is told about, or the causality that is documented. In a
             persistent problem, the documented theory is the organization&rsquo;s existing story about
             itself, precisely the theory that has already guided the interventions that keep not
@@ -267,7 +267,7 @@ export default function SMAIReactivated() {
             style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.72)` }}>
             A confident wrong diagram is worse than no diagram
           </p>
-          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+          <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
             A fluent, coherent, professional-looking causal model of the wrong loops does not merely
             fail to help; it actively justifies the intervention that cannot work, and it does so
             with more institutional authority than the vague unease that preceded it. A map of the
@@ -282,7 +282,7 @@ export default function SMAIReactivated() {
             style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.72)` }}>
             The real loops are not written down
           </p>
-          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+          <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
             The reinforcing loop that explains a persistent problem is, by definition, the one
             nobody has articulated: undocumented, often politically uncomfortable, and not available
             in any text AI can read. It surfaces by asking the people inside the system what
@@ -295,14 +295,14 @@ export default function SMAIReactivated() {
         <div className="rounded-lg p-5 sm:col-span-2"
           style={{ background: `${TEAL}0.05)`, border: `1px solid ${TEAL}0.20)` }}>
           <p className="font-mono uppercase tracking-widest mb-2"
-            style={{ fontSize: 'var(--text-2xs)', color: `${TEAL}0.65)` }}>The honest readout</p>
+            style={{ fontSize: 'var(--text-2xs)', color: `${TEAL_TEXT}0.85)` }}>The honest readout</p>
           <p className="font-semibold"
-            style={{ fontSize: 'var(--text-sm)', color: `${TEAL}0.85)` }}>
+            style={{ fontSize: 'var(--text-sm)', color: `${TEAL_TEXT}0.90)` }}>
             Use AI to draft the model and widen the hypotheses. Then treat what it produces as your own
             beliefs, drawn tidily, and go break it.
           </p>
           <p className="mt-2"
-            style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
             Talk to the people inside the system. Look for the loops nobody wrote down. Name the
             uncomfortable ones. Test the model&rsquo;s predictions against history: if these loops are real,
             what should we have already seen? Confirm what you can, cheaply, before acting on a
