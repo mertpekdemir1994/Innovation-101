@@ -5,8 +5,14 @@ import { motion, useInView, useReducedMotion } from 'framer-motion'
 const PLUM = 'rgba(107,74,119,'
 const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
-const SVG_W = 700
+// Canvas widened from the original 700-wide composition (1.67:1) toward
+// 2.33:1 by framing it wider, not stretching the circles — the Venn
+// diagram's own geometry is untouched, just recentered via a translate
+// (see OFFSET_X below, applied to everything except the caption, which is
+// centered on the full new canvas).
+const SVG_W = 980
 const SVG_H = 420
+const OFFSET_X = 140
 
 // Three circle centers
 const D_CX = 350, D_CY = 113
@@ -35,7 +41,7 @@ export default function BBEstablishing() {
       viewBox={`0 0 ${SVG_W} ${SVG_H}`}
       width="100%"
       preserveAspectRatio="xMidYMid meet"
-      style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
+      style={{ margin: '0 auto', display: 'block' }}
       aria-label="Three overlapping circles: Desirability (top), Feasibility (bottom-left), Viability (bottom-right). Where all three overlap is the Breakthrough."
     >
       <defs>
@@ -56,6 +62,8 @@ export default function BBEstablishing() {
           <stop offset="100%" stopColor={`${PLUM}0.08)`} />
         </radialGradient>
       </defs>
+
+      <g transform={`translate(${OFFSET_X}, 0)`}>
 
       {/* D circle */}
       <motion.circle
@@ -239,6 +247,8 @@ export default function BBEstablishing() {
           </text>
         </motion.g>
       ))}
+
+      </g>
 
       {/* Caption */}
       <motion.text
