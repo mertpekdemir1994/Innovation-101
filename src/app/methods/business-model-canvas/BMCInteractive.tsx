@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM   = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER  = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
@@ -101,7 +102,7 @@ export default function BMCInteractive() {
   const prefersReduced = useReducedMotion()
   const tr = prefersReduced ? { duration: 0 } : { duration: 0.2 }
 
-  const SVG_H = 248
+  const SVG_H = 270
 
   function blockOpacity(k: BlockId): number {
     if (scenario === 'segment') {
@@ -168,7 +169,7 @@ export default function BMCInteractive() {
           style={{
             fontFamily: 'var(--font-mono)', letterSpacing: '0.08em',
             background: scenario === 'segment' ? `${AMBER}0.14)` : 'transparent',
-            color: scenario === 'segment' ? `${AMBER}0.90)` : `${AMBER}0.58)`,
+            color: scenario === 'segment' ? `${AMBER}0.90)` : `${AMBER}0.70)`,
             border: `1px solid ${scenario === 'segment' ? `${AMBER}0.55)` : `${AMBER}0.25)`}`,
           }}>
           CHANGE SEGMENT →
@@ -180,7 +181,7 @@ export default function BMCInteractive() {
           style={{
             fontFamily: 'var(--font-mono)', letterSpacing: '0.08em',
             background: scenario === 'channel' ? `${AMBER}0.14)` : 'transparent',
-            color: scenario === 'channel' ? `${AMBER}0.90)` : `${AMBER}0.58)`,
+            color: scenario === 'channel' ? `${AMBER}0.90)` : `${AMBER}0.70)`,
             border: `1px solid ${scenario === 'channel' ? `${AMBER}0.55)` : `${AMBER}0.25)`}`,
           }}>
           CHANGE CHANNEL (PREMIUM) →
@@ -230,7 +231,7 @@ export default function BMCInteractive() {
           const isBreaking = scenario === 'channel' && k === 'cost'
           const isAffected = scenario === 'segment' && SCENARIO_AFFECTED.segment.includes(k)
           const glowFilter = (isBreaking || isAffected) ? 'url(#bmc-int-amber-glow)' : k === selected ? 'url(#bmc-int-plum-glow)' : 'none'
-          const textColor = isBreaking ? `${AMBER}0.95)` : isAffected ? `${AMBER}0.88)` : k === selected ? `${PLUM}1)` : k === 'vp' ? `${PLUM}0.88)` : 'rgba(255,255,255,0.65)'
+          const textColor = isBreaking ? `${AMBER}0.95)` : isAffected ? `${AMBER}0.88)` : k === selected ? `${PLUM_TEXT}1)` : k === 'vp' ? `${PLUM_TEXT}0.88)` : 'rgba(255,255,255,0.65)'
 
           return (
             <motion.g
@@ -250,18 +251,18 @@ export default function BMCInteractive() {
                 transition={tr}
                 style={{ filter: glowFilter }}
               />
-              <text x={b.x + b.w / 2} y={hasTwo ? midY - 6 : midY}
+              <text x={b.x + b.w / 2} y={hasTwo ? midY - (isAffected || isBreaking ? 14 : 8) : midY}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize={k === 'cost' || k === 'rev' ? '7' : '6'}
-                fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+                fontSize="11"
+                fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                 fill={textColor} style={{ userSelect: 'none', pointerEvents: 'none' }}>
                 {line1}
               </text>
               {hasTwo && (
-                <text x={b.x + b.w / 2} y={midY + 9}
+                <text x={b.x + b.w / 2} y={midY + (isAffected || isBreaking ? 2 : 10)}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize={k === 'cost' || k === 'rev' ? '7' : '6'}
-                  fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+                  fontSize="11"
+                  fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                   fill={textColor} style={{ userSelect: 'none', pointerEvents: 'none' }}>
                   {line2}
                 </text>
@@ -270,16 +271,16 @@ export default function BMCInteractive() {
               {isBreaking && (
                 <text x={b.x + b.w / 2} y={b.y + b.h - 10}
                   textAnchor="middle"
-                  fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fontWeight="600"
                   fill={`${AMBER}0.85)`} style={{ userSelect: 'none', pointerEvents: 'none' }}>
                   ⚠ ECONOMICS BREAK
                 </text>
               )}
               {/* AFFECTED label on segment-affected blocks */}
               {isAffected && (
-                <text x={b.x + b.w / 2} y={b.y + b.h - 8}
+                <text x={b.x + b.w / 2} y={b.y + b.h - 10}
                   textAnchor="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                   fill={`${AMBER}0.75)`} style={{ userSelect: 'none', pointerEvents: 'none' }}>
                   MUST CHANGE
                 </text>
@@ -290,8 +291,8 @@ export default function BMCInteractive() {
 
         {/* Idle hint */}
         {scenario === 'none' && !selected && (
-          <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          <text x={SVG_W / 2} y={SVG_H - 10} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             CLICK ANY BLOCK, OR USE A SCENARIO ABOVE
           </text>
@@ -299,20 +300,34 @@ export default function BMCInteractive() {
 
         {/* Segment scenario annotation */}
         {scenario === 'segment' && (
-          <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill={`${AMBER_TEXT}0.891)`} style={{ userSelect: 'none' }}>
-            Teams routinely change the segment and update nothing else, which is how a canvas becomes fiction.
-          </text>
+          <>
+            <text x={SVG_W / 2} y={SVG_H - 26} textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.01em"
+              fill={`${AMBER_TEXT}0.891)`} style={{ userSelect: 'none' }}>
+              Teams routinely change the segment and update nothing else,
+            </text>
+            <text x={SVG_W / 2} y={SVG_H - 10} textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.01em"
+              fill={`${AMBER_TEXT}0.891)`} style={{ userSelect: 'none' }}>
+              which is how a canvas becomes fiction.
+            </text>
+          </>
         )}
 
         {/* Channel break annotation */}
         {scenario === 'channel' && (
-          <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.06em"
-            fill={`${AMBER}0.75)`} style={{ userSelect: 'none' }}>
-            The cost of this channel exceeds what the revenue stream brings in. Two blocks cannot both be true.
-          </text>
+          <>
+            <text x={SVG_W / 2} y={SVG_H - 26} textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.01em"
+              fill={`${AMBER}0.85)`} style={{ userSelect: 'none' }}>
+              The cost of this channel exceeds what the revenue stream brings in.
+            </text>
+            <text x={SVG_W / 2} y={SVG_H - 10} textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.01em"
+              fill={`${AMBER}0.85)`} style={{ userSelect: 'none' }}>
+              Two blocks cannot both be true.
+            </text>
+          </>
         )}
       </svg>
 
@@ -333,9 +348,9 @@ export default function BMCInteractive() {
               borderRadius: '8px',
             }}>
             <p style={{
-              fontFamily: 'var(--font-mono)', fontSize: '8px',
-              letterSpacing: '0.14em', fontWeight: 600,
-              color: `${PLUM}0.80)`, marginBottom: '10px',
+              fontFamily: 'var(--font-mono)', fontSize: '10px',
+              letterSpacing: '0.10em', fontWeight: 600,
+              color: `${PLUM_TEXT}1)`, marginBottom: '10px',
             }}>
               {LABELS[selected!].join(' ').trim()}
             </p>
@@ -344,7 +359,7 @@ export default function BMCInteractive() {
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '14px' }}>
               <div style={{ padding: '12px 14px', background: `${PLUM}0.08)`, borderRadius: '6px', border: `1px solid ${PLUM}0.18)` }}>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '7px', letterSpacing: '0.12em', color: `${PLUM}0.60)`, marginBottom: '6px' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.08em', color: `${PLUM_TEXT}0.90)`, marginBottom: '6px' }}>
                   DEPENDS ON
                 </p>
                 <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
@@ -356,7 +371,7 @@ export default function BMCInteractive() {
                 </ul>
               </div>
               <div style={{ padding: '12px 14px', background: `${AMBER}0.06)`, borderRadius: '6px', border: `1px solid ${AMBER}0.18)` }}>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '7px', letterSpacing: '0.12em', color: `${AMBER}0.65)`, marginBottom: '6px' }}>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.08em', color: `${AMBER}0.75)`, marginBottom: '6px' }}>
                   UNTESTED HYPOTHESIS
                 </p>
                 <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.58)', lineHeight: 1.6, margin: 0 }}>
@@ -379,7 +394,7 @@ export default function BMCInteractive() {
               marginTop: '20px', padding: '20px 24px',
               background: `${AMBER}0.06)`, border: `1px solid ${AMBER}0.22)`, borderRadius: '8px',
             }}>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.14em', color: `${AMBER}0.80)`, marginBottom: '10px' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.10em', color: `${AMBER}0.80)`, marginBottom: '10px' }}>
               SEGMENT CHANGE: THREE BLOCKS MUST MOVE
             </p>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.80)', lineHeight: 1.55, marginBottom: '12px' }}>
@@ -405,7 +420,7 @@ export default function BMCInteractive() {
               marginTop: '20px', padding: '20px 24px',
               background: `${AMBER}0.08)`, border: `2px solid ${AMBER}0.45)`, borderRadius: '8px',
             }}>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.14em', color: `${AMBER}0.90)`, marginBottom: '10px' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.10em', color: `${AMBER}0.90)`, marginBottom: '10px' }}>
               ⚠ THE BREAK: THIS IS THE METHOD
             </p>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.88)', lineHeight: 1.55, marginBottom: '12px' }}>

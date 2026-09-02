@@ -3,11 +3,12 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const PLUM  = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
-const SVG_H = 260
+const SVG_H = 290
 
 // ── Block geometry ─────────────────────────────────────────────────────────
 // All blocks sit on a dark background, canonical BMC arrangement.
@@ -137,7 +138,7 @@ export default function BMCEstablishing() {
           const stroke = isVP ? `${PLUM}0.72)` : `${PLUM}0.38)`
           const strokeW = isVP ? 1.6 : 1.0
           const glowFilter = isVP ? 'url(#bmc-est-plum-glow)' : 'none'
-          const textColor = isVP ? `${PLUM}1)` : `rgba(255,255,255,0.68)`
+          const textColor = isVP ? `${PLUM_TEXT}1)` : `rgba(255,255,255,0.68)`
           const midY = b.y + b.h / 2
           const hasTwo = line2 !== ''
 
@@ -150,19 +151,19 @@ export default function BMCEstablishing() {
               />
               <text
                 x={b.x + b.w / 2}
-                y={hasTwo ? midY - 6 : midY}
+                y={hasTwo ? midY - 8 : midY}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize={k === 'cost' || k === 'rev' ? '7' : '6'}
-                fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+                fontSize="11"
+                fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                 fill={textColor} style={{ userSelect: 'none' }}>
                 {line1}
               </text>
               {hasTwo && (
                 <text
-                  x={b.x + b.w / 2} y={midY + 9}
+                  x={b.x + b.w / 2} y={midY + 10}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize={k === 'cost' || k === 'rev' ? '7' : '6'}
-                  fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+                  fontSize="11"
+                  fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                   fill={textColor} style={{ userSelect: 'none' }}>
                   {line2}
                 </text>
@@ -199,7 +200,7 @@ export default function BMCEstablishing() {
         {/* Strained label */}
         <motion.g {...fade(1.55)}>
           <text x={395} y={206} textAnchor="middle"
-            fontSize="3.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}>
             UNDER TENSION
           </text>
@@ -207,10 +208,10 @@ export default function BMCEstablishing() {
 
         {/* ── CAPTION ── */}
         <motion.text
-          x={SVG_W / 2} y={SVG_H - 7}
-          textAnchor="middle" fontSize="3.8"
-          fontFamily="var(--font-mono)" letterSpacing="0.06em"
-          fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
+          x={SVG_W / 2} y={SVG_H - 14}
+          textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.02em"
+          fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }}
           {...fade(1.70)}>
           Nine blocks. One structure. Change any block and others move with it.
         </motion.text>

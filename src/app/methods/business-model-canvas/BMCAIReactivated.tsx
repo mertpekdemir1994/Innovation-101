@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM   = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const AMBER  = 'rgba(245,158,11,'
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
@@ -83,7 +84,7 @@ export default function BMCAIReactivated() {
   const prefersReduced = useReducedMotion()
   const isAuthor = mode === 'author'
   const tr = prefersReduced ? { duration: 0 } : { duration: 0.26 }
-  const SVG_H = 248
+  const SVG_H = 290
 
   function blockFill(k: BlockId): string {
     if (isAuthor) return `${INDIGO}0.14)`
@@ -118,12 +119,12 @@ export default function BMCAIReactivated() {
             key={m}
             onClick={() => setMode(m)}
             style={{
-              fontFamily: 'var(--font-mono)', fontSize: '9px', letterSpacing: '0.12em',
+              fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.08em',
               padding: '7px 18px', borderRadius: '20px', cursor: 'pointer',
               transition: prefersReduced ? 'none' : 'all 0.2s',
               border: `1px solid ${m === mode ? (m === 'adversary' ? `${PLUM}0.60)` : `${INDIGO}0.60)`) : 'rgba(255,255,255,0.14)'}`,
               background: m === mode ? (m === 'adversary' ? `${PLUM}0.12)` : `${INDIGO}0.12)`) : 'transparent',
-              color: m === mode ? (m === 'adversary' ? `${PLUM}0.92)` : `${INDIGO}0.92)`) : 'var(--color-dark-muted)',
+              color: m === mode ? (m === 'adversary' ? `${PLUM_TEXT}0.95)` : `${INDIGO}0.92)`) : 'var(--color-dark-muted)',
             }}>
             {m === 'author' ? 'AI AS AUTHOR' : 'AI AS ADVERSARY'}
           </button>
@@ -171,38 +172,38 @@ export default function BMCAIReactivated() {
                 transition={tr}
                 style={{ filter: glowFilter }}
               />
-              <text x={b.x + b.w / 2} y={hasTwo ? midY - 6 : midY}
+              <text x={b.x + b.w / 2} y={hasTwo ? midY - (isAuthor || isContradiction ? 14 : 8) : midY}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize={k === 'cost' || k === 'rev' ? '7' : '6'}
-                fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+                fontSize="11"
+                fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                 style={{ userSelect: 'none', fill: textColor(k) }}>
                 {line1}
               </text>
               {hasTwo && (
-                <text x={b.x + b.w / 2} y={midY + 9}
+                <text x={b.x + b.w / 2} y={midY + (isAuthor || isContradiction ? 2 : 10)}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize={k === 'cost' || k === 'rev' ? '7' : '6'}
-                  fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+                  fontSize="11"
+                  fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                   style={{ userSelect: 'none', fill: textColor(k) }}>
                   {line2}
                 </text>
               )}
               {/* Author mode: UNVALIDATED badge */}
               {isAuthor && (
-                <text x={b.x + b.w / 2} y={b.y + b.h - 9}
+                <text x={b.x + b.w / 2} y={b.y + b.h - 10}
                   textAnchor="middle"
-                  fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}>
                   UNVALIDATED
                 </text>
               )}
               {/* Adversary mode: contradiction badges */}
               {isContradiction && (
-                <text x={b.x + b.w / 2} y={b.y + b.h - 9}
+                <text x={b.x + b.w / 2} y={b.y + b.h - 10}
                   textAnchor="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="-0.01em" fontWeight="600"
                   fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
-                  {k === 'ch' ? '⚠ PREMIUM CHANNEL' : '⚠ ECONOMICS BREAK'}
+                  {k === 'ch' ? '⚠ CHANNEL' : '⚠ ECONOMICS BREAK'}
                 </text>
               )}
             </motion.g>
@@ -218,11 +219,11 @@ export default function BMCAIReactivated() {
               animate={{ opacity: 1 }}
               exit={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
               transition={tr}>
-              <rect x={SVG_W / 2 - 160} y={SVG_H - 36} width={320} height={28} rx={5}
+              <rect x={SVG_W / 2 - 250} y={SVG_H - 40} width={500} height={30} rx={5}
                 fill={`${INDIGO}0.18)`} stroke={`${INDIGO}0.50)`} strokeWidth={1.2}
                 style={{ filter: 'url(#bmc-ai-indigo-glow)' }} />
-              <text x={SVG_W / 2} y={SVG_H - 19} textAnchor="middle"
-                fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+              <text x={SVG_W / 2} y={SVG_H - 22} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em" fontWeight="600"
                 fill={`${INDIGO_TEXT}0.979)`} style={{ userSelect: 'none' }}>
                 PLAUSIBLE · PROFESSIONAL · ENTIRELY UNVALIDATED
               </text>
@@ -242,9 +243,9 @@ export default function BMCAIReactivated() {
               <line
                 x1={462} y1={172} x2={300} y2={176}
                 stroke={`${AMBER}0.70)`} strokeWidth={1.5} strokeDasharray="5 3" />
-              <text x={380} y={194} textAnchor="middle"
-                fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
-                fill={`${AMBER}0.75)`} style={{ userSelect: 'none' }}>
+              <text x={380} y={198} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em" fontWeight="600"
+                fill={`${AMBER}0.85)`} style={{ userSelect: 'none' }}>
                 CONTRADICTION FOUND
               </text>
             </motion.g>
@@ -269,8 +270,8 @@ export default function BMCAIReactivated() {
               borderRadius: '6px',
             }}>
               <p style={{
-                fontFamily: 'var(--font-mono)', fontSize: '7px', letterSpacing: '0.12em',
-                fontWeight: 600, color: `${accent}0.80)`, marginBottom: '8px',
+                fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.06em',
+                fontWeight: 600, color: accent === PLUM ? `${PLUM_TEXT}0.95)` : `${accent}0.80)`, marginBottom: '8px',
               }}>{label}</p>
               <p style={{ color: 'rgba(255,255,255,0.56)', fontSize: '12px', lineHeight: 1.65, margin: 0 }}>
                 {body}
@@ -285,7 +286,7 @@ export default function BMCAIReactivated() {
         marginTop: '12px', padding: '16px 20px',
         background: `${PLUM}0.06)`, border: `1px solid ${PLUM}0.20)`, borderRadius: '6px',
       }}>
-        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '7px', letterSpacing: '0.12em', color: `${PLUM}0.70)`, marginBottom: '8px' }}>
+        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.06em', color: `${PLUM_TEXT}0.95)`, marginBottom: '8px' }}>
           THE HONEST SYNTHESIS
         </p>
         <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '13px', lineHeight: 1.65, margin: 0 }}>
