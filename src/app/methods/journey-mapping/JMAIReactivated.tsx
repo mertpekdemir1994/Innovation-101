@@ -81,7 +81,7 @@ export default function JMAIReactivated() {
 
       {/* ── Journey map SVG ── */}
       <div className="w-full flex justify-center mb-10 select-none" aria-hidden="true">
-        <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}>
+        <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
           <defs>
             <filter id="jm-ai-glow" x="-10%" y="-60%" width="120%" height="220%">
               <feGaussianBlur stdDeviation="3" result="blur" />

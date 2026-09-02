@@ -73,7 +73,7 @@ export default function PFLAIReactivated() {
         aria-label={isAI
           ? 'AI mode: the SIGNAL-to-SENSE connector is dramatically strengthened in indigo: AI synthesizes signal at scale, repairing the volume-broken junction. DECIDE, SHIP, and the return measurement remain in brick (human), with amber markers. Three amber labels show what AI cannot do: decide, ship, or measure.'
           : 'Human mode: standard feedback loop in brick. All four stages and the return path at full visibility.'}
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="pfl-ai-glow" x="-20%" y="-20%" width="140%" height="140%">

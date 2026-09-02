@@ -99,7 +99,7 @@ export default function UTAIReactivated() {
         aria-label={isAI
           ? 'AI mode: the intended path turns indigo and three heuristic flags appear showing what AI can review. The actual path (the real person\'s wandering route and friction points) fades to nearly invisible, with a label stating it is not accessible to AI.'
           : 'Human mode: both paths visible, the intended straight white path and the actual brick-colored wandering path with four friction points marked.'}
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="ut-ai-glow" x="-20%" y="-20%" width="140%" height="140%">

@@ -113,7 +113,7 @@ export default function MVPAIReactivated() {
         ? 'AI-reactivated view. MLP optimization badge highlighted with AI cost-collapse badge (indigo). Core and cut pile unchanged. Human-judgment annotations: TASTE (loved vs polished) and INTERPRETATION (idea vs execution) remain human.'
         : 'Traditional view: two products, same core, different optimization.'}>
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-          preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}>
+          preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}>
           <defs>
             <filter id="mvpai-glow" x="-30%" y="-30%" width="160%" height="160%">
               <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur" />

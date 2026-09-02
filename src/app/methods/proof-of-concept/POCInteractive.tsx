@@ -104,7 +104,7 @@ export default function POCInteractive() {
         aria-label="Interactive proving rig. Click any labelled zone to explore what a PoC includes, excludes, and produces."
         style={{ position: 'relative' }}>
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-          preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}>
+          preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}>
           <defs>
             <filter id="poc-int-glow" x="-30%" y="-30%" width="160%" height="160%">
               <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur" />

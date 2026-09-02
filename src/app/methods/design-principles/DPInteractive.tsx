@@ -136,7 +136,7 @@ export default function DPInteractive() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Decision fork. Select a principle above to see whether it closes a branch."
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="dp-int-plum-glow" x="-30%" y="-30%" width="160%" height="160%">

@@ -64,7 +64,7 @@ export default function POCEstablishing() {
     <div className="w-full"
       aria-label="Proving rig diagram. A bare apparatus connects an input block on the left to a pass/fail readout on the right. Above the apparatus: 'ONE CRITICAL QUESTION'. Inside: three internal stages (Ingest, Process, Evaluate). Below: three ghosted absent elements (No Interface, No Extra Features, No Product Shell). The rig is built only to answer the one question. Everything else is deliberately excluded.">
       <svg ref={ref} viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-        preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}>
+        preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}>
         <defs>
           <filter id="poc-est-glow" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur" />

@@ -163,7 +163,7 @@ export default function CMAIReactivated() {
         aria-label={isAI
           ? 'AI mode: REAL-TIME SERVING genuinely closes (indigo). PIPELINE RELIABILITY shows as HAVE IT, but this is a deceptive fill: the surface appears solid, but the underlying capability is still absent. Nobody in the organization can judge the AI output.'
           : 'Human mode: the capability map in its actual state. DATA QUALITY partial, PIPELINE RELIABILITY a genuine gap.'}
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="cm-ai-glow" x="-25%" y="-25%" width="150%" height="150%">

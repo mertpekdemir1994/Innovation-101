@@ -183,7 +183,7 @@ export default function SBInteractive() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Interactive storyboard. Click any frame to reveal what it shows and what it assumes."
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="sb-int-clay-glow" x="-30%" y="-30%" width="160%" height="160%">

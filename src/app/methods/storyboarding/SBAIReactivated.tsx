@@ -118,7 +118,7 @@ export default function SBAIReactivated() {
           ? 'Five storyboard frames, all rendered by AI with clean indigo borders. Frame four contains the words "intelligently surfaces the right answer": a label, not a drawing. The gap is invisible but present.'
           : 'Five storyboard frames. Frames one through three and frame five have clay borders. Frame four, THE GAP, has an amber border and is still empty. The gap cannot be closed by AI any more than it can be closed by hand.'
         }
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block', marginBottom: '24px' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', marginBottom: '24px' }}
       >
         <defs>
           <filter id="sb-ai-indigo-glow" x="-30%" y="-30%" width="160%" height="160%">

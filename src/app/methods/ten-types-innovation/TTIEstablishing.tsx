@@ -54,7 +54,7 @@ export default function TTIEstablishing() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
+        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}
         role="img"
         aria-label="The 10 Types of Innovation in three categories: Configuration (Profit Model, Network, Structure, Process), Offering (Product Performance, Product System), and Experience (Service, Channel, Brand, Customer Engagement). Product Performance is the most commonly used type; the other nine are typically under-used."
       >

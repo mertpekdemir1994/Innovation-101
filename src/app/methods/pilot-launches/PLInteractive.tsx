@@ -113,7 +113,7 @@ export default function PLInteractive() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Interactive pilot zone diagram. Click a zone to explore it."
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block', cursor: 'default' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', cursor: 'default' }}
       >
         <defs>
           <filter id="pl-int-glow" x="-20%" y="-20%" width="140%" height="140%">

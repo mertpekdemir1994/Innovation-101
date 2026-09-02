@@ -88,7 +88,7 @@ export default function RPInteractive() {
       >
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
           preserveAspectRatio="xMidYMid meet"
-          style={{ maxWidth: 'var(--width-illustration)', display: 'block', cursor: 'default' }}>
+          style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', cursor: 'default' }}>
           <defs>
             <filter id="rp-int-clay-glow" x="-30%" y="-30%" width="160%" height="160%">
               <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />

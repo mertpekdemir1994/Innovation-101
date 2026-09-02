@@ -72,7 +72,7 @@ export default function AMPAIReactivated() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
+        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}
         aria-label={
           isAI
             ? 'AI mode: the assumption "Will they buy online?" is incorrectly placed in the top-left monitor quadrant. AI rates online purchasing as well-established behaviour, missing that buying shoes without trying is the genuine, untested leap.'

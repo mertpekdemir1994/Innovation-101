@@ -44,7 +44,7 @@ export default function JTBDEstablishing() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}
+        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}
       >
         <defs>
           <filter id="jtbd-est-glow" x="-30%" y="-30%" width="160%" height="160%">

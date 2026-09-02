@@ -60,7 +60,7 @@ export default function OrthodoxiesAIReactivated() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
+        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}
         aria-label={
           isAI
             ? 'AI mode: walls are thick indigo, the break in the right wall is closed. AI reinforces every orthodoxy as fact rather than naming it as a breakable assumption.'

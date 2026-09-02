@@ -135,7 +135,7 @@ export default function BMCAIReactivated() {
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
         preserveAspectRatio="xMidYMid meet"
-        style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
+        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
         aria-label={isAuthor
           ? 'AI-as-author mode: all nine canvas blocks are filled instantly in indigo, looking professional and plausible. Each block is marked UNVALIDATED: every entry is a guess, and the confidence is precisely what makes it dangerous.'
           : 'AI-as-adversary mode: the Channels and Cost Structure blocks are highlighted in amber as a contradiction. AI has found that the chosen channel breaks the cost structure. This is formal coherence work AI does well.'}

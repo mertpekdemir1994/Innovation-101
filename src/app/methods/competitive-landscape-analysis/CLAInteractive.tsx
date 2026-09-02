@@ -210,7 +210,7 @@ export default function CLAInteractive() {
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}
           width="100%"
-          style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible', cursor: 'default' }}
+          style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible', cursor: 'default' }}
         >
           <defs>
             <filter id="cla-int-glow" x="-40%" y="-40%" width="180%" height="180%">

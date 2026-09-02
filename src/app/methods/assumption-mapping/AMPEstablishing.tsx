@@ -69,7 +69,7 @@ export default function AMPEstablishing() {
       variants={container}
       aria-label="Importance by uncertainty risk grid. Top-right quadrant (high importance, unknown) glows in clay orange and is labelled LEAP OF FAITH: TEST THESE FIRST. Other quadrants: top-left is MONITOR, bottom-right is NICE TO KNOW, bottom-left is IGNORE. Seven assumption cards are placed across the four quadrants."
     >
-      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}>
+      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           <filter id="amp-est-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="6" result="blur" />

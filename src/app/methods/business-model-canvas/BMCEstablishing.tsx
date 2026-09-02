@@ -101,7 +101,7 @@ export default function BMCEstablishing() {
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="The Business Model Canvas as a coherence engine. Nine blocks in the canonical arrangement: Key Partners, Key Activities, Key Resources, Value Propositions, Customer Relationships, Channels, Customer Segments, Cost Structure, and Revenue Streams. Dependency lines connect the blocks: Value Propositions connects to Customer Segments; Channels and Customer Relationships both depend on the Segment; Key Activities and Key Resources flow to Value Propositions and to Cost Structure. One link, between Channels and Cost Structure, is drawn under tension in amber, hinting that a premium channel choice could break the economics."
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="bmc-est-plum-glow" x="-30%" y="-30%" width="160%" height="160%">

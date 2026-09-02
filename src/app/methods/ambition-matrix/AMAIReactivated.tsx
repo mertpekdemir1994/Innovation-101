@@ -53,7 +53,7 @@ export default function AMAIReactivated() {
     <div>
       {/* SVG illustration - zone fills animate on toggle */}
       <div className="w-full flex justify-center mb-12 select-none" aria-hidden="true">
-        <svg viewBox="0 0 560 450" width="100%" style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}>
+        <svg viewBox="0 0 560 450" width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
           <defs>
             <filter id="am-ai-glow" x="-20%" y="-20%" width="140%" height="140%">
               <feGaussianBlur stdDeviation="7" result="blur" />

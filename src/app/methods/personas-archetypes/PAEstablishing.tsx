@@ -41,7 +41,7 @@ export default function PAEstablishing() {
       aria-hidden="true"
     >
       {/* viewBox 720×258: 3 cards + captions below */}
-      <svg viewBox="0 0 720 258" width="100%" style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}>
+      <svg viewBox="0 0 720 258" width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           <filter id="pa-est-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="5" result="blur" />

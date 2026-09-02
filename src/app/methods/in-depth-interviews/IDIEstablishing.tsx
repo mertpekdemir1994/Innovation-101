@@ -44,7 +44,7 @@ export default function IDIEstablishing() {
       aria-hidden="true"
     >
       {/* viewBox height: body base (137) + name (18) + sub (16) + margin (14) = 185 */}
-      <svg viewBox="0 0 640 185" width="100%" style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}>
+      <svg viewBox="0 0 640 185" width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           {/* Soft glow that blends stroke/fill outward: matches DiamondHero treatment */}
           <filter id="idi-est-glow" x="-40%" y="-40%" width="180%" height="180%">

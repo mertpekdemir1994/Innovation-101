@@ -60,7 +60,7 @@ export default function PLEstablishing() {
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Contained pilot zone. A large dark world of un-launched markets surrounds a single bounded pilot zone. Inside the zone runs the complete, real solution: all features, full UX, operations, support, and economics. Three boundary dimensions define the zone: SEGMENT (who), GEOGRAPHY (where), TIMEFRAME (how long with end date). Four metrics read out to a GO/NO-GO gate."
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
       >
         <defs>
           {/* Glow filter for the pilot zone */}

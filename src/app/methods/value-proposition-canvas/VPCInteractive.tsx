@@ -131,7 +131,7 @@ export default function VPCInteractive() {
       </div>
 
       {/* SVG */}
-      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} className="w-full" style={{ maxWidth: 'var(--width-illustration)', maxHeight: 320 }}
+      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} className="w-full" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', maxHeight: 320 }}
         aria-hidden="true">
         <defs>
           <filter id="vpc-int-glow" x="-30%" y="-30%" width="160%" height="160%">

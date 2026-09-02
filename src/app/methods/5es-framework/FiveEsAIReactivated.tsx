@@ -68,7 +68,7 @@ export default function FiveEsAIReactivated() {
 
       {/* Phase SVG */}
       <div className="w-full select-none mb-10" aria-hidden="true">
-        <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', display: 'block', overflow: 'visible' }}>
+        <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
           <defs>
             <filter id="fes-ai-glow" x="-20%" y="-100%" width="140%" height="300%">
               <feGaussianBlur stdDeviation="2.5" result="b" />

@@ -142,7 +142,7 @@ export default function TTIInteractive() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ maxWidth: 'var(--width-illustration)', overflow: 'visible' }}
+        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}
         role="group"
         aria-label="10 Types of Innovation, click any tile to read about that type in depth"
       >

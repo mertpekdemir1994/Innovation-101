@@ -50,7 +50,7 @@ export default function CTEstablishing() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         className="w-full"
-        style={{ maxWidth: 'var(--width-illustration)', maxHeight: 310 }}
+        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', maxHeight: 310 }}
         role="img"
         aria-label="Stated-vs-revealed gap: a tall bar showing 76% stated interest, a shorter bar showing 28% revealed commitment, and a threshold line at 40% that the revealed bar fails to clear"
       >

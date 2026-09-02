@@ -114,7 +114,7 @@ export default function UTInteractive() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         aria-label="Interactive intended-versus-actual path diagram. Click a friction point to explore it."
-        style={{ width: '100%', maxWidth: 'var(--width-illustration)', display: 'block', cursor: 'default' }}
+        style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', cursor: 'default' }}
       >
         <defs>
           <filter id="ut-int-glow" x="-20%" y="-20%" width="140%" height="140%">
