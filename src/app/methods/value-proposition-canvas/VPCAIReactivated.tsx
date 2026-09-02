@@ -52,7 +52,7 @@ export default function VPCAIReactivated() {
                 background: mode === m
                   ? m === 'ai' ? `${INDIGO}0.25)` : `${PLUM}0.25)`
                   : 'transparent',
-                color: mode === m ? '#fff' : 'rgba(255,255,255,0.38)',
+                color: mode === m ? '#fff' : 'rgba(255,255,255,0.50)',
                 border: `1px solid ${mode === m ? (m === 'ai' ? `${INDIGO}0.55)` : `${PLUM}0.55)`) : 'transparent'}`,
               }}
             >{m === 'human' ? 'Human Research' : 'With AI'}</button>
@@ -85,13 +85,13 @@ export default function VPCAIReactivated() {
 
         {/* VM labels */}
         <text x={VM_DX} y={VM_Y + 16} textAnchor="middle"
-          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={11} fontWeight={600}
           letterSpacing={1.2} fontFamily="monospace">PRODUCTS &amp; SERVICES</text>
         <text x={77} y={VM_DY + 14} textAnchor="middle"
-          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={11} fontWeight={600}
           letterSpacing={1.1} fontFamily="monospace">GAIN CREATORS</text>
         <text x={203} y={VM_DY + 14} textAnchor="middle"
-          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={11} fontWeight={600}
           letterSpacing={1.1} fontFamily="monospace">PAIN RELIEVERS</text>
 
         {/* VM items */}
@@ -125,13 +125,13 @@ export default function VPCAIReactivated() {
 
         {/* CP labels */}
         <text x={CP_CX} y={CP_CY - 62} textAnchor="middle"
-          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={11} fontWeight={600}
           letterSpacing={1.1} fontFamily="monospace">CUSTOMER JOBS</text>
         <text x={CP_CX - 50} y={CP_CY + 56} textAnchor="middle"
-          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={11} fontWeight={600}
           letterSpacing={1.1} fontFamily="monospace">GAINS</text>
         <text x={CP_CX + 50} y={CP_CY + 56} textAnchor="middle"
-          fill="rgba(255,255,255,0.625)" fontSize={6.5} fontWeight={600}
+          fill="rgba(255,255,255,0.625)" fontSize={11} fontWeight={600}
           letterSpacing={1.1} fontFamily="monospace">PAINS</text>
 
         {/* CP dots */}
@@ -165,11 +165,11 @@ export default function VPCAIReactivated() {
                   strokeWidth={1.4}
                   markerEnd="url(#vpc-ai-arrow)" />
               ))}
-              <text x={349} y={168} textAnchor="middle"
-                fill={`${INDIGO_TEXT}0.975)`} fontSize={7.5} fontWeight={600}
+              <text x={349} y={162} textAnchor="middle"
+                fill={`${INDIGO_TEXT}0.975)`} fontSize={11} fontWeight={600}
                 letterSpacing={1.0} fontFamily="monospace">COMPLETE FIT ✓</text>
               <text x={349} y={180} textAnchor="middle"
-                fill={`${INDIGO_TEXT}0.899)`} fontSize={6} fontFamily="monospace">AI sees no gaps</text>
+                fill={`${INDIGO_TEXT}0.899)`} fontSize={11} fontFamily="monospace">AI sees no gaps</text>
             </motion.g>
           ) : (
             /* Human mode: honest, 2 FIT, 2 WASTED, 1 UNMET */
@@ -184,24 +184,24 @@ export default function VPCAIReactivated() {
                 stroke={`${PLUM}0.55)`} strokeWidth={1.5}
                 markerEnd="url(#vpc-ai-arrow)" />
               <text x={349} y={165} textAnchor="middle"
-                fill={`${PLUM_TEXT}0.975)`} fontSize={7.5} fontWeight={600}
+                fill={`${PLUM_TEXT}0.975)`} fontSize={11} fontWeight={600}
                 letterSpacing={1.0} fontFamily="monospace">FIT ✓</text>
               {/* Wasted */}
               <line x1={VM_RE} y1={140} x2={325} y2={140}
                 stroke={`${AMBER}0.58)`} strokeWidth={1.2} strokeDasharray="4 3" />
               <text x={327} y={137} textAnchor="start"
-                fill={`${AMBER}0.68)`} fontSize={6.5} fontWeight={600}
+                fill={`${AMBER}0.68)`} fontSize={11} fontWeight={600}
                 letterSpacing={1.1} fontFamily="monospace">WASTED ×</text>
               <line x1={VM_RE} y1={178} x2={325} y2={178}
                 stroke={`${AMBER}0.52)`} strokeWidth={1.2} strokeDasharray="4 3" />
               <text x={327} y={175} textAnchor="start"
-                fill={`${AMBER_TEXT}0.882)`} fontSize={6.5} fontWeight={600}
+                fill={`${AMBER_TEXT}0.882)`} fontSize={11} fontWeight={600}
                 letterSpacing={1.1} fontFamily="monospace">WASTED ×</text>
               {/* Unmet */}
               <line x1={CP_LE} y1={212} x2={378} y2={212}
                 stroke={`${AMBER}0.50)`} strokeWidth={1.2} strokeDasharray="4 3" />
               <text x={376} y={209} textAnchor="end"
-                fill={`${AMBER_TEXT}0.876)`} fontSize={6.5} fontWeight={600}
+                fill={`${AMBER_TEXT}0.876)`} fontSize={11} fontWeight={600}
                 letterSpacing={1.1} fontFamily="monospace">UNMET NEED !</text>
             </motion.g>
           )}
@@ -213,7 +213,7 @@ export default function VPCAIReactivated() {
             <motion.text
               key="ai-label"
               x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
-              fill={`${INDIGO_TEXT}0.885)`} fontSize={6.5} fontFamily="monospace" letterSpacing={0.8}
+              fill={`${INDIGO_TEXT}0.885)`} fontSize={11} fontFamily="monospace" letterSpacing={0.8}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
             >AI filled every gap, inspect each connection against your research before acting
@@ -233,8 +233,8 @@ export default function VPCAIReactivated() {
             {AI_CARDS.map((card, i) => (
               <div key={i} className="rounded-lg p-4 border"
                 style={{ background: `${INDIGO}0.06)`, borderColor: `${INDIGO}0.20)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
-                  style={{ color: `${INDIGO}0.75)` }}>{card.heading}</p>
+                <p className="text-2xs font-semibold uppercase tracking-wider mb-2"
+                  style={{ color: `${INDIGO_TEXT}0.85)` }}>{card.heading}</p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.body}</p>
               </div>
             ))}
@@ -251,8 +251,8 @@ export default function VPCAIReactivated() {
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border"
                 style={{ background: `${PLUM}0.10)`, borderColor: `${PLUM}0.28)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
-                  style={{ color: `${PLUM}0.80)` }}>{card.h}</p>
+                <p className="text-2xs font-semibold uppercase tracking-wider mb-2"
+                  style={{ color: `${PLUM_TEXT}0.85)` }}>{card.h}</p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.b}</p>
               </div>
             ))}
@@ -263,8 +263,8 @@ export default function VPCAIReactivated() {
       {/* Synthesis card (always visible) */}
       <div className="mt-3 rounded-lg p-4 border border-white/8"
         style={{ background: 'rgba(255,255,255,0.04)' }}>
-        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/30 mb-1">Synthesis</p>
-        <p className="text-xs text-white/45 leading-relaxed">
+        <p className="text-2xs font-semibold uppercase tracking-wider text-white/50 mb-1">Synthesis</p>
+        <p className="text-xs text-white/50 leading-relaxed">
           FIT is earned through research and honest gap analysis, not assumed through pattern completion. Test every connection against customer evidence before it drives prioritisation decisions.
         </p>
       </div>

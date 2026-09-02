@@ -82,16 +82,16 @@ export default function VPCInteractive() {
       <div className="flex flex-wrap items-start gap-6 mb-4">
         {/* VALUE MAP group */}
         <div className="flex flex-col gap-1.5">
-          <span className="text-[9px] font-semibold tracking-[1.8px] uppercase"
-            style={{ color: `${PLUM}0.60)` }}>Value Map</span>
+          <span className="text-2xs font-semibold tracking-[1.8px] uppercase"
+            style={{ color: `${PLUM_TEXT}0.85)` }}>Value Map</span>
           <div className="flex flex-wrap gap-1.5">
             {VM_REGIONS.map(r => (
               <button key={r.id} onClick={() => toggle(r.id)}
-                className="px-3 py-1 rounded-full text-[10px] font-semibold tracking-wide transition-all"
+                className="px-3 py-1 rounded-full text-2xs font-semibold tracking-wide transition-all"
                 style={{
                   background: active === r.id ? `${PLUM}0.35)` : 'rgba(255,255,255,0.05)',
                   border: `1px solid ${active === r.id ? `${PLUM}0.70)` : 'rgba(255,255,255,0.12)'}`,
-                  color: active === r.id ? '#fff' : 'rgba(255,255,255,0.45)',
+                  color: active === r.id ? '#fff' : 'rgba(255,255,255,0.50)',
                 }}
               >{r.label}</button>
             ))}
@@ -100,16 +100,16 @@ export default function VPCInteractive() {
 
         {/* CUSTOMER PROFILE group */}
         <div className="flex flex-col gap-1.5">
-          <span className="text-[9px] font-semibold tracking-[1.8px] uppercase"
-            style={{ color: `${PLUM}0.60)` }}>Customer Profile</span>
+          <span className="text-2xs font-semibold tracking-[1.8px] uppercase"
+            style={{ color: `${PLUM_TEXT}0.85)` }}>Customer Profile</span>
           <div className="flex flex-wrap gap-1.5">
             {(['jobs','pains','gains'] as Region[]).map(id => (
               <button key={id} onClick={() => toggle(id)}
-                className="px-3 py-1 rounded-full text-[10px] font-semibold tracking-wide transition-all"
+                className="px-3 py-1 rounded-full text-2xs font-semibold tracking-wide transition-all"
                 style={{
                   background: active === id ? `${PLUM}0.35)` : 'rgba(255,255,255,0.05)',
                   border: `1px solid ${active === id ? `${PLUM}0.70)` : 'rgba(255,255,255,0.12)'}`,
-                  color: active === id ? '#fff' : 'rgba(255,255,255,0.45)',
+                  color: active === id ? '#fff' : 'rgba(255,255,255,0.50)',
                 }}
               >{id === 'ps' ? 'Products & Services' : id.charAt(0).toUpperCase() + id.slice(1)}</button>
             ))}
@@ -118,13 +118,13 @@ export default function VPCInteractive() {
 
         {/* Fit toggle */}
         <div className="flex flex-col gap-1.5">
-          <span className="text-[9px] font-semibold tracking-[1.8px] uppercase text-white/20">Fit</span>
+          <span className="text-2xs font-semibold tracking-[1.8px] uppercase text-white/50">Fit</span>
           <button onClick={() => setShowFit(f => !f)}
-            className="px-3 py-1 rounded-full text-[10px] font-semibold tracking-wide transition-all"
+            className="px-3 py-1 rounded-full text-2xs font-semibold tracking-wide transition-all"
             style={{
               background: showFit ? `${PLUM}0.25)` : 'rgba(255,255,255,0.05)',
               border: `1px solid ${showFit ? `${PLUM}0.55)` : 'rgba(255,255,255,0.12)'}`,
-              color: showFit ? '#fff' : 'rgba(255,255,255,0.45)',
+              color: showFit ? '#fff' : 'rgba(255,255,255,0.50)',
             }}
           >{showFit ? 'Hide Fit' : 'Show Fit'}</button>
         </div>
@@ -180,8 +180,8 @@ export default function VPCInteractive() {
           <text key={r.id}
             x={r.x + r.w / 2} y={r.y + (r.id === 'ps' ? 17 : 15)}
             textAnchor="middle"
-            fill={`rgba(255,255,255,${active === r.id ? '0.65' : vmDim(r.id) ? '0.12' : '0.28'})`}
-            fontSize={7} fontWeight={600} letterSpacing={1.2} fontFamily="monospace"
+            fill={`rgba(255,255,255,${active === r.id ? '0.70' : '0.50'})`}
+            fontSize={11} fontWeight={600} letterSpacing={1.2} fontFamily="monospace"
             style={{ transition: 'fill 0.22s' }}
           >{r.label}</text>
         ))}
@@ -241,8 +241,8 @@ export default function VPCInteractive() {
           { id: 'gains' as Region, label: 'GAINS',          x: CP_CX - 55, y: CP_CY + 60 },
         ]).map(r => (
           <text key={r.id} x={r.x} y={r.y} textAnchor="middle"
-            fill={`rgba(255,255,255,${active === r.id ? '0.70' : cpDim(r.id) ? '0.10' : '0.28'})`}
-            fontSize={7} fontWeight={600} letterSpacing={1.2} fontFamily="monospace"
+            fill={`rgba(255,255,255,${active === r.id ? '0.70' : '0.50'})`}
+            fontSize={11} fontWeight={600} letterSpacing={1.2} fontFamily="monospace"
             style={{ transition: 'fill 0.22s' }}
           >{r.label}</text>
         ))}
@@ -280,28 +280,28 @@ export default function VPCInteractive() {
                 markerEnd="url(#vpc-int-arrow-plum)" />
 
               <text x={349} y={174} textAnchor="middle"
-                fill={`${PLUM_TEXT}0.979)`} fontSize={7.5} fontWeight={600}
+                fill={`${PLUM_TEXT}0.979)`} fontSize={11} fontWeight={600}
                 letterSpacing={1.0} fontFamily="monospace">FIT ✓</text>
 
               {/* WASTED: PR item with no pain */}
               <line x1={VM_RE} y1={148} x2={328} y2={148}
                 stroke={`${AMBER}0.60)`} strokeWidth={1.2} strokeDasharray="4 3" />
               <text x={330} y={145} textAnchor="start"
-                fill={`${AMBER}0.70)`} fontSize={6.5} fontWeight={600}
+                fill={`${AMBER}0.70)`} fontSize={11} fontWeight={600}
                 letterSpacing={1.1} fontFamily="monospace">WASTED ×</text>
 
               {/* WASTED: GC item with no gain */}
               <line x1={VM_RE} y1={188} x2={328} y2={188}
                 stroke={`${AMBER}0.55)`} strokeWidth={1.2} strokeDasharray="4 3" />
               <text x={330} y={185} textAnchor="start"
-                fill={`${AMBER_TEXT}0.891)`} fontSize={6.5} fontWeight={600}
+                fill={`${AMBER_TEXT}0.891)`} fontSize={11} fontWeight={600}
                 letterSpacing={1.1} fontFamily="monospace">WASTED ×</text>
 
               {/* UNMET NEED */}
               <line x1={CP_LE} y1={220} x2={380} y2={220}
                 stroke={`${AMBER}0.52)`} strokeWidth={1.2} strokeDasharray="4 3" />
               <text x={378} y={217} textAnchor="end"
-                fill={`${AMBER_TEXT}0.882)`} fontSize={6.5} fontWeight={600}
+                fill={`${AMBER_TEXT}0.882)`} fontSize={11} fontWeight={600}
                 letterSpacing={1.1} fontFamily="monospace">UNMET NEED !</text>
             </motion.g>
           )}
@@ -323,8 +323,8 @@ export default function VPCInteractive() {
               borderColor: `${PLUM}0.38)`,
             }}
           >
-            <p className="text-[10px] font-semibold uppercase tracking-[1.6px] mb-2"
-              style={{ color: `${PLUM}0.80)` }}>
+            <p className="text-2xs font-semibold uppercase tracking-[1.6px] mb-2"
+              style={{ color: `${PLUM_TEXT}0.85)` }}>
               {REGION_DETAILS[active].heading}
             </p>
             <p className="text-sm leading-relaxed text-white/70 mb-3">
@@ -332,8 +332,8 @@ export default function VPCInteractive() {
             </p>
             <div className="flex items-start gap-2 rounded p-3"
               style={{ background: `${PLUM}0.12)` }}>
-              <span className="text-[10px] font-semibold shrink-0 mt-0.5"
-                style={{ color: `${PLUM}0.80)` }}>TIP</span>
+              <span className="text-2xs font-semibold shrink-0 mt-0.5"
+                style={{ color: `${PLUM_TEXT}0.85)` }}>TIP</span>
               <p className="text-xs text-white/55 leading-relaxed">
                 {REGION_DETAILS[active].tip}
               </p>
