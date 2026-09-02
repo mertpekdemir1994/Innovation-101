@@ -183,7 +183,7 @@ function PhaseDiamond({
               y={120}
               textAnchor="middle"
               dominantBaseline="middle"
-              fontSize="10"
+              fontSize="13"
               fontFamily="var(--font-mono)"
               fontWeight="500"
               letterSpacing="0.08em"
@@ -219,7 +219,7 @@ function PhaseContent({ phase }: { phase: Phase }) {
         <div>
           <span
             className="font-mono text-2xs uppercase tracking-widest px-space-3 py-space-1 rounded-full inline-block mb-space-2"
-            style={{ color: `${PURPLE}0.80)`, background: `${PURPLE}0.08)`, border: `1px solid ${PURPLE}0.15)` }}
+            style={{ color: `${PURPLE_TEXT}0.85)`, background: `${PURPLE}0.08)`, border: `1px solid ${PURPLE}0.15)` }}
           >
             {phase.mode}
           </span>
@@ -231,7 +231,7 @@ function PhaseContent({ phase }: { phase: Phase }) {
         className="rounded-xl px-space-6 py-space-5 mb-space-6"
         style={{ background: `${PURPLE}0.04)`, border: `1px solid ${PURPLE}0.10)` }}
       >
-        <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${PURPLE}0.65)` }}>
+        <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${PURPLE_TEXT}0.85)` }}>
           Objective
         </p>
         <p className="text-sm text-neutral-700 leading-relaxed">{phase.objective}</p>
@@ -265,7 +265,7 @@ function PhaseContent({ phase }: { phase: Phase }) {
         className="rounded-lg px-space-5 py-space-4"
         style={{ background: `${PURPLE}0.05)`, borderLeft: `3px solid ${PURPLE}0.38)` }}
       >
-        <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${PURPLE}0.70)` }}>
+        <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${PURPLE_TEXT}0.85)` }}>
           Key question
         </p>
         <p className="text-sm italic text-neutral-700 leading-relaxed">{phase.keyQuestion}</p>
@@ -322,7 +322,7 @@ export default function DDPhasesDeepDive() {
               transition={{ duration: 0.22 }}
               className="mt-space-6 text-center"
             >
-              <p className="font-mono text-2xs uppercase tracking-widest mb-space-1" style={{ color: `${PURPLE}0.75)` }}>
+              <p className="font-mono text-2xs uppercase tracking-widest mb-space-1" style={{ color: `${PURPLE_TEXT}0.85)` }}>
                 {activeData.mode}
               </p>
               <p className="font-semibold text-lg text-neutral-900">{activeData.label}</p>
