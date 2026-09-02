@@ -8,12 +8,12 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
-const SVG_H = 268
+const SVG_H = 280
 const AXIS_Y = 200
 const AXIS_X0 = 54
 const AXIS_X1 = 642
 const CW = 86
-const CH = 54
+const CH = 70
 
 type Mode = 'human' | 'ai'
 
@@ -61,8 +61,8 @@ export default function DSAIReactivated() {
                 ? m === 'ai' ? `${INDIGO}0.38)` : `${SAGE}0.38)`
                 : 'rgba(255,255,255,0.12)'}`,
               color: mode === m
-                ? m === 'ai' ? `${INDIGO}1)` : `${SAGE}1)`
-                : 'rgba(255,255,255,0.40)',
+                ? m === 'ai' ? `${INDIGO_TEXT}1)` : `${SAGE_TEXT}1)`
+                : 'rgba(255,255,255,0.55)',
             }}
           >
             {m === 'human' ? 'Human-led' : 'AI-enhanced'}
@@ -96,10 +96,10 @@ export default function DSAIReactivated() {
             points={`${AXIS_X1},${AXIS_Y} ${AXIS_X1 - 7},${AXIS_Y - 3.5} ${AXIS_X1 - 7},${AXIS_Y + 3.5}`}
             fill="rgba(255,255,255,0.18)" />
           <text x={AXIS_X0} y={AXIS_Y - 6}
-            fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
+            fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.06em"
             fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}>TIME →</text>
           <text x={AXIS_X1 + 6} y={AXIS_Y + 4}
-            fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.06em"
+            fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.03em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>14 DAYS</text>
 
           {/* Cards + overlays */}
@@ -129,9 +129,9 @@ export default function DSAIReactivated() {
                     <line x1={cx} y1={AXIS_Y - 4} x2={cx} y2={AXIS_Y + 4}
                       stroke={e.pattern ? `${activeColor}0.50)` : 'rgba(255,255,255,0.22)'}
                       strokeWidth={e.pattern ? 1.2 : 0.8} />
-                    <text x={cx} y={AXIS_Y + 11} textAnchor="middle"
-                      fontSize="4.5" fontFamily="system-ui, sans-serif"
-                      fill={e.pattern ? `${activeColor}0.55)` : 'rgba(255,255,255,0.63)'}
+                    <text x={cx} y={AXIS_Y + 15} textAnchor="middle"
+                      fontSize="11" fontFamily="system-ui, sans-serif"
+                      fill={e.pattern ? `${activeColor === INDIGO ? INDIGO_TEXT : SAGE_TEXT}0.85)` : 'rgba(255,255,255,0.63)'}
                       style={{ userSelect: 'none' }}>{e.day}</text>
 
                     {/* Glow */}
@@ -147,28 +147,29 @@ export default function DSAIReactivated() {
                       stroke={e.pattern ? `${activeColor}0.32)` : 'rgba(255,255,255,0.10)'}
                       strokeWidth={0.8} />
 
-                    {/* AI tag badge (AI mode only) */}
+                    {/* AI tag badge (AI mode only) - widened, "AVOIDANCE" at
+                        11pt doesn't fit the original 42-wide badge */}
                     {isAI && e.pattern && (
                       <>
-                        <rect x={cardL + 4} y={cy + 4} width={42} height={10} rx={2}
+                        <rect x={cardL + 3} y={cy + 4} width={76} height={18} rx={2}
                           fill={`${INDIGO}0.22)`} />
-                        <text x={cardL + 7} y={cy + 12} fontSize="4.5"
-                          fontFamily="system-ui, sans-serif" letterSpacing="0.06em"
+                        <text x={cardL + 9} y={cy + 16} fontSize="11"
+                          fontFamily="system-ui, sans-serif" letterSpacing="0.02em"
                           fill={`${INDIGO_TEXT}0.969)`} style={{ userSelect: 'none' }}>{e.aiTag}</text>
                       </>
                     )}
 
                     {/* Context label */}
-                    <text x={cx} y={cy + (isAI && e.pattern ? 27 : 14)} textAnchor="middle"
-                      fontSize="6.5" fontFamily="system-ui, sans-serif"
-                      fontWeight="600" letterSpacing="0.08em"
-                      fill={e.pattern ? `${activeColor}0.90)` : 'rgba(255,255,255,0.74)'}
+                    <text x={cx} y={cy + (isAI && e.pattern ? 38 : 16)} textAnchor="middle"
+                      fontSize="11" fontFamily="system-ui, sans-serif"
+                      fontWeight="600" letterSpacing="0.04em"
+                      fill={e.pattern ? `${activeColor === INDIGO ? INDIGO_TEXT : SAGE_TEXT}0.90)` : 'rgba(255,255,255,0.74)'}
                       style={{ userSelect: 'none' }}>{e.context}</text>
 
                     {/* Emotion */}
-                    <text x={cx} y={cy + (isAI && e.pattern ? 44 : 44)} textAnchor="middle"
-                      fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.07em"
-                      fill={e.pattern ? `${activeColor}0.75)` : 'rgba(255,255,255,0.725)'}
+                    <text x={cx} y={cy + (isAI && e.pattern ? 58 : 34)} textAnchor="middle"
+                      fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.03em"
+                      fill={e.pattern ? `${activeColor === INDIGO ? INDIGO_TEXT : SAGE_TEXT}0.85)` : 'rgba(255,255,255,0.725)'}
                       style={{ userSelect: 'none' }}>{e.emotion}</text>
                   </g>
                 )
@@ -179,8 +180,8 @@ export default function DSAIReactivated() {
                 <>
                   <path d={`M186,${AXIS_Y + 18} Q378,${AXIS_Y + 34} 570,${AXIS_Y + 18}`}
                     stroke={`${SAGE}0.50)`} fill="none" strokeWidth={1.2} strokeDasharray="4 3" />
-                  <text x={378} y={AXIS_Y + 50} textAnchor="middle"
-                    fontSize="4.8" fontFamily="system-ui, sans-serif" letterSpacing="0.09em"
+                  <text x={378} y={AXIS_Y + 40} textAnchor="middle"
+                    fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.02em"
                     fill={`${SAGE_TEXT}0.926)`} style={{ userSelect: 'none' }}>
                     RESEARCHER IDENTIFIES: CONTEXT FRICTION PATTERN
                   </text>
@@ -192,31 +193,45 @@ export default function DSAIReactivated() {
                 <>
                   <path d={`M186,${AXIS_Y + 18} Q378,${AXIS_Y + 34} 570,${AXIS_Y + 18}`}
                     stroke={`${INDIGO}0.55)`} fill="none" strokeWidth={1.2} strokeDasharray="4 3" />
-                  <text x={378} y={AXIS_Y + 50} textAnchor="middle"
-                    fontSize="4.8" fontFamily="system-ui, sans-serif" letterSpacing="0.09em"
+                  <text x={378} y={AXIS_Y + 40} textAnchor="middle"
+                    fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.01em"
                     fill={`${INDIGO_TEXT}0.926)`} style={{ userSelect: 'none' }}>
                     AI: FRICTION/AVOIDANCE CLUSTER: 4 / 6 ENTRIES, CONTEXT VARIABLE
                   </text>
-                  {/* AI speed badge */}
-                  <rect x={14} y={14} width={108} height={16} rx={3}
+                  {/* AI speed badge - widened, the text no longer fits a
+                      108-wide badge at 11pt */}
+                  <rect x={14} y={14} width={180} height={22} rx={3}
                     fill={`${INDIGO}0.18)`} stroke={`${INDIGO}0.30)`} strokeWidth={0.7} />
-                  <text x={22} y={25} fontSize="5" fontFamily="system-ui, sans-serif"
-                    letterSpacing="0.07em" fill={`${INDIGO_TEXT}0.958)`}
+                  <text x={22} y={29} fontSize="11" fontFamily="system-ui, sans-serif"
+                    letterSpacing="0.02em" fill={`${INDIGO_TEXT}0.958)`}
                     style={{ userSelect: 'none' }}>AI: ANALYZED 6 ENTRIES</text>
                 </>
               )}
             </motion.g>
           </AnimatePresence>
 
-          {/* Caption */}
-          <text x={SVG_W / 2} y={SVG_H - 3} textAnchor="middle"
-            fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.59)"
-            style={{ userSelect: 'none' }}>
-            {isAI
-              ? 'AI CAN CLUSTER AND TAG REAL ENTRIES AT SCALE, BUT THE REAL ENTRIES MUST COME FROM REAL PARTICIPANTS'
-              : 'HUMAN RESEARCHER READS ACROSS THE ACCUMULATION TO SURFACE THE LONGITUDINAL PATTERN'}
-          </text>
+          {/* Caption - the AI-mode sentence (102 characters) is split across
+              two lines; at 11pt it no longer fits one line within SVG_W */}
+          {isAI ? (
+            <>
+              <text x={SVG_W / 2} y={SVG_H - 24} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.02em"
+                fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
+                AI CAN CLUSTER AND TAG REAL ENTRIES AT SCALE,
+              </text>
+              <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.02em"
+                fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
+                BUT THE REAL ENTRIES MUST COME FROM REAL PARTICIPANTS
+              </text>
+            </>
+          ) : (
+            <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
+              fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.02em"
+              fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
+              HUMAN RESEARCHER READS ACROSS THE ACCUMULATION TO SURFACE THE LONGITUDINAL PATTERN
+            </text>
+          )}
         </svg>
       </div>
 
@@ -243,8 +258,8 @@ export default function DSAIReactivated() {
               ].map(item => (
                 <div key={item.label} className="rounded-lg border p-4"
                   style={{ borderColor: `${SAGE}0.20)`, background: `${SAGE}0.05)` }}>
-                  <p className="text-[9px] font-mono uppercase tracking-widest mb-2"
-                    style={{ color: `${SAGE}0.75)` }}>{item.label}</p>
+                  <p className="text-[10px] font-mono uppercase tracking-widest mb-2"
+                    style={{ color: `${SAGE_TEXT}0.90)` }}>{item.label}</p>
                   <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.60)' }}>{item.body}</p>
                 </div>
               ))}
@@ -269,8 +284,8 @@ export default function DSAIReactivated() {
               ].map(item => (
                 <div key={item.label} className="rounded-lg border p-4"
                   style={{ borderColor: `${INDIGO}0.20)`, background: `${INDIGO}0.05)` }}>
-                  <p className="text-[9px] font-mono uppercase tracking-widest mb-2"
-                    style={{ color: `${INDIGO}0.75)` }}>{item.label}</p>
+                  <p className="text-[10px] font-mono uppercase tracking-widest mb-2"
+                    style={{ color: `${INDIGO_TEXT}0.90)` }}>{item.label}</p>
                   <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.60)' }}>{item.body}</p>
                 </div>
               ))}

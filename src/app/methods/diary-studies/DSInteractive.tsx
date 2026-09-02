@@ -6,12 +6,12 @@ const SAGE = 'rgba(61,107,90,'
 const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 const SVG_W = 700
-const SVG_H = 268
+const SVG_H = 280
 const AXIS_Y = 200
 const AXIS_X0 = 54
 const AXIS_X1 = 642
 const CW = 86
-const CH = 54
+const CH = 88
 
 type EntryFull = {
   id: number
@@ -118,10 +118,10 @@ export default function DSInteractive() {
             points={`${AXIS_X1},${AXIS_Y} ${AXIS_X1 - 7},${AXIS_Y - 3.5} ${AXIS_X1 - 7},${AXIS_Y + 3.5}`}
             fill="rgba(255,255,255,0.18)" />
           <text x={AXIS_X0} y={AXIS_Y - 6}
-            fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
+            fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.06em"
             fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}>TIME →</text>
           <text x={AXIS_X1 + 6} y={AXIS_Y + 4}
-            fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.06em"
+            fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.03em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>14 DAYS</text>
 
           {/* Entries (appear one by one) */}
@@ -149,8 +149,8 @@ export default function DSInteractive() {
                   <line x1={cx} y1={AXIS_Y - 4} x2={cx} y2={AXIS_Y + 4}
                     stroke={e.pattern ? `${SAGE}0.50)` : 'rgba(255,255,255,0.22)'}
                     strokeWidth={e.pattern ? 1.2 : 0.8} />
-                  <text x={cx} y={AXIS_Y + 11} textAnchor="middle"
-                    fontSize="4.5" fontFamily="system-ui, sans-serif"
+                  <text x={cx} y={AXIS_Y + 15} textAnchor="middle"
+                    fontSize="11" fontFamily="system-ui, sans-serif"
                     fill={e.pattern ? `${SAGE_TEXT}0.905)` : 'rgba(255,255,255,0.63)'}
                     style={{ userSelect: 'none' }}>{e.day}</text>
 
@@ -170,18 +170,23 @@ export default function DSInteractive() {
                     strokeWidth={0.8} />
 
                   <text x={cx} y={cy + 14} textAnchor="middle"
-                    fontSize="6.5" fontFamily="system-ui, sans-serif"
-                    fontWeight="600" letterSpacing="0.08em"
+                    fontSize="11" fontFamily="system-ui, sans-serif"
+                    fontWeight="600" letterSpacing="0.04em"
                     fill={e.pattern ? `${SAGE_TEXT}0.983)` : 'rgba(255,255,255,0.74)'}
                     style={{ userSelect: 'none' }}>{e.context}</text>
-                  <text x={cx} y={cy + 25} textAnchor="middle"
-                    fontSize="4.5" fontFamily="system-ui, sans-serif"
+                  {/* Time and location split into two lines - see DSEstablishing */}
+                  <text x={cx} y={cy + 30} textAnchor="middle"
+                    fontSize="11" fontFamily="system-ui, sans-serif"
                     fill="rgba(255,255,255,0.65)"
-                    style={{ userSelect: 'none' }}>{`${e.time} · ${e.location}`}</text>
-                  <line x1={cardL + 8} y1={cy + 32} x2={cardL + CW - 8} y2={cy + 32}
+                    style={{ userSelect: 'none' }}>{e.time}</text>
+                  <text x={cx} y={cy + 46} textAnchor="middle"
+                    fontSize="11" fontFamily="system-ui, sans-serif"
+                    fill="rgba(255,255,255,0.65)"
+                    style={{ userSelect: 'none' }}>{e.location}</text>
+                  <line x1={cardL + 8} y1={cy + 58} x2={cardL + CW - 8} y2={cy + 58}
                     stroke="rgba(255,255,255,0.08)" strokeWidth={0.7} />
-                  <text x={cx} y={cy + 44} textAnchor="middle"
-                    fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.07em"
+                  <text x={cx} y={cy + 74} textAnchor="middle"
+                    fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.03em"
                     fill={e.pattern ? `${SAGE_TEXT}0.958)` : 'rgba(255,255,255,0.725)'}
                     style={{ userSelect: 'none' }}>{e.emotion}</text>
                 </motion.g>
@@ -198,8 +203,8 @@ export default function DSInteractive() {
               >
                 <path d={`M186,${AXIS_Y + 18} Q378,${AXIS_Y + 34} 570,${AXIS_Y + 18}`}
                   stroke={`${SAGE}0.55)`} fill="none" strokeWidth={1.4} strokeDasharray="4 3" />
-                <text x={378} y={AXIS_Y + 50} textAnchor="middle"
-                  fontSize="4.8" fontFamily="system-ui, sans-serif" letterSpacing="0.09em"
+                <text x={378} y={AXIS_Y + 45} textAnchor="middle"
+                  fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.03em"
                   fill={`${SAGE_TEXT}0.937)`} style={{ userSelect: 'none' }}>
                   CONTEXT FRICTION PATTERN: DAY 3 / 7 / 10 / 13
                 </text>
@@ -211,19 +216,19 @@ export default function DSInteractive() {
 
       {/* Controls */}
       <div className="flex flex-wrap items-center gap-3 mt-4 mb-5">
-        <span className="font-mono text-[9px] uppercase tracking-widest"
-          style={{ color: 'rgba(255,255,255,0.30)' }}>
+        <span className="font-mono text-[10px] uppercase tracking-widest"
+          style={{ color: 'rgba(255,255,255,0.55)' }}>
           ENTRY {revealedCount} OF {ENTRIES.length}
         </span>
 
         {canRevealMore && (
           <button
             onClick={advance}
-            className="px-4 py-1.5 rounded-full text-[9px] font-semibold uppercase tracking-widest transition-colors"
+            className="px-4 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-widest transition-colors"
             style={{
               background: `${SAGE}0.14)`,
               border: `1px solid ${SAGE}0.38)`,
-              color: `${SAGE}1)`,
+              color: `${SAGE_TEXT}1)`,
             }}
           >
             NEXT ENTRY →
@@ -233,11 +238,11 @@ export default function DSInteractive() {
         {canRevealPattern && (
           <button
             onClick={revealPattern}
-            className="px-4 py-1.5 rounded-full text-[9px] font-semibold uppercase tracking-widest transition-colors"
+            className="px-4 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-widest transition-colors"
             style={{
               background: `${SAGE}0.10)`,
               border: `1px solid ${SAGE}0.28)`,
-              color: `${SAGE}0.85)`,
+              color: `${SAGE_TEXT}0.95)`,
             }}
           >
             REVEAL PATTERN
@@ -245,8 +250,8 @@ export default function DSInteractive() {
         )}
 
         {patternVisible && (
-          <span className="text-[9px] font-mono uppercase tracking-widest"
-            style={{ color: `${SAGE}0.65)` }}>PATTERN VISIBLE ↓</span>
+          <span className="text-[10px] font-mono uppercase tracking-widest"
+            style={{ color: `${SAGE_TEXT}0.90)` }}>PATTERN VISIBLE ↓</span>
         )}
       </div>
 
@@ -261,13 +266,13 @@ export default function DSInteractive() {
             className="rounded-lg p-5 border"
             style={{ background: `${SAGE}0.08)`, borderColor: `${SAGE}0.30)` }}
           >
-            <p className="text-[9px] font-mono uppercase tracking-widest mb-3"
-              style={{ color: `${SAGE}0.70)` }}>THE LONGITUDINAL PATTERN</p>
+            <p className="text-[10px] font-mono uppercase tracking-widest mb-3"
+              style={{ color: `${SAGE_TEXT}0.90)` }}>THE LONGITUDINAL PATTERN</p>
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.70)' }}>
               {PATTERN_TEXT}
             </p>
-            <p className="mt-3 text-[9px] font-mono uppercase tracking-widest"
-              style={{ color: `${SAGE}0.55)` }}>
+            <p className="mt-3 text-[10px] font-mono uppercase tracking-widest"
+              style={{ color: `${SAGE_TEXT}0.80)` }}>
               ↑ INVISIBLE IN ANY SINGLE ENTRY, ONLY VISIBLE ACROSS THE ACCUMULATION
             </p>
           </motion.div>
@@ -285,30 +290,30 @@ export default function DSInteractive() {
           >
             <div className="flex items-start justify-between gap-4 mb-3">
               <div>
-                <p className="text-[9px] font-mono uppercase tracking-widest mb-0.5"
-                  style={{ color: `${SAGE}0.60)` }}>SELF-LOGGED ENTRY</p>
+                <p className="text-[10px] font-mono uppercase tracking-widest mb-0.5"
+                  style={{ color: `${SAGE_TEXT}0.85)` }}>SELF-LOGGED ENTRY</p>
                 <p className="font-mono text-xs font-semibold uppercase tracking-widest"
-                  style={{ color: selectedEntry.pattern ? `${SAGE}1)` : 'rgba(255,255,255,0.85)' }}>
+                  style={{ color: selectedEntry.pattern ? `${SAGE_TEXT}1)` : 'rgba(255,255,255,0.85)' }}>
                   {selectedEntry.context}: {selectedEntry.day}
                 </p>
               </div>
               <div className="text-right shrink-0">
-                <p className="text-[8px] font-mono uppercase tracking-wide"
-                  style={{ color: 'rgba(255,255,255,0.30)' }}>{selectedEntry.time}</p>
-                <p className="text-[8px] font-mono uppercase tracking-wide"
-                  style={{ color: 'rgba(255,255,255,0.30)' }}>{selectedEntry.location}</p>
+                <p className="text-[10px] font-mono uppercase tracking-wide"
+                  style={{ color: 'rgba(255,255,255,0.55)' }}>{selectedEntry.time}</p>
+                <p className="text-[10px] font-mono uppercase tracking-wide"
+                  style={{ color: 'rgba(255,255,255,0.55)' }}>{selectedEntry.location}</p>
               </div>
             </div>
             <p className="text-sm leading-relaxed mb-3" style={{ color: 'rgba(255,255,255,0.65)' }}>
               {selectedEntry.detail}
             </p>
-            <p className="text-xs italic" style={{ color: `${SAGE}0.65)` }}>
+            <p className="text-xs italic" style={{ color: `${SAGE_TEXT}0.90)` }}>
               {selectedEntry.quote}
             </p>
             {selectedEntry.pattern && (
               <div className="mt-3 pt-3 border-t" style={{ borderColor: `${SAGE}0.18)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest"
-                  style={{ color: `${SAGE}0.55)` }}>
+                <p className="text-[10px] font-mono uppercase tracking-widest"
+                  style={{ color: `${SAGE_TEXT}0.80)` }}>
                   ★ PART OF THE RECURRING PATTERN: {revealedCount >= 4 ? 'REVEAL PATTERN WHEN READY' : 'CONTINUE TO SEE MORE'}
                 </p>
               </div>
@@ -322,8 +327,8 @@ export default function DSInteractive() {
             className="rounded-lg p-4 border text-center"
             style={{ borderColor: 'rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}
           >
-            <p className="text-[9px] font-mono uppercase tracking-widest"
-              style={{ color: 'rgba(255,255,255,0.25)' }}>
+            <p className="text-[10px] font-mono uppercase tracking-widest"
+              style={{ color: 'rgba(255,255,255,0.55)' }}>
               {canRevealMore
                 ? 'CLICK AN ENTRY TO SEE WHAT THE PARTICIPANT LOGGED, OR ADVANCE TO THE NEXT DAY'
                 : 'ALL ENTRIES VISIBLE, CLICK ANY ENTRY TO EXPLORE IT, OR REVEAL THE LONGITUDINAL PATTERN'}

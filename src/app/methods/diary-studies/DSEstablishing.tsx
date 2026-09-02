@@ -6,12 +6,12 @@ const SAGE = 'rgba(61,107,90,'
 const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 const SVG_W = 700
-const SVG_H = 268
+const SVG_H = 280
 const AXIS_Y = 200
 const AXIS_X0 = 54
 const AXIS_X1 = 642
 const CW = 86
-const CH = 54
+const CH = 88
 
 type EntryDef = {
   id: number
@@ -68,14 +68,14 @@ export default function DSEstablishing() {
 
         {/* Axis labels */}
         <motion.text x={AXIS_X0} y={AXIS_Y - 6}
-          fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
+          fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.06em"
           fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.3, delay: prefersReduced ? 0 : 0.08 }}
         >TIME →</motion.text>
 
         <motion.text x={AXIS_X1 + 6} y={AXIS_Y + 4}
-          fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.06em"
+          fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.03em"
           fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.3, delay: prefersReduced ? 0 : 0.50 }}
@@ -106,8 +106,8 @@ export default function DSEstablishing() {
                 strokeWidth={e.pattern ? 1.2 : 0.8} />
 
               {/* Day label */}
-              <text x={cx} y={AXIS_Y + 11} textAnchor="middle"
-                fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.05em"
+              <text x={cx} y={AXIS_Y + 15} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.02em"
                 fill={e.pattern ? `${SAGE_TEXT}0.905)` : 'rgba(255,255,255,0.63)'}
                 style={{ userSelect: 'none' }}>{e.day}</text>
 
@@ -126,24 +126,30 @@ export default function DSEstablishing() {
 
               {/* Context */}
               <text x={cx} y={cy + 14} textAnchor="middle"
-                fontSize="6.5" fontFamily="system-ui, sans-serif"
-                fontWeight="600" letterSpacing="0.08em"
+                fontSize="11" fontFamily="system-ui, sans-serif"
+                fontWeight="600" letterSpacing="0.04em"
                 fill={e.pattern ? `${SAGE_TEXT}0.983)` : 'rgba(255,255,255,0.74)'}
                 style={{ userSelect: 'none' }}>{e.context}</text>
 
-              {/* Time + location */}
-              <text x={cx} y={cy + 25} textAnchor="middle"
-                fontSize="4.5" fontFamily="system-ui, sans-serif"
+              {/* Time and location - split into two lines; the combined
+                  "7:45 PM · Restaurant" line no longer fits an 86-wide card
+                  at 11pt */}
+              <text x={cx} y={cy + 30} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif"
                 fill="rgba(255,255,255,0.65)"
-                style={{ userSelect: 'none' }}>{`${e.time} · ${e.location}`}</text>
+                style={{ userSelect: 'none' }}>{e.time}</text>
+              <text x={cx} y={cy + 46} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif"
+                fill="rgba(255,255,255,0.65)"
+                style={{ userSelect: 'none' }}>{e.location}</text>
 
               {/* Divider */}
-              <line x1={cardL + 8} y1={cy + 32} x2={cardL + CW - 8} y2={cy + 32}
+              <line x1={cardL + 8} y1={cy + 58} x2={cardL + CW - 8} y2={cy + 58}
                 stroke="rgba(255,255,255,0.08)" strokeWidth={0.7} />
 
               {/* Emotion */}
-              <text x={cx} y={cy + 44} textAnchor="middle"
-                fontSize="5" fontFamily="system-ui, sans-serif" letterSpacing="0.07em"
+              <text x={cx} y={cy + 74} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.03em"
                 fill={e.pattern ? `${SAGE_TEXT}0.958)` : 'rgba(255,255,255,0.725)'}
                 style={{ userSelect: 'none' }}>{e.emotion}</text>
             </motion.g>
@@ -158,16 +164,16 @@ export default function DSEstablishing() {
         >
           <path d={`M186,${AXIS_Y + 18} Q378,${AXIS_Y + 34} 570,${AXIS_Y + 18}`}
             stroke={`${SAGE}0.50)`} fill="none" strokeWidth={1.2} strokeDasharray="4 3" />
-          <text x={378} y={AXIS_Y + 50} textAnchor="middle"
-            fontSize="4.8" fontFamily="system-ui, sans-serif" letterSpacing="0.09em"
+          <text x={378} y={AXIS_Y + 45} textAnchor="middle"
+            fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.03em"
             fill={`${SAGE_TEXT}0.926)`} style={{ userSelect: 'none' }}>
             RECURRING PATTERN: CONTEXT FRICTION → DROPOUT
           </text>
         </motion.g>
 
         {/* Caption */}
-        <motion.text x={SVG_W / 2} y={SVG_H - 3} textAnchor="middle"
-          fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
+        <motion.text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
+          fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.59)"
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.3, delay: prefersReduced ? 0 : 0.68 }}
