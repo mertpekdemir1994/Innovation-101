@@ -31,7 +31,7 @@ const ROLE_DETAIL: Record<Role, { heading: string; body: string }> = {
 }
 
 function dome(cx: number, cy: number, w: number, h: number) {
-  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 0 ${cx + w} ${cy + h} Z`
+  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 1 ${cx + w} ${cy + h} Z`
 }
 
 function roleState(id: Role, active: Role | null, hovered: Role | null) {

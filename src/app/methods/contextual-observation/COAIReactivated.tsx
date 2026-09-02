@@ -9,7 +9,7 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 function dome(cx: number, cy: number, w: number, h: number): string {
-  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 0 ${cx + w} ${cy + h} Z`
+  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 1 ${cx + w} ${cy + h} Z`
 }
 
 type Mode = 'human' | 'ai'

@@ -58,7 +58,7 @@ const CT = 22
 const CH = 193
 
 function dome(cx: number, cy: number, w: number, h: number) {
-  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 0 ${cx + w} ${cy + h} Z`
+  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 1 ${cx + w} ${cy + h} Z`
 }
 
 function cardState(id: Persona, active: Persona | null, hovered: Persona | null) {

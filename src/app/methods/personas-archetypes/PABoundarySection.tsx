@@ -37,7 +37,7 @@ const DETAIL: Record<State, { heading: string; descriptor: string; body: string;
 // ── Mini SVG illustrations for each state ────────────────────────────────────
 
 function dome(cx: number, cy: number, w: number, h: number) {
-  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 0 ${cx + w} ${cy + h} Z`
+  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 1 ${cx + w} ${cy + h} Z`
 }
 
 function PersonasSVG() {

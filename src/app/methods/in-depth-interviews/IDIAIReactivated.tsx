@@ -33,7 +33,7 @@ const AI_NOTES: Record<Role, { well: string; risks: string }> = {
 }
 
 function dome(cx: number, cy: number, w: number, h: number) {
-  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 0 ${cx + w} ${cy + h} Z`
+  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 1 ${cx + w} ${cy + h} Z`
 }
 
 export default function IDIAIReactivated() {

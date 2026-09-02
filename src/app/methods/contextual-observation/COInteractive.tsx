@@ -7,7 +7,7 @@ const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 const AMBER = 'rgba(245,158,11,'
 
 function dome(cx: number, cy: number, w: number, h: number): string {
-  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 0 ${cx + w} ${cy + h} Z`
+  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 1 ${cx + w} ${cy + h} Z`
 }
 
 type El = 'stated' | 'workaround' | 'friction' | 'env-detail' | 'say-do-gap' | null
