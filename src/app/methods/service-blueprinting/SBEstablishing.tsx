@@ -57,7 +57,7 @@ export default function SBEstablishing() {
       variants={container}
       aria-hidden="true"
     >
-      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
+      <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           <filter id="sb-est-glow" x="-20%" y="-200%" width="140%" height="500%">
             <feGaussianBlur stdDeviation="2.5" result="b" />

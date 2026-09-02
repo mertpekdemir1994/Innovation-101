@@ -40,8 +40,8 @@ export default function ServiceBlueprintingPage() {
       {/* ─────────────────────────────────────────────────────────
           S1 - Header / Identity   DARK
           ───────────────────────────────────────────────────────── */}
-      <DarkSection>
-        <Container>
+      <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
+        <Container className="relative z-10 flex flex-col justify-center flex-1">
           <div className="py-20 md:py-28">
             <span
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
@@ -77,17 +77,12 @@ export default function ServiceBlueprintingPage() {
             </p>
           </div>
         </Container>
-      </DarkSection>
 
-      {/* ─────────────────────────────────────────────────────────
-          S2 - Establishing visual   DARK
-          ───────────────────────────────────────────────────────── */}
-      <DarkSection>
-        <Container>
-          <div className="pb-20">
-            <SBEstablishing />
-          </div>
-        </Container>
+        {/* Establishing visual: full width, outside Container, matching the
+            framework hero treatment */}
+        <div className="relative z-10 w-full px-space-6 md:px-space-10 pb-space-12 pt-space-6">
+          <SBEstablishing />
+        </div>
       </DarkSection>
 
       {/* ─────────────────────────────────────────────────────────
