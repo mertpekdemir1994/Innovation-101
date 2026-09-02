@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY  = 'rgba(31,58,95,'
+const NAVY_TEXT = 'rgba(141,155,173,'  // brightened text-safe variant of NAVY
 const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
@@ -98,7 +99,7 @@ export default function JTBDInteractive() {
           )
         })}
         {view === 'right' && (
-          <span className="self-center" style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.30)', marginLeft: 4 }}>
+          <span className="self-center" style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.50)', marginLeft: 4 }}>
             Click a slot to explore it
           </span>
         )}
@@ -148,7 +149,7 @@ export default function JTBDInteractive() {
                 <text
                   x={350} y={SLOT_Y + 18}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                   fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}
                 >{'× WRONG: FEATURE / DEMOGRAPHIC'}</text>
                 <line
@@ -167,12 +168,20 @@ export default function JTBDInteractive() {
                   fontSize="14" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
                   fill="rgba(255,255,255,0.85)" style={{ userSelect: 'none' }}
                 >for suburban commuters</text>
+                {/* Split into two lines - the single-line caption (84 chars) no
+                    longer fits the 680-wide panel at 11pt */}
                 <text
-                  x={350} y={SLOT_Y + 120}
+                  x={350} y={SLOT_Y + 114}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                   fill={`${AMBER_TEXT}0.82)`} style={{ userSelect: 'none' }}
-                >{'a product · a demographic; hidden: the job · the circumstance · the real competition'}</text>
+                >{'a product · a demographic; hidden:'}</text>
+                <text
+                  x={350} y={SLOT_Y + 130}
+                  textAnchor="middle" dominantBaseline="middle"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                  fill={`${AMBER_TEXT}0.82)`} style={{ userSelect: 'none' }}
+                >{'the job · the circumstance · the real competition'}</text>
               </motion.g>
             ) : (
               /* ── JOB STATEMENT (three slots) ── */
@@ -202,7 +211,7 @@ export default function JTBDInteractive() {
                       <text
                         x={s.cx} y={SLOT_Y + 16}
                         textAnchor="middle" dominantBaseline="middle"
-                        fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+                        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em"
                         fill={isActive ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.7)'}
                         opacity={dimmed ? 0.35 : 1}
                         style={{ userSelect: 'none', transition: 'opacity 0.28s' }}
@@ -218,7 +227,7 @@ export default function JTBDInteractive() {
                         <text
                           key={li} x={s.cx} y={SLOT_Y + 60 + li * 17}
                           textAnchor="middle" dominantBaseline="middle"
-                          fontSize="8" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
+                          fontSize="11" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
                           fill="rgba(255,255,255,0.90)"
                           opacity={dimmed ? 0.35 : 1}
                           style={{ userSelect: 'none', transition: 'opacity 0.28s' }}
@@ -227,7 +236,7 @@ export default function JTBDInteractive() {
                       <text
                         x={s.cx} y={SLOT_Y + 138}
                         textAnchor="middle" dominantBaseline="middle"
-                        fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                         fill="rgba(255,255,255,0.625)"
                         opacity={dimmed ? 0.35 : 1}
                         style={{ userSelect: 'none', transition: 'opacity 0.28s' }}
@@ -287,9 +296,9 @@ export default function JTBDInteractive() {
 
           {/* Caption */}
           <text
-            x={SVG_W / 2} y={SVG_H - 6}
+            x={SVG_W / 2} y={SVG_H - 8}
             textAnchor="middle" dominantBaseline="auto"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={view === 'wrong' ? `${AMBER_TEXT}0.783)` : 'rgba(255,255,255,0.58)'}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >
@@ -327,7 +336,7 @@ export default function JTBDInteractive() {
                   {d.extra && (
                     <p
                       className="font-mono mb-3"
-                      style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.38)', letterSpacing: '0.06em' }}
+                      style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.50)', letterSpacing: '0.06em' }}
                     >{d.extra}</p>
                   )}
                   <p
@@ -348,7 +357,7 @@ export default function JTBDInteractive() {
       >
         <p
           className="font-mono uppercase tracking-widest mb-2"
-          style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.80)` }}
+          style={{ fontSize: 'var(--text-2xs)', color: `${NAVY_TEXT}0.90)` }}
         >The reframe</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
           Toggle between views. The wrong framing looks like market analysis: a product and a segment.
@@ -366,7 +375,7 @@ export default function JTBDInteractive() {
           { label: 'Social',     body: 'How the person wants to be perceived by others, or how they want to perceive themselves. Often the deepest driver of hiring and firing decisions, and the most frequently missed.' },
         ].map(({ label, body }) => (
           <div key={label} className="rounded-lg p-4" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.38)' }}>{label}</p>
+            <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.50)' }}>{label}</p>
             <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.58)', lineHeight: 'var(--leading-relaxed)' }}>{body}</p>
           </div>
         ))}

@@ -70,13 +70,15 @@ export default function JTBDEstablishing() {
           <text
             x={24} y={30}
             textAnchor="start" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
           >{'× WRONG: FEATURE / DEMOGRAPHIC'}</text>
+          {/* x moved 252 -> 290: at 11pt the first label now ends at ~270,
+              needs the gap widened to avoid running into this one */}
           <text
-            x={252} y={30}
+            x={290} y={30}
             textAnchor="start" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-inter,sans-serif)" fontStyle="italic"
+            fontSize="11" fontFamily="var(--font-inter,sans-serif)" fontStyle="italic"
             fill="rgba(255,255,255,0.65)" style={{ userSelect: 'none' }}
           >{'a thicker milkshake for suburban commuters'}</text>
         </motion.g>
@@ -93,7 +95,7 @@ export default function JTBDEstablishing() {
           <text
             x={S1_CX} y={SLOT_Y + 16}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em"
             fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >WHEN</text>
           <line
@@ -105,14 +107,14 @@ export default function JTBDEstablishing() {
             <text
               key={i} x={S1_CX} y={SLOT_Y + 60 + i * 17}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="8" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
+              fontSize="11" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
               fill="rgba(255,255,255,0.90)" style={{ userSelect: 'none' }}
             >{ln}</text>
           ))}
           <text
             x={S1_CX} y={SLOT_Y + 138}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}
           >SITUATION</text>
         </motion.g>
@@ -141,7 +143,7 @@ export default function JTBDEstablishing() {
           <text
             x={S2_CX} y={SLOT_Y + 16}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em"
             fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >I WANT TO</text>
           <line
@@ -153,14 +155,14 @@ export default function JTBDEstablishing() {
             <text
               key={i} x={S2_CX} y={SLOT_Y + 60 + i * 17}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="8" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
+              fontSize="11" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
               fill="rgba(255,255,255,0.90)" style={{ userSelect: 'none' }}
             >{ln}</text>
           ))}
           <text
             x={S2_CX} y={SLOT_Y + 138}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}
           >MOTIVATION</text>
         </motion.g>
@@ -189,7 +191,7 @@ export default function JTBDEstablishing() {
           <text
             x={S3_CX} y={SLOT_Y + 16}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em"
             fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >SO I CAN</text>
           <line
@@ -201,14 +203,14 @@ export default function JTBDEstablishing() {
             <text
               key={i} x={S3_CX} y={SLOT_Y + 60 + i * 17}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="8" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
+              fontSize="11" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
               fill="rgba(255,255,255,0.90)" style={{ userSelect: 'none' }}
             >{ln}</text>
           ))}
           <text
             x={S3_CX} y={SLOT_Y + 138}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill="rgba(255,255,255,0.625)" style={{ userSelect: 'none' }}
           >OUTCOME</text>
         </motion.g>
@@ -217,7 +219,7 @@ export default function JTBDEstablishing() {
         <motion.text
           x={SVG_W / 2} y={SVG_H - 8}
           textAnchor="middle" dominantBaseline="auto"
-          fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.59)"
           style={{ userSelect: 'none' }}
           variants={fadeIn}

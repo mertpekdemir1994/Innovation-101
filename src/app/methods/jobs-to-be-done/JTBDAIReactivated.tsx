@@ -4,13 +4,14 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY   = 'rgba(31,58,95,'
+const NAVY_TEXT = 'rgba(141,155,173,'  // brightened text-safe variant of NAVY
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 type Mode = 'human' | 'ai'
 
 const SVG_W  = 700
-const SVG_H  = 228
+const SVG_H  = 234
 const SLOT_Y = 12
 const SLOT_H = 128
 const MID_Y  = SLOT_Y + SLOT_H / 2  // 76
@@ -42,12 +43,14 @@ const SLOT_LINES: Record<Mode, string[][]> = {
   ],
 }
 
-const ROW_Y = 150, ROW_H = 56, ITEM_H = 20
-const ITEM_START = 162
+const ROW_Y = 150, ROW_H = 56, ITEM_H = 26
+// x=175 (was 148) and cx=92 (was 78): "TRUE COMPETITION" at 11pt needs more
+// room in the left column than the old smaller font did
+const ITEM_START = 189
 
 const COMPETITION: Record<Mode, { label: string; sublabel: string; items: string[]; itemW: number }> = {
   human: { label: 'TRUE COMPETITION', sublabel: '(non-obvious)',     items: ['banana', 'bagel', 'donut', 'boredom'],            itemW: 90 },
-  ai:    { label: 'AI COMPETITION',   sublabel: '(within category)', items: ['other shakes', 'smoothies', 'frozen desserts'],   itemW: 106 },
+  ai:    { label: 'AI COMPETITION',   sublabel: '(within category)', items: ['other shakes', 'smoothies', 'frozen desserts'],   itemW: 120 },
 }
 
 export default function JTBDAIReactivated() {
@@ -129,7 +132,7 @@ export default function JTBDAIReactivated() {
               <text
                 x={cx} y={SLOT_Y + 14}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em"
                 fill={isAI ? `${INDIGO_TEXT}0.912)` : 'rgba(255,255,255,0.7)'}
                 style={{ userSelect: 'none', transition: 'fill 0.35s' }}
               >{label}</text>
@@ -152,14 +155,14 @@ export default function JTBDAIReactivated() {
                     <text
                       key={li} x={cx} y={SLOT_Y + 48 + li * 16}
                       textAnchor="middle" dominantBaseline="middle"
-                      fontSize="7.5" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
+                      fontSize="11" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
                       fill="rgba(255,255,255,0.88)" style={{ userSelect: 'none' }}
                     >{ln}</text>
                   ))}
                   <text
                     x={cx} y={SLOT_Y + 108}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                     fill={isAI ? `${INDIGO_TEXT}0.885)` : 'rgba(255,255,255,0.625)'}
                     style={{ userSelect: 'none' }}
                   >{sublabel}</text>
@@ -192,20 +195,20 @@ export default function JTBDAIReactivated() {
             stroke={isAI ? `${INDIGO}0.18)` : `${NAVY}0.22)`}
             style={{ transition: 'fill 0.35s, stroke 0.35s' }}
           />
-          <line x1={148} y1={ROW_Y + 6} x2={148} y2={ROW_Y + ROW_H - 6} stroke="rgba(255,255,255,0.07)" />
+          <line x1={175} y1={ROW_Y + 6} x2={175} y2={ROW_Y + ROW_H - 6} stroke="rgba(255,255,255,0.07)" />
 
           {/* Competition label (transitions fill) */}
           <text
-            x={78} y={ROW_Y + ROW_H / 2 - 6}
+            x={92} y={ROW_Y + ROW_H / 2 - 8}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={isAI ? `${INDIGO_TEXT}0.92)` : 'rgba(255,255,255,0.71)'}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >{comp.label}</text>
           <text
-            x={78} y={ROW_Y + ROW_H / 2 + 8}
+            x={92} y={ROW_Y + ROW_H / 2 + 12}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={isAI ? `${INDIGO_TEXT}0.87)` : 'rgba(255,255,255,0.64)'}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}
           >{comp.sublabel}</text>
@@ -233,7 +236,7 @@ export default function JTBDAIReactivated() {
                     <text
                       x={icx} y={iy + ITEM_H / 2}
                       textAnchor="middle" dominantBaseline="middle"
-                      fontSize="5" fontFamily="var(--font-inter,sans-serif)"
+                      fontSize="11" fontFamily="var(--font-inter,sans-serif)"
                       fill={isAI ? `${INDIGO_TEXT}0.958)` : 'rgba(255,255,255,0.78)'}
                       style={{ userSelect: 'none' }}
                     >{item}</text>
@@ -248,9 +251,9 @@ export default function JTBDAIReactivated() {
             {isAI && (
               <motion.text
                 key="ai-annotation"
-                x={350} y={SVG_H - 6}
+                x={350} y={SVG_H - 8}
                 textAnchor="middle" dominantBaseline="auto"
-                fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                 fill={`${INDIGO_TEXT}0.885)`} style={{ userSelect: 'none' }}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 transition={{ duration: 0.28 }}
@@ -271,7 +274,7 @@ export default function JTBDAIReactivated() {
             transition={{ duration: 0.28, ease }}
           >
             <div className="rounded-xl p-5" style={{ background: `${INDIGO}0.06)`, border: `1px solid ${INDIGO}0.20)` }}>
-              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}>
+              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_TEXT}0.90)` }}>
                 Where AI is useful
               </p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -298,7 +301,7 @@ export default function JTBDAIReactivated() {
 
       {/* Synthesis */}
       <div className="rounded-xl p-6" style={{ background: `${NAVY}0.10)`, border: `1px solid ${NAVY}0.25)` }}>
-        <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.80)` }}>
+        <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY_TEXT}0.90)` }}>
           The honest synthesis
         </p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>

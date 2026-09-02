@@ -5,6 +5,9 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY   = 'rgba(31,58,95,'
 const INDIGO = 'rgba(99,102,241,'
+// darker indigo for use as text on this light background — plain INDIGO
+// can't reach 4.5:1 on white even at full opacity
+const INDIGO_DARK = 'rgba(79,70,229,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -29,7 +32,7 @@ export default function JTBDExampleToggle() {
             className="rounded-full px-5 py-2 text-sm font-semibold transition-colors"
             style={{
               background: tab === t.id ? `${NAVY}0.85)` : 'transparent',
-              color:      tab === t.id ? '#fff' : `${NAVY}0.70)`,
+              color:      tab === t.id ? '#fff' : `${NAVY}0.90)`,
               border:     `1.5px solid ${tab === t.id ? `${NAVY}0.70)` : `${NAVY}0.30)`}`,
             }}
             aria-pressed={tab === t.id}
@@ -48,7 +51,7 @@ export default function JTBDExampleToggle() {
           >
             {/* Scenario */}
             <div className="rounded-xl p-6 mb-6" style={{ background: `${NAVY}0.06)`, border: `1px solid ${NAVY}0.18)` }}>
-              <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.65)` }}>
+              <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.90)` }}>
                 Scenario
               </p>
               <p className="font-semibold mb-2" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}>
@@ -81,7 +84,7 @@ export default function JTBDExampleToggle() {
 
             {/* The job statement */}
             <div className="rounded-xl p-6 mb-6" style={{ background: `${NAVY}0.08)`, border: `1px solid ${NAVY}0.22)` }}>
-              <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.65)` }}>
+              <p className="font-mono uppercase tracking-widest mb-3" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.90)` }}>
                 The job statement
               </p>
               <div className="grid sm:grid-cols-3 gap-3 mb-4">
@@ -91,7 +94,7 @@ export default function JTBDExampleToggle() {
                   { slot: 'SO I CAN', text: 'arrive at work feeling ready, not depleted or bored' },
                 ].map(({ slot, text }) => (
                   <div key={slot} className="rounded-lg p-3" style={{ background: `${NAVY}0.14)`, border: `1px solid ${NAVY}0.22)` }}>
-                    <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.60)` }}>{slot}</p>
+                    <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.90)` }}>{slot}</p>
                     <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-800)', lineHeight: 'var(--leading-relaxed)' }}>{text}</p>
                   </div>
                 ))}
@@ -123,7 +126,7 @@ export default function JTBDExampleToggle() {
 
             {/* The winning move */}
             <div className="rounded-xl p-5 mb-4" style={{ background: `${NAVY}0.08)`, border: `1px solid ${NAVY}0.22)` }}>
-              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.65)` }}>
+              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.90)` }}>
                 The winning move, revealed by the job
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-800)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -157,7 +160,7 @@ export default function JTBDExampleToggle() {
           >
             {/* AI scenario */}
             <div className="rounded-xl p-6 mb-6" style={{ background: `${INDIGO}0.06)`, border: `1px solid ${INDIGO}0.20)` }}>
-              <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}>
+              <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_DARK}0.90)` }}>
                 Same scenario: AI assistance applied
               </p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -190,7 +193,7 @@ export default function JTBDExampleToggle() {
                     <p className="font-mono uppercase tracking-widest" style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
                       Job {i + 1}
                     </p>
-                    <span className="font-mono uppercase tracking-widest" style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.60)` }}>
+                    <span className="font-mono uppercase tracking-widest" style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_DARK}0.90)` }}>
                       {quality}
                     </span>
                   </div>
@@ -212,7 +215,7 @@ export default function JTBDExampleToggle() {
 
             {/* What AI missed */}
             <div className="rounded-xl p-6 mb-4" style={{ background: `${NAVY}0.06)`, border: `1px solid ${NAVY}0.18)` }}>
-              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.65)` }}>
+              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.90)` }}>
                 The job the AI did not produce
               </p>
               <p className="font-semibold mb-3" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)', lineHeight: 1.35 }}>
@@ -229,7 +232,9 @@ export default function JTBDExampleToggle() {
 
             {/* Wrong competition */}
             <div className="rounded-xl p-5 mb-4" style={{ background: 'rgba(245,158,11,0.04)', border: '1px solid rgba(245,158,11,0.18)' }}>
-              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: 'rgba(245,158,11,0.70)' }}>
+              {/* darker amber (amber-700) — plain rgba(245,158,11,) can't reach
+                  4.5:1 on white even at full opacity */}
+              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: 'rgba(180,83,9,1)' }}>
                 The competition AI named, and the competition it missed
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -256,7 +261,7 @@ export default function JTBDExampleToggle() {
 
             {/* Synthesis */}
             <div className="rounded-xl p-5" style={{ background: `${NAVY}0.08)`, border: `1px solid ${NAVY}0.22)` }}>
-              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.65)` }}>
+              <p className="font-mono uppercase tracking-widest mb-2" style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.90)` }}>
                 What this tells you about AI + JTBD
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
