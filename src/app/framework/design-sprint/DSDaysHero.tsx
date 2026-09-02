@@ -100,7 +100,7 @@ export default function DSDaysHero() {
             <text
               x={nodeCX(i)} y={yRow - nodeH / 2 + 20}
               textAnchor="middle" fill={`rgba(204,139,89,0.895)`}
-              fontSize="11" fontFamily="ui-monospace, monospace" letterSpacing="0.1em"
+              fontSize="13" fontFamily="ui-monospace, monospace" letterSpacing="0.1em"
               style={{ textTransform: 'uppercase' }}
             >
               {String(i + 1).padStart(2, '0')}
@@ -119,7 +119,7 @@ export default function DSDaysHero() {
             <text
               x={nodeCX(i)} y={yRow - nodeH / 2 + 62}
               textAnchor="middle" fill={`rgba(204,139,89,0.874)`}
-              fontSize="11" fontFamily="ui-monospace, monospace" letterSpacing="0.08em"
+              fontSize="13" fontFamily="ui-monospace, monospace" letterSpacing="0.08em"
               style={{ textTransform: 'uppercase' }}
             >
               {day.sub}
@@ -134,13 +134,13 @@ export default function DSDaysHero() {
           transition={{ delay: 1.3 }}
         >
           <line
-            x1={svgW - 138} y1={svgH - 24}
-            x2={svgW - 112} y2={svgH - 24}
+            x1={svgW - 210} y1={svgH - 24}
+            x2={svgW - 184} y2={svgH - 24}
             stroke={`${CLAY}0.30)`} strokeWidth={1.5} strokeDasharray="4 3"
           />
           <text
-            x={svgW - 106} y={svgH - 19}
-            fill={`rgba(204,139,89,0.864)`} fontSize="11"
+            x={svgW - 8} y={svgH - 19} textAnchor="end"
+            fill={`rgba(204,139,89,0.864)`} fontSize="13"
             fontFamily="ui-monospace, monospace" letterSpacing="0.08em"
           >
             run another sprint
