@@ -28,7 +28,7 @@ const TILES = [
   { id: 'network',             cat: 'config',   x: 80,  lines: ['NETWORK'] },
   { id: 'structure',           cat: 'config',   x: 144, lines: ['STRUCT.'] },
   { id: 'process',             cat: 'config',   x: 208, lines: ['PROCESS'] },
-  { id: 'product-performance', cat: 'offering', x: 288, lines: ['PRODUCT', 'PERF.'],    noteAbove: 'over-used' },
+  { id: 'product-performance', cat: 'offering', x: 288, lines: ['PRODUCT', 'PERF.'],    noteAbove: 'over-used', noteOffset: 8 },
   { id: 'product-system',      cat: 'offering', x: 352, lines: ['PRODUCT', 'SYSTEM'] },
   { id: 'service',             cat: 'exp',      x: 432, lines: ['SERVICE'] },
   { id: 'channel',             cat: 'exp',      x: 496, lines: ['CHANNEL'] },
@@ -54,7 +54,7 @@ export default function TTIEstablishing() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}
+        style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}
         role="img"
         aria-label="The 10 Types of Innovation in three categories: Configuration (Profit Model, Network, Structure, Process), Offering (Product Performance, Product System), and Experience (Service, Channel, Brand, Customer Engagement). Product Performance is the most commonly used type; the other nine are typically under-used."
       >
@@ -130,10 +130,13 @@ export default function TTIEstablishing() {
                 filter="url(#tti-est-glow)"
               />
 
-              {/* Subtle over-used marker (non-color-coded, text only) */}
+              {/* Subtle over-used marker (non-color-coded, text only). Nudged
+                  right via noteOffset when the tile sits flush against its
+                  category box's rounded left corner, so the label clears the
+                  border instead of sitting on top of it. */}
               {tile.noteAbove && (
                 <text
-                  x={cx} y={TILE_Y - 14}
+                  x={cx + (tile.noteOffset ?? 0)} y={TILE_Y - 14}
                   textAnchor="middle"
                   fontSize="11"
                   fontFamily="var(--font-mono)"
