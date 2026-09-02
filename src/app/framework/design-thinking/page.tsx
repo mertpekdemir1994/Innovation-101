@@ -74,7 +74,7 @@ export default function DesignThinkingPage() {
         </Container>
 
         {/* Five-stage diagram: full width, outside Container */}
-        <div className="relative z-10 w-full px-space-6 md:px-space-10 pb-space-12 pt-space-2">
+        <div className="relative z-10 w-full px-space-6 md:px-space-10 pb-space-12 pt-space-6">
           <DTStagesHero />
         </div>
 

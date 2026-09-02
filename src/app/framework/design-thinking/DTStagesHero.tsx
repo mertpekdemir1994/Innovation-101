@@ -113,16 +113,20 @@ export default function DTStagesHero() {
 
   return (
     <div className="w-full flex justify-center items-center py-space-4 select-none" aria-hidden="true">
-      <svg viewBox="0 0 760 380" width="100%" style={{ overflow: 'visible' }}>
+      <svg viewBox="0 0 990 380" width="100%" style={{ overflow: 'visible' }}>
+      {/* Canvas widened from the original 760-wide composition (2:1) toward a more
+          cinematic 2.6:1 by framing it wider, not stretching it — the lemniscate's
+          own geometry is untouched, just recentered via this translate. */}
+      <g transform="translate(115, 0)">
 
         {/* ── Subtle lobe labels ── */}
         <text x={75} y={CY + 4} textAnchor="middle"
-          fill={`rgba(61,169,160,0.836)`} fontSize="9" fontFamily="ui-monospace,monospace"
+          fill={`rgba(61,169,160,0.836)`} fontSize="12" fontFamily="ui-monospace,monospace"
           letterSpacing="0.14em">
           PROBLEM
         </text>
         <text x={685} y={CY + 4} textAnchor="middle"
-          fill={`rgba(61,169,160,0.836)`} fontSize="9" fontFamily="ui-monospace,monospace"
+          fill={`rgba(61,169,160,0.836)`} fontSize="12" fontFamily="ui-monospace,monospace"
           letterSpacing="0.14em">
           SOLUTION
         </text>
@@ -176,7 +180,7 @@ export default function DTStagesHero() {
           <text
             x={ix - 8} y={iy - 14}
             textAnchor="middle" fill={`rgba(61,169,160,0.884)`}
-            fontSize="9.5" fontFamily="ui-monospace,monospace" letterSpacing="0.08em"
+            fontSize="12" fontFamily="ui-monospace,monospace" letterSpacing="0.08em"
           >
             iterate
           </text>
@@ -200,20 +204,20 @@ export default function DTStagesHero() {
                 fill={`${TEAL}0.17)`} stroke={`${TEAL}0.65)`} strokeWidth={2} />
               {/* Short label inside */}
               <text x={node.x} y={node.y + 5} textAnchor="middle"
-                fill={`rgba(61,169,160,0.98)`} fontSize="9" fontWeight="600"
+                fill={`rgba(61,169,160,0.98)`} fontSize="12" fontWeight="600"
                 fontFamily="ui-monospace,monospace" letterSpacing="0.04em">
                 {node.label.slice(0, 4).toUpperCase()}
               </text>
 
               {/* External: stage name */}
-              <text x={lb.lx} y={lb.ly - 8} textAnchor={lb.anchor}
-                fill="rgba(255,255,255,0.82)" fontSize="13" fontWeight="600"
+              <text x={lb.lx} y={lb.ly - 9} textAnchor={lb.anchor}
+                fill="rgba(255,255,255,0.82)" fontSize="17" fontWeight="600"
                 fontFamily="Inter,sans-serif" letterSpacing="0.01em">
                 {node.label}
               </text>
               {/* External: sub-label */}
-              <text x={lb.lx} y={lb.ly + 8} textAnchor={lb.anchor}
-                fill="rgba(255,255,255,0.675)" fontSize="11"
+              <text x={lb.lx} y={lb.ly + 12} textAnchor={lb.anchor}
+                fill="rgba(255,255,255,0.675)" fontSize="14"
                 fontFamily="Inter,sans-serif">
                 {node.sub}
               </text>
@@ -221,6 +225,7 @@ export default function DTStagesHero() {
           )
         })}
 
+      </g>
       </svg>
     </div>
   )
