@@ -4,6 +4,9 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
 const INDIGO = 'rgba(99,102,241,'
+// darker indigo for text on this light background — plain INDIGO can't
+// reach 4.5:1 on white even at full opacity
+const INDIGO_DARK = 'rgba(79,70,229,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -30,7 +33,7 @@ export default function PLExampleToggle() {
                 ? t === 'ai' ? `${INDIGO}0.85)` : `${BRICK}0.85)`
                 : 'transparent',
               color: tab === t ? '#fff'
-                : t === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`,
+                : t === 'ai' ? `${INDIGO_DARK}0.90)` : `${BRICK}0.90)`,
               border: `1.5px solid ${tab === t
                 ? t === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`
                 : t === 'ai' ? `${INDIGO}0.30)` : `${BRICK}0.30)`}`,
@@ -45,7 +48,7 @@ export default function PLExampleToggle() {
       <div className="rounded-lg px-4 py-3 mb-6"
         style={{ background: `${BRICK}0.06)`, border: `1px solid ${BRICK}0.18)` }}>
         <p className="font-mono uppercase tracking-widest mb-1"
-          style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.60)` }}>Shared scenario</p>
+          style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.90)` }}>Shared scenario</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
           {SCENARIO}
         </p>
@@ -68,7 +71,7 @@ export default function PLExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ border: `1px solid ${BRICK}0.20)`, background: `${BRICK}0.04)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.70)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.90)` }}>
                 First: define the three boundaries before anything ships
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -83,7 +86,7 @@ export default function PLExampleToggle() {
             {/* Step 2: Pre-committing metrics */}
             <div className="rounded-lg p-5" style={{ border: `1px solid ${BRICK}0.15)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.60)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.90)` }}>
                 Second: agree on success criteria before the results come in
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -99,7 +102,7 @@ export default function PLExampleToggle() {
             {/* Step 3: Running the pilot */}
             <div className="rounded-lg p-5" style={{ border: `1px solid ${BRICK}0.15)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.60)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.90)` }}>
                 What the operational reality revealed
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -117,7 +120,7 @@ export default function PLExampleToggle() {
             {/* Step 4: The gate */}
             <div className="rounded-lg p-5" style={{ border: `1px solid ${BRICK}0.15)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.60)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.90)` }}>
                 The go/no-go gate, called on the committed date
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -135,7 +138,7 @@ export default function PLExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ border: `1px solid ${BRICK}0.28)`, background: `${BRICK}0.06)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.70)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.90)` }}>
                 What the pilot was actually for
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
@@ -145,7 +148,7 @@ export default function PLExampleToggle() {
                 volume, even bounded volume.
               </p>
               <p className="font-semibold"
-                style={{ fontSize: 'var(--text-sm)', color: `${BRICK}0.80)` }}>
+                style={{ fontSize: 'var(--text-sm)', color: `${BRICK}0.90)` }}>
                 The pilot did not save a good product from a bad scale decision. It saved the company from scaling
                 a delivery model with two structural faults neither the team nor the supplier nor any pre-launch
                 analysis had been able to predict. Those faults were only visible when the thing actually ran.
@@ -165,7 +168,7 @@ export default function PLExampleToggle() {
             <div className="rounded-lg px-4 py-3"
               style={{ background: `${INDIGO}0.06)`, border: `1px solid ${INDIGO}0.20)` }}>
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
-                <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
+                <span className="font-semibold" style={{ color: `${INDIGO_DARK}0.90)` }}>Hypothetical:</span>{' '}
                 The traditional approach above was run by the team directly. This tab imagines the same team
                 had used AI assistance throughout the pilot design, execution, and analysis, to show where AI
                 genuinely helps and what it structurally cannot do.
@@ -177,11 +180,11 @@ export default function PLExampleToggle() {
               style={{ border: `1px solid ${INDIGO}0.22)`, background: `${INDIGO}0.05)` }}>
               <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
                 <p className="font-mono uppercase tracking-widest"
-                  style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.80)` }}>
+                  style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_DARK}0.90)` }}>
                   Where AI genuinely helped
                 </p>
                 <span className="font-mono text-xs px-2 py-0.5 rounded-full"
-                  style={{ background: `${INDIGO}0.12)`, color: `${INDIGO}0.75)`, border: `1px solid ${INDIGO}0.25)` }}>
+                  style={{ background: `${INDIGO}0.12)`, color: `${INDIGO_DARK}0.90)`, border: `1px solid ${INDIGO}0.25)` }}>
                   Real uplift
                 </span>
               </div>
@@ -201,7 +204,7 @@ export default function PLExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ border: `1px solid rgba(245,158,11,0.22)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
-                style={{ fontSize: 'var(--text-2xs)', color: 'rgba(245,158,11,0.80)' }}>
+                style={{ fontSize: 'var(--text-2xs)', color: 'rgba(180,83,9,1)' }}>
                 What AI could not see: the operational reality
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)', marginBottom: 12 }}>
@@ -229,7 +232,7 @@ export default function PLExampleToggle() {
             <div className="rounded-lg p-5"
               style={{ background: `${BRICK}0.04)`, border: `1px solid ${BRICK}0.18)` }}>
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.65)` }}>The honest readout</p>
+                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.90)` }}>The honest readout</p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 The strongest version uses AI to design the pilot faster and analyze results more thoroughly,
                 while running the actual pilot with the same operational rigor the traditional approach demands.

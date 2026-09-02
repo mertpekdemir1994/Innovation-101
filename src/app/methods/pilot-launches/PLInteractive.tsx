@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 
 const SVG_W = 700, SVG_H = 268
 
@@ -11,23 +12,25 @@ const ZN_X = 62, ZN_Y = 44, ZN_W = 342, ZN_H = 170
 const ZN_CX = ZN_X + ZN_W / 2
 const ZN_CY = ZN_Y + ZN_H / 2
 
-// Feature tiles
+// Feature tiles. ALL FEATURES widened 82->96: doesn't fit the old tile
+// width at 11pt. FULL UX / OPERATIONS shifted right to keep the row's gaps.
 const FTILES = [
-  { x: 76,  y: 80,  w: 82, h: 22, label: 'ALL FEATURES' },
-  { x: 170, y: 80,  w: 82, h: 22, label: 'FULL UX'      },
-  { x: 264, y: 80,  w: 82, h: 22, label: 'OPERATIONS'   },
+  { x: 76,  y: 80,  w: 96, h: 22, label: 'ALL FEATURES' },
+  { x: 180, y: 80,  w: 82, h: 22, label: 'FULL UX'      },
+  { x: 270, y: 80,  w: 82, h: 22, label: 'OPERATIONS'   },
   { x: 108, y: 112, w: 82, h: 22, label: 'SUPPORT'      },
   { x: 214, y: 112, w: 82, h: 22, label: 'ECONOMICS'    },
 ]
 
-// Metrics
+// Metrics. Shortened: at 11pt none of the original phrases fit the
+// ~66-88-unit zone-to-gate corridor these labels float in.
 const M_X1 = ZN_X + ZN_W + 14
 const M_X2 = 484
 const METRICS = [
-  { y: 68,  label: 'ACQUISITION COST' },
-  { y: 96,  label: '90-DAY RETENTION' },
-  { y: 124, label: 'UNIT ECONOMICS'   },
-  { y: 152, label: 'OP. LOAD'         },
+  { y: 68,  label: 'CAC'         },
+  { y: 96,  label: 'RETENTION'   },
+  { y: 124, label: 'UNIT ECON.'  },
+  { y: 152, label: 'OP. LOAD'    },
 ]
 
 // Gate
@@ -138,7 +141,7 @@ export default function PLInteractive() {
           { x: 620, y: 195, text: 'UN-LAUNCHED' },
         ].map(({ x, y, text }) => (
           <text key={text + x} x={x} y={y}
-            fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill={`rgba(255,255,255,${active ? 0.05 : 0.10})`} style={{ userSelect: 'none' }}>
             {text}
           </text>
@@ -160,7 +163,7 @@ export default function PLInteractive() {
         {/* SEGMENT label */}
         <motion.text x={ZN_CX} y={ZN_Y - 12}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
           fill={zoneColor('segment', `rgba(183,145,135,0.979)`, `rgba(183,145,135,0.828)`)}
           style={{ userSelect: 'none', cursor: 'pointer' }}
           animate={{ opacity: 1 }}
@@ -172,7 +175,7 @@ export default function PLInteractive() {
         {/* GEOGRAPHY label */}
         <motion.text
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
           fill={zoneColor('geography', `rgba(183,145,135,0.979)`, `rgba(183,145,135,0.828)`)}
           style={{ userSelect: 'none', cursor: 'pointer' }}
           transform={`rotate(-90 ${ZN_X - 10} ${ZN_CY})`}
@@ -185,7 +188,7 @@ export default function PLInteractive() {
         {/* TIMEFRAME label */}
         <motion.text x={ZN_CX} y={ZN_Y + ZN_H + 14}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
           fill={zoneColor('timeframe', `rgba(183,145,135,0.979)`, `rgba(183,145,135,0.828)`)}
           style={{ userSelect: 'none', cursor: 'pointer' }}
           animate={{ opacity: 1 }}
@@ -202,7 +205,7 @@ export default function PLInteractive() {
           {/* REAL FULL SOLUTION heading */}
           <text x={ZN_CX} y={64}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
             fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}>
             REAL · FULL SOLUTION
           </text>
@@ -216,7 +219,7 @@ export default function PLInteractive() {
                 strokeWidth="1" rx={2} />
               <text x={t.x + t.w / 2} y={t.y + t.h / 2}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                 fill={`rgba(183,145,135,0.979)`} style={{ userSelect: 'none' }}>
                 {t.label}
               </text>
@@ -226,7 +229,7 @@ export default function PLInteractive() {
           {/* Operations annotation */}
           <text x={ZN_CX} y={148}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`rgba(183,145,135,0.874)`} style={{ userSelect: 'none' }}>
             REAL OPERATIONS · REAL CUSTOMERS · REAL MONEY
           </text>
@@ -250,7 +253,7 @@ export default function PLInteractive() {
                 strokeWidth="1" markerEnd="url(#pl-int-arr)" />
               <text x={M_X1 + (M_X2 - M_X1) / 2} y={m.y - 5}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
                 fill={isActive('metrics') ? `rgba(183,145,135,0.948)` : `rgba(183,145,135,0.895)`}
                 style={{ userSelect: 'none' }}>
                 {m.label}
@@ -276,19 +279,19 @@ export default function PLInteractive() {
             filter="url(#pl-int-glow)" />
           <text x={GATE_CX} y={GATE_CY - 14}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
             fill={`rgba(183,145,135,0.979)`} style={{ userSelect: 'none' }}>
             GO / NO-GO
           </text>
           <text x={GATE_CX} y={GATE_CY + 2}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}>
             PRE-COMMITTED
           </text>
-          <text x={GATE_CX} y={GATE_CY + 13}
+          <text x={GATE_CX} y={GATE_CY + 18}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}>
             CRITERIA
           </text>
@@ -311,7 +314,7 @@ export default function PLInteractive() {
             className="rounded-full px-3 py-1 text-xs font-mono tracking-widest transition-all"
             style={{
               background: active === id ? `${BRICK}0.18)` : 'transparent',
-              color: active === id ? `${BRICK}0.90)` : `${BRICK}0.45)`,
+              color: active === id ? `${BRICK_TEXT}1)` : `${BRICK_TEXT}0.90)`,
               border: `1px solid ${active === id ? `${BRICK}0.50)` : `${BRICK}0.20)`}`,
             }}
           >
@@ -324,7 +327,7 @@ export default function PLInteractive() {
             className="rounded-full px-3 py-1 text-xs font-mono tracking-widest transition-all"
             style={{
               background: 'transparent',
-              color: 'rgba(255,255,255,0.30)',
+              color: 'rgba(255,255,255,0.50)',
               border: '1px solid rgba(255,255,255,0.12)',
             }}
           >
@@ -349,7 +352,7 @@ export default function PLInteractive() {
             }}
           >
             <p className="font-mono uppercase tracking-widest mb-2"
-              style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.70)` }}>
+              style={{ fontSize: 'var(--text-2xs)', color: `${BRICK_TEXT}0.90)` }}>
               {info.tag}
             </p>
             <p className="font-semibold mb-3"
@@ -362,7 +365,7 @@ export default function PLInteractive() {
             {info.tradeoff && (
               <div className="mt-3 rounded px-3 py-2"
                 style={{ background: `${BRICK}0.08)`, borderLeft: `2px solid ${BRICK}0.35)` }}>
-                <p className="font-mono" style={{ fontSize: 'var(--text-xs)', color: `${BRICK}0.70)` }}>
+                <p className="font-mono" style={{ fontSize: 'var(--text-xs)', color: `${BRICK_TEXT}0.90)` }}>
                   {info.tradeoff}
                 </p>
               </div>
@@ -373,7 +376,7 @@ export default function PLInteractive() {
 
       {!active && (
         <p className="font-mono text-center"
-          style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.09em' }}>
+          style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.50)', letterSpacing: '0.09em' }}>
           CLICK ANY ELEMENT OR LABEL TO EXPLORE
         </p>
       )}

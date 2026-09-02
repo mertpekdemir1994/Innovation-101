@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 const AMBER  = 'rgba(245,158,11,'
@@ -13,21 +14,25 @@ const ZN_X = 62, ZN_Y = 44, ZN_W = 342, ZN_H = 170
 const ZN_CX = ZN_X + ZN_W / 2
 const ZN_CY = ZN_Y + ZN_H / 2
 
+// ALL FEATURES widened 82->96: doesn't fit the old tile width at 11pt.
+// FULL UX / OPERATIONS shifted right to keep the row's gaps.
 const FTILES = [
-  { x: 76,  y: 80,  w: 82, h: 22, label: 'ALL FEATURES' },
-  { x: 170, y: 80,  w: 82, h: 22, label: 'FULL UX'      },
-  { x: 264, y: 80,  w: 82, h: 22, label: 'OPERATIONS'   },
+  { x: 76,  y: 80,  w: 96, h: 22, label: 'ALL FEATURES' },
+  { x: 180, y: 80,  w: 82, h: 22, label: 'FULL UX'      },
+  { x: 270, y: 80,  w: 82, h: 22, label: 'OPERATIONS'   },
   { x: 108, y: 112, w: 82, h: 22, label: 'SUPPORT'      },
   { x: 214, y: 112, w: 82, h: 22, label: 'ECONOMICS'    },
 ]
 
+// Shortened: at 11pt none of the original phrases fit the ~66-88-unit
+// zone-to-gate corridor these labels float in.
 const M_X1 = ZN_X + ZN_W + 14
 const M_X2 = 484
 const METRICS = [
-  { y: 68,  label: 'ACQUISITION COST' },
-  { y: 96,  label: '90-DAY RETENTION' },
-  { y: 124, label: 'UNIT ECONOMICS'   },
-  { y: 152, label: 'OP. LOAD'         },
+  { y: 68,  label: 'CAC'         },
+  { y: 96,  label: 'RETENTION'   },
+  { y: 124, label: 'UNIT ECON.'  },
+  { y: 152, label: 'OP. LOAD'    },
 ]
 
 const GATE_X = 492, GATE_Y = 50, GATE_W = 118, GATE_H = 158
@@ -36,11 +41,14 @@ const GATE_CY = GATE_Y + GATE_H / 2
 
 type Mode = 'human' | 'ai'
 
-// Human judgment markers shown in AI mode
+// Human judgment markers shown in AI mode. Each now renders as two lines
+// (see render code) since the full phrase doesn't fit one line at 11pt.
+// mk2/mk3 moved further from center (28/30 -> 45) to clear the operations
+// annotation and the gate's CRITERIA line now that the badge is taller.
 const HUMAN_MARKERS = [
-  { x: ZN_CX, y: ZN_Y - 22, text: 'REPRESENTATIVENESS: HUMAN JUDGMENT' },
-  { x: ZN_CX, y: ZN_CY + 28, text: 'UNMODELED REALITY: SURFACES IN THE PILOT' },
-  { x: GATE_CX, y: GATE_CY + 30, text: 'GO / NO-GO: HUMAN DECISION' },
+  { x: ZN_CX, y: ZN_Y - 22, l1: 'REPRESENTATIVENESS:', l2: 'HUMAN JUDGMENT' },
+  { x: ZN_CX, y: ZN_CY + 45, l1: 'UNMODELED REALITY:', l2: 'SURFACES IN THE PILOT' },
+  { x: GATE_CX, y: GATE_CY + 45, l1: 'GO / NO-GO:', l2: 'HUMAN DECISION' },
 ]
 
 export default function PLAIReactivated() {
@@ -50,6 +58,9 @@ export default function PLAIReactivated() {
   const ease = [0.16, 1, 0.3, 1] as [number, number, number, number]
 
   const zoneColor  = isAI ? INDIGO : BRICK
+  // Text-safe variant: plain zoneColor fails 4.5:1 as text even at full
+  // opacity on this dark background, in either mode
+  const zoneColorText = isAI ? INDIGO_TEXT : BRICK_TEXT
   const gateBorder = isAI ? `${INDIGO}0.65)` : `${BRICK}0.65)`
   const gateGlow   = isAI ? `${INDIGO}0.30)` : `${BRICK}0.35)`
   const tileStroke = isAI ? `${INDIGO}0.45)` : `${BRICK}0.45)`
@@ -70,7 +81,7 @@ export default function PLAIReactivated() {
                 ? m === 'ai' ? `${INDIGO}0.85)` : `${BRICK}0.85)`
                 : 'transparent',
               color: mode === m ? '#fff'
-                : m === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`,
+                : m === 'ai' ? `${INDIGO_TEXT}0.90)` : `${BRICK_TEXT}0.90)`,
               border: `1.5px solid ${mode === m
                 ? m === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`
                 : m === 'ai' ? `${INDIGO}0.30)` : `${BRICK}0.30)`}`,
@@ -115,7 +126,7 @@ export default function PLAIReactivated() {
           { x: 620, y: 195, text: 'UN-LAUNCHED' },
         ].map(({ x, y, text }) => (
           <text key={text + x} x={x} y={y}
-            fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill="rgba(255,255,255,0.55)" style={{ userSelect: 'none' }}>
             {text}
           </text>
@@ -137,28 +148,28 @@ export default function PLAIReactivated() {
         {/* Boundary labels */}
         <motion.text x={ZN_CX} y={ZN_Y - 12}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
           style={{ userSelect: 'none' }}
-          animate={{ fill: `${zoneColor}0.65)` }}
+          animate={{ fill: `${zoneColorText}0.90)` }}
           transition={{ duration: 0.40 }}>
           ⊞ SEGMENT · WHO IS EXPOSED
         </motion.text>
 
         <motion.text
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
           style={{ userSelect: 'none' }}
           transform={`rotate(-90 ${ZN_X - 10} ${ZN_CY})`}
-          animate={{ fill: `${zoneColor}0.65)` }}
+          animate={{ fill: `${zoneColorText}0.90)` }}
           transition={{ duration: 0.40 }}>
           ◈ GEOGRAPHY · WHERE
         </motion.text>
 
         <motion.text x={ZN_CX} y={ZN_Y + ZN_H + 14}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
           style={{ userSelect: 'none' }}
-          animate={{ fill: `${zoneColor}0.65)` }}
+          animate={{ fill: `${zoneColorText}0.90)` }}
           transition={{ duration: 0.40 }}>
           ⊟ TIMEFRAME · END DATE FIXED
         </motion.text>
@@ -168,7 +179,7 @@ export default function PLAIReactivated() {
           {isAI && (
             <motion.text x={ZN_CX} y={63}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
               fill={`${INDIGO_TEXT}0.958)`} style={{ userSelect: 'none' }}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.30 }}>
@@ -182,7 +193,7 @@ export default function PLAIReactivated() {
           {!isAI && (
             <motion.text x={ZN_CX} y={63}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
               fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.30 }}>
@@ -200,8 +211,8 @@ export default function PLAIReactivated() {
               fill={tileFill} stroke={tileStroke} strokeWidth="1" rx={2} />
             <text x={t.x + t.w / 2} y={t.y + t.h / 2}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill={`${zoneColor}0.90)`} style={{ userSelect: 'none' }}>
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fill={`${zoneColorText}0.90)`} style={{ userSelect: 'none' }}>
               {t.label}
             </text>
           </motion.g>
@@ -210,8 +221,8 @@ export default function PLAIReactivated() {
         {/* Operations annotation */}
         <text x={ZN_CX} y={148}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-          fill={`${zoneColor}0.40)`} style={{ userSelect: 'none' }}>
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fill={`${zoneColorText}0.80)`} style={{ userSelect: 'none' }}>
           REAL OPERATIONS · REAL CUSTOMERS · REAL MONEY
         </text>
 
@@ -225,7 +236,7 @@ export default function PLAIReactivated() {
               strokeWidth="1" markerEnd="url(#pl-ai-arr)" />
             <text x={M_X1 + (M_X2 - M_X1) / 2} y={m.y - 5}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
               fill={isAI ? `${INDIGO_TEXT}0.885)` : `rgba(183,145,135,0.905)`}
               style={{ userSelect: 'none' }}>
               {m.label}
@@ -241,39 +252,47 @@ export default function PLAIReactivated() {
           transition={{ duration: 0.40 }} />
         <text x={GATE_CX} y={GATE_CY - 14}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
-          fill={`${zoneColor}0.90)`} style={{ userSelect: 'none' }}>
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+          fill={`${zoneColorText}0.90)`} style={{ userSelect: 'none' }}>
           GO / NO-GO
         </text>
         <text x={GATE_CX} y={GATE_CY + 2}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-          fill={`${zoneColor}0.55)`} style={{ userSelect: 'none' }}>
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fill={`${zoneColorText}0.85)`} style={{ userSelect: 'none' }}>
           PRE-COMMITTED
         </text>
-        <text x={GATE_CX} y={GATE_CY + 13}
+        <text x={GATE_CX} y={GATE_CY + 18}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
-          fill={`${zoneColor}0.55)`} style={{ userSelect: 'none' }}>
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fill={`${zoneColorText}0.85)`} style={{ userSelect: 'none' }}>
           CRITERIA
         </text>
 
         {/* Human judgment markers (AI mode only) */}
         <AnimatePresence>
           {isAI && HUMAN_MARKERS.map((mk, i) => (
-            <motion.g key={mk.text}
+            <motion.g key={mk.l1}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.28, delay: prefersReduced ? 0 : 0.08 + i * 0.06 }}>
+              {/* Widened 190->200 and grown 18->36 tall: the full phrase
+                  needs two lines at 11pt */}
               <rect
-                x={mk.x - 95} y={mk.y - 9}
-                width={190} height={18}
+                x={mk.x - 100} y={mk.y - 18}
+                width={200} height={36}
                 fill={`${AMBER}0.06)`} stroke={`${AMBER}0.30)`}
                 strokeWidth="1" rx={2} />
-              <text x={mk.x} y={mk.y}
+              <text x={mk.x} y={mk.y - 6}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
                 fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
-                {mk.text}
+                {mk.l1}
+              </text>
+              <text x={mk.x} y={mk.y + 8}
+                textAnchor="middle" dominantBaseline="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
+                {mk.l2}
               </text>
             </motion.g>
           ))}
@@ -297,15 +316,15 @@ export default function PLAIReactivated() {
                 style={{ border: `1px solid ${INDIGO}0.22)`, background: `${INDIGO}0.05)` }}>
                 <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
                   <p className="font-mono uppercase tracking-widest"
-                    style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.80)` }}>
+                    style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_TEXT}0.90)` }}>
                     Where AI genuinely helps
                   </p>
                   <span className="font-mono text-xs px-2 py-0.5 rounded-full"
-                    style={{ background: `${INDIGO}0.12)`, color: `${INDIGO}0.75)`, border: `1px solid ${INDIGO}0.25)` }}>
+                    style={{ background: `${INDIGO}0.12)`, color: `${INDIGO_TEXT}0.90)`, border: `1px solid ${INDIGO}0.25)` }}>
                     Real uplift
                   </span>
                 </div>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                   AI accelerates the design of the pilot: analyzing segment data to size and characterize potential cohorts,
                   helping construct the metrics instrumentation plan, running market-sizing models for geography selection,
                   and analyzing pilot results at the end, surfacing patterns across acquisition, retention, and operational
@@ -321,7 +340,7 @@ export default function PLAIReactivated() {
                   style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}>
                   Human judgment: representativeness
                 </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                   AI can analyze demographic and behavioral data for a candidate segment, but whether THIS segment
                   represents the population you intend to scale to (given the specific context, the market moment,
                   the operational constraints) is a judgment call about things AI cannot access. The representativeness
@@ -336,7 +355,7 @@ export default function PLAIReactivated() {
                   style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}>
                   Human judgment: what actually breaks
                 </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                   What breaks at the boundary (the supplier who cannot actually scale, the support team that hits its
                   capacity limit, the edge case in the billing flow that only appears at real volume) surfaces in the
                   pilot&rsquo;s operational reality. AI cannot predict this from data. It appears when real systems meet real
@@ -352,7 +371,7 @@ export default function PLAIReactivated() {
                   style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}>
                   Human judgment: the go/no-go decision
                 </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                   Pre-committed criteria answer the binary question of whether results are technically good enough.
                   The actual go decision carries organizational accountability: for the investment required to scale,
                   for the people and partners who will be affected, for the timing relative to everything else the
@@ -365,10 +384,10 @@ export default function PLAIReactivated() {
             <div className="rounded-lg p-4"
               style={{ border: `1px solid ${BRICK}0.22)`, background: `${BRICK}0.04)` }}>
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.70)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK_TEXT}0.90)` }}>
                 The traditional method
               </p>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                 A pilot launch is a manual process end to end. The team selects the segment, defines the geography,
                 sets the metrics and success criteria, runs the operational launch, and calls the gate. The pilot
                 produces real operational experience (what the supply chain actually does at volume, what the support
@@ -382,10 +401,10 @@ export default function PLAIReactivated() {
           <div className="rounded-lg p-4"
             style={{ background: `${BRICK}0.04)`, border: `1px solid ${BRICK}0.16)` }}>
             <p className="font-mono uppercase tracking-widest mb-2"
-              style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.60)` }}>
+              style={{ fontSize: 'var(--text-2xs)', color: `${BRICK_TEXT}0.90)` }}>
               The honest synthesis
             </p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
               AI changes the design and analysis work around pilots. It does not change what a pilot is: running
               the real thing with bounded exposure to learn from real operational conditions. The judgment calls
               that make a pilot valid (representativeness, reading what the operations actually produced, calling

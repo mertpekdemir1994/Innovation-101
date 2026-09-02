@@ -4,7 +4,7 @@ import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
 
-const SVG_W = 700, SVG_H = 268
+const SVG_W = 700, SVG_H = 284
 
 // Pilot zone: the contained, bounded slice
 const ZN_X = 62, ZN_Y = 44, ZN_W = 342, ZN_H = 170
@@ -12,10 +12,12 @@ const ZN_CX = ZN_X + ZN_W / 2   // 233
 const ZN_CY = ZN_Y + ZN_H / 2   // 129
 
 // Feature tiles inside zone (FULL, REAL solution, no cut pile)
+// ALL FEATURES widened 82->96: doesn't fit the old tile width at 11pt.
+// FULL UX / OPERATIONS shifted right to keep the row's gaps.
 const FTILES = [
-  { x: 76,  y: 80,  w: 82, h: 22, label: 'ALL FEATURES' },
-  { x: 170, y: 80,  w: 82, h: 22, label: 'FULL UX'      },
-  { x: 264, y: 80,  w: 82, h: 22, label: 'OPERATIONS'   },
+  { x: 76,  y: 80,  w: 96, h: 22, label: 'ALL FEATURES' },
+  { x: 180, y: 80,  w: 82, h: 22, label: 'FULL UX'      },
+  { x: 270, y: 80,  w: 82, h: 22, label: 'OPERATIONS'   },
   { x: 108, y: 112, w: 82, h: 22, label: 'SUPPORT'      },
   { x: 214, y: 112, w: 82, h: 22, label: 'ECONOMICS'    },
 ]
@@ -23,11 +25,13 @@ const FTILES = [
 // Metric lines (zone right edge → gate)
 const M_X1 = ZN_X + ZN_W + 14   // 418
 const M_X2 = 484
+// Shortened: at 11pt none of the original phrases fit the ~66-88-unit
+// zone-to-gate corridor these labels float in.
 const METRICS = [
-  { y: 68,  label: 'ACQUISITION COST' },
-  { y: 96,  label: '90-DAY RETENTION' },
-  { y: 124, label: 'UNIT ECONOMICS'   },
-  { y: 152, label: 'OP. LOAD'         },
+  { y: 68,  label: 'CAC'         },
+  { y: 96,  label: 'RETENTION'   },
+  { y: 124, label: 'UNIT ECON.'  },
+  { y: 152, label: 'OP. LOAD'    },
 ]
 
 // GO/NO-GO gate
@@ -35,7 +39,7 @@ const GATE_X = 492, GATE_Y = 50, GATE_W = 118, GATE_H = 158
 const GATE_CX = GATE_X + GATE_W / 2   // 551
 const GATE_CY = GATE_Y + GATE_H / 2   // 129
 
-const CAP_Y = SVG_H - 7  // 261
+const CAP_Y = SVG_H - 23  // two caption lines now, 16 apart
 
 export default function PLEstablishing() {
   const ref = useRef<SVGSVGElement>(null)
@@ -87,7 +91,7 @@ export default function PLEstablishing() {
           { x: 620, y: 195, text: 'UN-LAUNCHED' },
         ].map(({ x, y, text }) => (
           <motion.text key={text + x} x={x} y={y}
-            fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill="rgba(255,255,255,0.55)" style={{ userSelect: 'none' }}
             {...fade(0.04)}>
             {text}
@@ -109,7 +113,7 @@ export default function PLEstablishing() {
         {/* SEGMENT: above zone */}
         <motion.text x={ZN_CX} y={ZN_Y - 12}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
           fill={`rgba(183,145,135,0.926)`} style={{ userSelect: 'none' }}
           {...fade(0.20)}>
           ⊞ SEGMENT · WHO IS EXPOSED
@@ -118,7 +122,7 @@ export default function PLEstablishing() {
         {/* GEOGRAPHY: left of zone (rotated) */}
         <motion.text
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
           fill={`rgba(183,145,135,0.926)`} style={{ userSelect: 'none' }}
           transform={`rotate(-90 ${ZN_X - 10} ${ZN_CY})`}
           {...fade(0.24)}>
@@ -128,7 +132,7 @@ export default function PLEstablishing() {
         {/* TIMEFRAME: below zone */}
         <motion.text x={ZN_CX} y={ZN_Y + ZN_H + 14}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
           fill={`rgba(183,145,135,0.926)`} style={{ userSelect: 'none' }}
           {...fade(0.28)}>
           ⊟ TIMEFRAME · END DATE FIXED
@@ -137,7 +141,7 @@ export default function PLEstablishing() {
         {/* "REAL · FULL SOLUTION" heading inside zone */}
         <motion.text x={ZN_CX} y={64}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em" fontWeight="600"
           fill={`rgba(183,145,135,0.958)`} style={{ userSelect: 'none' }}
           {...fade(0.34)}>
           REAL · FULL SOLUTION
@@ -151,7 +155,7 @@ export default function PLEstablishing() {
               strokeWidth="1" rx="2" />
             <text x={t.x + t.w / 2} y={t.y + t.h / 2}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
               fill={`rgba(183,145,135,0.979)`} style={{ userSelect: 'none' }}>
               {t.label}
             </text>
@@ -161,7 +165,7 @@ export default function PLEstablishing() {
         {/* Operations annotation inside zone */}
         <motion.text x={ZN_CX} y={148}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
           fill={`rgba(183,145,135,0.874)`} style={{ userSelect: 'none' }}
           {...fade(0.72)}>
           REAL OPERATIONS · REAL CUSTOMERS · REAL MONEY
@@ -175,7 +179,7 @@ export default function PLEstablishing() {
               markerEnd="url(#pl-est-arr)" />
             <text x={M_X1 + (M_X2 - M_X1) / 2} y={m.y - 5}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
               fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}>
               {m.label}
             </text>
@@ -191,33 +195,41 @@ export default function PLEstablishing() {
 
         <motion.text x={GATE_CX} y={GATE_CY - 14}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
           fill={`rgba(183,145,135,0.979)`} style={{ userSelect: 'none' }}
           {...fade(0.88)}>
           GO / NO-GO
         </motion.text>
         <motion.text x={GATE_CX} y={GATE_CY + 2}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
           fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}
           {...fade(0.90)}>
           PRE-COMMITTED
         </motion.text>
-        <motion.text x={GATE_CX} y={GATE_CY + 13}
+        <motion.text x={GATE_CX} y={GATE_CY + 18}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em"
           fill={`rgba(183,145,135,0.905)`} style={{ userSelect: 'none' }}
           {...fade(0.92)}>
           CRITERIA
         </motion.text>
 
-        {/* Caption */}
-        <motion.text x={ZN_CX} y={CAP_Y}
+        {/* Caption: split across two lines — the single-line sentence was
+            right at the SVG_W edge at 11pt */}
+        <motion.text x={SVG_W / 2} y={CAP_Y}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
           fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           {...fade(1.00)}>
-          The solution inside is full and real. The boundary defines who sees it, where, and for how long.
+          The solution inside is full and real.
+        </motion.text>
+        <motion.text x={SVG_W / 2} y={CAP_Y + 16}
+          textAnchor="middle" dominantBaseline="middle"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
+          {...fade(1.00)}>
+          The boundary defines who sees it, where, and for how long.
         </motion.text>
       </svg>
     </div>
