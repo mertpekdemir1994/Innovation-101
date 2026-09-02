@@ -134,7 +134,7 @@ export default function AvatarsAIReactivated() {
                 <motion.text
                   x={LX + 8} y={labelY}
                   textAnchor="start" dominantBaseline="middle"
-                  fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                   style={{ userSelect: 'none' }}
                   animate={{ fill: labelFill(i, aiMode) }}
                   transition={{ duration: 0.35 }}
@@ -161,7 +161,7 @@ export default function AvatarsAIReactivated() {
           <motion.text
             x={CX} y={CY + 4}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             style={{ userSelect: 'none', pointerEvents: 'none' }}
             animate={{ fill: aiMode ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.92)' }}
             transition={{ duration: 0.4 }}
@@ -172,9 +172,9 @@ export default function AvatarsAIReactivated() {
             {aiMode && (
               <motion.text
                 key="ai-confident"
-                x={CX - 155} y={80}
-                textAnchor="middle" fontSize="6"
-                fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                x={CX - 98} y={80}
+                textAnchor="middle" fontSize="9"
+                fontFamily="var(--font-mono)" letterSpacing="0.04em"
                 fill={`rgba(141,143,245,0.926)`}
                 style={{ userSelect: 'none' }}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -187,8 +187,8 @@ export default function AvatarsAIReactivated() {
               <motion.text
                 key="ai-blind"
                 x={CX} y={CY - 42}
-                textAnchor="middle" fontSize="5.5"
-                fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                textAnchor="middle" fontSize="9"
+                fontFamily="var(--font-mono)" letterSpacing="0.04em"
                 fill="rgba(255,165,0,0.70)"
                 style={{ userSelect: 'none' }}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}

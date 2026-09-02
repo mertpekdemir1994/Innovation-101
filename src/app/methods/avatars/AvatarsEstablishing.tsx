@@ -88,7 +88,7 @@ export default function AvatarsEstablishing() {
                 <text
                   x={CX} y={CY + 4}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="6.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                   fill="rgba(255,255,255,0.92)" style={{ userSelect: 'none' }}
                 >AVATAR</text>
               )}
@@ -109,17 +109,17 @@ export default function AvatarsEstablishing() {
                 fill={isBeachhead ? 'rgba(255,255,255,0.80)' : `${PLUM}0.60)`}
               />
               <text
-                x={LX + 8} y={labelY}
+                x={LX + 8} y={labelY - 2}
                 textAnchor="start" dominantBaseline="middle"
-                fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                 fill={isBeachhead ? 'rgba(255,255,255,0.85)' : `${PLUM_TEXT}0.962)`}
                 style={{ userSelect: 'none' }}
               >{label}</text>
               <text
-                x={LX + 8} y={labelY + 13}
+                x={LX + 8} y={labelY + 14}
                 textAnchor="start" dominantBaseline="middle"
-                fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                fill="rgba(255,255,255,0.64)"
+                fontSize="9" fontFamily="var(--font-mono)"
+                fill="rgba(255,255,255,0.68)"
                 style={{ userSelect: 'none' }}
               >{sub}</text>
             </motion.g>
@@ -131,8 +131,8 @@ export default function AvatarsEstablishing() {
           x={CX - 170} y={CY}
           textAnchor="middle"
           transform={`rotate(-90 ${CX - 170} ${CY})`}
-          fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.14em"
-          fill="rgba(255,255,255,0.56)"
+          fontSize="9" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fill="rgba(255,255,255,0.62)"
           style={{ userSelect: 'none' }}
           variants={fadeIn}
           transition={labelT}

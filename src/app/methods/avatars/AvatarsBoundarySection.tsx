@@ -5,7 +5,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,74,119,'
+const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 const NAVY = 'rgba(31,58,95,'
+const NAVY_TEXT = 'rgba(141,155,173,'  // brightened text-safe variant of NAVY
 
 type State = 'avatar' | 'personas' | 'segments'
 
@@ -68,7 +70,7 @@ function AvatarMiniSVG({ active }: { active: boolean }) {
         />
       ))}
       <text x={60} y={63} textAnchor="middle" dominantBaseline="middle"
-        fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.06em"
         fill={active ? 'rgba(255,255,255,0.90)' : 'rgba(255,255,255,0.7)'}
         style={{ userSelect: 'none' }}
       >AVATAR</text>
@@ -79,7 +81,7 @@ function AvatarMiniSVG({ active }: { active: boolean }) {
 function PersonasMiniSVG({ active }: { active: boolean }) {
   const fill   = active ? `${NAVY}0.55)` : `${NAVY}0.25)`
   const stroke = active ? 'rgba(255,255,255,0.42)' : 'rgba(255,255,255,0.18)'
-  const textF  = active ? 'rgba(255,255,255,0.80)' : 'rgba(255,255,255,0.30)'
+  const textF  = active ? 'rgba(255,255,255,0.80)' : 'rgba(255,255,255,0.60)'
   const dome = (cx: number) =>
     `M ${cx - 8} 85 A 8 10 0 0 0 ${cx + 8} 85 Z`
   return (
@@ -93,7 +95,7 @@ function PersonasMiniSVG({ active }: { active: boolean }) {
         </g>
       ))}
       <text x={60} y={104} textAnchor="middle" dominantBaseline="middle"
-        fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+        fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.02em"
         fill={textF} style={{ userSelect: 'none' }}
       >BEHAVIORAL TYPES</text>
     </svg>
@@ -103,7 +105,7 @@ function PersonasMiniSVG({ active }: { active: boolean }) {
 function SegmentsMiniSVG({ active }: { active: boolean }) {
   const bars = [0.85, 0.55, 0.35, 0.20]
   const barFill = active ? 'rgba(255,255,255,0.30)' : 'rgba(255,255,255,0.12)'
-  const textF   = active ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.28)'
+  const textF   = active ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.55)'
   return (
     <svg viewBox="0 0 120 110" width="100%" style={{ maxWidth: 160 }}>
       {bars.map((w, i) => (
@@ -113,7 +115,7 @@ function SegmentsMiniSVG({ active }: { active: boolean }) {
         </g>
       ))}
       <text x={60} y={104} textAnchor="middle" dominantBaseline="middle"
-        fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+        fontSize="8" fontFamily="var(--font-mono)" letterSpacing="0.01em"
         fill={textF} style={{ userSelect: 'none' }}
       >QUANTITATIVE FILTERS</text>
     </svg>
@@ -141,9 +143,9 @@ export default function AvatarsBoundarySection() {
             aria-pressed={active === id}
           >
             <p className="font-semibold mb-1.5"
-              style={{ fontSize: 'var(--text-sm)', color: active === id ? '#FAFAFA' : 'rgba(255,255,255,0.42)' }}
+              style={{ fontSize: 'var(--text-sm)', color: active === id ? '#FAFAFA' : 'rgba(255,255,255,0.62)' }}
             >{label}</p>
-            <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.35)' }}>
+            <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.55)' }}>
               {summary}
             </p>
           </button>
@@ -182,7 +184,7 @@ export default function AvatarsBoundarySection() {
                   style={{ background: `${PLUM}0.08)`, border: `1px solid ${PLUM}0.18)` }}
                 >
                   <p className="font-mono uppercase tracking-widest mb-2"
-                    style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.68)` }}
+                    style={{ fontSize: 'var(--text-2xs)', color: `${PLUM_TEXT}0.95)` }}
                   >Key distinction</p>
                   <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.65)' }}>
                     {DETAIL[active].keyDiff}
@@ -195,7 +197,7 @@ export default function AvatarsBoundarySection() {
                     <Link
                       href={DETAIL[active].link!}
                       className="inline-flex items-center gap-1.5 font-mono uppercase tracking-widest"
-                      style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.72)` }}
+                      style={{ fontSize: 'var(--text-2xs)', color: `${NAVY_TEXT}0.95)` }}
                     >
                       Go to Personas & Archetypes
                       <span aria-hidden="true">→</span>
