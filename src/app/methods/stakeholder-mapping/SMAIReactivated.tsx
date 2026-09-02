@@ -8,11 +8,15 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
-const SVG_H = 258
-const CW = 126
-const CH = 78
-const COLS = [68, 214, 360, 506]
-const ROWS = [20, 114]
+const SVG_H = 492
+const CW = 300
+const CH = 96
+// Two thematic columns (obvious / non-obvious), four cards stacked in each,
+// matching the layout used in SMEstablishing.
+const COLS = [25, 375]
+const ROW_TOP = 30, ROW_GAP = 106
+const ROWS = [ROW_TOP, ROW_TOP + ROW_GAP, ROW_TOP + ROW_GAP * 2, ROW_TOP + ROW_GAP * 3]
+const CAPTION_Y1 = SVG_H - 28, CAPTION_Y2 = SVG_H - 12
 
 type Mode = 'human' | 'ai'
 type CardStatus = 'obvious' | 'partial' | 'ghost'
@@ -53,22 +57,23 @@ function renderHumanCard(c: CardDef, x: number, y: number) {
   const isPartial = c.status === 'partial'
   const fill = isGhost ? `${SAGE}0.05)` : isPartial ? `${SAGE}0.07)` : `${SAGE}0.08)`
   const stroke = isGhost ? `${SAGE}0.22)` : isPartial ? `${SAGE}0.30)` : `${SAGE}0.35)`
-  const nameOpacity = isGhost ? 0.55 : isPartial ? 0.70 : 0.90
+  // SAGE_TEXT-based floor: plain SAGE fails 4.5:1 on this dark background even at 1.0 opacity
+  const nameOpacity = isGhost ? 0.85 : isPartial ? 0.92 : 1.0
   const hasNonObvious = isGhost || isPartial
 
   return (
     <g key={c.name}>
       <rect x={x} y={y} width={CW} height={CH} rx={3} fill={fill} stroke={stroke} strokeWidth={0.9} />
       {hasNonObvious && (
-        <text x={x + CW - 7} y={y + 11} textAnchor="end" fontSize="6"
+        <text x={x + CW - 10} y={y + 16} textAnchor="end" fontSize="11"
           fontFamily="system-ui, sans-serif" fill={`${SAGE_TEXT}0.926)`}
           style={{ userSelect: 'none' }}>★</text>
       )}
-      <text x={x + CW / 2} y={y + 17} textAnchor="middle"
-        fontSize="6.5" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.09em"
-        fill={`${SAGE}${nameOpacity})`} style={{ userSelect: 'none' }}>{c.name}</text>
-      <text x={x + CW / 2} y={y + 28} textAnchor="middle"
-        fontSize="5" fontFamily="system-ui, sans-serif" fill={`rgba(255,255,255,${isGhost ? 0.22 : 0.35})`}
+      <text x={x + CW / 2} y={y + 22} textAnchor="middle"
+        fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.09em"
+        fill={`${SAGE_TEXT}${nameOpacity})`} style={{ userSelect: 'none' }}>{c.name}</text>
+      <text x={x + CW / 2} y={y + 40} textAnchor="middle"
+        fontSize="11" fontFamily="system-ui, sans-serif" fill={`rgba(255,255,255,${isGhost ? 0.50 : 0.55})`}
         style={{ userSelect: 'none' }}>{c.role}</text>
     </g>
   )
@@ -85,11 +90,11 @@ function renderAICard(c: CardDef, x: number, y: number) {
           fill="rgba(255,255,255,0.02)"
           stroke="rgba(255,255,255,0.10)"
           strokeWidth={0.7} strokeDasharray="4 3" />
-        <text x={x + CW / 2} y={y + CH / 2 - 4} textAnchor="middle"
-          fontSize="12" fontFamily="system-ui, sans-serif" fill="rgba(255,255,255,0.57)"
+        <text x={x + CW / 2} y={y + CH / 2 - 6} textAnchor="middle"
+          fontSize="28" fontFamily="system-ui, sans-serif" fill="rgba(255,255,255,0.57)"
           style={{ userSelect: 'none' }}>?</text>
-        <text x={x + CW / 2} y={y + CH / 2 + 10} textAnchor="middle"
-          fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
+        <text x={x + CW / 2} y={y + CH / 2 + 24} textAnchor="middle"
+          fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>NOT SURFACED</text>
       </g>
     )
@@ -97,27 +102,28 @@ function renderAICard(c: CardDef, x: number, y: number) {
 
   const fill = isPartial ? `${INDIGO}0.07)` : `${INDIGO}0.10)`
   const stroke = isPartial ? `${INDIGO}0.25)` : `${INDIGO}0.38)`
-  const nameOpacity = isPartial ? 0.65 : 0.88
-  const badgeOpacity = isPartial ? 0.50 : 0.75
+  // INDIGO_TEXT-based floor: plain INDIGO fails 4.5:1 on this dark background even at 1.0 opacity
+  const nameOpacity = isPartial ? 0.90 : 1.0
+  const badgeOpacity = isPartial ? 0.85 : 1.0
 
   return (
     <g key={c.name}>
       <rect x={x} y={y} width={CW} height={CH} rx={3} fill={fill} stroke={stroke} strokeWidth={0.9} />
       {/* AI badge */}
-      <rect x={x + 6} y={y + 6} width={54} height={10} rx={2}
+      <rect x={x + 8} y={y + 8} width={130} height={18} rx={3}
         fill={`${INDIGO}0.20)`} />
-      <text x={x + 9} y={y + 14} fontSize="4.5" fontFamily="system-ui, sans-serif"
-        letterSpacing="0.08em" fill={`${INDIGO}${badgeOpacity})`}
+      <text x={x + 14} y={y + 21} fontSize="11" fontFamily="system-ui, sans-serif"
+        letterSpacing="0.08em" fill={`${INDIGO_TEXT}${badgeOpacity})`}
         style={{ userSelect: 'none' }}>{c.aiLabel}</text>
-      <text x={x + CW / 2} y={y + 37} textAnchor="middle"
-        fontSize="6.5" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.09em"
-        fill={`${INDIGO}${nameOpacity})`} style={{ userSelect: 'none' }}>{c.name}</text>
-      <text x={x + CW / 2} y={y + 49} textAnchor="middle"
-        fontSize="5" fontFamily="system-ui, sans-serif" fill={`${INDIGO_TEXT}0.885)`}
+      <text x={x + CW / 2} y={y + 46} textAnchor="middle"
+        fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.09em"
+        fill={`${INDIGO_TEXT}${nameOpacity})`} style={{ userSelect: 'none' }}>{c.name}</text>
+      <text x={x + CW / 2} y={y + 64} textAnchor="middle"
+        fontSize="11" fontFamily="system-ui, sans-serif" fill={`${INDIGO_TEXT}0.885)`}
         style={{ userSelect: 'none' }}>{c.role}</text>
       {isPartial && (
-        <text x={x + CW / 2} y={y + 62} textAnchor="middle"
-          fontSize="4.5" fontFamily="system-ui, sans-serif"
+        <text x={x + CW / 2} y={y + 82} textAnchor="middle"
+          fontSize="11" fontFamily="system-ui, sans-serif"
           fill={`${INDIGO_TEXT}0.87)`} style={{ userSelect: 'none' }}>attributes incomplete</text>
       )}
     </g>
@@ -147,8 +153,8 @@ export default function SMAIReactivated() {
                 ? m === 'ai' ? `${INDIGO}0.38)` : `${SAGE}0.38)`
                 : 'rgba(255,255,255,0.12)'}`,
               color: mode === m
-                ? m === 'ai' ? `${INDIGO}1)` : `${SAGE}1)`
-                : 'rgba(255,255,255,0.40)',
+                ? m === 'ai' ? `${INDIGO_TEXT}1)` : `${SAGE_TEXT}1)`
+                : 'rgba(255,255,255,0.50)',
             }}
           >
             {m === 'human' ? 'Human-led' : 'AI-assisted'}
@@ -177,38 +183,50 @@ export default function SMAIReactivated() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.28 }}
             >
-              {/* Row labels */}
-              <text x={SVG_W / 2} y={12} textAnchor="middle"
-                fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
+              {/* Column headers: obvious group (left), non-obvious group (right) */}
+              <text x={COLS[0] + CW / 2} y={16} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
                 fill={isAI ? `${INDIGO_TEXT}0.885)` : `${SAGE_TEXT}0.885)`}
                 style={{ userSelect: 'none' }}>
                 {isAI ? 'AI: OBVIOUS STAKEHOLDERS (LISTED)' : 'OBVIOUS STAKEHOLDERS'}
               </text>
-              <text x={SVG_W / 2} y={108} textAnchor="middle"
-                fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
+              <text x={COLS[1] + CW / 2} y={16} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
                 fill={isAI ? 'rgba(255,255,255,0.6)' : `${SAGE_TEXT}0.895)`}
                 style={{ userSelect: 'none' }}>
                 {isAI ? 'NON-OBVIOUS (NOT SURFACED WITHOUT GUIDANCE)' : 'NON-OBVIOUS (★)'}
               </text>
 
-              {/* Cards */}
+              {/* Cards: c.row picks the column (group), c.col picks the position within it */}
               {cards.map(c => {
-                const x = COLS[c.col]
-                const y = ROWS[c.row]
+                const x = COLS[c.row]
+                const y = ROWS[c.col]
                 return isAI ? renderAICard(c, x, y) : renderHumanCard(c, x, y)
               })}
             </motion.g>
           </AnimatePresence>
 
           {/* Caption */}
-          <text x={SVG_W / 2} y={SVG_H - 4} textAnchor="middle"
-            fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.6)"
-            style={{ userSelect: 'none' }}>
-            {isAI
-              ? 'AI LISTS OBVIOUS STAKEHOLDERS QUICKLY, BUT OFTEN MISSES INFORMAL, INDIRECT, AND BLOCKING ROLES'
-              : 'HUMAN-LED MAPPING SURFACES THE FULL CAST, INCLUDING WHO AI TENDS TO OVERLOOK'}
-          </text>
+          {isAI ? (
+            <>
+              <text x={SVG_W / 2} y={CAPTION_Y1} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
+                fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
+                AI LISTS OBVIOUS STAKEHOLDERS QUICKLY,
+              </text>
+              <text x={SVG_W / 2} y={CAPTION_Y2} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
+                fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
+                BUT OFTEN MISSES INFORMAL, INDIRECT, AND BLOCKING ROLES
+              </text>
+            </>
+          ) : (
+            <text x={SVG_W / 2} y={CAPTION_Y2} textAnchor="middle"
+              fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
+              fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
+              HUMAN-LED MAPPING SURFACES THE FULL CAST, INCLUDING WHO AI TENDS TO OVERLOOK
+            </text>
+          )}
         </svg>
       </div>
 
@@ -229,8 +247,8 @@ export default function SMAIReactivated() {
               ].map(item => (
                 <div key={item.label} className="rounded-lg border p-4"
                   style={{ borderColor: `${SAGE}0.20)`, background: `${SAGE}0.05)` }}>
-                  <p className="text-[9px] font-mono uppercase tracking-widest mb-2"
-                    style={{ color: `${SAGE}0.75)` }}>{item.label}</p>
+                  <p className="text-2xs font-mono uppercase tracking-widest mb-2"
+                    style={{ color: `${SAGE_TEXT}0.85)` }}>{item.label}</p>
                   <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.60)' }}>{item.body}</p>
                 </div>
               ))}
@@ -249,8 +267,8 @@ export default function SMAIReactivated() {
               ].map(item => (
                 <div key={item.label} className="rounded-lg border p-4"
                   style={{ borderColor: `${INDIGO}0.20)`, background: `${INDIGO}0.05)` }}>
-                  <p className="text-[9px] font-mono uppercase tracking-widest mb-2"
-                    style={{ color: `${INDIGO}0.75)` }}>{item.label}</p>
+                  <p className="text-2xs font-mono uppercase tracking-widest mb-2"
+                    style={{ color: `${INDIGO_TEXT}0.85)` }}>{item.label}</p>
                   <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.60)' }}>{item.body}</p>
                 </div>
               ))}

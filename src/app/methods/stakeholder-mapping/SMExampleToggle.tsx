@@ -4,6 +4,9 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const SAGE   = 'rgba(61,107,90,'
 const INDIGO = 'rgba(99,102,241,'
+// darker indigo for text on this light background — plain INDIGO can't
+// reach 4.5:1 on white even at full opacity
+const INDIGO_DARK = 'rgba(79,70,229,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -33,7 +36,7 @@ export default function SMExampleToggle() {
                 ? t === 'ai' ? `${INDIGO}0.35)` : `${SAGE}0.35)`
                 : 'var(--color-neutral-100)'}`,
               color: tab === t
-                ? t === 'ai' ? `${INDIGO}1)` : `${SAGE}1)`
+                ? t === 'ai' ? `${INDIGO_DARK}1)` : `${SAGE}1)`
                 : 'var(--color-neutral-600)',
             }}
           >
@@ -44,7 +47,7 @@ export default function SMExampleToggle() {
 
       {/* Scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
+        <span className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
       </div>
 
@@ -59,7 +62,7 @@ export default function SMExampleToggle() {
           >
             {/* Step 1 */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${SAGE}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${SAGE}1)` }}>Step 1: Map the obvious cast</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The team began where any product team would. The obvious stakeholders were documented first:
@@ -76,7 +79,7 @@ export default function SMExampleToggle() {
 
             {/* Step 2: pushing the cast */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${SAGE}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${SAGE}1)` }}>Step 2: Push past the obvious: who else has a stake?</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
                 The facilitator kept pushing: <em>who else</em> interacts with floor cleaning, even indirectly?
@@ -109,10 +112,10 @@ export default function SMExampleToggle() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       {item.nonObvious && (
-                        <span className="text-[8px] font-semibold uppercase tracking-widest px-1.5 py-0.5 rounded"
-                          style={{ color: `${SAGE}0.85)`, background: `${SAGE}0.10)` }}>★ non-obvious</span>
+                        <span className="text-2xs font-semibold uppercase tracking-widest px-1.5 py-0.5 rounded"
+                          style={{ color: `${SAGE}0.90)`, background: `${SAGE}0.10)` }}>★ non-obvious</span>
                       )}
-                      <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-600">{item.who}</p>
+                      <p className="text-2xs font-semibold uppercase tracking-widest text-neutral-600">{item.who}</p>
                     </div>
                     <p className="text-sm text-neutral-700 leading-relaxed">{item.find}</p>
                   </div>
@@ -122,7 +125,7 @@ export default function SMExampleToggle() {
 
             {/* Step 3: the reframe */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${SAGE}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
                 style={{ color: `${SAGE}1)` }}>Step 3: The stakeholder that changed the brief</p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
                 The elderly and limited-mobility users provided the pivotal insight. When the team studied this
@@ -136,7 +139,7 @@ export default function SMExampleToggle() {
                 opportunity were both revealed by a stakeholder group nobody had planned to research.
               </p>
               <div className="rounded p-4" style={{ background: `${SAGE}0.08)`, borderLeft: `2px solid ${SAGE}0.38)` }}>
-                <p className="text-xs font-semibold mb-1" style={{ color: `${SAGE}0.85)` }}>
+                <p className="text-xs font-semibold mb-1" style={{ color: `${SAGE}0.90)` }}>
                   From stakeholder to product category
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
@@ -160,7 +163,7 @@ export default function SMExampleToggle() {
             <div className="rounded-lg px-4 py-3 border"
               style={{ background: `${INDIGO}0.05)`, borderColor: `${INDIGO}0.20)` }}>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                <span className="font-semibold" style={{ color: `${INDIGO}0.80)` }}>Hypothetical:</span>{' '}
+                <span className="font-semibold" style={{ color: `${INDIGO_DARK}0.90)` }}>Hypothetical:</span>{' '}
                 The Swiffer research was human-led. This tab imagines the team had opened with an AI-generated
                 stakeholder map instead, to show what that surfaces, and what it misses.
               </p>
@@ -169,10 +172,10 @@ export default function SMExampleToggle() {
             {/* AI output */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
               <div className="flex items-center justify-between mb-4">
-                <p className="text-[10px] font-semibold uppercase tracking-widest"
-                  style={{ color: `${INDIGO}0.90)` }}>What AI produced: a fast, organised initial cast</p>
-                <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full"
-                  style={{ background: `${INDIGO}0.10)`, color: `${INDIGO}0.80)`, border: `1px solid ${INDIGO}0.25)` }}>
+                <p className="text-2xs font-semibold uppercase tracking-widest"
+                  style={{ color: `${INDIGO_DARK}0.90)` }}>What AI produced: a fast, organised initial cast</p>
+                <span className="text-2xs font-semibold px-2 py-0.5 rounded-full"
+                  style={{ background: `${INDIGO}0.10)`, color: `${INDIGO_DARK}0.90)`, border: `1px solid ${INDIGO}0.25)` }}>
                   obvious only
                 </span>
               </div>
@@ -192,13 +195,13 @@ export default function SMExampleToggle() {
                     }}>
                     <div className="flex items-start justify-between gap-2">
                       <div>
-                        <p className="text-[9px] font-semibold uppercase tracking-widest mb-0.5"
-                          style={{ color: item.obvious ? `${INDIGO}0.80)` : 'var(--color-neutral-500)' }}>{item.role}</p>
-                        <p className="text-[8px] mb-1" style={{ color: 'var(--color-neutral-500)' }}>{item.attrs}</p>
-                        <p className="text-[10px] text-neutral-600 italic">{item.note}</p>
+                        <p className="text-2xs font-semibold uppercase tracking-widest mb-0.5"
+                          style={{ color: item.obvious ? `${INDIGO_DARK}0.90)` : 'var(--color-neutral-500)' }}>{item.role}</p>
+                        <p className="text-2xs mb-1" style={{ color: 'var(--color-neutral-500)' }}>{item.attrs}</p>
+                        <p className="text-2xs text-neutral-600 italic">{item.note}</p>
                       </div>
                       {!item.obvious && (
-                        <span className="text-[7px] font-mono uppercase px-1.5 py-0.5 rounded shrink-0"
+                        <span className="text-2xs font-mono uppercase px-1.5 py-0.5 rounded shrink-0"
                           style={{ color: 'var(--color-neutral-500)', background: 'var(--color-neutral-100)', border: '1px solid var(--color-neutral-200)' }}>
                           secondary
                         </span>
@@ -217,8 +220,8 @@ export default function SMExampleToggle() {
 
             {/* What was missing */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.18)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4"
-                style={{ color: `${INDIGO}0.80)` }}>What the AI output missed</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4"
+                style={{ color: `${INDIGO_DARK}0.90)` }}>What the AI output missed</p>
               <div className="space-y-3">
                 {[
                   {
@@ -236,7 +239,7 @@ export default function SMExampleToggle() {
                 ].map(item => (
                   <div key={item.miss} className="rounded p-3"
                     style={{ background: 'var(--color-neutral-50)', borderLeft: '2px solid var(--color-neutral-200)' }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-widest mb-1 text-neutral-500">{item.miss}</p>
+                    <p className="text-2xs font-semibold uppercase tracking-widest mb-1 text-neutral-500">{item.miss}</p>
                     <p className="text-xs text-neutral-600 leading-relaxed">{item.why}</p>
                   </div>
                 ))}
@@ -246,8 +249,8 @@ export default function SMExampleToggle() {
             {/* Honest split */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.18)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-widest mb-3"
-                  style={{ color: `${INDIGO}0.80)` }}>Where AI helped</p>
+                <p className="text-2xs font-semibold uppercase tracking-widest mb-3"
+                  style={{ color: `${INDIGO_DARK}0.90)` }}>Where AI helped</p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
                   Speed and completeness on the obvious cast. A well-structured initial list in two minutes,
                   properly attributed with power and interest scores. A good starting point for the session,
@@ -255,7 +258,7 @@ export default function SMExampleToggle() {
                 </p>
               </div>
               <div className="border rounded-lg p-5 border-amber-200 bg-amber-50">
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-700 mb-3">
+                <p className="text-2xs font-semibold uppercase tracking-widest text-amber-700 mb-3">
                   Where it needed human judgment
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">

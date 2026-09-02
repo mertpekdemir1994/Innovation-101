@@ -120,7 +120,7 @@ function attitudeColor(a: Attitude): string {
 function AttrChip({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
   return (
     <span
-      className="text-[8px] font-mono uppercase tracking-wide px-1.5 py-0.5 rounded"
+      className="text-2xs font-mono uppercase tracking-wide px-1.5 py-0.5 rounded"
       style={{
         background: highlight ? `${SAGE}0.15)` : 'rgba(255,255,255,0.06)',
         color: highlight ? `${SAGE_TEXT}0.979)` : 'rgba(255,255,255,0.71)',
@@ -147,13 +147,13 @@ export default function SMInteractive() {
     <div className="w-full">
       {/* Sort controls */}
       <div className="flex flex-wrap gap-2 mb-6">
-        <span className="text-[9px] font-semibold uppercase tracking-widest self-center mr-1"
+        <span className="text-2xs font-semibold uppercase tracking-widest self-center mr-1"
           style={{ color: 'rgba(255,255,255,0.65)' }}>SORT BY</span>
         {(Object.keys(SORT_LABELS) as SortMode[]).map(mode => (
           <button
             key={mode}
             onClick={() => { setSort(mode); setSelected(null) }}
-            className="px-3 py-1.5 rounded-full text-[9px] font-semibold uppercase tracking-widest transition-colors"
+            className="px-3 py-1.5 rounded-full text-2xs font-semibold uppercase tracking-widest transition-colors"
             style={{
               background: sort === mode ? `${SAGE}0.14)` : 'rgba(255,255,255,0.05)',
               border: `1px solid ${sort === mode ? `${SAGE}0.38)` : 'rgba(255,255,255,0.10)'}`,
@@ -184,9 +184,9 @@ export default function SMInteractive() {
                     <div className="flex items-start gap-2">
                       <div style={{ width: 2, minHeight: 20, marginTop: 2, borderRadius: 1, background: `${SAGE}0.50)`, flexShrink: 0 }} />
                       <div>
-                        <span className="font-mono text-[9px] uppercase tracking-widest mr-2"
+                        <span className="font-mono text-2xs uppercase tracking-widest mr-2"
                           style={{ color: `${SAGE_TEXT}0.969)` }}>{group.label}</span>
-                        <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.675)' }}>{group.sublabel}</span>
+                        <span className="text-2xs" style={{ color: 'rgba(255,255,255,0.675)' }}>{group.sublabel}</span>
                       </div>
                     </div>
                   </motion.div>
@@ -216,22 +216,22 @@ export default function SMInteractive() {
                     >
                       {/* Non-obvious badge */}
                       {s.nonObvious && (
-                        <div className="text-[7px] font-mono uppercase tracking-widest mb-1"
+                        <div className="text-2xs font-mono uppercase tracking-widest mb-1"
                           style={{ color: `${SAGE_TEXT}0.926)` }}>★ non-obvious</div>
                       )}
                       {/* Name */}
-                      <p className="font-mono text-[9px] uppercase tracking-widest mb-0.5 font-semibold"
+                      <p className="font-mono text-2xs uppercase tracking-widest mb-0.5 font-semibold"
                         style={{ color: s.nonObvious ? `${SAGE_TEXT}0.984)` : 'rgba(255,255,255,0.80)' }}>
                         {s.name}
                       </p>
                       {/* Role */}
-                      <p className="text-[9px] mb-2" style={{ color: 'rgba(255,255,255,0.675)' }}>{s.role}</p>
+                      <p className="text-2xs mb-2" style={{ color: 'rgba(255,255,255,0.675)' }}>{s.role}</p>
                       {/* Attribute chips */}
                       <div className="flex flex-wrap gap-1">
                         <AttrChip label="PWR" value={s.power} highlight={sort === 'power-interest' && s.power === 'high'} />
                         <AttrChip label="INT" value={s.interest} highlight={sort === 'power-interest' && s.interest === 'high'} />
                         <span
-                          className="text-[8px] font-mono uppercase tracking-wide px-1.5 py-0.5 rounded"
+                          className="text-2xs font-mono uppercase tracking-wide px-1.5 py-0.5 rounded"
                           style={{
                             color: attitudeColor(s.attitude),
                             background: s.attitude === 'blocker' ? 'rgba(245,158,11,0.10)' : `${SAGE}0.08)`,
@@ -266,7 +266,7 @@ export default function SMInteractive() {
           >
             <div className="flex items-start justify-between gap-4 mb-3">
               <div>
-                <p className="font-mono text-[9px] uppercase tracking-widest mb-1"
+                <p className="font-mono text-2xs uppercase tracking-widest mb-1"
                   style={{ color: `${SAGE_TEXT}0.916)` }}>SELECTED STAKEHOLDER</p>
                 <p className="font-mono text-xs font-semibold uppercase tracking-widest"
                   style={{ color: selectedStakeholder.nonObvious ? `${SAGE_TEXT}1)` : 'rgba(255,255,255,0.90)' }}>
@@ -284,7 +284,7 @@ export default function SMInteractive() {
             </p>
             {selectedStakeholder.nonObvious && (
               <div className="mt-3 pt-3 border-t" style={{ borderColor: `${SAGE}0.18)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: `${SAGE_TEXT}0.926)` }}>
+                <p className="text-2xs font-mono uppercase tracking-widest" style={{ color: `${SAGE_TEXT}0.926)` }}>
                   ★ NON-OBVIOUS, teams frequently omit this stakeholder from initial research plans
                 </p>
               </div>
@@ -298,7 +298,7 @@ export default function SMInteractive() {
             className="mt-5 rounded-lg p-4 border text-center"
             style={{ borderColor: 'rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}
           >
-            <p className="text-[9px] font-mono uppercase tracking-widest"
+            <p className="text-2xs font-mono uppercase tracking-widest"
               style={{ color: 'rgba(255,255,255,0.625)' }}>
               {sort === 'cast'
                 ? 'SELECT A CARD TO SEE FULL ATTRIBUTES, THEN SORT THE CAST BY POWER, ATTITUDE, OR INFLUENCE'

@@ -6,13 +6,19 @@ const SAGE = 'rgba(61,107,90,'
 const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
 const SVG_W = 700
-const SVG_H = 258
-const CW = 126
-const CH = 78
+const SVG_H = 480
+const CW = 300
+const CH = 96
 
-// Four-column grid, centred in 700px
-const COLS = [68, 214, 360, 506]
-const ROWS = [20, 114]
+// Two thematic columns (obvious / non-obvious), four cards stacked in each.
+// c.row picks the column (which group), c.col picks the position within it.
+const COLS = [25, 375]
+const ROW_TOP = 30, ROW_GAP = 106
+const ROWS = [ROW_TOP, ROW_TOP + ROW_GAP, ROW_TOP + ROW_GAP * 2, ROW_TOP + ROW_GAP * 3]
+
+// Card-internal vertical offsets: star/name/role near the top, a divider,
+// then the two attribute lines, spaced for 11pt type throughout.
+const STAR_DY = 16, NAME_DY = 22, ROLE_DY = 40, DIV_DY = 48, ATTR1_DY = 64, ATTR2_DY = 82
 
 type Attitude = 'supporter' | 'neutral' | 'blocker'
 type Level = 'low' | 'medium' | 'high'
@@ -70,30 +76,30 @@ export default function SMEstablishing() {
           </filter>
         </defs>
 
-        {/* Row 0 label */}
+        {/* Column 0 header: the obvious group */}
         <motion.text
-          x={SVG_W / 2} y={12} textAnchor="middle"
-          fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
+          x={COLS[0] + CW / 2} y={16} textAnchor="middle"
+          fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
           fill="rgba(255,255,255,0.61)"
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.4, delay: prefersReduced ? 0 : 0.05 }}
           style={{ userSelect: 'none' }}
         >OBVIOUS STAKEHOLDERS</motion.text>
 
-        {/* Row 1 label */}
+        {/* Column 1 header: the non-obvious group */}
         <motion.text
-          x={SVG_W / 2} y={108} textAnchor="middle"
-          fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
+          x={COLS[1] + CW / 2} y={16} textAnchor="middle"
+          fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
           fill={`${SAGE_TEXT}0.905)`}
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.4, delay: prefersReduced ? 0 : 0.32 }}
           style={{ userSelect: 'none' }}
         >NON-OBVIOUS (★)</motion.text>
 
-        {/* Cards */}
+        {/* Cards: c.row picks the column (group), c.col picks the position within it */}
         {CARDS.map((c, i) => {
-          const x = COLS[c.col]
-          const y = ROWS[c.row]
+          const x = COLS[c.row]
+          const y = ROWS[c.col]
           const delay = prefersReduced ? 0 : i * 0.065 + 0.10
 
           return (
@@ -121,38 +127,38 @@ export default function SMEstablishing() {
 
               {/* Non-obvious star */}
               {c.nonObvious && (
-                <text x={x + CW - 7} y={y + 11} textAnchor="end"
-                  fontSize="6" fontFamily="system-ui, sans-serif"
+                <text x={x + CW - 10} y={y + STAR_DY} textAnchor="end"
+                  fontSize="11" fontFamily="system-ui, sans-serif"
                   fill={`${SAGE_TEXT}0.948)`}
                   style={{ userSelect: 'none' }}>★</text>
               )}
 
               {/* Name */}
-              <text x={x + CW / 2} y={y + 17} textAnchor="middle"
-                fontSize="6.5" fontFamily="system-ui, sans-serif"
+              <text x={x + CW / 2} y={y + NAME_DY} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif"
                 fontWeight="600" letterSpacing="0.09em"
                 fill={c.nonObvious ? `${SAGE_TEXT}0.983)` : 'rgba(255,255,255,0.78)'}
                 style={{ userSelect: 'none' }}>{c.name}</text>
 
               {/* Role */}
-              <text x={x + CW / 2} y={y + 28} textAnchor="middle"
-                fontSize="5" fontFamily="system-ui, sans-serif"
+              <text x={x + CW / 2} y={y + ROLE_DY} textAnchor="middle"
+                fontSize="11" fontFamily="system-ui, sans-serif"
                 fill="rgba(255,255,255,0.675)"
                 style={{ userSelect: 'none' }}>{c.role}</text>
 
               {/* Divider */}
-              <line x1={x + 8} y1={y + 35} x2={x + CW - 8} y2={y + 35}
+              <line x1={x + 8} y1={y + DIV_DY} x2={x + CW - 8} y2={y + DIV_DY}
                 stroke="rgba(255,255,255,0.08)" strokeWidth={0.7} />
 
               {/* Attributes row 1 */}
-              <text x={x + 8} y={y + 46} fontSize="4.8" fontFamily="system-ui, sans-serif"
+              <text x={x + 8} y={y + ATTR1_DY} fontSize="11" fontFamily="system-ui, sans-serif"
                 letterSpacing="0.05em" fill="rgba(255,255,255,0.7)"
                 style={{ userSelect: 'none' }}>
                 {`PWR ${c.power.slice(0, 3).toUpperCase()}  ·  INT ${c.interest.slice(0, 3).toUpperCase()}`}
               </text>
 
               {/* Attributes row 2 */}
-              <text x={x + 8} y={y + 58} fontSize="4.8" fontFamily="system-ui, sans-serif"
+              <text x={x + 8} y={y + ATTR2_DY} fontSize="11" fontFamily="system-ui, sans-serif"
                 letterSpacing="0.05em" fill={attitudeColor(c.attitude)}
                 style={{ userSelect: 'none' }}>
                 {`${c.attitude.toUpperCase()}  ·  INFL ${c.influence.slice(0, 3).toUpperCase()}`}
@@ -163,8 +169,8 @@ export default function SMEstablishing() {
 
         {/* Caption */}
         <motion.text
-          x={SVG_W / 2} y={SVG_H - 4} textAnchor="middle"
-          fontSize="4.5" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
+          x={SVG_W / 2} y={SVG_H - 12} textAnchor="middle"
+          fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.08em"
           fill="rgba(255,255,255,0.6)"
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.4, delay: prefersReduced ? 0 : 0.65 }}
