@@ -26,7 +26,7 @@ type EntryDef = {
 }
 
 const ENTRIES: EntryDef[] = [
-  { id: 0, x: 92,  day: 'DAY 1',  time: '7:30 AM',  context: 'ROUTINE',   location: 'Home',       emotion: 'NEUTRAL',    pattern: false, cardY: 116 },
+  { id: 0, x: 92,  day: 'DAY 1',  time: '7:30 AM',  context: 'ROUTINE',   location: 'Home',       emotion: 'NEUTRAL',    pattern: false, cardY: 100 },
   { id: 1, x: 186, day: 'DAY 3',  time: '1:15 PM',  context: 'WORK DESK', location: 'Work',       emotion: 'FRUSTRATED', pattern: true,  cardY: 72  },
   { id: 2, x: 280, day: 'DAY 5',  time: '9:00 PM',  context: 'EVENING',   location: 'Home',       emotion: 'SATISFIED',  pattern: false, cardY: 103 },
   { id: 3, x: 378, day: 'DAY 7',  time: '7:45 PM',  context: 'OUT',       location: 'Restaurant', emotion: 'AVOIDANT',   pattern: true,  cardY: 76  },
@@ -43,7 +43,7 @@ export default function DSEstablishing() {
   return (
     <div className="w-full" aria-hidden="true">
       <svg ref={ref} viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-        preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}>
+        preserveAspectRatio="xMidYMid meet" style={{ margin: '0 auto', display: 'block' }}>
         <defs>
           <filter id="ds-est-glow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
