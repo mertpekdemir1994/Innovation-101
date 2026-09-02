@@ -59,7 +59,7 @@ export default function MVPEstablishing() {
     <div className="w-full"
       aria-label="Two products, one shared core, one shared cut pile. Center: SHARED CORE with five feature tiles (Core Value, Core Action, Core Data, Core Feature, Core Flow) identical in both products. Left: MVP optimization badge, Tuned for Learning: fast, cheap, honest signal from the market. Right: MLP optimization badge, Tuned for Love: craft, resonance, users become advocates. Below: SHARED CUT PILE, five non-core features both products ruthlessly discarded. The scope is identical; only the optimization of the core differs. An MLP is not bigger than an MVP.">
       <svg ref={ref} viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
-        preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}>
+        preserveAspectRatio="xMidYMid meet" style={{ margin: '0 auto', display: 'block' }}>
         <defs>
           <filter id="mvpe-glow" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur" />
