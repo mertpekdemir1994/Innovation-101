@@ -30,14 +30,14 @@ type TypeId =
 const TILES: { id: TypeId; cat: 'config' | 'offering' | 'exp'; x: number; lines: string[] }[] = [
   { id: 'profit-model',        cat: 'config',   x: 16,  lines: ['PROFIT', 'MODEL'] },
   { id: 'network',             cat: 'config',   x: 80,  lines: ['NETWORK'] },
-  { id: 'structure',           cat: 'config',   x: 144, lines: ['STRUCTURE'] },
+  { id: 'structure',           cat: 'config',   x: 144, lines: ['STRUCT.'] },
   { id: 'process',             cat: 'config',   x: 208, lines: ['PROCESS'] },
   { id: 'product-performance', cat: 'offering', x: 288, lines: ['PRODUCT', 'PERF.'] },
   { id: 'product-system',      cat: 'offering', x: 352, lines: ['PRODUCT', 'SYSTEM'] },
   { id: 'service',             cat: 'exp',      x: 432, lines: ['SERVICE'] },
   { id: 'channel',             cat: 'exp',      x: 496, lines: ['CHANNEL'] },
   { id: 'brand',               cat: 'exp',      x: 560, lines: ['BRAND'] },
-  { id: 'customer-engagement', cat: 'exp',      x: 624, lines: ['CUSTOMER', 'ENGAGE.'] },
+  { id: 'customer-engagement', cat: 'exp',      x: 624, lines: ['CUST.', 'ENGAGE.'] },
 ]
 
 function getSelectedCats(sel: Set<TypeId>) {
@@ -66,7 +66,7 @@ function getMeter(count: number, catCount: number, allCats: boolean): MeterInfo 
     state: 'none', pct: 0,
     fillColor: 'transparent',
     stateLabel: '',
-    stateColor: 'rgba(255,255,255,0.28)',
+    stateColor: 'rgba(255,255,255,0.50)',
     description: 'Select types below to build your company\'s innovation profile.',
     srText: '0 types selected. Select types to begin.',
   }
@@ -95,7 +95,7 @@ function getMeter(count: number, catCount: number, allCats: boolean): MeterInfo 
       state: 'strong', pct,
       fillColor: `${PLUM}0.82)`,
       stateLabel: `STRONGLY DEFENSIBLE: ${count} TYPES`,
-      stateColor: `${PLUM}0.95)`,
+      stateColor: `${PLUM_TEXT}0.95)`,
       description: `To copy this, a competitor must replicate ${count} distinct innovations simultaneously, a genuinely hard target. Add at least one type from each of the three categories to make this the hardest possible position to copy.`,
       srText: `${count} types selected across ${catCount} categories. Strongly defensible: an interlocking system.`,
     }
@@ -105,7 +105,7 @@ function getMeter(count: number, catCount: number, allCats: boolean): MeterInfo 
     state: 'bonus', pct,
     fillColor: `${PLUM}1)`,
     stateLabel: `HARDEST TO COPY: ${count} TYPES / ALL 3 CATEGORIES`,
-    stateColor: `${PLUM}1)`,
+    stateColor: `${PLUM_TEXT}1)`,
     description: `Breadth across Configuration, Offering, and Experience makes this system hardest of all to replicate. A competitor must rebuild innovations in every dimension of the business model simultaneously: internal operations, the offering itself, and the customer-facing experience.`,
     srText: `${count} types selected across all three categories. Hardest to copy, the strongest possible combined position.`,
   }
@@ -133,7 +133,7 @@ export default function TTIDefensibilityBuilder() {
   const allCats = cats.size >= 3
   const meter   = getMeter(count, cats.size, allCats)
 
-  const SVG_H = 170
+  const SVG_H = 182
 
   const trMeter = prefersReduced
     ? ({ duration: 0 } as const)
@@ -151,11 +151,14 @@ export default function TTIDefensibilityBuilder() {
     if (count > 0)        return `${PLUM}0.16)`
     return `${PLUM}0.65)`
   }
+  // plain PLUM fails 4.5:1 on this dark background at every opacity used here
+  // (even at 1.0) — use the brightened PLUM_TEXT variant instead, with a
+  // floor of 0.85 so even the "dimmed" tier stays compliant
   function tileTextFill(id: TypeId) {
-    if (selected.has(id)) return `${PLUM}1.0)`
-    if (id === hovered)   return `${PLUM}0.88)`
-    if (count > 0)        return `${PLUM}0.24)`
-    return `${PLUM}0.90)`
+    if (selected.has(id)) return `${PLUM_TEXT}1.0)`
+    if (id === hovered)   return `${PLUM_TEXT}0.95)`
+    if (count > 0)        return `${PLUM_TEXT}0.85)`
+    return `${PLUM_TEXT}0.90)`
   }
 
   return (
@@ -180,9 +183,9 @@ export default function TTIDefensibilityBuilder() {
               return (
                 <span key={cat} style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '6.5px',
+                  fontSize: '11px',
                   letterSpacing: '0.08em',
-                  color: has ? `${PLUM}0.85)` : 'rgba(255,255,255,0.22)',
+                  color: has ? `${PLUM_TEXT}0.85)` : 'rgba(255,255,255,0.50)',
                   transition: prefersReduced ? 'none' : 'color 0.25s',
                 }}>
                   {label} {has ? '✓' : '·'}
@@ -213,10 +216,10 @@ export default function TTIDefensibilityBuilder() {
 
         {/* Scale endpoint labels */}
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '6px' }}>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '6px', letterSpacing: '0.08em', color: `${AMBER}0.50)` }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.08em', color: `${AMBER}0.90)` }}>
             EASILY COPIED
           </span>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '6px', letterSpacing: '0.08em', color: `${PLUM}0.55)` }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.08em', color: `${PLUM_TEXT}0.85)` }}>
             GENUINELY DEFENSIBLE
           </span>
         </div>
@@ -224,7 +227,7 @@ export default function TTIDefensibilityBuilder() {
         {/* State description */}
         <motion.p
           style={{ marginTop: '12px', fontSize: '14px', lineHeight: 1.65 }}
-          animate={{ color: count === 0 ? 'rgba(255,255,255,0.28)' : 'rgba(255,255,255,0.62)' }}
+          animate={{ color: count === 0 ? 'rgba(255,255,255,0.50)' : 'rgba(255,255,255,0.62)' }}
           transition={prefersReduced ? { duration: 0 } : { duration: 0.25 }}
         >
           {meter.description}
@@ -244,7 +247,7 @@ export default function TTIDefensibilityBuilder() {
               borderRadius: '6px',
             }}
           >
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', letterSpacing: '0.12em', color: `${PLUM}0.88)`, fontWeight: 600 }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.12em', color: `${PLUM_TEXT}0.90)`, fontWeight: 600 }}>
               WELL-ROUNDED: BREADTH ACROSS ALL THREE CATEGORIES
             </p>
           </motion.div>
@@ -287,7 +290,7 @@ export default function TTIDefensibilityBuilder() {
             <text
               x={cat.cx} y={CAT_LABEL_Y}
               textAnchor="middle"
-              fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
               fill={cats.has(cat.id) ? `${PLUM_TEXT}0.975)` : `${PLUM_TEXT}0.895)`}
               style={{ userSelect: 'none', transition: 'fill 0.25s' }}
             >
@@ -331,7 +334,7 @@ export default function TTIDefensibilityBuilder() {
                 <motion.text
                   x={cx} y={TILE_CY}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                   style={{ userSelect: 'none', pointerEvents: 'none' }}
                   animate={{ fill: tileTextFill(tile.id) }}
                   transition={{ duration: prefersReduced ? 0 : 0.20 }}
@@ -341,9 +344,9 @@ export default function TTIDefensibilityBuilder() {
               ) : (
                 <>
                   <motion.text
-                    x={cx} y={TILE_CY - 8}
+                    x={cx} y={TILE_CY - 9}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                     style={{ userSelect: 'none', pointerEvents: 'none' }}
                     animate={{ fill: tileTextFill(tile.id) }}
                     transition={{ duration: prefersReduced ? 0 : 0.20 }}
@@ -351,9 +354,9 @@ export default function TTIDefensibilityBuilder() {
                     {tile.lines[0]}
                   </motion.text>
                   <motion.text
-                    x={cx} y={TILE_CY + 8}
+                    x={cx} y={TILE_CY + 9}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                     style={{ userSelect: 'none', pointerEvents: 'none' }}
                     animate={{ fill: tileTextFill(tile.id) }}
                     transition={{ duration: prefersReduced ? 0 : 0.20 }}
@@ -365,9 +368,9 @@ export default function TTIDefensibilityBuilder() {
 
               {isSel && (
                 <text
-                  x={tile.x + TILE_W - 8} y={TILE_Y + 13}
+                  x={tile.x + TILE_W - 10} y={TILE_Y + 14}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="8" fontFamily="var(--font-mono)"
+                  fontSize="11" fontFamily="var(--font-mono)"
                   fill={`${PLUM_TEXT}0.983)`}
                   style={{ userSelect: 'none', pointerEvents: 'none' }}
                 >
@@ -383,7 +386,7 @@ export default function TTIDefensibilityBuilder() {
           <text
             x={SVG_W / 2} y={SVG_H - 4}
             textAnchor="middle"
-            fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill="rgba(255,255,255,0.61)"
             style={{ userSelect: 'none' }}
           >

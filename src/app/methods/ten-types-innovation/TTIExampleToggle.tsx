@@ -5,6 +5,10 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 const PLUM   = 'rgba(107,74,119,'
 const AMBER  = 'rgba(245,158,11,'
 const INDIGO = 'rgba(99,102,241,'
+// Darker variants for text on this light background: plain AMBER and INDIGO
+// fail 4.5:1 on white even at full opacity.
+const AMBER_DARK  = 'rgba(180,83,9,'
+const INDIGO_DARK = 'rgba(79,70,229,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -32,7 +36,7 @@ export default function TTIExampleToggle() {
                 : 'transparent',
               border: `1px solid ${tab === t ? (t === 'ai' ? `${INDIGO}0.35)` : `${PLUM}0.35)`) : 'var(--color-neutral-100)'}`,
               color: tab === t
-                ? t === 'ai' ? `${INDIGO}1)` : `${PLUM}1)`
+                ? t === 'ai' ? `${INDIGO_DARK}1)` : `${PLUM}1)`
                 : 'var(--color-neutral-600)',
             }}
           >
@@ -43,7 +47,7 @@ export default function TTIExampleToggle() {
 
       {/* Scenario */}
       <div className="rounded-lg px-4 py-3 mb-6" style={{ background: 'var(--color-neutral-100)' }}>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
+        <span className="text-2xs font-semibold uppercase tracking-widest text-neutral-500 mr-2">Shared scenario</span>
         <span className="text-sm text-neutral-600">{SCENARIO}</span>
       </div>
 
@@ -58,7 +62,7 @@ export default function TTIExampleToggle() {
           >
             {/* The analysis */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${PLUM}0.22)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-4" style={{ color: `${PLUM}1)` }}>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-4" style={{ color: `${PLUM}1)` }}>
                 What the 10 Types revealed
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-4">
@@ -84,8 +88,8 @@ export default function TTIExampleToggle() {
                     }}
                   >
                     <p
-                      className="text-[9px] font-semibold uppercase tracking-wider mb-1"
-                      style={{ color: item.type === 'PRODUCT PERFORMANCE' ? `rgba(245,158,11,0.65)` : `${PLUM}0.72)` }}
+                      className="text-2xs font-semibold uppercase tracking-wider mb-1"
+                      style={{ color: item.type === 'PRODUCT PERFORMANCE' ? `${AMBER_DARK}1)` : `${PLUM}0.90)` }}
                     >
                       {item.type}
                     </p>
@@ -97,7 +101,7 @@ export default function TTIExampleToggle() {
 
             {/* The combination effect */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${PLUM}0.28)`, background: `${PLUM}0.04)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-3" style={{ color: `${PLUM}1)` }}>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-3" style={{ color: `${PLUM}1)` }}>
                 Why the combination was so hard to copy
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed mb-3">
@@ -113,7 +117,7 @@ export default function TTIExampleToggle() {
 
             {/* Key learning */}
             <div className="rounded-lg p-5 border" style={{ background: `${PLUM}0.06)`, borderColor: `${PLUM}0.18)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-2" style={{ color: `${PLUM}1)` }}>Why the framework mattered</p>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-2" style={{ color: `${PLUM}1)` }}>Why the framework mattered</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 Reading the advantage across all ten types, rather than fixating on the coffee, is what revealed why it was
                 so hard to beat, and what a would-be competitor would actually have to replicate. The insight came from
@@ -132,12 +136,12 @@ export default function TTIExampleToggle() {
             {/* What AI produced */}
             <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.22)` }}>
               <div className="flex items-center justify-between mb-4">
-                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: `${INDIGO}0.90)` }}>
+                <p className="text-2xs font-semibold uppercase tracking-widest" style={{ color: `${INDIGO_DARK}0.90)` }}>
                   What AI produced
                 </p>
                 <span
-                  className="text-[9px] font-semibold px-2 py-0.5 rounded-full"
-                  style={{ background: `${INDIGO}0.10)`, color: `${INDIGO}0.80)`, border: `1px solid ${INDIGO}0.25)` }}
+                  className="text-2xs font-semibold px-2 py-0.5 rounded-full"
+                  style={{ background: `${INDIGO}0.10)`, color: `${INDIGO_DARK}0.90)`, border: `1px solid ${INDIGO}0.25)` }}
                 >
                   Ten columns populated
                 </span>
@@ -160,10 +164,10 @@ export default function TTIExampleToggle() {
                   { type: 'Cust. Engagement', idea: 'Loyalty program' },
                 ].map((item, i) => (
                   <div key={i} className="rounded p-2 text-center" style={{ background: `${INDIGO}0.06)`, border: `1px solid ${INDIGO}0.14)` }}>
-                    <p className="text-[8px] uppercase tracking-wider mb-1" style={{ color: `${INDIGO}0.55)` }}>
+                    <p className="text-2xs uppercase tracking-wider mb-1" style={{ color: `${INDIGO_DARK}0.90)` }}>
                       {item.type}
                     </p>
-                    <p className="text-[9px] font-semibold text-neutral-600">{item.idea}</p>
+                    <p className="text-2xs font-semibold text-neutral-600">{item.idea}</p>
                   </div>
                 ))}
               </div>
@@ -172,7 +176,7 @@ export default function TTIExampleToggle() {
             {/* What was missing */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="border rounded-lg p-5" style={{ borderColor: `${INDIGO}0.18)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-widest mb-3" style={{ color: `${INDIGO}0.80)` }}>
+                <p className="text-2xs font-semibold uppercase tracking-widest mb-3" style={{ color: `${INDIGO_DARK}0.90)` }}>
                   As breadth: useful
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
@@ -181,7 +185,7 @@ export default function TTIExampleToggle() {
                 </p>
               </div>
               <div className="border rounded-lg p-5 border-amber-200 bg-amber-50">
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-700 mb-3">
+                <p className="text-2xs font-semibold uppercase tracking-widest text-amber-700 mb-3">
                   As strategy: the combination was missing
                 </p>
                 <p className="text-xs text-neutral-700 leading-relaxed">
@@ -194,7 +198,7 @@ export default function TTIExampleToggle() {
 
             {/* Honest readout */}
             <div className="rounded-lg p-5 border" style={{ background: `${INDIGO}0.04)`, borderColor: `${INDIGO}0.18)` }}>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-2" style={{ color: `${INDIGO}0.80)` }}>
+              <p className="text-2xs font-semibold uppercase tracking-widest mb-2" style={{ color: `${INDIGO_DARK}0.90)` }}>
                 The honest readout
               </p>
               <p className="text-sm text-neutral-700 leading-relaxed">

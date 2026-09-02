@@ -26,14 +26,14 @@ const CATEGORIES = [
 const TILES = [
   { id: 'profit-model',        cat: 'config',   x: 16,  lines: ['PROFIT', 'MODEL'] },
   { id: 'network',             cat: 'config',   x: 80,  lines: ['NETWORK'] },
-  { id: 'structure',           cat: 'config',   x: 144, lines: ['STRUCTURE'] },
+  { id: 'structure',           cat: 'config',   x: 144, lines: ['STRUCT.'] },
   { id: 'process',             cat: 'config',   x: 208, lines: ['PROCESS'] },
   { id: 'product-performance', cat: 'offering', x: 288, lines: ['PRODUCT', 'PERF.'],    noteAbove: 'over-used' },
   { id: 'product-system',      cat: 'offering', x: 352, lines: ['PRODUCT', 'SYSTEM'] },
   { id: 'service',             cat: 'exp',      x: 432, lines: ['SERVICE'] },
   { id: 'channel',             cat: 'exp',      x: 496, lines: ['CHANNEL'] },
   { id: 'brand',               cat: 'exp',      x: 560, lines: ['BRAND'] },
-  { id: 'customer-engagement', cat: 'exp',      x: 624, lines: ['CUSTOMER', 'ENGAGE.'] },
+  { id: 'customer-engagement', cat: 'exp',      x: 624, lines: ['CUST.', 'ENGAGE.'] },
 ]
 
 export default function TTIEstablishing() {
@@ -93,7 +93,7 @@ export default function TTIEstablishing() {
             <text
               x={cat.cx} y={CAT_LABEL_Y}
               textAnchor="middle"
-              fontSize="8.5"
+              fontSize="11"
               fontFamily="var(--font-mono)"
               letterSpacing="0.12em"
               fill={`${PLUM_TEXT}0.958)`}
@@ -133,9 +133,9 @@ export default function TTIEstablishing() {
               {/* Subtle over-used marker (non-color-coded, text only) */}
               {tile.noteAbove && (
                 <text
-                  x={cx} y={TILE_Y - 6}
+                  x={cx} y={TILE_Y - 14}
                   textAnchor="middle"
-                  fontSize="5.5"
+                  fontSize="11"
                   fontFamily="var(--font-mono)"
                   letterSpacing="0.08em"
                   fill="rgba(255,255,255,0.64)"
@@ -149,7 +149,7 @@ export default function TTIEstablishing() {
                 <text
                   x={cx} y={TILE_CY}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="8.5" fontFamily="var(--font-mono)"
+                  fontSize="11" fontFamily="var(--font-mono)"
                   letterSpacing="0.10em"
                   fill={`${PLUM_TEXT}0.99)`}
                   style={{ userSelect: 'none' }}
@@ -159,9 +159,9 @@ export default function TTIEstablishing() {
               ) : (
                 <>
                   <text
-                    x={cx} y={TILE_CY - 8}
+                    x={cx} y={TILE_CY - 9}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize="8.5" fontFamily="var(--font-mono)"
+                    fontSize="11" fontFamily="var(--font-mono)"
                     letterSpacing="0.10em"
                     fill={`${PLUM_TEXT}0.99)`}
                     style={{ userSelect: 'none' }}
@@ -169,9 +169,9 @@ export default function TTIEstablishing() {
                     {tile.lines[0]}
                   </text>
                   <text
-                    x={cx} y={TILE_CY + 8}
+                    x={cx} y={TILE_CY + 9}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize="8.5" fontFamily="var(--font-mono)"
+                    fontSize="11" fontFamily="var(--font-mono)"
                     letterSpacing="0.10em"
                     fill={`${PLUM_TEXT}0.99)`}
                     style={{ userSelect: 'none' }}
@@ -198,7 +198,7 @@ export default function TTIEstablishing() {
           <text
             x={16} y={SVG_H - 7}
             textAnchor="start"
-            fontSize="6.5" fontFamily="var(--font-mono)"
+            fontSize="11" fontFamily="var(--font-mono)"
             letterSpacing="0.10em"
             fill="rgba(255,255,255,0.61)"
             style={{ userSelect: 'none' }}
@@ -208,7 +208,7 @@ export default function TTIEstablishing() {
           <text
             x={684} y={SVG_H - 7}
             textAnchor="end"
-            fontSize="6.5" fontFamily="var(--font-mono)"
+            fontSize="11" fontFamily="var(--font-mono)"
             letterSpacing="0.10em"
             fill="rgba(255,255,255,0.61)"
             style={{ userSelect: 'none' }}

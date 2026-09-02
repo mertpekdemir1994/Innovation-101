@@ -26,15 +26,15 @@ const CATEGORIES = [
 // No overUsed flag: all tiles are neutral in this section
 const TILES = [
   { id: 'profit-model',        cat: 'config',   x: 16,  lines: ['PROFIT', 'MODEL'],      aiIdea: ['TRY', 'SUBSCR.'] },
-  { id: 'network',             cat: 'config',   x: 80,  lines: ['NETWORK'],              aiIdea: ['ADD', 'PARTNERS'] },
-  { id: 'structure',           cat: 'config',   x: 144, lines: ['STRUCTURE'],            aiIdea: ['REORGANIZE'] },
-  { id: 'process',             cat: 'config',   x: 208, lines: ['PROCESS'],              aiIdea: ['GO AGILE'] },
-  { id: 'product-performance', cat: 'offering', x: 288, lines: ['PRODUCT', 'PERF.'],    aiIdea: ['BETTER', 'FEATURES'] },
-  { id: 'product-system',      cat: 'offering', x: 352, lines: ['PRODUCT', 'SYSTEM'],   aiIdea: ['BUILD', 'PLATFORM'] },
+  { id: 'network',             cat: 'config',   x: 80,  lines: ['NETWORK'],              aiIdea: ['ADD', 'PARTNER'] },
+  { id: 'structure',           cat: 'config',   x: 144, lines: ['STRUCT.'],              aiIdea: ['REORG.'] },
+  { id: 'process',             cat: 'config',   x: 208, lines: ['PROCESS'],              aiIdea: ['AGILE'] },
+  { id: 'product-performance', cat: 'offering', x: 288, lines: ['PRODUCT', 'PERF.'],    aiIdea: ['BETTER', 'FEATURE'] },
+  { id: 'product-system',      cat: 'offering', x: 352, lines: ['PRODUCT', 'SYSTEM'],   aiIdea: ['BUILD', 'PLATF.'] },
   { id: 'service',             cat: 'exp',      x: 432, lines: ['SERVICE'],              aiIdea: ['ADD', 'SUPPORT'] },
   { id: 'channel',             cat: 'exp',      x: 496, lines: ['CHANNEL'],             aiIdea: ['SELL', 'DIRECT'] },
-  { id: 'brand',               cat: 'exp',      x: 560, lines: ['BRAND'],               aiIdea: ['SUSTAIN-', 'ABILITY'] },
-  { id: 'customer-engagement', cat: 'exp',      x: 624, lines: ['CUSTOMER', 'ENGAGE.'], aiIdea: ['LOYALTY', 'PROG.'] },
+  { id: 'brand',               cat: 'exp',      x: 560, lines: ['BRAND'],               aiIdea: ['SUSTAIN', 'ABLE'] },
+  { id: 'customer-engagement', cat: 'exp',      x: 624, lines: ['CUST.', 'ENGAGE.'], aiIdea: ['LOYALTY', 'PROG.'] },
 ]
 
 type Mode = 'human' | 'ai'
@@ -60,7 +60,7 @@ export default function TTIAIReactivated() {
                 background: mode === m
                   ? m === 'ai' ? `${INDIGO}0.25)` : `${PLUM}0.25)`
                   : 'transparent',
-                color: mode === m ? '#fff' : 'rgba(255,255,255,0.38)',
+                color: mode === m ? '#fff' : 'rgba(255,255,255,0.50)',
                 border: `1px solid ${mode === m ? (m === 'ai' ? `${INDIGO}0.55)` : `${PLUM}0.55)`) : 'transparent'}`,
               }}
             >
@@ -105,7 +105,7 @@ export default function TTIAIReactivated() {
             <text
               x={cat.cx} y={CAT_LABEL_Y}
               textAnchor="middle"
-              fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
               fill={isAI ? `${INDIGO_TEXT}0.916)` : `${PLUM_TEXT}0.905)`}
               style={{ userSelect: 'none', transition: 'fill 0.35s' }}
             >
@@ -147,21 +147,21 @@ export default function TTIAIReactivated() {
                     {tile.lines.length === 1 ? (
                       <text x={cx} y={TILE_CY}
                         textAnchor="middle" dominantBaseline="middle"
-                        fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                         fill={`${PLUM_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                         {tile.lines[0]}
                       </text>
                     ) : (
                       <>
-                        <text x={cx} y={TILE_CY - 8}
+                        <text x={cx} y={TILE_CY - 9}
                           textAnchor="middle" dominantBaseline="middle"
-                          fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                           fill={`${PLUM_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                           {tile.lines[0]}
                         </text>
-                        <text x={cx} y={TILE_CY + 8}
+                        <text x={cx} y={TILE_CY + 9}
                           textAnchor="middle" dominantBaseline="middle"
-                          fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                           fill={`${PLUM_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                           {tile.lines[1]}
                         </text>
@@ -178,7 +178,7 @@ export default function TTIAIReactivated() {
                     {tile.lines.length === 1 ? (
                       <text x={cx} y={TILE_CY - 16}
                         textAnchor="middle" dominantBaseline="middle"
-                        fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                         fill={`${INDIGO_TEXT}0.864)`} style={{ userSelect: 'none' }}>
                         {tile.lines[0]}
                       </text>
@@ -186,13 +186,13 @@ export default function TTIAIReactivated() {
                       <>
                         <text x={cx} y={TILE_CY - 24}
                           textAnchor="middle" dominantBaseline="middle"
-                          fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                           fill={`${INDIGO_TEXT}0.864)`} style={{ userSelect: 'none' }}>
                           {tile.lines[0]}
                         </text>
-                        <text x={cx} y={TILE_CY - 14}
+                        <text x={cx} y={TILE_CY - 8}
                           textAnchor="middle" dominantBaseline="middle"
-                          fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                           fill={`${INDIGO_TEXT}0.864)`} style={{ userSelect: 'none' }}>
                           {tile.lines[1]}
                         </text>
@@ -200,23 +200,23 @@ export default function TTIAIReactivated() {
                     )}
                     {/* AI idea text */}
                     {tile.aiIdea.length === 1 ? (
-                      <text x={cx} y={TILE_CY + 10}
+                      <text x={cx} y={TILE_CY + 16}
                         textAnchor="middle" dominantBaseline="middle"
-                        fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                        fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                         fill={`${INDIGO_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                         {tile.aiIdea[0]}
                       </text>
                     ) : (
                       <>
-                        <text x={cx} y={TILE_CY + 3}
+                        <text x={cx} y={TILE_CY + 8}
                           textAnchor="middle" dominantBaseline="middle"
-                          fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                           fill={`${INDIGO_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                           {tile.aiIdea[0]}
                         </text>
-                        <text x={cx} y={TILE_CY + 15}
+                        <text x={cx} y={TILE_CY + 24}
                           textAnchor="middle" dominantBaseline="middle"
-                          fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                           fill={`${INDIGO_TEXT}0.983)`} style={{ userSelect: 'none' }}>
                           {tile.aiIdea[1]}
                         </text>
@@ -255,7 +255,7 @@ export default function TTIAIReactivated() {
               },
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border" style={{ background: `${INDIGO}0.07)`, borderColor: `${INDIGO}0.22)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-wider mb-2" style={{ color: `${INDIGO}0.80)` }}>
+                <p className="text-2xs font-semibold uppercase tracking-wider mb-2" style={{ color: `${INDIGO_TEXT}0.85)` }}>
                   {card.h}
                 </p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.b}</p>
@@ -281,7 +281,7 @@ export default function TTIAIReactivated() {
               },
             ].map((card, i) => (
               <div key={i} className="rounded-lg p-4 border" style={{ background: `${PLUM}0.10)`, borderColor: `${PLUM}0.26)` }}>
-                <p className="text-[10px] font-semibold uppercase tracking-wider mb-2" style={{ color: `${PLUM}0.82)` }}>
+                <p className="text-2xs font-semibold uppercase tracking-wider mb-2" style={{ color: `${PLUM_TEXT}0.85)` }}>
                   {card.h}
                 </p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.b}</p>
@@ -293,8 +293,8 @@ export default function TTIAIReactivated() {
 
       {/* Synthesis card */}
       <div className="mt-4 rounded-lg p-4 border border-white/8" style={{ background: 'rgba(255,255,255,0.04)' }}>
-        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/28 mb-1">Synthesis</p>
-        <p className="text-xs text-white/42 leading-relaxed">
+        <p className="text-2xs font-semibold uppercase tracking-wider text-white/50 mb-1">Synthesis</p>
+        <p className="text-xs text-white/50 leading-relaxed">
           AI accelerates the diagnostic and guarantees breadth across all ten types: real value, countering the product-only default. But the payoff of the framework is the specific, non-obvious combination of under-used types that becomes a defensible system. That combination is a strategic judgment that depends on deep knowledge of this business and this competitive landscape. AI gives you ten columns. Human strategy picks the interlocking set.
         </p>
       </div>

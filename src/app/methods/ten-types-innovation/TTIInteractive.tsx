@@ -29,14 +29,14 @@ type TypeId =
 const TILES: { id: TypeId; cat: string; x: number; lines: string[] }[] = [
   { id: 'profit-model',        cat: 'config',   x: 16,  lines: ['PROFIT', 'MODEL'] },
   { id: 'network',             cat: 'config',   x: 80,  lines: ['NETWORK'] },
-  { id: 'structure',           cat: 'config',   x: 144, lines: ['STRUCTURE'] },
+  { id: 'structure',           cat: 'config',   x: 144, lines: ['STRUCT.'] },
   { id: 'process',             cat: 'config',   x: 208, lines: ['PROCESS'] },
   { id: 'product-performance', cat: 'offering', x: 288, lines: ['PRODUCT', 'PERF.'] },
   { id: 'product-system',      cat: 'offering', x: 352, lines: ['PRODUCT', 'SYSTEM'] },
   { id: 'service',             cat: 'exp',      x: 432, lines: ['SERVICE'] },
   { id: 'channel',             cat: 'exp',      x: 496, lines: ['CHANNEL'] },
   { id: 'brand',               cat: 'exp',      x: 560, lines: ['BRAND'] },
-  { id: 'customer-engagement', cat: 'exp',      x: 624, lines: ['CUSTOMER', 'ENGAGE.'] },
+  { id: 'customer-engagement', cat: 'exp',      x: 624, lines: ['CUST.', 'ENGAGE.'] },
 ]
 
 interface Detail {
@@ -111,7 +111,7 @@ export default function TTIInteractive() {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(id) }
   }
 
-  const SVG_H = 170
+  const SVG_H = 182
 
   function tileFill(id: TypeId) {
     if (id === active)   return `${PLUM}0.30)`
@@ -127,11 +127,14 @@ export default function TTIInteractive() {
     return `${PLUM}0.65)`
   }
 
+  // plain PLUM fails 4.5:1 on this dark background at every opacity used here
+  // (even at 1.0) — use the brightened PLUM_TEXT variant instead, with a
+  // floor of 0.85 so even the "dimmed" tier stays compliant
   function tileTextFill(id: TypeId) {
-    if (id === active)   return `${PLUM}1.0)`
-    if (id === hovered)  return `${PLUM}0.90)`
-    if (active !== null) return `${PLUM}0.24)`
-    return `${PLUM}0.92)`
+    if (id === active)   return `${PLUM_TEXT}1.0)`
+    if (id === hovered)  return `${PLUM_TEXT}0.95)`
+    if (active !== null) return `${PLUM_TEXT}0.85)`
+    return `${PLUM_TEXT}0.90)`
   }
 
   return (
@@ -171,7 +174,7 @@ export default function TTIInteractive() {
             <text
               x={cat.cx} y={CAT_LABEL_Y}
               textAnchor="middle"
-              fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
               fill={active && TILES.find(t => t.id === active)?.cat === cat.id ? `${PLUM_TEXT}0.969)` : `${PLUM_TEXT}0.905)`}
               style={{ userSelect: 'none', transition: 'fill 0.22s' }}
             >
@@ -216,7 +219,7 @@ export default function TTIInteractive() {
                 <motion.text
                   x={cx} y={TILE_CY}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                   style={{ userSelect: 'none', pointerEvents: 'none' }}
                   animate={{ fill: tileTextFill(tile.id) }}
                   transition={{ duration: prefersReduced ? 0 : 0.22 }}
@@ -226,9 +229,9 @@ export default function TTIInteractive() {
               ) : (
                 <>
                   <motion.text
-                    x={cx} y={TILE_CY - 8}
+                    x={cx} y={TILE_CY - 9}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                     style={{ userSelect: 'none', pointerEvents: 'none' }}
                     animate={{ fill: tileTextFill(tile.id) }}
                     transition={{ duration: prefersReduced ? 0 : 0.22 }}
@@ -236,9 +239,9 @@ export default function TTIInteractive() {
                     {tile.lines[0]}
                   </motion.text>
                   <motion.text
-                    x={cx} y={TILE_CY + 8}
+                    x={cx} y={TILE_CY + 9}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize="8.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
                     style={{ userSelect: 'none', pointerEvents: 'none' }}
                     animate={{ fill: tileTextFill(tile.id) }}
                     transition={{ duration: prefersReduced ? 0 : 0.22 }}
@@ -256,7 +259,7 @@ export default function TTIInteractive() {
           <text
             x={SVG_W / 2} y={SVG_H - 4}
             textAnchor="middle"
-            fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill="rgba(255,255,255,0.61)"
             style={{ userSelect: 'none' }}
           >
@@ -279,7 +282,7 @@ export default function TTIInteractive() {
           >
             <p
               className="font-mono uppercase tracking-widest mb-3"
-              style={{ fontSize: 'var(--text-2xs)', color: `${PLUM}0.85)` }}
+              style={{ fontSize: 'var(--text-2xs)', color: `${PLUM_TEXT}0.85)` }}
             >
               {TYPE_DETAILS[active].heading}
             </p>
@@ -295,7 +298,7 @@ export default function TTIInteractive() {
               }}
             >
               <p className="font-mono uppercase tracking-widest mb-1"
-                style={{ fontSize: '8px', letterSpacing: '0.12em', color: `${PLUM}0.55)` }}>
+                style={{ fontSize: '11px', letterSpacing: '0.12em', color: `${PLUM_TEXT}0.85)` }}>
                 EXAMPLE
               </p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.58)', lineHeight: 'var(--leading-relaxed)' }}>
@@ -309,7 +312,7 @@ export default function TTIInteractive() {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             transition={{ duration: prefersReduced ? 0 : 0.15 }}
             className="mt-5 text-center"
-            style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.22)', fontStyle: 'italic' }}
+            style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.50)', fontStyle: 'italic' }}
           >
             Select a tile to read what that type means and a concrete example.
           </motion.p>
