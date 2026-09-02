@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
@@ -82,9 +83,9 @@ export default function DREstablishing() {
         <motion.g {...fade(0.04)}>
           <line x1={22} y1={24} x2={564} y2={24}
             stroke={`${BRICK}0.22)`} strokeWidth={0.8} />
-          <text x={22} y={18} fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={22} y={18} fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`rgba(183,145,135,0.895)`} style={{ userSelect: 'none' }}>FIRM</text>
-          <text x={564} y={18} textAnchor="end" fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={564} y={18} textAnchor="end" fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`rgba(183,145,135,0.849)`} style={{ userSelect: 'none' }}>LOOSE</text>
           <path d="M 70,24 L 530,24" stroke={`${BRICK}0.18)`} strokeWidth={0.8}
             markerEnd="url(#dr-est-arr)" />
@@ -98,13 +99,13 @@ export default function DREstablishing() {
             <rect x={g.x - 5} y={CY - 5} width={10} height={10}
               transform={`rotate(45 ${g.x} ${CY})`}
               fill={`${BRICK}0.08)`} stroke={`${BRICK}0.32)`} strokeWidth={0.9} />
-            <text x={g.x} y={78} textAnchor="middle" fontSize="3.8"
-              fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            <text x={g.x} y={78} textAnchor="middle" fontSize="11"
+              fontFamily="var(--font-mono)" letterSpacing="0.04em"
               fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}>
               {g.label}
             </text>
-            <text x={g.x} y={190} textAnchor="middle" fontSize="3.4"
-              fontFamily="var(--font-mono)" letterSpacing="0.06em"
+            <text x={g.x} y={202} textAnchor="middle" fontSize="11"
+              fontFamily="var(--font-mono)" letterSpacing="0.04em"
               fill={`rgba(183,145,135,0.84)`} style={{ userSelect: 'none' }}>
               PROCEED · ADJUST · STOP
             </text>
@@ -123,30 +124,31 @@ export default function DREstablishing() {
               rx={3}
               filter={i === 0 ? 'url(#dr-est-glow)' : undefined}
             />
-            {/* Horizon label */}
+            {/* Horizon label - moved above the box; the box itself is too short
+                (36 units for PROOF) to stack three lines of 11pt text */}
             <text
-              x={b.x + b.w / 2} y={b.y + 9}
-              textAnchor="middle" fontSize="3.4"
-              fontFamily="var(--font-mono)" letterSpacing="0.08em"
-              fill={`${BRICK}${b.conf * 0.55})`}
+              x={b.x + b.w / 2} y={b.y - 10}
+              textAnchor="middle" fontSize="11"
+              fontFamily="var(--font-mono)" letterSpacing="0.04em"
+              fill={`${BRICK_TEXT}${Math.max(b.conf * 0.65, 0.80)})`}
               style={{ userSelect: 'none' }}>
               {b.hor}
             </text>
-            {/* Main label */}
+            {/* Main label - the only label that stays inside the box */}
             <text
               x={b.x + b.w / 2} y={CY - 2}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5.6" fontFamily="var(--font-mono)" letterSpacing="0.11em" fontWeight="600"
-              fill={`${BRICK}${b.conf * 0.96})`}
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+              fill={`${BRICK_TEXT}${Math.max(b.conf * 0.96, 0.85)})`}
               style={{ userSelect: 'none' }}>
               {b.label}
             </text>
-            {/* Sublabel */}
+            {/* Sublabel - moved below the box, see horizon label note */}
             <text
-              x={b.x + b.w / 2} y={b.y + b.h - 9}
-              textAnchor="middle" fontSize="3.6"
-              fontFamily="var(--font-mono)" letterSpacing="0.07em"
-              fill={`${BRICK}${b.conf * 0.48})`}
+              x={b.x + b.w / 2} y={b.y + b.h + 14}
+              textAnchor="middle" fontSize="11"
+              fontFamily="var(--font-mono)" letterSpacing="0.03em"
+              fill={`${BRICK_TEXT}${Math.max(b.conf * 0.60, 0.80)})`}
               style={{ userSelect: 'none' }}>
               {b.sub}
             </text>
@@ -168,8 +170,8 @@ export default function DREstablishing() {
             opacity: { duration: 0.01, delay: d(1.30) },
           }}
         />
-        <motion.text x={360} y={36} textAnchor="middle" fontSize="3.4"
-          fontFamily="var(--font-mono)" letterSpacing="0.07em"
+        <motion.text x={360} y={36} textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill={`${AMBER_TEXT}0.83)`} style={{ userSelect: 'none' }}
           {...fade(1.60)}>
           WHAT YOU LEARN RESHAPES WHAT COMES NEXT
@@ -194,8 +196,8 @@ export default function DREstablishing() {
         {/* Caption */}
         <motion.text
           x={SVG_W / 2} y={SVG_H - 7}
-          textAnchor="middle" fontSize="4.0"
-          fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.62)" style={{ userSelect: 'none' }}
           {...fade(2.0)}>
           Near bets are firm. Far bets are deliberately loose. The arrows are the honesty.

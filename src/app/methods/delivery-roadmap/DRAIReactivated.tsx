@@ -3,10 +3,13 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const AMBER  = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
+
+function textSafe(c: string) { return c === INDIGO ? INDIGO_TEXT : c === BRICK ? BRICK_TEXT : c }
 
 const SVG_W = 700, SVG_H = 268, CY = 134
 
@@ -93,7 +96,7 @@ export default function DRAIReactivated() {
                 ? m === 'ai' ? `${INDIGO}0.85)` : `${BRICK}0.85)`
                 : 'transparent',
               color: mode === m ? '#fff'
-                : m === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`,
+                : m === 'ai' ? `${INDIGO_TEXT}0.90)` : `${BRICK_TEXT}0.90)`,
               border: `1.5px solid ${mode === m
                 ? m === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`
                 : m === 'ai' ? `${INDIGO}0.30)` : `${BRICK}0.30)`}`,
@@ -143,17 +146,17 @@ export default function DRAIReactivated() {
         {/* Human mode: FIRM → LOOSE indicator */}
         {!isAI && (
           <g>
-            <text x={22} y={18} fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            <text x={22} y={18} fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
               fill={`rgba(183,145,135,0.895)`} style={{ userSelect: 'none' }}>FIRM</text>
-            <text x={564} y={18} textAnchor="end" fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            <text x={564} y={18} textAnchor="end" fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
               fill={`rgba(183,145,135,0.849)`} style={{ userSelect: 'none' }}>LOOSE</text>
           </g>
         )}
 
         {/* AI mode: false precision warning */}
         {isAI && (
-          <text x={SVG_W / 2} y={20} textAnchor="middle" fontSize="5"
-            fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+          <text x={SVG_W / 2} y={26} textAnchor="middle" fontSize="11"
+            fontFamily="var(--font-mono)" letterSpacing="0.04em" fontWeight="600"
             fill={`${AMBER}0.78)`} style={{ userSelect: 'none' }}>
             ⚠ FALSE PRECISION: THE WRONG ROADMAP, BEAUTIFULLY MADE
           </text>
@@ -189,26 +192,27 @@ export default function DRAIReactivated() {
                 filter={!isAI && i === 0 ? 'url(#dr-ai-glow)' : undefined}
               />
               {hor && (
-                <text x={b.x + b.w / 2} y={b.y + 9} textAnchor="middle" fontSize="3.4"
-                  fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                  fill={`${BRICK}${conf * 0.50})`} style={{ userSelect: 'none' }}>
+                <text x={b.x + b.w / 2} y={b.y - 10} textAnchor="middle" fontSize="11"
+                  fontFamily="var(--font-mono)" letterSpacing="0.04em"
+                  fill={`${BRICK_TEXT}${Math.max(conf * 0.60, 0.80)})`} style={{ userSelect: 'none' }}>
                   {hor}
                 </text>
               )}
               <text x={b.x + b.w / 2} y={CY - 2} textAnchor="middle" dominantBaseline="middle"
-                fontSize="5.6" fontFamily="var(--font-mono)" letterSpacing="0.11em" fontWeight="600"
-                fill={`${BRICK}${conf * 0.96})`} style={{ userSelect: 'none' }}>
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+                fill={`${BRICK_TEXT}${Math.max(conf * 0.96, 0.85)})`} style={{ userSelect: 'none' }}>
                 {b.label}
               </text>
-              <text x={b.x + b.w / 2} y={b.y + b.h - 9} textAnchor="middle" fontSize="3.6"
-                fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={`${BRICK}${conf * 0.45})`} style={{ userSelect: 'none' }}>
+              <text x={b.x + b.w / 2} y={b.y + b.h + 14} textAnchor="middle" fontSize="11"
+                fontFamily="var(--font-mono)" letterSpacing="0.03em"
+                fill={`${BRICK_TEXT}${Math.max(conf * 0.55, 0.80)})`} style={{ userSelect: 'none' }}>
                 {b.sub}
               </text>
-              {/* AI mode: "EQUALLY CONFIDENT" tag on far bet */}
+              {/* AI mode: "EQUALLY CONFIDENT" tag on far bet - sits where the
+                  (blanked-out in AI mode) horizon label would go */}
               {isAI && i === BETS.length - 1 && (
-                <text x={b.x + b.w / 2} y={b.y - 6} textAnchor="middle" fontSize="3.6"
-                  fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                <text x={b.x + b.w / 2} y={b.y - 10} textAnchor="middle" fontSize="11"
+                  fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${AMBER}0.70)`} style={{ userSelect: 'none' }}>
                   EQUALLY CONFIDENT AS DAY ONE
                 </text>
@@ -223,8 +227,8 @@ export default function DRAIReactivated() {
             <path d={LEARN_A} fill="none"
               stroke={`${AMBER}0.38)`} strokeWidth={1.2} strokeDasharray="4 3"
               markerEnd="url(#dr-ai-arr-b)" />
-            <text x={360} y={36} textAnchor="middle" fontSize="3.4"
-              fontFamily="var(--font-mono)" letterSpacing="0.07em"
+            <text x={360} y={36} textAnchor="middle" fontSize="11"
+              fontFamily="var(--font-mono)" letterSpacing="0.02em"
               fill={`${AMBER_TEXT}0.798)`} style={{ userSelect: 'none' }}>
               WHAT YOU LEARN RESHAPES WHAT COMES NEXT
             </text>
@@ -243,20 +247,25 @@ export default function DRAIReactivated() {
                   filter="url(#dr-ai-indigo-glow)" />
               </g>
             ))}
-            {/* Mechanics labels */}
-            {AI_MECHANICS.map((m, i) => (
-              <g key={i}>
-                <rect x={m.x - 40} y={m.y - 7} width={80} height={16}
-                  fill={`${INDIGO}0.08)`} stroke={`${INDIGO}0.28)`} strokeWidth={0.8} rx={2} />
-                <text x={m.x} y={m.y + 2} textAnchor="middle" fontSize="3.8"
-                  fontFamily="var(--font-mono)" letterSpacing="0.06em"
-                  fill={`${INDIGO_TEXT}0.941)`} style={{ userSelect: 'none' }}>
-                  {m.label}
-                </text>
-              </g>
-            ))}
-            <text x={280} y={218} textAnchor="middle" fontSize="3.6"
-              fontFamily="var(--font-mono)" letterSpacing="0.07em"
+            {/* Mechanics labels - widened; "MAINTENANCE LOG" doesn't fit the
+                original 80-wide badge at 11pt, and the leftmost badge is
+                shifted right so its wider box doesn't run off the left edge */}
+            {AI_MECHANICS.map((m, i) => {
+              const cx = i === 0 ? 75 : m.x
+              return (
+                <g key={i}>
+                  <rect x={cx - 62} y={m.y + 3} width={124} height={22}
+                    fill={`${INDIGO}0.08)`} stroke={`${INDIGO}0.28)`} strokeWidth={0.8} rx={2} />
+                  <text x={cx} y={m.y + 18} textAnchor="middle" fontSize="11"
+                    fontFamily="var(--font-mono)" letterSpacing="0.02em"
+                    fill={`${INDIGO_TEXT}0.941)`} style={{ userSelect: 'none' }}>
+                    {m.label}
+                  </text>
+                </g>
+              )
+            })}
+            <text x={280} y={244} textAnchor="middle" fontSize="11"
+              fontFamily="var(--font-mono)" letterSpacing="0.02em"
               fill={`${INDIGO_TEXT}0.895)`} style={{ userSelect: 'none' }}>
               AI: MECHANICS ASSISTANCE, GENUINE UPLIFT
             </text>
@@ -264,8 +273,8 @@ export default function DRAIReactivated() {
         )}
 
         {/* Caption */}
-        <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
-          fontFamily="var(--font-mono)" letterSpacing="0.06em"
+        <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>
           {isAI
             ? 'It looks better and is worse. The gradient was the honesty.'
@@ -295,17 +304,17 @@ export default function DRAIReactivated() {
                   style={{
                     fontSize: 'var(--text-2xs)',
                     background: `${c.color}0.12)`,
-                    color: `${c.color}0.78)`,
+                    color: `${textSafe(c.color)}0.85)`,
                     border: `1px solid ${c.color}0.25)`,
                   }}>
                   {c.badge}
                 </span>
               </div>
               <p className="font-semibold mb-2"
-                style={{ fontSize: 'var(--text-sm)', color: `${c.color}0.85)` }}>
+                style={{ fontSize: 'var(--text-sm)', color: `${textSafe(c.color)}0.90)` }}>
                 {c.head}
               </p>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.70)', lineHeight: 'var(--leading-relaxed)' }}>
                 {c.body}
               </p>
             </div>

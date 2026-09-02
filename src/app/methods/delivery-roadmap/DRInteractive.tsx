@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
@@ -92,7 +93,7 @@ export default function DRInteractive() {
           className="rounded-full px-4 py-1.5 text-xs font-semibold transition-all"
           style={{
             background: view === 'convenience' ? `${AMBER}0.18)` : 'transparent',
-            color: view === 'convenience' ? `${AMBER}0.90)` : `${BRICK}0.65)`,
+            color: view === 'convenience' ? `${AMBER}0.90)` : `${BRICK_TEXT}0.85)`,
             border: `1.5px solid ${view === 'convenience' ? `${AMBER}0.55)` : `${BRICK}0.28)`}`,
           }}>
           {view === 'risk' ? 'SEQUENCE: BY RISK' : '⚠ SEQUENCE: BY CONVENIENCE'}
@@ -103,7 +104,7 @@ export default function DRInteractive() {
           className="rounded-full px-4 py-1.5 text-xs font-semibold transition-all"
           style={{
             background: severed ? `${AMBER}0.18)` : 'transparent',
-            color: severed ? `${AMBER}0.90)` : `${BRICK}0.65)`,
+            color: severed ? `${AMBER}0.90)` : `${BRICK_TEXT}0.85)`,
             border: `1.5px solid ${severed ? `${AMBER}0.55)` : `${BRICK}0.28)`}`,
           }}>
           {severed ? '⚠ LEARNING: SEVERED' : 'LEARNING: CONNECTED'}
@@ -112,7 +113,7 @@ export default function DRInteractive() {
           <button
             onClick={() => { setActive(null); setView('risk'); setSevered(false) }}
             className="rounded-full px-4 py-1.5 text-xs font-semibold transition-all"
-            style={{ color: `${BRICK}0.45)`, border: `1.5px solid ${BRICK}0.18)` }}>
+            style={{ color: `${BRICK_TEXT}0.70)`, border: `1.5px solid ${BRICK}0.18)` }}>
             CLEAR
           </button>
         )}
@@ -160,8 +161,8 @@ export default function DRInteractive() {
 
         {/* Severed warning overlay */}
         {severed && (
-          <text x={SVG_W / 2} y={22} textAnchor="middle" fontSize="5"
-            fontFamily="var(--font-mono)" letterSpacing="0.10em" fontWeight="600"
+          <text x={SVG_W / 2} y={26} textAnchor="middle" fontSize="11"
+            fontFamily="var(--font-mono)" letterSpacing="0.04em" fontWeight="600"
             fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
             ⚠ ROADMAP → SCHEDULE: ALL BETS APPEAR EQUALLY CONFIDENT
           </text>
@@ -179,8 +180,8 @@ export default function DRInteractive() {
               stroke={active === g.id ? `${BRICK}0.65)` : `${BRICK}0.32)`}
               strokeWidth={active === g.id ? 1.5 : 0.9}
               filter={active === g.id ? 'url(#dr-int-glow)' : undefined} />
-            <text x={g.x} y={78} textAnchor="middle" fontSize="3.8"
-              fontFamily="var(--font-mono)" letterSpacing="0.08em"
+            <text x={g.x} y={78} textAnchor="middle" fontSize="11"
+              fontFamily="var(--font-mono)" letterSpacing="0.04em"
               fill={active === g.id ? `rgba(183,145,135,0.937)` : `rgba(183,145,135,0.864)`}
               style={{ userSelect: 'none' }}>
               {g.label}
@@ -210,40 +211,47 @@ export default function DRInteractive() {
                 rx={3}
                 filter={isActive ? 'url(#dr-int-glow)' : undefined}
               />
-              <text x={b.x + b.w / 2} y={b.y + 9} textAnchor="middle" fontSize="3.4"
-                fontFamily="var(--font-mono)" letterSpacing="0.08em"
-                fill={`${BRICK}${conf * 0.52})`} style={{ userSelect: 'none' }}>
+              {/* Horizon label above the box, main label inside, sublabel below -
+                  the box itself (36 units tall for PROOF) can't stack three lines
+                  of 11pt text, see DREstablishing for the same restructuring */}
+              <text x={b.x + b.w / 2} y={b.y - 10} textAnchor="middle" fontSize="11"
+                fontFamily="var(--font-mono)" letterSpacing="0.04em"
+                fill={`${BRICK_TEXT}${Math.max(conf * 0.60, 0.80)})`} style={{ userSelect: 'none' }}>
                 {severed ? '' : b.hor}
               </text>
               <text x={b.x + b.w / 2} y={CY - 2} textAnchor="middle" dominantBaseline="middle"
-                fontSize="5.6" fontFamily="var(--font-mono)" letterSpacing="0.11em" fontWeight="600"
-                fill={isConvRisk ? `${AMBER}0.90)` : `${BRICK}${conf * 0.96})`}
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em" fontWeight="600"
+                fill={isConvRisk ? `${AMBER}0.90)` : `${BRICK_TEXT}${Math.max(conf * 0.96, 0.85)})`}
                 style={{ userSelect: 'none' }}>
                 {b.label}
               </text>
-              <text x={b.x + b.w / 2} y={b.y + b.h - 9} textAnchor="middle" fontSize="3.6"
-                fontFamily="var(--font-mono)" letterSpacing="0.07em"
-                fill={`${BRICK}${conf * 0.45})`} style={{ userSelect: 'none' }}>
+              <text x={b.x + b.w / 2} y={b.y + b.h + 14} textAnchor="middle" fontSize="11"
+                fontFamily="var(--font-mono)" letterSpacing="0.03em"
+                fill={`${BRICK_TEXT}${Math.max(conf * 0.55, 0.80)})`} style={{ userSelect: 'none' }}>
                 {b.sub}
               </text>
-              {/* Convenience mode annotations */}
+              {/* Convenience mode annotations - moved further above the box (and
+                  PROOF's start-anchored, not centered) since the horizon label now
+                  occupies the space directly above the box, and PROOF sits close
+                  enough to the left edge that a centered 33-char line would run
+                  off-canvas */}
               {view === 'convenience' && b.id === 'proof' && (
-                <text x={b.x + b.w / 2} y={b.y - 6} textAnchor="middle" fontSize="3.5"
-                  fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                <text x={b.x} y={b.y - 34} textAnchor="start" fontSize="11"
+                  fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${AMBER}0.70)`} style={{ userSelect: 'none' }}>
                   EXISTENTIAL RISK, SCHEDULED LAST
                 </text>
               )}
               {view === 'convenience' && b.id === 'release' && (
-                <text x={b.x + b.w / 2} y={b.y - 6} textAnchor="middle" fontSize="3.5"
-                  fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                <text x={b.x + b.w / 2} y={b.y - 34} textAnchor="middle" fontSize="11"
+                  fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`rgba(183,145,135,0.895)`} style={{ userSelect: 'none' }}>
                   COMFORTABLE, FIRST
                 </text>
               )}
               {view === 'convenience' && b.id === 'rollout' && (
-                <text x={b.x + b.w / 2} y={b.y - 6} textAnchor="middle" fontSize="3.5"
-                  fontFamily="var(--font-mono)" letterSpacing="0.07em"
+                <text x={b.x + b.w / 2} y={b.y - 34} textAnchor="middle" fontSize="11"
+                  fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${AMBER}0.75)`} style={{ userSelect: 'none' }}>
                   ⚠ FATAL PROBLEM: MONTH NINE
                 </text>
@@ -281,16 +289,16 @@ export default function DRInteractive() {
 
         {/* Label when connected */}
         {!severed && (
-          <text x={360} y={36} textAnchor="middle" fontSize="3.4"
-            fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          <text x={360} y={36} textAnchor="middle" fontSize="11"
+            fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill={`${AMBER_TEXT}0.808)`} style={{ userSelect: 'none' }}>
             WHAT YOU LEARN RESHAPES WHAT COMES NEXT
           </text>
         )}
 
         {/* Caption */}
-        <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="4.0"
-          fontFamily="var(--font-mono)" letterSpacing="0.06em"
+        <text x={SVG_W / 2} y={SVG_H - 7} textAnchor="middle" fontSize="11"
+          fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
           {severed
             ? 'The gradient is gone. Every box looks equally confident. That is the lie.'
@@ -307,7 +315,7 @@ export default function DRInteractive() {
             className="rounded px-3 py-1.5 text-xs font-semibold font-mono tracking-widest transition-all"
             style={{
               background: active === b.id ? `${BRICK}0.18)` : 'transparent',
-              color: active === b.id ? `${BRICK}0.90)` : `${BRICK}0.50)`,
+              color: active === b.id ? `${BRICK_TEXT}0.95)` : `${BRICK_TEXT}0.80)`,
               border: `1.5px solid ${active === b.id ? `${BRICK}0.55)` : `${BRICK}0.22)`}`,
             }}>
             {b.label}
@@ -320,7 +328,7 @@ export default function DRInteractive() {
             className="rounded px-3 py-1.5 text-xs font-semibold font-mono tracking-widest transition-all"
             style={{
               background: active === g.id ? `${BRICK}0.12)` : 'transparent',
-              color: active === g.id ? `${BRICK}0.75)` : `${BRICK}0.38)`,
+              color: active === g.id ? `${BRICK_TEXT}0.90)` : `${BRICK_TEXT}0.80)`,
               border: `1.5px dashed ${active === g.id ? `${BRICK}0.45)` : `${BRICK}0.18)`}`,
             }}>
             {g.label}
@@ -341,14 +349,14 @@ export default function DRInteractive() {
             style={{ background: `${BRICK}0.07)`, border: `1px solid ${BRICK}0.22)` }}
           >
             <p className="font-mono uppercase tracking-widest mb-1"
-              style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.62)` }}>
+              style={{ fontSize: 'var(--text-2xs)', color: `${BRICK_TEXT}0.85)` }}>
               {INFO[active].tag}
             </p>
             <p className="font-semibold mb-3"
-              style={{ fontSize: 'var(--text-base)', color: `${BRICK}0.82)` }}>
+              style={{ fontSize: 'var(--text-base)', color: `${BRICK_TEXT}0.95)` }}>
               {INFO[active].headline}
             </p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.70)', lineHeight: 'var(--leading-relaxed)' }}>
               {INFO[active].body}
             </p>
           </motion.div>
@@ -371,7 +379,7 @@ export default function DRInteractive() {
               style={{ fontSize: 'var(--text-base)', color: `${AMBER}0.85)` }}>
               Every bet looks equally confident. The gradient is gone.
             </p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.70)', lineHeight: 'var(--leading-relaxed)' }}>
               Without learning arrows feeding back to reshape earlier bets, there is no reason for the far
               end to stay loose. The plan can be fully specified all the way out, and it will be, because
               the organisation needs certainty and the roadmap is now a commitment device rather than a
@@ -399,7 +407,7 @@ export default function DRInteractive() {
               style={{ fontSize: 'var(--text-base)', color: `${AMBER}0.85)` }}>
               Easy work first, existential question last.
             </p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.70)', lineHeight: 'var(--leading-relaxed)' }}>
               In a convenience-ordered roadmap, the team starts with what is familiar and demo-able
               (user interface work, integrations, comfortable features) and defers the riskiest assumption
               to the end. The result: nine months of invested delivery before the team discovers whether
