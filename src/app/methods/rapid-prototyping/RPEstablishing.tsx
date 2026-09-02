@@ -33,6 +33,9 @@ const RUNGS: Rung[] = [
 const ZONE_X1  = RUNGS[0].x - 22
 const ZONE_X2  = RUNGS[1].x + 22
 const ZONE_MID = (ZONE_X1 + ZONE_X2) / 2
+// The sub-line's full sentence is wider than the bracket it sits under, so it
+// gets its own, further-right center to keep clear of the SVG's left edge.
+const JUST_SUB_X = 205
 
 export default function RPEstablishing() {
   const ref = useRef<SVGSVGElement>(null)
@@ -50,7 +53,7 @@ export default function RPEstablishing() {
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
         preserveAspectRatio="xMidYMid meet"
-        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
+        style={{ margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="rp-est-clay-glow" x="-30%" y="-30%" width="160%" height="160%">
@@ -77,10 +80,10 @@ export default function RPEstablishing() {
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             ROUGH · FAST
           </text>
-          <text x={AXIS_X2+4} y={AXIS_Y+10} textAnchor="start"
+          <text x={SVG_W - 4} y={AXIS_Y+18} textAnchor="end"
             fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
-            HIGH FIDELITY →
+            HIGH FIDELITY
           </text>
         </motion.g>
 
@@ -159,7 +162,7 @@ export default function RPEstablishing() {
             style={{ filter: `drop-shadow(0 0 5px ${CLAY_TEXT}0.843))`, userSelect: 'none' }}>
             JUST ENOUGH TO LEARN
           </text>
-          <text x={ZONE_MID} y={JUST_SUB_Y} textAnchor="middle"
+          <text x={JUST_SUB_X} y={JUST_SUB_Y} textAnchor="middle"
             fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`${CLAY_TEXT}0.87)`} style={{ userSelect: 'none' }}>
             default low · the lowest that answers your question
