@@ -47,7 +47,7 @@ export default function VPCEstablishing() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         className="w-full"
-        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', maxHeight: 340 }}
+        style={{ margin: '0 auto', display: 'block' }}
         aria-label="Value Proposition Canvas showing value map and customer profile with fit connections and gaps"
         role="img"
       >
