@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const AMBER  = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 const INDIGO = 'rgba(99,102,241,'
@@ -22,11 +23,16 @@ const LOOP_PATH = `M 18,${CY} L 568,${CY} L 608,${CY} C 638,${CY} 644,145 644,17
 
 type Mode = 'human' | 'ai'
 
-// Amber markers for human judgment (shown in AI mode)
+// Amber markers for human judgment (shown in AI mode). Widened (none of the
+// phrases fit their old badge at 11pt) and moved off the stage-box row / the
+// return-path label so the bigger badges don't sit on top of other text:
+// mk1 moved off the DECIDE-SHIP connector (y=CY) to the open space below the
+// boxes; mk2 shifted down further to clear mk1; mk3 moved below the return
+// path label it used to overlap.
 const HUMAN_MARKERS = [
-  { cx: 447, cy: CY,  text: 'DECIDE: HUMAN JUDGMENT',     w: 150 },
-  { cx: 524, cy: 148, text: 'SHIP: HUMANS SHIP IT',       w: 122 },
-  { cx: 350, cy: 196, text: 'RETURN: HUMAN MEASURES IT',  w: 155 },
+  { cx: 447, cy: 145, text: 'DECIDE: HUMAN JUDGMENT',     w: 180 },
+  { cx: 524, cy: 169, text: 'SHIP: HUMANS SHIP IT',       w: 165 },
+  { cx: 350, cy: 206, text: 'RETURN: HUMAN MEASURES IT',  w: 200 },
 ]
 
 export default function PFLAIReactivated() {
@@ -50,7 +56,7 @@ export default function PFLAIReactivated() {
                 ? m === 'ai' ? `${INDIGO}0.85)` : `${BRICK}0.85)`
                 : 'transparent',
               color: mode === m ? '#fff'
-                : m === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`,
+                : m === 'ai' ? `${INDIGO_TEXT}0.90)` : `${BRICK_TEXT}0.90)`,
               border: `1.5px solid ${mode === m
                 ? m === 'ai' ? `${INDIGO}0.70)` : `${BRICK}0.70)`
                 : m === 'ai' ? `${INDIGO}0.30)` : `${BRICK}0.30)`}`,
@@ -112,6 +118,7 @@ export default function PFLAIReactivated() {
           const isSense = s.id === 'sense'
           const useIndigo = isAI && isSense
           const c = useIndigo ? INDIGO : BRICK
+          const cText = useIndigo ? INDIGO_TEXT : BRICK_TEXT
           return (
             <motion.g key={s.id}
               animate={{ opacity: 1 }}
@@ -122,8 +129,8 @@ export default function PFLAIReactivated() {
                 filter={useIndigo ? 'url(#pfl-ai-indigo-glow)' : 'url(#pfl-ai-glow)'} />
               <text x={s.x + S_W / 2} y={CY}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.11em" fontWeight="600"
-                fill={`${c}0.92)`} style={{ userSelect: 'none' }}>
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.11em" fontWeight="600"
+                fill={`${cText}0.92)`} style={{ userSelect: 'none' }}>
                 {s.label}
               </text>
             </motion.g>
@@ -171,9 +178,9 @@ export default function PFLAIReactivated() {
             <motion.g
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.30 }}>
-              <text x={136} y={96}
+              <text x={136} y={90}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em" fontWeight="600"
                 fill={`${INDIGO_TEXT}0.958)`} style={{ userSelect: 'none' }}>
                 AI SYNTHESIZES AT SCALE
               </text>
@@ -184,8 +191,8 @@ export default function PFLAIReactivated() {
         {/* Return path label */}
         <motion.text x={300} y={187}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
-          fill={`${BRICK}${isAI ? '0.28)' : '0.38)'}`}
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          fill={`${BRICK_TEXT}${isAI ? '0.80)' : '0.90)'}`}
           style={{ userSelect: 'none' }}>
           ← BACK TO SIGNAL · MEASURES WHETHER THE CHANGE WORKED
         </motion.text>
@@ -203,7 +210,7 @@ export default function PFLAIReactivated() {
                 strokeWidth="1" rx={2} />
               <text x={mk.cx} y={mk.cy}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
                 fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
                 {mk.text}
               </text>
@@ -214,9 +221,9 @@ export default function PFLAIReactivated() {
         {/* AI mode: SENSE box "averages the specific" warning */}
         <AnimatePresence>
           {isAI && (
-            <motion.text x={216} y={135}
+            <motion.text x={216} y={140}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
               fill={`${AMBER_TEXT}0.876)`} style={{ userSelect: 'none' }}
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.30, delay: prefersReduced ? 0 : 0.20 }}>
@@ -243,15 +250,15 @@ export default function PFLAIReactivated() {
                 style={{ border: `1px solid ${INDIGO}0.22)`, background: `${INDIGO}0.05)` }}>
                 <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
                   <p className="font-mono uppercase tracking-widest"
-                    style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.80)` }}>
+                    style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_TEXT}0.90)` }}>
                     Where AI genuinely transforms this method: SENSE
                   </p>
                   <span className="font-mono text-xs px-2 py-0.5 rounded-full"
-                    style={{ background: `${INDIGO}0.12)`, color: `${INDIGO}0.75)`, border: `1px solid ${INDIGO}0.25)` }}>
+                    style={{ background: `${INDIGO}0.12)`, color: `${INDIGO_TEXT}0.90)`, border: `1px solid ${INDIGO}0.25)` }}>
                     Largest practical AI win
                   </span>
                 </div>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                   Post-launch signal has always had one defining problem: volume. Thousands of support tickets,
                   tens of thousands of reviews, endless session records and survey responses, far more than any
                   team can read, let alone synthesise. This is precisely why the signal-to-sense junction broke
@@ -270,7 +277,7 @@ export default function PFLAIReactivated() {
                   style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}>
                   Human judgment: AI cannot DECIDE
                 </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                   Deciding which problems matter, what to trade off, what to fix and what to live with; this is a
                   judgment with consequences, made by people accountable for the product. AI will produce a
                   confident, well-organised recommendation. A recommendation from a system bearing no consequence
@@ -287,7 +294,7 @@ export default function PFLAIReactivated() {
                   style={{ fontSize: 'var(--text-2xs)', color: `${AMBER}0.75)` }}>
                   Human judgment: AI averages away the specific outlier
                 </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                   The danger of synthesis at scale is that it optimises for the average. The one strange, articulate
                   complaint that reveals a genuine, serious design failure (the outlier that a sharp human would
                   have stopped on) gets clustered into a theme and averaged into noise. AI is excellent at telling
@@ -301,10 +308,10 @@ export default function PFLAIReactivated() {
             <div className="rounded-lg p-4"
               style={{ border: `1px solid ${BRICK}0.22)`, background: `${BRICK}0.04)` }}>
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.70)` }}>
+                style={{ fontSize: 'var(--text-2xs)', color: `${BRICK_TEXT}0.90)` }}>
                 The traditional method
               </p>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
                 A feedback loop is run end-to-end by people. Someone owns the sense-making step, on a rhythm,
                 and reads raw signal. A decision forum meets with authority to act on findings. Decisions land
                 in the actual product. Someone checks whether the change worked, and that check becomes the
@@ -318,10 +325,10 @@ export default function PFLAIReactivated() {
           <div className="rounded-lg p-4"
             style={{ background: `${BRICK}0.04)`, border: `1px solid ${BRICK}0.16)` }}>
             <p className="font-mono uppercase tracking-widest mb-2"
-              style={{ fontSize: 'var(--text-2xs)', color: `${BRICK}0.60)` }}>
+              style={{ fontSize: 'var(--text-2xs)', color: `${BRICK_TEXT}0.90)` }}>
               The honest synthesis
             </p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
               Use AI at the sense stage, without hesitation: it is genuinely transformative there, and it
               repairs the junction that volume used to break. But read the outliers yourself, because synthesis
               averages away the specific complaint that matters most. And do not mistake faster sense-making

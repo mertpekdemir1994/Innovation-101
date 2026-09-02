@@ -24,24 +24,26 @@ const STAGES = [
 // C1: (106→172) mid 139   C2: (260→326) mid 293   C3: (414→480) mid 447
 // Return path bottom: y=196, B4 midpoint x=350
 
+// nameY/tagY gaps widened (13 -> 18, 11 -> 16): tuned for ~4.8/3.6px text,
+// too tight for 11pt stacking
 const BREAKS = [
   {
-    cx: 139, cy: CY, nameY: 64, tagY: 77, isTop: true,
+    cx: 139, cy: CY, nameY: 62, tagY: 80, isTop: true,
     name: 'DATA LAKE',
     tag: 'SIGNAL · NO SENSE',
   },
   {
-    cx: 293, cy: CY, nameY: 64, tagY: 77, isTop: true,
+    cx: 293, cy: CY, nameY: 62, tagY: 80, isTop: true,
     name: 'INSIGHT DECK',
     tag: 'SENSE · NO DECISION',
   },
   {
-    cx: 447, cy: CY, nameY: 64, tagY: 77, isTop: true,
+    cx: 447, cy: CY, nameY: 62, tagY: 80, isTop: true,
     name: 'ROADMAP ITEM',
     tag: 'DECIDE · NO SHIP',
   },
   {
-    cx: 350, cy: 196, nameY: 232, tagY: 221, isTop: false,
+    cx: 350, cy: 196, nameY: 234, tagY: 218, isTop: false,
     name: 'NEVER CHECKED',
     tag: 'SHIP · NOT MEASURED',
   },
@@ -115,7 +117,7 @@ export default function PFLEstablishing() {
               filter="url(#pfl-est-glow)" />
             <text x={s.x + S_W / 2} y={CY}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.11em" fontWeight="600"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.11em" fontWeight="600"
               fill={`rgba(183,145,135,0.983)`} style={{ userSelect: 'none' }}>
               {s.label}
             </text>
@@ -145,7 +147,7 @@ export default function PFLEstablishing() {
         {/* Return path label */}
         <motion.text x={300} y={187}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
           fill={`rgba(183,145,135,0.87)`} style={{ userSelect: 'none' }}
           {...fade(1.7)}>
           ← BACK TO SIGNAL · MEASURES WHETHER THE CHANGE WORKED
@@ -165,14 +167,14 @@ export default function PFLEstablishing() {
             {/* Pathology name */}
             <text x={b.cx} y={b.nameY}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
               fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
               {b.name}
             </text>
             {/* Break state tag */}
             <text x={b.cx} y={b.tagY}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
               fill={`${AMBER_TEXT}0.839)`} style={{ userSelect: 'none' }}>
               {b.tag}
             </text>
@@ -182,7 +184,7 @@ export default function PFLEstablishing() {
         {/* "LOOP CLOSES" annotation: top right corner area */}
         <motion.text x={648} y={138}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.4" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
           fill={`rgba(183,145,135,0.849)`} style={{ userSelect: 'none' }}
           transform="rotate(90 648 138)"
           {...fade(1.9)}>
@@ -192,7 +194,7 @@ export default function PFLEstablishing() {
         {/* Caption */}
         <motion.text x={SVG_W / 2} y={CAP_Y}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.06em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
           fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           {...fade(2.4)}>
           A loop is only a loop if it closes. Every junction is a place it usually does not.

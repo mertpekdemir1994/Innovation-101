@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK  = 'rgba(138,75,60,'
+const BRICK_TEXT = 'rgba(183,145,135,'  // brightened text-safe variant of BRICK
 const AMBER  = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
@@ -199,7 +200,7 @@ export default function PFLInteractive() {
               filter={active === s.id ? 'url(#pfl-int-glow)' : undefined} />
             <text x={s.x + S_W / 2} y={CY}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.11em" fontWeight="600"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.11em" fontWeight="600"
               fill={`rgba(183,145,135,0.983)`} style={{ userSelect: 'none' }}>
               {s.label}
             </text>
@@ -240,7 +241,7 @@ export default function PFLInteractive() {
         {/* Return path label */}
         <motion.text x={300} y={187}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="3.8" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
           fill={`rgba(183,145,135,0.864)`} style={{ userSelect: 'none' }}
           animate={{ opacity: active === 'b4' ? 0.08 : (active ? 0.18 : 0.80) }}
           transition={{ duration: 0.22 }}>
@@ -260,7 +261,7 @@ export default function PFLInteractive() {
           {active === 'b1' && (
             <text x={139} y={90}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
               fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
               LOOP BREAKS HERE
             </text>
@@ -284,7 +285,7 @@ export default function PFLInteractive() {
           {active === 'b2' && (
             <text x={293} y={90}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
               fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
               LOOP BREAKS HERE
             </text>
@@ -308,7 +309,7 @@ export default function PFLInteractive() {
           {active === 'b3' && (
             <text x={447} y={90}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
               fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
               LOOP BREAKS HERE
             </text>
@@ -332,7 +333,7 @@ export default function PFLInteractive() {
           {active === 'b4' && (
             <text x={350} y={174}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.0" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.08em"
               fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
               LOOP BREAKS HERE
             </text>
@@ -346,23 +347,23 @@ export default function PFLInteractive() {
 
         {/* Break point ambient labels (show when not active, hide when something else is active) */}
         {[
-          { bId: 'b1', cx: 139, nameY: 64, tagY: 77, name: 'DATA LAKE',    tag: 'SIGNAL · NO SENSE'   },
-          { bId: 'b2', cx: 293, nameY: 64, tagY: 77, name: 'INSIGHT DECK', tag: 'SENSE · NO DECISION' },
-          { bId: 'b3', cx: 447, nameY: 64, tagY: 77, name: 'ROADMAP ITEM', tag: 'DECIDE · NO SHIP'    },
-          { bId: 'b4', cx: 350, nameY: 232, tagY: 221, name: 'NEVER CHECKED', tag: 'SHIP · NOT MEASURED' },
+          { bId: 'b1', cx: 139, nameY: 62, tagY: 80, name: 'DATA LAKE',    tag: 'SIGNAL · NO SENSE'   },
+          { bId: 'b2', cx: 293, nameY: 62, tagY: 80, name: 'INSIGHT DECK', tag: 'SENSE · NO DECISION' },
+          { bId: 'b3', cx: 447, nameY: 62, tagY: 80, name: 'ROADMAP ITEM', tag: 'DECIDE · NO SHIP'    },
+          { bId: 'b4', cx: 350, nameY: 234, tagY: 218, name: 'NEVER CHECKED', tag: 'SHIP · NOT MEASURED' },
         ].map(({ bId, cx, nameY, tagY, name, tag }) => (
           <motion.g key={bId}
             animate={{ opacity: active === null ? 0.85 : active === bId ? 0 : 0.18 }}
             transition={{ duration: 0.22 }}>
             <text x={cx} y={nameY}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.6" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
               fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
               {name}
             </text>
             <text x={cx} y={tagY}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="3.6" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
               fill={`${AMBER_TEXT}0.833)`} style={{ userSelect: 'none' }}>
               {tag}
             </text>
@@ -381,7 +382,7 @@ export default function PFLInteractive() {
               className="rounded-full px-3 py-1 text-xs font-mono tracking-widest transition-all"
               style={{
                 background: active === id ? `${BRICK}0.18)` : 'transparent',
-                color: active === id ? `${BRICK}0.92)` : `${BRICK}0.45)`,
+                color: active === id ? `${BRICK_TEXT}1)` : `${BRICK_TEXT}0.90)`,
                 border: `1px solid ${active === id ? `${BRICK}0.50)` : `${BRICK}0.20)`}`,
               }}
             >
@@ -398,7 +399,7 @@ export default function PFLInteractive() {
               className="rounded-full px-3 py-1 text-xs font-mono tracking-widest transition-all"
               style={{
                 background: active === id ? `${AMBER}0.14)` : 'transparent',
-                color: active === id ? `${AMBER}0.88)` : `${AMBER}0.40)`,
+                color: active === id ? `${AMBER}0.88)` : `${AMBER}0.75)`,
                 border: `1px solid ${active === id ? `${AMBER}0.45)` : `${AMBER}0.18)`}`,
               }}
             >
@@ -412,7 +413,7 @@ export default function PFLInteractive() {
             className="rounded-full px-3 py-1 text-xs font-mono tracking-widest transition-all"
             style={{
               background: 'transparent',
-              color: 'rgba(255,255,255,0.30)',
+              color: 'rgba(255,255,255,0.50)',
               border: '1px solid rgba(255,255,255,0.12)',
             }}
           >
@@ -437,7 +438,7 @@ export default function PFLInteractive() {
             }}
           >
             <p className="font-mono uppercase tracking-widest mb-2"
-              style={{ fontSize: 'var(--text-2xs)', color: isBreak ? `${AMBER}0.72)` : `${BRICK}0.70)` }}>
+              style={{ fontSize: 'var(--text-2xs)', color: isBreak ? `${AMBER}0.72)` : `${BRICK_TEXT}0.90)` }}>
               {info.tag}
             </p>
             <p className="font-semibold mb-3"
@@ -450,7 +451,7 @@ export default function PFLInteractive() {
             {isBreak && (
               <div className="mt-3 rounded px-3 py-2"
                 style={{ background: `${AMBER}0.07)`, borderLeft: `2px solid ${AMBER}0.35)` }}>
-                <p className="font-mono" style={{ fontSize: 'var(--text-xs)', color: `${AMBER}0.65)` }}>
+                <p className="font-mono" style={{ fontSize: 'var(--text-xs)', color: `${AMBER}0.75)` }}>
                   Diagnosing WHERE your loop breaks is more useful than adding more signal, which is what most organisations do instead.
                 </p>
               </div>
@@ -461,7 +462,7 @@ export default function PFLInteractive() {
 
       {!active && (
         <p className="font-mono text-center"
-          style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.22)', letterSpacing: '0.09em' }}>
+          style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.50)', letterSpacing: '0.09em' }}>
           CLICK A STAGE OR A BREAK POINT TO EXPLORE, BREAK POINTS SEVER THE LOOP
         </p>
       )}
