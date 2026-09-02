@@ -117,7 +117,7 @@ export default function FDEVariantsSpectrum() {
     <div>
       {/* Axis labels */}
       <div className="flex items-center justify-between mb-space-2">
-        <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${BRICK}0.70)` }}>
+        <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${BRICK}0.85)` }}>
           ← Highest commitment
         </span>
         <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: 'var(--color-neutral-500)' }}>
@@ -148,7 +148,7 @@ export default function FDEVariantsSpectrum() {
                     ? `${BRICK}1)`
                     : `${BRICK}${variant.nodeOpacity * 0.12})`,
                   border: `1px solid ${active === i ? 'transparent' : `${BRICK}${variant.nodeOpacity * 0.30})`}`,
-                  color: active === i ? '#fff' : `${BRICK}${variant.nodeOpacity * 0.85})`,
+                  color: active === i ? '#fff' : `${BRICK}0.85)`,
                   transform: active === i ? 'scale(1.15)' : 'scale(1)',
                   boxShadow: active === i ? `0 0 0 4px ${BRICK}0.10)` : 'none',
                 }}
@@ -218,7 +218,7 @@ export default function FDEVariantsSpectrum() {
                 className="mt-space-4 rounded-lg px-space-5 py-space-4"
                 style={{ background: `${BRICK}0.04)`, border: `1px solid ${BRICK}0.12)` }}
               >
-                <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${BRICK}0.55)` }}>
+                <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${BRICK}0.85)` }}>
                   Prompt
                 </p>
                 <p className="text-sm leading-relaxed" style={{ color: `${BRICK}0.80)` }}>{v.prompt}</p>
@@ -295,7 +295,7 @@ export default function FDEVariantsSpectrum() {
             style={{ background: active === i ? `${BRICK}0.03)` : undefined }}
           >
             <p className="text-sm font-semibold text-neutral-900 pr-space-4">{variant.name}</p>
-            <p className="text-sm" style={{ color: `${BRICK}${0.40 + (3 - i) * 0.15})` }}>
+            <p className="text-sm" style={{ color: `${BRICK}0.85)` }}>
               {variant.commitmentLabel}
             </p>
             <p className="text-sm text-neutral-500 leading-snug hidden md:block">{BEST_FOR[variant.key]}</p>

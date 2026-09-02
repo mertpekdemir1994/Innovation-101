@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(185,28,28,'
+// This dark, saturated red fails 4.5:1 against the near-black section
+// background at any opacity — brightened text-safe variant of BRICK.
+const BRICK_TEXT = 'rgba(216,129,129,'
 
 type Group = {
   label: string
@@ -128,13 +131,13 @@ export default function FDEDiagnostic() {
               <div className="flex items-center gap-space-4 mb-space-5">
                 <span
                   className="font-mono text-2xs uppercase tracking-widest px-space-3 py-space-1 rounded-full"
-                  style={{ color: `${BRICK}0.80)`, background: `${BRICK}0.10)`, border: `1px solid ${BRICK}0.20)` }}
+                  style={{ color: `${BRICK_TEXT}0.85)`, background: `${BRICK}0.10)`, border: `1px solid ${BRICK}0.20)` }}
                 >
                   {group.label}
                 </span>
                 <p className="text-sm" style={{ color: 'rgba(255,255,255,0.35)' }}>{group.description}</p>
                 {groupAnswered > 0 && (
-                  <span className="font-mono text-xs ml-auto" style={{ color: `${BRICK}0.55)` }}>
+                  <span className="font-mono text-xs ml-auto" style={{ color: `${BRICK_TEXT}0.85)` }}>
                     {groupYes}/{group.questions.length}
                   </span>
                 )}

@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const BRICK = 'rgba(185,28,28,'
+// This dark, saturated red fails 4.5:1 against the near-black section
+// background at any opacity — brightened text-safe variant of BRICK.
+const BRICK_TEXT = 'rgba(216,129,129,'
 
 type VariantKey = 'palantir' | 'distyl' | 'embedded' | 'commitment'
 
@@ -120,7 +123,7 @@ export default function FDEInteractiveSection() {
                     {variant.label}
                   </p>
                   <div className="flex gap-space-3 mt-space-1">
-                    <span className="font-mono text-2xs" style={{ color: isActive ? `${BRICK}0.70)` : 'rgba(255,255,255,0.25)' }}>
+                    <span className="font-mono text-2xs" style={{ color: isActive ? `${BRICK_TEXT}0.85)` : 'rgba(255,255,255,0.25)' }}>
                       {variant.commitment}
                     </span>
                   </div>
@@ -131,7 +134,7 @@ export default function FDEInteractiveSection() {
 
           {/* Spectrum labels */}
           <div className="hidden md:flex flex-col justify-between mt-space-2 ml-1">
-            <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${BRICK}0.45)` }}>
+            <span className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${BRICK_TEXT}0.85)` }}>
               ↑ Most radical
             </span>
             <span className="font-mono text-2xs uppercase tracking-widest mt-space-2" style={{ color: 'rgba(255,255,255,0.20)' }}>
@@ -180,7 +183,7 @@ export default function FDEInteractiveSection() {
                 className="rounded-xl p-space-5 mb-space-5"
                 style={{ background: `${BRICK}0.12)`, border: `1px solid ${BRICK}0.22)` }}
               >
-                <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${BRICK}0.65)` }}>
+                <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${BRICK_TEXT}0.85)` }}>
                   {detail.example.co}
                 </p>
                 <p className="text-sm leading-relaxed italic" style={{ color: 'rgba(255,255,255,0.75)' }}>
@@ -230,7 +233,7 @@ export default function FDEInteractiveSection() {
                 className="rounded-xl px-space-5 py-space-4"
                 style={{ background: `${BRICK}0.08)`, border: `1px solid ${BRICK}0.18)` }}
               >
-                <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${BRICK}0.65)` }}>
+                <p className="font-mono text-2xs uppercase tracking-widest mb-space-2" style={{ color: `${BRICK_TEXT}0.85)` }}>
                   Where to start
                 </p>
                 <p className="text-sm leading-relaxed italic" style={{ color: 'rgba(255,255,255,0.55)' }}>
