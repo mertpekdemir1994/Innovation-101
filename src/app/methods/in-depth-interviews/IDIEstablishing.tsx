@@ -14,7 +14,7 @@ const ROLES = [
 
 // Dome path: base at cy+h, arcs up to apex at cy
 function dome(cx: number, cy: number, w: number, h: number) {
-  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 0 ${cx + w} ${cy + h} Z`
+  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 1 ${cx + w} ${cy + h} Z`
 }
 
 const FILL_DEFAULT   = 'rgba(255,255,255,0.08)'
@@ -44,7 +44,7 @@ export default function IDIEstablishing() {
       aria-hidden="true"
     >
       {/* viewBox height: body base (137) + name (18) + sub (16) + margin (14) = 185 */}
-      <svg viewBox="0 0 640 185" width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
+      <svg viewBox="0 0 640 185" width="100%" style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           {/* Soft glow that blends stroke/fill outward: matches DiamondHero treatment */}
           <filter id="idi-est-glow" x="-40%" y="-40%" width="180%" height="180%">

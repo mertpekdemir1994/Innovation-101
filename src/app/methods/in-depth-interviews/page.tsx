@@ -42,8 +42,8 @@ export default function InDepthInterviewsPage() {
       {/* ────────────────────────────────────────────────────────────
           S1 - Header / Identity   DARK
           ──────────────────────────────────────────────────────────── */}
-      <DarkSection>
-        <Container>
+      <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
+        <Container className="relative z-10 flex flex-col justify-center flex-1">
           <div className="py-20 md:py-28">
             {/* Stage badge */}
             <span
@@ -85,17 +85,12 @@ export default function InDepthInterviewsPage() {
             </p>
           </div>
         </Container>
-      </DarkSection>
 
-      {/* ────────────────────────────────────────────────────────────
-          S2 - Establishing visual   DARK (scroll-in)
-          ──────────────────────────────────────────────────────────── */}
-      <DarkSection>
-        <Container>
-          <div className="pb-20">
-            <IDIEstablishing />
-          </div>
-        </Container>
+        {/* Establishing visual: full width, outside Container, matching the
+            framework hero treatment */}
+        <div className="relative z-10 w-full px-space-6 md:px-space-10 pb-space-12 pt-space-6">
+          <IDIEstablishing />
+        </div>
       </DarkSection>
 
       {/* ────────────────────────────────────────────────────────────
