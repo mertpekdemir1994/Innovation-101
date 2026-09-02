@@ -15,7 +15,7 @@ const CT = 22   // card top y
 const CH = 193  // card height
 
 function dome(cx: number, cy: number, w: number, h: number) {
-  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 0 ${cx + w} ${cy + h} Z`
+  return `M ${cx - w} ${cy + h} A ${w} ${h} 0 0 1 ${cx + w} ${cy + h} Z`
 }
 
 export default function PAEstablishing() {
@@ -41,7 +41,7 @@ export default function PAEstablishing() {
       aria-hidden="true"
     >
       {/* viewBox 720×258: 3 cards + captions below */}
-      <svg viewBox="0 0 720 258" width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
+      <svg viewBox="0 0 720 258" width="100%" style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           <filter id="pa-est-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="5" result="blur" />
