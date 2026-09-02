@@ -55,20 +55,24 @@ const DETAIL: Record<Reveal, { heading: string; description: string; distinction
 
 const MW = 350, MSW = 70
 const MSCX = [35, 105, 175, 245, 315] as const
-const MHDR_H = 22
-const MDIV_Y = 24
-const MCA_Y = 26, MCA_H = 24
-const MFS_Y = 52, MFS_H = 24
-const MLOV_Y = 80
-const MBS_Y  = 86, MBS_H = 24
-const MSP_Y  = 112, MSP_H = 22
-const MH_FULL = 142  // full blueprint height
-const MH_JM   = 92   // journey-map height (above LOV only, with emotion line)
+const MHDR_H = 26
+const MDIV_Y = 28
+// CA is taller than the other bands: it's the only one that also has to
+// hold the emotion-line overlay (Journey Mapping mini) below its label.
+const MCA_Y = 30, MCA_H = 44
+const MFS_Y = 76, MFS_H = 26
+const MLOV_Y = 124
+const MBS_Y  = 132, MBS_H = 26
+const MSP_Y  = 160, MSP_H = 24
+const MCAPTION_Y = 196          // shared bottom-caption baseline (middle anchor)
+const MH_FULL = 208             // full blueprint height
+const MH_JM   = 164             // journey-map height (above LOV + a dimmed strip)
 
-// Abbreviated emotion line for the Journey Mapping mini SVG
-// Points track through the CA lane (mid = MCA_Y + MCA_H/2 = 38)
+// Abbreviated emotion line for the Journey Mapping mini SVG, redrawn to
+// sit in the lower two-thirds of the (taller) CA band, clear of the
+// CUSTOMER ACTIONS label above it
 const MEM_PATH =
-  `M 35,44 C 60,38 80,34 105,33 C 120,36 148,52 175,54 C 198,52 225,36 245,32 C 270,30 295,38 315,40`
+  `M 35,61.8 C 60,58 80,55.5 105,54.9 C 120,56.8 148,66.8 175,68 C 198,66.8 225,56.8 245,54.3 C 270,53 295,58 315,59.3`
 
 function BlueprintMiniSVG() {
   return (
@@ -82,7 +86,7 @@ function BlueprintMiniSVG() {
           />
           <text x={MSCX[i]} y={2 + MHDR_H / 2 + 2}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${TEAL_TEXT}0.962)`} style={{ userSelect: 'none' }}
           >S{i + 1}</text>
         </g>
@@ -91,33 +95,33 @@ function BlueprintMiniSVG() {
       {/* CA */}
       <rect x={0} y={MCA_Y} width={MW} height={MCA_H} fill={`${TEAL}0.07)`} />
       <line x1={0} y1={MCA_Y + MCA_H} x2={MW} y2={MCA_Y + MCA_H} stroke="rgba(255,255,255,0.07)" strokeWidth={1} />
-      <text x={3} y={MCA_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.899)`} style={{ userSelect: 'none' }}
+      <text x={3} y={MCA_Y + 6} textAnchor="start" dominantBaseline="hanging"
+        fontSize="11" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.899)`} style={{ userSelect: 'none' }}
       >CUSTOMER ACTIONS</text>
       {/* FS */}
       <rect x={0} y={MFS_Y} width={MW} height={MFS_H} fill={`${TEAL}0.04)`} />
       <line x1={0} y1={MFS_Y + MFS_H} x2={MW} y2={MFS_Y + MFS_H} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
-      <text x={3} y={MFS_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.878)`} style={{ userSelect: 'none' }}
+      <text x={3} y={MFS_Y + 6} textAnchor="start" dominantBaseline="hanging"
+        fontSize="11" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.878)`} style={{ userSelect: 'none' }}
       >FRONTSTAGE</text>
       {/* LOV */}
       <line x1={0} y1={MLOV_Y} x2={MW} y2={MLOV_Y}
         stroke="rgba(255,255,255,0.60)" strokeWidth={1.5} strokeDasharray="6 4"
       />
-      <text x={MW - 3} y={MLOV_Y - 4}
+      <text x={MW - 3} y={MLOV_Y - 8}
         textAnchor="end" dominantBaseline="auto"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.55)" style={{ userSelect: 'none' }}
+        fontSize="11" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.55)" style={{ userSelect: 'none' }}
       >LINE OF VISIBILITY</text>
       {/* BS */}
       <rect x={0} y={MBS_Y} width={MW} height={MBS_H} fill={`${SLATE}0.05)`} />
       <line x1={0} y1={MBS_Y + MBS_H} x2={MW} y2={MBS_Y + MBS_H} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
-      <text x={3} y={MBS_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${SLATE_TEXT}0.905)`} style={{ userSelect: 'none' }}
+      <text x={3} y={MBS_Y + 6} textAnchor="start" dominantBaseline="hanging"
+        fontSize="11" fontFamily="var(--font-mono)" fill={`${SLATE_TEXT}0.905)`} style={{ userSelect: 'none' }}
       >BACKSTAGE</text>
       {/* SP */}
       <rect x={0} y={MSP_Y} width={MW} height={MSP_H} fill={`${SLATE}0.08)`} />
-      <text x={3} y={MSP_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${SLATE_TEXT}0.885)`} style={{ userSelect: 'none' }}
+      <text x={3} y={MSP_Y + 6} textAnchor="start" dominantBaseline="hanging"
+        fontSize="11" fontFamily="var(--font-mono)" fill={`${SLATE_TEXT}0.885)`} style={{ userSelect: 'none' }}
       >SUPPORT PROCESSES / SYSTEMS</text>
       {/* Column dividers */}
       {[1,2,3,4].map(i => (
@@ -125,8 +129,8 @@ function BlueprintMiniSVG() {
           stroke="rgba(255,255,255,0.05)" strokeWidth={1}
         />
       ))}
-      <text x={MW / 2} y={MH_FULL - 2} textAnchor="middle" dominantBaseline="auto"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.864)`} style={{ userSelect: 'none' }}
+      <text x={MW / 2} y={MCAPTION_Y} textAnchor="middle" dominantBaseline="middle"
+        fontSize="11" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.864)`} style={{ userSelect: 'none' }}
       >ABOVE + BELOW THE LINE, FULL DELIVERY SYSTEM</text>
     </svg>
   )
@@ -144,7 +148,7 @@ function JourneyMappingMiniSVG() {
           />
           <text x={MSCX[i]} y={2 + MHDR_H / 2 + 2}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${TEAL_TEXT}0.962)`} style={{ userSelect: 'none' }}
           >S{i + 1}</text>
         </g>
@@ -152,21 +156,21 @@ function JourneyMappingMiniSVG() {
       <line x1={0} y1={MDIV_Y} x2={MW} y2={MDIV_Y} stroke="rgba(255,255,255,0.08)" strokeWidth={1} />
       {/* CA: customer actions + emotion line */}
       <rect x={0} y={MCA_Y} width={MW} height={MCA_H} fill={`${TEAL}0.07)`} />
-      <text x={3} y={MCA_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.899)`} style={{ userSelect: 'none' }}
+      <text x={3} y={MCA_Y + 6} textAnchor="start" dominantBaseline="hanging"
+        fontSize="11" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.899)`} style={{ userSelect: 'none' }}
       >CUSTOMER ACTIONS</text>
       <line x1={0} y1={MCA_Y + MCA_H} x2={MW} y2={MCA_Y + MCA_H} stroke="rgba(255,255,255,0.07)" strokeWidth={1} />
       {/* FS */}
       <rect x={0} y={MFS_Y} width={MW} height={MFS_H} fill={`${TEAL}0.04)`} />
-      <text x={3} y={MFS_Y + 7} textAnchor="start" dominantBaseline="hanging"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.878)`} style={{ userSelect: 'none' }}
+      <text x={3} y={MFS_Y + 6} textAnchor="start" dominantBaseline="hanging"
+        fontSize="11" fontFamily="var(--font-mono)" fill={`${TEAL_TEXT}0.878)`} style={{ userSelect: 'none' }}
       >FRONTSTAGE</text>
-      {/* Emotion line in the CA area */}
+      {/* Emotion line in the CA area, redrawn to sit clear of the label above it */}
       <path d={MEM_PATH}
         stroke={`${TEAL}0.85)`} strokeWidth={2} strokeLinecap="round" fill="none"
       />
       {MSCX.map((cx, i) => {
-        const eys = [44, 33, 54, 32, 40]
+        const eys = [61.8, 54.9, 68, 54.3, 59.3]
         return <circle key={i} cx={cx} cy={eys[i]} r={2}
           fill={`${TEAL}0.90)`} stroke="rgba(255,255,255,0.60)" strokeWidth={0.8}
         />
@@ -175,9 +179,9 @@ function JourneyMappingMiniSVG() {
       <line x1={0} y1={MLOV_Y} x2={MW} y2={MLOV_Y}
         stroke="rgba(255,255,255,0.20)" strokeWidth={1.5} strokeDasharray="6 4"
       />
-      <text x={MW - 3} y={MLOV_Y - 4}
+      <text x={MW - 3} y={MLOV_Y - 8}
         textAnchor="end" dominantBaseline="auto"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
+        fontSize="11" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}
       >LINE OF VISIBILITY</text>
       {/* Below LOV: dimmed hint only */}
       <rect x={0} y={MLOV_Y} width={MW} height={MH_JM - MLOV_Y}
@@ -185,7 +189,7 @@ function JourneyMappingMiniSVG() {
       />
       <text x={MW / 2} y={MLOV_Y + (MH_JM - MLOV_Y) / 2}
         textAnchor="middle" dominantBaseline="middle"
-        fontSize="4" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.575)" style={{ userSelect: 'none' }}
+        fontSize="11" fontFamily="var(--font-mono)" fill="rgba(255,255,255,0.575)" style={{ userSelect: 'none' }}
       >NOT IN SCOPE, STAYS ABOVE THE LINE</text>
       {/* Column dividers */}
       {[1,2,3,4].map(i => (
@@ -214,7 +218,7 @@ function FiveEsMiniSVG() {
         stroke="rgba(255,255,255,0.20)" strokeWidth={1} strokeDasharray="6 4"
       />
       {[MCA_Y, MFS_Y, MBS_Y, MSP_Y].map((y, i) => (
-        <rect key={i} x={0} y={y} width={MW} height={i < 2 ? MCA_H : MBS_H}
+        <rect key={i} x={0} y={y} width={MW} height={[MCA_H, MFS_H, MBS_H, MSP_H][i]}
           fill={i < 2 ? `${TEAL}0.02)` : `${SLATE}0.03)`}
         />
       ))}
@@ -226,7 +230,7 @@ function FiveEsMiniSVG() {
           />
           <text x={MSCX[i]} y={2 + MHDR_H / 2 + 2}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.07em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.07em"
             fill={`${INDIGO_TEXT}0.979)`} style={{ userSelect: 'none' }}
           >{label}</text>
         </g>
@@ -236,8 +240,8 @@ function FiveEsMiniSVG() {
           stroke={`${INDIGO}0.10)`} strokeWidth={1}
         />
       ))}
-      <text x={MW / 2} y={MH_FULL - 2} textAnchor="middle" dominantBaseline="auto"
-        fontSize="3.5" fontFamily="var(--font-mono)" fill={`${INDIGO_TEXT}0.874)`} style={{ userSelect: 'none' }}
+      <text x={MW / 2} y={MCAPTION_Y} textAnchor="middle" dominantBaseline="middle"
+        fontSize="11" fontFamily="var(--font-mono)" fill={`${INDIGO_TEXT}0.874)`} style={{ userSelect: 'none' }}
       >FIXED FIVE-PHASE EVALUATION LENS</text>
     </svg>
   )
@@ -250,6 +254,8 @@ export default function SBBoundarySection() {
 
   const accentColor = (id: Reveal) =>
     id === '5es' ? `${INDIGO}` : `${TEAL}`
+  const accentTextColor = (id: Reveal) =>
+    id === '5es' ? `${INDIGO_TEXT}` : `${TEAL_TEXT}`
 
   return (
     <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-start">
@@ -266,9 +272,9 @@ export default function SBBoundarySection() {
             aria-pressed={active === id}
           >
             <p className="font-semibold mb-1.5"
-              style={{ fontSize: 'var(--text-sm)', color: active === id ? '#FAFAFA' : 'rgba(255,255,255,0.40)' }}
+              style={{ fontSize: 'var(--text-sm)', color: active === id ? '#FAFAFA' : 'rgba(255,255,255,0.50)' }}
             >{label}</p>
-            <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.28)' }}>
+            <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.50)' }}>
               {summary}
             </p>
           </button>
@@ -306,7 +312,7 @@ export default function SBBoundarySection() {
               style={{ background: `${accentColor(active)}0.08)`, border: `1px solid ${accentColor(active)}0.18)` }}
             >
               <p className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${accentColor(active)}0.65)` }}
+                style={{ fontSize: 'var(--text-2xs)', color: `${accentTextColor(active)}0.85)` }}
               >When to reach for this instead</p>
               <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.62)' }}>
                 {DETAIL[active].distinction}
@@ -317,7 +323,7 @@ export default function SBBoundarySection() {
               <div className="mt-4">
                 <Link href={DETAIL[active].link!}
                   className="inline-flex items-center gap-1.5 font-mono uppercase tracking-widest"
-                  style={{ fontSize: 'var(--text-2xs)', color: `${accentColor(active)}0.70)` }}
+                  style={{ fontSize: 'var(--text-2xs)', color: `${accentTextColor(active)}0.85)` }}
                 >
                   Go to {ITEMS.find(i => i.id === active)?.label}
                   <span aria-hidden="true">→</span>

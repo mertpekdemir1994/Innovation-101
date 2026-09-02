@@ -15,19 +15,25 @@ const SCX = [70, 210, 350, 490, 630] as const
 const HDR_TOP = 8, HDR_H = 36
 const DIV_Y   = 48
 
-const CA_Y = 50,  CA_H = 42
-const FS_Y = 94,  FS_H = 42
-const LOV_TOP      = FS_Y + FS_H  // 136
-const LOV_LINE_Y   = 143
-const LOV_BOTTOM   = 150
-const BS_Y = 150, BS_H = 42
-const SP_Y = 194, SP_H = 42
-const SVG_H = 244
+const CA_Y = 50,  CA_H = 48
+const FS_Y = 98,  FS_H = 48
+const LOV_TOP      = FS_Y + FS_H  // 146
+const LOV_LINE_Y   = 166
+const LOV_BOTTOM   = 174
+const BS_Y = 174, BS_H = 48
+const SP_Y = 222, SP_H = 48
+const SVG_H = 270
+
+// Vertical offsets shared by every band: label sits near the band top
+// (hanging baseline), the row of items sits well below it so an 11pt
+// label and an 11pt item line never touch.
+const LABEL_DY = 6
+const ITEM_DY  = 32
 
 const STAGE_NAMES = ['DISCOVER', 'CONSIDER', 'START', 'USE', 'RESOLVE'] as const
 
-const CA_ITEMS = ['Searches online',    'Compares plans',  'Signs up',        'Uses the service', 'Reports an issue'] as const
-const FS_ITEMS = ['Ads / Landing page', 'Pricing / Sales', 'Onboarding flow', 'App / Dashboard',  'Support chat'] as const
+const CA_ITEMS = ['Searches online',   'Compares plans',  'Signs up',        'Uses the service', 'Reports an issue'] as const
+const FS_ITEMS = ['Ads/Landing page',  'Pricing / Sales', 'Onboarding flow', 'App / Dashboard',  'Support chat'] as const
 const BS_ITEMS = ['Lead enrichment',    'CRM operations',  'Account setup',   'Usage tracking',   'Ticket routing'] as const
 const SP_ITEMS = ['Analytics CRM',      'Billing system',  'Auth service',    'Usage database',   'Helpdesk platform'] as const
 
@@ -96,6 +102,7 @@ export default function SBInteractive() {
 
   const isBelow = (id: LayerId) => id === 'backstage' || id === 'support-processes'
   const accentFor = (id: LayerId) => isBelow(id) ? SLATE : TEAL
+  const accentTextFor = (id: LayerId) => isBelow(id) ? SLATE_TEXT : TEAL_TEXT
 
   return (
     <div>
@@ -120,7 +127,7 @@ export default function SBInteractive() {
               />
               <text x={SCX[i]} y={HDR_TOP + HDR_H / 2 + 2}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.12em"
                 fill={`${TEAL_TEXT}0.979)`} style={{ userSelect: 'none', pointerEvents: 'none' }}
               >{name}</text>
             </g>
@@ -148,14 +155,14 @@ export default function SBInteractive() {
               style={{ transition: 'fill 0.20s' }}
             />
             <line x1={0} y1={CA_Y + CA_H} x2={SVG_W} y2={CA_Y + CA_H} stroke="rgba(255,255,255,0.07)" strokeWidth={1} />
-            <text x={4} y={CA_Y + 7} textAnchor="start" dominantBaseline="hanging"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            <text x={4} y={CA_Y + LABEL_DY} textAnchor="start" dominantBaseline="hanging"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={`${TEAL_TEXT}0.905)`} style={{ userSelect: 'none', pointerEvents: 'none' }}
             >CUSTOMER ACTIONS</text>
             {CA_ITEMS.map((text, i) => (
-              <text key={i} x={SCX[i]} y={CA_Y + CA_H / 2 + 5}
+              <text key={i} x={SCX[i]} y={CA_Y + ITEM_DY}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="6.5" fontFamily="var(--font-body, Inter, sans-serif)"
+                fontSize="11" fontFamily="var(--font-body, Inter, sans-serif)"
                 fill="rgba(255,255,255,0.70)" style={{ userSelect: 'none', pointerEvents: 'none' }}
               >{text}</text>
             ))}
@@ -176,14 +183,14 @@ export default function SBInteractive() {
               style={{ transition: 'fill 0.20s' }}
             />
             <line x1={0} y1={FS_Y + FS_H} x2={SVG_W} y2={FS_Y + FS_H} stroke="rgba(255,255,255,0.06)" strokeWidth={1} />
-            <text x={4} y={FS_Y + 7} textAnchor="start" dominantBaseline="hanging"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            <text x={4} y={FS_Y + LABEL_DY} textAnchor="start" dominantBaseline="hanging"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={`${TEAL_TEXT}0.885)`} style={{ userSelect: 'none', pointerEvents: 'none' }}
             >FRONTSTAGE</text>
             {FS_ITEMS.map((text, i) => (
-              <text key={i} x={SCX[i]} y={FS_Y + FS_H / 2 + 5}
+              <text key={i} x={SCX[i]} y={FS_Y + ITEM_DY}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="6.5" fontFamily="var(--font-body, Inter, sans-serif)"
+                fontSize="11" fontFamily="var(--font-body, Inter, sans-serif)"
                 fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none', pointerEvents: 'none' }}
               >{text}</text>
             ))}
@@ -214,9 +221,9 @@ export default function SBInteractive() {
               filter="url(#sb-int-glow)"
               style={{ transition: 'stroke 0.20s, stroke-width 0.20s', pointerEvents: 'none' }}
             />
-            <text x={SVG_W - 6} y={LOV_LINE_Y - 7}
+            <text x={SVG_W - 6} y={LOV_LINE_Y - 8}
               textAnchor="end" dominantBaseline="auto"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.14em"
               fill={activeLayer === 'line-of-visibility' ? 'rgba(255,255,255,0.88)' : 'rgba(255,255,255,0.58)'}
               style={{ userSelect: 'none', pointerEvents: 'none', transition: 'fill 0.20s' }}
             >LINE OF VISIBILITY</text>
@@ -237,14 +244,14 @@ export default function SBInteractive() {
               style={{ transition: 'fill 0.20s' }}
             />
             <line x1={0} y1={BS_Y + BS_H} x2={SVG_W} y2={BS_Y + BS_H} stroke="rgba(255,255,255,0.05)" strokeWidth={1} />
-            <text x={4} y={BS_Y + 7} textAnchor="start" dominantBaseline="hanging"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            <text x={4} y={BS_Y + LABEL_DY} textAnchor="start" dominantBaseline="hanging"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={`${SLATE_TEXT}0.912)`} style={{ userSelect: 'none', pointerEvents: 'none' }}
             >BACKSTAGE</text>
             {BS_ITEMS.map((text, i) => (
-              <text key={i} x={SCX[i]} y={BS_Y + BS_H / 2 + 5}
+              <text key={i} x={SCX[i]} y={BS_Y + ITEM_DY}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="6.5" fontFamily="var(--font-body, Inter, sans-serif)"
+                fontSize="11" fontFamily="var(--font-body, Inter, sans-serif)"
                 fill={`${SLATE_TEXT}0.941)`} style={{ userSelect: 'none', pointerEvents: 'none' }}
               >{text}</text>
             ))}
@@ -264,14 +271,14 @@ export default function SBInteractive() {
               fill={activeLayer === 'support-processes' ? `${SLATE}0.22)` : `${SLATE}0.08)`}
               style={{ transition: 'fill 0.20s' }}
             />
-            <text x={4} y={SP_Y + 7} textAnchor="start" dominantBaseline="hanging"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            <text x={4} y={SP_Y + LABEL_DY} textAnchor="start" dominantBaseline="hanging"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={`${SLATE_TEXT}0.891)`} style={{ userSelect: 'none', pointerEvents: 'none' }}
             >SUPPORT PROCESSES / SYSTEMS</text>
             {SP_ITEMS.map((text, i) => (
-              <text key={i} x={SCX[i]} y={SP_Y + SP_H / 2 + 5}
+              <text key={i} x={SCX[i]} y={SP_Y + ITEM_DY}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="6.5" fontFamily="var(--font-body, Inter, sans-serif)"
+                fontSize="11" fontFamily="var(--font-body, Inter, sans-serif)"
                 fill={`${SLATE_TEXT}0.92)`} style={{ userSelect: 'none', pointerEvents: 'none' }}
               >{text}</text>
             ))}
@@ -281,7 +288,7 @@ export default function SBInteractive() {
         {!activeLayer && (
           <p className="text-center mt-4" style={{
             fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)',
-            letterSpacing: '0.10em', textTransform: 'uppercase', color: `${TEAL}0.50)`,
+            letterSpacing: '0.10em', textTransform: 'uppercase', color: `${TEAL_TEXT}0.85)`,
           }}>
             Click any layer to see what lives there
           </p>
@@ -304,7 +311,7 @@ export default function SBInteractive() {
             }}
           >
             <p className="font-mono uppercase tracking-widest mb-1"
-              style={{ fontSize: 'var(--text-2xs)', color: `${accentFor(activeLayer)}0.68)` }}
+              style={{ fontSize: 'var(--text-2xs)', color: `${accentTextFor(activeLayer)}0.85)` }}
             >{LAYER_DETAIL[activeLayer].tagline}</p>
             <h3 className="font-semibold mb-4"
               style={{ fontSize: 'var(--text-xl)', color: '#FAFAFA' }}
@@ -317,7 +324,7 @@ export default function SBInteractive() {
                 style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.20)' }}
               >
                 <p className="font-mono uppercase tracking-widest mb-2"
-                  style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.40)' }}
+                  style={{ fontSize: 'var(--text-2xs)', color: 'rgba(255,255,255,0.50)' }}
                 >The key distinction</p>
                 <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: 'rgba(255,255,255,0.58)' }}>
                   A journey map lives entirely above this line. A service blueprint keeps the top spine and then crosses it. The crossing is what this method exists for.
@@ -333,7 +340,7 @@ export default function SBInteractive() {
             className="flex items-center justify-center"
             style={{ minHeight: 100 }}
           >
-            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.22)', fontStyle: 'italic' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.50)', fontStyle: 'italic' }}>
               Select a layer to read its description.
             </p>
           </motion.div>

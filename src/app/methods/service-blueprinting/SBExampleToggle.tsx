@@ -17,6 +17,7 @@ const CONTENT: Record<Tab, {
   verdict: string
   verdictLabel: string
   verdictColor: string
+  verdictBorderColor: string
 }> = {
   traditional: {
     intro: 'A bank wants to fix its small-business loan application. Customers experience it as slow and arbitrary: they apply, wait weeks with little contact, and often receive a decision that feels unexplained. The customer-facing team has already journey-mapped the experience and knows customers feel abandoned during the wait. Now they need to understand why, in the operations beneath the line of visibility.',
@@ -28,7 +29,9 @@ const CONTENT: Record<Tab, {
     finding: 'The customer-facing symptom (a frustrating wait) had an operational root three layers below the surface: an unowned handoff between departments that no individual team could see and no system recorded as a delay. The journey map told them customers felt abandoned; the blueprint told them exactly why.',
     verdict: 'The fix (assigning clear ownership of that handoff and adding a simple tracking step) addressed the real root cause rather than optimizing the surface. Without the blueprint going below the line of visibility, the team would have redesigned the frontstage and left the underlying problem untouched.',
     verdictLabel: 'Result',
-    verdictColor: 'rgba(5,150,105,0.75)',
+    // emerald-800: plain emerald fails 4.5:1 on this light background even at full opacity
+    verdictColor: 'rgba(6,95,70,1)',
+    verdictBorderColor: 'rgba(6,95,70,0.22)',
   },
   ai: {
     intro: 'The same bank builds the blueprint with AI assistance. AI assembles a draft from the bank\'s process documentation, system logs, and application-tracking data, reconstructing the documented frontstage, backstage steps, and systems and quantifying where applications show logged delays.',
@@ -40,7 +43,9 @@ const CONTENT: Record<Tab, {
     finding: 'AI reconstructed the documented service fast and quantified logged delays: real value. But the root cause lived in the undocumented reality below the line of visibility: an unowned gap that no process doc acknowledges and no system records as a failure. Only frontline staff could reveal it.',
     verdict: 'The strongest approach used the AI draft to establish the documented baseline quickly, then took that draft to frontline staff to correct it with how the work truly runs. AI built the visible structure; humans found the hidden break.',
     verdictLabel: 'Result',
-    verdictColor: 'rgba(251,146,60,0.75)',
+    // orange-800: plain orange fails 4.5:1 on this light background even at full opacity
+    verdictColor: 'rgba(154,52,18,1)',
+    verdictBorderColor: 'rgba(154,52,18,0.22)',
   },
 }
 
@@ -90,7 +95,7 @@ export default function SBExampleToggle() {
                 <div className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center font-mono text-xs font-semibold"
                   style={{
                     background: 'rgba(42,111,122,0.08)',
-                    color: `${TEAL}0.70)`,
+                    color: `${TEAL}0.95)`,
                     border: '1px solid rgba(42,111,122,0.22)',
                     marginTop: 2,
                   }}
@@ -114,7 +119,7 @@ export default function SBExampleToggle() {
           </div>
 
           <div className="rounded-xl p-5"
-            style={{ border: `1px solid ${d.verdictColor.replace('0.75', '0.22')}` }}
+            style={{ border: `1px solid ${d.verdictBorderColor}` }}
           >
             <p className="font-mono uppercase tracking-widest mb-2"
               style={{ fontSize: 'var(--text-2xs)', color: d.verdictColor }}
