@@ -34,7 +34,11 @@ export default function FDEHeroOrbit() {
 
   return (
     <div className="w-full flex justify-center items-center py-space-4 select-none" aria-hidden="true">
-      <svg viewBox="0 0 960 680" width="100%" style={{ maxWidth: 960 }} className="overflow-visible">
+      <svg viewBox="0 0 1740 680" width="100%" className="overflow-visible">
+      {/* Canvas widened from the original 960-wide composition (1.41:1) toward
+          2.56:1 by framing it wider, not stretching the circle — the orbit's
+          own geometry is untouched, just recentered via this translate. */}
+      <g transform="translate(390, 0)">
 
         {/* Outer glow */}
         <circle cx={cx} cy={cy} r={r + 48}
@@ -68,14 +72,14 @@ export default function FDEHeroOrbit() {
         })}
 
         {/* Center labels */}
-        <text x={cx} y={cy - 10} textAnchor="middle"
-          fill={`${BRICK_TEXT}0.87)`} fontSize="12"
+        <text x={cx} y={cy - 13} textAnchor="middle"
+          fill={`${BRICK_TEXT}0.87)`} fontSize="22"
           fontFamily="ui-monospace, monospace" letterSpacing="0.14em"
           style={{ textTransform: 'uppercase' }}>
           continuous
         </text>
-        <text x={cx} y={cy + 10} textAnchor="middle"
-          fill={`${BRICK_TEXT}0.84)`} fontSize="11"
+        <text x={cx} y={cy + 14} textAnchor="middle"
+          fill={`${BRICK_TEXT}0.84)`} fontSize="20"
           fontFamily="ui-monospace, monospace" letterSpacing="0.12em"
           style={{ textTransform: 'uppercase' }}>
           loop
@@ -105,43 +109,44 @@ export default function FDEHeroOrbit() {
               />
 
               {/* Number */}
-              <text x={x} y={y - 9}
+              <text x={x} y={y - 10}
                 textAnchor="middle"
                 fill={`${BRICK_TEXT}0.91)`}
-                fontSize="10" fontFamily="ui-monospace, monospace" letterSpacing="0.10em">
+                fontSize="13" fontFamily="ui-monospace, monospace" letterSpacing="0.10em">
                 {movement.n}
               </text>
 
               {/* Short label */}
-              <text x={x} y={y + 9}
+              <text x={x} y={y + 11}
                 textAnchor="middle"
                 fill={`${BRICK_TEXT}1.0)`}
-                fontSize="15" fontWeight="700"
-                fontFamily="ui-monospace, monospace" letterSpacing="0.06em"
+                fontSize="17" fontWeight="700"
+                fontFamily="ui-monospace, monospace" letterSpacing="0.02em"
                 style={{ textTransform: 'uppercase' }}>
                 {movement.short}
               </text>
 
               {/* External full label */}
-              <text x={lx} y={ly - 8}
+              <text x={lx} y={ly - 9}
                 textAnchor={anc}
                 fill={`${BRICK_TEXT}0.96)`}
-                fontSize="13" fontFamily="ui-monospace, monospace"
+                fontSize="24" fontFamily="ui-monospace, monospace"
                 letterSpacing="0.08em" style={{ textTransform: 'uppercase' }}>
                 {movement.full}
               </text>
 
               {/* External verb */}
-              <text x={lx} y={ly + 10}
+              <text x={lx} y={ly + 16}
                 textAnchor={anc}
                 fill={`${BRICK_TEXT}0.876)`}
-                fontSize="11" fontFamily="ui-monospace, monospace"
-                letterSpacing="0.10em" style={{ textTransform: 'uppercase' }}>
+                fontSize="20" fontFamily="ui-monospace, monospace"
+                letterSpacing="0.05em" style={{ textTransform: 'uppercase' }}>
                 {movement.verb}
               </text>
             </motion.g>
           )
         })}
+      </g>
       </svg>
     </div>
   )

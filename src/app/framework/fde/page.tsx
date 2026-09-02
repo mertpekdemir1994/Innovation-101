@@ -81,7 +81,7 @@ export default function FDEPage() {
         </Container>
 
         {/* Decorative orbit diagram */}
-        <div className="relative z-10 w-full px-space-4 md:px-space-8 pb-space-10">
+        <div className="relative z-10 w-full px-space-6 md:px-space-10 pb-space-12 pt-space-6">
           <FDEHeroOrbit />
         </div>
 
