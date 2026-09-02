@@ -71,7 +71,7 @@ export default function HMWEstablishing() {
           <text
             x={PROB_CX} y={PROB_Y + 18}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
             fill="rgba(255,255,255,0.65)" style={{ userSelect: 'none' }}
           >PROBLEM SPACE</text>
           <line
@@ -81,15 +81,16 @@ export default function HMWEstablishing() {
           <text
             x={PROB_CX} y={PROB_Y + 44}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill="rgba(255,255,255,0.71)" style={{ userSelect: 'none' }}
           >INSIGHT</text>
+          {/* Quote lines: gap widened 14 -> 16 for 11pt stacking */}
           {([
-            ['Users abandon checkout',         PROB_Y + 68,  '7',   0.80],
-            ['at payment, the step',             PROB_Y + 82,  '7',   0.80],
-            ['feels effortful',                 PROB_Y + 96,  '7',   0.80],
-            ['and uncertain.',                  PROB_Y + 110, '7',   0.80],
-            ['11 of 14 interviews',             PROB_Y + 140, '4.5', 0.30],
+            ['Users abandon checkout',         PROB_Y + 64,  '11', 0.80],
+            ['at payment, the step',             PROB_Y + 80,  '11', 0.80],
+            ['feels effortful',                 PROB_Y + 96,  '11', 0.80],
+            ['and uncertain.',                  PROB_Y + 112, '11', 0.80],
+            ['11 of 14 interviews',             PROB_Y + 140, '11', 0.55],
           ] as [string, number, string, number][]).map(([t, y, fs, op]) => (
             <text
               key={y} x={PROB_CX} y={y}
@@ -133,7 +134,7 @@ export default function HMWEstablishing() {
               key={word}
               x={DOOR_CX} y={PROB_Y + 60 + i * 18}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
               fill="rgba(255,255,255,0.78)" style={{ userSelect: 'none' }}
             >{word}</text>
           ))}
@@ -174,7 +175,7 @@ export default function HMWEstablishing() {
           <text
             x={SOL_CX} y={PROB_Y + 18}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
             fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >HOW MIGHT WE</text>
           <line
@@ -182,9 +183,9 @@ export default function HMWEstablishing() {
             stroke="rgba(255,255,255,0.10)"
           />
           {([
-            ['make checkout feel',   PROB_Y + 64, '8.5', '600', 0.92],
-            ['effortless and',       PROB_Y + 80, '8.5', '600', 0.92],
-            ['reassuring?',          PROB_Y + 96, '8.5', '600', 0.92],
+            ['make checkout feel',   PROB_Y + 64, '11', '600', 0.92],
+            ['effortless and',       PROB_Y + 80, '11', '600', 0.92],
+            ['reassuring?',          PROB_Y + 96, '11', '600', 0.92],
           ] as [string, number, string, string, number][]).map(([t, y, fs, fw, op]) => (
             <text
               key={y} x={SOL_CX} y={y}
@@ -193,12 +194,20 @@ export default function HMWEstablishing() {
               fill={`rgba(255,255,255,${op})`} style={{ userSelect: 'none' }}
             >{t}</text>
           ))}
+          {/* Split into two lines - the single-line sentence (39 chars) no
+              longer fits the 234-unit panel width at 11pt */}
           <text
-            x={SOL_CX} y={PROB_Y + 135}
+            x={SOL_CX} y={PROB_Y + 133}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="5" fontFamily="var(--font-inter,sans-serif)" fontStyle="italic"
+            fontSize="11" fontFamily="var(--font-inter,sans-serif)" fontStyle="italic"
             fill="rgba(255,255,255,0.69)" style={{ userSelect: 'none' }}
-          >specific problem. open solution space.</text>
+          >specific problem.</text>
+          <text
+            x={SOL_CX} y={PROB_Y + 149}
+            textAnchor="middle" dominantBaseline="middle"
+            fontSize="11" fontFamily="var(--font-inter,sans-serif)" fontStyle="italic"
+            fill="rgba(255,255,255,0.69)" style={{ userSelect: 'none' }}
+          >open solution space.</text>
         </motion.g>
       </svg>
     </motion.div>

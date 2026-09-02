@@ -130,7 +130,7 @@ export default function HMWScopeSlider() {
           <text
             x={PROB_CX} y={PROB_Y + 18}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
             fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           >PROBLEM SPACE</text>
           <line
@@ -140,13 +140,14 @@ export default function HMWScopeSlider() {
           <text
             x={PROB_CX} y={PROB_Y + 44}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >INSIGHT</text>
+          {/* gap widened 14 -> 16 for 11pt stacking */}
           {([
-            ['Users abandon checkout',          PROB_Y + 68, '6.5', 0.74],
-            ['at payment, feels',                 PROB_Y + 82, '6.5', 0.74],
-            ['effortful and uncertain.',         PROB_Y + 96, '6.5', 0.74],
+            ['Users abandon checkout',          PROB_Y + 64, '11', 0.74],
+            ['at payment, feels',                 PROB_Y + 80, '11', 0.74],
+            ['effortful and uncertain.',         PROB_Y + 96, '11', 0.74],
           ] as [string, number, string, number][]).map(([t, y, fs, op]) => (
             <text
               key={y} x={PROB_CX} y={y}
@@ -180,7 +181,7 @@ export default function HMWScopeSlider() {
             <text
               key={word} x={DOOR_CX} y={PROB_Y + 60 + i * 18}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
               fill="rgba(255,255,255,0.78)" style={{ userSelect: 'none' }}
             >{word}</text>
           ))}
@@ -226,7 +227,7 @@ export default function HMWScopeSlider() {
               <text
                 x={SOL_CX} y={SOL_Y + 18}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
                 fill={data.warn ? `${AMBER_TEXT}0.861)` : 'rgba(255,255,255,0.7)'}
                 style={{ userSelect: 'none' }}
               >HOW MIGHT WE</text>
@@ -238,20 +239,21 @@ export default function HMWScopeSlider() {
                 <text
                   key={i} x={SOL_CX} y={LINE_Y0 + i * LINE_SPACING}
                   textAnchor="middle" dominantBaseline="middle"
-                  fontSize="8.5" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
+                  fontSize="11" fontWeight="600" fontFamily="var(--font-inter,sans-serif)"
                   fill="rgba(255,255,255,0.90)" style={{ userSelect: 'none' }}
                 >{line}</text>
               ))}
-              {/* Scope quality tag */}
+              {/* Scope quality tag - widened, "⚠ SCOPE PROBLEM" doesn't fit
+                  the original 84-wide badge at 11pt */}
               <rect
-                x={SOL_CX - 42} y={SOL_Y + 150} width={84} height={16} rx={3}
+                x={SOL_CX - 65} y={SOL_Y + 144} width={130} height={22} rx={3}
                 fill={data.warn ? `${AMBER}0.14)` : `${NAVY}0.30)`}
                 stroke={data.warn ? `${AMBER}0.28)` : 'rgba(255,255,255,0.15)'}
               />
               <text
-                x={SOL_CX} y={SOL_Y + 158}
+                x={SOL_CX} y={SOL_Y + 155}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
                 fill={data.warn ? `${AMBER}0.75)` : 'rgba(255,255,255,0.55)'}
                 style={{ userSelect: 'none' }}
               >{data.warn ? '⚠ SCOPE PROBLEM' : '✓ CALIBRATED'}</text>
@@ -276,19 +278,19 @@ export default function HMWScopeSlider() {
           <text
             x={BAR_X} y={BAR_Y - 6}
             textAnchor="start" dominantBaseline="auto"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           >NARROW</text>
           <text
             x={BAR_X + BAR_MAX_W} y={BAR_Y - 6}
             textAnchor="end" dominantBaseline="auto"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}
           >BROAD</text>
           <text
             x={BAR_X + BAR_MAX_W / 2} y={BAR_Y - 6}
             textAnchor="middle" dominantBaseline="auto"
-            fontSize="4" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
           >← SCOPE BREADTH →</text>
 
@@ -298,7 +300,7 @@ export default function HMWScopeSlider() {
               key={scope + '-note'}
               x={SVG_W / 2} y={BAR_Y + BAR_H + 16}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5" fontFamily="var(--font-inter,sans-serif)" fontStyle="italic"
+              fontSize="11" fontFamily="var(--font-inter,sans-serif)" fontStyle="italic"
               fill={data.warn ? `${AMBER_TEXT}0.861)` : 'rgba(255,255,255,0.69)'}
               style={{ userSelect: 'none' }}
               initial={{ opacity: 0 }}

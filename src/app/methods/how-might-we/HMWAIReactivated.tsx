@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const NAVY   = 'rgba(31,58,95,'
+const NAVY_TEXT = 'rgba(141,155,173,'  // brightened text-safe variant of NAVY
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
@@ -75,7 +76,7 @@ export default function HMWAIReactivated() {
                   background: isActive
                     ? (isAI ? `${INDIGO}0.78)` : 'rgba(255,255,255,0.90)')
                     : 'transparent',
-                  color: isActive ? (isAI ? '#fff' : '#111') : 'rgba(255,255,255,0.45)',
+                  color: isActive ? (isAI ? '#fff' : '#111') : 'rgba(255,255,255,0.55)',
                 }}
                 aria-pressed={isActive}
               >{label}</button>
@@ -117,7 +118,7 @@ export default function HMWAIReactivated() {
           <text
             x={PROB_CX} y={PROB_Y + 18}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
             fill="rgba(255,255,255,0.64)" style={{ userSelect: 'none' }}
           >PROBLEM SPACE</text>
           <line
@@ -127,13 +128,14 @@ export default function HMWAIReactivated() {
           <text
             x={PROB_CX} y={PROB_Y + 44}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="4.8" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
             fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
           >INSIGHT</text>
+          {/* gap widened 14 -> 16 for 11pt stacking */}
           {([
-            ['Users abandon checkout',          PROB_Y + 68, '6.5', 0.74],
-            ['at payment, feels',                 PROB_Y + 82, '6.5', 0.74],
-            ['effortful and uncertain.',         PROB_Y + 96, '6.5', 0.74],
+            ['Users abandon checkout',          PROB_Y + 64, '11', 0.74],
+            ['at payment, feels',                 PROB_Y + 80, '11', 0.74],
+            ['effortful and uncertain.',         PROB_Y + 96, '11', 0.74],
           ] as [string, number, string, number][]).map(([t, y, fs, op]) => (
             <text
               key={y} x={PROB_CX} y={y}
@@ -170,7 +172,7 @@ export default function HMWAIReactivated() {
             <text
               key={word} x={DOOR_CX} y={PROB_Y + 60 + i * 18}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="7.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
               fill={aiMode ? `${INDIGO_TEXT}0.948)` : 'rgba(255,255,255,0.78)'}
               style={{ userSelect: 'none', transition: 'fill 0.35s' }}
             >{word}</text>
@@ -217,7 +219,7 @@ export default function HMWAIReactivated() {
             <text
               x={SOL_CX} y={PROB_Y + 18}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.05em"
               fill="rgba(255,255,255,0.7)" style={{ userSelect: 'none' }}
             >HOW MIGHT WE</text>
             <line
@@ -225,9 +227,9 @@ export default function HMWAIReactivated() {
               stroke="rgba(255,255,255,0.10)"
             />
             {([
-              ['make checkout feel',   PROB_Y + 68, '8.5'],
-              ['effortless and',       PROB_Y + 84, '8.5'],
-              ['reassuring?',          PROB_Y + 100, '8.5'],
+              ['make checkout feel',   PROB_Y + 68, '11'],
+              ['effortless and',       PROB_Y + 84, '11'],
+              ['reassuring?',          PROB_Y + 100, '11'],
             ] as [string, number, string][]).map(([t, y, fs]) => (
               <text
                 key={y} x={SOL_CX} y={y}
@@ -239,39 +241,57 @@ export default function HMWAIReactivated() {
             <text
               x={SOL_CX} y={PROB_Y + 148}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.03em"
               fill="rgba(255,255,255,0.65)" style={{ userSelect: 'none' }}
             >1 QUESTION, CALIBRATED SCOPE</text>
           </motion.g>
 
-          {/* ── AI MODE: flood of questions ── */}
+          {/* ── AI MODE: flood of questions ──
+              Originally rendered all 20 full questions at 4.2px to visually
+              read as an overwhelming, low-quality flood. At an 11pt floor,
+              20 lines don't fit the 194-unit-tall panel and full question
+              text ("How might we show free shipping threshold?") doesn't
+              fit the 234-unit width. Shows a subset with the common
+              "How might we" prefix stripped (the header already establishes
+              that context) plus a "+N more" line, preserving the same
+              "AI produces far more than you need" idea within the floor. */}
           <motion.g
             animate={{ opacity: aiMode ? 1 : 0 }}
             transition={T}
           >
             <text
-              x={SOL_CX} y={PROB_Y + 14}
+              x={SOL_CX} y={PROB_Y + 18}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="4.2" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0em"
               fill={`${INDIGO_TEXT}0.916)`} style={{ userSelect: 'none' }}
             >20 QUESTIONS, 4 SECONDS, NO SCOPE</text>
             <line
-              x1={SOL_X + 10} y1={PROB_Y + 22} x2={SOL_X + SOL_W - 10} y2={PROB_Y + 22}
+              x1={SOL_X + 10} y1={PROB_Y + 30} x2={SOL_X + SOL_W - 10} y2={PROB_Y + 30}
               stroke={`${INDIGO}0.14)`}
             />
-            {AI_QUESTIONS.map((q, i) => (
+            {AI_QUESTIONS.slice(0, 8).map((q, i) => (
               <text
                 key={i}
                 x={SOL_X + 11}
-                y={PROB_Y + 30 + i * 8.2}
+                y={PROB_Y + 50 + i * 15}
                 textAnchor="start"
                 dominantBaseline="hanging"
-                fontSize="4.2"
+                fontSize="11"
                 fontFamily="var(--font-inter,sans-serif)"
-                fill={`${INDIGO}${i % 4 === 0 ? '0.72)' : i % 4 === 1 ? '0.55)' : i % 4 === 2 ? '0.62)' : '0.48)'}`}
+                fill={`${INDIGO_TEXT}${i % 3 === 0 ? '0.95)' : i % 3 === 1 ? '0.87)' : '0.80)'}`}
                 style={{ userSelect: 'none' }}
-              >{q}</text>
+              >{q.replace(/^How might we /, '')}</text>
             ))}
+            <text
+              x={SOL_X + 11}
+              y={PROB_Y + 50 + 8 * 15}
+              textAnchor="start"
+              dominantBaseline="hanging"
+              fontSize="11"
+              fontFamily="var(--font-mono)" letterSpacing="0.02em"
+              fill={`${INDIGO_TEXT}0.80)`}
+              style={{ userSelect: 'none' }}
+            >+ {AI_QUESTIONS.length - 8} MORE</text>
           </motion.g>
 
           {/* AI mode annotation: appears over center gap */}
@@ -281,7 +301,7 @@ export default function HMWAIReactivated() {
                 key="ai-annotation"
                 x={350} y={SVG_H - 8}
                 textAnchor="middle" dominantBaseline="auto"
-                fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                 fill={`${INDIGO_TEXT}0.885)`} style={{ userSelect: 'none' }}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 transition={{ duration: 0.28 }}
@@ -307,7 +327,7 @@ export default function HMWAIReactivated() {
             >
               <p
                 className="font-mono uppercase tracking-widest mb-2"
-                style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO}0.70)` }}
+                style={{ fontSize: 'var(--text-2xs)', color: `${INDIGO_TEXT}0.90)` }}
               >Where AI is useful</p>
               <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.65)', lineHeight: 'var(--leading-relaxed)' }}>
                 AI generates large volumes of HMW questions from a brief quickly, useful for exploring scope variants,
@@ -341,7 +361,7 @@ export default function HMWAIReactivated() {
       >
         <p
           className="font-mono uppercase tracking-widest mb-3"
-          style={{ fontSize: 'var(--text-2xs)', color: `${NAVY}0.80)` }}
+          style={{ fontSize: 'var(--text-2xs)', color: `${NAVY_TEXT}0.90)` }}
         >The honest synthesis</p>
         <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255,255,255,0.68)', lineHeight: 'var(--leading-relaxed)' }}>
           AI accelerates the generation of HMW questions from a brief, genuinely useful when you need a large starting
