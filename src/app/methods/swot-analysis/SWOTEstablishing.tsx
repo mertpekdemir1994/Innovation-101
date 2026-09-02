@@ -4,26 +4,29 @@ import { motion, useReducedMotion } from 'framer-motion'
 
 const PLUM = 'rgba(107,74,119,'
 
-// SVG layout: 640 × 420
+// SVG layout: 960 × 420 (horizontal scale 1.5x applied to the original
+// 640-wide composition — every x-coordinate below is the original × 1.5,
+// giving the hero a cinematic ~2.3:1 frame while leaving every y-coordinate,
+// and so the quadrant grid's proportions, completely untouched)
 // Quadrant centers: S top-left (internal+helpful) = Strengths, W top-right (internal+harmful) = Weaknesses
 // O bottom-left (external+helpful) = Opportunities, T bottom-right (external+harmful) = Threats
-// Grid lines cross at cx=320, cy=210
+// Grid lines cross at cx=480, cy=210
 
 // `color` drives the line/dots (only needs 3:1); `textColor` is a brightened
 // variant for the move label, since plain PLUM/red/blue fail 4.5:1 on this
 // dark background at the opacities `color` uses
 const CROSSINGS = [
-  { id: 'so', label: 'S × O', move: 'PRESS',   x1: 160, y1: 100, x2: 160, y2: 310, color: `${PLUM}0.85)`, textColor: 'rgba(166,147,174,0.90)' },
-  { id: 'wt', label: 'W × T', move: 'DEFEND',  x1: 480, y1: 100, x2: 480, y2: 310, color: 'rgba(220,38,38,0.70)', textColor: 'rgba(248,113,113,0.90)' },
-  { id: 'st', label: 'S × T', move: 'COUNTER', x1: 160, y1: 100, x2: 480, y2: 310, color: 'rgba(245,158,11,0.75)', textColor: 'rgba(245,158,11,0.75)' },
-  { id: 'wo', label: 'W × O', move: 'BUILD',   x1: 480, y1: 100, x2: 160, y2: 310, color: 'rgba(59,130,246,0.75)', textColor: 'rgba(96,165,250,0.90)' },
+  { id: 'so', label: 'S × O', move: 'PRESS',   x1: 240, y1: 100, x2: 240, y2: 310, color: `${PLUM}0.85)`, textColor: 'rgba(166,147,174,0.90)' },
+  { id: 'wt', label: 'W × T', move: 'DEFEND',  x1: 720, y1: 100, x2: 720, y2: 310, color: 'rgba(220,38,38,0.70)', textColor: 'rgba(248,113,113,0.90)' },
+  { id: 'st', label: 'S × T', move: 'COUNTER', x1: 240, y1: 100, x2: 720, y2: 310, color: 'rgba(245,158,11,0.75)', textColor: 'rgba(245,158,11,0.75)' },
+  { id: 'wo', label: 'W × O', move: 'BUILD',   x1: 720, y1: 100, x2: 240, y2: 310, color: 'rgba(59,130,246,0.75)', textColor: 'rgba(96,165,250,0.90)' },
 ]
 
 const QUADRANTS = [
-  { id: 's', label: 'STRENGTHS',     axis: 'Internal · Helpful', cx: 160, cy: 100, items: ['Loyal customer base', 'Dense local footprint', 'Supplier relationships'] },
-  { id: 'w', label: 'WEAKNESSES',    axis: 'Internal · Harmful', cx: 480, cy: 100, items: ['Weak digital presence', 'Limited delivery logistics', 'Thin margins'] },
-  { id: 'o', label: 'OPPORTUNITIES', axis: 'External · Helpful', cx: 160, cy: 310, items: ['"Shop local" sentiment', 'Convenience demand', 'Untapped delivery market'] },
-  { id: 't', label: 'THREATS',       axis: 'External · Harmful', cx: 480, cy: 310, items: ['National online entrant', 'Changing consumer habits', 'Price competition'] },
+  { id: 's', label: 'STRENGTHS',     axis: 'Internal · Helpful', cx: 240, cy: 100, items: ['Loyal customer base', 'Dense local footprint', 'Supplier relationships'] },
+  { id: 'w', label: 'WEAKNESSES',    axis: 'Internal · Harmful', cx: 720, cy: 100, items: ['Weak digital presence', 'Limited delivery logistics', 'Thin margins'] },
+  { id: 'o', label: 'OPPORTUNITIES', axis: 'External · Helpful', cx: 240, cy: 310, items: ['"Shop local" sentiment', 'Convenience demand', 'Untapped delivery market'] },
+  { id: 't', label: 'THREATS',       axis: 'External · Harmful', cx: 720, cy: 310, items: ['National online entrant', 'Changing consumer habits', 'Price competition'] },
 ]
 
 export default function SWOTEstablishing() {
@@ -51,7 +54,7 @@ export default function SWOTEstablishing() {
       viewport={{ once: true, margin: '-80px' }}
       aria-label="SWOT grid showing four quadrants and cross-pairing connections"
     >
-      <svg viewBox="0 0 640 420" width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
+      <svg viewBox="0 0 960 420" width="100%" style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           <filter id="swot-est-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="6" result="blur" />
@@ -65,7 +68,7 @@ export default function SWOTEstablishing() {
 
         {/* Ambient plum wash */}
         <motion.ellipse
-          cx={320} cy={210} rx={280} ry={180}
+          cx={480} cy={210} rx={420} ry={180}
           fill={`${PLUM}0.06)`}
           variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
           transition={axisT}
@@ -74,15 +77,15 @@ export default function SWOTEstablishing() {
         {/* ── Axis lines ── */}
         <motion.g variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} transition={axisT}>
           {/* Vertical axis */}
-          <line x1={320} y1={30} x2={320} y2={390} stroke="rgba(255,255,255,0.18)" strokeWidth={1} strokeDasharray="4 4" />
+          <line x1={480} y1={30} x2={480} y2={390} stroke="rgba(255,255,255,0.18)" strokeWidth={1} strokeDasharray="4 4" />
           {/* Horizontal axis */}
-          <line x1={30} y1={210} x2={610} y2={210} stroke="rgba(255,255,255,0.18)" strokeWidth={1} strokeDasharray="4 4" />
+          <line x1={45} y1={210} x2={915} y2={210} stroke="rgba(255,255,255,0.18)" strokeWidth={1} strokeDasharray="4 4" />
 
           {/* Axis labels */}
-          <text x={320} y={20} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.10em">INTERNAL</text>
-          <text x={320} y={408} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.10em">EXTERNAL</text>
-          <text x={22} y={213} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(-90,22,213)">HELPFUL</text>
-          <text x={618} y={213} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(90,618,213)">HARMFUL</text>
+          <text x={480} y={20} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.10em">INTERNAL</text>
+          <text x={480} y={408} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.10em">EXTERNAL</text>
+          <text x={33} y={213} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(-90,33,213)">HELPFUL</text>
+          <text x={927} y={213} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize={11} fontFamily="var(--font-mono)" letterSpacing="0.08em" transform="rotate(90,927,213)">HARMFUL</text>
         </motion.g>
 
         {/* ── Quadrant labels + items ── */}
@@ -144,7 +147,7 @@ export default function SWOTEstablishing() {
               />
               {/* Move label at midpoint */}
               <text
-                x={(c.x1 + c.x2) / 2 + (c.id === 'st' ? 40 : c.id === 'wo' ? -40 : 0)}
+                x={(c.x1 + c.x2) / 2 + (c.id === 'st' ? 60 : c.id === 'wo' ? -60 : 0)}
                 y={(c.y1 + c.y2) / 2 + (c.id === 'so' ? -8 : c.id === 'wt' ? -8 : 0)}
                 textAnchor="middle"
                 fill={c.textColor}
