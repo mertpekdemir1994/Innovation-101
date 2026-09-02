@@ -108,7 +108,7 @@ export default function CCWExampleToggle() {
                       borderLeft: `2px solid ${item.clay ? `${CLAY}0.50)` : 'var(--color-neutral-200)'}`,
                     }}>
                     <div className="shrink-0 w-24">
-                      <span className="text-[9px] font-semibold uppercase tracking-wider block"
+                      <span className="text-[10px] font-semibold uppercase tracking-wider block"
                         style={{ color: item.clay ? `${CLAY}1)` : 'var(--color-neutral-500)' }}>
                         {item.contributor}
                       </span>
@@ -168,7 +168,7 @@ export default function CCWExampleToggle() {
               <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
                   style={{ color: `${INDIGO}0.90)` }}>Where AI genuinely helped</p>
-                <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full"
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                   style={{ background: `${INDIGO}0.10)`, color: `${INDIGO}0.80)`, border: `1px solid ${INDIGO}0.25)` }}>
                   Support around the workshop
                 </span>
@@ -187,7 +187,7 @@ export default function CCWExampleToggle() {
               <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
                 <p className="text-[10px] font-semibold uppercase tracking-widest"
                   style={{ color: `${INDIGO}0.90)` }}>Where it hit the core limit</p>
-                <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full"
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                   style={{ background: 'rgba(217,119,6,0.10)', color: 'rgba(217,119,6,0.85)', border: '1px solid rgba(217,119,6,0.25)' }}>
                   Cannot be the participants
                 </span>
@@ -214,7 +214,7 @@ export default function CCWExampleToggle() {
                 ].map((item, i) => (
                   <div key={i} className="rounded p-3"
                     style={{ background: `${INDIGO}0.05)`, borderLeft: `2px solid ${INDIGO}0.28)` }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-wider mb-1"
+                    <p className="text-[10px] font-semibold uppercase tracking-wider mb-1"
                       style={{ color: `${INDIGO}0.65)` }}>{item.tag}</p>
                     <p className="text-xs text-neutral-700 italic mb-1.5">{item.ai}</p>
                     <p className="text-[10px] text-neutral-500 leading-relaxed">↑ {item.note}</p>

@@ -7,11 +7,11 @@ const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
-const SVG_W = 700, SVG_H = 258
+const SVG_W = 700, SVG_H = 286
 
-const CX = 210, CY = 40, CW = 280, CH = 140
+const CX = 190, CY = 40, CW = 320, CH = 142
 const CCX = CX + CW / 2  // 350
-const CCY = CY + CH / 2  // 110
+const CCY = CY + CH / 2  // 111
 
 const PR = 12, DR = 5
 
@@ -40,30 +40,30 @@ export default function CCWInteractive() {
   const whiteCardOp  = isFor ? 1.0  : 1.0
 
   const PARTICIPANT_LINES = [
-    { x1: P1.cx + PR + 2, y1: P1.cy, x2: CX,      y2: 82 },
-    { x1: P2.cx + PR + 2, y1: P2.cy, x2: CX,      y2: 150 },
-    { x1: P3.cx - PR - 2, y1: P3.cy, x2: CX + CW, y2: 82 },
-    { x1: P4.cx - PR - 2, y1: P4.cy, x2: CX + CW, y2: 150 },
+    { x1: P1.cx + PR + 2, y1: P1.cy, x2: CX,      y2: 81 },
+    { x1: P2.cx + PR + 2, y1: P2.cy, x2: CX,      y2: 157 },
+    { x1: P3.cx - PR - 2, y1: P3.cy, x2: CX + CW, y2: 81 },
+    { x1: P4.cx - PR - 2, y1: P4.cy, x2: CX + CW, y2: 157 },
   ]
   const TEAM_LINES = [
-    { x1: T1.cx, y1: T1.cy - PR - 2, x2: 290, y2: CY + CH },
-    { x1: T2.cx, y1: T2.cy - PR - 2, x2: 410, y2: CY + CH },
+    { x1: T1.cx, y1: T1.cy - PR - 2, x2: 284, y2: CY + CH },
+    { x1: T2.cx, y1: T2.cy - PR - 2, x2: 398, y2: CY + CH },
   ]
 
   const CARDS = [
-    { x: 222, y: 54,  w: 96,  h: 18, label: 'LIVED EXPERIENCE',  clay: true  },
-    { x: 372, y: 54,  w: 104, h: 18, label: 'SPECIFIC CONTEXT',  clay: true  },
-    { x: 222, y: 96,  w: 102, h: 18, label: 'DESIGN APPROACH',   clay: false },
-    { x: 346, y: 96,  w: 130, h: 18, label: 'OPERATIONAL DETAIL', clay: true  },
-    { x: 250, y: 148, w: 82,  h: 18, label: 'PAIN POINT',        clay: true  },
-    { x: 364, y: 148, w: 112, h: 18, label: 'WORKABLE CHANGE',   clay: false },
+    { x: 218, y: 70,  w: 126, h: 22, label: 'LIVED EXPERIENCE',   clay: true  },
+    { x: 356, y: 70,  w: 126, h: 22, label: 'SPECIFIC CONTEXT',   clay: true  },
+    { x: 214, y: 108, w: 120, h: 22, label: 'DESIGN APPROACH',    clay: false },
+    { x: 346, y: 108, w: 140, h: 22, label: 'OPERATIONAL DETAIL', clay: true  },
+    { x: 241, y: 146, w: 86,  h: 22, label: 'PAIN POINT',         clay: true  },
+    { x: 339, y: 146, w: 120, h: 22, label: 'WORKABLE CHANGE',    clay: false },
   ]
 
   const REACT_POSITIONS = [
-    { cx: P1.cx, cy: P1.cy, anchor: 'end' as const,   rx: P1.cx - PR - 4, ry: P1.cy - 16 },
-    { cx: P2.cx, cy: P2.cy, anchor: 'end' as const,   rx: P2.cx - PR - 4, ry: P2.cy + 20 },
-    { cx: P3.cx, cy: P3.cy, anchor: 'start' as const, rx: P3.cx + PR + 4, ry: P3.cy - 16 },
-    { cx: P4.cx, cy: P4.cy, anchor: 'start' as const, rx: P4.cx + PR + 4, ry: P4.cy + 20 },
+    { cx: P1.cx, cy: P1.cy - PR - 8 },
+    { cx: P2.cx, cy: P2.cy - PR - 8 },
+    { cx: P3.cx, cy: P3.cy - PR - 8 },
+    { cx: P4.cx, cy: P4.cy - PR - 8 },
   ]
 
   return (
@@ -82,7 +82,7 @@ export default function CCWInteractive() {
                 ? (m === 'for' ? `${INDIGO}0.35)` : `${CLAY}0.35)`)
                 : 'rgba(255,255,255,0.12)'}`,
               color: mode === m
-                ? m === 'for' ? `${INDIGO}1)` : `${CLAY}1)`
+                ? m === 'for' ? `${INDIGO_TEXT}1)` : `${CLAY_TEXT}1)`
                 : 'rgba(255,255,255,0.40)',
             }}>
             {m === 'with' ? 'Design-WITH (co-creation)' : 'Design-FOR (feedback)'}
@@ -114,7 +114,7 @@ export default function CCWInteractive() {
 
           {/* Mode label */}
           <text x={CCX} y={24} textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={isFor ? `${INDIGO_TEXT}0.926)` : `${CLAY_TEXT}0.933)`}
             style={{ userSelect: 'none', transition: 'fill 0.35s' }}>
             {isFor ? 'DESIGN FOR · TEAM PRESENTS · PARTICIPANTS REACT' : 'DESIGN WITH · EVERYONE CONTRIBUTES'}
@@ -131,8 +131,8 @@ export default function CCWInteractive() {
               fill={canvasFill}
               stroke={canvasStroke} strokeWidth={1.2}
               style={{ transition: 'fill 0.35s, stroke 0.35s' }} />
-            <text x={CCX} y={CCY + 4} textAnchor="middle"
-              fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.14em"
+            <text x={CCX} y={CY + 16} textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
               fill={isFor ? 'rgba(255,255,255,0.625)' : `${CLAY_TEXT}0.828)`}
               style={{ userSelect: 'none', transition: 'fill 0.35s' }}>
               {isFor ? "TEAM'S IDEA" : 'SHARED CANVAS'}
@@ -169,7 +169,7 @@ export default function CCWInteractive() {
                 style={(!isFor && c.clay) ? { filter: 'url(#ccw-int-glow-sm)' } : undefined} />
               <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                 fill={c.clay ? `${CLAY_TEXT}0.975)` : 'rgba(255,255,255,0.7)'}
                 style={{ userSelect: 'none' }}>
                 {c.label}
@@ -188,8 +188,8 @@ export default function CCWInteractive() {
                 <path d={`M 581 ${CCY - 5} L 587 ${CCY} L 581 ${CCY + 5}`}
                   stroke={`${INDIGO}0.35)`} strokeWidth={1} fill="none"
                   strokeLinecap="round" strokeLinejoin="round" />
-                <text x={(CCX + 50 + 586) / 2} y={CCY - 8} textAnchor="middle"
-                  fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                <text x={(CCX + 50 + 586) / 2} y={CCY - 12} textAnchor="middle"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                   fill={`${INDIGO_TEXT}0.891)`} style={{ userSelect: 'none' }}>
                   PRESENTS →
                 </text>
@@ -198,19 +198,14 @@ export default function CCWInteractive() {
           </AnimatePresence>
 
           {/* Participant nodes */}
-          {[
-            { ...P1, anchor: 'end' as const,   lx: P1.cx - PR - 4, ly: P1.cy },
-            { ...P2, anchor: 'end' as const,   lx: P2.cx - PR - 4, ly: P2.cy },
-            { ...P3, anchor: 'start' as const, lx: P3.cx + PR + 4, ly: P3.cy },
-            { ...P4, anchor: 'start' as const, lx: P4.cx + PR + 4, ly: P4.cy },
-          ].map((p, i) => (
+          {[P1, P2, P3, P4].map((p, i) => (
             <g key={`p${i}`} style={{ opacity: pNodeOp, transition: 'opacity 0.35s' }}>
               <circle cx={p.cx} cy={p.cy} r={PR}
                 fill={`${CLAY}0.10)`} stroke={`${CLAY}0.55)`} strokeWidth={1.2} />
               <circle cx={p.cx} cy={p.cy} r={DR} fill={`${CLAY}0.80)`} />
-              <text x={p.lx} y={p.ly + 1}
-                textAnchor={p.anchor} dominantBaseline="middle"
-                fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              <text x={p.cx} y={p.cy + PR + 14}
+                textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                 fill={`${CLAY_TEXT}0.912)`} style={{ userSelect: 'none' }}>
                 PARTICIPANT
               </text>
@@ -223,9 +218,9 @@ export default function CCWInteractive() {
               <motion.g key={`react-${i}`}
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 transition={{ ...fade, delay: prefersReduced ? 0 : i * 0.06 }}>
-                <text x={p.rx} y={p.ry}
-                  textAnchor={p.anchor}
-                  fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                <text x={p.cx} y={p.cy}
+                  textAnchor="middle"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                   fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}>
                   REACT?
                 </text>
@@ -244,8 +239,8 @@ export default function CCWInteractive() {
               <circle cx={t.cx} cy={t.cy} r={DR}
                 fill={isFor ? 'rgba(255,255,255,0.72)' : 'rgba(255,255,255,0.48)'}
                 style={{ transition: 'fill 0.35s' }} />
-              <text x={t.cx} y={t.cy + PR + 10} textAnchor="middle"
-                fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+              <text x={t.cx} y={t.cy + PR + 14} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                 fill={isFor ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.65)'}
                 style={{ userSelect: 'none', transition: 'fill 0.35s' }}>
                 TEAM
@@ -254,8 +249,8 @@ export default function CCWInteractive() {
           ))}
 
           {/* Caption */}
-          <text x={CCX} y={SVG_H - 4} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          <text x={CCX} y={SVG_H - 8} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.01em"
             fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
             {isFor
               ? 'DESIGN-FOR: PARTICIPANTS REACT · IDEA STAYS THE TEAM\'S · NO OWNERSHIP BUILT'
@@ -289,8 +284,8 @@ export default function CCWInteractive() {
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${CLAY}0.22)`, background: `${CLAY}0.05)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest"
-                  style={{ color: `${CLAY}0.75)` }}>{item.label}</p>
+                <p className="text-[10px] font-mono uppercase tracking-widest"
+                  style={{ color: `${CLAY_TEXT}0.90)` }}>{item.label}</p>
                 <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.58)' }}>
                   {item.body}
                 </p>
@@ -320,8 +315,8 @@ export default function CCWInteractive() {
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${INDIGO}0.22)`, background: `${INDIGO}0.05)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest"
-                  style={{ color: `${INDIGO}0.75)` }}>{item.label}</p>
+                <p className="text-[10px] font-mono uppercase tracking-widest"
+                  style={{ color: `${INDIGO_TEXT}0.90)` }}>{item.label}</p>
                 <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.58)' }}>
                   {item.body}
                 </p>

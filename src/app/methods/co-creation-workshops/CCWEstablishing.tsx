@@ -6,12 +6,11 @@ const CLAY = 'rgba(181,97,62,'
 const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 
 const SVG_W = 700
-const SVG_H = 258
+const SVG_H = 286
 
 // Central shared canvas
-const CX = 210, CY = 40, CW = 280, CH = 140
+const CX = 190, CY = 40, CW = 320, CH = 142
 const CCX = CX + CW / 2  // 350
-const CCY = CY + CH / 2  // 110
 
 // Person node radii
 const PR = 12, DR = 5
@@ -28,22 +27,22 @@ const T2 = { cx: 425, cy: 232 }
 
 // Contribution lines (person → canvas edge)
 const LINES = [
-  { x1: P1.cx + PR + 2, y1: P1.cy, x2: CX,      y2: 82,  clay: true  },
-  { x1: P2.cx + PR + 2, y1: P2.cy, x2: CX,      y2: 150, clay: true  },
-  { x1: P3.cx - PR - 2, y1: P3.cy, x2: CX + CW, y2: 82,  clay: true  },
-  { x1: P4.cx - PR - 2, y1: P4.cy, x2: CX + CW, y2: 150, clay: true  },
-  { x1: T1.cx, y1: T1.cy - PR - 2, x2: 290,     y2: CY + CH, clay: false },
-  { x1: T2.cx, y1: T2.cy - PR - 2, x2: 410,     y2: CY + CH, clay: false },
+  { x1: P1.cx + PR + 2, y1: P1.cy, x2: CX,      y2: 81,  clay: true  },
+  { x1: P2.cx + PR + 2, y1: P2.cy, x2: CX,      y2: 157, clay: true  },
+  { x1: P3.cx - PR - 2, y1: P3.cy, x2: CX + CW, y2: 81,  clay: true  },
+  { x1: P4.cx - PR - 2, y1: P4.cy, x2: CX + CW, y2: 157, clay: true  },
+  { x1: T1.cx, y1: T1.cy - PR - 2, x2: 284,     y2: CY + CH, clay: false },
+  { x1: T2.cx, y1: T2.cy - PR - 2, x2: 398,     y2: CY + CH, clay: false },
 ]
 
 // Contribution cards inside the canvas (mixed participant + team)
 const CARDS = [
-  { x: 222, y: 54,  w: 96,  h: 18, label: 'LIVED EXPERIENCE',  clay: true  },
-  { x: 372, y: 54,  w: 104, h: 18, label: 'SPECIFIC CONTEXT',  clay: true  },
-  { x: 222, y: 96,  w: 102, h: 18, label: 'DESIGN APPROACH',   clay: false },
-  { x: 346, y: 96,  w: 130, h: 18, label: 'OPERATIONAL DETAIL', clay: true  },
-  { x: 250, y: 148, w: 82,  h: 18, label: 'PAIN POINT',        clay: true  },
-  { x: 364, y: 148, w: 112, h: 18, label: 'WORKABLE CHANGE',   clay: false },
+  { x: 218, y: 70,  w: 126, h: 22, label: 'LIVED EXPERIENCE',   clay: true  },
+  { x: 356, y: 70,  w: 126, h: 22, label: 'SPECIFIC CONTEXT',   clay: true  },
+  { x: 214, y: 108, w: 120, h: 22, label: 'DESIGN APPROACH',    clay: false },
+  { x: 346, y: 108, w: 140, h: 22, label: 'OPERATIONAL DETAIL', clay: true  },
+  { x: 241, y: 146, w: 86,  h: 22, label: 'PAIN POINT',         clay: true  },
+  { x: 339, y: 146, w: 120, h: 22, label: 'WORKABLE CHANGE',    clay: false },
 ]
 
 export default function CCWEstablishing() {
@@ -74,7 +73,7 @@ export default function CCWEstablishing() {
 
         {/* DESIGN WITH header label */}
         <motion.text x={CCX} y={24} textAnchor="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.20em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.16em"
           fill={`${CLAY_TEXT}0.933)`} style={{ userSelect: 'none' }}
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}
@@ -93,8 +92,8 @@ export default function CCWEstablishing() {
           <rect x={CX} y={CY} width={CW} height={CH} rx={8}
             fill={`${CLAY}0.05)`}
             stroke={`${CLAY}0.30)`} strokeWidth={1.2} />
-          <text x={CCX} y={CCY + 4} textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.16em"
+          <text x={CCX} y={CY + 16} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${CLAY_TEXT}0.824)`} style={{ userSelect: 'none' }}>
             SHARED CANVAS
           </text>
@@ -126,7 +125,7 @@ export default function CCWEstablishing() {
               style={c.clay ? { filter: 'url(#ccw-est-glow-sm)' } : undefined} />
             <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 1}
               textAnchor="middle" dominantBaseline="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
               fill={c.clay ? `${CLAY_TEXT}0.975)` : 'rgba(255,255,255,0.69)'}
               style={{ userSelect: 'none' }}>
               {c.label}
@@ -136,10 +135,10 @@ export default function CCWEstablishing() {
 
         {/* Participant nodes */}
         {[
-          { ...P1, anchor: 'end' as const,   lx: P1.cx - PR - 4, ly: P1.cy, delay: 0.12 },
-          { ...P2, anchor: 'end' as const,   lx: P2.cx - PR - 4, ly: P2.cy, delay: 0.21 },
-          { ...P3, anchor: 'start' as const, lx: P3.cx + PR + 4, ly: P3.cy, delay: 0.18 },
-          { ...P4, anchor: 'start' as const, lx: P4.cx + PR + 4, ly: P4.cy, delay: 0.27 },
+          { ...P1, delay: 0.12 },
+          { ...P2, delay: 0.21 },
+          { ...P3, delay: 0.18 },
+          { ...P4, delay: 0.27 },
         ].map((p, i) => (
           <motion.g key={`p${i}`}
             initial={{ opacity: 0, y: 8 }}
@@ -148,9 +147,9 @@ export default function CCWEstablishing() {
             <circle cx={p.cx} cy={p.cy} r={PR}
               fill={`${CLAY}0.10)`} stroke={`${CLAY}0.55)`} strokeWidth={1.2} />
             <circle cx={p.cx} cy={p.cy} r={DR} fill={`${CLAY}0.80)`} />
-            <text x={p.lx} y={p.ly + 1}
-              textAnchor={p.anchor} dominantBaseline="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            <text x={p.cx} y={p.cy + PR + 14}
+              textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
               fill={`${CLAY_TEXT}0.912)`} style={{ userSelect: 'none' }}>
               PARTICIPANT
             </text>
@@ -169,8 +168,8 @@ export default function CCWEstablishing() {
             <circle cx={t.cx} cy={t.cy} r={PR}
               fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.28)" strokeWidth={1.0} />
             <circle cx={t.cx} cy={t.cy} r={DR} fill="rgba(255,255,255,0.48)" />
-            <text x={t.cx} y={t.cy + PR + 10} textAnchor="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            <text x={t.cx} y={t.cy + PR + 14} textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
               fill="rgba(255,255,255,0.65)" style={{ userSelect: 'none' }}>
               TEAM
             </text>
@@ -178,8 +177,8 @@ export default function CCWEstablishing() {
         ))}
 
         {/* Caption */}
-        <motion.text x={CCX} y={SVG_H - 4} textAnchor="middle"
-          fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+        <motion.text x={CCX} y={SVG_H - 8} textAnchor="middle"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.58)"
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}

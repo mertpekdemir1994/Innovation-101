@@ -7,9 +7,9 @@ const CLAY_TEXT = 'rgba(201,139,113,'  // brightened text-safe variant of CLAY
 const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
-const SVG_W = 700, SVG_H = 258
+const SVG_W = 700, SVG_H = 290
 
-const CX = 210, CY = 40, CW = 280, CH = 140
+const CX = 190, CY = 60, CW = 320, CH = 142
 const CCX = CX + CW / 2  // 350
 
 const PR = 12, DR = 5
@@ -23,11 +23,11 @@ const T2 = { cx: 425, cy: 232 }
 
 type Mode = 'human' | 'ai'
 
-// AI support badges - shown at periphery in AI mode
+// AI support badges - shown at periphery, above the header, in AI mode
 const AI_BADGES = [
-  { x: 130, y: 12, w: 96,  label: 'AI: AGENDA',    id: 'agenda'   },
-  { x: 480, y: 12, w: 106, label: 'AI: STIMULUS',  id: 'stimulus' },
-  { x: 255, y: 215, w: 104, label: 'AI: SYNTHESIS', id: 'synthesis'},
+  { x: 30,  y: 8, w: 84,  label: 'AI: AGENDA',    id: 'agenda'   },
+  { x: 296, y: 8, w: 108, label: 'AI: SYNTHESIS',  id: 'synthesis'},
+  { x: 590, y: 8, w: 100, label: 'AI: STIMULUS',  id: 'stimulus' },
 ]
 
 export default function CCWAIReactivated() {
@@ -49,7 +49,7 @@ export default function CCWAIReactivated() {
                 background: mode === m
                   ? m === 'ai' ? `${INDIGO}0.25)` : `${CLAY}0.22)`
                   : 'transparent',
-                color: mode === m ? '#fff' : 'rgba(255,255,255,0.38)',
+                color: mode === m ? '#fff' : 'rgba(255,255,255,0.55)',
                 border: `1px solid ${mode === m
                   ? (m === 'ai' ? `${INDIGO}0.55)` : `${CLAY}0.55)`)
                   : 'transparent'}`,
@@ -82,8 +82,8 @@ export default function CCWAIReactivated() {
         </defs>
 
         {/* Mode label */}
-        <text x={CCX} y={24} textAnchor="middle"
-          fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.18em"
+        <text x={CCX} y={46} textAnchor="middle"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
           fill={isAI ? `${INDIGO_TEXT}0.916)` : `${CLAY_TEXT}0.933)`}
           style={{ userSelect: 'none', transition: 'fill 0.35s' }}>
           {isAI ? 'AI ASSISTS AT THE EDGES · REAL PARTICIPANTS STAY AT THE CENTER' : 'DESIGN WITH · REAL PEOPLE CO-CREATING'}
@@ -99,19 +99,19 @@ export default function CCWAIReactivated() {
             stroke={isAI ? `${CLAY}0.22)` : `${CLAY}0.30)`}
             strokeWidth={1.2}
             style={{ transition: 'stroke 0.35s' }} />
-          <text x={CCX} y={CX + CH / 2 - 4} textAnchor="middle"
-            fontSize="7" fontFamily="var(--font-mono)" letterSpacing="0.16em"
+          <text x={CCX} y={CY + 16} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.10em"
             fill={`${CLAY_TEXT}0.828)`} style={{ userSelect: 'none' }}>
             SHARED CANVAS
           </text>
           {/* Contribution cards */}
           {[
-            { x: 222, y: 54,  w: 96,  h: 18, label: 'LIVED EXPERIENCE',  clay: true  },
-            { x: 372, y: 54,  w: 104, h: 18, label: 'SPECIFIC CONTEXT',  clay: true  },
-            { x: 222, y: 96,  w: 102, h: 18, label: 'DESIGN APPROACH',   clay: false },
-            { x: 346, y: 96,  w: 130, h: 18, label: 'OPERATIONAL DETAIL', clay: true  },
-            { x: 250, y: 148, w: 82,  h: 18, label: 'PAIN POINT',        clay: true  },
-            { x: 364, y: 148, w: 112, h: 18, label: 'WORKABLE CHANGE',   clay: false },
+            { x: 218, y: CY + 30, w: 126, h: 22, label: 'LIVED EXPERIENCE',   clay: true  },
+            { x: 356, y: CY + 30, w: 126, h: 22, label: 'SPECIFIC CONTEXT',   clay: true  },
+            { x: 214, y: CY + 68, w: 120, h: 22, label: 'DESIGN APPROACH',    clay: false },
+            { x: 346, y: CY + 68, w: 140, h: 22, label: 'OPERATIONAL DETAIL', clay: true  },
+            { x: 241, y: CY + 106, w: 86, h: 22, label: 'PAIN POINT',         clay: true  },
+            { x: 339, y: CY + 106, w: 120, h: 22, label: 'WORKABLE CHANGE',   clay: false },
           ].map((c, i) => (
             <g key={i}>
               <rect x={c.x} y={c.y} width={c.w} height={c.h} rx={3}
@@ -120,7 +120,7 @@ export default function CCWAIReactivated() {
                 strokeWidth={0.8} />
               <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 1}
                 textAnchor="middle" dominantBaseline="middle"
-                fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                 fill={c.clay ? `${CLAY_TEXT}0.975)` : 'rgba(255,255,255,0.69)'}
                 style={{ userSelect: 'none' }}>
                 {c.label}
@@ -131,12 +131,12 @@ export default function CCWAIReactivated() {
 
         {/* Contribution lines */}
         {[
-          { x1: P1.cx + PR + 2, y1: P1.cy, x2: CX,      y2: 82,      clay: true  },
-          { x1: P2.cx + PR + 2, y1: P2.cy, x2: CX,      y2: 150,     clay: true  },
-          { x1: P3.cx - PR - 2, y1: P3.cy, x2: CX + CW, y2: 82,      clay: true  },
-          { x1: P4.cx - PR - 2, y1: P4.cy, x2: CX + CW, y2: 150,     clay: true  },
-          { x1: T1.cx, y1: T1.cy - PR - 2, x2: 290,     y2: CY + CH, clay: false },
-          { x1: T2.cx, y1: T2.cy - PR - 2, x2: 410,     y2: CY + CH, clay: false },
+          { x1: P1.cx + PR + 2, y1: P1.cy, x2: CX,      y2: 101,     clay: true  },
+          { x1: P2.cx + PR + 2, y1: P2.cy, x2: CX,      y2: 177,     clay: true  },
+          { x1: P3.cx - PR - 2, y1: P3.cy, x2: CX + CW, y2: 101,     clay: true  },
+          { x1: P4.cx - PR - 2, y1: P4.cy, x2: CX + CW, y2: 177,     clay: true  },
+          { x1: T1.cx, y1: T1.cy - PR - 2, x2: 284,     y2: CY + CH, clay: false },
+          { x1: T2.cx, y1: T2.cy - PR - 2, x2: 398,     y2: CY + CH, clay: false },
         ].map((l, i) => (
           <line key={i}
             x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
@@ -145,19 +145,14 @@ export default function CCWAIReactivated() {
         ))}
 
         {/* Participant nodes - remain clay and active even in AI mode */}
-        {[
-          { ...P1, anchor: 'end' as const,   lx: P1.cx - PR - 4, ly: P1.cy },
-          { ...P2, anchor: 'end' as const,   lx: P2.cx - PR - 4, ly: P2.cy },
-          { ...P3, anchor: 'start' as const, lx: P3.cx + PR + 4, ly: P3.cy },
-          { ...P4, anchor: 'start' as const, lx: P4.cx + PR + 4, ly: P4.cy },
-        ].map((p, i) => (
+        {[P1, P2, P3, P4].map((p, i) => (
           <g key={`p${i}`}>
             <circle cx={p.cx} cy={p.cy} r={PR}
               fill={`${CLAY}0.10)`} stroke={`${CLAY}0.55)`} strokeWidth={1.2} />
             <circle cx={p.cx} cy={p.cy} r={DR} fill={`${CLAY}0.80)`} />
-            <text x={p.lx} y={p.ly + 1}
-              textAnchor={p.anchor} dominantBaseline="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            <text x={p.cx} y={p.cy + PR + 14}
+              textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
               fill={`${CLAY_TEXT}0.912)`} style={{ userSelect: 'none' }}>
               PARTICIPANT
             </text>
@@ -170,8 +165,8 @@ export default function CCWAIReactivated() {
             <circle cx={t.cx} cy={t.cy} r={PR}
               fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.28)" strokeWidth={1.0} />
             <circle cx={t.cx} cy={t.cy} r={DR} fill="rgba(255,255,255,0.48)" />
-            <text x={t.cx} y={t.cy + PR + 10} textAnchor="middle"
-              fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+            <text x={t.cx} y={t.cy + PR + 14} textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
               fill="rgba(255,255,255,0.65)" style={{ userSelect: 'none' }}>
               TEAM
             </text>
@@ -187,35 +182,35 @@ export default function CCWAIReactivated() {
               {/* AI support badges */}
               {AI_BADGES.map(b => (
                 <g key={b.id}>
-                  <rect x={b.x} y={b.y} width={b.w} height={16} rx={3}
+                  <rect x={b.x} y={b.y} width={b.w} height={22} rx={3}
                     fill={`${INDIGO}0.12)`} stroke={`${INDIGO}0.40)`} strokeWidth={0.8} />
-                  <text x={b.x + b.w / 2} y={b.y + 10}
+                  <text x={b.x + b.w / 2} y={b.y + 11}
                     textAnchor="middle" dominantBaseline="middle"
-                    fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                     fill={`${INDIGO_TEXT}0.958)`} style={{ userSelect: 'none' }}>
                     {b.label}
                   </text>
                 </g>
               ))}
 
-              {/* Simulated-participant node (crossed out) */}
+              {/* Simulated-participant node (crossed out) - sits in the margin right of the canvas */}
               <g>
-                <circle cx={350} cy={25} r={PR}
+                <circle cx={563} cy={131} r={PR}
                   fill={`${INDIGO}0.08)`} stroke={`${INDIGO}0.45)`}
                   strokeWidth={1.2} strokeDasharray="3 2" />
-                <line x1={350 - PR + 2} y1={25 - PR + 2}
-                      x2={350 + PR - 2} y2={25 + PR - 2}
+                <line x1={563 - PR + 2} y1={131 - PR + 2}
+                      x2={563 + PR - 2} y2={131 + PR - 2}
                   stroke={`${INDIGO}0.55)`} strokeWidth={1} />
-                <text x={350} y={25 + PR + 10} textAnchor="middle"
-                  fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                <text x={563} y={131 + PR + 15} textAnchor="middle"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                   fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}>
                   AI SIM ≠ REAL
                 </text>
               </g>
 
               {/* "REAL PARTICIPANTS: CANNOT BE REPLACED" annotation */}
-              <text x={CCX} y={SVG_H - 4} textAnchor="middle"
-                fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              <text x={CCX} y={SVG_H - 8} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                 fill={`${CLAY_TEXT}0.895)`} style={{ userSelect: 'none' }}>
                 REAL PARTICIPANTS · LIVED EXPERIENCE · CANNOT BE SIMULATED OR REPLACED
               </text>
@@ -225,8 +220,8 @@ export default function CCWAIReactivated() {
 
         {/* Caption (human mode) */}
         {!isAI && (
-          <text x={CCX} y={SVG_H - 4} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          <text x={CCX} y={SVG_H - 8} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
             REAL PARTICIPATION · GROUNDED INSIGHT · SHARED OWNERSHIP
           </text>
@@ -254,7 +249,7 @@ export default function CCWAIReactivated() {
               <div key={i} className="rounded-lg p-4 border"
                 style={{ background: `${CLAY}0.06)`, borderColor: `${CLAY}0.22)` }}>
                 <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
-                  style={{ color: `${CLAY}0.90)` }}>{card.h}</p>
+                  style={{ color: `${CLAY_TEXT}0.90)` }}>{card.h}</p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.b}</p>
               </div>
             ))}
@@ -282,7 +277,7 @@ export default function CCWAIReactivated() {
               <div key={i} className="rounded-lg p-4 border"
                 style={{ background: `${INDIGO}0.07)`, borderColor: `${INDIGO}0.22)` }}>
                 <p className="text-[10px] font-semibold uppercase tracking-wider mb-2"
-                  style={{ color: `${INDIGO}0.80)` }}>{card.h}</p>
+                  style={{ color: `${INDIGO_TEXT}0.90)` }}>{card.h}</p>
                 <p className="text-xs text-white/55 leading-relaxed">{card.b}</p>
               </div>
             ))}
@@ -293,8 +288,8 @@ export default function CCWAIReactivated() {
       {/* Synthesis */}
       <div className="mt-4 rounded-lg p-4 border border-white/8"
         style={{ background: 'rgba(255,255,255,0.04)' }}>
-        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/28 mb-1">Synthesis</p>
-        <p className="text-xs text-white/42 leading-relaxed">
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/60 mb-1">Synthesis</p>
+        <p className="text-xs text-white/55 leading-relaxed">
           Use AI to support the workshop: preparing it, supplying stimulus, and synthesizing its output. But keep real people at the center of the making: the grounded insight from real co-creation and the ownership that eases adoption both require actual participation, which AI can neither be nor manufacture.
         </p>
       </div>
