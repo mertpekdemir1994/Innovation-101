@@ -8,11 +8,11 @@ const AMBER = 'rgba(245,158,11,'
 const AMBER_TEXT = 'rgba(245,158,11,'  // brightened text-safe variant of AMBER
 
 const SVG_W = 700
-const SVG_H = 228
+const SVG_H = 220
 
 // Five frames left to right. Frame 3 (index 3) is THE GAP.
 const FRAME_W = 116
-const FRAME_H = 118
+const FRAME_H = 130
 const FRAME_Y = 14
 
 const FRAME_X = [
@@ -25,7 +25,7 @@ const FRAME_X = [
 const FRAME_LABELS = [
   '1: BEFORE',
   '2: OPENS APP',
-  '3: SEES SUGGESTION',
+  '3: SUGGESTION',
   '?: THE GAP',
   '5: OUTCOME',
 ]
@@ -132,7 +132,7 @@ export default function SBEstablishing() {
     }
   }
 
-  const LABEL_Y = FRAME_Y + FRAME_H + 12
+  const LABEL_Y = FRAME_Y + FRAME_H + 20
 
   return (
     <div className="w-full">
@@ -170,7 +170,7 @@ export default function SBEstablishing() {
               {i === 1 && <SketchFrame1 x={fx} y={FRAME_Y} />}
               {i === 2 && <SketchFrame2 x={fx} y={FRAME_Y} />}
               <text x={fx + FRAME_W / 2} y={LABEL_Y}
-                textAnchor="middle" fontSize="4.8"
+                textAnchor="middle" fontSize="11"
                 fontFamily="var(--font-mono)" letterSpacing="0.09em"
                 fill={`${CLAY_TEXT}0.912)`} style={{ userSelect: 'none' }}>
                 {FRAME_LABELS[i]}
@@ -203,21 +203,21 @@ export default function SBEstablishing() {
             ?
           </text>
           {/* "THE FRAME NOBODY COULD DRAW" */}
-          <text x={FRAME_X[3] + FRAME_W / 2} y={FRAME_Y + 88}
-            textAnchor="middle" fontSize="3.8"
+          <text x={FRAME_X[3] + FRAME_W / 2} y={FRAME_Y + 96}
+            textAnchor="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>
             THE FRAME
           </text>
-          <text x={FRAME_X[3] + FRAME_W / 2} y={FRAME_Y + 97}
-            textAnchor="middle" fontSize="3.8"
+          <text x={FRAME_X[3] + FRAME_W / 2} y={FRAME_Y + 114}
+            textAnchor="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.08em"
             fill={`${AMBER_TEXT}0.861)`} style={{ userSelect: 'none' }}>
             NOBODY COULD DRAW
           </text>
           {/* Label below */}
           <text x={FRAME_X[3] + FRAME_W / 2} y={LABEL_Y}
-            textAnchor="middle" fontSize="4.8"
+            textAnchor="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
             fill={`${AMBER}0.80)`} style={{ userSelect: 'none' }}>
             {FRAME_LABELS[3]}
@@ -230,7 +230,7 @@ export default function SBEstablishing() {
             fill={`${CLAY}0.04)`} stroke={`${CLAY}0.22)`} strokeWidth={0.7} />
           <SketchFrame4 x={FRAME_X[4]} y={FRAME_Y} />
           <text x={FRAME_X[4] + FRAME_W / 2} y={LABEL_Y}
-            textAnchor="middle" fontSize="4.8"
+            textAnchor="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.09em"
             fill={`${CLAY_TEXT}0.874)`} style={{ userSelect: 'none' }}>
             {FRAME_LABELS[4]}
@@ -238,8 +238,8 @@ export default function SBEstablishing() {
         </motion.g>
 
         {/* ── Caption ── */}
-        <motion.text x={SVG_W / 2} y={SVG_H - 7}
-          textAnchor="middle" fontSize="3.8"
+        <motion.text x={SVG_W / 2} y={SVG_H - 8}
+          textAnchor="middle" fontSize="11"
           fontFamily="var(--font-mono)" letterSpacing="0.06em"
           fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}
           {...fade(1.40)}>

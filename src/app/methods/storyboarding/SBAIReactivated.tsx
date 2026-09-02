@@ -10,7 +10,7 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 680
-const SVG_H = 130
+const SVG_H = 160
 const FW    = 108
 const FH    = 90
 const FY    = 14
@@ -22,27 +22,34 @@ const FRAME_X: number[] = (() => {
   return Array.from({ length: 5 }, (_, i) => sx + i * (FW + GAP_P))
 })()
 
-const LABEL_Y = FY + FH + 11
+const LABEL_Y = FY + FH + 20
+const BANNER_Y = LABEL_Y + 24
 
 type Mode = 'author' | 'adversary'
 
 // In AUTHOR mode, AI draws a complete 5-frame storyboard, including frame 3
 // In ADVERSARY mode, frames 0-2 and 4 normal; frame 3 amber (gap still there)
 
+// `color` is the plain prefix used for backgrounds/borders (fine at low opacity);
+// `textColor` is the brightened variant used for the label, since plain INDIGO
+// and plain CLAY both fail 4.5:1 on this dark background even at full opacity.
 const AUTHOR_CARDS = [
   {
     label: 'THE COLLAPSE',
     color: INDIGO,
+    textColor: INDIGO_TEXT,
     body: 'AI eliminates the drawing barrier. Five frames appear in thirty seconds, rendered clearly, narrated confidently. The visual quality problem is gone. The storyboard looks finished.',
   },
   {
     label: 'THE SUBSTITUTION',
     color: AMBER,
+    textColor: AMBER_TEXT,
     body: 'In frame four the AI writes: "The app intelligently suggests the right recipe." It does not draw the mechanism. It labels it. A label is not a frame. The gap is illustrated, not crossed.',
   },
   {
     label: 'THE RISK',
     color: AMBER,
+    textColor: AMBER_TEXT,
     body: 'A storyboard with no gaps looks like a validated concept. It is not. The team becomes more confident and less correct. The gap that would have stopped a three-month build is now invisible under a professionally rendered arrow.',
   },
 ]
@@ -51,16 +58,19 @@ const ADVERSARY_CARDS = [
   {
     label: 'FIND THE GAP',
     color: INDIGO,
+    textColor: INDIGO_TEXT,
     body: 'Ask AI to read your storyboard and find the frame that describes a mechanism rather than a behaviour. It will find it. Every time. "Frame four tells us the app suggests a recipe. It does not show us how the app knows what is available."',
   },
   {
     label: 'STRESS THE FRAME',
     color: INDIGO,
+    textColor: INDIGO_TEXT,
     body: 'For each frame: ask AI what assumption the frame is making and how safe that assumption is. The framing forces honesty in a way that freeform exploration does not. You get a risk map, not a narrative.',
   },
   {
     label: 'THE PRINCIPLE',
-    color: `${CLAY}1)`,
+    color: CLAY,
+    textColor: CLAY_TEXT,
     body: 'Do not ask AI to draw your storyboard. Ask it to read your storyboard and tell you which frame it cannot draw honestly. That frame is your gap.',
   },
 ]
@@ -91,8 +101,8 @@ export default function SBAIReactivated() {
                   ? m === 'author' ? `${INDIGO}0.50)` : `${CLAY}0.50)`
                   : 'rgba(255,255,255,0.12)'}`,
                 color: active
-                  ? m === 'author' ? `${INDIGO}1)` : `${CLAY}1)`
-                  : 'rgba(255,255,255,0.45)',
+                  ? m === 'author' ? `${INDIGO_TEXT}1)` : `${CLAY_TEXT}1)`
+                  : 'rgba(255,255,255,0.50)',
               }}
             >
               {m === 'author' ? 'AI AS AUTHOR' : 'AI AS ADVERSARY'}
@@ -160,30 +170,30 @@ export default function SBAIReactivated() {
               {/* Author mode: frame 3 shows a label instead of mechanism */}
               {isAuthor && isGap && (
                 <>
-                  {/* "Intelligently surfaces" text: the label masquerading as a frame */}
-                  <text x={fx + FW / 2} y={FY + 30}
-                    textAnchor="middle" fontSize="5.5"
+                  {/* "Intelligently surfaces right answer": the label masquerading as a frame */}
+                  <text x={fx + FW / 2} y={FY + 22}
+                    textAnchor="middle" fontSize="11"
                     fontFamily="var(--font-mono)"
                     fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}>
                     intelligently
                   </text>
                   <text x={fx + FW / 2} y={FY + 40}
-                    textAnchor="middle" fontSize="5.5"
+                    textAnchor="middle" fontSize="11"
                     fontFamily="var(--font-mono)"
                     fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}>
                     surfaces
                   </text>
-                  <text x={fx + FW / 2} y={FY + 50}
-                    textAnchor="middle" fontSize="5.5"
+                  <text x={fx + FW / 2} y={FY + 58}
+                    textAnchor="middle" fontSize="11"
                     fontFamily="var(--font-mono)"
                     fill={`${INDIGO_TEXT}0.905)`} style={{ userSelect: 'none' }}>
                     right answer
                   </text>
-                  <text x={fx + FW / 2} y={FY + 74}
-                    textAnchor="middle" fontSize="4.0"
+                  <text x={fx + FW / 2} y={FY + 76}
+                    textAnchor="middle" fontSize="11"
                     fontFamily="var(--font-mono)" letterSpacing="0.06em"
                     fill={`${AMBER_TEXT}0.891)`} style={{ userSelect: 'none' }}>
-                    ← A LABEL, NOT A FRAME
+                    NOT A FRAME
                   </text>
                 </>
               )}
@@ -202,7 +212,7 @@ export default function SBAIReactivated() {
               {/* Author: "UNVALIDATED" badge on each frame */}
               {isAuthor && !isGap && (
                 <text x={fx + FW / 2} y={FY + FH - 8}
-                  textAnchor="middle" fontSize="3.8"
+                  textAnchor="middle" fontSize="11"
                   fontFamily="var(--font-mono)" letterSpacing="0.06em"
                   fill={`${INDIGO_TEXT}0.874)`} style={{ userSelect: 'none' }}>
                   RENDERED
@@ -210,7 +220,7 @@ export default function SBAIReactivated() {
               )}
 
               <text x={fx + FW / 2} y={LABEL_Y}
-                textAnchor="middle" fontSize="4.0"
+                textAnchor="middle" fontSize="11"
                 fontFamily="var(--font-mono)" letterSpacing="0.08em"
                 fontWeight={isGap ? '600' : undefined}
                 fill={isAuthor ? `${INDIGO_TEXT}0.895)` : isGap ? `${AMBER}0.78)` : `${CLAY_TEXT}0.891)`}
@@ -223,16 +233,16 @@ export default function SBAIReactivated() {
 
         {/* Author mode: banner */}
         {isAuthor && (
-          <text x={SVG_W / 2} y={SVG_H - 6}
-            textAnchor="middle" fontSize="3.6"
+          <text x={SVG_W / 2} y={BANNER_Y}
+            textAnchor="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.07em"
             fill={`${INDIGO_TEXT}0.864)`} style={{ userSelect: 'none' }}>
             COMPLETE · PROFESSIONAL · THE GAP IS STILL THERE
           </text>
         )}
         {!isAuthor && (
-          <text x={SVG_W / 2} y={SVG_H - 6}
-            textAnchor="middle" fontSize="3.6"
+          <text x={SVG_W / 2} y={BANNER_Y}
+            textAnchor="middle" fontSize="11"
             fontFamily="var(--font-mono)" letterSpacing="0.07em"
             fill={`${AMBER_TEXT}0.814)`} style={{ userSelect: 'none' }}>
             AI CANNOT CROSS THE GAP EITHER, IT CAN ONLY FIND IT FASTER
@@ -252,15 +262,9 @@ export default function SBAIReactivated() {
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}
         >
           {(isAuthor ? AUTHOR_CARDS : ADVERSARY_CARDS).map((card, i) => {
-            const accent = typeof card.color === 'string' && card.color.startsWith('rgba')
-              ? card.color
-              : `${card.color}1)`
-            const alphaBg = typeof card.color === 'string' && card.color.startsWith('rgba')
-              ? card.color.replace(/[\d.]+\)$/, '0.06)')
-              : `${card.color}0.06)`
-            const alphaBorder = typeof card.color === 'string' && card.color.startsWith('rgba')
-              ? card.color.replace(/[\d.]+\)$/, '0.22)')
-              : `${card.color}0.22)`
+            const accent = `${card.textColor}1)`
+            const alphaBg = `${card.color}0.06)`
+            const alphaBorder = `${card.color}0.22)`
             return (
               <div key={i} className="rounded-sm p-5"
                 style={{ background: alphaBg, border: `1px solid ${alphaBorder}` }}>
@@ -283,7 +287,7 @@ export default function SBAIReactivated() {
         border: `1px solid ${CLAY}0.25)`,
         borderLeft: `3px solid ${CLAY}0.60)`,
       }}>
-        <p className="text-xs font-mono tracking-widest mb-3" style={{ color: `${CLAY}0.72)` }}>
+        <p className="text-xs font-mono tracking-widest mb-3" style={{ color: `${CLAY_TEXT}0.85)` }}>
           HOW TO USE AI WITH A STORYBOARD
         </p>
         <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>

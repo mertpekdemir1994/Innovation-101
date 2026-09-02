@@ -22,12 +22,12 @@ const FRAME_X: number[] = (() => {
   return Array.from({ length: 5 }, (_, i) => startX + i * (FW + GAP_PX))
 })()
 
-const LABEL_Y = FY + FH + 11
+const LABEL_Y = FY + FH + 20
 
 const FRAME_TITLES = [
   '1: BEFORE',
   '2: OPENS APP',
-  '3: SEES SUGGESTION',
+  '3: SUGGESTION',
   '?: THE GAP',
   '5: OUTCOME',
 ]
@@ -224,7 +224,7 @@ export default function SBInteractive() {
               />
               <SketchInSVG id={i} x={fx} y={FY} />
               <text x={fx + FW / 2} y={LABEL_Y}
-                textAnchor="middle" fontSize="4.4"
+                textAnchor="middle" fontSize="11"
                 fontFamily="var(--font-mono)" letterSpacing="0.09em"
                 fill={sel ? `${CLAY_TEXT}0.969)` : `${CLAY_TEXT}0.895)`}
                 style={{ userSelect: 'none' }}>
@@ -262,7 +262,7 @@ export default function SBInteractive() {
                 ?
               </text>
               <text x={fx + FW / 2} y={LABEL_Y}
-                textAnchor="middle" fontSize="4.4"
+                textAnchor="middle" fontSize="11"
                 fontFamily="var(--font-mono)" letterSpacing="0.09em" fontWeight="600"
                 fill={`${AMBER}0.82)`} style={{ userSelect: 'none' }}>
                 {FRAME_TITLES[3]}
@@ -289,7 +289,7 @@ export default function SBInteractive() {
             }}
           >
             <p className="text-xs font-mono tracking-widest mb-3"
-              style={{ color: `${CLAY}0.55)` }}>
+              style={{ color: `${CLAY_TEXT}0.85)` }}>
               FRAME {(selected as number) + 1}: WHAT IT SHOWS
             </p>
             <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.78)' }}>
@@ -305,7 +305,7 @@ export default function SBInteractive() {
             }}>
               <p className="text-xs font-mono tracking-widest mb-2" style={{
                 color: detail.assumptionRisk === 'safe'
-                  ? 'rgba(22,163,74,0.70)'
+                  ? 'rgba(22,163,74,0.90)'
                   : `${AMBER}0.72)`,
               }}>
                 {detail.assumptionRisk === 'safe' ? 'ASSUMPTION: PROBABLY SAFE' : 'ASSUMPTION: UNTESTED'}

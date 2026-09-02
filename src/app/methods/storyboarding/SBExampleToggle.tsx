@@ -5,6 +5,11 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 const CLAY  = 'rgba(181,97,62,'
 const AMBER = 'rgba(245,158,11,'
 const INDIGO = 'rgba(99,102,241,'
+// darker variants for text on this light background — the plain colors
+// above can't reach 4.5:1 on white even at full opacity
+const CLAY_DARK   = 'rgba(140,74,47,'
+const INDIGO_DARK = 'rgba(79,70,229,'
+const AMBER_DARK  = 'rgba(180,83,9,'
 
 type Tab = 'traditional' | 'ai'
 
@@ -68,6 +73,7 @@ export default function SBExampleToggle() {
         {(['traditional', 'ai'] as Tab[]).map(t => {
           const active  = tab === t
           const accent  = t === 'traditional' ? CLAY : INDIGO
+          const accentTextDark = t === 'traditional' ? CLAY_DARK : INDIGO_DARK
           return (
             <button
               key={t}
@@ -76,7 +82,7 @@ export default function SBExampleToggle() {
               style={{
                 background: active ? `${accent}0.10)` : 'rgba(0,0,0,0.03)',
                 border: `1px solid ${active ? `${accent}0.40)` : 'rgba(0,0,0,0.10)'}`,
-                color: active ? `${accent}1)` : 'var(--color-neutral-500)',
+                color: active ? `${accentTextDark}1)` : 'var(--color-neutral-500)',
               }}
             >
               {t === 'traditional' ? 'TRADITIONAL' : 'WITH AI (HYPOTHETICAL)'}
@@ -114,6 +120,7 @@ export default function SBExampleToggle() {
             const isGapPanel = tab === 'traditional' && i === 1
             const isAIGap    = tab === 'ai' && i === 1
             const accent     = tab === 'traditional' ? CLAY : INDIGO
+            const accentTextDark = tab === 'traditional' ? CLAY_DARK : INDIGO_DARK
             const borderLeft = isGapPanel || isAIGap
               ? `3px solid ${AMBER}0.70)`
               : `3px solid ${accent}0.40)`
@@ -126,7 +133,7 @@ export default function SBExampleToggle() {
               }}>
                 <p className="text-xs font-mono tracking-widest mb-1"
                   style={{
-                    color: isGapPanel || isAIGap ? `${AMBER}0.90)` : `${accent}0.90)`,
+                    color: isGapPanel || isAIGap ? `${AMBER_DARK}1)` : `${accentTextDark}1)`,
                   }}>
                   {panel.step}
                 </p>
