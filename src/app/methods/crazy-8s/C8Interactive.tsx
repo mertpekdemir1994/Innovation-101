@@ -143,8 +143,8 @@ export default function C8Interactive() {
                 strokeWidth={0.8} />
             )
           })}
-          <text x={(TIMER_X1 + TIMER_X2) / 2} y={6} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          <text x={(TIMER_X1 + TIMER_X2) / 2} y={35} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${CLAY_TEXT}0.891)`} style={{ userSelect: 'none' }}>1 MIN PER PANEL</text>
 
           {/* Panels */}
@@ -166,8 +166,8 @@ export default function C8Interactive() {
             const strokeStr = late
               ? `${CLAY}${strokeO}`
               : `rgba(255,255,255,${strokeO}`
-            const numO  = isSelected ? (late ? `${CLAY}0.80)` : 'rgba(255,255,255,0.70)') : isDimmed ? 'rgba(255,255,255,0.14)' : (late ? `${CLAY}0.60)` : 'rgba(255,255,255,0.28)')
-            const lblO  = isSelected ? (late ? `${CLAY}1.00)` : 'rgba(255,255,255,0.90)') : isDimmed ? 'rgba(255,255,255,0.12)' : (late ? `${CLAY}0.82)` : 'rgba(255,255,255,0.38)')
+            const numO  = isSelected ? (late ? `${CLAY_TEXT}0.90)` : 'rgba(255,255,255,0.70)') : isDimmed ? 'rgba(255,255,255,0.14)' : (late ? `${CLAY_TEXT}0.80)` : 'rgba(255,255,255,0.28)')
+            const lblO  = isSelected ? (late ? `${CLAY_TEXT}1.00)` : 'rgba(255,255,255,0.90)') : isDimmed ? 'rgba(255,255,255,0.12)' : (late ? `${CLAY_TEXT}0.95)` : 'rgba(255,255,255,0.38)')
             const lineO = isSelected ? (late ? `${CLAY}0.60)` : 'rgba(255,255,255,0.45)') : isDimmed ? 'rgba(255,255,255,0.06)' : (late ? `${CLAY}0.42)` : 'rgba(255,255,255,0.16)')
 
             return (
@@ -194,8 +194,8 @@ export default function C8Interactive() {
                   rx={5} fill="transparent" />
                 <rect x={x} y={y} width={PANEL_W} height={PANEL_H} rx={3}
                   fill={fillStr} stroke={strokeStr} strokeWidth={isSelected ? 1.2 : 0.8} />
-                <text x={x + 7} y={y + 12}
-                  fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                <text x={x + 7} y={y + 13}
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                   fill={numO} style={{ userSelect: 'none' }}>
                   {String(p.n).padStart(2, '0')}
                 </text>
@@ -206,7 +206,7 @@ export default function C8Interactive() {
                     stroke={lineO} strokeWidth={0.9} />
                 ))}
                 <text x={cx} y={y + PANEL_H - 9} textAnchor="middle"
-                  fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                  fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                   fill={lblO} style={{ userSelect: 'none' }}>
                   {late ? 'ORIGINAL' : 'OBVIOUS'}
                 </text>
@@ -218,7 +218,7 @@ export default function C8Interactive() {
           <line x1={TIMER_X1} y1={WALL_Y} x2={TIMER_X2} y2={WALL_Y}
             stroke={`${CLAY}0.28)`} strokeWidth={0.8} strokeDasharray="4 3" />
           <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 7} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${CLAY_TEXT}0.905)`} style={{ userSelect: 'none' }}>← THE WALL</text>
         </svg>
       </div>
@@ -231,7 +231,7 @@ export default function C8Interactive() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.18 }}
-            className="rounded-lg border p-5 text-sm text-neutral-500"
+            className="rounded-lg border p-5 text-sm text-white text-opacity-55"
             style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
             Click any panel to see what kind of idea it produces, and why the late panels are where the breakthroughs live.
           </motion.div>
@@ -249,25 +249,25 @@ export default function C8Interactive() {
           >
             <div className="flex items-center gap-3 flex-wrap">
               <span className="text-[10px] font-semibold uppercase tracking-widest"
-                style={{ color: selectedPanel.row === 1 ? `${CLAY}0.90)` : 'rgba(255,255,255,0.60)' }}>
+                style={{ color: selectedPanel.row === 1 ? `${CLAY_TEXT}0.95)` : 'rgba(255,255,255,0.60)' }}>
                 Panel {selected}
               </span>
-              <span className="text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
+              <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
                 style={{
                   background: selectedPanel.row === 1 ? `${CLAY}0.12)` : 'rgba(255,255,255,0.08)',
-                  color: selectedPanel.row === 1 ? `${CLAY}0.80)` : 'rgba(255,255,255,0.55)',
+                  color: selectedPanel.row === 1 ? `${CLAY_TEXT}0.90)` : 'rgba(255,255,255,0.55)',
                   border: `1px solid ${selectedPanel.row === 1 ? `${CLAY}0.25)` : 'rgba(255,255,255,0.14)'}`,
                 }}>
                 {selectedPanel.type}
               </span>
             </div>
             <div>
-              <p className="text-sm font-semibold mb-2 text-neutral-200">{selectedPanel.headline}</p>
-              <p className="text-sm text-neutral-600 leading-relaxed">{selectedPanel.body}</p>
+              <p className="text-sm font-semibold mb-2 text-white text-opacity-90">{selectedPanel.headline}</p>
+              <p className="text-sm text-white text-opacity-70 leading-relaxed">{selectedPanel.body}</p>
             </div>
             <div className="border-t pt-4"
               style={{ borderColor: selectedPanel.row === 1 ? `${CLAY}0.15)` : 'rgba(255,255,255,0.08)' }}>
-              <p className="text-xs text-neutral-500 leading-relaxed italic">{selectedPanel.note}</p>
+              <p className="text-xs text-white text-opacity-55 leading-relaxed italic">{selectedPanel.note}</p>
             </div>
           </motion.div>
         )}

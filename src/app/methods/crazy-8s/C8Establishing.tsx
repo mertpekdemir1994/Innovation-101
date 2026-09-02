@@ -75,14 +75,14 @@ export default function C8Establishing() {
                 strokeWidth={0.8} />
             )
           })}
-          <text x={TIMER_X1} y={TIMER_Y - 8} textAnchor="start"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={TIMER_X1} y={TIMER_Y + 21} textAnchor="start"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>0 MIN</text>
-          <text x={TIMER_X2} y={TIMER_Y - 8} textAnchor="end"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+          <text x={TIMER_X2} y={TIMER_Y + 21} textAnchor="end"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill="rgba(255,255,255,0.61)" style={{ userSelect: 'none' }}>8 MIN</text>
-          <text x={(TIMER_X1 + TIMER_X2) / 2} y={TIMER_Y - 8} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          <text x={(TIMER_X1 + TIMER_X2) / 2} y={TIMER_Y + 21} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${CLAY_TEXT}0.895)`} style={{ userSelect: 'none' }}>1 MIN PER PANEL</text>
         </motion.g>
 
@@ -115,8 +115,8 @@ export default function C8Establishing() {
               )}
               <rect x={x} y={y} width={PANEL_W} height={PANEL_H} rx={3}
                 fill={fill} stroke={stroke} strokeWidth={0.8} />
-              <text x={x + 7} y={y + 12}
-                fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+              <text x={x + 7} y={y + 13}
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                 fill={numFill} style={{ userSelect: 'none' }}>
                 {String(p.n).padStart(2, '0')}
               </text>
@@ -127,7 +127,7 @@ export default function C8Establishing() {
                   stroke={lineFill} strokeWidth={0.9} />
               ))}
               <text x={cx} y={y + PANEL_H - 9} textAnchor="middle"
-                fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.10em"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                 fill={lblFill} style={{ userSelect: 'none' }}>
                 {late ? 'ORIGINAL' : 'OBVIOUS'}
               </text>
@@ -143,11 +143,11 @@ export default function C8Establishing() {
         >
           <line x1={TIMER_X1} y1={WALL_Y} x2={TIMER_X2} y2={WALL_Y}
             stroke={`${CLAY}0.32)`} strokeWidth={0.8} strokeDasharray="4 3" />
-          <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 7} textAnchor="middle"
-            fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
+          <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 5} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={`${CLAY_TEXT}0.92)`} style={{ userSelect: 'none' }}>← THE WALL</text>
           <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y + 13} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
             fill="rgba(255,255,255,0.6)" style={{ userSelect: 'none' }}>
             obvious ideas run out here, keep going
           </text>
@@ -155,7 +155,7 @@ export default function C8Establishing() {
 
         {/* Caption */}
         <motion.text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
-          fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+          fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
           fill="rgba(255,255,255,0.58)"
           initial={{ opacity: 0 }}
           animate={visible ? { opacity: 1 } : { opacity: 0 }}

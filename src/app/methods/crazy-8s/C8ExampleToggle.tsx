@@ -154,7 +154,7 @@ export default function C8ExampleToggle() {
                 <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-700">
                   The unsound path: ask AI to generate the directions instead
                 </p>
-                <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full text-amber-600 bg-amber-50 border border-amber-200">
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full text-amber-600 bg-amber-50 border border-amber-200">
                   hypothetical
                 </span>
               </div>
@@ -180,7 +180,7 @@ export default function C8ExampleToggle() {
                 ].map(item => (
                   <div key={item.label} className="rounded p-3"
                     style={{ background: 'rgba(245,158,11,0.05)', borderLeft: '2px solid rgba(245,158,11,0.22)' }}>
-                    <p className="text-[9px] font-semibold uppercase tracking-widest mb-1 text-amber-700">{item.label}</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-widest mb-1 text-amber-700">{item.label}</p>
                     <p className="text-xs text-neutral-700 leading-relaxed">{item.body}</p>
                   </div>
                 ))}

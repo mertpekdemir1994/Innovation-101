@@ -8,7 +8,7 @@ const INDIGO = 'rgba(99,102,241,'
 const INDIGO_TEXT = 'rgba(141,143,245,'  // brightened text-safe variant of INDIGO
 
 const SVG_W = 700
-const SVG_H = 268
+const SVG_H = 280
 
 const PANEL_W = 148
 const PANEL_H = 76
@@ -61,8 +61,8 @@ export default function C8AIReactivated() {
                 ? (m === 'ai' ? `${INDIGO}0.35)` : `${CLAY}0.35)`)
                 : 'rgba(255,255,255,0.12)'}`,
               color: mode === m
-                ? m === 'ai' ? `${INDIGO}1)` : `${CLAY}1)`
-                : 'rgba(255,255,255,0.40)',
+                ? m === 'ai' ? `${INDIGO_TEXT}1)` : `${CLAY_TEXT}1)`
+                : 'rgba(255,255,255,0.55)',
             }}>
             {m === 'human' ? 'Human-led' : 'With AI (hypothetical)'}
           </button>
@@ -94,23 +94,24 @@ export default function C8AIReactivated() {
           {/* Timer bar */}
           <line x1={TIMER_X1} y1={14} x2={TIMER_X2} y2={14}
             stroke="rgba(255,255,255,0.10)" strokeWidth={1} />
-          <text x={(TIMER_X1 + TIMER_X2) / 2} y={6} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.12em"
+          <text x={(TIMER_X1 + TIMER_X2) / 2} y={35} textAnchor="middle"
+            fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
             fill={isAI ? `${INDIGO_TEXT}0.874)` : `${CLAY_TEXT}0.891)`}
             style={{ userSelect: 'none' }}>
             {isAI ? 'AI: INSTANT GENERATION, NO TIMER NEEDED' : '1 MIN PER PANEL'}
           </text>
 
-          {/* AI "instant" badge */}
+          {/* AI "instant" badge - widened; "100 IDEAS IN SECONDS" doesn't fit
+              the original 130-wide badge at 11pt */}
           <AnimatePresence>
             {isAI && (
               <motion.g key="ai-badge"
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 transition={fade}>
-                <rect x={14} y={20} width={130} height={16} rx={3}
+                <rect x={14} y={18} width={172} height={22} rx={3}
                   fill={`${INDIGO}0.18)`} stroke={`${INDIGO}0.30)`} strokeWidth={0.7} />
-                <text x={22} y={31} fontSize="5" fontFamily="var(--font-mono)"
-                  letterSpacing="0.07em" fill={`${INDIGO_TEXT}0.958)`}
+                <text x={22} y={33} fontSize="11" fontFamily="var(--font-mono)"
+                  letterSpacing="0.02em" fill={`${INDIGO_TEXT}0.958)`}
                   style={{ userSelect: 'none' }}>100 IDEAS IN SECONDS</text>
               </motion.g>
             )}
@@ -136,9 +137,9 @@ export default function C8AIReactivated() {
                 const stroke = isAI
                   ? `${INDIGO}0.38)` : late ? `${CLAY}0.48)` : 'rgba(255,255,255,0.14)'
                 const numFill = isAI
-                  ? `${INDIGO}0.55)` : late ? `${CLAY}0.60)` : 'rgba(255,255,255,0.28)'
+                  ? `${INDIGO_TEXT}0.85)` : late ? `${CLAY_TEXT}0.85)` : 'rgba(255,255,255,0.28)'
                 const lblFill = isAI
-                  ? `${INDIGO}0.70)` : late ? `${CLAY}0.82)` : 'rgba(255,255,255,0.38)'
+                  ? `${INDIGO_TEXT}0.95)` : late ? `${CLAY_TEXT}0.95)` : 'rgba(255,255,255,0.38)'
                 const lineFill = isAI
                   ? `${INDIGO}0.30)` : late ? `${CLAY}0.42)` : 'rgba(255,255,255,0.16)'
 
@@ -156,8 +157,8 @@ export default function C8AIReactivated() {
                     )}
                     <rect x={x} y={y} width={PANEL_W} height={PANEL_H} rx={3}
                       fill={fill} stroke={stroke} strokeWidth={0.8} />
-                    <text x={x + 7} y={y + 12}
-                      fontSize="6" fontFamily="var(--font-mono)" letterSpacing="0.08em"
+                    <text x={x + 7} y={y + 13}
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.04em"
                       fill={numFill} style={{ userSelect: 'none' }}>
                       {String(p.n).padStart(2, '0')}
                     </text>
@@ -168,7 +169,7 @@ export default function C8AIReactivated() {
                         stroke={lineFill} strokeWidth={0.9} />
                     ))}
                     <text x={cx} y={y + PANEL_H - 9} textAnchor="middle"
-                      fontSize="5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                      fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                       fill={lblFill} style={{ userSelect: 'none' }}>
                       {isAI ? 'AI: PLAUSIBLE' : (late ? 'ORIGINAL' : 'OBVIOUS')}
                     </text>
@@ -181,11 +182,11 @@ export default function C8AIReactivated() {
                 <g>
                   <line x1={TIMER_X1} y1={WALL_Y} x2={TIMER_X2} y2={WALL_Y}
                     stroke={`${CLAY}0.30)`} strokeWidth={0.8} strokeDasharray="4 3" />
-                  <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 7} textAnchor="middle"
-                    fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
+                  <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 5} textAnchor="middle"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                     fill={`${CLAY_TEXT}0.912)`} style={{ userSelect: 'none' }}>← THE WALL</text>
                   <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y + 13} textAnchor="middle"
-                    fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                     fill="rgba(255,255,255,0.59)" style={{ userSelect: 'none' }}>
                     obvious ideas run out here, constraint forces you past it
                   </text>
@@ -194,11 +195,11 @@ export default function C8AIReactivated() {
                 <g>
                   <line x1={TIMER_X1} y1={WALL_Y} x2={TIMER_X2} y2={WALL_Y}
                     stroke={`${INDIGO}0.14)`} strokeWidth={0.8} strokeDasharray="4 3" />
-                  <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 7} textAnchor="middle"
-                    fontSize="5.5" fontFamily="var(--font-mono)" letterSpacing="0.13em"
+                  <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y - 5} textAnchor="middle"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em"
                     fill={`${INDIGO_TEXT}0.885)`} style={{ userSelect: 'none' }}>NO WALL, AI NEVER RUNS OUT OF PLAUSIBLE IDEAS</text>
                   <text x={(TIMER_X1 + TIMER_X2) / 2} y={WALL_Y + 13} textAnchor="middle"
-                    fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.09em"
+                    fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
                     fill={`${INDIGO_TEXT}0.853)`} style={{ userSelect: 'none' }}>
                     without the wall, there is no forcing function to reach the non-obvious
                   </text>
@@ -208,13 +209,26 @@ export default function C8AIReactivated() {
           </AnimatePresence>
 
           {/* Caption */}
-          <text x={SVG_W / 2} y={SVG_H - 6} textAnchor="middle"
-            fontSize="4.5" fontFamily="var(--font-mono)" letterSpacing="0.08em"
-            fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
-            {isAI
-              ? 'AI GENERATES PLAUSIBLE IDEAS INSTANTLY, AND REMOVES THE CONSTRAINT THAT PRODUCES ORIGINALITY'
-              : 'THE CONSTRAINT IS THE METHOD, THE WALL IS WHERE ORIGINAL IDEAS BEGIN'}
-          </text>
+          {isAI ? (
+            <>
+              <text x={SVG_W / 2} y={SVG_H - 24} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
+                fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
+                AI GENERATES PLAUSIBLE IDEAS INSTANTLY,
+              </text>
+              <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
+                fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
+                fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
+                AND REMOVES THE CONSTRAINT THAT PRODUCES ORIGINALITY
+              </text>
+            </>
+          ) : (
+            <text x={SVG_W / 2} y={SVG_H - 8} textAnchor="middle"
+              fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.02em"
+              fill="rgba(255,255,255,0.58)" style={{ userSelect: 'none' }}>
+              THE CONSTRAINT IS THE METHOD, THE WALL IS WHERE ORIGINAL IDEAS BEGIN
+            </text>
+          )}
         </svg>
       </div>
 
@@ -243,8 +257,8 @@ export default function C8AIReactivated() {
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${CLAY}0.20)`, background: `${CLAY}0.04)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest"
-                  style={{ color: `${CLAY}0.75)` }}>{item.label}</p>
+                <p className="text-[10px] font-mono uppercase tracking-widest"
+                  style={{ color: `${CLAY_TEXT}0.90)` }}>{item.label}</p>
                 <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.58)' }}>
                   {item.body}
                 </p>
@@ -274,8 +288,8 @@ export default function C8AIReactivated() {
             ].map(item => (
               <div key={item.label} className="rounded-lg border p-4 space-y-2"
                 style={{ borderColor: `${INDIGO}0.20)`, background: `${INDIGO}0.04)` }}>
-                <p className="text-[9px] font-mono uppercase tracking-widest"
-                  style={{ color: `${INDIGO}0.75)` }}>{item.label}</p>
+                <p className="text-[10px] font-mono uppercase tracking-widest"
+                  style={{ color: `${INDIGO_TEXT}0.90)` }}>{item.label}</p>
                 <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.58)' }}>
                   {item.body}
                 </p>
