@@ -473,12 +473,12 @@ export default function AffinityMappingPage() {
           S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={NAVY}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same research corpus, organized two ways.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               An IDEO team is redesigning children&rsquo;s toothbrushes for Oral-B. Field research is complete.

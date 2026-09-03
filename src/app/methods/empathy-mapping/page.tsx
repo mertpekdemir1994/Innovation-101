@@ -457,12 +457,12 @@ export default function EmpathyMappingPage() {
           S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={NAVY}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same research. Two maps. One insight that only one of them could make.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A financial-services team is designing a retirement-planning tool for people in their early thirties.

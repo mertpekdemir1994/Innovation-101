@@ -463,11 +463,11 @@ export default function JobsToBeDonePage() {
           S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={NAVY}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same product. Two investigations. One found the job; one did not.</SectionHeadingLight>
-            <p className="mb-10" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}>
+            <p className="max-w-prose mx-auto px-6 md:px-8 mb-10" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}>
               A fast-food chain wants to sell more milkshakes. Sales are flat. Both approaches investigate the same
               product and the same purchase; only the method differs. Toggle between them to see which one found
               the job, and what the job revealed.
