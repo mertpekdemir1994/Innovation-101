@@ -5,18 +5,22 @@ import { motion, useReducedMotion } from 'framer-motion'
 const PLUM = 'rgba(107,74,119,'
 const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
-// Grid geometry
-const GX = 80, GY = 40, GW = 400, GH = 340
-const GR = GX + GW   // 480
+// Grid geometry — width stretched (400→900, 2.25x) to give the hero a
+// cinematic ~2.35:1 frame. This is a genuine 2D coordinate field (both
+// axes run Existing→New), not a fixed shape, so the zone ellipses' cx and
+// rx were scaled by the same 2.25x to preserve their relative position and
+// overlap along the diagonal; cy/ry (the vertical dimension) are untouched.
+const GX = 80, GY = 40, GW = 900, GH = 340
+const GR = GX + GW   // 980
 const GB = GY + GH   // 380
-const MX = GX + GW / 2  // 280
+const MX = GX + GW / 2  // 530
 const MY = GY + GH / 2  // 210
 
 // Three zones along the bottom-left → top-right diagonal
 const ZONES = [
-  { id: 'core',             label: 'CORE',            cx: 165, cy: 308, rx: 82, ry: 64 },
-  { id: 'adjacent',         label: 'ADJACENT',         cx: 280, cy: 210, rx: 102, ry: 74 },
-  { id: 'transformational', label: 'TRANSFORMATIONAL', cx: 394, cy: 112, rx: 82, ry: 62 },
+  { id: 'core',             label: 'CORE',            cx: 271, cy: 308, rx: 185, ry: 64 },
+  { id: 'adjacent',         label: 'ADJACENT',         cx: 530, cy: 210, rx: 230, ry: 74 },
+  { id: 'transformational', label: 'TRANSFORMATIONAL', cx: 787, cy: 112, rx: 185, ry: 62 },
 ]
 
 export default function AMEstablishing() {
@@ -41,7 +45,7 @@ export default function AMEstablishing() {
       variants={container}
       aria-hidden="true"
     >
-      <svg viewBox="0 0 560 450" width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
+      <svg viewBox="0 0 1060 450" width="100%" style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           <filter id="am-est-glow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="7" result="blur" />
@@ -58,7 +62,7 @@ export default function AMEstablishing() {
 
         {/* Ambient plum wash */}
         <motion.ellipse
-          cx={MX} cy={MY} rx={240} ry={190}
+          cx={MX} cy={MY} rx={454} ry={190}
           fill={`${PLUM}0.05)`}
           variants={fade} transition={gridT}
         />
