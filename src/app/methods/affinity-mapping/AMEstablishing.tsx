@@ -4,8 +4,13 @@ import { motion, useReducedMotion } from 'framer-motion'
 
 const NAVY = 'rgba(31,58,95,'
 
-const SVG_W = 700
-const SVG_H = 500
+// Regridded from the original 2x2 cluster grid (700x500, 1.40:1) into a
+// single row of 4: the four clusters carry no 2D-axis relationship to each
+// other (unlike empathy-mapping's quadrants), so a row reads just as
+// naturally and gives the hero a cinematic ~4.8:1 frame. Cluster size and
+// internal layout (strip + 4 stacked cards) are completely untouched.
+const SVG_W = 1380
+const SVG_H = 285
 const CL_W  = 280
 const CL_H  = 190
 const STRIP_H = 64
@@ -37,13 +42,13 @@ const CLUSTERS: ClusterDef[] = [
     id: 'firstweek',
     insightLines: ['The first session', 'sets the ceiling'],
     cards: ["didn't know the rules", 'felt judged the first time', 'figured out by watching', '3 sessions to feel normal'],
-    tlx: 40, tly: 255,
+    tlx: 720, tly: 40,
   },
   {
     id: 'identity',
     insightLines: ['People exercise for', 'who they want to become'],
     cards: ['doing it for future me', 'current pain, future reward', 'want to be that person', 'identity, not fitness'],
-    tlx: 380, tly: 255,
+    tlx: 1060, tly: 40,
   },
 ]
 
@@ -87,7 +92,7 @@ export default function AMEstablishing() {
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
-        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}
+        style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}
       >
         <defs>
           <filter id="am-est-glow" x="-20%" y="-20%" width="140%" height="140%">
