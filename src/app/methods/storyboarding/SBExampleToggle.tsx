@@ -78,6 +78,7 @@ export default function SBExampleToggle() {
             <button
               key={t}
               onClick={() => setTab(t)}
+              aria-pressed={active}
               className="px-4 py-2 text-xs font-mono tracking-widest rounded-sm transition-colors"
               style={{
                 background: active ? `${accent}0.10)` : 'rgba(0,0,0,0.03)',

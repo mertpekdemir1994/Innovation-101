@@ -490,7 +490,7 @@ export default function DoubleDiamondViz({ phaseContent, theme = 'light' }: Doub
 
   return (
     <div>
-      <p className="sr-only focus:not-sr-only text-xs text-neutral-400 mb-space-4">
+      <p className={`sr-only focus:not-sr-only text-xs mb-space-4 ${theme === 'dark' ? 'text-neutral-400' : 'text-neutral-500'}`}>
         Tab to navigate phases, Enter or Space to expand, Escape to close.
       </p>
 

@@ -20,6 +20,7 @@ export default function CTExampleToggle() {
       <div className="flex gap-2 mb-6">
         {(['traditional', 'ai'] as Tab[]).map(t => (
           <button key={t} onClick={() => setTab(t)}
+            aria-pressed={tab === t}
             className="px-4 py-2 rounded-full text-xs font-semibold transition-all"
             style={{
               background: tab === t

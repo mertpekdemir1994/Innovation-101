@@ -295,6 +295,7 @@ export default function HomePage() {
                     }}
                   >
                     Book time <span aria-hidden="true">→</span>
+                    <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </div>
               </div>

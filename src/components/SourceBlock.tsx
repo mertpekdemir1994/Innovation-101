@@ -19,6 +19,7 @@ export default function SourceBlock({ sourceBook, sourceAuthor, amazonAffiliateU
         className="inline-flex items-center gap-space-2 text-sm font-semibold text-section hover:opacity-70 transition-opacity"
       >
         Buy on Amazon →
+        <span className="sr-only"> (opens in a new tab)</span>
       </a>
     </div>
   )

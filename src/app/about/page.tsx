@@ -270,6 +270,7 @@ export default function AboutPage() {
                 }}
               >
                 LinkedIn <span aria-hidden="true">→</span>
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
               <a
                 href="https://calendar.app.google/753ZRix7sw4XVtzC7"
@@ -286,6 +287,7 @@ export default function AboutPage() {
                 }}
               >
                 Book time <span aria-hidden="true">→</span>
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
             </div>
 

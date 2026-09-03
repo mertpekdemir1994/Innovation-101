@@ -21,6 +21,7 @@ export default function CalendarCTA({ title }: CalendarCTAProps) {
           style={{ background: 'var(--color-section, var(--color-neutral-900))' }}
         >
           Book a coffee →
+          <span className="sr-only"> (opens in a new tab)</span>
         </a>
       </div>
     </div>
