@@ -37,9 +37,9 @@ function LightSection({ children, className = '' }: { children: React.ReactNode;
   )
 }
 
-function Container({ prose = false, children }: { prose?: boolean; children: React.ReactNode }) {
+function Container({ prose = false, children, className = '' }: { prose?: boolean; children: React.ReactNode; className?: string }) {
   return (
-    <div className={prose ? 'max-w-prose' : 'w-full'}>
+    <div className={`${prose ? 'max-w-prose' : 'w-full'}${className ? ` ${className}` : ''}`}>
       {children}
     </div>
   )
@@ -86,7 +86,7 @@ export default function DesignPrinciplesPage() {
       <DarkSection>
         <SectionLabel accent={PLUM} dark>The visual</SectionLabel>
         <SectionHeadingDark>A principle is a fork with one branch closed</SectionHeadingDark>
-        <div className="max-w-prose mb-10">
+        <div className="max-w-prose mx-auto px-6 md:px-8 mb-10">
           <Body className="mb-6 last:mb-0">
             A design principle is not a value. It is a pre-committed decision about a specific recurring tradeoff,
             made before the hard choice arrives, by the people who will be held to it, with the sacrifice
@@ -103,7 +103,7 @@ export default function DesignPrinciplesPage() {
 
       {/* S3 - The two tests (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={PLUM}>The tests</SectionLabel>
           <SectionHeadingLight>Two tests: arguability and closure</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
@@ -158,7 +158,7 @@ export default function DesignPrinciplesPage() {
 
       {/* S4 - The platitude problem (dark) */}
       <DarkSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={PLUM} dark>The failure mode</SectionLabel>
           <SectionHeadingDark>Why platitudes proliferate</SectionHeadingDark>
           <Body className="mb-6 last:mb-0">
@@ -193,7 +193,7 @@ export default function DesignPrinciplesPage() {
 
       {/* S5 - How to derive (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={PLUM}>Derivation</SectionLabel>
           <SectionHeadingLight>Start from the recurring argument</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
@@ -253,7 +253,7 @@ export default function DesignPrinciplesPage() {
 
       {/* S6 - Writing them well (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={PLUM}>Language</SectionLabel>
           <SectionHeadingLight>&ldquo;Even when&rdquo; is the whole principle</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
@@ -302,7 +302,7 @@ export default function DesignPrinciplesPage() {
 
       {/* S7 - When a principle gets tested (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={PLUM}>Pressure</SectionLabel>
           <SectionHeadingLight>A principle is tested when the pressure arrives</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
@@ -339,7 +339,7 @@ export default function DesignPrinciplesPage() {
 
       {/* S8 - When to revisit (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={PLUM}>Maintenance</SectionLabel>
           <SectionHeadingLight>Principles have a shelf life</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
@@ -366,7 +366,7 @@ export default function DesignPrinciplesPage() {
       <DarkSection>
         <SectionLabel accent={PLUM} dark>Try it</SectionLabel>
         <SectionHeadingDark>Bring a candidate principle to the fork</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="max-w-prose mx-auto px-6 md:px-8 mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.62)', lineHeight: 'var(--leading-relaxed)' }}>
           Select one of the five candidates below. Real principles close a branch and pass the arguability test.
           Platitudes close nothing. The fork stays undecided.
@@ -376,7 +376,7 @@ export default function DesignPrinciplesPage() {
 
       {/* S10 - When to run this (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={PLUM}>When to use</SectionLabel>
           <SectionHeadingLight>When the same argument keeps coming back</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
@@ -434,7 +434,7 @@ export default function DesignPrinciplesPage() {
       <LightSection>
         <SectionLabel accent={PLUM}>AI &amp; this method</SectionLabel>
         <SectionHeadingLight>When AI helps and when it misleads</SectionHeadingLight>
-        <p className="max-w-prose mb-10"
+        <p className="max-w-prose mx-auto px-6 md:px-8 mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
           AI produces polished, balanced principles by design. At the fork, that means both branches
           remain open, the fork is always undecided. Here is where the boundary runs.
@@ -446,7 +446,7 @@ export default function DesignPrinciplesPage() {
       <LightSection>
         <SectionLabel accent={PLUM}>Example</SectionLabel>
         <SectionHeadingLight>A product team and a power-user problem</SectionHeadingLight>
-        <p className="max-w-prose mb-10"
+        <p className="max-w-prose mx-auto px-6 md:px-8 mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
           A team faces a recurring argument about configurability. The traditional tab shows the derivation
           method working. The AI tab shows what happens when the process is shortcut, and where AI

@@ -39,7 +39,7 @@ function LightSection({ children }: { children: React.ReactNode }) {
 
 function Container({ children, prose = false }: { children: React.ReactNode; prose?: boolean }) {
   return (
-    <div className={prose ? 'max-w-prose' : 'w-full'}>
+    <div className={prose ? 'max-w-prose mx-auto px-6 md:px-8' : 'w-full'}>
       {children}
     </div>
   )
@@ -135,7 +135,7 @@ export default function BMCPage() {
       <DarkSection>
         <SectionLabel accent={PLUM}>The visual</SectionLabel>
         <SectionHeadingDark>Nine blocks. One structure. The links between them are the method.</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="max-w-prose mx-auto px-6 md:px-8 mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.55)', lineHeight: 'var(--leading-relaxed)' }}>
           The canonical nine-block canvas, but built as a coherence engine rather than a form.
           The blocks are visibly linked: which blocks constrain which, and what changes when one block moves.
@@ -180,7 +180,7 @@ export default function BMCPage() {
       <DarkSection>
         <SectionLabel accent={PLUM}>Try it</SectionLabel>
         <SectionHeadingDark>Change one block. Watch another break. That is the method.</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="max-w-prose mx-auto px-6 md:px-8 mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
           Click any block to see what it holds and what it depends on. No block stands alone. Use the
           scenario buttons to see how changing one block propagates, and how a premium channel change produces
@@ -402,7 +402,7 @@ export default function BMCPage() {
       <DarkSection>
         <SectionLabel accent={PLUM}>AI and this method</SectionLabel>
         <SectionHeadingDark>AI fills all nine blocks in seconds, beautifully. A completed canvas was never the achievement, and now it is not even work.</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="max-w-prose mx-auto px-6 md:px-8 mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)', lineHeight: 'var(--leading-relaxed)' }}>
           Toggle between modes to see what changes when AI generates the canvas, and the one use where
           it is a genuinely valuable adversary.
@@ -414,7 +414,7 @@ export default function BMCPage() {
       <LightSection>
         <SectionLabel accent={PLUM}>In practice</SectionLabel>
         <SectionHeadingLight>An enterprise software company moves down-market. One block changes. Almost everything else breaks.</SectionHeadingLight>
-        <p className="max-w-prose mb-10"
+        <p className="max-w-prose mx-auto px-6 md:px-8 mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
           Tab A shows the structured canvas working: mapping the current model, changing one block, following
           the dependencies, and finding the contradiction that tells them what the move requires.

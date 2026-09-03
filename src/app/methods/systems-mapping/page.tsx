@@ -31,8 +31,8 @@ function LightSection({ children, className = '' }: { children: React.ReactNode;
   )
 }
 
-function Container({ prose = false, children }: { prose?: boolean; children: React.ReactNode }) {
-  return <div className={prose ? 'max-w-prose' : 'w-full'}>{children}</div>
+function Container({ prose = false, children, className = '' }: { prose?: boolean; children: React.ReactNode; className?: string }) {
+  return <div className={`${prose ? 'max-w-prose' : 'w-full'}${className ? ` ${className}` : ''}`}>{children}</div>
 }
 
 export default function SystemsMappingPage() {
@@ -74,7 +74,7 @@ export default function SystemsMappingPage() {
       <DarkSection>
         <SectionLabel accent={TEAL} dark>The visual</SectionLabel>
         <SectionHeadingDark>Two loops. One explains why it always comes back.</SectionHeadingDark>
-        <div className="max-w-prose mb-10">
+        <div className="max-w-prose mx-auto px-6 md:px-8 mb-10">
           <Body className="mb-6 last:mb-0">
             A systems map contains VARIABLES that rise and fall and CAUSAL ARROWS showing what drives
             what. The arrows form CLOSED LOOPS, and this is what makes a systems map different from
@@ -94,7 +94,7 @@ export default function SystemsMappingPage() {
 
       {/* S3 - What it is (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={TEAL}>What it is</SectionLabel>
           <SectionHeadingLight>A model of why, not a picture of who</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
@@ -156,7 +156,7 @@ export default function SystemsMappingPage() {
       <DarkSection>
         <SectionLabel accent={TEAL} dark>Try it</SectionLabel>
         <SectionHeadingDark>Fix the symptom. Watch the system put it back. Then find the leverage.</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="max-w-prose mx-auto px-6 md:px-8 mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.62)', lineHeight: 'var(--leading-relaxed)' }}>
           The same two interventions, in the same system. One is what most organizations do, forever.
           One is what actually changes the outcome. The contrast is the whole point.
@@ -166,7 +166,7 @@ export default function SystemsMappingPage() {
 
       {/* S5 - When to deploy (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={TEAL}>When to deploy</SectionLabel>
           <SectionHeadingLight>The signature symptom is a problem that keeps coming back</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
@@ -225,7 +225,7 @@ export default function SystemsMappingPage() {
 
       {/* S6 - How it works (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={TEAL}>How it works</SectionLabel>
           <SectionHeadingLight>Build the model from the recurring behavior outward</SectionHeadingLight>
 
@@ -259,7 +259,7 @@ export default function SystemsMappingPage() {
 
       {/* S7 - Best practices (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={TEAL}>Best practices</SectionLabel>
           <SectionHeadingLight>What good looks like, and the mistakes</SectionHeadingLight>
 
@@ -311,7 +311,7 @@ export default function SystemsMappingPage() {
 
       {/* S8 - Logistics (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={TEAL}>Logistics</SectionLabel>
           <SectionHeadingLight>Build it with the people inside, and expect argument</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
@@ -344,7 +344,7 @@ export default function SystemsMappingPage() {
       <DarkSection>
         <SectionLabel accent={TEAL} dark>AI &amp; this method</SectionLabel>
         <SectionHeadingDark>AI draws the elegant version of the loops that have already failed</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="max-w-prose mx-auto px-6 md:px-8 mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.62)', lineHeight: 'var(--leading-relaxed)' }}>
           Toggle between the complete model and the AI-generated map. The contrast shows where AI
           genuinely helps, and why a confident diagram of the wrong loops is the most dangerous
@@ -357,7 +357,7 @@ export default function SystemsMappingPage() {
       <LightSection>
         <SectionLabel accent={TEAL}>Example</SectionLabel>
         <SectionHeadingLight>A quality problem that three leaders could not fix</SectionHeadingLight>
-        <p className="max-w-prose mb-10"
+        <p className="max-w-prose mx-auto px-6 md:px-8 mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
           The traditional tab shows the two loops that explain two years of failure: the obvious
           balancing loop everyone knew and the reinforcing loop nobody had named. The AI tab shows
@@ -368,7 +368,7 @@ export default function SystemsMappingPage() {
 
       {/* S11 - Framework connections (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={TEAL}>Frameworks</SectionLabel>
           <SectionHeadingLight>Where this sits in the wider process</SectionHeadingLight>
 
@@ -422,7 +422,7 @@ export default function SystemsMappingPage() {
 
       {/* S12 - Related methods (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={TEAL}>Related methods</SectionLabel>
           <SectionHeadingLight>How Systems Mapping connects to the wider taxonomy</SectionHeadingLight>
 
@@ -471,7 +471,7 @@ export default function SystemsMappingPage() {
 
       {/* S13 - Sources (light) */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto px-6 md:px-8">
           <SectionLabel accent={TEAL}>Sources &amp; further reading</SectionLabel>
           <SectionHeadingLight>Where to go deeper</SectionHeadingLight>
 

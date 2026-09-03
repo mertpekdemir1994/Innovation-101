@@ -24,9 +24,12 @@ function LightSection({ children, className = '' }: { children: React.ReactNode;
     </section>
   )
 }
-function Container({ children, prose = false }: { children: React.ReactNode; prose?: boolean }) {
+function Container({ children, prose = false, className = '' }: { children: React.ReactNode; prose?: boolean; className?: string }) {
+  // No outer band-providing wrapper on this page's DarkSection/LightSection
+  // (unlike the other exception pages), so Container itself must always
+  // supply the margin — mx-auto stays unconditional for both branches.
   return (
-    <div className={`mx-auto px-6 py-16 ${prose ? 'max-w-prose' : 'max-w-content'}`}>
+    <div className={`mx-auto px-6 md:px-8 py-16 ${prose ? 'max-w-prose' : 'max-w-content'}${className ? ` ${className}` : ''}`}>
       {children}
     </div>
   )
@@ -142,7 +145,7 @@ export default function DeliveryRoadmapPage() {
 
       {/* S3 - What it is */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto">
           <SectionLabel accent="rgba(138,75,60,0.65)">What it is</SectionLabel>
           <SectionHeadingLight>A sequence of bets, not a list of commitments</SectionHeadingLight>
           <div className="space-y-4">
@@ -243,7 +246,7 @@ export default function DeliveryRoadmapPage() {
 
       {/* S6 - How it works */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto">
           <SectionLabel accent="rgba(138,75,60,0.65)">How it works</SectionLabel>
           <SectionHeadingLight>Six disciplines</SectionHeadingLight>
           <div className="space-y-8">
@@ -303,7 +306,7 @@ export default function DeliveryRoadmapPage() {
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Sequencing ambition</SectionLabel>
           <SectionHeadingLight>The family of crawl-walk-run progressions</SectionHeadingLight>
-          <div className="max-w-prose mb-8">
+          <div className="max-w-prose mx-auto px-6 md:px-8 mb-8">
             <Body className="">
               The confidence-gradient sequence structures HOW you deliver. But the roadmap also
               carries a second dimension: HOW MUCH you attempt at each rung. Ambition must be earned
@@ -346,7 +349,7 @@ export default function DeliveryRoadmapPage() {
               </div>
             ))}
           </div>
-          <div className="max-w-prose rounded-lg p-5"
+          <div className="max-w-prose mx-auto rounded-lg p-5"
             style={{ background: `rgba(138,75,60,0.06)`, border: `1.5px solid rgba(138,75,60,0.22)` }}>
             <p className="font-semibold mb-1"
               style={{ fontSize: 'var(--text-sm)', color: BRICK }}>
@@ -524,7 +527,7 @@ export default function DeliveryRoadmapPage() {
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Related methods</SectionLabel>
           <SectionHeadingLight>The methods that connect here</SectionHeadingLight>
-          <p className="mb-6 max-w-prose"
+          <p className="mb-6 max-w-prose mx-auto px-6 md:px-8"
             style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)', lineHeight: 'var(--leading-relaxed)' }}>
             The delivery roadmap is connective tissue: it sequences and orders the other Delivery &amp;
             Validation methods, carries the gate criteria between them, and provides the structure into
@@ -558,7 +561,7 @@ export default function DeliveryRoadmapPage() {
 
       {/* S14 - Sources */}
       <LightSection>
-        <Container prose>
+        <Container prose className="mx-auto">
           <SectionLabel accent="rgba(138,75,60,0.65)">Sources and further reading</SectionLabel>
           <SectionHeadingLight>What this draws on</SectionHeadingLight>
           <div className="space-y-3">

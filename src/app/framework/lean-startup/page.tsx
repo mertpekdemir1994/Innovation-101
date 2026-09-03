@@ -156,7 +156,7 @@ export default function LeanStartupPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="max-w-prose space-y-space-4 mb-space-8">
+            <div className="max-w-prose mx-auto px-6 md:px-8 space-y-space-4 mb-space-8">
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
                 Before the Lean Startup, the dominant model for building new products was the
                 business plan model: write a comprehensive plan, raise money against it, execute it,
@@ -176,7 +176,7 @@ export default function LeanStartupPage() {
 
           <ScrollReveal delay={0.15}>
             <div
-              className="max-w-prose rounded-xl p-space-7 space-y-space-5"
+              className="max-w-prose mx-auto rounded-xl p-space-7 space-y-space-5"
               style={{ background: 'var(--color-warm-50)', border: '1px solid var(--color-neutral-200)' }}
             >
               <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${PURPLE}0.65)` }}>
@@ -233,7 +233,7 @@ export default function LeanStartupPage() {
           <ScrollReveal>
             <Eyebrow className="mb-space-6">When to use it</Eyebrow>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4 max-w-prose">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4 max-w-prose mx-auto px-6 md:px-8">
             {[
               {
                 heading: 'Use it when',
@@ -303,7 +303,7 @@ export default function LeanStartupPage() {
             >
               Click any phase to see how it works
             </h2>
-            <p className="text-base mb-space-8 max-w-prose" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="text-base mb-space-8 max-w-prose mx-auto px-6 md:px-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               Click Build, Measure, or Learn to explore each phase. Click Pivot to see the eight
               pivot types. Switch between MVP types below the loop to see a real-world example of each.
             </p>
@@ -325,7 +325,7 @@ export default function LeanStartupPage() {
             >
               Six versions, one loop
             </h2>
-            <p className="text-base text-neutral-600 mb-space-10 max-w-prose">
+            <p className="text-base text-neutral-600 mb-space-10 max-w-prose mx-auto px-6 md:px-8">
               The Lean Startup did not emerge fully formed. It is the product of a lineage of related
               thinking that began a decade before Ries published the book. Select a version to see
               what changed.
@@ -360,7 +360,7 @@ export default function LeanStartupPage() {
             >
               Where this connects
             </h2>
-            <p className="text-base mb-space-8 max-w-prose" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="text-base mb-space-8 max-w-prose mx-auto px-6 md:px-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               The Lean Startup answers &ldquo;what should we build and is it right?&rdquo; These are
               the frameworks and methods that answer adjacent questions.
             </p>
@@ -401,7 +401,7 @@ export default function LeanStartupPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-10">
-          <div className="max-w-prose">
+          <div className="max-w-prose mx-auto px-6 md:px-8">
             <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-6">
               Sources &amp; Further Reading
             </p>
