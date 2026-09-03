@@ -5,6 +5,11 @@ import { motion, useReducedMotion } from 'framer-motion'
 const PLUM = 'rgba(107,74,119,'
 const PLUM_TEXT = 'rgba(166,147,174,'  // brightened text-safe variant of PLUM
 
+// Canvas widened from the original 560-wide composition (1.40:1) toward
+// 2.35:1 by framing it wider, not stretching the rings — the bullseye's
+// own geometry is untouched, just recentered via a translate (see
+// OFFSET_X below, applied to every child).
+const OFFSET_X = 190
 const CX = 188, CY = 200
 
 const RINGS = [
@@ -40,7 +45,7 @@ export default function AvatarsEstablishing() {
       variants={container}
       aria-hidden="true"
     >
-      <svg viewBox="0 0 560 400" width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}>
+      <svg viewBox="0 0 940 400" width="100%" style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}>
         <defs>
           <filter id="av-est-glow" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="6" result="blur" />
@@ -50,6 +55,8 @@ export default function AvatarsEstablishing() {
             </feMerge>
           </filter>
         </defs>
+
+        <g transform={`translate(${OFFSET_X}, 0)`}>
 
         {/* Ambient plum wash - child 0 in stagger */}
         <motion.ellipse
@@ -138,6 +145,7 @@ export default function AvatarsEstablishing() {
           transition={labelT}
         >FOCUS NARROWS INWARD →</motion.text>
 
+        </g>
       </svg>
     </motion.div>
   )
