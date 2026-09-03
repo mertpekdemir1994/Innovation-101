@@ -5,16 +5,20 @@ import { motion, useInView, useReducedMotion } from 'framer-motion'
 const SAGE = 'rgba(61,107,90,'
 const SAGE_TEXT = 'rgba(130,160,149,'  // brightened text-safe variant of SAGE
 
-const SVG_W = 700
-const SVG_H = 480
+// Regridded from the original 2-column x 4-row stack (700x480, 1.46:1) into
+// 4 columns x 2 rows for a cinematic ~2.3:1 frame: the obvious/non-obvious
+// grouping now reads as top/bottom bands instead of left/right columns,
+// same 8 cards, same membership, nothing about the content changed.
+const SVG_W = 1310
+const SVG_H = 300
 const CW = 300
 const CH = 96
 
-// Two thematic columns (obvious / non-obvious), four cards stacked in each.
-// c.row picks the column (which group), c.col picks the position within it.
-const COLS = [25, 375]
-const ROW_TOP = 30, ROW_GAP = 106
-const ROWS = [ROW_TOP, ROW_TOP + ROW_GAP, ROW_TOP + ROW_GAP * 2, ROW_TOP + ROW_GAP * 3]
+// c.row picks the band (0 = obvious, 1 = non-obvious), c.col picks the
+// position across that band.
+const COLS = [25, 345, 665, 985]
+const ROWS = [30, 166]
+const TOP_HEADER_Y = 16, BOTTOM_HEADER_Y = 150
 
 // Card-internal vertical offsets: star/name/role near the top, a divider,
 // then the two attribute lines, spaced for 11pt type throughout.
@@ -65,7 +69,7 @@ export default function SMEstablishing() {
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
         preserveAspectRatio="xMidYMid meet"
-        style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
+        style={{ margin: '0 auto', display: 'block' }}
       >
         <defs>
           <filter id="sm-est-glow" x="-20%" y="-20%" width="140%" height="140%">
@@ -76,9 +80,9 @@ export default function SMEstablishing() {
           </filter>
         </defs>
 
-        {/* Column 0 header: the obvious group */}
+        {/* Top row header: the obvious group */}
         <motion.text
-          x={COLS[0] + CW / 2} y={16} textAnchor="middle"
+          x={SVG_W / 2} y={TOP_HEADER_Y} textAnchor="middle"
           fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
           fill="rgba(255,255,255,0.61)"
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
@@ -86,9 +90,9 @@ export default function SMEstablishing() {
           style={{ userSelect: 'none' }}
         >OBVIOUS STAKEHOLDERS</motion.text>
 
-        {/* Column 1 header: the non-obvious group */}
+        {/* Bottom row header: the non-obvious group */}
         <motion.text
-          x={COLS[1] + CW / 2} y={16} textAnchor="middle"
+          x={SVG_W / 2} y={BOTTOM_HEADER_Y} textAnchor="middle"
           fontSize="11" fontFamily="system-ui, sans-serif" letterSpacing="0.10em"
           fill={`${SAGE_TEXT}0.905)`}
           initial={{ opacity: 0 }} animate={visible ? { opacity: 1 } : { opacity: 0 }}
@@ -96,10 +100,10 @@ export default function SMEstablishing() {
           style={{ userSelect: 'none' }}
         >NON-OBVIOUS (★)</motion.text>
 
-        {/* Cards: c.row picks the column (group), c.col picks the position within it */}
+        {/* Cards: c.row picks the band (top/bottom), c.col picks the position across it */}
         {CARDS.map((c, i) => {
-          const x = COLS[c.row]
-          const y = ROWS[c.col]
+          const x = COLS[c.col]
+          const y = ROWS[c.row]
           const delay = prefersReduced ? 0 : i * 0.065 + 0.10
 
           return (
