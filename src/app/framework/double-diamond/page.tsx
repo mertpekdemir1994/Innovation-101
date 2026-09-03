@@ -64,7 +64,7 @@ export default function DoubleDiamondPage() {
           }}
         />
 
-        <Container className="relative z-10 flex flex-col justify-center flex-1 py-space-13">
+        <Container className="relative z-10 w-full flex flex-col justify-center flex-1 py-space-13">
           {/* Title */}
           <h1
             className="font-display font-semibold text-balance mb-space-6"

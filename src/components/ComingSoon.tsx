@@ -47,13 +47,12 @@ export default function ComingSoon({ accent, glowRgb, heading, body, footer }: C
         }}
       />
 
+      <div className="max-w-content mx-auto px-6 md:px-8 w-full" style={{ position: 'relative', zIndex: 1 }}>
       <div
         style={{
-          position: 'relative',
-          zIndex: 1,
           textAlign: 'center',
           maxWidth: '26rem',
-          padding: '0 1.5rem',
+          margin: '0 auto',
         }}
       >
         {/* Animated SVG: decorative, aria-hidden */}
@@ -135,6 +134,7 @@ export default function ComingSoon({ accent, glowRgb, heading, body, footer }: C
             {footer}
           </p>
         )}
+      </div>
       </div>
     </main>
   )

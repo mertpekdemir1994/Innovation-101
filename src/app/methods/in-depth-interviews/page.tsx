@@ -43,7 +43,7 @@ export default function InDepthInterviewsPage() {
           S1 - Header / Identity   DARK
           ──────────────────────────────────────────────────────────── */}
       <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
-        <Container className="relative z-10 flex flex-col justify-center flex-1">
+        <Container className="relative z-10 w-full flex flex-col justify-center flex-1">
           <div className="py-20 md:py-28">
             {/* Stage badge */}
             <span

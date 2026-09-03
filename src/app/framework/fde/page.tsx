@@ -58,7 +58,7 @@ export default function FDEPage() {
           }}
         />
 
-        <Container className="relative z-10 pt-space-13 pb-space-4">
+        <Container className="relative z-10 w-full pt-space-13 pb-space-4">
           <p
             className="font-mono text-2xs uppercase tracking-widest mb-space-4"
             style={{ color: `${BRICK}0.65)` }}

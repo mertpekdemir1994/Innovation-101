@@ -57,7 +57,7 @@ export default function DesignThinkingPage() {
           }}
         />
 
-        <Container className="relative z-10 flex flex-col justify-center flex-1 py-space-13">
+        <Container className="relative z-10 w-full flex flex-col justify-center flex-1 py-space-13">
           <h1
             className="font-display font-semibold text-balance mb-space-6"
             style={{ color: '#FAFAFA', fontSize: 'clamp(3rem, 8vw, 5.5rem)', lineHeight: 1.05, letterSpacing: '-0.02em' }}

@@ -81,7 +81,7 @@ export default function PilotLaunchesPage() {
           S1 - Header / Identity + Establishing visual   DARK
           ───────────────────────────────────────────────────────── */}
       <DarkSection className="relative min-h-screen flex flex-col overflow-hidden">
-        <Container className="relative z-10 flex flex-col justify-center flex-1">
+        <Container className="relative z-10 w-full flex flex-col justify-center flex-1">
           <div className="py-20 md:py-28">
             <span
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
