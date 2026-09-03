@@ -485,12 +485,12 @@ export default function CoCreationWorkshopsPage() {
           S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={CLAY}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same problem. Two approaches, one surfaces what the team couldn&rsquo;t know, one misses it entirely.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A health system redesigning a frustrating chronic-care programme. The team could design

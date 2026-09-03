@@ -472,12 +472,12 @@ export default function ContextualObservationPage() {
           S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={SAGE}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same scenario. Two approaches, one finds the shoebox, one optimises the software.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               Intuit needed to understand how small business owners actually managed their money before deciding what to build next.

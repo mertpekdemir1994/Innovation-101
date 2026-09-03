@@ -400,11 +400,11 @@ export default function FiveEsFrameworkPage() {
           S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={TEAL}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same studio, evaluated two ways.</SectionHeadingLight>
-            <p className="mb-10"
+            <p className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               Altitude Fitness, a boutique cycling studio with three locations, has excellent class quality and strong retention among regulars, but fewer than 40% of first-time visitors return for a second class. Management has focused on instructors and programming: the Engage phase. The 5Es workshop is commissioned to find out what else is going on. The same studio, evaluated once with a traditional 5Es workshop grounded in primary research, and once with AI providing the analysis.

@@ -464,12 +464,12 @@ export default function BBPage() {
 
       {/* S10 - In-depth example LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={PLUM}>In-depth example</SectionLabel>
             <SectionHeadingLight>The premium cleaning service: a D+F idea that looked like a breakthrough until the numbers arrived.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A founding team runs a rigorous DFV check on a premium on-demand cleaning service

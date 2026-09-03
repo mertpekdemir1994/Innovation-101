@@ -493,12 +493,12 @@ export default function DSPage() {
           S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={SAGE}>In-depth example</SectionLabel>
             <SectionHeadingLight>Spotify: the pattern that was invisible in every interview, visible across two weeks of diary entries.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               Retrospective interviews about music listening produced generic, occasion-based answers.

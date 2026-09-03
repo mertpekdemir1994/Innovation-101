@@ -480,12 +480,12 @@ export default function CLAPage() {
           S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={SAGE}>In-depth example</SectionLabel>
             <SectionHeadingLight>Entering the wine market: the reframe that revealed a category-sized gap.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A company mapping the wine market on its conventional axis sees a saturated, crowded field.

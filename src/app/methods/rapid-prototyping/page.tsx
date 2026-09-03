@@ -522,12 +522,12 @@ export default function RPPage() {
 
       {/* S11 - In-depth example LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={CLAY}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same feature, two approaches: what low fidelity produced, and what AI produced.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A team prototypes a new app feature to learn whether the concept and flow work.

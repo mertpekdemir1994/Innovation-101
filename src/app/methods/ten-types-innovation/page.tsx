@@ -470,12 +470,12 @@ export default function TenTypesInnovationPage() {
           S11 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={PLUM}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same case. The same question. Two approaches, one finds the system, one finds a list.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               Nespresso&rsquo;s advantage held for years even though its coffee was good but not categorically better than rivals&rsquo;.

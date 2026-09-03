@@ -483,12 +483,12 @@ export default function SMPage() {
           S10 - In-depth example   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={SAGE}>In-depth example</SectionLabel>
             <SectionHeadingLight>The Swiffer: the stakeholder that changed the design brief.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A product team mapping stakeholders for a floor-cleaning product pushes past the obvious

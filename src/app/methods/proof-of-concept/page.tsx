@@ -476,11 +476,11 @@ export default function ProofOfConceptPage() {
           S10 - Example toggle   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={BRICK}>In practice</SectionLabel>
             <SectionHeadingLight>A logistics team asks: can the data predict delays? See what a well-run PoC produces, and what AI changes about the time it takes.</SectionHeadingLight>
-            <p className="mb-8"
+            <p className="max-w-prose mx-auto px-6 md:px-8 mb-8"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
               A well-formed PoC question, a threshold set in advance, real messy data, and a
               qualified verdict that reshaped what to build. See the traditional approach first,

@@ -465,12 +465,12 @@ export default function SCCPage() {
 
       {/* S10 - In-depth example LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={PLUM}>In-depth example</SectionLabel>
             <SectionHeadingLight>The spread-thin company: the strategic choices that turned a competitor in many arenas into a winner in few.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A mid-sized company competing in many segments and winning in none works the cascade

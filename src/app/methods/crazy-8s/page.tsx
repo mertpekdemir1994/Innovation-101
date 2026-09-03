@@ -473,12 +473,12 @@ export default function C8Page() {
 
       {/* S10 - In-depth example LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={CLAY}>In-depth example</SectionLabel>
             <SectionHeadingLight>The robotics company: the panel-seven idea that almost wasn&rsquo;t drawn.</SectionHeadingLight>
             <p
-              className="mb-10"
+              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A team running Crazy 8s for a robotics product pushes through the wall and discovers
