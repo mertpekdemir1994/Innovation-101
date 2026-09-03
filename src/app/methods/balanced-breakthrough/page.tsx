@@ -189,7 +189,7 @@ export default function BBPage() {
 
       {/* S5 - When to deploy LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={PLUM}>When to deploy it</SectionLabel>
             <SectionHeadingLight>Before committing investment. The DFV check is most valuable when the stakes of getting it wrong are still low enough to change direction.</SectionHeadingLight>
@@ -241,7 +241,7 @@ export default function BBPage() {
             </div>
 
             <div
-              className="rounded-lg p-5 mt-10"
+              className="max-w-prose mx-auto rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>

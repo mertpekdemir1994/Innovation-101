@@ -203,7 +203,7 @@ export default function UsabilityTestingPage() {
           S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={BRICK}>When to deploy it</SectionLabel>
             <SectionHeadingLight>When you have something a person can operate, and you need to know whether they can.</SectionHeadingLight>
@@ -257,7 +257,7 @@ export default function UsabilityTestingPage() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-lg px-5 py-4"
+            <div className="max-w-prose mx-auto mt-8 rounded-lg px-5 py-4"
               style={{ background: 'var(--color-neutral-100)', borderLeft: `3px solid ${BRICK}` }}>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 <span className="font-semibold" style={{ color: BRICK }}>The honest limit:</span>{' '}
@@ -398,7 +398,7 @@ export default function UsabilityTestingPage() {
           S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20" style={{ borderTop: '1px solid var(--color-neutral-100)' }}>
             <SectionLabel accent={BRICK}>Logistics</SectionLabel>
             <SectionHeadingLight>Five people, a few hours, and the discipline to stay quiet. The barrier to entry is low by design.</SectionHeadingLight>

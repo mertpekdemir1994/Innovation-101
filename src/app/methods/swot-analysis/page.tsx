@@ -113,7 +113,7 @@ export default function SWOTAnalysisPage() {
 
       {/* S5 - When to deploy LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={PLUM}>When to deploy it</SectionLabel>
             <SectionHeadingLight>Right tool, right moment, and when to reach for something else.</SectionHeadingLight>
@@ -155,7 +155,7 @@ export default function SWOTAnalysisPage() {
                 </ul>
               </div>
             </div>
-            <div className="rounded-lg p-5 mt-10" style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}>
+            <div className="max-w-prose mx-auto rounded-lg p-5 mt-10" style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: SWOT is only as good as the honesty and specificity of its entries, and both are usually poor. It invites vague, unfalsifiable items that feel true and mean nothing. It is also a snapshot with no sense of magnitude or probability: a trivial threat and an existential one sit in the same box. Treat it as the opening move of a strategy conversation, never the conclusion of one.
               </p>
@@ -289,7 +289,7 @@ export default function SWOTAnalysisPage() {
 
       {/* S11 - Used in frameworks LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={PLUM}>Used in these frameworks</SectionLabel>
             <SectionHeadingLight>Where SWOT fits in the larger process.</SectionHeadingLight>

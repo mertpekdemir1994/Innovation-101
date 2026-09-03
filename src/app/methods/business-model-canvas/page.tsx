@@ -191,7 +191,7 @@ export default function BMCPage() {
 
       {/* S5 - When to deploy LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <SectionLabel accent={PLUM}>When to deploy it</SectionLabel>
           <SectionHeadingLight>Use it when you need to see the whole model at once and check whether it holds.</SectionHeadingLight>
 
@@ -236,7 +236,7 @@ export default function BMCPage() {
             </div>
           </div>
 
-          <div className="mt-8 p-5 rounded-lg"
+          <div className="max-w-prose mx-auto mt-8 p-5 rounded-lg"
             style={{ background: 'rgba(107,74,119,0.05)', border: '1px solid rgba(107,74,119,0.16)' }}>
             <p className="font-mono uppercase tracking-widest mb-2"
               style={{ fontSize: 'var(--text-2xs)', color: PLUM }}>The honest limit</p>
@@ -361,7 +361,7 @@ export default function BMCPage() {
 
       {/* S8 - Logistics LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="border-t pt-20" style={{ borderColor: 'var(--color-neutral-200)' }}>
             <SectionLabel accent={PLUM}>Logistics</SectionLabel>
             <SectionHeadingLight>Do it together. Sketch several. Expect the disagreement.</SectionHeadingLight>

@@ -193,7 +193,7 @@ export default function StoryboardingPage() {
 
       {/* S5 - When to deploy LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <SectionLabel accent={CLAY}>When to deploy it</SectionLabel>
           <SectionHeadingLight>Use it before you build anything, especially before you are confident the concept works.</SectionHeadingLight>
 
@@ -238,7 +238,7 @@ export default function StoryboardingPage() {
             </div>
           </div>
 
-          <div className="mt-8 p-5 rounded-lg"
+          <div className="max-w-prose mx-auto mt-8 p-5 rounded-lg"
             style={{ background: 'rgba(181,97,62,0.05)', border: '1px solid rgba(181,97,62,0.16)' }}>
             <p className="font-mono uppercase tracking-widest mb-2"
               style={{ fontSize: 'var(--text-2xs)', color: CLAY }}>The honest limit</p>
@@ -362,7 +362,7 @@ export default function StoryboardingPage() {
 
       {/* S8 - Logistics LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="border-t pt-20" style={{ borderColor: 'var(--color-neutral-200)' }}>
             <SectionLabel accent={CLAY}>Logistics</SectionLabel>
             <SectionHeadingLight>Everyone draws. Small enough that the gap is felt by everyone in the room.</SectionHeadingLight>

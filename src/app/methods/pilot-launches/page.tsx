@@ -186,7 +186,7 @@ export default function PilotLaunchesPage() {
           S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={BRICK}>When to deploy it</SectionLabel>
             <SectionHeadingLight>When the product is ready but the delivery model is unproven at scale.</SectionHeadingLight>
@@ -300,7 +300,7 @@ export default function PilotLaunchesPage() {
           S7 - From pilot to full launch [ADDED]   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20" style={{ borderTop: '1px solid var(--color-neutral-100)' }}>
             <SectionLabel accent={BRICK}>From pilot to full launch</SectionLabel>
             <SectionHeadingLight>Staged rollout or go wide? The gate verdict should drive the answer.</SectionHeadingLight>
@@ -379,7 +379,7 @@ export default function PilotLaunchesPage() {
               </div>
             </div>
 
-            <div className="mt-6 rounded-lg px-5 py-4"
+            <div className="max-w-prose mx-auto mt-6 rounded-lg px-5 py-4"
               style={{ background: 'var(--color-neutral-100)', borderLeft: `3px solid ${BRICK}` }}>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 <span className="font-semibold" style={{ color: BRICK }}>On NO-GO verdicts:</span>{' '}
@@ -448,7 +448,7 @@ export default function PilotLaunchesPage() {
           S9 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20" style={{ borderTop: '1px solid var(--color-neutral-100)' }}>
             <SectionLabel accent={BRICK}>Logistics</SectionLabel>
             <SectionHeadingLight>What running a pilot actually requires.</SectionHeadingLight>

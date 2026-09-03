@@ -376,7 +376,7 @@ export default function DesignPrinciplesPage() {
 
       {/* S10 - When to run this (light) */}
       <LightSection>
-        <Container prose className="mx-auto px-6 md:px-8">
+        <Container className="mx-auto px-6 md:px-8">
           <SectionLabel accent={PLUM}>When to use</SectionLabel>
           <SectionHeadingLight>When the same argument keeps coming back</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
@@ -416,7 +416,7 @@ export default function DesignPrinciplesPage() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-lg p-5"
+          <div className="max-w-prose mx-auto mt-8 rounded-lg p-5"
             style={{ background: 'rgba(107,74,119,0.05)', border: '1px solid rgba(107,74,119,0.18)' }}>
             <p className="font-mono uppercase tracking-widest mb-2"
               style={{ fontSize: 'var(--text-2xs)', color: PLUM }}>On quantity</p>

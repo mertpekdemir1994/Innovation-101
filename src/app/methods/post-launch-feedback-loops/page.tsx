@@ -190,7 +190,7 @@ export default function PostLaunchFeedbackLoopsPage() {
           S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={BRICK}>When to deploy it</SectionLabel>
             <SectionHeadingLight>When the product is live and the learning should not stop.</SectionHeadingLight>
@@ -242,7 +242,7 @@ export default function PostLaunchFeedbackLoopsPage() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-lg px-5 py-4"
+            <div className="max-w-prose mx-auto mt-8 rounded-lg px-5 py-4"
               style={{ background: 'var(--color-neutral-100)', borderLeft: `3px solid ${BRICK}` }}>
               <p className="font-semibold mb-1"
                 style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-800)' }}>
@@ -399,7 +399,7 @@ export default function PostLaunchFeedbackLoopsPage() {
           S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20" style={{ borderTop: '1px solid var(--color-neutral-100)' }}>
             <SectionLabel accent={BRICK}>Logistics</SectionLabel>
             <SectionHeadingLight>What running a feedback loop actually requires.</SectionHeadingLight>

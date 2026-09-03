@@ -197,7 +197,7 @@ export default function DSPage() {
           S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={SAGE}>When to deploy it</SectionLabel>
             <SectionHeadingLight>For longitudinal behaviour, private context, and patterns that live across time rather than within any single moment.</SectionHeadingLight>
@@ -249,7 +249,7 @@ export default function DSPage() {
             </div>
 
             <div
-              className="rounded-lg p-5 mt-10"
+              className="max-w-prose mx-auto rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>

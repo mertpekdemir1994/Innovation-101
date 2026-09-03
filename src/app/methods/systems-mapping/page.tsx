@@ -166,7 +166,7 @@ export default function SystemsMappingPage() {
 
       {/* S5 - When to deploy (light) */}
       <LightSection>
-        <Container prose className="mx-auto px-6 md:px-8">
+        <Container className="mx-auto px-6 md:px-8">
           <SectionLabel accent={TEAL}>When to deploy</SectionLabel>
           <SectionHeadingLight>The signature symptom is a problem that keeps coming back</SectionHeadingLight>
           <Body className="mb-6 last:mb-0">
@@ -207,7 +207,7 @@ export default function SystemsMappingPage() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-lg p-5"
+          <div className="max-w-prose mx-auto mt-8 rounded-lg p-5"
             style={{ background: 'rgba(42,111,122,0.05)', border: '1px solid rgba(42,111,122,0.18)' }}>
             <p className="font-mono uppercase tracking-widest mb-2"
               style={{ fontSize: 'var(--text-2xs)', color: TEAL }}>The honest limit</p>

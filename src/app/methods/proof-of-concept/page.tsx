@@ -198,7 +198,7 @@ export default function ProofOfConceptPage() {
           S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={BRICK}>When to deploy it</SectionLabel>
             <SectionHeadingLight>When you have a specific, technically uncertain question that a concept stands or falls on, and building first would be the expensive way to find out.</SectionHeadingLight>
@@ -250,7 +250,7 @@ export default function ProofOfConceptPage() {
             </div>
 
             <div
-              className="rounded-lg p-5 mt-10"
+              className="max-w-prose mx-auto rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -400,7 +400,7 @@ export default function ProofOfConceptPage() {
           S8 - Logistics   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={BRICK}>Logistics</SectionLabel>
             <SectionHeadingLight>Small team, short timeframe, real data, and a pre-committed verdict criterion.</SectionHeadingLight>
@@ -433,7 +433,7 @@ export default function ProofOfConceptPage() {
               ))}
             </div>
 
-            <div className="mt-8 rounded-lg p-5"
+            <div className="max-w-prose mx-auto mt-8 rounded-lg p-5"
               style={{ background: `rgba(138,75,60,0.04)`, border: `1px solid rgba(138,75,60,0.15)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
                 style={{ fontSize: 'var(--text-2xs)', color: BRICK }}>

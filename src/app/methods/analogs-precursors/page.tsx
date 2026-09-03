@@ -202,7 +202,7 @@ export default function APPage() {
           S5 - When to deploy   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={CLAY}>When to deploy it</SectionLabel>
             <SectionHeadingLight>For ideation that needs range. Not for optimization that needs refinement.</SectionHeadingLight>
@@ -253,7 +253,7 @@ export default function APPage() {
             </div>
 
             <div
-              className="rounded-lg p-5 mt-10"
+              className="max-w-prose mx-auto rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -514,7 +514,7 @@ export default function APPage() {
           S11 - Analogs vs Precursors distinction   LIGHT
           ───────────────────────────────────────────────────────── */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={CLAY}>Two directions, one method</SectionLabel>
             <SectionHeadingLight>The two axes are perpendicular on purpose. Each direction requires a different search skill.</SectionHeadingLight>

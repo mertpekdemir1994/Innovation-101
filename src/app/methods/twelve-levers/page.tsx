@@ -196,7 +196,7 @@ export default function TLPage() {
 
       {/* S5 — When to deploy LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={PLUM}>When to deploy it</SectionLabel>
             <SectionHeadingLight>When competitive pressure is intensifying, margins are eroding, or the product is good enough but not different enough to sustain.</SectionHeadingLight>
@@ -308,7 +308,7 @@ export default function TLPage() {
 
       {/* S7 — Best practices LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20">
             <SectionLabel accent={PLUM}>Best practices</SectionLabel>
             <SectionHeadingLight>The audit is only as honest as the room.</SectionHeadingLight>
@@ -355,7 +355,7 @@ export default function TLPage() {
 
       {/* S8 — Logistics LIGHT */}
       <LightSection>
-        <Container prose>
+        <Container>
           <div className="py-20 border-t" style={{ borderColor: 'var(--color-neutral-200)' }}>
             <SectionLabel accent={PLUM}>Logistics</SectionLabel>
             <SectionHeadingLight>Who, how long, and what you need in the room.</SectionHeadingLight>
