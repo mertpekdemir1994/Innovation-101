@@ -1,6 +1,6 @@
 import ComingSoon from '@/components/ComingSoon'
 
-export const metadata = { title: 'Reading — Innovation 101' }
+export const metadata = { title: 'Reading · Innovation 101' }
 
 export default function ReadingPage() {
   return (
