@@ -7,7 +7,7 @@ import SMAIReactivated from './SMAIReactivated'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Stakeholder Mapping — Methods — Innovation 101',
+  title: 'Stakeholder Mapping · Methods',
 }
 
 const SMEstablishing = dynamic(() => import('./SMEstablishing'), { ssr: false })

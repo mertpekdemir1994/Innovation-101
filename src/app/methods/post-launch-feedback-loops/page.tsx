@@ -5,7 +5,7 @@ import PFLExampleToggle from './PFLExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Post-Launch Feedback Loops — Methods — Innovation 101',
+  title: 'Post-Launch Feedback Loops · Methods',
 }
 
 const PFLEstablishing  = dynamic(() => import('./PFLEstablishing'),  { ssr: false })

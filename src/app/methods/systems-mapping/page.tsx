@@ -9,7 +9,7 @@ const SMInteractive   = dynamic(() => import('./SMInteractive'),   { ssr: false 
 const SMAIReactivated = dynamic(() => import('./SMAIReactivated'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Systems Mapping — Innovation 101',
+  title: 'Systems Mapping · Methods',
   description: 'Modelling the feedback loops, delays, and leverage points that explain why a system keeps producing the same outcome, no matter how many times you fix it.',
 }
 

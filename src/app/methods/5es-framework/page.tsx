@@ -6,7 +6,7 @@ import FiveEsBoundarySection from './FiveEsBoundarySection'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'The 5Es Framework — Methods — Innovation 101',
+  title: 'The 5Es Framework · Methods',
 }
 
 const FiveEsEstablishing  = dynamic(() => import('./FiveEsEstablishing'),  { ssr: false })

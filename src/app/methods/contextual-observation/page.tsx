@@ -5,7 +5,7 @@ import COExampleToggle from './COExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Contextual Observation (Ethnography) — Methods — Innovation 101',
+  title: 'Contextual Observation (Ethnography) · Methods',
 }
 
 const COEstablishing  = dynamic(() => import('./COEstablishing'),  { ssr: false })

@@ -5,7 +5,7 @@ import HMWExampleToggle from './HMWExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'How Might We — Methods — Innovation 101',
+  title: 'How Might We · Methods',
 }
 
 const HMWEstablishing  = dynamic(() => import('./HMWEstablishing'),  { ssr: false })

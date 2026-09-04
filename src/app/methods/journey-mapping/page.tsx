@@ -6,7 +6,7 @@ import JMBoundarySection from './JMBoundarySection'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Journey Mapping — Methods — Innovation 101',
+  title: 'Journey Mapping · Methods',
 }
 
 const JMEstablishing  = dynamic(() => import('./JMEstablishing'),  { ssr: false })

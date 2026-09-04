@@ -6,7 +6,7 @@ import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark,
 import FrameworkHoverCard from '../../../components/method/FrameworkHoverCard'
 
 export const metadata: Metadata = {
-  title: 'Proof of Concept — Methods — Innovation 101',
+  title: 'Proof of Concept · Methods',
 }
 
 const POCEstablishing  = dynamic(() => import('./POCEstablishing'),  { ssr: false })

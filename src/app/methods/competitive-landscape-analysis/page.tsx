@@ -5,7 +5,7 @@ import CLAExampleToggle from './CLAExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Competitive Landscape Analysis — Methods — Innovation 101',
+  title: 'Competitive Landscape Analysis · Methods',
 }
 
 const CLAEstablishing  = dynamic(() => import('./CLAEstablishing'),  { ssr: false })

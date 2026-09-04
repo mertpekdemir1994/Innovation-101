@@ -5,7 +5,7 @@ import CCWExampleToggle from './CCWExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Co-Creation Workshops — Methods — Innovation 101',
+  title: 'Co-Creation Workshops · Methods',
 }
 
 const CCWEstablishing  = dynamic(() => import('./CCWEstablishing'),  { ssr: false })

@@ -5,7 +5,7 @@ import IDIExampleToggle from './IDIExampleToggle'
 import { DarkSection, LightSection, WarmSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'In-Depth Interviews — Methods — Innovation 101',
+  title: 'In-Depth Interviews · Methods',
 }
 
 // Client components: dynamic import avoids SSR/hydration issues with animations

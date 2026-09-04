@@ -1,7 +1,7 @@
 import { getMethods } from '@/lib/content'
 import MethodsStageView from '@/components/MethodsStageView'
 
-export const metadata = { title: 'Methods · Innovation 101' }
+export const metadata = { title: 'Methods' }
 
 export default function MethodsPage() {
   const methods = getMethods()

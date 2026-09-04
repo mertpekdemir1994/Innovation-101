@@ -5,7 +5,7 @@ import AMPExampleToggle from './AMPExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Assumption Mapping — Methods — Innovation 101',
+  title: 'Assumption Mapping · Methods',
 }
 
 const AMPEstablishing  = dynamic(() => import('./AMPEstablishing'),  { ssr: false })

@@ -19,7 +19,7 @@ const AIEvolutionTimeline = dynamic(() => import('./AIEvolutionTimeline'), { ssr
 const AICaseStudy = dynamic(() => import('./AICaseStudy'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Agile Innovation · Innovation 101',
+  title: 'Agile Innovation',
   description: 'Agile Innovation applies the iterative rhythms of Agile development to the broader innovation process, enabling organizations to move from insight to delivery in short, focused cycles while keeping the flexibility to change direction as they learn.',
 }
 

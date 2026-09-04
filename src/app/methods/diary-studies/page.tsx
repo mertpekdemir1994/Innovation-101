@@ -6,7 +6,7 @@ import DSExampleToggle from './DSExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Diary Studies — Methods — Innovation 101',
+  title: 'Diary Studies · Methods',
 }
 
 const DSEstablishing = dynamic(() => import('./DSEstablishing'), { ssr: false })

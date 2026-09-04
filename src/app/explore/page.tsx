@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { getFrameworks } from '@/lib/content'
 
-export const metadata = { title: 'Frameworks · Innovation 101' }
+export const metadata = { title: 'Frameworks' }
 
 const INTERACTIVE_TYPE_LABELS: Record<string, string> = {
   'double-diamond': 'Double Diamond',

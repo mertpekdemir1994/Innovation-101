@@ -9,7 +9,7 @@ const DPInteractive    = dynamic(() => import('./DPInteractive'),    { ssr: fals
 const DPAIReactivated  = dynamic(() => import('./DPAIReactivated'),  { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Design Principles — Innovation 101',
+  title: 'Design Principles · Methods',
   description: 'Pre-committed tradeoffs that decide, in advance, how a team will choose when a hard choice arrives, and what it has agreed to say no to.',
 }
 

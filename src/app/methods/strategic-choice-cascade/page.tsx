@@ -5,7 +5,7 @@ import SCCExampleToggle from './SCCExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Strategic Choice Cascade — Methods — Innovation 101',
+  title: 'Strategic Choice Cascade · Methods',
 }
 
 const SCCEstablishing  = dynamic(() => import('./SCCEstablishing'),  { ssr: false })

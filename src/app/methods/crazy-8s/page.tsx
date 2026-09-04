@@ -5,7 +5,7 @@ import C8ExampleToggle from './C8ExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Crazy 8s — Methods — Innovation 101',
+  title: 'Crazy 8s · Methods',
 }
 
 const C8Establishing  = dynamic(() => import('./C8Establishing'),  { ssr: false })

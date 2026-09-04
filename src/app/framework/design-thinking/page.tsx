@@ -19,7 +19,7 @@ const DTEvolutionTimeline = dynamic(() => import('./DTEvolutionTimeline'), { ssr
 const DTCaseStudy = dynamic(() => import('./DTCaseStudy'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Design Thinking · Innovation 101',
+  title: 'Design Thinking',
   description: 'Design Thinking is a human-centered, five-stage process for solving problems by deeply understanding the people you design for before exploring and testing solutions.',
 }
 

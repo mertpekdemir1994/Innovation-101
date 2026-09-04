@@ -20,7 +20,7 @@ const FDECaseStudy = dynamic(() => import('./FDECaseStudy'), { ssr: false })
 const FDEDiagnostic = dynamic(() => import('./FDEDiagnostic'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Forward Deployed Engineering · Innovation 101',
+  title: 'Forward Deployed Engineering',
   description: 'Forward Deployed Engineering embeds highly skilled engineers directly with customers to build custom solutions in the field with radical autonomy, with successful innovations migrating back to the core platform.',
 }
 

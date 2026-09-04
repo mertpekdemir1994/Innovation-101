@@ -5,7 +5,7 @@ import SWOTExampleToggle from './SWOTExampleToggle'
 import { DarkSection, LightSection, WarmSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'SWOT Analysis — Methods — Innovation 101',
+  title: 'SWOT Analysis · Methods',
 }
 
 const SWOTEstablishing  = dynamic(() => import('./SWOTEstablishing'),  { ssr: false })

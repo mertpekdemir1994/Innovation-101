@@ -5,7 +5,7 @@ import OrthodoxiesExampleToggle from './OrthodoxiesExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Orthodoxies — Methods — Innovation 101',
+  title: 'Orthodoxies · Methods',
 }
 
 const OrthodoxiesEstablishing  = dynamic(() => import('./OrthodoxiesEstablishing'),  { ssr: false })

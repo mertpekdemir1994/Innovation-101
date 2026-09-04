@@ -5,7 +5,7 @@ import PLExampleToggle from './PLExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Pilot Launches — Methods — Innovation 101',
+  title: 'Pilot Launches · Methods',
 }
 
 const PLEstablishing  = dynamic(() => import('./PLEstablishing'),  { ssr: false })

@@ -6,7 +6,7 @@ import AvatarsBoundarySection from './AvatarsBoundarySection'
 import { DarkSection, LightSection, WarmSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Avatars — Methods — Innovation 101',
+  title: 'Avatars · Methods',
 }
 
 const AvatarsEstablishing  = dynamic(() => import('./AvatarsEstablishing'),  { ssr: false })

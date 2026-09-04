@@ -5,7 +5,7 @@ import AMExampleToggle from './AMExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Affinity Mapping — Methods — Innovation 101',
+  title: 'Affinity Mapping · Methods',
 }
 
 const AMEstablishing  = dynamic(() => import('./AMEstablishing'),  { ssr: false })

@@ -5,7 +5,7 @@ import CTExampleToggle from './CTExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Concept Testing — Methods — Innovation 101',
+  title: 'Concept Testing · Methods',
 }
 
 const CTEstablishing  = dynamic(() => import('./CTEstablishing'),  { ssr: false })

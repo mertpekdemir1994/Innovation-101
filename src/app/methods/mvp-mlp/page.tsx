@@ -6,7 +6,7 @@ import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark,
 import FrameworkHoverCard from '../../../components/method/FrameworkHoverCard'
 
 export const metadata: Metadata = {
-  title: 'MVP & MLP — Methods — Innovation 101',
+  title: 'MVP & MLP · Methods',
 }
 
 const MVPEstablishing  = dynamic(() => import('./MVPEstablishing'),  { ssr: false })

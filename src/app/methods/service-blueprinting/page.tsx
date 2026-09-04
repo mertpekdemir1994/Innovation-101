@@ -6,7 +6,7 @@ import SBBoundarySection from './SBBoundarySection'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Service Blueprinting — Methods — Innovation 101',
+  title: 'Service Blueprinting · Methods',
 }
 
 const SBEstablishing  = dynamic(() => import('./SBEstablishing'),  { ssr: false })

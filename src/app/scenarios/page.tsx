@@ -1,6 +1,6 @@
 import ComingSoon from '@/components/ComingSoon'
 
-export const metadata = { title: 'Scenarios · Innovation 101' }
+export const metadata = { title: 'Scenarios' }
 
 export default function ScenariosPage() {
   return (

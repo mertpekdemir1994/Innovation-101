@@ -5,7 +5,7 @@ import APExampleToggle from './APExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Analogs & Precursors — Methods — Innovation 101',
+  title: 'Analogs & Precursors · Methods',
 }
 
 const APEstablishing  = dynamic(() => import('./APEstablishing'),  { ssr: false })

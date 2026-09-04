@@ -5,7 +5,7 @@ import BBExampleToggle from './BBExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Balanced Breakthrough — Methods — Innovation 101',
+  title: 'Balanced Breakthrough · Methods',
 }
 
 const BBEstablishing  = dynamic(() => import('./BBEstablishing'),  { ssr: false })

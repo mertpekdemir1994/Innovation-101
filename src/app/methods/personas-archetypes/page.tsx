@@ -6,7 +6,7 @@ import PABoundarySection from './PABoundarySection'
 import { DarkSection, LightSection, WarmSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Personas & Archetypes — Methods — Innovation 101',
+  title: 'Personas & Archetypes · Methods',
 }
 
 const PAEstablishing  = dynamic(() => import('./PAEstablishing'),  { ssr: false })

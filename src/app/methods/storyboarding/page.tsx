@@ -9,7 +9,7 @@ const SBInteractive   = dynamic(() => import('./SBInteractive'),   { ssr: false 
 const SBAIReactivated = dynamic(() => import('./SBAIReactivated'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Storyboarding — Methods — Innovation 101',
+  title: 'Storyboarding · Methods',
   description: 'Drawing a proposed experience frame by frame, before anything is built, so that the moments you cannot draw reveal the parts of the idea that do not work.',
 }
 

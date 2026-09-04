@@ -5,7 +5,7 @@ import TTIExampleToggle from './TTIExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: '10 Types of Innovation — Methods — Innovation 101',
+  title: '10 Types of Innovation · Methods',
 }
 
 const TTIEstablishing        = dynamic(() => import('./TTIEstablishing'),        { ssr: false })

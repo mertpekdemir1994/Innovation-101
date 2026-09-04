@@ -5,7 +5,7 @@ import EMExampleToggle from './EMExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Ecosystem Mapping — Methods — Innovation 101',
+  title: 'Ecosystem Mapping · Methods',
 }
 
 const EMEstablishing  = dynamic(() => import('./EMEstablishing'),  { ssr: false })

@@ -19,7 +19,7 @@ const DSEvolutionTimeline = dynamic(() => import('./DSEvolutionTimeline'), { ssr
 const DSCaseStudy = dynamic(() => import('./DSCaseStudy'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Design Sprint · Innovation 101',
+  title: 'Design Sprint',
   description: 'The Design Sprint is a five-day process for answering critical business questions through rapid prototyping and real user testing, compressing months of work into a single week.',
 }
 

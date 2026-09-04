@@ -5,7 +5,7 @@ import VPCExampleToggle from './VPCExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Value Proposition Canvas — Methods — Innovation 101',
+  title: 'Value Proposition Canvas · Methods',
 }
 
 const VPCEstablishing  = dynamic(() => import('./VPCEstablishing'),  { ssr: false })

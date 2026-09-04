@@ -5,7 +5,7 @@ import FMExampleToggle from './FMExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Flow Mapping — Methods — Innovation 101',
+  title: 'Flow Mapping · Methods',
 }
 
 const FMEstablishing  = dynamic(() => import('./FMEstablishing'),  { ssr: false })

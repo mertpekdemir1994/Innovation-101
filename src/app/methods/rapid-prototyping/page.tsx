@@ -6,7 +6,7 @@ import RPFidelitySelector from './RPFidelitySelector'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Rapid Prototyping — Methods — Innovation 101',
+  title: 'Rapid Prototyping · Methods',
 }
 
 const RPEstablishing  = dynamic(() => import('./RPEstablishing'),  { ssr: false })

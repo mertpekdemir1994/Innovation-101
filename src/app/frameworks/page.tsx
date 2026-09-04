@@ -10,7 +10,7 @@ import {
   FDEMini,
 } from './miniIllustrations'
 
-export const metadata: Metadata = { title: 'Frameworks · Innovation 101' }
+export const metadata: Metadata = { title: 'Frameworks' }
 
 // ── Framework data: educational/chronological-adoption order ─────────────────
 const FRAMEWORKS = [

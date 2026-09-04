@@ -9,7 +9,7 @@ const BMCInteractive   = dynamic(() => import('./BMCInteractive'),   { ssr: fals
 const BMCAIReactivated = dynamic(() => import('./BMCAIReactivated'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Business Model Canvas - Methods - Innovation 101',
+  title: 'Business Model Canvas · Methods',
   description: 'A one-page model of how a business creates, delivers, and captures value across nine linked blocks, used to see whether the whole thing holds together.',
 }
 

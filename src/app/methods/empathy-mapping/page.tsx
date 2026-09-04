@@ -5,7 +5,7 @@ import EMPExampleToggle from './EMPExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Empathy Mapping — Methods — Innovation 101',
+  title: 'Empathy Mapping · Methods',
 }
 
 const EMPEstablishing  = dynamic(() => import('./EMPEstablishing'),  { ssr: false })

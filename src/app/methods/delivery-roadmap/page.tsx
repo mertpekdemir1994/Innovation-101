@@ -1,6 +1,11 @@
+import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import DRExampleToggle from './DRExampleToggle'
 import { SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
+
+export const metadata: Metadata = {
+  title: 'Delivery Roadmap · Methods',
+}
 
 const DREstablishing   = dynamic(() => import('./DREstablishing'),   { ssr: false })
 const DRInteractive    = dynamic(() => import('./DRInteractive'),    { ssr: false })

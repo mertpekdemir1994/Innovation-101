@@ -7,7 +7,7 @@ import {
 } from '../../components/method/Primitives'
 
 export const metadata = {
-  title: 'About · Innovation 101',
+  title: 'About',
   description:
     'Forty methods, six frameworks, and the practitioner behind them. A working reference built from real consulting work.',
 }

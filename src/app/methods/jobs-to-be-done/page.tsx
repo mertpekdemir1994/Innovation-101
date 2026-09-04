@@ -5,7 +5,7 @@ import JTBDExampleToggle from './JTBDExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Jobs To Be Done — Methods — Innovation 101',
+  title: 'Jobs To Be Done · Methods',
 }
 
 const JTBDEstablishing  = dynamic(() => import('./JTBDEstablishing'),  { ssr: false })

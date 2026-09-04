@@ -5,7 +5,7 @@ import UTExampleToggle from './UTExampleToggle'
 import { DarkSection, LightSection, Container, SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Usability Testing — Methods — Innovation 101',
+  title: 'Usability Testing · Methods',
 }
 
 const UTEstablishing  = dynamic(() => import('./UTEstablishing'),  { ssr: false })

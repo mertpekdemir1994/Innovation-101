@@ -1,6 +1,11 @@
+import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import CMExampleToggle from './CMExampleToggle'
 import { SectionLabel, SectionHeadingDark, SectionHeadingLight, Body } from '../../../components/method/Primitives'
+
+export const metadata: Metadata = {
+  title: 'Capability Mapping · Methods',
+}
 
 const CMEstablishing   = dynamic(() => import('./CMEstablishing'),   { ssr: false })
 const CMInteractive    = dynamic(() => import('./CMInteractive'),    { ssr: false })
