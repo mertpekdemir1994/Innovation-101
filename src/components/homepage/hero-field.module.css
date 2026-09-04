@@ -1,10 +1,14 @@
 /*
-  Drifting motif field: decorative background for the homepage hero.
-  Five SVG line-art shapes drift slowly. Each has a different trajectory
-  and duration to avoid synchronisation.
+  Topographic contour-line field: animated background for the homepage hero.
 
-  Static fallback: shapes render at rest when prefers-reduced-motion is
-  not explicitly "no-preference" (covers: reduce, unset, unsupported).
+  .track holds two identical tiles side by side (200% width, each tile 50%).
+  Sliding .track left by exactly one tile (-50% of its own width) at a
+  constant linear speed loops seamlessly: the instant the animation wraps
+  100% -> 0%, tile 2 is sitting exactly where tile 1 started.
+
+  Static fallback: the field renders at rest (no scroll) when the user's
+  motion preference isn't explicitly "no-preference" (covers: reduce, unset,
+  unsupported).
 */
 
 .field {
@@ -14,41 +18,26 @@
   pointer-events: none;
 }
 
-.motif {
-  position: absolute;
-  opacity: 0.20;
+.track {
+  display: flex;
+  width: 200%;
+  height: 100%;
+}
+
+.tile {
+  flex: 0 0 50%;
+  width: 50%;
+  height: 100%;
+  display: block;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .driftA { animation: drift-a 36s ease-in-out infinite; }
-  .driftB { animation: drift-b 28s ease-in-out infinite; }
-  .driftC { animation: drift-c 42s ease-in-out infinite; }
-  .driftD { animation: drift-d 31s ease-in-out infinite; }
-  .driftE { animation: drift-e 25s ease-in-out infinite; }
+  .track {
+    animation: contour-scroll 11s linear infinite;
+  }
 }
 
-@keyframes drift-a {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50%       { transform: translate(22px, -26px) rotate(5deg); }
-}
-
-@keyframes drift-b {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33%       { transform: translate(-16px, 18px) rotate(-4deg); }
-  67%       { transform: translate(12px, -14px) rotate(3deg); }
-}
-
-@keyframes drift-c {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50%       { transform: translate(20px, 22px) rotate(-6deg); }
-}
-
-@keyframes drift-d {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50%       { transform: translate(-24px, -16px) rotate(4deg); }
-}
-
-@keyframes drift-e {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50%       { transform: translate(14px, 20px) rotate(-3deg); }
+@keyframes contour-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
