@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
@@ -207,30 +207,131 @@ const ICONS: Record<string, (color: string) => React.ReactNode> = {
   'fde':              (c) => <FDEConnectionIcon color={c} />,
 }
 
+// ─── Responsive visible-card count ─────────────────────────────────────────────
+// 3 cards at lg (≥1024px), 2 at sm-md (≥640px), 1 below that.
+
+function computeVisibleCount(): number {
+  const w = window.innerWidth
+  if (w < 640) return 1
+  if (w < 1024) return 2
+  return 3
+}
+
+// Initial state always matches the server-rendered value (3) so hydration never
+// mismatches; the real width is only read after mount, inside the effect.
+function useVisibleCount(): number {
+  const [count, setCount] = useState(3)
+  useEffect(() => {
+    const onResize = () => setCount(computeVisibleCount())
+    onResize()
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+  return count
+}
+
+function mod(n: number, m: number): number {
+  return ((n % m) + m) % m
+}
+
+// ─── Card ───────────────────────────────────────────────────────────────────
+
+function CarouselCard({ fw }: { fw: Framework }) {
+  const prefersReduced = useReducedMotion()
+
+  return (
+    <Link
+      href={`/framework/${fw.slug}`}
+      style={{ textDecoration: 'none', display: 'flex', flex: '1 1 0', minWidth: 0 }}
+    >
+      <motion.div
+        className="flex flex-col flex-1 bg-white rounded-xl overflow-hidden"
+        style={{
+          border: '1px solid var(--color-neutral-200)',
+          boxShadow: 'var(--shadow-subtle)',
+        }}
+        whileHover={prefersReduced ? {} : {
+          y: -3,
+          boxShadow: 'var(--shadow-card)',
+          borderColor: fw.color,
+        }}
+        transition={{ duration: 0.15, ease: [0.16, 1, 0.3, 1] }}
+      >
+        {/* Identity accent bar */}
+        <div style={{ height: 3, background: fw.color, flexShrink: 0 }} />
+
+        <div className="flex flex-col flex-1 p-5">
+          {/* Icon zone */}
+          <div
+            className="flex items-center justify-center shrink-0 mb-4"
+            style={{ height: 72, background: `rgba(${fw.rgb},0.07)`, borderRadius: 6 }}
+            aria-hidden="true"
+          >
+            <div style={{ width: '68%', maxWidth: 88 }}>
+              {ICONS[fw.slug](fw.color)}
+            </div>
+          </div>
+
+          {/* Name */}
+          <h3
+            className="font-display font-semibold shrink-0 mb-1.5"
+            style={{ fontSize: 'var(--text-lg)', lineHeight: 1.25, color: 'var(--color-neutral-900)' }}
+          >
+            {fw.name}
+          </h3>
+
+          {/* Description, clamped so cards in a row stay level */}
+          <p
+            className="line-clamp-2 shrink-0 mb-4"
+            style={{ fontSize: 'var(--text-sm)', lineHeight: 1.55, color: 'var(--color-neutral-600)' }}
+          >
+            {fw.desc}
+          </p>
+
+          {/* Elastic spacer: pins CTA to the bottom regardless of desc length */}
+          <div className="flex-1" style={{ minHeight: 'var(--space-2)' }} />
+
+          <span style={{
+            fontSize: 'var(--text-sm)',
+            fontWeight: 600,
+            color: fw.color,
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.375rem',
+          }}>
+            Explore <span aria-hidden="true">→</span>
+          </span>
+        </div>
+      </motion.div>
+    </Link>
+  )
+}
+
 // ─── Carousel ─────────────────────────────────────────────────────────────────
 
 export default function FrameworksCarousel() {
-  const [active, setActive] = useState(0)
+  const total = FRAMEWORKS.length
+  const visibleCount = useVisibleCount()
+  const [start, setStart] = useState(0)
   const [dir, setDir] = useState(1)
   const prefersReduced = useReducedMotion()
 
-  const go = useCallback((index: number, currentActive: number) => {
-    setDir(index > currentActive ? 1 : -1)
-    setActive(index)
-  }, [])
+  const activeStart = mod(start, total)
+
+  const go = useCallback((index: number) => {
+    const forwardDist = mod(index - activeStart, total)
+    setDir(forwardDist <= total / 2 ? 1 : -1)
+    setStart(index)
+  }, [activeStart, total])
 
   const next = useCallback(() => {
-    setActive((a) => {
-      setDir(1)
-      return (a + 1) % FRAMEWORKS.length
-    })
+    setDir(1)
+    setStart((s) => s + 1)
   }, [])
 
   const prev = useCallback(() => {
-    setActive((a) => {
-      setDir(-1)
-      return (a - 1 + FRAMEWORKS.length) % FRAMEWORKS.length
-    })
+    setDir(-1)
+    setStart((s) => s - 1)
   }, [])
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
@@ -238,7 +339,8 @@ export default function FrameworksCarousel() {
     if (e.key === 'ArrowLeft') prev()
   }, [next, prev])
 
-  const fw: Framework = FRAMEWORKS[active]
+  const visibleItems = Array.from({ length: visibleCount }, (_, i) => FRAMEWORKS[mod(start + i, total)])
+  const visibleIndices = new Set(Array.from({ length: visibleCount }, (_, i) => mod(start + i, total)))
 
   // onKeyDown here catches Left/Right bubbled up from the focusable prev/next/dot
   // buttons inside; the region itself is never a keyboard-interaction target on its own.
@@ -246,92 +348,26 @@ export default function FrameworksCarousel() {
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <div role="region" aria-label="Frameworks carousel" onKeyDown={handleKeyDown}>
 
-      {/* ── Slide ─────────────────────────────────────────────────────────── */}
-      <div style={{ overflow: 'hidden', borderRadius: '8px' }}>
+      {/* ── Slides ────────────────────────────────────────────────────────── */}
+      <div style={{ overflow: 'hidden' }}>
         <AnimatePresence mode="wait" initial={false} custom={dir}>
           <motion.div
-            key={active}
+            key={`${activeStart}-${visibleCount}`}
             custom={dir}
             variants={{
-              enter: (d: number) => ({ x: prefersReduced ? 0 : d * 48, opacity: 0 }),
+              enter: (d: number) => ({ x: prefersReduced ? 0 : `${d * 12}%`, opacity: 0 }),
               center: { x: 0, opacity: 1 },
-              exit:  (d: number) => ({ x: prefersReduced ? 0 : d * -48, opacity: 0 }),
+              exit:  (d: number) => ({ x: prefersReduced ? 0 : `${d * -12}%`, opacity: 0 }),
             }}
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: prefersReduced ? 0 : 0.26, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: prefersReduced ? 0 : 0.28, ease: [0.16, 1, 0.3, 1] }}
+            style={{ display: 'flex', gap: '1.25rem', alignItems: 'stretch' }}
           >
-            <Link
-              href={`/framework/${fw.slug}`}
-              style={{ display: 'block', textDecoration: 'none' }}
-            >
-              <div
-                className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8 items-center"
-                style={{
-                  background: 'var(--color-background)',
-                  border: `1.5px solid ${fw.color}`,
-                  borderRadius: '8px',
-                  padding: '2rem',
-                }}
-              >
-                {/* Icon */}
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  padding: '1rem',
-                  background: `rgba(${fw.rgb},0.07)`,
-                  borderRadius: '6px',
-                  minHeight: '90px',
-                }}>
-                  {ICONS[fw.slug](fw.color)}
-                </div>
-
-                {/* Text */}
-                <div>
-                  <p style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: 'var(--text-2xs)',
-                    letterSpacing: '0.10em',
-                    textTransform: 'uppercase',
-                    color: fw.color,
-                    marginBottom: '0.5rem',
-                  }}>
-                    Framework · {active + 1} of {FRAMEWORKS.length}
-                  </p>
-                  <h3 style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: 'clamp(1.25rem, 2.5vw, 1.625rem)',
-                    fontWeight: 600,
-                    lineHeight: 1.2,
-                    color: 'var(--color-neutral-900)',
-                    marginBottom: '0.625rem',
-                  }}>
-                    {fw.name}
-                  </h3>
-                  <p style={{
-                    fontSize: 'var(--text-sm)',
-                    lineHeight: 1.65,
-                    color: 'var(--color-neutral-600)',
-                    marginBottom: '1.25rem',
-                    maxWidth: '52ch',
-                  }}>
-                    {fw.desc}
-                  </p>
-                  <span style={{
-                    fontSize: 'var(--text-sm)',
-                    fontWeight: 600,
-                    color: fw.color,
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.375rem',
-                  }}>
-                    Explore framework <span aria-hidden="true">→</span>
-                  </span>
-                </div>
-              </div>
-            </Link>
+            {visibleItems.map((fw, i) => (
+              <CarouselCard key={`${fw.slug}-${i}`} fw={fw} />
+            ))}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -366,31 +402,34 @@ export default function FrameworksCarousel() {
           ←
         </button>
 
-        {/* Dot indicators */}
+        {/* Dot indicators: all currently-visible frameworks are shown active */}
         <div
           role="tablist"
           aria-label="Select framework"
           style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}
         >
-          {FRAMEWORKS.map((f, i) => (
-            <button
-              key={f.slug}
-              role="tab"
-              aria-selected={i === active}
-              aria-label={f.name}
-              onClick={() => go(i, active)}
-              style={{
-                width: i === active ? '1.5rem' : '0.5rem',
-                height: '0.5rem',
-                borderRadius: '2px',
-                border: 'none',
-                padding: 0,
-                cursor: 'pointer',
-                background: i === active ? fw.color : 'var(--color-neutral-200)',
-                transition: 'width 220ms ease, background 220ms ease',
-              }}
-            />
-          ))}
+          {FRAMEWORKS.map((f, i) => {
+            const isVisible = visibleIndices.has(i)
+            return (
+              <button
+                key={f.slug}
+                role="tab"
+                aria-selected={isVisible}
+                aria-label={f.name}
+                onClick={() => go(i)}
+                style={{
+                  width: isVisible ? '1.5rem' : '0.5rem',
+                  height: '0.5rem',
+                  borderRadius: '2px',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  background: isVisible ? f.color : 'var(--color-neutral-200)',
+                  transition: 'width 220ms ease, background 220ms ease',
+                }}
+              />
+            )
+          })}
         </div>
 
         <button
