@@ -32,8 +32,8 @@ const VARIANT_DETAIL: Record<VariantKey, {
   palantir: {
     headline: 'Full FDE: Radical autonomy, field as R&D, long-term embeds',
     description:
-      'Engineers embedded with specific customers for months or years. Custom solutions built directly in the customer\'s environment with no central approval process. Customer deployments treated as R&D, not delivery. Successful field innovations extracted and migrated to the core platform. The most extreme version, requiring engineers who simultaneously combine world-class technical skill with customer-facing capability and independent product judgment. Real only if all three of McCardel\'s conditions are met: premium enterprise pricing, complex non-standardizable problems, and authentic field autonomy.',
-    when: 'Your customers are Fortune 500 or government, problems are un-standardizable, and you can hire engineers who are simultaneously world-class builders and effective field operators.',
+      'Engineers embedded with specific customers for months or years. Custom solutions built directly in the customer\'s environment with no central approval process. Customer deployments treated as R&D, not delivery. Successful field innovations extracted and migrated to the core platform. The most extreme version, requiring engineers who simultaneously combine elite technical skill with customer-facing capability and independent product judgment. Real only if all three of McCardel\'s conditions are met: premium enterprise pricing, complex non-standardizable problems, and authentic field autonomy.',
+    when: 'Your customers are Fortune 500 or government, problems are un-standardizable, and you can hire engineers who are simultaneously excellent builders and effective field operators.',
     prompt: 'Are you interested in FDE because it genuinely fits your context, or because it sounds cool and Palantir is successful? These are different reasons and lead to different outcomes.',
     example: {
       co: 'Palantir Technologies: Foundry Origin',

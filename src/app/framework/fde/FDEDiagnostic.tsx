@@ -39,7 +39,7 @@ const GROUPS: Group[] = [
     questions: [
       {
         q: 'Can you hire engineers who combine top-tier technical skill with customer-facing capability and independent product judgment?',
-        hint: 'This profile is exceptionally rare. An FDE who is world-class at building but cannot manage a complex customer relationship (or vice versa) cannot do true FDE.',
+        hint: 'This profile is exceptionally rare. An FDE who is excellent at building but cannot manage a complex customer relationship (or vice versa) cannot do true FDE.',
       },
       {
         q: 'Can your leadership genuinely subordinate the product roadmap to field team discoveries?',

@@ -20,8 +20,8 @@ const FDECaseStudy = dynamic(() => import('./FDECaseStudy'), { ssr: false })
 const FDEDiagnostic = dynamic(() => import('./FDEDiagnostic'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Forward Deployed Engineering — Innovation 101',
-  description: 'Forward Deployed Engineering embeds highly skilled engineers directly with customers, empowered to build custom solutions in the field with radical autonomy, with successful innovations migrating back to the core platform.',
+  title: 'Forward Deployed Engineering · Innovation 101',
+  description: 'Forward Deployed Engineering embeds highly skilled engineers directly with customers to build custom solutions in the field with radical autonomy, with successful innovations migrating back to the core platform.',
 }
 
 
@@ -124,7 +124,7 @@ export default function FDEPage() {
                   'Genuine subordination of the central product roadmap to field team discoveries. An organization with a planning function that controls what gets built cannot do true FDE.',
                 ].map((cond, i) => (
                   <li key={i} className="flex items-start gap-space-3 text-sm text-neutral-600">
-                    <span style={{ color: `${BRICK}0.55)`, flexShrink: 0 }}>—</span>
+                    <span style={{ color: `${BRICK}0.55)`, flexShrink: 0 }}>·</span>
                     {cond}
                   </li>
                 ))}
@@ -210,7 +210,7 @@ export default function FDEPage() {
                   set high-level objectives and leave all other decisions to people in the field. Senior leadership
                   defines the mission. FDEs decide how to achieve it. There is no central approval process for
                   field decisions. This doctrine is what makes FDE genuinely different from professional services
-                  or implementation consulting, and what makes it genuinely hard to run.
+                  or implementation consulting, and what makes it hard to run.
                 </p>
               </div>
             </div>
@@ -233,7 +233,7 @@ export default function FDEPage() {
                 items: [
                   'Your market consists of large complex organizations (Fortune 500 or government) willing to pay premium prices for context-specific solutions',
                   'You do not yet know what the right product is and believe field discovery is the fastest way to find out',
-                  'You can hire engineers who are simultaneously world-class at building and at customer engagement',
+                  'You can hire engineers who are simultaneously excellent at building and at customer engagement',
                   'Your leadership can genuinely tolerate the chaos and unpredictability of bottoms-up product discovery',
                   'You are building a platform designed for extensibility from day one',
                 ],
