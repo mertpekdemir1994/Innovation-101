@@ -19,7 +19,7 @@ const LSEvolutionTimeline = dynamic(() => import('./LSEvolutionTimeline'), { ssr
 const LSCaseStudy = dynamic(() => import('./LSCaseStudy'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Lean Startup — Innovation 101',
+  title: 'Lean Startup · Innovation 101',
   description: 'The Lean Startup replaces elaborate planning with validated learning: a continuous Build-Measure-Learn loop that treats every launch as a test of a hypothesis.',
 }
 
