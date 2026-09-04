@@ -33,7 +33,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .track {
-    animation: contour-scroll 11s linear infinite;
+    animation: contour-scroll 17s linear infinite;
   }
 }
 
