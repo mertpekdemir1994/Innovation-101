@@ -46,6 +46,22 @@ export default function HomePage() {
           }}
         />
 
+        {/* Legibility scrim: independent of the contour field's own gradient/
+            opacity, this guarantees the text block always sits on a clean,
+            sufficiently dark patch — text contrast doesn't depend on where
+            the animation happens to be. Static (does not scroll or move with
+            the parallax/loop), centered on the same spot the text occupies. */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'radial-gradient(ellipse 62% 52% at 24% 54%, rgba(9,9,11,0.60) 0%, rgba(9,9,11,0.30) 45%, transparent 78%)',
+            pointerEvents: 'none',
+          }}
+        />
+
         {/* Foreground content */}
         <div className="relative z-10 max-w-content mx-auto px-6 md:px-8 w-full flex flex-col justify-center flex-1 py-24">
           <SectionLabel accent="rgba(255,255,255,0.50)">INNOVATION 101</SectionLabel>

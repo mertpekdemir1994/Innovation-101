@@ -9,6 +9,10 @@
   Static fallback: the field renders at rest (no scroll) when the user's
   motion preference isn't explicitly "no-preference" (covers: reduce, unset,
   unsupported).
+
+  .field itself also gets a translateY written directly via JS (HeroField.tsx)
+  as the page scrolls — a slower-than-content parallax. No transform is set
+  on it here so that write never conflicts with a stylesheet rule.
 */
 
 .field {
