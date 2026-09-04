@@ -13,6 +13,16 @@
   .field itself also gets a translateY written directly via JS (HeroField.tsx)
   as the page scrolls — a slower-than-content parallax. No transform is set
   on it here so that write never conflicts with a stylesheet rule.
+
+  .tilt rotates the whole pattern -30deg (30deg counter-clockwise) and is
+  oversized to 280%/centered via -90% inset before that rotation, so the
+  rotated content still fully covers .field's corners at any realistic hero
+  aspect ratio (checked geometrically down to ultrawide desktop, not just
+  eyeballed) — .field's own overflow:hidden then clips it back down to the
+  visible box. .track's 200%/50% percentages are relative to .tilt now
+  instead of .field, but that's still fully self-referential (translateX
+  -50% is always exactly one tile-width of .track's own box), so the
+  seamless-loop guarantee is unaffected by which element it's nested in.
 */
 
 .field {
@@ -20,6 +30,15 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+}
+
+.tilt {
+  position: absolute;
+  width: 280%;
+  height: 280%;
+  left: -90%;
+  top: -90%;
+  transform: rotate(-30deg);
 }
 
 .track {
