@@ -19,7 +19,7 @@ const AIEvolutionTimeline = dynamic(() => import('./AIEvolutionTimeline'), { ssr
 const AICaseStudy = dynamic(() => import('./AICaseStudy'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Agile Innovation — Innovation 101',
+  title: 'Agile Innovation · Innovation 101',
   description: 'Agile Innovation applies the iterative rhythms of Agile development to the broader innovation process, enabling organizations to move from insight to delivery in short, focused cycles while keeping the flexibility to change direction as they learn.',
 }
 
@@ -335,7 +335,7 @@ export default function AgileInnovationPage() {
               { name: 'Design Sprint', rel: 'A Design Sprint is a compressed five-day version of the Agile Innovation cycle, useful for resolving specific uncertainties the standing rhythm cannot address quickly enough', slug: '/framework/design-sprint' },
               { name: 'Design Thinking', rel: 'Design Thinking shapes the human understanding that feeds the Discovery Sprint; Agile Innovation operationalizes the delivery of what that understanding reveals', slug: '/framework/design-thinking' },
               { name: 'Assumption Mapping', rel: 'The core method for maintaining a hypothesis-driven backlog, making the risk profile of each backlog item visible', slug: '/methods/assumption-mapping' },
-              { name: 'Depth Interviews', rel: 'The core research method of the Discovery Sprint, the mechanism that continuously refreshes the team\'s understanding of the problem space', slug: '/methods/depth-interviews' },
+              { name: 'In-Depth Interviews', rel: 'The core research method of the Discovery Sprint, the mechanism that continuously refreshes the team\'s understanding of the problem space', slug: '/methods/in-depth-interviews' },
             ].map(({ name, rel, slug }, i) => (
               <ScrollReveal key={name} delay={i * 0.06}>
                 <a
