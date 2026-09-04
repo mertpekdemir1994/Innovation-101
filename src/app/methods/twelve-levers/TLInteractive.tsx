@@ -159,6 +159,7 @@ export default function TLInteractive() {
         width="100%"
         preserveAspectRatio="xMidYMid meet"
         style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
+        role="group"
         aria-label="Interactive twelve-lever panel. Click any lever to explore its innovation potential."
       >
         <defs>

@@ -94,7 +94,7 @@ export default function MVPMLPPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       BRICK,
+                color:       '#FFA584',  /* BRICK, brightened for text contrast */
                 background: 'rgba(138,75,60,0.12)',
                 border:     '1px solid rgba(138,75,60,0.28)',
               }}
@@ -126,7 +126,7 @@ export default function MVPMLPPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               Both are minimum. Both ship only the core. The question is not how much you build,
               it is what you build the core to do: teach you something, or make someone love it.

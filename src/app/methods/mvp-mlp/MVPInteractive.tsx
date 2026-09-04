@@ -95,7 +95,8 @@ export default function MVPInteractive() {
 
   return (
     <div className="w-full">
-      <div aria-label="Interactive MVP and MLP comparison. Toggle between MVP and MLP optimization to see what each buys and risks. Click the Shared Core or Shared Cut Pile for more about the identical scope.">
+      <div role="group"
+ aria-label="Interactive MVP and MLP comparison. Toggle between MVP and MLP optimization to see what each buys and risks. Click the Shared Core or Shared Cut Pile for more about the identical scope.">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
           preserveAspectRatio="xMidYMid meet" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}>
           <defs>

@@ -98,7 +98,7 @@ export default function UsabilityTestingPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       BRICK,
+                color:       '#FFA584',  /* BRICK, brightened for text contrast */
                 background: 'rgba(138,75,60,0.10)',
                 border:     '1px solid rgba(138,75,60,0.22)',
               }}
@@ -122,7 +122,7 @@ export default function UsabilityTestingPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               It is obvious to you because you built it. The only way to find out whether it is obvious to anyone else is to watch a stranger try, and say nothing.
             </p>

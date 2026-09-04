@@ -182,6 +182,7 @@ export default function SBInteractive() {
       {/* ── FRAME SVG ── */}
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        role="group"
         aria-label="Interactive storyboard. Click any frame to reveal what it shows and what it assumes."
         style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
       >

@@ -112,6 +112,7 @@ export default function PLInteractive() {
     <div className="w-full">
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        role="group"
         aria-label="Interactive pilot zone diagram. Click a zone to explore it."
         style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', cursor: 'default' }}
       >

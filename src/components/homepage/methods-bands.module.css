@@ -47,14 +47,15 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--band-color);
-  /* Brighten dark tokens (Synthesis #1F3A5F, Strategy #6B4A77) */
-  filter: brightness(1.5);
+  /* Brighten dark tokens so every stage clears 4.5:1 on --color-dark-surface;
+     Synthesis (#1F3A5F) is the binding case at 2.2x, ~4.7:1 */
+  filter: brightness(2.2);
 }
 
 .stageCount {
   font-family: var(--font-mono);
   font-size: var(--text-2xs);
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* ── Problem one-liner ─────────────────────────────────────────────────────── */
@@ -63,7 +64,7 @@
   font-family: var(--font-mono);
   font-size: var(--text-2xs);
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.5);
   margin-bottom: 0.75rem;
   line-height: 1.5;
 }

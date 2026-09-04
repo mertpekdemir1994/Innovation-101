@@ -91,7 +91,7 @@ export default function BBPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       PLUM,
+                color:       '#EBA3FF',  /* PLUM, brightened for text contrast */
                 background: 'rgba(107,74,119,0.12)',
                 border:     '1px solid rgba(107,74,119,0.28)',
               }}
@@ -116,7 +116,7 @@ export default function BBPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               An idea that passes two lenses is not a breakthrough. It is a trap with a blind spot, and the one that passes two is usually harder to kill than the one that passes none.
             </p>

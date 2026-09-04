@@ -114,7 +114,7 @@ export default function AMInteractive() {
 
   return (
     <div>
-      <div className="w-full select-none mb-6" aria-label="Affinity map, click a cluster to explore it">
+      <div className="w-full select-none mb-6" role="group" aria-label="Affinity map, click a cluster to explore it">
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}
           width="100%"

@@ -42,6 +42,7 @@
        never for fills/borders/icons — the base tokens above already work fine
        for those at the 3:1 non-text threshold) ─────────────────────────── */
   --color-scenario-text:  #8D4D04;  /* darker derivative of --color-scenario, ~6.6:1 on white */
+  --color-methods-text:   #047857;  /* darker derivative of --color-methods, ~5.5:1 on white */
   --stage-ideation-text:  #763F28;  /* darker derivative of --stage-ideation, ~8.1:1 on white */
 
   /* ─── Focus ring (overridden inside .dark-section) ────────────────────── */

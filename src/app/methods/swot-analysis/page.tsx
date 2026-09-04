@@ -38,7 +38,7 @@ export default function SWOTAnalysisPage() {
           <div className="py-20 md:py-28">
             <span
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
-              style={{ fontSize: 'var(--text-2xs)', color: PLUM, background: `${PLUM_RGBA}0.10)`, border: `1px solid ${PLUM_RGBA}0.22)` }}
+              style={{ fontSize: 'var(--text-2xs)', color: '#EBA3FF' /* PLUM, brightened for text contrast */, background: `${PLUM_RGBA}0.10)`, border: `1px solid ${PLUM_RGBA}0.22)` }}
             >
               Strategy &amp; Prioritization
             </span>
@@ -51,7 +51,7 @@ export default function SWOTAnalysisPage() {
             <p className="mb-3 max-w-[600px]" style={{ fontSize: 'var(--text-xl)', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}>
               A four-quadrant view of your strengths, weaknesses, opportunities, and threats, whose actual value is not the four lists but the strategic moves you find by crossing them.
             </p>
-            <p className="max-w-[520px]" style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}>
+            <p className="max-w-[520px]" style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}>
               Anyone can fill in four boxes. The strategy is not in the boxes. It is in the lines you draw between them.
             </p>
           </div>

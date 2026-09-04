@@ -91,7 +91,7 @@ export default function C8Page() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       CLAY,
+                color:       '#FFD588',  /* CLAY, brightened for text contrast */
                 background: 'rgba(181,97,62,0.12)',
                 border:     '1px solid rgba(181,97,62,0.28)',
               }}
@@ -116,7 +116,7 @@ export default function C8Page() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               Your first three ideas are the ones everyone has. The method exists to drag you, fast, to idea number seven.
             </p>

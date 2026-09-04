@@ -37,6 +37,7 @@ export default function COEstablishing() {
       whileInView="visible"
       viewport={{ once: true, margin: '-60px' }}
       variants={container}
+      role="img"
       aria-label="In-context observation scene: a person at a desk with a computer on the left (the stated tool) and sticky notes, a paper pile, and a receipts shoebox on the right (the real system), with an observer watching from the side"
     >
       <svg

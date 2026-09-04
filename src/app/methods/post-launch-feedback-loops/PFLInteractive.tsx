@@ -150,6 +150,7 @@ export default function PFLInteractive() {
 
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        role="group"
         aria-label="Interactive feedback loop. Click a stage to explore it. Click a break point to sever the loop at that junction and see what a broken loop produces."
         style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', cursor: 'default' }}
       >

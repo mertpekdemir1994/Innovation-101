@@ -93,7 +93,7 @@ export default function ValuePropositionCanvasPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       PLUM,
+                color:       '#EBA3FF',  /* PLUM, brightened for text contrast */
                 background: 'rgba(107,74,119,0.12)',
                 border:     '1px solid rgba(107,74,119,0.28)',
               }}
@@ -117,7 +117,7 @@ export default function ValuePropositionCanvasPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               The gaps are not the failure. They are the finding. A canvas with visible wasted features and unmet needs is doing its job; one with perfect fit throughout is almost certainly filled from imagination.
             </p>

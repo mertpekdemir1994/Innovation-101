@@ -42,6 +42,7 @@ export default function BBEstablishing() {
       width="100%"
       preserveAspectRatio="xMidYMid meet"
       style={{ margin: '0 auto', display: 'block' }}
+      role="img"
       aria-label="Three overlapping circles: Desirability (top), Feasibility (bottom-left), Viability (bottom-right). Where all three overlap is the Breakthrough."
     >
       <defs>

@@ -46,6 +46,7 @@ export default function RPEstablishing() {
   return (
     <div
       className="w-full"
+      role="img"
       aria-label="Horizontal fidelity spectrum from rough paper sketch on the left to polished prototype on the right. The just enough to learn zone is marked low on the spectrum at the paper sketch and conceptual visual levels. A warning zone near the polished end notes that high fidelity invites feedback on polish rather than concept."
     >
       <svg

@@ -6,9 +6,9 @@ import { useState, useEffect, useRef } from 'react'
 
 const NAV_ITEMS = [
   { label: 'Frameworks', href: '/frameworks', color: 'var(--color-framework)' },
-  { label: 'Methods',    href: '/methods',    color: 'var(--color-methods)'   },
-  { label: 'Scenarios',  href: '/scenarios',  color: 'var(--color-scenario)'  },
-  { label: 'Reading',    href: '/reading',    color: 'var(--color-reading)'   },
+  { label: 'Methods',    href: '/methods',    color: 'var(--color-methods-text)'   },
+  { label: 'Scenarios',  href: '/scenarios',  color: 'var(--color-scenario-text)'  },
+  { label: 'Reading',    href: '/reading',    color: 'var(--color-reading)' },
   { label: 'About',      href: '/about',      color: 'var(--color-neutral-900)' },
 ]
 

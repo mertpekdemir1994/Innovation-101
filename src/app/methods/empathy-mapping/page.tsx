@@ -93,7 +93,7 @@ export default function EmpathyMappingPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       NAVY,
+                color:       '#4480D1',  /* NAVY, brightened for text contrast */
                 background: 'rgba(31,58,95,0.12)',
                 border:     '1px solid rgba(31,58,95,0.28)',
               }}
@@ -117,7 +117,7 @@ export default function EmpathyMappingPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               What people say is rarely the whole story. The empathy map exists to expose the distance between what they say, what they do, and what they feel, and that distance is where the design problem actually lives.
             </p>

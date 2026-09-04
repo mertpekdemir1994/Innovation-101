@@ -70,7 +70,7 @@ export default function AmbitionMatrixPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize: 'var(--text-2xs)',
-                color: PLUM,
+                color: '#EBA3FF',  /* PLUM, brightened for text contrast */
                 background: 'rgba(107,74,119,0.10)',
                 border: '1px solid rgba(107,74,119,0.22)',
               }}
@@ -94,7 +94,7 @@ export default function AmbitionMatrixPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               Most organizations starve their boldest bets without realizing it. This is the tool that makes the imbalance visible.
             </p>

@@ -54,6 +54,7 @@ export default function SCCEstablishing() {
       width="100%"
       preserveAspectRatio="xMidYMid meet"
       style={{ margin: '0 auto', display: 'block' }}
+      role="img"
       aria-label="Strategic Choice Cascade: five choices flowing left to right: Winning Aspiration, Where to Play (the heart), How to Win (the heart), Capabilities, Management Systems, with reinforcing feedback links showing all choices must cohere as a mutually-reinforcing whole."
     >
       <defs>

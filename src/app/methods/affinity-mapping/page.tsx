@@ -99,7 +99,7 @@ export default function AffinityMappingPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       NAVY,
+                color:       '#4480D1',  /* NAVY, brightened for text contrast */
                 background: 'rgba(31,58,95,0.12)',
                 border:     '1px solid rgba(31,58,95,0.28)',
               }}
@@ -123,7 +123,7 @@ export default function AffinityMappingPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               The insight is not in the card. It is in the grouping. And in the name you give the grouping, which is not a category. It is a claim.
             </p>

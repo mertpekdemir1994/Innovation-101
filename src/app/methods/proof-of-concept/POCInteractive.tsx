@@ -101,6 +101,7 @@ export default function POCInteractive() {
   return (
     <div className="w-full">
       <div
+        role="group"
         aria-label="Interactive proving rig. Click any labelled zone to explore what a PoC includes, excludes, and produces."
         style={{ position: 'relative' }}>
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"

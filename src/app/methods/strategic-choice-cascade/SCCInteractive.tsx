@@ -113,7 +113,7 @@ export default function SCCInteractive() {
           preserveAspectRatio="xMidYMid meet"
           style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', cursor: 'pointer' }}
           aria-label="Interactive Strategic Choice Cascade, click a choice to learn what it means and how it connects to the others"
-          role="img">
+          role="group">
 
           <defs>
             <filter id="scc-int-glow" x="-40%" y="-40%" width="180%" height="180%">

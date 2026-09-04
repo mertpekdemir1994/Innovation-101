@@ -79,7 +79,7 @@ export default function CTInteractive() {
 
       {/* SVG */}
       <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} className="w-full" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', maxHeight: 290 }}
-        aria-label="Interactive stated-vs-revealed comparison with threshold" role="img">
+        aria-label="Interactive stated-vs-revealed comparison with threshold" role="group">
         <defs>
           <filter id="ct-int-glow" x="-40%" y="-40%" width="180%" height="180%">
             <feGaussianBlur stdDeviation="3.5" result="blur" />

@@ -87,7 +87,7 @@ export default function FlowMappingPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       TEAL,
+                color:       '#5CF4FF',  /* TEAL, brightened for text contrast */
                 background: 'rgba(42,111,122,0.10)',
                 border:     '1px solid rgba(42,111,122,0.22)',
               }}
@@ -111,7 +111,7 @@ export default function FlowMappingPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               Nobody designed the seventeen paths through your product. They accumulated. A flow map is how you finally see them.
             </p>

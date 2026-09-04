@@ -93,7 +93,7 @@ export default function OrthodoxiesPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       SAGE,
+                color:       '#86EBC6',  /* SAGE, brightened for text contrast */
                 background: 'rgba(61,107,90,0.12)',
                 border:     '1px solid rgba(61,107,90,0.28)',
               }}
@@ -117,7 +117,7 @@ export default function OrthodoxiesPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               Every industry is quietly governed by rules nobody wrote down and nobody questions. The breakthrough usually lives on the other side of one of them.
             </p>

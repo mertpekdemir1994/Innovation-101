@@ -86,7 +86,7 @@ export default function FiveEsInteractive() {
   return (
     <div>
       {/* Phase SVG - click to select */}
-      <div className="w-full select-none mb-8" aria-label="Click a phase to explore it">
+      <div className="w-full select-none mb-8" role="group" aria-label="Click a phase to explore it">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible', cursor: 'pointer' }}>
           <defs>
             <filter id="fes-int-glow" x="-20%" y="-100%" width="140%" height="300%">

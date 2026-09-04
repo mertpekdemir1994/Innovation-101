@@ -87,6 +87,7 @@ export default function SMInteractive() {
       {/* SVG */}
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        role="group"
         aria-label="Interactive causal loop diagram. Select an intervention above to see what happens."
         style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
       >

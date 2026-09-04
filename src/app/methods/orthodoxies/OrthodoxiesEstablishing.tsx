@@ -70,6 +70,7 @@ export default function OrthodoxiesEstablishing() {
       whileInView="visible"
       viewport={{ once: true, margin: '-60px' }}
       variants={container}
+      role="img"
       aria-label="Constraint-space illustration: a central possibility space is boxed in by four labeled walls, each an unquestioned industry orthodoxy. The right wall is broken open, revealing opportunity territory beyond it."
     >
       <svg

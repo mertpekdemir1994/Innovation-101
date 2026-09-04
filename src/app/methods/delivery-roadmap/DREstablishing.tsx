@@ -55,6 +55,7 @@ export default function DREstablishing() {
       <svg
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        role="img"
         aria-label="Confidence-gradient bet sequence. Four bet boxes sit left to right: PROOF (now, firm solid border), RELEASE (next, mostly solid), PILOT (later, dashed border), ROLLOUT (far, faded and dashed). Gate markers sit between each pair. Two learning arrows curve backwards from later bets to earlier bets, showing how what you learn reshapes what comes next."
         style={{ width: '100%', margin: '0 auto', display: 'block' }}
       >

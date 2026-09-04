@@ -46,7 +46,7 @@ export default function AvatarsPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       PLUM,
+                color:       '#EBA3FF',  /* PLUM, brightened for text contrast */
                 background: 'rgba(107,74,119,0.10)',
                 border:     '1px solid rgba(107,74,119,0.22)',
               }}
@@ -70,7 +70,7 @@ export default function AvatarsPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               It is easier to own 100 percent of a tiny market than 1 percent of a huge one. The Avatar is the discipline of choosing the tiny market on purpose.
             </p>

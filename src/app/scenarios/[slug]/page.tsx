@@ -27,7 +27,7 @@ export default function ScenarioPage({ params }: { params: { slug: string } }) {
             <span
               className="text-xs font-semibold uppercase tracking-widest px-2 py-1 rounded"
               style={{
-                color: 'var(--color-scenario)',
+                color: 'var(--color-scenario-text)',
                 background: 'rgba(217, 119, 6, 0.08)',
               }}
             >

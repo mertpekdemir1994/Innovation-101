@@ -71,6 +71,7 @@ export default function AMPEstablishing() {
       whileInView="visible"
       viewport={{ once: true, margin: '-60px' }}
       variants={container}
+      role="img"
       aria-label="Importance by uncertainty risk grid. Top-right quadrant (high importance, unknown) glows in clay orange and is labelled LEAP OF FAITH: TEST THESE FIRST. Other quadrants: top-left is MONITOR, bottom-right is NICE TO KNOW, bottom-left is IGNORE. Seven assumption cards are placed across the four quadrants."
     >
       <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%" style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}>

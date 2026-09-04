@@ -82,7 +82,7 @@ export default function HowMightWePage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       NAVY,
+                color:       '#4480D1',  /* NAVY, brightened for text contrast */
                 background: 'rgba(31,58,95,0.12)',
                 border:     '1px solid rgba(31,58,95,0.28)',
               }}
@@ -106,7 +106,7 @@ export default function HowMightWePage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               Some problems, stated as problems, cannot be solved, only endured. The question is not what to fix. It is how to stand in front of the same situation and ask something different.
             </p>

@@ -127,6 +127,7 @@ export default function DRInteractive() {
 
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        role="group"
         aria-label="Interactive delivery roadmap. Click any bet or gate to explore it. Toggle sequence order and learning arrows."
         style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}
       >

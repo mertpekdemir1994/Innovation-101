@@ -84,7 +84,7 @@ export default function COInteractive() {
         viewBox={`0 0 ${SVG_W} 248`}
         width="100%"
         style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible', cursor: 'default' }}
-        role="img"
+        role="group"
         aria-label="Interactive contextual observation scene with clickable zones"
       >
         <defs>

@@ -113,7 +113,7 @@ export default function StoryboardingPage() {
           className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
           style={{
             fontSize: 'var(--text-2xs)',
-            color: CLAY,
+            color: '#FFD588',  /* CLAY, brightened for text contrast */
             background: 'rgba(181,97,62,0.12)',
             border: '1px solid rgba(181,97,62,0.28)',
           }}>

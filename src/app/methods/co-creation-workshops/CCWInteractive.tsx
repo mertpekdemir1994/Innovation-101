@@ -91,7 +91,7 @@ export default function CCWInteractive() {
       </div>
 
       {/* SVG scene */}
-      <div className="w-full" aria-live="polite" aria-atomic="true"
+      <div className="w-full" role="img" aria-live="polite" aria-atomic="true"
         aria-label={isFor
           ? 'Design-FOR mode: participants are dimmed, contribution lines removed, REACT labels appear at participant positions. Canvas labeled TEAM\'S IDEA with only team contributions visible. A presentation arrow points from canvas toward participants.'
           : 'Design-WITH mode: all four participants and two team members are actively connected to the shared canvas by contribution lines. Canvas is full of mixed contributions from all parties.'}>

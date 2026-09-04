@@ -48,7 +48,7 @@ export default function EcosystemMappingPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       TEAL,
+                color:       '#5CF4FF',  /* TEAL, brightened for text contrast */
                 background: 'rgba(42,111,122,0.10)',
                 border:     '1px solid rgba(42,111,122,0.22)',
               }}
@@ -72,7 +72,7 @@ export default function EcosystemMappingPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               Some problems cannot be solved by serving one user, because the problem is not in the user. It is in the web of relationships around them.
             </p>

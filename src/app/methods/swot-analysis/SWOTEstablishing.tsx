@@ -52,6 +52,7 @@ export default function SWOTEstablishing() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-80px' }}
+      role="img"
       aria-label="SWOT grid showing four quadrants and cross-pairing connections"
     >
       <svg viewBox="0 0 960 420" width="100%" style={{ margin: '0 auto', display: 'block', overflow: 'visible' }}>

@@ -75,6 +75,7 @@ export default function TLEstablishing() {
       width="100%"
       preserveAspectRatio="xMidYMid meet"
       style={{ maxWidth: 'var(--width-illustration)', display: 'block' }}
+      role="img"
       aria-label="Twelve levers of business innovation arranged in three columns: Value Proposition (Target Segment, Offering, Revenue Model, Bundling), Operating Model (Value Chain, Cost Model, Organization, Technology), and Go-to-Market (Channels, Relationships, Brand, Partnerships). Offering is marked as over-pulled; Revenue Model, Cost Model, and Partnerships are marked as high-leverage and under-used."
     >
       <defs>

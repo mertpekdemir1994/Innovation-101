@@ -48,8 +48,8 @@ export default function VPCEstablishing() {
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         className="w-full"
         style={{ margin: '0 auto', display: 'block' }}
-        aria-label="Value Proposition Canvas showing value map and customer profile with fit connections and gaps"
         role="img"
+        aria-label="Value Proposition Canvas showing value map and customer profile with fit connections and gaps"
       >
         <defs>
           <filter id="vpc-est-glow" x="-30%" y="-30%" width="160%" height="160%">

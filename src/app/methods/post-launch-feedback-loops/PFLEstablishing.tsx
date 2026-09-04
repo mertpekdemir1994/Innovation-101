@@ -72,6 +72,7 @@ export default function PFLEstablishing() {
       <svg
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        role="img"
         aria-label="The closed feedback loop. Four stages form a rectangular circuit: SIGNAL (what the live product tells you) flows right to SENSE (making meaning) flows right to DECIDE (choosing what to do) flows right to SHIP (changing the product), then a return path sweeps along the bottom back to SIGNAL (measuring whether the change worked). At each junction, a break point marks where real loops fail: between SIGNAL and SENSE, the DATA LAKE nobody reads; between SENSE and DECIDE, the INSIGHT DECK that changes nothing; between DECIDE and SHIP, the ROADMAP ITEM that never lands; on the return path between SHIP and SIGNAL, the CHANGE nobody checks."
         style={{ width: '100%', margin: '0 auto', display: 'block' }}
       >

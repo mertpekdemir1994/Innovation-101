@@ -47,6 +47,7 @@ export default function C8Establishing() {
 
   return (
     <div className="w-full"
+      role="img"
       aria-label="Eight-panel Crazy 8s grid with timer. Panels 1–4 labeled OBVIOUS represent conventional first ideas. A dashed wall line marks where obvious ideas run out. Panels 5–8 labeled ORIGINAL in clay orange represent breakthrough ideas reached past the wall. Timer bar shows 1 minute per panel, 8 minutes total.">
       <svg ref={ref} viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
         preserveAspectRatio="xMidYMid meet" style={{ margin: '0 auto', display: 'block' }}>

@@ -57,6 +57,7 @@ export default function FMEstablishing() {
   return (
     <div
       className="w-full"
+      role="img"
       aria-label="Branching flow topology: one entry point forks into three paths. Top path: SUBMIT → VALIDATE → RESOLVED (with a DEAD END branch off VALIDATE leading nowhere). Middle path: SUBMIT → PROCESS → APPROVE → COMPLETE (with a LOOP back from APPROVE to PROCESS). Bottom path (unintended, accreted): SUBMIT → ESCALATE → MANUAL STEP → COMPLETE (a redundant route to the same outcome). Pathologies marked: DEAD END, LOOP, UNINTENDED BRANCH, REDUNDANT PATH."
     >
       <svg ref={ref} viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"

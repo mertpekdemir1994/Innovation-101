@@ -135,6 +135,7 @@ export default function DPInteractive() {
       {/* SVG fork */}
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        role="group"
         aria-label="Decision fork. Select a principle above to see whether it closes a branch."
         style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block' }}
       >

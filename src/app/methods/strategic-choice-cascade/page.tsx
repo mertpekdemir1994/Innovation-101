@@ -85,7 +85,7 @@ export default function SCCPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       PLUM,
+                color:       '#EBA3FF',  /* PLUM, brightened for text contrast */
                 background: 'rgba(107,74,119,0.12)',
                 border:     '1px solid rgba(107,74,119,0.28)',
               }}
@@ -111,7 +111,7 @@ export default function SCCPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               Strategy is not a vision statement or a plan. It is a small set of hard choices that fit together, and the hardest part is deciding where you will NOT play.
             </p>

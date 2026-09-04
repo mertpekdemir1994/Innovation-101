@@ -47,7 +47,7 @@ export default function FiveEsFrameworkPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       TEAL,
+                color:       '#5CF4FF',  /* TEAL, brightened for text contrast */
                 background: 'rgba(42,111,122,0.10)',
                 border:     '1px solid rgba(42,111,122,0.22)',
               }}
@@ -71,7 +71,7 @@ export default function FiveEsFrameworkPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               Most teams pour everything into the middle of an experience and neglect how it begins and ends. The 5Es exists to stop that.
             </p>

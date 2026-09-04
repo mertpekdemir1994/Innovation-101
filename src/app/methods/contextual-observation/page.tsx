@@ -99,7 +99,7 @@ export default function ContextualObservationPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       SAGE,
+                color:       '#86EBC6',  /* SAGE, brightened for text contrast */
                 background: 'rgba(61,107,90,0.12)',
                 border:     '1px solid rgba(61,107,90,0.28)',
               }}
@@ -123,7 +123,7 @@ export default function ContextualObservationPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               The insight is never in the interview. It is in the shoebox on the desk and the sticky note on the side of the screen.
             </p>

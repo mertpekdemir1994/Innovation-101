@@ -108,7 +108,7 @@ export default function BMCPage() {
           className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
           style={{
             fontSize: 'var(--text-2xs)',
-            color: PLUM,
+            color: '#EBA3FF',  /* PLUM, brightened for text contrast */
             background: 'rgba(107,74,119,0.12)',
             border: '1px solid rgba(107,74,119,0.28)',
           }}>

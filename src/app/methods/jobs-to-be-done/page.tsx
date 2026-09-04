@@ -99,7 +99,7 @@ export default function JobsToBeDonePage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       NAVY,
+                color:       '#4480D1',  /* NAVY, brightened for text contrast */
                 background: 'rgba(31,58,95,0.12)',
                 border:     '1px solid rgba(31,58,95,0.28)',
               }}
@@ -124,7 +124,7 @@ export default function JobsToBeDonePage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               People do not buy products. They hire them to do a job, and they fire them when something does it
               better. Understand the job and you understand the demand.

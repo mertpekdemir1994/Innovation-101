@@ -135,7 +135,7 @@ export default function EMPInteractive() {
       </div>
 
       {/* Canvas */}
-      <div className="w-full select-none mb-6" aria-label="Empathy map, click a quadrant or use the buttons above to explore">
+      <div className="w-full select-none mb-6" role="group" aria-label="Empathy map, click a quadrant or use the buttons above to explore">
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}
           width="100%"

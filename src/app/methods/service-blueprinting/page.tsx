@@ -47,7 +47,7 @@ export default function ServiceBlueprintingPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       TEAL,
+                color:       '#5CF4FF',  /* TEAL, brightened for text contrast */
                 background: 'rgba(42,111,122,0.10)',
                 border:     '1px solid rgba(42,111,122,0.22)',
               }}
@@ -71,7 +71,7 @@ export default function ServiceBlueprintingPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               A journey map shows what the customer feels. A service blueprint shows everything working, and sometimes failing, beneath the surface to make that feeling happen.
             </p>

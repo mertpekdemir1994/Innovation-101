@@ -94,7 +94,7 @@ export default function ProofOfConceptPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       BRICK,
+                color:       '#FFA584',  /* BRICK, brightened for text contrast */
                 background: 'rgba(138,75,60,0.12)',
                 border:     '1px solid rgba(138,75,60,0.28)',
               }}
@@ -119,7 +119,7 @@ export default function ProofOfConceptPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               The PoC is not a product. It is not a prototype. It is a proving rig. It answers
               one question, then it is discarded. The knowledge it produced is what carries forward.

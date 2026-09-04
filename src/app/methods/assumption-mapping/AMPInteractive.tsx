@@ -167,7 +167,7 @@ export default function AMPInteractive() {
       <div className="w-full select-none">
         <svg viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
           style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible', cursor: 'default' }}
-          role="img"
+          role="group"
           aria-label="Interactive assumption mapping grid. Five clickable assumption cards are placed across four quadrants. Click each to reveal its verdict.">
           <defs>
             <filter id="amp-int-glow-sm" x="-20%" y="-20%" width="140%" height="140%">

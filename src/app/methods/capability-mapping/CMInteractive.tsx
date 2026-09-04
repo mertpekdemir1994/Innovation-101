@@ -206,6 +206,7 @@ export default function CMInteractive() {
 
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        role="group"
         aria-label="Interactive layered capability map. Toggle between TODAY (current state) and TARGET (what delivery requires). Click any capability to explore it. Click a foundational gap to see instability propagate upward."
         style={{ width: '100%', maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible' }}
       >

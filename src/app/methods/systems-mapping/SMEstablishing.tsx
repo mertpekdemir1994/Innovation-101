@@ -56,6 +56,7 @@ export default function SMEstablishing() {
       <svg
         ref={ref}
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        role="img"
         aria-label="Causal loop diagram showing two loops. LEFT: REINFORCING loop R1: DELIVERY PRESSURE drives TECHNICAL DEBT, which slows delivery, which increases DELIVERY PRESSURE further. A self-amplifying vicious circle. RIGHT: BALANCING loop B1: DEFECT RATE drives more TESTING, which reduces DEFECT RATE. An equilibrium-restoring loop that absorbs interventions. A CROSS-ARROW connects the two loops: DELIVERY PRESSURE causes shortcuts that produce DEFECTS, but with a long DELAY, which is why nobody connects them. The LEVERAGE POINT glows above the DELIVERY PRESSURE node, far from where the pain (DEFECT RATE) is felt."
         style={{ width: '100%', margin: '0 auto', display: 'block' }}
       >

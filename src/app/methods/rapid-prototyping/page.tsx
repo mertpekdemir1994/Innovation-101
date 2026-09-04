@@ -94,7 +94,7 @@ export default function RPPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize:   'var(--text-2xs)',
-                color:       CLAY,
+                color:       '#FFD588',  /* CLAY, brightened for text contrast */
                 background: 'rgba(181,97,62,0.12)',
                 border:     '1px solid rgba(181,97,62,0.28)',
               }}
@@ -119,7 +119,7 @@ export default function RPPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               The point is not to build something good. It is to build something rough, fast, that
               answers your biggest question before you have spent anything making it pretty.

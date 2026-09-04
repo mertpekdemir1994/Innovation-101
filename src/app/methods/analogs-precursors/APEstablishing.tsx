@@ -61,6 +61,7 @@ export default function APEstablishing() {
       whileInView="visible"
       viewport={{ once: true, margin: '-60px' }}
       variants={container}
+      role="img"
       aria-label="Two-axis search space diagram: horizontal axis extends right for Analogs (across industries), vertical axis extends upward for Precursors (back through time). Hotel, Airport, and Pit Crew on the analog axis; Early Version, Prior Art, and Antecedent on the precursor axis. Axes intersect at the Current Problem origin."
     >
       <svg

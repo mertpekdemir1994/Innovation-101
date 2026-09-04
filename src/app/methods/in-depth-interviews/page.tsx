@@ -50,7 +50,7 @@ export default function InDepthInterviewsPage() {
               className="inline-block font-mono uppercase tracking-widest rounded-full px-3 py-1 mb-6"
               style={{
                 fontSize: 'var(--text-2xs)',
-                color: SAGE,
+                color: '#86EBC6',  /* SAGE, brightened for text contrast */
                 background: 'rgba(61,107,90,0.10)',
                 border: '1px solid rgba(61,107,90,0.22)',
               }}
@@ -79,7 +79,7 @@ export default function InDepthInterviewsPage() {
 
             <p
               className="max-w-[520px]"
-              style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic' }}
+              style={{ fontSize: 'var(--text-base)', color: 'var(--color-dark-muted)', fontStyle: 'italic' }}
             >
               The most foundational research method in innovation, and the one teams most often do badly.
             </p>

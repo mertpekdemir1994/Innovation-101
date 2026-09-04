@@ -125,7 +125,7 @@ export default function OrthodoxiesInteractive() {
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         width="100%"
         style={{ maxWidth: 'var(--width-illustration)', margin: '0 auto', display: 'block', overflow: 'visible', cursor: 'default' }}
-        role="img"
+        role="group"
         aria-label="Interactive constraint space with four clickable orthodoxy walls"
       >
         <defs>

@@ -25,7 +25,7 @@ interface ComingSoonProps {
 
 export default function ComingSoon({ accent, glowRgb, heading, body, footer }: ComingSoonProps) {
   return (
-    <main
+    <div
       className="dark-section"
       style={{
         minHeight: '100vh',
@@ -136,6 +136,6 @@ export default function ComingSoon({ accent, glowRgb, heading, body, footer }: C
         )}
       </div>
       </div>
-    </main>
+    </div>
   )
 }

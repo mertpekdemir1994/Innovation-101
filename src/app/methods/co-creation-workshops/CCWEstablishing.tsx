@@ -53,6 +53,7 @@ export default function CCWEstablishing() {
 
   return (
     <div className="w-full"
+      role="img"
       aria-label="Design-with collaboration space. Four participants (clay-accented) and two team members (subtle) are positioned around a central shared canvas. Contribution lines connect each person to the canvas, which is filled with a mix of participant and team contributions. This illustrates making together: all contributions woven into one shared solution.">
       <svg ref={ref} viewBox={`0 0 ${SVG_W} ${SVG_H}`} width="100%"
         preserveAspectRatio="xMidYMid meet" style={{ margin: '0 auto', display: 'block' }}>
