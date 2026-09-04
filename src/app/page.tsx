@@ -144,7 +144,7 @@ export default function HomePage() {
             <Body className="mb-2">
               A framework is a named structure for running an innovation process from
               end to end: not a method (a single tool), not a metaphor. There are six
-              here because different problems call for fundamentally different approaches.
+              here because different problems call for different approaches.
             </Body>
             <Body className="mb-10">
               Pick the one that fits how your problem is shaped, then use the methods
@@ -394,8 +394,8 @@ export default function HomePage() {
                   }}
                 >
                   It is a demonstration of the same idea the site keeps returning
-                  to: that AI is genuinely useful for fluent production, and that
-                  the judgment about what is true and what matters stays human.
+                  to: that AI is useful for fluent production, and that the
+                  judgment about what is true and what matters stays human.
                 </p>
               </div>
 
