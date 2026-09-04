@@ -19,7 +19,7 @@ const DDEvolutionTimeline = dynamic(() => import('./DDEvolutionTimeline'), { ssr
 const DDCaseStudy = dynamic(() => import('./DDCaseStudy'), { ssr: false })
 
 export const metadata: Metadata = {
-  title: 'Double Diamond — Innovation 101',
+  title: 'Double Diamond · Innovation 101',
   description: 'The Double Diamond separates the work of finding the right problem from the work of finding the right solution.',
 }
 
