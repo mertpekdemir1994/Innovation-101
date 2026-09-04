@@ -10,7 +10,7 @@ import {
   FDEMini,
 } from './miniIllustrations'
 
-export const metadata: Metadata = { title: 'Frameworks — Innovation 101' }
+export const metadata: Metadata = { title: 'Frameworks · Innovation 101' }
 
 // ── Framework data: educational/chronological-adoption order ─────────────────
 const FRAMEWORKS = [
@@ -117,7 +117,7 @@ export default function FrameworksPage() {
                 color: '#FAFAFA',
               }}
             >
-              End-to-end innovation journeys
+              End-to-end innovation frameworks
             </h1>
             <p className="text-lg max-w-[560px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.50)' }}>
               Six frameworks, each a complete system for moving from problem to solution. Ordered from

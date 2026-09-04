@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { getFrameworks } from '@/lib/content'
 
-export const metadata = { title: 'Frameworks — Innovation 101' }
+export const metadata = { title: 'Frameworks · Innovation 101' }
 
 const INTERACTIVE_TYPE_LABELS: Record<string, string> = {
   'double-diamond': 'Double Diamond',
@@ -25,10 +25,10 @@ export default function ExplorePage() {
           Process Frameworks
         </p>
         <h1 className="text-4xl md:text-6xl font-semibold text-neutral-900 text-balance mb-4">
-          End-to-end innovation journeys
+          End-to-end innovation frameworks
         </h1>
         <p className="text-lg text-neutral-600 max-w-[560px] leading-relaxed">
-          Five frameworks, each a complete system for moving from problem to
+          Six frameworks, each a complete system for moving from problem to
           solution. Pick the one that fits your context.
         </p>
       </header>
