@@ -7,7 +7,7 @@ import {
 } from '../../components/method/Primitives'
 
 export const metadata = {
-  title: 'About — Innovation 101',
+  title: 'About · Innovation 101',
   description:
     'Forty methods, six frameworks, and the practitioner behind them. A working reference built from real consulting work.',
 }
@@ -185,8 +185,8 @@ export default function AboutPage() {
                   team, formerly known as Doblin. He leads research and
                   experience-strategy engagements for Fortune 50 to 500 companies
                   across financial services, healthcare, and enterprise technology,
-                  uncovering user needs, shaping product strategy, and delivering
-                  customer-centered products and services.
+                  identifying what users need and shaping the product and
+                  service strategy that follows from it.
                 </Body>
                 <Body>
                   His path ran from engineering to design. After a BS in
@@ -341,8 +341,8 @@ export default function AboutPage() {
               content from Mert&apos;s outlines and notes, structured the site
               architecture, and translated design decisions into working code.
               The split isn&apos;t a technicality: it&apos;s the actual point.
-              AI is genuinely good at fluent production. It&apos;s not the thing
-              that decides what&apos;s true.
+              AI is good at fluent production. It&apos;s not the thing that
+              decides what&apos;s true.
             </Body>
 
           </div>
