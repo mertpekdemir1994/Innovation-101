@@ -44,7 +44,7 @@
 -->
 
 ## Category: The Argument
-Description: Four books that argue for a starting posture, curiosity, purpose, and a willingness to be wrong, before any method is chosen.
+Description: Four books on why curiosity, purpose, and a willingness to be wrong come before any method.
 
 ### Book: Change by Design
 Hero: true
@@ -87,7 +87,7 @@ Detail: Grant argues that people default to three mindsets when defending a beli
 AmazonUrl:
 
 ## Category: Where Ideas Come From
-Description: Four books on how new ideas surface, get championed, and get tested, from the individual to the five-day process.
+Description: Four books on how new ideas surface, get championed, and get tested.
 
 ### Book: Originals
 Hero: true
@@ -130,7 +130,7 @@ Detail: Developed at Google Ventures, the sprint process assigns one day each to
 AmazonUrl:
 
 ## Category: Doing the Work
-Description: Four reference books cataloging the concrete research and design methods used to do the work the other four categories describe.
+Description: Four books on the concrete research and design methods used to carry out that work.
 
 ### Book: 101 Design Methods
 Hero: true
@@ -138,7 +138,7 @@ Author: Vijay Kumar
 Year: 2012
 CoverUrl: https://covers.openlibrary.org/b/isbn/9781118083468-L.jpg
 Tags: Design Research, Methods, Innovation
-Summary: 101 Design Methods is a reference book by Vijay Kumar that organizes design and innovation activities into a structured, repeatable process.
+Summary: 101 Design Methods is a book by Vijay Kumar that organizes design and innovation activities into a structured, repeatable process.
 Detail: Kumar presents a seven-mode framework, sense intent, know context, know people, frame insights, explore concepts, frame solutions, and realize offerings, and places 101 named methods within it, from ethnographic research techniques to concept-evaluation matrices. Each method is described with its purpose, the steps to run it, and the kind of output it produces. The book argues that innovation work benefits from a shared vocabulary and sequence rather than ad hoc brainstorming. It is written as a practitioner's reference rather than a narrative, intended to be consulted method by method.
 AmazonUrl:
 
@@ -148,7 +148,7 @@ Author: Bella Martin and Bruce Hanington
 Year: 2012
 CoverUrl: https://covers.openlibrary.org/b/isbn/9781592537563-L.jpg
 Tags: Design Research, Methods
-Summary: Universal Methods of Design is a reference book by Bella Martin and Bruce Hanington that catalogs research and design methods used across the design process.
+Summary: Universal Methods of Design is a book by Bella Martin and Bruce Hanington that catalogs research and design methods used across the design process.
 Detail: The book presents each method on a standardized two-page spread covering its purpose, procedure, and a real-world example, covering methods from user interviews and card sorting to prototyping and usability testing. It groups methods loosely by where they are typically used, from early research through concept development to evaluation. The authors intend it as a reference for practitioners and students who need a consistent explanation of an unfamiliar method rather than a book read start to finish. Later editions expanded the original set of methods.
 AmazonUrl:
 
@@ -168,12 +168,12 @@ Author: IDEO.org
 Year: 2015
 CoverUrl: https://covers.openlibrary.org/b/isbn/9780991406319-L.jpg
 Tags: Design Research, Methods, Design Thinking
-Summary: The Field Guide to Human-Centered Design is a practical handbook published by IDEO.org that introduces human-centered design to organizations working on social impact problems.
+Summary: The Field Guide to Human-Centered Design is a book by IDEO.org that introduces human-centered design to organizations working on social impact problems.
 Detail: The book organizes 57 methods across three phases, Inspiration, Ideation, and Implementation, walking a team from initial research with a community through generating concepts to piloting a solution. It emphasizes direct contact with the people a project is meant to serve, including guidance on conducting interviews and structuring co-creation sessions. Worksheets and case studies from IDEO.org projects in health, agriculture, and economic development illustrate each phase. The guide was funded through a public crowdfunding campaign and is distributed by IDEO.org for free.
 AmazonUrl:
 
 ## Category: Strategy & Business
-Description: Four books connecting design and innovation to strategic choice and business model logic.
+Description: Four books on connecting design and innovation to strategic choice and business model logic.
 
 ### Book: Playing to Win
 Hero: true
@@ -216,7 +216,7 @@ Detail: The canvas divides a business model into nine building blocks, including
 AmazonUrl:
 
 ## Category: Systems & Foundations
-Description: Four foundational texts behind systems thinking, usability, service design, and strategy that the rest of this site draws on directly.
+Description: Four books on the systems thinking, usability, service design, and strategy foundations the rest of this site draws on.
 
 ### Book: Thinking in Systems
 Hero: true
@@ -224,7 +224,7 @@ Author: Donella Meadows
 Year: 2008
 CoverUrl: https://covers.openlibrary.org/b/isbn/9781603580557-L.jpg
 Tags: Systems, Strategy
-Summary: Thinking in Systems is an introductory book on systems thinking by environmental scientist Donella Meadows, edited and published posthumously in 2008.
+Summary: Thinking in Systems is a book by environmental scientist Donella Meadows about systems thinking, edited and published posthumously in 2008.
 Detail: Meadows explains systems as arrangements of stocks, flows, and feedback loops, and argues that a system's structure, not the intentions of the people within it, determines its behavior over time. She introduces the concept of leverage points, places where a small, targeted change can shift a system's behavior, and ranks them from least to most effective, with changing a system's underlying goal or paradigm at the top of the list. The book uses examples including population growth, corporate behavior, and resource depletion to show how systems produce counterintuitive outcomes such as policy resistance, where an intervention is absorbed and the original problem returns. It closes with practical guidance on observing a system before intervening in it.
 AmazonUrl:
 
@@ -244,7 +244,7 @@ Author: Marc Stickdorn, Markus Hormess, Adam Lawrence, and Jakob Schneider
 Year: 2018
 CoverUrl: https://covers.openlibrary.org/b/isbn/9781491927182-L.jpg
 Tags: Service Design, Methods, Design Research
-Summary: This Is Service Design Doing is a practitioner's handbook by Marc Stickdorn, Markus Hormess, Adam Lawrence, and Jakob Schneider about applying service design methods to real projects.
+Summary: This Is Service Design Doing is a book by Marc Stickdorn, Markus Hormess, Adam Lawrence, and Jakob Schneider about applying service design methods to real projects.
 Detail: The authors present service design as a way of designing the front-stage and back-stage elements of a service together, including staff actions, physical environments, and digital touchpoints a customer does not see directly. The book organizes methods around a research, ideation, prototyping, and implementation cycle, with tools such as customer journey maps, service blueprints, and stakeholder maps explained step by step. It includes contributed case studies from practitioners in industries including banking, healthcare, and transportation showing the methods applied under real project constraints. The authors emphasize facilitation and team dynamics alongside the methods themselves, arguing that a workshop's design affects its output as much as the tools used within it.
 AmazonUrl:
 
