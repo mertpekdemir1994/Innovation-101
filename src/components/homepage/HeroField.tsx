@@ -37,7 +37,6 @@ import styles from './hero-field.module.css'
 
 const TILE_W = 900
 const TILE_H = 1270
-const SW = '2.5'
 
 const LINES = [
   'M 0.0,53.7 L 6.4,53.6 L 12.9,53.6 L 19.3,53.6 L 25.7,53.6 L 32.1,53.7 L 38.6,53.9 L 45.0,54.1 L 51.4,54.3 L 57.9,54.5 L 64.3,54.7 L 70.7,54.8 L 77.1,54.7 L 83.6,54.6 L 90.0,54.2 L 96.4,53.7 L 102.9,53.0 L 109.3,52.0 L 115.7,50.9 L 122.1,49.6 L 128.6,48.1 L 135.0,46.5 L 141.4,44.9 L 147.9,43.2 L 154.3,41.5 L 160.7,40.0 L 167.1,38.5 L 173.6,37.2 L 180.0,36.1 L 186.4,35.3 L 192.9,34.7 L 199.3,34.3 L 205.7,34.1 L 212.1,34.2 L 218.6,34.5 L 225.0,34.9 L 231.4,35.3 L 237.9,35.9 L 244.3,36.4 L 250.7,36.8 L 257.1,37.0 L 263.6,37.1 L 270.0,37.0 L 276.4,36.6 L 282.9,35.9 L 289.3,34.9 L 295.7,33.7 L 302.1,32.2 L 308.6,30.6 L 315.0,28.8 L 321.4,26.9 L 327.9,24.9 L 334.3,23.1 L 340.7,21.4 L 347.1,19.9 L 353.6,18.6 L 360.0,17.7 L 366.4,17.3 L 372.9,17.2 L 379.3,17.6 L 385.7,18.5 L 392.1,19.8 L 398.6,21.6 L 405.0,23.8 L 411.4,26.4 L 417.9,29.2 L 424.3,32.3 L 430.7,35.5 L 437.1,38.9 L 443.6,42.2 L 450.0,45.5 L 456.4,48.6 L 462.9,51.6 L 469.3,54.2 L 475.7,56.7 L 482.1,58.8 L 488.6,60.6 L 495.0,62.1 L 501.4,63.2 L 507.9,64.1 L 514.3,64.7 L 520.7,65.1 L 527.1,65.2 L 533.6,65.2 L 540.0,65.1 L 546.4,64.8 L 552.9,64.4 L 559.3,63.9 L 565.7,63.3 L 572.1,62.6 L 578.6,61.8 L 585.0,60.9 L 591.4,59.9 L 597.9,58.6 L 604.3,57.2 L 610.7,55.5 L 617.1,53.6 L 623.6,51.4 L 630.0,49.0 L 636.4,46.3 L 642.9,43.3 L 649.3,40.1 L 655.7,36.7 L 662.1,33.2 L 668.6,29.6 L 675.0,26.0 L 681.4,22.4 L 687.9,19.0 L 694.3,15.8 L 700.7,13.0 L 707.1,10.5 L 713.6,8.4 L 720.0,6.9 L 726.4,5.9 L 732.9,5.5 L 739.3,5.7 L 745.7,6.4 L 752.1,7.8 L 758.6,9.6 L 765.0,11.9 L 771.4,14.6 L 777.9,17.7 L 784.3,21.0 L 790.7,24.4 L 797.1,27.9 L 803.6,31.4 L 810.0,34.8 L 816.4,38.0 L 822.9,41.0 L 829.3,43.7 L 835.7,46.0 L 842.1,48.0 L 848.6,49.7 L 855.0,51.1 L 861.4,52.1 L 867.9,52.8 L 874.3,53.3 L 880.7,53.6 L 887.1,53.7 L 893.6,53.7 L 900.0,53.7',
@@ -89,6 +88,20 @@ const LINES = [
 // (Text legibility is additionally guaranteed independent of this — see the
 // dedicated scrim in page.tsx — this gradient is a visual choice on top of
 // that guarantee, not a substitute for it.)
+//
+// Per-line thickness timing: duration varies gently with i (7.7s-10.3s) so
+// the 40 lines aren't all breathing in perfect lockstep, and delay is
+// negative and increases with i so every line starts partway into its own
+// cycle already staggered from the last, instead of all 40 flashing into
+// sync on mount. Both tiles render the same LINES array at the same indices,
+// so tile A and tile B stay phase-identical — required for the horizontal
+// seamless loop, where the two tiles must stay pixel-for-pixel the same.
+function lineTiming(i: number) {
+  const duration = 9 + 1.3 * Math.sin(i * 0.55 + 1.2)
+  const delay = -(i * 0.18)
+  return { animationDuration: `${duration.toFixed(2)}s`, animationDelay: `${delay.toFixed(2)}s` }
+}
+
 function ContourTile({ gradientId }: { gradientId: string }) {
   return (
     <svg
@@ -106,9 +119,9 @@ function ContourTile({ gradientId }: { gradientId: string }) {
           <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.15" />
         </linearGradient>
       </defs>
-      <g stroke={`url(#${gradientId})`} strokeWidth={SW} strokeLinecap="round" strokeLinejoin="round">
+      <g stroke={`url(#${gradientId})`} strokeLinecap="round" strokeLinejoin="round">
         {LINES.map((d, i) => (
-          <path key={i} d={d} />
+          <path key={i} d={d} className={styles.contourLine} style={lineTiming(i)} />
         ))}
       </g>
     </svg>
