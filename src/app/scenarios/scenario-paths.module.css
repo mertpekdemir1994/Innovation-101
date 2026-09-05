@@ -1,0 +1,24 @@
+/*
+  Static default (prefers-reduced-motion: reduce, or feature unsupported):
+  every path and node sits at a fixed mid-brightness -- three visible
+  candidate routes, none singled out, no motion.
+*/
+.path {
+  opacity: 0.55;
+}
+.node {
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pathA { animation: sp-relay 6s ease-in-out infinite; animation-delay: 0s; }
+  .pathB { animation: sp-relay 6s ease-in-out infinite; animation-delay: 2s; }
+  .pathC { animation: sp-relay 6s ease-in-out infinite; animation-delay: 4s; }
+}
+
+@keyframes sp-relay {
+  0%   { opacity: 0.18; }
+  16%  { opacity: 0.9; }
+  33%  { opacity: 0.18; }
+  100% { opacity: 0.18; }
+}
