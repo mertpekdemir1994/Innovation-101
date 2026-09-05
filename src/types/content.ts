@@ -88,6 +88,8 @@ export type ReadingBook = {
   title: string
   hero: boolean
   author: string
+  year: string
+  coverUrl: string
   tags: string[]
   summary: string
   detail: string

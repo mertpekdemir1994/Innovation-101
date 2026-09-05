@@ -137,6 +137,8 @@ export function getReadingCategories(): ReadingCategory[] {
         title,
         hero: readField(bookRestJoined, 'Hero').toLowerCase() === 'true',
         author: readField(bookRestJoined, 'Author'),
+        year: readField(bookRestJoined, 'Year'),
+        coverUrl: readField(bookRestJoined, 'CoverUrl'),
         tags: readField(bookRestJoined, 'Tags').split(',').map((t) => t.trim()).filter(Boolean),
         summary: readField(bookRestJoined, 'Summary'),
         detail: readField(bookRestJoined, 'Detail'),
