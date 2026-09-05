@@ -67,7 +67,7 @@ const WALLS: Record<WallId, {
     belief: 'Low prices signal low quality; the category requires high prices to be taken seriously.',
     beliefBody: 'High price is treated as a proxy for quality and expertise. Low-cost alternatives are assumed to be inferior or untrustworthy. This assumption allows the whole industry to maintain high margins without question, because buyers use price as a quality signal, and always have.',
     flip: 'What if the product were cheap enough to own several, like a fashion accessory?',
-    opportunity: 'Accessible pricing expands the market enormously, makes repeat purchase viable, and turns a considered purchase into a casual one. The key move is detaching price from perceived quality through other credibility signals: design, brand, social proof.',
+    opportunity: 'Accessible pricing expands the market, makes repeat purchase viable, and turns a considered purchase into a casual one. The key move is detaching price from perceived quality through other credibility signals: design, brand, social proof.',
     hmw: 'How might we make the product cheap enough to own multiple versions without signaling low quality?',
   },
 }

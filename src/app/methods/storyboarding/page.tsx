@@ -527,7 +527,7 @@ export default function StoryboardingPage() {
                 <div>
                   <p className="font-mono uppercase tracking-widest mb-1"
                     style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
-                    Ideation &amp; Prototyping — Method 6 of 6
+                    Ideation &amp; Prototyping · Method 6 of 6
                   </p>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>
                     40 methods across 6 stage groups

@@ -568,7 +568,7 @@ export default function DesignPrinciplesPage() {
             <div>
               <p className="font-mono uppercase tracking-widest mb-1"
                 style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
-                Strategy &amp; Prioritization — Method 8 of 9
+                Strategy &amp; Prioritization · Method 8 of 9
               </p>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>
                 40 methods across 6 stage groups

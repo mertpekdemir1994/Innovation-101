@@ -504,7 +504,7 @@ export default function SystemsMappingPage() {
               <div>
                 <p className="font-mono uppercase tracking-widest mb-1"
                   style={{ fontSize: 'var(--text-2xs)', color: 'var(--color-neutral-500)' }}>
-                  Experience &amp; Systems Mapping — Method 6 of 6
+                  Experience &amp; Systems Mapping · Method 6 of 6
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)' }}>
                   40 methods across 6 stage groups
