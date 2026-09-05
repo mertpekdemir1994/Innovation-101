@@ -7,6 +7,8 @@ import type {
   MethodStage,
   ScenarioFrontmatter,
   ReadingFrontmatter,
+  ReadingBook,
+  ReadingCategory,
   ContentItem,
 } from '@/types/content'
 
@@ -86,4 +88,65 @@ export function getReadingItems(): ContentItem<ReadingFrontmatter>[] {
 
 export function getReadingItem(slug: string): ContentItem<ReadingFrontmatter> | null {
   return readMdxFile<ReadingFrontmatter>('reading', slug)
+}
+
+// ── Reading page (books list) ───────────────────────────────────────────────
+// Single source of truth: content/reading/reading.md. See the format
+// documented at the top of that file. Everything the /reading page renders
+// comes from parsing it here -- no book content is duplicated in components.
+
+function slugify(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+function readField(block: string, field: string): string {
+  const match = block.match(new RegExp(`^${field}:\\s*(.*)$`, 'm'))
+  return match ? match[1].trim() : ''
+}
+
+export function getReadingCategories(): ReadingCategory[] {
+  const filePath = path.join(contentRoot, 'reading', 'reading.md')
+  if (!fs.existsSync(filePath)) return []
+
+  const raw = fs.readFileSync(filePath, 'utf-8')
+  // Strip the documentation comment block at the top before parsing --
+  // it contains a "### Book: <title>" template example that would
+  // otherwise be picked up as a fake 21st book.
+  const content = raw.replace(/<!--[\s\S]*?-->/, '')
+
+  const categoryBlocks = content.split(/^## Category: /m).slice(1)
+
+  return categoryBlocks.map((catBlock) => {
+    const [nameLine, ...rest] = catBlock.split('\n')
+    const name = nameLine.trim()
+    const restJoined = rest.join('\n')
+    const description = readField(restJoined, 'Description')
+
+    const bookBlocks = restJoined.split(/^### Book: /m).slice(1)
+    const books: ReadingBook[] = bookBlocks.map((bookBlock) => {
+      const [titleLine, ...bookRest] = bookBlock.split('\n')
+      const title = titleLine.trim()
+      const bookRestJoined = bookRest.join('\n')
+      const amazonUrl = readField(bookRestJoined, 'AmazonUrl')
+
+      return {
+        slug: slugify(title),
+        title,
+        hero: readField(bookRestJoined, 'Hero').toLowerCase() === 'true',
+        author: readField(bookRestJoined, 'Author'),
+        tags: readField(bookRestJoined, 'Tags').split(',').map((t) => t.trim()).filter(Boolean),
+        summary: readField(bookRestJoined, 'Summary'),
+        detail: readField(bookRestJoined, 'Detail'),
+        amazonUrl: amazonUrl.length > 0 ? amazonUrl : null,
+      }
+    })
+
+    // Hero always first, regardless of source order in the file.
+    books.sort((a, b) => Number(b.hero) - Number(a.hero))
+
+    return { slug: slugify(name), name, description, books }
+  })
 }

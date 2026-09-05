@@ -78,3 +78,25 @@ export type ContentItem<T> = {
   content: string
   slug: string
 }
+
+// The /reading page's book list. Parsed from the single source-of-truth
+// file content/reading/reading.md (see the format documented at the top
+// of that file) by getReadingCategories() in src/lib/content.ts. Not a
+// per-item MDX type like the others above -- one file holds all 20 books.
+export type ReadingBook = {
+  slug: string
+  title: string
+  hero: boolean
+  author: string
+  tags: string[]
+  summary: string
+  detail: string
+  amazonUrl: string | null
+}
+
+export type ReadingCategory = {
+  slug: string
+  name: string
+  description: string
+  books: ReadingBook[]
+}
