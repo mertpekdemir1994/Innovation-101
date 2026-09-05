@@ -26,7 +26,7 @@ function Container({ children, prose = false, className = '' }: { children: Reac
   // (unlike the other exception pages), so Container itself must always
   // supply the margin — mx-auto stays unconditional for both branches.
   return (
-    <div className={`mx-auto px-6 md:px-8 py-16 ${prose ? 'max-w-prose' : 'max-w-content'}${className ? ` ${className}` : ''}`}>
+    <div className={prose ? `prose-col py-16${className ? ` ${className}` : ''}` : `mx-auto px-6 md:px-8 py-16 max-w-content${className ? ` ${className}` : ''}`}>
       {children}
     </div>
   )
@@ -132,7 +132,7 @@ export default function CapabilityMappingPage() {
 
       {/* S3 - What it is */}
       <LightSection>
-        <Container prose className="mx-auto">
+        <Container prose>
           <SectionLabel accent="rgba(138,75,60,0.65)">What it is</SectionLabel>
           <SectionHeadingLight>A diagnostic, not a training programme</SectionHeadingLight>
           <div className="space-y-4">
@@ -235,7 +235,7 @@ export default function CapabilityMappingPage() {
               </div>
             ))}
           </div>
-          <div className="max-w-prose mx-auto mt-6 rounded-lg p-5"
+          <div className="max-w-prose mt-6 rounded-lg p-5"
             style={{ background: 'rgba(138,75,60,0.04)', border: `1px solid rgba(138,75,60,0.16)` }}>
             <p className="font-semibold mb-2"
               style={{ fontSize: 'var(--text-sm)', color: BRICK }}>
@@ -254,7 +254,7 @@ export default function CapabilityMappingPage() {
 
       {/* S6 - How it works */}
       <LightSection>
-        <Container prose className="mx-auto">
+        <Container prose>
           <SectionLabel accent="rgba(138,75,60,0.65)">How it works</SectionLabel>
           <SectionHeadingLight>Six disciplines</SectionHeadingLight>
           <div className="space-y-8">
@@ -472,7 +472,7 @@ export default function CapabilityMappingPage() {
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Related methods</SectionLabel>
           <SectionHeadingLight>The methods that connect here</SectionHeadingLight>
-          <p className="mb-6 max-w-prose mx-auto px-6 md:px-8"
+          <p className="max-w-prose mb-6"
             style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)', lineHeight: 'var(--leading-relaxed)' }}>
             Capability mapping sits underneath the other Delivery &amp; Validation methods: it asks the
             question they all assume is already answered. Its closest partner is the Delivery Roadmap,
@@ -506,7 +506,7 @@ export default function CapabilityMappingPage() {
 
       {/* S13 - Sources */}
       <LightSection>
-        <Container prose className="mx-auto">
+        <Container prose>
           <SectionLabel accent="rgba(138,75,60,0.65)">Sources and further reading</SectionLabel>
           <SectionHeadingLight>What this draws on</SectionHeadingLight>
           <div className="space-y-3">

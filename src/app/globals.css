@@ -57,6 +57,27 @@
     font-size: var(--text-xs);
   }
 
+  /* ── Prose column: reading-width text, aligned to Container's left edge ──
+     Replaces `max-w-prose mx-auto [px-6 md:px-8]`. Centering a 720px box
+     independently of the 1200px content box (via mx-auto on both) gives them
+     different left insets on any viewport wider than max-w-content — this
+     anchors the left margin to the same inset Container uses, so a prose
+     paragraph lines up with the grid/list section above or below it instead
+     of floating in its own centered column. Below ~1200px the calc term goes
+     negative and `max()` falls back to Container's own px-6/md:px-8 gutter,
+     so mobile rendering is unchanged. */
+  .prose-col {
+    max-width: var(--width-prose);
+    margin-left: max(1.5rem, calc((100% - var(--width-content)) / 2));
+    margin-right: max(1.5rem, calc((100% - var(--width-content)) / 2));
+  }
+  @media (min-width: 768px) {
+    .prose-col {
+      margin-left: max(2rem, calc((100% - var(--width-content)) / 2));
+      margin-right: max(2rem, calc((100% - var(--width-content)) / 2));
+    }
+  }
+
   /* ── Dark section utilities ────────────────────────────────────────────
      Apply to any <section> with a dark/near-black background.
      Children inherit white text; headings override the base layer default. */
