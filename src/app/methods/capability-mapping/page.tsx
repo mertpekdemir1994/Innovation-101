@@ -21,12 +21,12 @@ function DarkSection({ children, className = '' }: { children: React.ReactNode; 
 function LightSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return <section className={`w-full bg-white ${className}`}>{children}</section>
 }
-function Container({ children, prose = false, className = '' }: { children: React.ReactNode; prose?: boolean; className?: string }) {
+function Container({ children, className = '' }: { children: React.ReactNode; prose?: boolean; className?: string }) {
   // No outer band-providing wrapper on this page's DarkSection/LightSection
   // (unlike the other exception pages), so Container itself must always
-  // supply the margin — mx-auto stays unconditional for both branches.
+  // supply the margin.
   return (
-    <div className={prose ? `prose-col py-16${className ? ` ${className}` : ''}` : `mx-auto px-6 md:px-8 py-16 max-w-content${className ? ` ${className}` : ''}`}>
+    <div className={`mx-auto px-6 md:px-8 py-16 max-w-content${className ? ` ${className}` : ''}`}>
       {children}
     </div>
   )
@@ -235,7 +235,7 @@ export default function CapabilityMappingPage() {
               </div>
             ))}
           </div>
-          <div className="max-w-prose mt-6 rounded-lg p-5"
+          <div className="mt-6 rounded-lg p-5"
             style={{ background: 'rgba(138,75,60,0.04)', border: `1px solid rgba(138,75,60,0.16)` }}>
             <p className="font-semibold mb-2"
               style={{ fontSize: 'var(--text-sm)', color: BRICK }}>
@@ -472,7 +472,7 @@ export default function CapabilityMappingPage() {
         <Container>
           <SectionLabel accent="rgba(138,75,60,0.65)">Related methods</SectionLabel>
           <SectionHeadingLight>The methods that connect here</SectionHeadingLight>
-          <p className="max-w-prose mb-6"
+          <p className="mb-6"
             style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-500)', lineHeight: 'var(--leading-relaxed)' }}>
             Capability mapping sits underneath the other Delivery &amp; Validation methods: it asks the
             question they all assume is already answered. Its closest partner is the Delivery Roadmap,

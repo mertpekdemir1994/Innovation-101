@@ -37,9 +37,9 @@ function LightSection({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Container({ children, prose = false }: { children: React.ReactNode; prose?: boolean }) {
+function Container({ children }: { children: React.ReactNode; prose?: boolean }) {
   return (
-    <div className={prose ? 'max-w-prose' : 'w-full'}>
+    <div className="w-full">
       {children}
     </div>
   )
@@ -140,7 +140,7 @@ export default function StoryboardingPage() {
       <DarkSection>
         <SectionLabel accent={CLAY}>The visual</SectionLabel>
         <SectionHeadingDark>Five frames. The sequence halts at the one nobody could draw. That halt is the method.</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.55)', lineHeight: 'var(--leading-relaxed)' }}>
           Three frames build the story. The fourth, the frame nobody could draw, is empty. The fifth frame
           shows the outcome, dimmed and unreachable until the gap is crossed. The gap is not a failure of the
@@ -182,7 +182,7 @@ export default function StoryboardingPage() {
       <DarkSection>
         <SectionLabel accent={CLAY}>Try it</SectionLabel>
         <SectionHeadingDark>Click each frame. Find what it assumes. Try to fill the gap.</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
           Every frame contains an assumption. The first two are probably safe. The third is less safe than
           it looks. When you try to fill the gap, you will find that every attempt names a new assumption
@@ -238,7 +238,7 @@ export default function StoryboardingPage() {
             </div>
           </div>
 
-          <div className="max-w-prose mt-8 p-5 rounded-lg"
+          <div className="mt-8 p-5 rounded-lg"
             style={{ background: 'rgba(181,97,62,0.05)', border: '1px solid rgba(181,97,62,0.16)' }}>
             <p className="font-mono uppercase tracking-widest mb-2"
               style={{ fontSize: 'var(--text-2xs)', color: CLAY }}>The honest limit</p>
@@ -403,7 +403,7 @@ export default function StoryboardingPage() {
       <DarkSection>
         <SectionLabel accent={CLAY}>AI and this method</SectionLabel>
         <SectionHeadingDark>AI eliminates the drawing barrier. It does not eliminate the gap; it hides it.</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.48)', lineHeight: 'var(--leading-relaxed)' }}>
           Toggle between modes. AI as author generates a complete storyboard quickly, and illustrates the gap
           with a label rather than a frame. AI as adversary reads your storyboard and finds the label faster
@@ -416,7 +416,7 @@ export default function StoryboardingPage() {
       <LightSection>
         <SectionLabel accent={CLAY}>In practice</SectionLabel>
         <SectionHeadingLight>A meal-planning app team draws five frames. The fourth one stops the room.</SectionHeadingLight>
-        <p className="max-w-prose mb-10"
+        <p className="mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
           Tab A shows the storyboard working: the team finds the gap, names it precisely, and changes the
           concept before a single line of code is written. Tab B shows what happens when AI generates the

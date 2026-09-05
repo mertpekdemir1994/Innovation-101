@@ -5,7 +5,7 @@ type CalendarCTAProps = {
 export default function CalendarCTA({ title }: CalendarCTAProps) {
   return (
     <div className="border-t border-neutral-100 py-16 px-6 md:px-8 text-center">
-      <div className="max-w-prose mx-auto">
+      <div className="max-w-content mx-auto">
         <p className="text-xs font-semibold uppercase tracking-widest text-neutral-600 mb-4">
           Coffee &amp; Innovation · 30 min · Free
         </p>

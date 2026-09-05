@@ -18,7 +18,7 @@ const TEAL = '#2A6F7A'
 function DarkSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
     <section className={`bg-neutral-950 text-white ${className}`} style={{ '--color-focus-ring': 'var(--color-dark-text)' } as React.CSSProperties}>
-      <div className="max-w-content mx-auto px-6 py-24">{children}</div>
+      <div className="max-w-content mx-auto px-6 md:px-8 py-24">{children}</div>
     </section>
   )
 }
@@ -26,13 +26,13 @@ function DarkSection({ children, className = '' }: { children: React.ReactNode; 
 function LightSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
     <section className={`bg-white ${className}`}>
-      <div className="max-w-content mx-auto px-6 py-24">{children}</div>
+      <div className="max-w-content mx-auto px-6 md:px-8 py-24">{children}</div>
     </section>
   )
 }
 
-function Container({ prose = false, children, className = '' }: { prose?: boolean; children: React.ReactNode; className?: string }) {
-  return <div className={`${prose ? 'max-w-prose' : 'w-full'}${className ? ` ${className}` : ''}`}>{children}</div>
+function Container({ children, className = '' }: { prose?: boolean; children: React.ReactNode; className?: string }) {
+  return <div className={`w-full${className ? ` ${className}` : ''}`}>{children}</div>
 }
 
 export default function SystemsMappingPage() {
@@ -74,7 +74,7 @@ export default function SystemsMappingPage() {
       <DarkSection>
         <SectionLabel accent={TEAL} dark>The visual</SectionLabel>
         <SectionHeadingDark>Two loops. One explains why it always comes back.</SectionHeadingDark>
-        <div className="max-w-prose mb-10">
+        <div className="mb-10">
           <Body className="mb-6 last:mb-0">
             A systems map contains VARIABLES that rise and fall and CAUSAL ARROWS showing what drives
             what. The arrows form CLOSED LOOPS, and this is what makes a systems map different from
@@ -156,7 +156,7 @@ export default function SystemsMappingPage() {
       <DarkSection>
         <SectionLabel accent={TEAL} dark>Try it</SectionLabel>
         <SectionHeadingDark>Fix the symptom. Watch the system put it back. Then find the leverage.</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.62)', lineHeight: 'var(--leading-relaxed)' }}>
           The same two interventions, in the same system. One is what most organizations do, forever.
           One is what actually changes the outcome. The contrast is the whole point.
@@ -207,7 +207,7 @@ export default function SystemsMappingPage() {
             ))}
           </div>
 
-          <div className="max-w-prose mt-8 rounded-lg p-5"
+          <div className="mt-8 rounded-lg p-5"
             style={{ background: 'rgba(42,111,122,0.05)', border: '1px solid rgba(42,111,122,0.18)' }}>
             <p className="font-mono uppercase tracking-widest mb-2"
               style={{ fontSize: 'var(--text-2xs)', color: TEAL }}>The honest limit</p>
@@ -344,7 +344,7 @@ export default function SystemsMappingPage() {
       <DarkSection>
         <SectionLabel accent={TEAL} dark>AI &amp; this method</SectionLabel>
         <SectionHeadingDark>AI draws the elegant version of the loops that have already failed</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.62)', lineHeight: 'var(--leading-relaxed)' }}>
           Toggle between the complete model and the AI-generated map. The contrast shows where AI
           genuinely helps, and why a confident diagram of the wrong loops is the most dangerous
@@ -357,7 +357,7 @@ export default function SystemsMappingPage() {
       <LightSection>
         <SectionLabel accent={TEAL}>Example</SectionLabel>
         <SectionHeadingLight>A quality problem that three leaders could not fix</SectionHeadingLight>
-        <p className="max-w-prose mb-10"
+        <p className="mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
           The traditional tab shows the two loops that explain two years of failure: the obvious
           balancing loop everyone knew and the reinforcing loop nobody had named. The AI tab shows

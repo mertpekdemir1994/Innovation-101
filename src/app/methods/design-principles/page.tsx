@@ -20,7 +20,7 @@ const PLUM = '#6B4A77'
 function DarkSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
     <section className={`bg-neutral-950 text-white ${className}`} style={{ '--color-focus-ring': 'var(--color-dark-text)' } as React.CSSProperties}>
-      <div className="max-w-content mx-auto px-6 py-24">
+      <div className="max-w-content mx-auto px-6 md:px-8 py-24">
         {children}
       </div>
     </section>
@@ -30,16 +30,16 @@ function DarkSection({ children, className = '' }: { children: React.ReactNode; 
 function LightSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
     <section className={`bg-white ${className}`}>
-      <div className="max-w-content mx-auto px-6 py-24">
+      <div className="max-w-content mx-auto px-6 md:px-8 py-24">
         {children}
       </div>
     </section>
   )
 }
 
-function Container({ prose = false, children, className = '' }: { prose?: boolean; children: React.ReactNode; className?: string }) {
+function Container({ children, className = '' }: { prose?: boolean; children: React.ReactNode; className?: string }) {
   return (
-    <div className={`${prose ? 'max-w-prose' : 'w-full'}${className ? ` ${className}` : ''}`}>
+    <div className={`w-full${className ? ` ${className}` : ''}`}>
       {children}
     </div>
   )
@@ -86,7 +86,7 @@ export default function DesignPrinciplesPage() {
       <DarkSection>
         <SectionLabel accent={PLUM} dark>The visual</SectionLabel>
         <SectionHeadingDark>A principle is a fork with one branch closed</SectionHeadingDark>
-        <div className="max-w-prose mb-10">
+        <div className="mb-10">
           <Body className="mb-6 last:mb-0">
             A design principle is not a value. It is a pre-committed decision about a specific recurring tradeoff,
             made before the hard choice arrives, by the people who will be held to it, with the sacrifice
@@ -366,7 +366,7 @@ export default function DesignPrinciplesPage() {
       <DarkSection>
         <SectionLabel accent={PLUM} dark>Try it</SectionLabel>
         <SectionHeadingDark>Bring a candidate principle to the fork</SectionHeadingDark>
-        <p className="max-w-prose mb-10"
+        <p className="mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.62)', lineHeight: 'var(--leading-relaxed)' }}>
           Select one of the five candidates below. Real principles close a branch and pass the arguability test.
           Platitudes close nothing. The fork stays undecided.
@@ -416,7 +416,7 @@ export default function DesignPrinciplesPage() {
             ))}
           </div>
 
-          <div className="max-w-prose mt-8 rounded-lg p-5"
+          <div className="mt-8 rounded-lg p-5"
             style={{ background: 'rgba(107,74,119,0.05)', border: '1px solid rgba(107,74,119,0.18)' }}>
             <p className="font-mono uppercase tracking-widest mb-2"
               style={{ fontSize: 'var(--text-2xs)', color: PLUM }}>On quantity</p>
@@ -434,7 +434,7 @@ export default function DesignPrinciplesPage() {
       <LightSection>
         <SectionLabel accent={PLUM}>AI &amp; this method</SectionLabel>
         <SectionHeadingLight>When AI helps and when it misleads</SectionHeadingLight>
-        <p className="max-w-prose mb-10"
+        <p className="mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
           AI produces polished, balanced principles by design. At the fork, that means both branches
           remain open, the fork is always undecided. Here is where the boundary runs.
@@ -446,7 +446,7 @@ export default function DesignPrinciplesPage() {
       <LightSection>
         <SectionLabel accent={PLUM}>Example</SectionLabel>
         <SectionHeadingLight>A product team and a power-user problem</SectionHeadingLight>
-        <p className="max-w-prose mb-10"
+        <p className="mb-10"
           style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
           A team faces a recurring argument about configurability. The traditional tab shows the derivation
           method working. The AI tab shows what happens when the process is shortcut, and where AI

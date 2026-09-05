@@ -44,9 +44,9 @@ export function WarmSection({ children, className = '', ariaLabelledBy }: Sectio
   )
 }
 
-export function Container({ children, prose = false, className = '' }: { children: React.ReactNode; prose?: boolean; className?: string }) {
+export function Container({ children, className = '' }: { children: React.ReactNode; prose?: boolean; className?: string }) {
   return (
-    <div className={`${prose ? 'prose-col' : 'max-w-content mx-auto px-6 md:px-8'}${className ? ` ${className}` : ''}`}>
+    <div className={`max-w-content mx-auto px-6 md:px-8${className ? ` ${className}` : ''}`}>
       {children}
     </div>
   )
