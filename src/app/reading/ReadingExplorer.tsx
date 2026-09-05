@@ -85,7 +85,11 @@ function CategoryTabs({
   }
 
   return (
-    <div role="tablist" aria-label="Reading categories" className="flex flex-wrap gap-2">
+    // flex-nowrap + horizontal scroll rather than flex-wrap: five pills of
+    // uneven length ("Learning the Groundwork" vs "Doing the Work") could
+    // wrap one tab onto its own second row at in-between viewport widths.
+    // Scrolling keeps every tab's label on one line at any width instead.
+    <div role="tablist" aria-label="Reading categories" className="flex flex-nowrap gap-2 overflow-x-auto pb-1 -mb-1">
       {categories.map((category, i) => {
         const isActive = i === activeIndex
         return (
@@ -99,7 +103,7 @@ function CategoryTabs({
             tabIndex={isActive ? 0 : -1}
             onClick={() => onSelect(i)}
             onKeyDown={(e) => onKeyDown(e, i)}
-            className="rounded-full px-4 py-2 font-semibold whitespace-nowrap"
+            className="rounded-full px-4 py-2 font-semibold whitespace-nowrap flex-shrink-0"
             style={{
               fontSize: 'var(--text-sm)',
               background: isActive ? `${READING}0.85)` : 'rgba(255,255,255,0.06)',
@@ -116,6 +120,15 @@ function CategoryTabs({
 }
 
 // ── Book listbox (left) ──────────────────────────────────────────────────
+
+function CheckIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style={{ flexShrink: 0, marginTop: 2 }}>
+      <circle cx="8" cy="8" r="8" fill={`${READING}1)`} />
+      <path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
 
 function BookOption({ book, isSelected, onSelect, onKeyDown, optionRef }: {
   book: ReadingBook
@@ -135,13 +148,12 @@ function BookOption({ book, isSelected, onSelect, onKeyDown, optionRef }: {
       onKeyDown={onKeyDown}
       className="flex items-start gap-3 px-4 py-3 cursor-pointer"
       style={{
-        // The accent bar sits flush against the panel's own left edge (no
-        // padding around it) so it reads as a clear selection indicator
-        // rather than a floating decoration -- the earlier version had
-        // this bar inset inside the listbox's own padding, which read as
-        // disconnected from the row it was meant to mark.
-        background: isSelected ? `${READING}0.06)` : 'transparent',
-        borderLeft: `3px solid ${isSelected ? `${READING}0.85)` : 'transparent'}`,
+        // Solid neutral fill, not a tint of the site's red identity color:
+        // a reddish background read as a warning/error state rather than
+        // a plain selection, which was likely why it looked off. A small
+        // check circle (the one place red still appears here) marks the
+        // selection instead of a colored row background.
+        background: isSelected ? 'var(--color-neutral-50)' : 'transparent',
         borderBottom: '1px solid var(--color-neutral-100)',
       }}
     >
@@ -162,6 +174,7 @@ function BookOption({ book, isSelected, onSelect, onKeyDown, optionRef }: {
           {book.author} &middot; {book.year}
         </p>
       </div>
+      {isSelected && <CheckIcon />}
     </div>
   )
 }
@@ -205,18 +218,28 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
         One shared white surface instead of two separate bordered/shadowed
         boxes side by side: the list and the detail pane are sections of
         the same panel, divided by a single line rather than a visible
-        gap between two cards of different heights (the previous version
-        left a white gap under the shorter list column once the taller
-        detail column set the row height).
+        gap between two cards of different heights.
+
+        A fixed height (not just matched to each other) so all 5
+        categories render at the identical height regardless of how long
+        that category's currently-selected summary/detail text is --
+        switching tabs no longer resizes the panel. Content that doesn't
+        fit scrolls in its own area (the paragraphs on the right, and the
+        book list on the left as a safety net) rather than growing the
+        container.
       */}
       <div
-        className="grid md:grid-cols-[320px_1fr] bg-white rounded-xl overflow-hidden mt-6"
+        // The fixed height only applies at the md: breakpoint where list
+        // and detail sit side by side and need to match; on mobile they
+        // stack vertically instead, where a fixed height would cramp both
+        // sections rather than solve anything, so it's left auto there.
+        className="grid md:grid-cols-[320px_1fr] bg-white rounded-xl overflow-hidden mt-6 md:h-[460px]"
         style={{ border: '1px solid var(--color-neutral-200)', boxShadow: 'var(--shadow-subtle)' }}
       >
         <div
           role="listbox"
           aria-label={`Books in ${category.name}`}
-          className="flex flex-col border-b md:border-b-0 md:border-r"
+          className="flex flex-col border-b md:border-b-0 md:border-r overflow-y-auto"
           style={{ borderColor: 'var(--color-neutral-200)' }}
         >
           {books.map((book, i) => (
@@ -231,8 +254,8 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
           ))}
         </div>
 
-        <div className="p-6">
-          <div className="flex items-start justify-between gap-4">
+        <div className="p-6 flex flex-col min-h-0">
+          <div className="flex items-start justify-between gap-4 flex-shrink-0">
             <div className="flex gap-5 min-w-0">
               <BookCover book={selected} width={80} height={120} />
               <div className="min-w-0">
@@ -282,7 +305,7 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
             </button>
           </div>
 
-          <div className="mt-5" style={{ borderTop: '1px solid var(--color-neutral-100)', paddingTop: '1.25rem' }}>
+          <div className="mt-5 flex-1 overflow-y-auto" style={{ borderTop: '1px solid var(--color-neutral-100)', paddingTop: '1.25rem' }}>
             <p className="mb-3" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
               {selected.summary}
             </p>
