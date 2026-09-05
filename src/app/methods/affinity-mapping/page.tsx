@@ -248,7 +248,7 @@ export default function AffinityMappingPage() {
             </div>
 
             <div
-              className="max-w-prose mx-auto rounded-lg p-5 mt-10"
+              className="max-w-prose rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -478,7 +478,7 @@ export default function AffinityMappingPage() {
             <SectionLabel accent={NAVY}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same research corpus, organized two ways.</SectionHeadingLight>
             <p
-              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
+              className="max-w-prose mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               An IDEO team is redesigning children&rsquo;s toothbrushes for Oral-B. Field research is complete.

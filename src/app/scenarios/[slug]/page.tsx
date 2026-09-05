@@ -76,7 +76,7 @@ export default function ScenarioPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      <div className="max-w-prose mx-auto px-6 md:px-8 py-16">
+      <div className="prose-col py-16">
         <MDXRenderer source={content} />
       </div>
 

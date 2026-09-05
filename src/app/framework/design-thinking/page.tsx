@@ -131,7 +131,7 @@ export default function DesignThinkingPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="max-w-prose mx-auto px-6 md:px-8 space-y-space-4 mb-space-8">
+            <div className="max-w-prose space-y-space-4 mb-space-8">
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
                 Most problem-solving starts with an idea. Someone has a solution, becomes attached
                 to it, and spends months building it before discovering whether anyone needed it.
@@ -152,7 +152,7 @@ export default function DesignThinkingPage() {
 
           <ScrollReveal delay={0.15}>
             <div
-              className="max-w-prose mx-auto rounded-xl p-space-7 space-y-space-5"
+              className="max-w-prose rounded-xl p-space-7 space-y-space-5"
               style={{ background: 'var(--color-warm-50)', border: '1px solid var(--color-neutral-200)' }}
             >
               <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${TEAL}0.65)` }}>
@@ -207,7 +207,7 @@ export default function DesignThinkingPage() {
           <ScrollReveal>
             <Eyebrow className="mb-space-6">When to use it</Eyebrow>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4 max-w-prose mx-auto px-6 md:px-8">
+          <div className="max-w-prose grid grid-cols-1 md:grid-cols-2 gap-space-4">
             {[
               {
                 heading: 'Use it when',
@@ -272,7 +272,7 @@ export default function DesignThinkingPage() {
             >
               Click any stage to see how it works
             </h2>
-            <p className="text-base mb-space-8 max-w-prose mx-auto px-6 md:px-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="max-w-prose text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               Select a stage to explore its mindset, activities, and a real-world example. The IDEO
               three-lens model (Desirability, Feasibility, Viability) is surfaced below each stage
               panel; click a lens to see what it means.
@@ -295,7 +295,7 @@ export default function DesignThinkingPage() {
             >
               Five versions, one conviction
             </h2>
-            <p className="text-base text-neutral-600 mb-space-10 max-w-prose mx-auto px-6 md:px-8">
+            <p className="max-w-prose text-base text-neutral-600 mb-space-10">
               Design Thinking is not a single fixed method. It is an idea shaped over decades, from
               academic roots into commercial practice and enterprise scale. Select a version to see
               what changed.
@@ -330,7 +330,7 @@ export default function DesignThinkingPage() {
             >
               Where this connects
             </h2>
-            <p className="text-base mb-space-8 max-w-prose mx-auto px-6 md:px-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="max-w-prose text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               Design Thinking answers &ldquo;are we solving the right human problem, and have we
               explored solutions widely enough?&rdquo; These are the frameworks and methods that
               answer the adjacent questions.
@@ -369,7 +369,7 @@ export default function DesignThinkingPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-10">
-          <div className="max-w-prose mx-auto px-6 md:px-8">
+          <div className="max-w-prose">
             <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-6">
               Sources &amp; Further Reading
             </p>

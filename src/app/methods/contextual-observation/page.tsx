@@ -249,7 +249,7 @@ export default function ContextualObservationPage() {
             </div>
 
             <div
-              className="max-w-prose mx-auto rounded-lg p-5 mt-10"
+              className="max-w-prose rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -477,7 +477,7 @@ export default function ContextualObservationPage() {
             <SectionLabel accent={SAGE}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same scenario. Two approaches, one finds the shoebox, one optimises the software.</SectionHeadingLight>
             <p
-              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
+              className="max-w-prose mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               Intuit needed to understand how small business owners actually managed their money before deciding what to build next.

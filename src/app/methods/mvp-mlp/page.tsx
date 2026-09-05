@@ -390,7 +390,7 @@ export default function MVPMLPPage() {
             </div>
 
             <div
-              className="max-w-prose mx-auto rounded-lg p-5 mt-10"
+              className="max-w-prose rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -623,7 +623,7 @@ export default function MVPMLPPage() {
           <div className="py-20">
             <SectionLabel accent={BRICK}>In practice</SectionLabel>
             <SectionHeadingLight>A team launches a personal finance tool in a crowded market. Why they chose the MLP, and what changes with AI.</SectionHeadingLight>
-            <p className="max-w-prose mx-auto px-6 md:px-8 mb-8"
+            <p className="max-w-prose mb-8"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
               The judgment that drives the choice between MVP and MLP is about the market and its
               expectations, not about the size of the budget. See it in practice, then compare what

@@ -132,7 +132,7 @@ export default function AgileInnovationPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="max-w-prose mx-auto px-6 md:px-8 space-y-space-4 mb-space-8">
+            <div className="max-w-prose space-y-space-4 mb-space-8">
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
                 The Agile Manifesto (2001) prioritized working software over comprehensive documentation
                 and responding to change over following a plan. These principles transformed software
@@ -152,7 +152,7 @@ export default function AgileInnovationPage() {
 
           <ScrollReveal delay={0.15}>
             <div
-              className="max-w-prose mx-auto rounded-xl p-space-7 space-y-space-5"
+              className="max-w-prose rounded-xl p-space-7 space-y-space-5"
               style={{ background: 'var(--color-warm-50)', border: '1px solid var(--color-neutral-200)' }}
             >
               <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${PLUM}0.65)` }}>
@@ -198,7 +198,7 @@ export default function AgileInnovationPage() {
           <ScrollReveal>
             <Eyebrow className="mb-space-6">When to use it</Eyebrow>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4 max-w-prose mx-auto px-6 md:px-8">
+          <div className="max-w-prose grid grid-cols-1 md:grid-cols-2 gap-space-4">
             {[
               {
                 heading: 'Use it when',
@@ -263,7 +263,7 @@ export default function AgileInnovationPage() {
             >
               Click any stage to see how it works
             </h2>
-            <p className="text-base mb-space-8 max-w-prose mx-auto px-6 md:px-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="max-w-prose text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               Select a stage to explore its activities and a real-world company example. Use the
               readiness check first, or toggle Standard Agile mode to see what the rhythm looks like
               without the Discovery Sprint, and what that costs.
@@ -286,7 +286,7 @@ export default function AgileInnovationPage() {
             >
               Six versions, one engine
             </h2>
-            <p className="text-base text-neutral-600 mb-space-10 max-w-prose mx-auto px-6 md:px-8">
+            <p className="max-w-prose text-base text-neutral-600 mb-space-10">
               Agile began as a philosophy and evolved into a family of frameworks, each making different
               tradeoffs between prescription and flexibility, team autonomy and organizational alignment,
               speed and governance. Select a version to see what changed and what stayed the same.
@@ -321,7 +321,7 @@ export default function AgileInnovationPage() {
             >
               Where this connects
             </h2>
-            <p className="text-base mb-space-8 max-w-prose mx-auto px-6 md:px-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="max-w-prose text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               Agile Innovation is the operational cadence of innovation: it answers &ldquo;how do we keep
               discovering and delivering, continuously, without losing the thread?&rdquo; These are the
               frameworks and methods that answer the adjacent questions.
@@ -360,7 +360,7 @@ export default function AgileInnovationPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-10">
-          <div className="max-w-prose mx-auto px-6 md:px-8">
+          <div className="max-w-prose">
             <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-6">
               Sources &amp; Further Reading
             </p>

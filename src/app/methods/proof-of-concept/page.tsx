@@ -250,7 +250,7 @@ export default function ProofOfConceptPage() {
             </div>
 
             <div
-              className="max-w-prose mx-auto rounded-lg p-5 mt-10"
+              className="max-w-prose rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -433,7 +433,7 @@ export default function ProofOfConceptPage() {
               ))}
             </div>
 
-            <div className="max-w-prose mx-auto mt-8 rounded-lg p-5"
+            <div className="max-w-prose mt-8 rounded-lg p-5"
               style={{ background: `rgba(138,75,60,0.04)`, border: `1px solid rgba(138,75,60,0.15)` }}>
               <p className="font-mono uppercase tracking-widest mb-3"
                 style={{ fontSize: 'var(--text-2xs)', color: BRICK }}>
@@ -480,7 +480,7 @@ export default function ProofOfConceptPage() {
           <div className="py-20">
             <SectionLabel accent={BRICK}>In practice</SectionLabel>
             <SectionHeadingLight>A logistics team asks: can the data predict delays? See what a well-run PoC produces, and what AI changes about the time it takes.</SectionHeadingLight>
-            <p className="max-w-prose mx-auto px-6 md:px-8 mb-8"
+            <p className="max-w-prose mb-8"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
               A well-formed PoC question, a threshold set in advance, real messy data, and a
               qualified verdict that reshaped what to build. See the traditional approach first,

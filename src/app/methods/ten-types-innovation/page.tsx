@@ -227,7 +227,7 @@ export default function TenTypesInnovationPage() {
             </div>
 
             <div
-              className="max-w-prose mx-auto rounded-lg p-5 mt-10"
+              className="max-w-prose rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -475,7 +475,7 @@ export default function TenTypesInnovationPage() {
             <SectionLabel accent={PLUM}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same case. The same question. Two approaches, one finds the system, one finds a list.</SectionHeadingLight>
             <p
-              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
+              className="max-w-prose mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               Nespresso&rsquo;s advantage held for years even though its coffee was good but not categorically better than rivals&rsquo;.

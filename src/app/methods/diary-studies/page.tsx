@@ -249,7 +249,7 @@ export default function DSPage() {
             </div>
 
             <div
-              className="max-w-prose mx-auto rounded-lg p-5 mt-10"
+              className="max-w-prose rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -498,7 +498,7 @@ export default function DSPage() {
             <SectionLabel accent={SAGE}>In-depth example</SectionLabel>
             <SectionHeadingLight>Spotify: the pattern that was invisible in every interview, visible across two weeks of diary entries.</SectionHeadingLight>
             <p
-              className="max-w-prose mx-auto px-6 md:px-8 mb-10"
+              className="max-w-prose mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               Retrospective interviews about music listening produced generic, occasion-based answers.

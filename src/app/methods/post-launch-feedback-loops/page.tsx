@@ -242,7 +242,7 @@ export default function PostLaunchFeedbackLoopsPage() {
               </div>
             </div>
 
-            <div className="max-w-prose mx-auto mt-8 rounded-lg px-5 py-4"
+            <div className="max-w-prose mt-8 rounded-lg px-5 py-4"
               style={{ background: 'var(--color-neutral-100)', borderLeft: `3px solid ${BRICK}` }}>
               <p className="font-semibold mb-1"
                 style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-800)' }}>
