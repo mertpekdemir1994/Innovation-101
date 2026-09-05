@@ -116,7 +116,7 @@ export default function FDEDiagnostic() {
   return (
     <div>
       {/* Intro */}
-      <p className="max-w-prose text-base mb-space-8 leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
+      <p className="text-base mb-space-8 leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
         Answer nine questions across three groups to find out whether any version of FDE applies to your
         context. Be honest. The diagnostic is a decision tool, not a compatibility test.
       </p>

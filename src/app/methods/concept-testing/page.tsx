@@ -239,7 +239,7 @@ export default function ConceptTestingPage() {
             </div>
 
             <div
-              className="max-w-prose rounded-lg p-5 mt-10"
+              className="rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -473,7 +473,7 @@ export default function ConceptTestingPage() {
             <SectionLabel accent={PLUM}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same concept. Two approaches. One finds the truth; one cannot.</SectionHeadingLight>
             <p
-              className="max-w-prose mb-10"
+              className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A consumer goods company has a promising concept for a premium subscription product and confident executives

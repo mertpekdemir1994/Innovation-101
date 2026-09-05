@@ -50,12 +50,12 @@ export default function FrameworkPage({ params }: { params: { slug: string } }) 
       </div>
 
       {/* Content */}
-      <div className="prose-col py-16">
+      <div className="max-w-content mx-auto px-6 md:px-8 py-16">
         <MDXRenderer source={content} />
       </div>
 
       {/* Source */}
-      <div className="prose-col pb-16">
+      <div className="max-w-content mx-auto px-6 md:px-8 pb-16">
         <SourceBlock
           sourceBook={frontmatter.sourceBook}
           sourceAuthor={frontmatter.sourceAuthor}

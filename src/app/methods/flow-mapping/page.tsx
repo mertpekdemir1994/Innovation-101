@@ -243,7 +243,7 @@ export default function FlowMappingPage() {
               </div>
             </div>
 
-            <div className="max-w-prose rounded-lg p-5 mt-10"
+            <div className="rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: a flow map shows you the structure, not why it got that way, and not

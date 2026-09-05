@@ -155,7 +155,7 @@ export default function SWOTAnalysisPage() {
                 </ul>
               </div>
             </div>
-            <div className="max-w-prose rounded-lg p-5 mt-10" style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}>
+            <div className="rounded-lg p-5 mt-10" style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
                 The honest limit: SWOT is only as good as the honesty and specificity of its entries, and both are usually poor. It invites vague, unfalsifiable items that feel true and mean nothing. It is also a snapshot with no sense of magnitude or probability: a trivial threat and an existential one sit in the same box. Treat it as the opening move of a strategy conversation, never the conclusion of one.
               </p>

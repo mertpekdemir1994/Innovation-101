@@ -65,7 +65,7 @@ export default function DesignSprintPage() {
             Design<br />Sprint
           </h1>
           <p
-            className="text-xl max-w-prose mb-space-10"
+            className="text-xl mb-space-10"
             style={{ color: 'rgba(255,255,255,0.52)', lineHeight: 1.6 }}
           >
             Five focused days from problem to tested prototype. Answer a critical business question
@@ -132,7 +132,7 @@ export default function DesignSprintPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="max-w-prose space-y-space-4 mb-space-8">
+            <div className="space-y-space-4 mb-space-8">
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
                 The Design Sprint was developed at Google Ventures by Jake Knapp, John Zeratsky,
                 and Braden Kowitz between 2010 and 2016, tested across more than 150 startups and
@@ -153,7 +153,7 @@ export default function DesignSprintPage() {
 
           <ScrollReveal delay={0.15}>
             <div
-              className="max-w-prose rounded-xl p-space-7 space-y-space-5"
+              className="rounded-xl p-space-7 space-y-space-5"
               style={{ background: 'var(--color-warm-50)', border: '1px solid var(--color-neutral-200)' }}
             >
               <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${CLAY}0.65)` }}>
@@ -199,7 +199,7 @@ export default function DesignSprintPage() {
           <ScrollReveal>
             <Eyebrow className="mb-space-6">When to use it</Eyebrow>
           </ScrollReveal>
-          <div className="max-w-prose grid grid-cols-1 md:grid-cols-2 gap-space-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4">
             {[
               {
                 heading: 'Use it when',
@@ -264,7 +264,7 @@ export default function DesignSprintPage() {
             >
               Click any day to see how it works
             </h2>
-            <p className="max-w-prose text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               Select a day to explore its activities and a real-world company example. Use the
               sprint readiness check first, or toggle to Design Sprint 2.0 to see how Monday
               and Tuesday merge into a single four-day format.
@@ -287,7 +287,7 @@ export default function DesignSprintPage() {
             >
               Five versions, one engine
             </h2>
-            <p className="max-w-prose text-base text-neutral-600 mb-space-10">
+            <p className="text-base text-neutral-600 mb-space-10">
               The Design Sprint has evolved through close collaboration between its original authors
               and the practitioner community, producing named versions with documented changes.
               Select a version to see what changed and what stayed the same.
@@ -322,7 +322,7 @@ export default function DesignSprintPage() {
             >
               Where this connects
             </h2>
-            <p className="max-w-prose text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               The Design Sprint answers &ldquo;which direction should we build, and does it work for
               real users?&rdquo; These are the frameworks and methods that answer the adjacent questions.
             </p>
@@ -360,7 +360,7 @@ export default function DesignSprintPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-10">
-          <div className="max-w-prose">
+          <div className="">
             <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-6">
               Sources &amp; Further Reading
             </p>

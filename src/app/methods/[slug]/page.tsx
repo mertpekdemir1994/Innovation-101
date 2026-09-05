@@ -116,7 +116,7 @@ export default function MethodPage({ params }: { params: { slug: string } }) {
         </div>
       )}
 
-      <div className="prose-col py-16">
+      <div className="max-w-content mx-auto px-6 md:px-8 py-16">
         <MDXRenderer source={content} />
       </div>
 

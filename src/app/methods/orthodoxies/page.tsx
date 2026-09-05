@@ -247,7 +247,7 @@ export default function OrthodoxiesPage() {
             </div>
 
             <div
-              className="max-w-prose rounded-lg p-5 mt-10"
+              className="rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -487,7 +487,7 @@ export default function OrthodoxiesPage() {
             <SectionLabel accent={SAGE}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same scenario. Two approaches, one escapes the orthodoxies, one recites them.</SectionHeadingLight>
             <p
-              className="max-w-prose mb-10"
+              className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A team entering the eyewear industry uses an orthodoxies session to find an opening.

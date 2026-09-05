@@ -184,7 +184,7 @@ export default function EcosystemMappingPage() {
               </div>
             </div>
 
-            <div className="max-w-prose rounded-lg p-5 mt-10"
+            <div className="rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -406,7 +406,7 @@ export default function EcosystemMappingPage() {
           <div className="py-20">
             <SectionLabel accent={TEAL}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same marketplace, mapped two ways.</SectionHeadingLight>
-            <p className="max-w-prose mb-10"
+            <p className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A fast-growing short-term rental marketplace wants to understand its world well enough to find growth levers and head off threats. The instinctive framing is a simple two-sided market: hosts and guests. The ecosystem mapping session is commissioned to see if the real system is more complicated than that. The same business is mapped twice: once by a team with diverse domain knowledge running a structured session, once with AI providing the draft map.

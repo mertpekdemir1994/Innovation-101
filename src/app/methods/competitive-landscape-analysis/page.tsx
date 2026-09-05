@@ -245,7 +245,7 @@ export default function CLAPage() {
             </div>
 
             <div
-              className="max-w-prose rounded-lg p-5 mt-10"
+              className="rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -485,7 +485,7 @@ export default function CLAPage() {
             <SectionLabel accent={SAGE}>In-depth example</SectionLabel>
             <SectionHeadingLight>Entering the wine market: the reframe that revealed a category-sized gap.</SectionHeadingLight>
             <p
-              className="max-w-prose mb-10"
+              className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A company mapping the wine market on its conventional axis sees a saturated, crowded field.

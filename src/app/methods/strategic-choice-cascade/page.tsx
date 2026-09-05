@@ -238,7 +238,7 @@ export default function SCCPage() {
             </div>
 
             <div
-              className="max-w-prose rounded-lg p-5 mt-10"
+              className="rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -470,7 +470,7 @@ export default function SCCPage() {
             <SectionLabel accent={PLUM}>In-depth example</SectionLabel>
             <SectionHeadingLight>The spread-thin company: the strategic choices that turned a competitor in many arenas into a winner in few.</SectionHeadingLight>
             <p
-              className="max-w-prose mb-10"
+              className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A mid-sized company competing in many segments and winning in none works the cascade

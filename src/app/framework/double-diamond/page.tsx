@@ -80,7 +80,7 @@ export default function DoubleDiamondPage() {
 
           {/* Tagline */}
           <p
-            className="text-xl max-w-prose mb-space-10"
+            className="text-xl mb-space-10"
             style={{ color: 'rgba(255,255,255,0.52)', lineHeight: 1.6 }}
           >
             Separate the work of finding the right problem from the work
@@ -157,7 +157,7 @@ export default function DoubleDiamondPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="max-w-prose space-y-space-4 mb-space-8">
+            <div className="space-y-space-4 mb-space-8">
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
                 Most innovation efforts fail not because teams cannot find solutions; they fail
                 because teams solve the wrong problem. A product team builds a feature nobody
@@ -176,7 +176,7 @@ export default function DoubleDiamondPage() {
 
           <ScrollReveal delay={0.15}>
             <div
-              className="max-w-prose rounded-xl p-space-7 space-y-space-5"
+              className="rounded-xl p-space-7 space-y-space-5"
               style={{ background: 'var(--color-warm-50)', border: '1px solid var(--color-neutral-200)' }}
             >
               <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${PURPLE}0.65)` }}>
@@ -230,7 +230,7 @@ export default function DoubleDiamondPage() {
           <ScrollReveal>
             <Eyebrow className="mb-space-6">When to use it</Eyebrow>
           </ScrollReveal>
-          <div className="max-w-prose grid grid-cols-1 md:grid-cols-2 gap-space-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4">
             {[
               {
                 heading: 'Use it when',
@@ -300,7 +300,7 @@ export default function DoubleDiamondPage() {
             >
               Click any phase to see how it works
             </h2>
-            <p className="max-w-prose text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               Switch between the Design Council and Doblin lenses. The Doblin version adds a
               Desirable–Viable–Feasible filter at each convergence point.
             </p>
@@ -322,7 +322,7 @@ export default function DoubleDiamondPage() {
             >
               Five versions, one discipline
             </h2>
-            <p className="max-w-prose text-base text-neutral-600 mb-space-10">
+            <p className="text-base text-neutral-600 mb-space-10">
               The Double Diamond is one of the few innovation frameworks that has evolved publicly
               and transparently. Select a version to see what changed.
             </p>
@@ -357,7 +357,7 @@ export default function DoubleDiamondPage() {
             >
               Where this connects
             </h2>
-            <p className="max-w-prose text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               The Double Diamond is a framework, not a method. These are the methods and
               frameworks that slot into each phase.
             </p>
@@ -398,7 +398,7 @@ export default function DoubleDiamondPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-10">
-          <div className="max-w-prose">
+          <div className="">
             <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-6">
               Sources &amp; Further Reading
             </p>

@@ -379,7 +379,7 @@ export default function PilotLaunchesPage() {
               </div>
             </div>
 
-            <div className="max-w-prose mt-6 rounded-lg px-5 py-4"
+            <div className="mt-6 rounded-lg px-5 py-4"
               style={{ background: 'var(--color-neutral-100)', borderLeft: `3px solid ${BRICK}` }}>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
                 <span className="font-semibold" style={{ color: BRICK }}>On NO-GO verdicts:</span>{' '}

@@ -39,7 +39,7 @@ export default function ReadingItemPage({ params }: { params: { slug: string } }
 
       {/* Key takeaways */}
       <div className="border-b border-neutral-100 py-12 px-6 md:px-8">
-        <div className="prose-col">
+        <div className="max-w-content mx-auto px-6 md:px-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-neutral-600 mb-6">
             Key takeaways
           </p>
@@ -57,11 +57,11 @@ export default function ReadingItemPage({ params }: { params: { slug: string } }
         </div>
       </div>
 
-      <div className="prose-col py-16">
+      <div className="max-w-content mx-auto px-6 md:px-8 py-16">
         <MDXRenderer source={content} />
       </div>
 
-      <div className="prose-col pb-16">
+      <div className="max-w-content mx-auto px-6 md:px-8 pb-16">
         <SourceBlock
           sourceBook={frontmatter.bookTitle}
           sourceAuthor={frontmatter.author}

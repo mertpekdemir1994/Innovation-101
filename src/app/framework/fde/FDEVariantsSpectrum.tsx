@@ -304,7 +304,7 @@ export default function FDEVariantsSpectrum() {
       </div>
 
       {/* Closing statement */}
-      <p className="max-w-prose mt-space-8 text-sm text-neutral-500 leading-relaxed">
+      <p className="mt-space-8 text-sm text-neutral-500 leading-relaxed">
         Every organization can find a place on this spectrum. The question is not &ldquo;should we do FDE?&rdquo; but
         &ldquo;how much of FDE&rsquo;s core insight (that proximity to real customer context produces better
         products) can we practically embed in our operating model?&rdquo;

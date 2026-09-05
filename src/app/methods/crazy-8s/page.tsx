@@ -243,7 +243,7 @@ export default function C8Page() {
             </div>
 
             <div
-              className="max-w-prose rounded-lg p-5 mt-10"
+              className="rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -478,7 +478,7 @@ export default function C8Page() {
             <SectionLabel accent={CLAY}>In-depth example</SectionLabel>
             <SectionHeadingLight>The robotics company: the panel-seven idea that almost wasn&rsquo;t drawn.</SectionHeadingLight>
             <p
-              className="max-w-prose mb-10"
+              className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A team running Crazy 8s for a robotics product pushes through the wall and discovers

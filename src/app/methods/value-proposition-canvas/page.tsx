@@ -239,7 +239,7 @@ export default function ValuePropositionCanvasPage() {
             </div>
 
             <div
-              className="max-w-prose rounded-lg p-5 mt-10"
+              className="rounded-lg p-5 mt-10"
               style={{ background: 'var(--color-warm-100)', borderLeft: '3px solid var(--color-neutral-300)' }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)', fontStyle: 'italic' }}>
@@ -464,7 +464,7 @@ export default function ValuePropositionCanvasPage() {
             <SectionLabel accent={PLUM}>In-depth example</SectionLabel>
             <SectionHeadingLight>The same product. Two canvases. One strategic finding that only one of them could make.</SectionHeadingLight>
             <p
-              className="max-w-prose mb-10"
+              className="mb-10"
               style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-600)' }}
             >
               A startup with a feature-heavy project-management tool is struggling to win small creative agencies.

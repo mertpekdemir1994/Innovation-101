@@ -72,7 +72,7 @@ export default function FDEPage() {
             Forward<br />Deployed<br />Engineering
           </h1>
           <p
-            className="text-xl max-w-prose"
+            className="text-xl"
             style={{ color: 'rgba(255,255,255,0.52)', lineHeight: 1.6 }}
           >
             Engineers embedded directly with customers. The field as the product lab. Customer deployments
@@ -107,7 +107,7 @@ export default function FDEPage() {
           {/* Honest warning: moved here from hero */}
           <ScrollReveal>
             <div
-              className="max-w-prose rounded-xl px-space-6 py-space-5 mb-space-10"
+              className="rounded-xl px-space-6 py-space-5 mb-space-10"
               style={{ background: `${BRICK}0.05)`, border: `1px solid ${BRICK}0.18)` }}
             >
               <p className="font-mono text-2xs uppercase tracking-widest mb-space-3" style={{ color: `${BRICK}0.72)` }}>
@@ -145,7 +145,7 @@ export default function FDEPage() {
             >
               Four movements, one continuous cycle
             </h2>
-            <p className="max-w-prose text-base text-neutral-500 mb-space-10">
+            <p className="text-base text-neutral-500 mb-space-10">
               Select a movement on the loop to explore its objective, key activities, and the question it forces you to answer.
             </p>
           </ScrollReveal>
@@ -174,7 +174,7 @@ export default function FDEPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="max-w-prose space-y-space-4 mb-space-8">
+            <div className="space-y-space-4 mb-space-8">
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--leading-relaxed)', color: 'var(--color-neutral-700)' }}>
                 Most organizations build products from offices, developing solutions based on market research,
                 user interviews, roadmap planning sessions, and requirements documents. The people who understand
@@ -193,7 +193,7 @@ export default function FDEPage() {
 
           <ScrollReveal delay={0.15}>
             <div
-              className="max-w-prose rounded-xl p-space-7 space-y-space-5"
+              className="rounded-xl p-space-7 space-y-space-5"
               style={{ background: 'var(--color-warm-50)', border: '1px solid var(--color-neutral-200)' }}
             >
               <p className="font-mono text-2xs uppercase tracking-widest" style={{ color: `${BRICK}0.65)` }}>
@@ -226,7 +226,7 @@ export default function FDEPage() {
           <ScrollReveal>
             <Eyebrow className="mb-space-6">When to consider it</Eyebrow>
           </ScrollReveal>
-          <div className="max-w-prose grid grid-cols-1 md:grid-cols-2 gap-space-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-space-4">
             {[
               {
                 heading: 'Genuine FDE may be worth exploring when',
@@ -291,7 +291,7 @@ export default function FDEPage() {
             >
               FDE is a spectrum, not a binary choice
             </h2>
-            <p className="max-w-prose text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               Select a variant on the commitment spectrum to see what FDE looks like at that level of commitment:
               from the full Palantir model to Commitment Engineering, which delivers most of FDE&rsquo;s core
               benefit at a fraction of the cost.
@@ -314,7 +314,7 @@ export default function FDEPage() {
             >
               Four variants, one core insight
             </h2>
-            <p className="max-w-prose text-base text-neutral-600 mb-space-10">
+            <p className="text-base text-neutral-600 mb-space-10">
               FDE has not evolved through official versioning the way Design Sprint 2.0 emerged from
               the original. It has evolved through practitioners leaving Palantir, founding new
               companies, and either replicating, adapting, or explicitly rejecting the model based on
@@ -372,7 +372,7 @@ export default function FDEPage() {
             >
               Where this connects
             </h2>
-            <p className="max-w-prose text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p className="text-base mb-space-8" style={{ color: 'rgba(255,255,255,0.50)', lineHeight: 'var(--leading-relaxed)' }}>
               FDE is an extreme version of the customer-proximity principle that runs through every framework
               in this library. These are the frameworks and methods that FDE relates to most directly.
             </p>
@@ -410,7 +410,7 @@ export default function FDEPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <LightSection>
         <Container className="py-space-10">
-          <div className="max-w-prose">
+          <div className="">
             <p className="font-mono text-2xs uppercase tracking-widest text-neutral-500 mb-space-6">
               Sources &amp; Further Reading
             </p>
