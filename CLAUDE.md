@@ -99,10 +99,11 @@ Never use raw hex values in components — always use the token.
 
 ### Spacing
 - All spacing on a **base-8 scale**: `2, 4, 8, 12, 16, 24, 32, 48, 64, 96` (px)
-- Max content width: `max-w-content` (1200px)
-- Detail page content column: `max-w-prose` (720px)
+- One width for every section container, no exceptions: `max-w-content` (1200px), always `mx-auto` centered with `px-6 md:px-8` gutters
 - Related content panel: `max-w-panel` (320px)
 - Mobile breakpoint: `md:` (768px)
+
+> **Enforcement note:** A narrower `max-w-prose` (720px) column used to exist as a separate, independently-centered width for body-text sections. On any viewport wider than 1200px that gave prose sections a different left inset than the grid/list sections on the same page, which read as mismatched containers across the site. The distinction was retired sitewide — every section container is now the same width. `Container`'s `prose` prop is a no-op, kept only so existing call sites don't need touching. If a paragraph needs a narrower reading line-length for its own sake, cap its own text width locally (no separate margin/centering) — never give a section its own independently-centered container again.
 
 ### Animation
 - Use **Framer Motion** for all animations — no CSS transitions except for simple hover states
@@ -130,7 +131,7 @@ Shared primitives exported from that module:
 | `DarkSection` | `className?: string` |
 | `LightSection` | `className?: string` |
 | `WarmSection` | `className?: string` |
-| `Container` | `prose?: boolean` |
+| `Container` | `prose?: boolean` (no-op — every `Container` renders at `max-w-content`; kept only for existing call sites) |
 | `SectionLabel` | `accent: string`, `dark?: boolean` |
 | `SectionHeadingDark` | — |
 | `SectionHeadingLight` | — |
