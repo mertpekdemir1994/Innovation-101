@@ -96,10 +96,21 @@ const LINES = [
 // sync on mount. Both tiles render the same LINES array at the same indices,
 // so tile A and tile B stay phase-identical — required for the horizontal
 // seamless loop, where the two tiles must stay pixel-for-pixel the same.
-function lineTiming(i: number) {
+//
+// Driven from JS (see the effect below), not a CSS @keyframes animation:
+// stroke-width is a paint property, not a compositable one like transform or
+// opacity, so animating it on 80 elements (40 lines x 2 tiles) at the
+// browser's native 60fps repaints all of them 60 times a second. Measured
+// live via CDP: that alone dropped the page from a flat 60fps to ~37fps with
+// repeated 100ms+ stalls. The breathing cycle is 7-10s long, so updating it
+// only ~11 times/sec (see THICKNESS_UPDATE_MS below) is visually identical
+// but cuts that repaint work by roughly 5x.
+function lineThickness(i: number, tSec: number) {
   const duration = 9 + 1.3 * Math.sin(i * 0.55 + 1.2)
   const delay = -(i * 0.18)
-  return { animationDuration: `${duration.toFixed(2)}s`, animationDelay: `${delay.toFixed(2)}s` }
+  const phase = (((tSec + delay) % duration) + duration) % duration / duration
+  const wave = (Math.sin(phase * Math.PI * 2 - Math.PI / 2) + 1) / 2 // 0..1, matches the old keyframe's min-at-0%/max-at-50%/min-at-100% shape
+  return 1.25 + wave * (3.75 - 1.25)
 }
 
 function ContourTile({ gradientId }: { gradientId: string }) {
@@ -121,7 +132,7 @@ function ContourTile({ gradientId }: { gradientId: string }) {
       </defs>
       <g stroke={`url(#${gradientId})`} strokeLinecap="round" strokeLinejoin="round">
         {LINES.map((d, i) => (
-          <path key={i} d={d} className={styles.contourLine} style={lineTiming(i)} />
+          <path key={i} d={d} className={styles.contourLine} />
         ))}
       </g>
     </svg>
@@ -136,6 +147,13 @@ function ContourTile({ gradientId }: { gradientId: string }) {
 // frame — only a direct style write, the standard pattern for scroll-linked
 // transforms. Skipped entirely under prefers-reduced-motion.
 const PARALLAX_FACTOR = 0.35
+
+// How often the thickness wave actually repaints. The wave itself is smooth
+// and continuous (see lineThickness above) — this only controls how many of
+// its samples turn into an actual stroke-width write. 90ms (~11/sec) is
+// dense enough that a multi-second breathing cycle still reads as fluid,
+// while cutting the repaint count to roughly a fifth of native 60fps.
+const THICKNESS_UPDATE_MS = 90
 
 export default function HeroField() {
   const fieldRef = useRef<HTMLDivElement>(null)
@@ -167,6 +185,36 @@ export default function HeroField() {
     apply()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) return
+
+    const el = fieldRef.current
+    const allPaths = el ? Array.from(el.querySelectorAll<SVGPathElement>(`.${styles.contourLine}`)) : []
+    if (allPaths.length === 0) return
+
+    let rafId: number
+    let lastUpdate = 0
+    const tick = (now: number) => {
+      if (now - lastUpdate >= THICKNESS_UPDATE_MS) {
+        lastUpdate = now
+        const tSec = now / 1000
+        // Both tiles render LINES at the same indices, so a plain 0..N-1
+        // counter across the flat NodeList keeps tile A and tile B in the
+        // same phase automatically -- same guarantee the old per-render
+        // lineTiming(i) call gave, just computed here instead.
+        const perTile = allPaths.length / 2
+        allPaths.forEach((path, idx) => {
+          const width = lineThickness(idx % perTile, tSec)
+          path.style.strokeWidth = width.toFixed(2)
+        })
+      }
+      rafId = requestAnimationFrame(tick)
+    }
+    rafId = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(rafId)
   }, [])
 
   return (

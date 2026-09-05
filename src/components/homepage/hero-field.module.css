@@ -66,30 +66,19 @@
 }
 
 /*
-  Line thickness: each line breathes between a min and a max stroke width
-  continuously, with a per-line delay (set inline from HeroField.tsx) so
-  adjacent lines are never at the same point in the cycle at once — the
-  offset reads as a ripple traveling down the stack rather than 40 lines
-  pulsing in place together. ease-in-out keeps the change continuous
-  through the turn at each end instead of snapping.
+  Line thickness breathes between 1.25 (half the original static 2.5 stroke)
+  and 3.75 (1.5x it) continuously, with a per-line phase offset so adjacent
+  lines are never at the same point in the cycle -- reads as a ripple
+  traveling down the stack rather than 40 lines pulsing in place together.
 
-  1.25 is half of the original static 2.5 stroke; 3.75 is 1.5x it — the
-  midpoint of a sine-like ease between them lands back on 2.5, so the
-  animated line reads at the same average weight as the old static one.
+  Driven from JS (HeroField.tsx), not a CSS animation here: stroke-width is
+  a paint property, and animating it on 80 elements (40 lines x 2 tiles) at
+  native 60fps measured a real, repeated performance cost live via CDP --
+  dropped the page from 60fps to ~37fps with 100ms+ stalls. See the comment
+  above lineThickness() in HeroField.tsx for the full writeup. This rule is
+  just the static fallback stroke-width for prefers-reduced-motion, and the
+  base value JS overrides via inline style once it starts.
 */
 .contourLine {
   stroke-width: 2.5;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .contourLine {
-    animation-name: thickness-wave;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-  }
-}
-
-@keyframes thickness-wave {
-  0%, 100% { stroke-width: 1.25; }
-  50%      { stroke-width: 3.75; }
 }
