@@ -43,7 +43,7 @@
   Creativity, Methods
 -->
 
-## Category: The Argument
+## Category: Making the Case
 Description: Four books on why curiosity, purpose, and a willingness to be wrong come before any method.
 
 ### Book: Change by Design
@@ -86,7 +86,7 @@ Summary: Think Again is a book by organizational psychologist Adam Grant about t
 Detail: Grant argues that people default to three mindsets when defending a belief, preacher, prosecutor, and politician, and proposes a fourth, the scientist, who treats opinions as hypotheses to be tested rather than positions to be defended. He draws on psychological research and case studies to describe how overconfidence and identity attachment make people resistant to changing their minds. The book examines rethinking at the individual, interpersonal, and organizational levels, including how to have productive disagreements and how groups can build a culture that rewards updating beliefs. It closes with practical techniques for eliciting doubt in oneself and others.
 AmazonUrl:
 
-## Category: Where Ideas Come From
+## Category: Finding the Idea
 Description: Four books on how new ideas surface, get championed, and get tested.
 
 ### Book: Originals
@@ -172,7 +172,7 @@ Summary: The Field Guide to Human-Centered Design is a book by IDEO.org that int
 Detail: The book organizes 57 methods across three phases, Inspiration, Ideation, and Implementation, walking a team from initial research with a community through generating concepts to piloting a solution. It emphasizes direct contact with the people a project is meant to serve, including guidance on conducting interviews and structuring co-creation sessions. Worksheets and case studies from IDEO.org projects in health, agriculture, and economic development illustrate each phase. The guide was funded through a public crowdfunding campaign and is distributed by IDEO.org for free.
 AmazonUrl:
 
-## Category: Strategy & Business
+## Category: Setting the Strategy
 Description: Four books on connecting design and innovation to strategic choice and business model logic.
 
 ### Book: Playing to Win
@@ -215,7 +215,7 @@ Summary: Business Model Generation is a book by Alexander Osterwalder and Yves P
 Detail: The canvas divides a business model into nine building blocks, including customer segments, value propositions, channels, revenue streams, and cost structure, arranged so the connections between blocks are visible on one page. The authors argue that mapping these blocks together makes it easier to spot where a business model is inconsistent, for example a value proposition that does not match the chosen channel or customer segment. The book was developed collaboratively with several hundred practitioners and is presented in a visual, workbook-like format rather than as continuous prose. It includes patterns, design techniques, and case studies showing the canvas applied to companies such as Skype and Nintendo.
 AmazonUrl:
 
-## Category: Systems & Foundations
+## Category: Learning the Groundwork
 Description: Four books on the systems thinking, usability, service design, and strategy foundations the rest of this site draws on.
 
 ### Book: Thinking in Systems

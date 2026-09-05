@@ -133,10 +133,16 @@ function BookOption({ book, isSelected, onSelect, onKeyDown, optionRef }: {
       tabIndex={isSelected ? 0 : -1}
       onClick={onSelect}
       onKeyDown={onKeyDown}
-      className="flex items-start gap-3 p-3 rounded-lg cursor-pointer"
+      className="flex items-start gap-3 px-4 py-3 cursor-pointer"
       style={{
+        // The accent bar sits flush against the panel's own left edge (no
+        // padding around it) so it reads as a clear selection indicator
+        // rather than a floating decoration -- the earlier version had
+        // this bar inset inside the listbox's own padding, which read as
+        // disconnected from the row it was meant to mark.
         background: isSelected ? `${READING}0.06)` : 'transparent',
-        borderLeft: `3px solid ${isSelected ? `${READING}0.75)` : 'transparent'}`,
+        borderLeft: `3px solid ${isSelected ? `${READING}0.85)` : 'transparent'}`,
+        borderBottom: '1px solid var(--color-neutral-100)',
       }}
     >
       <BookCover book={book} width={40} height={60} />
@@ -195,12 +201,23 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
     >
       <CategoryDescription text={category.description} />
 
-      <div className="grid md:grid-cols-[320px_1fr] gap-6 mt-6">
+      {/*
+        One shared white surface instead of two separate bordered/shadowed
+        boxes side by side: the list and the detail pane are sections of
+        the same panel, divided by a single line rather than a visible
+        gap between two cards of different heights (the previous version
+        left a white gap under the shorter list column once the taller
+        detail column set the row height).
+      */}
+      <div
+        className="grid md:grid-cols-[320px_1fr] bg-white rounded-xl overflow-hidden mt-6"
+        style={{ border: '1px solid var(--color-neutral-200)', boxShadow: 'var(--shadow-subtle)' }}
+      >
         <div
           role="listbox"
           aria-label={`Books in ${category.name}`}
-          className="flex flex-col gap-1 bg-white rounded-xl p-2"
-          style={{ border: '1px solid var(--color-neutral-200)', boxShadow: 'var(--shadow-subtle)' }}
+          className="flex flex-col border-b md:border-b-0 md:border-r"
+          style={{ borderColor: 'var(--color-neutral-200)' }}
         >
           {books.map((book, i) => (
             <BookOption
@@ -214,37 +231,28 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
           ))}
         </div>
 
-        <div
-          className="bg-white rounded-xl overflow-hidden"
-          style={{ border: '1px solid var(--color-neutral-200)', boxShadow: 'var(--shadow-subtle)' }}
-        >
-          <div style={{ height: 4, background: selected.hero ? `${READING}0.85)` : 'var(--color-neutral-100)' }} />
-          <div className="p-6 flex gap-5">
-            <BookCover book={selected} width={92} height={138} />
-            <div className="flex-1 min-w-0">
-              {selected.hero && (
-                <p className="font-mono uppercase tracking-widest mb-1.5" style={{ fontSize: 'var(--text-2xs)', color: `${READING_TEXT}1)` }}>
-                  Start here
+        <div className="p-6">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex gap-5 min-w-0">
+              <BookCover book={selected} width={80} height={120} />
+              <div className="min-w-0">
+                {selected.hero && (
+                  <p className="font-mono uppercase tracking-widest mb-1.5" style={{ fontSize: 'var(--text-2xs)', color: `${READING_TEXT}1)` }}>
+                    Start here
+                  </p>
+                )}
+                <p className="font-semibold leading-snug" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
+                  {selected.title}
                 </p>
-              )}
-              <p className="font-semibold leading-snug" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
-                {selected.title}
-              </p>
-              <p className="mt-0.5" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)' }}>
-                {selected.author} &middot; {selected.year}
-              </p>
-              <div className="flex flex-wrap gap-2 mt-3">
-                {selected.tags.map((tag) => <TagPill key={tag} tag={tag} />)}
+                <p className="mt-0.5" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)' }}>
+                  {selected.author} &middot; {selected.year}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {selected.tags.map((tag) => <TagPill key={tag} tag={tag} />)}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="px-6 pb-6" style={{ borderTop: '1px solid var(--color-neutral-100)', paddingTop: '1.25rem' }}>
-            <p className="mb-3" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
-              {selected.summary}
-            </p>
-            <p className="mb-5" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
-              {selected.detail}
-            </p>
+
             {/*
               amazonUrl is blank for every book right now (see
               content/reading/reading.md). This button never gets an href
@@ -252,15 +260,18 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
               disabled and data-affiliate-pending mark it as present but
               inert for assistive tech and for whoever wires up affiliate
               tracking later. Filling in AmazonUrl in the source file is
-              the only change needed to activate a book's link.
+              the only change needed to activate a book's link. Placed as
+              a compact top-right CTA rather than a full-width button
+              under the paragraphs, so the detail pane doesn't run
+              noticeably taller than the book list next to it.
             */}
             <button
               type="button"
               aria-disabled="true"
               data-affiliate-pending
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold flex-shrink-0"
               style={{
-                fontSize: 'var(--text-sm)',
+                fontSize: 'var(--text-xs)',
                 color: 'var(--color-neutral-500)',
                 background: 'var(--color-neutral-100)',
                 border: '1px solid var(--color-neutral-200)',
@@ -269,6 +280,15 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
             >
               View on Amazon
             </button>
+          </div>
+
+          <div className="mt-5" style={{ borderTop: '1px solid var(--color-neutral-100)', paddingTop: '1.25rem' }}>
+            <p className="mb-3" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+              {selected.summary}
+            </p>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
+              {selected.detail}
+            </p>
           </div>
         </div>
       </div>
