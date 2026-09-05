@@ -25,7 +25,7 @@ export default function ReadingPage() {
           className="font-display font-semibold text-balance mb-4"
           style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', lineHeight: 1.05, letterSpacing: '-0.02em', color: '#FAFAFA' }}
         >
-          The reading behind this site
+          Foundational innovation reading
         </h1>
         <p className="text-lg max-w-[560px] leading-relaxed mb-12" style={{ color: 'rgba(255,255,255,0.50)' }}>
           Twenty books grouped by the question each one answers. Pick a category, then a book.
