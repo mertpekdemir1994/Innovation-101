@@ -141,17 +141,27 @@ export default function Nav() {
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
           >
+            {/*
+              The X is the top and bottom bars rotated 45deg/-45deg to
+              meet in the middle, with the middle bar faded out -- not a
+              separate icon. The translateY distance has to land each
+              bar's center exactly on the middle bar's center, or the two
+              strokes cross off-axis instead of forming a clean X: with
+              h-0.5 (2px) bars and a gap-1.5 (6px) gap, each bar's center
+              sits 8px from the middle bar's center, so that's the
+              distance each one travels.
+            */}
             <span
-              className="block w-5 h-px bg-neutral-900 transition-transform duration-200"
-              style={{ transform: menuOpen ? 'translateY(5px) rotate(45deg)' : 'none' }}
+              className="block w-5 h-0.5 bg-neutral-900 transition-transform duration-200"
+              style={{ transform: menuOpen ? 'translateY(8px) rotate(45deg)' : 'none' }}
             />
             <span
-              className="block w-5 h-px bg-neutral-900 transition-opacity duration-200"
+              className="block w-5 h-0.5 bg-neutral-900 transition-opacity duration-200"
               style={{ opacity: menuOpen ? 0 : 1 }}
             />
             <span
-              className="block w-5 h-px bg-neutral-900 transition-transform duration-200"
-              style={{ transform: menuOpen ? 'translateY(-5px) rotate(-45deg)' : 'none' }}
+              className="block w-5 h-0.5 bg-neutral-900 transition-transform duration-200"
+              style={{ transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' }}
             />
           </button>
         </div>

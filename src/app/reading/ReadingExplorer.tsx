@@ -146,8 +146,23 @@ function MeasuredExpand({ id, isOpen, children }: { id: string; isOpen: boolean;
   const [height, setHeight] = useState(0)
   const prefersReduced = useReducedMotion()
 
+  // A ResizeObserver, not a one-time scrollHeight read on mount: every
+  // book in every category mounts up front, but 4 of the 5 categories
+  // start out inside a `hidden` tabpanel, which collapses everything in
+  // it to a zero-size box. A single read at mount time would permanently
+  // record 0 for those, so their accordion content would never show once
+  // the tab became active. A ResizeObserver re-fires when the element's
+  // rendered size actually changes, including the 0 -> real transition
+  // that happens the moment its tab opens, so the height stays correct.
   useIsomorphicLayoutEffect(() => {
-    if (ref.current) setHeight(ref.current.scrollHeight)
+    const el = ref.current
+    if (!el) return
+    const observer = new ResizeObserver((entries) => {
+      const h = entries[0]?.contentRect.height
+      if (h !== undefined) setHeight(h)
+    })
+    observer.observe(el)
+    return () => observer.disconnect()
   }, [])
 
   return (
@@ -279,7 +294,7 @@ function BookOption({ book, isSelected, onSelect, onKeyDown, optionRef }: {
       <BookCover book={book} width={40} height={60} />
       <div className="flex-1 min-w-0 pt-0.5">
         <p
-          className="font-semibold leading-snug"
+          className="font-semibold leading-snug line-clamp-2"
           style={{ fontSize: 'var(--text-sm)', color: isSelected ? 'var(--color-neutral-900)' : 'var(--color-neutral-500)' }}
         >
           {book.title}
@@ -299,7 +314,30 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
   hidden: boolean
 }) {
   const optionRefs = useRef<(HTMLDivElement | null)[]>([])
+  const listRef = useRef<HTMLDivElement>(null)
+  const [listHeight, setListHeight] = useState<number | null>(null)
   const books = category.books
+
+  // The book list's own natural height (4 rows, now uniform-height rows
+  // via the title's line-clamp) becomes the panel's height, instead of a
+  // fixed guess or letting the taller side win: it's what makes the list
+  // flush with no padding under the 4th book, and what makes every
+  // category's panel come out the same height as the others, since every
+  // category's list has the same 4-row shape. A ResizeObserver rather
+  // than a one-time read for the same reason as the mobile accordion's
+  // panel measurement -- this list is inside a `hidden` tabpanel for 4 of
+  // the 5 categories at mount time, and needs to pick up its real size
+  // once that tab actually opens.
+  useIsomorphicLayoutEffect(() => {
+    const el = listRef.current
+    if (!el) return
+    const observer = new ResizeObserver((entries) => {
+      const h = entries[0]?.contentRect.height
+      if (h !== undefined) setListHeight(h)
+    })
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   function moveAndSelect(i: number) {
     const next = (i + books.length) % books.length
@@ -330,22 +368,27 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
       {/*
         Desktop: one shared white surface, list and detail as two columns
         of the same panel divided by a single line rather than a gap
-        between two cards. `items-start` (not the grid default of
-        `stretch`) is the actual fix for the trailing white space that
-        used to sit under the 4th book: stretch was forcing the list
-        column to match whatever height the detail column's text needed,
-        which is almost never the list's own natural height. Each column
-        now sizes to its own content instead -- the list is flush to its
-        4 rows on every category (identical structure each time, so this
-        is what keeps the 5 categories consistent with each other),
-        and the detail column is free to run taller or shorter without
-        the list padding out to match it.
+        between two cards. The panel's height is set explicitly to the
+        list's own measured height (above), and grid's default
+        align-items: stretch does the rest -- the list already fits that
+        height exactly (it's its own natural size), so stretching it is a
+        no-op, while the detail column gets stretched/clipped to it and
+        scrolls its own text internally if the selected book's summary
+        runs longer than the list. That's what makes the list flush with
+        no padding under the 4th book, and what makes every category's
+        panel come out the same height, since every list has the same
+        4-row shape.
       */}
       <div
-        className="hidden md:grid md:grid-cols-[320px_1fr] md:items-start bg-white rounded-xl overflow-hidden mt-6"
-        style={{ border: '1px solid var(--color-neutral-200)', boxShadow: 'var(--shadow-subtle)' }}
+        className="hidden md:grid md:grid-cols-[320px_1fr] bg-white rounded-xl overflow-hidden mt-6"
+        style={{
+          border: '1px solid var(--color-neutral-200)',
+          boxShadow: 'var(--shadow-subtle)',
+          ...(listHeight ? { height: `${listHeight}px` } : {}),
+        }}
       >
         <div
+          ref={listRef}
           role="listbox"
           aria-label={`Books in ${category.name}`}
           className="flex flex-col md:border-r"
@@ -363,8 +406,8 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
           ))}
         </div>
 
-        <div className="p-6">
-          <div className="flex items-start justify-between gap-4">
+        <div className="p-6 flex flex-col min-h-0">
+          <div className="flex items-start justify-between gap-4 flex-shrink-0">
             <div className="flex gap-5 min-w-0">
               <BookCover book={selected} width={80} height={120} />
               <div className="min-w-0">
@@ -409,7 +452,7 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
             </button>
           </div>
 
-          <div className="mt-5" style={{ borderTop: '1px solid var(--color-neutral-100)', paddingTop: '1.25rem' }}>
+          <div className="mt-5 flex-1 min-h-0 overflow-y-auto" style={{ borderTop: '1px solid var(--color-neutral-100)', paddingTop: '1.25rem' }}>
             <p className="mb-3" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
               {selected.summary}
             </p>
@@ -445,11 +488,13 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
 }
 
 function CategoryDescription({ text }: { text: string }) {
-  // No max-width: the line is short enough to fit on one row at the full
-  // panel width, and capping it narrower just wrapped it to two lines for
-  // no reason, leaving it misaligned with the panel's edges below.
+  // Single line only at md+, where the panel is wide enough for the whole
+  // sentence to fit without wrapping. Below md the same sentence doesn't
+  // fit the narrower width, and nowrap+ellipsis there was cutting off
+  // real words instead of just avoiding an unnecessary wrap -- mobile
+  // gets normal wrapping so the full sentence always shows.
   return (
-    <p className="whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.60)' }}>
+    <p className="md:whitespace-nowrap md:overflow-hidden md:text-ellipsis" style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.60)' }}>
       {text}
     </p>
   )
