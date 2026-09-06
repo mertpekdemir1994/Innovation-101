@@ -55,16 +55,11 @@ export default function ScenariosPage() {
               fontSize: 'var(--text-base)',
               lineHeight: 'var(--leading-relaxed)',
               color: 'var(--color-dark-muted)',
-              marginBottom: '2rem',
             }}
           >
             A scenario will describe a specific business situation, defined by its industry and the
             type of challenge it presents, and point to the frameworks and methods on this site that
-            apply to it, along with a realistic time estimate. None exist yet.
-          </p>
-
-          <p style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-normal)', color: 'var(--color-dark-muted)' }}>
-            Everything else on this site is finished. This is not.
+            apply to it, along with a realistic time estimate.
           </p>
         </div>
       </Container>
