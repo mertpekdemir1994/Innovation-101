@@ -14,7 +14,11 @@
     Author: <verified author string>
     Year: <first-publication year, verified, not guessed>
     CoverUrl: <front-cover image URL, ISBN-matched via covers.openlibrary.org
-               so it's the correct edition, not a fuzzy title search>
+               so it's the correct edition, not a fuzzy title search. A
+               couple of books use an olid-matched URL
+               (covers.openlibrary.org/b/olid/<edition-id>-L.jpg) instead --
+               same verified edition, but a brighter/cleaner scan than the
+               one that ISBN resolves to by default>
     Tags: <2-4 comma-separated tags, drawn only from the controlled
            vocabulary listed below -- do not introduce a new tag without
            adding it to that list and to the color mapping in
@@ -113,7 +117,7 @@ AmazonUrl:
 Hero: false
 Author: Tom Kelley (with Jonathan Littman)
 Year: 2005
-CoverUrl: https://covers.openlibrary.org/b/isbn/9780385512077-L.jpg
+CoverUrl: https://covers.openlibrary.org/b/olid/OL3425795M-L.jpg
 Tags: Innovation, Creativity, Leadership
 Summary: The Ten Faces of Innovation is a book by IDEO general manager Tom Kelley about roles that support innovation within an organization.
 Detail: Kelley proposes ten personas, grouped into learning, organizing, and building roles, such as the Anthropologist, the Experimenter, and the Hurdler, each representing a distinct way of contributing to innovation. He argues that innovation depends less on individual genius than on teams that combine these roles and on countering what he calls the "devil's advocate," a mindset that reflexively shuts down new ideas. Drawing on IDEO project stories, the book describes how each persona behaves in practice and how organizations can identify and develop them among existing staff. It presents innovation as a discipline that can be organized and staffed rather than left to chance.
@@ -136,7 +140,7 @@ Description: Books on the concrete research and design methods used to carry out
 Hero: true
 Author: Vijay Kumar
 Year: 2012
-CoverUrl: https://covers.openlibrary.org/b/isbn/9781118083468-L.jpg
+CoverUrl: https://covers.openlibrary.org/b/olid/OL29116100M-L.jpg
 Tags: Design Research, Methods, Innovation
 Summary: 101 Design Methods is a book by Vijay Kumar that organizes design and innovation activities into a structured, repeatable process.
 Detail: Kumar presents a seven-mode framework, sense intent, know context, know people, frame insights, explore concepts, frame solutions, and realize offerings, and places 101 named methods within it, from ethnographic research techniques to concept-evaluation matrices. Each method is described with its purpose, the steps to run it, and the kind of output it produces. The book argues that innovation work benefits from a shared vocabulary and sequence rather than ad hoc brainstorming. It is written as a practitioner's reference rather than a narrative, intended to be consulted method by method.

@@ -282,14 +282,14 @@ function BookOption({ book, isSelected, onSelect, onKeyDown, optionRef }: {
         // Fourth pass at this: a red-tinted background alone read as a
         // warning state, and a neutral background plus a check circle
         // looked like it was doing too much for a plain "you're reading
-        // this one" marker. This lands on a 30%-opacity fill of the
+        // this one" marker. This lands on a 15%-opacity fill of the
         // section's own accent color plus the left border, with the
         // *other* three rows' title receded to neutral-500 so the
         // selected one reads as the current one by contrast too, not
         // just its own decoration. The meta line darkens to neutral-700
         // when selected -- neutral-500 (its usual color on white) drops
-        // to under 3:1 against the tinted pink background.
-        background: isSelected ? `${READING}0.3)` : 'transparent',
+        // to under 4:1 against the tinted pink background even at 15%.
+        background: isSelected ? `${READING}0.15)` : 'transparent',
         borderLeft: `4px solid ${isSelected ? `${READING}1)` : 'transparent'}`,
         borderBottom: '1px solid var(--color-neutral-100)',
       }}

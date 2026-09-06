@@ -9,6 +9,15 @@ const nextConfig = {
         hostname: 'covers.openlibrary.org',
         pathname: '/b/isbn/**',
       },
+      {
+        // A couple of books' ISBN-linked cover is a dim library-copy scan
+        // with a barcode sticker on it; Open Library also has a cleaner,
+        // brighter scan of the identical edition, but only reachable by
+        // its edition id (olid), not the ISBN.
+        protocol: 'https',
+        hostname: 'covers.openlibrary.org',
+        pathname: '/b/olid/**',
+      },
     ],
   },
 };
