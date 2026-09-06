@@ -1,9 +1,16 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import { motion, useReducedMotion } from 'framer-motion'
 import type { ReadingCategory, ReadingBook } from '../../types/content'
-import { TAG_COLOR, TAG_COLOR_FALLBACK, TAG_TEXT_COLOR, TAG_TEXT_COLOR_FALLBACK, READING, READING_TEXT } from './tags'
+import { TAG_COLOR, TAG_COLOR_FALLBACK, TAG_TEXT_COLOR, TAG_TEXT_COLOR_FALLBACK, READING } from './tags'
+
+// Measuring a panel's natural height for the mobile accordion (below)
+// needs to happen in a layout effect so it's ready before paint, but
+// layout effects warn during SSR since there's no DOM to measure --
+// this falls back to a plain effect there.
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 /*
   Two nested single-select widgets, both built to the WAI-ARIA APG
@@ -119,16 +126,125 @@ function CategoryTabs({
   )
 }
 
-// ── Book listbox (left) ──────────────────────────────────────────────────
+// ── Mobile accordion (replaces the master-detail split below md) ────────
 
-function CheckIcon() {
+// Framer Motion's `height: 'auto'` gets permanently stuck at 0 in this
+// codebase (verified earlier on this same page) -- animating to a
+// measured pixel value instead, taken from the content's own scrollHeight,
+// is what actually works.
+//
+// The panel stays mounted at all times (collapsed to height 0 rather than
+// unmounted) rather than using AnimatePresence to remove it: this page's
+// tablist already had a real bug from the opposite choice, where
+// aria-controls on an inactive tab pointed at an id that didn't exist in
+// the DOM. Keeping every panel mounted means a collapsed row's
+// aria-controls always resolves to a real element; aria-hidden plus
+// pulling its one focusable descendant out of tab order (below) is what
+// keeps it out of the accessibility tree and keyboard flow while closed.
+function MeasuredExpand({ id, isOpen, children }: { id: string; isOpen: boolean; children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [height, setHeight] = useState(0)
+  const prefersReduced = useReducedMotion()
+
+  useIsomorphicLayoutEffect(() => {
+    if (ref.current) setHeight(ref.current.scrollHeight)
+  }, [])
+
   return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style={{ flexShrink: 0, marginTop: 2 }}>
-      <circle cx="8" cy="8" r="8" fill={`${READING}1)`} />
-      <path d="M4.5 8.2l2.2 2.2 4.8-4.8" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <motion.div
+      id={id}
+      role="region"
+      aria-hidden={!isOpen}
+      initial={false}
+      animate={{ height: isOpen ? height : 0, opacity: isOpen ? 1 : 0 }}
+      transition={prefersReduced ? { duration: 0 } : { duration: 0.3, ease: 'easeInOut' }}
+      style={{ overflow: 'hidden' }}
+    >
+      <div ref={ref}>{children}</div>
+    </motion.div>
   )
 }
+
+function MobileBookAccordionItem({ book, isSelected, onToggle }: {
+  book: ReadingBook
+  isSelected: boolean
+  onToggle: () => void
+}) {
+  const prefersReduced = useReducedMotion()
+  const panelId = `reading-mobile-panel-${book.slug}`
+
+  return (
+    <div style={{ borderBottom: '1px solid var(--color-neutral-100)' }}>
+      <button
+        type="button"
+        aria-expanded={isSelected}
+        aria-controls={panelId}
+        onClick={onToggle}
+        className="w-full flex items-center gap-3 px-4 py-3 text-left"
+      >
+        <BookCover book={book} width={40} height={60} />
+        <div className="flex-1 min-w-0">
+          <p className="font-semibold leading-snug" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}>
+            {book.title}
+          </p>
+          <p className="mt-0.5" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)' }}>
+            {book.author} &middot; {book.year}
+          </p>
+        </div>
+        <motion.svg
+          aria-hidden="true"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          className="flex-shrink-0"
+          style={{ color: 'var(--color-neutral-400)' }}
+          animate={prefersReduced ? {} : { rotate: isSelected ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </motion.svg>
+      </button>
+
+      <MeasuredExpand id={panelId} isOpen={isSelected}>
+        <div className="px-4 pb-5">
+          <div className="flex flex-wrap gap-2 mb-4">
+            {book.tags.map((tag) => <TagPill key={tag} tag={tag} />)}
+          </div>
+          <p className="mb-3" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
+            {book.summary}
+          </p>
+          <p className="mb-4" style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-600)', lineHeight: 'var(--leading-relaxed)' }}>
+            {book.detail}
+          </p>
+          {/* Same inert placeholder as the desktop CTA -- see the
+              comment by the desktop "View on Amazon" button below.
+              tabIndex is pulled to -1 while collapsed so this button,
+              which stays mounted at height 0, can't pick up keyboard
+              focus it has no visible home for. */}
+          <button
+            type="button"
+            aria-disabled="true"
+            data-affiliate-pending
+            tabIndex={isSelected ? 0 : -1}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold"
+            style={{
+              fontSize: 'var(--text-xs)',
+              color: 'var(--color-neutral-500)',
+              background: 'var(--color-neutral-100)',
+              border: '1px solid var(--color-neutral-200)',
+              cursor: 'not-allowed',
+            }}
+          >
+            View on Amazon
+          </button>
+        </div>
+      </MeasuredExpand>
+    </div>
+  )
+}
+
+// ── Book listbox (left) ──────────────────────────────────────────────────
 
 function BookOption({ book, isSelected, onSelect, onKeyDown, optionRef }: {
   book: ReadingBook
@@ -148,33 +264,30 @@ function BookOption({ book, isSelected, onSelect, onKeyDown, optionRef }: {
       onKeyDown={onKeyDown}
       className="flex items-start gap-3 px-4 py-3 cursor-pointer"
       style={{
-        // Solid neutral fill, not a tint of the site's red identity color:
-        // a reddish background read as a warning/error state rather than
-        // a plain selection, which was likely why it looked off. A small
-        // check circle (the one place red still appears here) marks the
-        // selection instead of a colored row background.
-        background: isSelected ? 'var(--color-neutral-50)' : 'transparent',
+        // Third pass at this: a red-tinted background read as a warning
+        // state, and a neutral background plus a check circle still
+        // looked like it was doing too much for a plain "you're reading
+        // this one" marker. Down to one signal -- a solid border on the
+        // true left edge, nothing added to the row's fill or content --
+        // plus a slightly receded title color on the *other* three rows
+        // so the selected one reads as the crisper, current one by
+        // contrast rather than needing its own decoration.
+        borderLeft: `4px solid ${isSelected ? `${READING}1)` : 'transparent'}`,
         borderBottom: '1px solid var(--color-neutral-100)',
       }}
     >
       <BookCover book={book} width={40} height={60} />
       <div className="flex-1 min-w-0 pt-0.5">
-        {book.hero && (
-          <p className="font-mono uppercase tracking-widest mb-1" style={{ fontSize: '0.6rem', color: `${READING_TEXT}1)` }}>
-            Start here
-          </p>
-        )}
         <p
           className="font-semibold leading-snug"
-          style={{ fontSize: 'var(--text-sm)', color: 'var(--color-neutral-900)' }}
+          style={{ fontSize: 'var(--text-sm)', color: isSelected ? 'var(--color-neutral-900)' : 'var(--color-neutral-500)' }}
         >
           {book.title}
         </p>
-        <p className="mt-0.5" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-600)' }}>
+        <p className="mt-0.5" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)' }}>
           {book.author} &middot; {book.year}
         </p>
       </div>
-      {isSelected && <CheckIcon />}
     </div>
   )
 }
@@ -215,31 +328,27 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
       <CategoryDescription text={category.description} />
 
       {/*
-        One shared white surface instead of two separate bordered/shadowed
-        boxes side by side: the list and the detail pane are sections of
-        the same panel, divided by a single line rather than a visible
-        gap between two cards of different heights.
-
-        A fixed height (not just matched to each other) so all 5
-        categories render at the identical height regardless of how long
-        that category's currently-selected summary/detail text is --
-        switching tabs no longer resizes the panel. Content that doesn't
-        fit scrolls in its own area (the paragraphs on the right, and the
-        book list on the left as a safety net) rather than growing the
-        container.
+        Desktop: one shared white surface, list and detail as two columns
+        of the same panel divided by a single line rather than a gap
+        between two cards. `items-start` (not the grid default of
+        `stretch`) is the actual fix for the trailing white space that
+        used to sit under the 4th book: stretch was forcing the list
+        column to match whatever height the detail column's text needed,
+        which is almost never the list's own natural height. Each column
+        now sizes to its own content instead -- the list is flush to its
+        4 rows on every category (identical structure each time, so this
+        is what keeps the 5 categories consistent with each other),
+        and the detail column is free to run taller or shorter without
+        the list padding out to match it.
       */}
       <div
-        // The fixed height only applies at the md: breakpoint where list
-        // and detail sit side by side and need to match; on mobile they
-        // stack vertically instead, where a fixed height would cramp both
-        // sections rather than solve anything, so it's left auto there.
-        className="grid md:grid-cols-[320px_1fr] bg-white rounded-xl overflow-hidden mt-6 md:h-[460px]"
+        className="hidden md:grid md:grid-cols-[320px_1fr] md:items-start bg-white rounded-xl overflow-hidden mt-6"
         style={{ border: '1px solid var(--color-neutral-200)', boxShadow: 'var(--shadow-subtle)' }}
       >
         <div
           role="listbox"
           aria-label={`Books in ${category.name}`}
-          className="flex flex-col border-b md:border-b-0 md:border-r overflow-y-auto"
+          className="flex flex-col md:border-r"
           style={{ borderColor: 'var(--color-neutral-200)' }}
         >
           {books.map((book, i) => (
@@ -254,16 +363,11 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
           ))}
         </div>
 
-        <div className="p-6 flex flex-col min-h-0">
-          <div className="flex items-start justify-between gap-4 flex-shrink-0">
+        <div className="p-6">
+          <div className="flex items-start justify-between gap-4">
             <div className="flex gap-5 min-w-0">
               <BookCover book={selected} width={80} height={120} />
               <div className="min-w-0">
-                {selected.hero && (
-                  <p className="font-mono uppercase tracking-widest mb-1.5" style={{ fontSize: 'var(--text-2xs)', color: `${READING_TEXT}1)` }}>
-                    Start here
-                  </p>
-                )}
                 <p className="font-semibold leading-snug" style={{ fontSize: 'var(--text-lg)', color: 'var(--color-neutral-900)' }}>
                   {selected.title}
                 </p>
@@ -285,8 +389,8 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
               tracking later. Filling in AmazonUrl in the source file is
               the only change needed to activate a book's link. Placed as
               a compact top-right CTA rather than a full-width button
-              under the paragraphs, so the detail pane doesn't run
-              noticeably taller than the book list next to it.
+              under the paragraphs, to keep it out of the way of the
+              summary text below.
             */}
             <button
               type="button"
@@ -305,7 +409,7 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
             </button>
           </div>
 
-          <div className="mt-5 flex-1 overflow-y-auto" style={{ borderTop: '1px solid var(--color-neutral-100)', paddingTop: '1.25rem' }}>
+          <div className="mt-5" style={{ borderTop: '1px solid var(--color-neutral-100)', paddingTop: '1.25rem' }}>
             <p className="mb-3" style={{ fontSize: 'var(--text-base)', color: 'var(--color-neutral-700)', lineHeight: 'var(--leading-relaxed)' }}>
               {selected.summary}
             </p>
@@ -315,13 +419,37 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
           </div>
         </div>
       </div>
+
+      {/*
+        Mobile: the master-detail split doesn't work below md -- stacking
+        the list above the detail pane meant picking a book required
+        scrolling down to read it, then back up to pick another. A
+        single-select accordion instead: the same `selectedIndex` state
+        drives which one row is expanded in place, right under its own
+        header, so picking and reading never leave the same spot. Exactly
+        one row is expanded at all times (never zero), matching the
+        listbox's own "always one selected" rule one level down.
+      */}
+      <div className="md:hidden bg-white rounded-xl overflow-hidden mt-6" style={{ border: '1px solid var(--color-neutral-200)', boxShadow: 'var(--shadow-subtle)' }}>
+        {books.map((book, i) => (
+          <MobileBookAccordionItem
+            key={book.slug}
+            book={book}
+            isSelected={i === selectedIndex}
+            onToggle={() => onSelect(i)}
+          />
+        ))}
+      </div>
     </div>
   )
 }
 
 function CategoryDescription({ text }: { text: string }) {
+  // No max-width: the line is short enough to fit on one row at the full
+  // panel width, and capping it narrower just wrapped it to two lines for
+  // no reason, leaving it misaligned with the panel's edges below.
   return (
-    <p style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.60)', lineHeight: 'var(--leading-relaxed)', maxWidth: '640px' }}>
+    <p className="whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'var(--text-base)', color: 'rgba(255,255,255,0.60)' }}>
       {text}
     </p>
   )

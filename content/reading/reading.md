@@ -44,7 +44,7 @@
 -->
 
 ## Category: Making the Case
-Description: Four books on why curiosity, purpose, and a willingness to be wrong come before any method.
+Description: Books on why curiosity, purpose, and a willingness to be wrong come before any method.
 
 ### Book: Change by Design
 Hero: true
@@ -87,7 +87,7 @@ Detail: Grant argues that people default to three mindsets when defending a beli
 AmazonUrl:
 
 ## Category: Finding the Idea
-Description: Four books on how new ideas surface, get championed, and get tested.
+Description: Books on how new ideas surface, get championed, and get tested.
 
 ### Book: Originals
 Hero: true
@@ -130,7 +130,7 @@ Detail: Developed at Google Ventures, the sprint process assigns one day each to
 AmazonUrl:
 
 ## Category: Doing the Work
-Description: Four books on the concrete research and design methods used to carry out that work.
+Description: Books on the concrete research and design methods used to carry out that work.
 
 ### Book: 101 Design Methods
 Hero: true
@@ -173,7 +173,7 @@ Detail: The book organizes 57 methods across three phases, Inspiration, Ideation
 AmazonUrl:
 
 ## Category: Setting the Strategy
-Description: Four books on connecting design and innovation to strategic choice and business model logic.
+Description: Books on connecting design and innovation to strategic choice and business model logic.
 
 ### Book: Playing to Win
 Hero: true
@@ -216,7 +216,7 @@ Detail: The canvas divides a business model into nine building blocks, including
 AmazonUrl:
 
 ## Category: Learning the Groundwork
-Description: Four books on the systems thinking, usability, service design, and strategy foundations the rest of this site draws on.
+Description: Books on the systems thinking, usability, service design, and strategy foundations the rest of this site draws on.
 
 ### Book: Thinking in Systems
 Hero: true
