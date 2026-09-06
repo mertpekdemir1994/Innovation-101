@@ -30,7 +30,7 @@ export default function AboutPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <DarkSection className="relative overflow-hidden" ariaLabelledBy="about-hero-heading">
         <Container>
-          <div style={{ paddingTop: '6rem', paddingBottom: '6rem', maxWidth: '38rem' }}>
+          <div style={{ paddingTop: '4rem', paddingBottom: '6rem', maxWidth: '38rem' }}>
             <p
               style={{
                 fontFamily: 'var(--font-mono)',
@@ -54,7 +54,7 @@ export default function AboutPage() {
                 marginBottom: '1.5rem',
               }}
             >
-              Forty methods. Six frameworks. The map between them.
+              Methods, frameworks, and the person behind them
             </h1>
             <p
               style={{
