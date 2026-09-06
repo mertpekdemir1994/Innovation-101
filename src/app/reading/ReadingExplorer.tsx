@@ -279,14 +279,17 @@ function BookOption({ book, isSelected, onSelect, onKeyDown, optionRef }: {
       onKeyDown={onKeyDown}
       className="flex items-start gap-3 px-4 py-3 cursor-pointer"
       style={{
-        // Third pass at this: a red-tinted background read as a warning
-        // state, and a neutral background plus a check circle still
+        // Fourth pass at this: a red-tinted background alone read as a
+        // warning state, and a neutral background plus a check circle
         // looked like it was doing too much for a plain "you're reading
-        // this one" marker. Down to one signal -- a solid border on the
-        // true left edge, nothing added to the row's fill or content --
-        // plus a slightly receded title color on the *other* three rows
-        // so the selected one reads as the crisper, current one by
-        // contrast rather than needing its own decoration.
+        // this one" marker. This lands on a 30%-opacity fill of the
+        // section's own accent color plus the left border, with the
+        // *other* three rows' title receded to neutral-500 so the
+        // selected one reads as the current one by contrast too, not
+        // just its own decoration. The meta line darkens to neutral-700
+        // when selected -- neutral-500 (its usual color on white) drops
+        // to under 3:1 against the tinted pink background.
+        background: isSelected ? `${READING}0.3)` : 'transparent',
         borderLeft: `4px solid ${isSelected ? `${READING}1)` : 'transparent'}`,
         borderBottom: '1px solid var(--color-neutral-100)',
       }}
@@ -299,7 +302,7 @@ function BookOption({ book, isSelected, onSelect, onKeyDown, optionRef }: {
         >
           {book.title}
         </p>
-        <p className="mt-0.5" style={{ fontSize: 'var(--text-xs)', color: 'var(--color-neutral-500)' }}>
+        <p className="mt-0.5" style={{ fontSize: 'var(--text-xs)', color: isSelected ? 'var(--color-neutral-700)' : 'var(--color-neutral-500)' }}>
           {book.author} &middot; {book.year}
         </p>
       </div>
@@ -307,15 +310,16 @@ function BookOption({ book, isSelected, onSelect, onKeyDown, optionRef }: {
   )
 }
 
-function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
+function CategoryPanel({ category, selectedIndex, onSelect, hidden, listHeight, onMeasureListHeight }: {
   category: ReadingCategory
   selectedIndex: number
   onSelect: (i: number) => void
   hidden: boolean
+  listHeight: number | null
+  onMeasureListHeight: (h: number) => void
 }) {
   const optionRefs = useRef<(HTMLDivElement | null)[]>([])
   const listRef = useRef<HTMLDivElement>(null)
-  const [listHeight, setListHeight] = useState<number | null>(null)
   const books = category.books
 
   // The book list's own natural height (4 rows, now uniform-height rows
@@ -323,21 +327,29 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
   // fixed guess or letting the taller side win: it's what makes the list
   // flush with no padding under the 4th book, and what makes every
   // category's panel come out the same height as the others, since every
-  // category's list has the same 4-row shape. A ResizeObserver rather
-  // than a one-time read for the same reason as the mobile accordion's
-  // panel measurement -- this list is inside a `hidden` tabpanel for 4 of
-  // the 5 categories at mount time, and needs to pick up its real size
-  // once that tab actually opens.
+  // category's list has the same 4-row shape.
+  //
+  // listHeight itself lives one level up, shared by all 5 panels, rather
+  // than each panel measuring and holding its own: every list has the
+  // same 4-row shape, so they all measure to the same value anyway, and
+  // sharing it means a category you're opening for the first time
+  // already has the right height the instant it's shown -- borrowed from
+  // whichever category measured first -- instead of rendering at its own
+  // natural (usually taller, detail-driven) auto height for a moment and
+  // visibly dropping down to the measured one a beat later. A
+  // ResizeObserver rather than a one-time read on mount, because this
+  // list sits inside a `hidden` tabpanel for 4 of the 5 categories at
+  // mount time and needs to pick up its real size once that tab opens.
   useIsomorphicLayoutEffect(() => {
     const el = listRef.current
     if (!el) return
     const observer = new ResizeObserver((entries) => {
       const h = entries[0]?.contentRect.height
-      if (h !== undefined) setListHeight(h)
+      if (h) onMeasureListHeight(h)
     })
     observer.observe(el)
     return () => observer.disconnect()
-  }, [])
+  }, [onMeasureListHeight])
 
   function moveAndSelect(i: number) {
     const next = (i + books.length) % books.length
@@ -384,6 +396,11 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
         style={{
           border: '1px solid var(--color-neutral-200)',
           boxShadow: 'var(--shadow-subtle)',
+          // Explicit no-transition: this height is a measured value, not
+          // a state the panel should visibly animate into -- switching
+          // tabs should show the new category at its right size
+          // immediately, not shrink/grow into place.
+          transition: 'none',
           ...(listHeight ? { height: `${listHeight}px` } : {}),
         }}
       >
@@ -391,7 +408,19 @@ function CategoryPanel({ category, selectedIndex, onSelect, hidden }: {
           ref={listRef}
           role="listbox"
           aria-label={`Books in ${category.name}`}
-          className="flex flex-col md:border-r"
+          // self-start, not the grid's default stretch: without it, the
+          // list gets stretched to match whatever height is *currently*
+          // applied to the grid, and its ResizeObserver dutifully reports
+          // that stretched size back -- which, the first time a category
+          // opens (before any height is set yet, so the row still
+          // auto-sizes to the taller detail pane), feeds a too-tall
+          // number back in, gets applied, gets re-measured slightly
+          // smaller as things settle, and so on: exactly the frame-by-
+          // frame shrinking this was supposed to not do. self-start makes
+          // the list always report its own true content height,
+          // independent of whatever height the container currently has,
+          // so there's one measurement and no loop to settle.
+          className="flex flex-col self-start md:border-r"
           style={{ borderColor: 'var(--color-neutral-200)' }}
         >
           {books.map((book, i) => (
@@ -505,6 +534,8 @@ export default function ReadingExplorer({ categories }: { categories: ReadingCat
   const [selections, setSelections] = useState<number[]>(
     () => categories.map((c) => Math.max(0, c.books.findIndex((b) => b.hero)))
   )
+  // Shared across all 5 panels -- see the comment in CategoryPanel.
+  const [listHeight, setListHeight] = useState<number | null>(null)
 
   return (
     <div>
@@ -527,6 +558,8 @@ export default function ReadingExplorer({ categories }: { categories: ReadingCat
             selectedIndex={selections[i]}
             onSelect={(bookIndex) => setSelections((prev) => prev.map((v, idx) => (idx === i ? bookIndex : v)))}
             hidden={i !== activeTab}
+            listHeight={listHeight}
+            onMeasureListHeight={setListHeight}
           />
         ))}
       </div>
